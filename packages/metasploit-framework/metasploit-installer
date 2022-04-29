@@ -15,20 +15,12 @@ update_rubygems
 gem install --no-document --verbose bundler
 gem install actionpack
 gem install rails --platform=ruby -- --use-system-libraries
-gem install nokogiri --platform=ruby -- --use-system-libraries
-bundle config build.nokogiri --use-system-libraries
 bundle install -j$(nproc --all) --verbose
 
 echo "Running RuGiR(Ruby Gem Issues Resolved)";sleep 2
 bundle update --bundler
 rubyLIBv=$(ls ${PREFIX}/lib/ruby|sort -r|grep -m 1 '[0-9].[0-9].[0-9]')
 rubyLIB="${PREFIX}/lib/ruby/gems/$rubyLIBv"
-#sleep 10
-#echo -en "\e[33mWARNING:\e[0m Please answer questions with an 'y'(YES) or '3'(ALL)"
-#sleep 1
-#gem uninstall nokogiri
-#gem install nokogiri --platform=ruby -- --use-system-libraries
-#bundle config build.nokogiri --use-system-libraries
 sed -i "s@/etc/resolv.conf@${PREFIX}/etc/resolv.conf@g" $msfDir/lib/net/dns/resolver.rb
 for i in aarch64-linux-android arm-linux-androideabi \
 	i686-linux-android x86_64-linux-android;do
@@ -107,6 +99,13 @@ chmod 755 ${PREFIX}/bin/msfconsole
 for i in msfd msfrpc msfrpcd msfvenom;do
 	ln -sfr ${PREFIX}/bin/msfconsole ${PREFIX}/bin/$i
 done
+
+sleep 10
+echo -en "\e[33mWARNING:\e[0m Please answer questions with an 'y'(YES) or '3'(ALL)"
+sleep 5
+gem uninstall nokogiri
+gem install nokogiri --platform=ruby -- --use-system-libraries
+bundle config build.nokogiri --use-system-libraries
 
 echo "Setting metasploit database"
 mkdir -p $msfDir/config

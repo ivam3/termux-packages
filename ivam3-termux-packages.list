@@ -1,1 +1,1 @@
-deb [trusted=yes arch=all] https://ivam3.github.io/termux-packages/dists stable extras
+deb [trusted=yes arch=all] https://ivam3.github.io/termux-packages stable extras
