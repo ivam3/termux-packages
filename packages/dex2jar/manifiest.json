@@ -1,0 +1,14 @@
+{
+  "name": "dex2jar",
+  "version": "2.1",
+  "arch": "all",
+  "homepage": "https://github.com/pxb1988/dex2jar",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["wget, unzip, openjdk-17"],
+  "suggests": [""],
+  "description": "Tools to work with android .dex and java .class files",
+  "files" :{
+    "dex2jar-installer": "bin/dex2jar-installer",
+    "dex2jar": "bin/dex2jar"
+	}
+}

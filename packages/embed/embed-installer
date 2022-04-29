@@ -1,0 +1,21 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+
+mkdir -p ${HOME}/.android $PREFIX/share
+git clone https://github.com/ivam3/embed.git ${PREFIX}/share/embed
+if [[ ! -d ${PREFIX}/share/embed ]]
+then
+	echo -en "\e[31mERROR:\e[0m Embed PATH missing ...\e[33mAborting.\e[0m"
+	exit 1
+fi
+ln -s ${PREFIX}/share/embed/.IbyC/debug.keystore ${HOME}/.android/debug.keystore 2>/dev/null
+pushd ${PREFIX}/share/embed >/dev/null
+gem install bundle
+bundle update --bundler
+bundle install
+echo -en "\e[33mWARNING:\e[0m Please answer questions with an 'y' or '3'"
+gem uninstall nokogiri
+gem install nokogiri --platform=ruby -- --use-system-libraries
+bundle config build.nokogiri --use-system-libraries
+popd
+exit 0

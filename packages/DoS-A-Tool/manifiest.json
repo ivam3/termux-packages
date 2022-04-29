@@ -1,0 +1,13 @@
+{
+	"name": "DoS-A-Tool",
+	"version": "2.0",
+	"arch": "all",
+	"homepage": "https://github.com/Ivam3/DoS-A-Tool",
+	"maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+	"depends": ["perl"],
+	"suggests": [""],
+	"description": "Sends a massive number of SYN requests to test a server to overwhelm its capacity with connections.",
+"files" :{
+    "embed-installer": "bin/DoS-A-Tool"
+	}
+}
