@@ -1,0 +1,15 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+link="https://github.com/pxb1988/dex2jar/releases/download"
+releases="v2.2-SNAPSHOT-2021-10-31"
+zipFile="dex-tools-2.2-SNAPSHOT-2021-10-31.zip"
+iHDB="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.set"
+
+wget --quiet --tries=20 $link/$releases/$zipFile -O ${TMPDIR}/dex2jar.zip
+unzip ${TMPDIR}/dex2jar.zip -d ${PREFIX}/share
+d2jDIR=$(ls ${PREFIX}/share|grep dex-tools)
+mv ${PREFIX}/share/$d2jDIR ${PREFIX}/share/dex2jar
+rm -rf ${TMPDIR}/dex2jar.zip
+
+exit 0
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

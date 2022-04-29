@@ -1,0 +1,13 @@
+{
+	"name": "exif",
+	"version": "2.0",
+	"arch": "all",
+	"homepage": "https://github.com/Ivam3/exif",
+	"maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+	"depends": ["exiftool"],
+	"suggests": ["fixer"],
+	"description": "Script in bash to automate exiftool usages.",
+  "files" :{
+		"exif": "bin/exif"
+	}
+}

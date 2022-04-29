@@ -1,0 +1,13 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ $(id -u) -eq 0 ]]
+then
+  echo -en "\e[31m(_➤)\e[0m You need to be a common user"
+  exit 1
+else
+  echo "Preparing enviroment ..."
+  if [[ -d ${PREFIX}/share/dex2jar ]]
+  then
+    rm -rf ${PREFIX}/share/dex2jar
+  fi
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -1,0 +1,112 @@
+Package: adbfastboot
+Version: 1.0.39a-8.0.0f
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1967
+Depends: openjdk-17
+Suggests: bugjaeger-app
+Homepage: https://t.me/Ivam3_Bot
+Description: Open source of minimal Android Debug Bridge(ADB) and FastBoot suite
+Filename: dists/stable/extras/binary-all/adbfastboot_1.0.39a-8.0.0f_all.deb
+Size: 888256
+MD5Sum: d478149bf6cdeab527e0804cd02ab50b
+SHA1: f3e80f6d3ac2b9bf4af7fbba1d145de2987bad7f
+SHA256: d89e3ed08a49aab9561521b1d5039a679e60da9b5e7042c05e36b313021072ea
+SHA512: 37533bf7a5259e2a980c821577c291a1f031b04ef977780c4cfe727350e74b2c0a77f4274e5d81a0ffc57e13083bb6d9cfa9b40f3b7ff2eb4d1a4ceafddd2226
+
+Package: botgram
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, python
+Suggests: fixer
+Homepage: https://github.com/ivam3/botgram
+Description: Scraper Telegram's groups information and manage it from CLi.
+Filename: dists/stable/extras/binary-all/botgram_1.0_all.deb
+Size: 1880
+MD5Sum: e61030f0fc5fbc9539804a02f39349f6
+SHA1: c60692f84519380c68f37db90b46204703d626fe
+SHA256: 27de458f5f302114306b905f961ce1f2447cafae0dd13be2c801f3bcf146b495
+SHA512: f8ef5065767b05b327aed4982fafb7595e683f303b3ba2ae7dc624f7d60093363f2e957acf15e9a971441d27bcc940a4c376eed681e3083530851e42bd22c52e
+
+Package: dex2jar
+Version: 2.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: wget, unzip, openjdk-17
+Suggests: fixer
+Homepage: https://github.com/pxb1988/dex2jar
+Description: Tools to work with android .dex and java .class files
+Filename: dists/stable/extras/binary-all/dex2jar_2.1_all.deb
+Size: 2160
+MD5Sum: f15688a198222b6bb682f07430fae070
+SHA1: 269b1224e228d86b0eda4131ac1514c753b81dd3
+SHA256: dde9b7b91183beefe95d84ba57cbbb59b78e266d0d2b9ad11d39f6d66d2e8271
+SHA512: 85a9a073efa0a69f42a15680fef2d611bec6041066cc026a754e7486159b860876403f7e686d949bd95e2eca8a409ffccecab422750e53132391657b9856d662
+
+Package: dos-a-tool
+Version: 2.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 5
+Depends: perl
+Suggests: fixer
+Homepage: https://github.com/Ivam3/DoS-A-Tool
+Description: Sends a massive number of SYN requests to test a server to overwhelm its capacity with connections.
+Filename: dists/stable/extras/binary-all/dos-a-tool_2.0_all.deb
+Size: 2928
+MD5Sum: ffdc21ce3f7bda16e0ab54131f1addd3
+SHA1: c69a5754de2beade0b1baf86dd923b1d4cd5acf1
+SHA256: 971cf2cf887fd6735f415513f156bdcd524048b9274a63fbed316345995844ce
+SHA512: 41b3f19c15d613e78847ee0642040ba2522973e37e5c5d2891450728d5ad70f47b30328c889f5a6671f016be47b235621e9d6c099fdaaa8991b5c87b8c81f837
+
+Package: embed
+Version: 2.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, wget, curl, axel, apktool, tar, aapt, apksigner, openjdk-17
+Suggests: metasploit-framework
+Homepage: https://github.com/Ivam3/embed
+Description: Open source tool to Embed metasploit payload into legitim APK file. (git-release installer)
+Filename: dists/stable/extras/binary-all/embed_2.0_all.deb
+Size: 1900
+MD5Sum: 32a84d3d57e5aeae50d127724a885cb8
+SHA1: c2cbc044843c6349225102e49a4176904b069f65
+SHA256: 8f2683c5ceb2b0aad68b718475ed08d1d743d2f3c8336a7642aa4caac13356ef
+SHA512: ad0b5370939964300b3adb7e7378c1fbeb9ab0bfc38cc52ed85f030dfe08b525254e8e6fe0eb033ad0cc7f39f478058d8cdb811625af1bb8569b15bea8b82350
+
+Package: exif
+Version: 2.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 3
+Depends: exiftool
+Suggests: fixer
+Homepage: https://github.com/Ivam3/exif
+Description: Script in bash to automate exiftool usages.
+Filename: dists/stable/extras/binary-all/exif_2.0_all.deb
+Size: 2172
+MD5Sum: b521d48d020fb7c92775365dd6601ecb
+SHA1: 8a43336204e167a99720ec0437cdba0ea97a0796
+SHA256: a360954a69468f89c450dee7f585267219e773fd26f95495ae269ca476901a72
+SHA512: 7458a5f76321d0a741a8fa416ab121069716646b543b6930e55f7d32b0970af7b0e997b145821e3bc32c04e2fc220baa406811c3e63a85c06374b6d7bd127663
+
+Package: metasploit-framework
+Version: 6.1.39
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 7
+Depends: python, autoconf, patchelf, binutils, bison, yarn, clang, coreutils, curl, findutils, apr, apr-util, postgresql, openssl, readline, libffi, libgmp, libpcap, libsqlite, libgrpc, libtool, libxml2, libxslt, ncurses, make, ncurses-utils, ncurses, git, wget, unzip, zip, tar, termux-tools, termux-elf-cleaner, pkg-config, git, ruby, libcap, resolv-conf, build-essential
+Suggests: openjdk-17
+Homepage: https://github.com/rapid7/metasploit-framework
+Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
+Filename: dists/stable/extras/binary-all/metasploit-framework_6.1.39_all.deb
+Size: 3780
+MD5Sum: ea11c7b8a7fc6ed050e6525081765083
+SHA1: 8543f9f05a4f23e805b2066e98fb685670bd36c3
+SHA256: 881b9c948e47580e15194924d0d0ce07a31a1bdcf075c37c6dfa1d763d77a945
+SHA512: 92538be401ac084576b1f2b62743324209697a787dd5426370dda78ac08d4b062c399a50c5888da1070e7c9ab25f8ffe629423c91ac7f4c367288029324c21e9
+

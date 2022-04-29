@@ -1,0 +1,29 @@
+#!/data/data/com.termux/files/usr/bin/bash
+#
+rubyLIBv=$(ls ${PREFIX}/lib/ruby|sort -r|grep -m 1 '[0-9].[0-9].[0-9]')
+rubyLIB="${PREFIX}/lib/ruby/gems/$rubyLIBv"
+
+for i in aarch64-linux-android arm-linux-androideabi \
+	i686-linux-android x86_64-linux-android;do
+	if [[ -e "$rubyLIB/${i}/bigdecimal.so" ]]
+	then
+		if [[ -e "$rubyLIB/${i}/bigdecimal/util.so" ]]
+		then
+			if [[ -n "$(patchelf --print-needed "$rubyLIB/${i}/bigdecimal/util.so"|grep bigdecimal.so)" ]]
+			then
+				exit 0
+			fi
+		fi
+		if [[ -e "$rubyLIB/${i}/bigdecimal/util.so" ]]
+		then
+			patchelf --add-needed \
+				"$rubyLIB/${i}/bigdecimal/util.so"
+		fi
+		if [[ -e "$rubyLIB/${i}/bigdecimal.so" ]]
+		then
+			patchelf --add-needed \
+				"$rubyLIB/${i}/bigdecimal.so"
+		fi
+	fi
+done
+exit 0
