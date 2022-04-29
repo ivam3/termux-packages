@@ -1,5 +1,0 @@
-#!/data/data/com.termux/files/usr/bin/bash
-if [[ -d ${HOME}/.local/share/embed ]]; then
-	rm -rf ${HOME}/.local/share/embed
-fi
-

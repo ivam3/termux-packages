@@ -1,5 +1,0 @@
-#!/data/data/com.termux/files/usr/bin/bash
-if [[ -d ${PREFIX}/share/dex2jar ]]; then
-  rm -rf ${PREFIX}/share/dex2jar
-fi
-####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

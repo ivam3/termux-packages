@@ -1,7 +1,0 @@
-#!/data/data/com.termux/files/usr/bin/bash
-if [[ -d ${PREFIX}/opt/metasploit-framework ]]; then
-	rm -rf ${PREFIX}/opt/metasploit-framework
-fi
-if [[ -d ${PREFIX}/var/lib/postgresql ]]; then
-	rm -rf ${PREFIX}/var/lib/postgresql
-fi
