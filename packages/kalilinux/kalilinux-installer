@@ -1,0 +1,11 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+
+wget --tries=20 --quiet \
+	https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Installer/Kali/kali-xfce.sh \
+	-O kali-xfce.sh
+chmod +x kali-xfce.sh
+bash kali-xfce.sh
+echo "deb [trusted=yes] http://http.kali.org/kali kali-rolling main contrib non-free" > ${HOME}/kali-fs/etc/apt/sources.list
+exit 0
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

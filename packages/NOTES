@@ -1,0 +1,22 @@
+cambio de nombre checker.py a webhackshl_checker.py
+
+cambio de nombre List a listofbooks y listoftutorials
+
+chmod 511 .local/etc/i-Haklab/*
+
+rm $PREFIX/etc/apache2/httpd.conf
+ln -s ~/.local/etc/apache2/httpd.conf $PREFIX/etc/apache2/httpd.conf
+
+rm $PREFIX/etc/myphpadmin/config.inc.php
+ln -s ~/.local/etc/myphpadmin/config.inc.php $PREFIX/etc/myphpadmin/config.inc.php
+
+rm $PREFIX/etc/tor/torrc
+ln -s ~/.local/etc/tor/torrc $PREFIX/etc/torrc
+
+rm $PREFIX/etc/proxychanis.conf
+ln -s ~/.local/etc/proxychains.conf $PREFIX/etc/proxichains.conf
+
+en funciones revisar link de banners
+
+obfsh tool
+

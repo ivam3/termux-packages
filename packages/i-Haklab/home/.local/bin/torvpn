@@ -1,0 +1,119 @@
+#!/usr/bin/bash
+#torvpn 2021 by Ivam3.
+####################
+IFS=$'\n\t'
+trap ctrl_c 2
+ctrl_c() { printf "$Y\t\t   [¿] Need a help [?]$B\n\t\tTelegram : t.me/Ivam3_Bot$W\n";exit;}
+R='\e[31m'
+G='\e[32m'
+Y='\e[33m'
+B='\e[34m'
+M='\e[35m'
+C='\e[36m'
+W='\e[0m'
+
+[[ $# -eq 0 ]] && { printf >&2 $R"ERROR:$W missing argument, type $(basename $0) -h for help";exit;}
+for tool in tor curl w3m proxychains4;do
+	if [[ $(command -v $tool >/dev/null;echo $?) -gt 0 ]]
+	then
+		[[ $tool = "proxychains4" ]] && tool="proxychains-ng"
+		printf >&2 "$Y(_➤)$W Installing dependencies ...\n"
+		yes|apt install $tool &>/dev/null
+		clear
+	fi
+done
+
+getIP(){
+	info="${TMPDIR}/tornvpn.tmp"
+	$run w3m cual-es-mi-ip.net/geolocalizar-ip-mapa 2>/dev/null|grep "Dirección" -A 6 > $info
+	ip=$(grep -oE '([0-9]{1,3}\.){3}[0-9]{1,3}' $info)
+	geo=$(tail -n 5 $info)
+	rm $info
+}
+	
+chkTor(){
+	if [[ $(curl --socks5-hostname localhost:9050 -s https://www.google.com >/dev/null;echo $?) -eq 0 ]]
+	then
+		run="proxychains4"
+		return 0
+	else
+		return 1
+	fi
+}
+case $1 in
+	-h|help|--help)
+		printf $Y"USAGE:$W $(basename $0) $Y<\e[0moptions$Y> or <\e[0mcommand to execute$Y>$W\n
+:::OPTIONS:::  |     :::DESCRIPTIONS:::
+     -h        | show this menu
+     ip        | show current tun0 ip address
+     pip       | show current real public ip address
+     geo       | geolocate current ip
+     swip      | swap to a random ip address
+     start     | turn on tor connections
+     stop      | turn off tor connections
+ any-command   | run an specific process over tor connections.
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n
+ex: $(basename $0) pip
+    $(basename $0) nmap -Pn 8.8.8.8/24\n"
+		;;
+	ip)
+		if chkTor;then
+			printf $G"╭─(_>)_Getting_Tor's_IP..";
+			getIP
+			printf ".$G[\e[0mDONE$G]$G\n╰──➤$W $ip"
+		else
+			printf $Y"WARNING:$W Tor's connection is inactive"
+		fi
+		;;
+	pip)
+		printf "$G╭─(_>)_Getting_Real_public_IP...";
+		getIP
+		printf "$G[\e[0mDONE$G]$G\n╰──➤$W $ip"
+		;;
+	geo)
+		printf $G"╭─(_>)_Geolocalizing_IP..."
+		chkTor;getIP
+		printf "$G[\e[0mDONE$G]$G\n╰──➤$W $ip\n$geo"
+		;;
+	swip)
+		if chkTor;then
+			printf $G"╭─(_>)_Getting_a_new_IP..";
+			killall -HUP --quiet tor
+			getIP
+			printf ".$G[\e[0mDONE$G]$G\n╰──➤$W $ip"
+		else
+			printf $Y"WARNING:$W Tor's connection is$R inactive$W"
+		fi
+		;;
+	start)
+		if chkTor;then
+			printf $Y"WARNING:$W Tor's connection is$G active$W"
+		else
+			printf $G"╭─(_>)_Connecting..";
+			tor >/dev/null 2>/dev/null &
+			sleep 1;chkTor;getIP
+			printf ".$G[\e[0mDONE$G]$G\n╰──➤$W $ip"
+		fi
+			;;
+	stop)
+		if chkTor;then
+			printf "$G(_➤)_Disconnecting..";
+			killall tor 2>/dev/null
+			sleep 0.5
+			printf ".$G[\e[0mDONE$G]$W"
+		else
+			printf $Y"WARNING:$W Tor's connection is$R inactive$W"
+		fi
+		;;
+	*)
+		if chkTor;then
+			getIP
+			printf "$G╭─(_>)_running_proxy_over:$W $ip$G\n╰──➤ $W"
+			exec proxychains4 $@ 2>/dev/null
+		else
+			printf $Y"WARNING:$W Tor's connection is$R inactive$W"
+		fi
+		;;
+esac
+
+#			i-Haklab by @Ivam3

@@ -1,0 +1,114 @@
+#!/data/data/com.termux/files/usr/bin/bash
+#Created on Jan/2022
+IFS=$'\n\t'
+trap ctrl_c 2
+
+Y='\e[33m'
+B='\e[34m'
+M='\e[35m'
+C='\e[36m'
+W='\e[0m'
+
+ctrl_c(){ printf "\n$Y\n   (¿) Need a help (?)$B\nTelegram : t.me/Ivam3_Bot$W\n";exit 0;}
+if ! command -v dex2jar 2>/dev/null
+then
+	echo -en $R"ERROR:$W dex2jar is not installed..$Y Aborting.$W"
+	exit 0
+fi
+
+printTable(){
+	local -r delimiter="${1}"
+  local -r data="$(removeEmptyLines "${2}")"
+
+  if [[ "${delimiter}" != '' && "$(isEmptyString "${data}")" = 'false' ]]
+  then
+		local -r numberOfLines="$(wc -l <<< "${data}")"
+		if [[ "${numberOfLines}" -gt '0' ]]
+    then
+			local table=''
+			local i=1
+			for ((i = 1; i <= "${numberOfLines}"; i = i + 1))
+      do
+				local line=''
+        line="$(sed "${i}q;d" <<< "${data}")"
+
+				local numberOfColumns='0'
+        numberOfColumns="$(awk -F "${delimiter}" '{print NF}' <<< "${line}")"
+
+        if [[ "${i}" -eq '1' ]]
+        then
+					table="${table}$(printf '%s#+' "$(repeatString '#+' "${numberOfColumns}")")"
+        fi
+
+        table="${table}\n"
+				local j=1
+
+        for ((j = 1; j <= "${numberOfColumns}"; j = j + 1))
+        do
+					table="${table}$(printf '#| %s' "$(cut -d "${delimiter}" -f "${j}" <<< "${line}")")"
+        done
+
+        table="${table}#|\n"
+
+        if [[ "${i}" -eq '1' ]] || [[ "${numberOfLines}" -gt '1' && "${i}" -eq "${numberOfLines}" ]]
+        then
+					table="${table}$(printf '%s#+' "$(repeatString '#+' "${numberOfColumns}")")"
+        fi
+			done
+
+      if [[ "$(isEmptyString "${table}")" = 'false' ]]
+			then
+				echo -e "${table}" | column -s '#' -t | awk '/^\+/{gsub(" ", "-", $0)}1'
+      fi
+		fi
+	fi
+}
+
+removeEmptyLines(){
+	local -r content="${1}"
+  echo -e "${content}" | sed '/^\s*$/d'
+}
+
+repeatString(){
+  local -r string="${1}"
+  local -r numberToRepeat="${2}"
+  if [[ "${string}" != '' && "${numberToRepeat}" =~ ^[1-9][0-9]*$ ]]
+  then
+		local -r result="$(printf "%${numberToRepeat}s")"
+    echo -e "${result// /${string}}"
+  fi
+}
+
+isEmptyString(){
+  local -r string="${1}"
+  if [[ "$(trimString "${string}")" = '' ]]
+  then
+		echo 'true' && return 0
+  fi
+  echo 'false' && return 1
+}
+
+trimString(){
+  local -r string="${1}"
+  sed 's,^[[:blank:]]*,,' <<< "${string}" | sed 's,[[:blank:]]*$,,'
+}
+
+file=$(mktemp)
+echo "AVAILABLE TOOLS" > $file
+echo "$(ls ${HOME}/.local/share/dex2jar/*.sh|cut -d "/" -f10|cut -d "." -f1)" >> $file
+
+usage(){
+	printf "$Y(_>)_usage :─➤$W dex2jar <tool> <options + arguments>\n$Y ╰──➤$W Example : dex2jar d2j-dex2jar -f ~/path/to/apk_to_decompile.apk$G\n"
+	printTable "/" "$(cat $file)"
+	rm $file 2>/dev/null;printf "$W\n";exit 0
+}
+[[ -z $1 ]] && usage
+tool=$(grep $1 $file)
+if [ -z $1 ] || [ -z $tool ] 2>/dev/null
+then
+	usage
+else
+	bash $(ls ${HOME}/.local/share/dex2jar/$tool.sh) ${@:2};rm $file 2>/dev/null
+fi
+
+#             i-Haklab by @Ivam3
