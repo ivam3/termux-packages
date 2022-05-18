@@ -1,3 +1,16 @@
+data/data/com.termux/files/usr/bin/adb                                           adbfastboot
+data/data/com.termux/files/usr/bin/adb.bin                                       adbfastboot
+data/data/com.termux/files/usr/bin/fastboot                                      adbfastboot
+data/data/com.termux/files/usr/bin/fastboot-armeabi                              adbfastboot
+data/data/com.termux/files/usr/bin/blackbox-installer                            blackbox
+data/data/com.termux/files/usr/bin/botgram                                       botgram
+data/data/com.termux/files/usr/bin/botgram-installer                             botgram
+data/data/com.termux/files/usr/bin/dex2jar                                       dex2jar
+data/data/com.termux/files/usr/bin/dex2jar-installer                             dex2jar
+data/data/com.termux/files/usr/bin/DoS-A-Tool                                    dos-a-tool
+data/data/com.termux/files/usr/bin/embed                                         embed
+data/data/com.termux/files/usr/bin/embed-installer                               embed
+data/data/com.termux/files/usr/bin/exif                                          exif
 data/data/com.termux/files/home/.bashrc                                          i-haklab
 data/data/com.termux/files/home/.config/fish/conf.d/omf.fish                     i-haklab
 data/data/com.termux/files/home/.config/fish/config.fish                         i-haklab
@@ -3155,3 +3168,5 @@ data/data/com.termux/files/home/.vim/syntax/snippet.vim                         
 data/data/com.termux/files/home/.vimrc                                           i-haklab
 data/data/com.termux/files/usr/bin/i-Haklab-installer                            i-haklab
 data/data/com.termux/files/usr/bin/termux-url-opener                             i-haklab
+data/data/com.termux/files/usr/bin/kalilinux-installer                           kalilinux
+data/data/com.termux/files/usr/bin/metasploit-installer                          metasploit-framework

@@ -1,3 +1,114 @@
+Package: adbfastboot
+Version: 1.0.39a-8.0.0f
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1967
+Depends: openjdk-17
+Suggests: bugjaeger-app
+Homepage: https://t.me/Ivam3_Bot
+Description: Open source of minimal Android Debug Bridge(ADB) and FastBoot suite
+Filename: dists/stable/extras/binary-all/adbfastboot_1.0.39a-8.0.0f_all.deb
+Size: 888348
+MD5Sum: d747cc6a8337f7945a096972d6baab99
+SHA1: bbeb80a0f87543f543db4c95ac40923b596141ba
+SHA256: 0291cb750ace5a74d2b2fd5d5249dda8281d0574736bdf4fd4e75452cbfadc78
+SHA512: 6a2a88adc944e5e18244da00c71a8ec72026faf5e710ab4b839bfd3196072fd6d04a96b1b65fa97b73d39bdbbd73a23e3a6740f9e433d2c89ce4add441532211
+
+Package: blackbox
+Version: 2.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: python2, wget
+Homepage: https://github.com/jothatron/blackbox
+Description: Tool for Bruteforcing attacks, Information Gathering, Dorking, Cracking and Exploit web vulnerabilities.
+Filename: dists/stable/extras/binary-all/blackbox_2.0_all.deb
+Size: 1704
+MD5Sum: 586098de1542c15e9bb519a779dfad49
+SHA1: 72176a0e558593c3e7d84b45f7489984fc95897a
+SHA256: 818dd7a3623e306e5fcf7f6d9fcb85cb6b06dfbb6c45df36d9c83a5afc3ecda6
+SHA512: a2dc7b99c2df4f920308496ef1c9104f5b56b54a3f88ebd2332ca43d04fdcc37532ccfad794266ef19e78df323dff89a0e16aeb4c4efe81558068068d7f5103e
+
+Package: botgram
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, python
+Suggests: fixer
+Homepage: https://github.com/ivam3/botgram
+Description: Scraper Telegram's groups information and manage it from CLi.
+Filename: dists/stable/extras/binary-all/botgram_1.0_all.deb
+Size: 1952
+MD5Sum: 23d56e3e47c609f2d15f3077dc93869a
+SHA1: 7e0686353580336fe35de308f3896146331d92ec
+SHA256: ef4a042d527235c397c76952040607d820ac97be377f6dda10a588450ddd402e
+SHA512: 925164e48837129bb3ff72fc22151d0d3ce2807948600e9dfdc7bae3214fbb3f27a5684d772cd1dc729611af78f570f803127540fa90f00924005256ea8c9dde
+
+Package: dex2jar
+Version: 2.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: wget, unzip, openjdk-17
+Suggests: fixer
+Homepage: https://github.com/pxb1988/dex2jar
+Description: Tools to work with android .dex and java .class files
+Filename: dists/stable/extras/binary-all/dex2jar_2.1_all.deb
+Size: 2204
+MD5Sum: 7761f1207720f524d8d7c36ef181c8f3
+SHA1: 7ad2d43909e03db145d6b58baade039ef495d41b
+SHA256: 02739da1e3c56d5ca9353f446323ef9ae58bb9097590e5817c377c75f81173d6
+SHA512: 69a9a6b9d6c294dae6112c43170fe0d5ec2c500aec1a637caf8e78de1c5b118e54fe41fe24336da7486ee3fbb426060dcd0c7d2b6357612f88e4d057f40a8e1e
+
+Package: dos-a-tool
+Version: 2.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 5
+Depends: perl
+Suggests: fixer
+Homepage: https://github.com/Ivam3/DoS-A-Tool
+Description: Sends a massive number of SYN requests to test a server to overwhelm its capacity with connections.
+Filename: dists/stable/extras/binary-all/dos-a-tool_2.0_all.deb
+Size: 3012
+MD5Sum: 5a5ded69a3a814c892323c30c4a5167e
+SHA1: 822e4fd37b30c4e5a5eaf3ac4c65c5501d9054c9
+SHA256: 330602382064af0494d2b897a9500ee521cc270c3083cf9d997732f653898e19
+SHA512: d0c6c7ed610b771a8cd31fa3e99f513f0120bff0c4f240697dcb9e039082d11b058112c5a2a9051d8edf31ba191255c2a77790bd632c46e9fb82e4b10d3551f3
+
+Package: embed
+Version: 2.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: ruby, git, wget, curl, axel, apktool, tar, aapt, apksigner, openjdk-17
+Suggests: metasploit-framework
+Homepage: https://github.com/Ivam3/embed
+Description: Open source tool to Embed metasploit payload into legitim APK file. (git-release installer)
+Filename: dists/stable/extras/binary-all/embed_2.0_all.deb
+Size: 1976
+MD5Sum: f5ae2d30be5a4a060eee9d10113b97d6
+SHA1: c285cc3084912b324dbe2135d02f53bdde15bab6
+SHA256: f5690e690813bb80f6520c99830687ddc695ba5b5dc4ab9e061c41eb69d2abe4
+SHA512: 94cc9cc61a9b69b0a007f135d4d5aea297c51b522fa4d7822fca91341d1d76edb07aac966521c1e5b19194a651bd65d59aefc5887fa36bd643a8b2ee2f27ba28
+
+Package: exif
+Version: 2.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 3
+Depends: exiftool
+Suggests: fixer
+Homepage: https://github.com/Ivam3/exif
+Description: Script in bash to automate exiftool usages.
+Filename: dists/stable/extras/binary-all/exif_2.0_all.deb
+Size: 2260
+MD5Sum: a80aa5e918b993b0e9291f60e1ef8b04
+SHA1: 057c74aeb53e78c082aeebb1e3502034a835d7c1
+SHA256: ed1ec8061b01ca794014942f7a23f6234f9b83f9da4e14fdca9dba995ed41876
+SHA512: 2452be995eab2dccbb9ba2623d23efee5f7fc212a43e18374f99678d0b7bc82dfddd91a26b06d52e2f8712cc97fa99c57ed0076dc1784504421f0ec6ab894315
+
 Package: i-haklab
 Version: 3.5.0
 Architecture: all
@@ -13,4 +124,36 @@ MD5Sum: ccb686c7f3c22fa8195e5b0c32426479
 SHA1: 1c4572c626ed2a2e5ef5601fe5519dcd378bbea4
 SHA256: b5db55d883188c7bc52a1c3f391622c41aa05d9914306606079332fa63891371
 SHA512: 6717bc4d75481d2dc7cac183d28d0d5028f915993d9423adafdb1144b8dcd353a99dba800c2fb0b55f6df8deca7605f194eb9366eadb95fe1d52f9b193afd8bc
+
+Package: kalilinux
+Version: 2022.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: wget, curl, proot, tar
+Suggests: vncserver
+Homepage: https://github.com/ivam3/termux-packages
+Description: Open-source penetration testing platform for Android devices, allowing for access to the Kali toolset
+Filename: dists/stable/extras/binary-all/kalilinux_2022.1_all.deb
+Size: 1728
+MD5Sum: c7e19966749cc8c6a2dce0c6ab0db329
+SHA1: 75db60c3db6a3d930b166fe6975537da81b59d6c
+SHA256: c1644b03e9265e171debf452d1f01afb25782bc7fb8be2c08805f1a7740d4e2f
+SHA512: 810f5b50a991d42b82dcbd43ea5734fbb33368b05ffb970d3fbfdcd4c3eafb319577caafeba03bc686b8a627d3fe4d9cf18ff8a8b6d5721613cd046773e0a082
+
+Package: metasploit-framework
+Version: 6.1.41
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 6
+Depends: python, autoconf, patchelf, binutils, bison, yarn, clang, coreutils, curl, findutils, apr, apr-util, postgresql, openssl, readline, libffi, libgmp, libpcap, libsqlite, libgrpc, libtool, libxml2, libxslt, ncurses, make, ncurses-utils, ncurses, git, wget, unzip, zip, tar, termux-tools, termux-elf-cleaner, pkg-config, git, ruby, libcap, resolv-conf, build-essential
+Suggests: openjdk-17
+Homepage: https://github.com/rapid7/metasploit-framework
+Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
+Filename: dists/stable/extras/binary-all/metasploit-framework_6.1.41_all.deb
+Size: 3620
+MD5Sum: 65661ee74182c4631cfd370aa3cfb273
+SHA1: 3599659428af9112014bd5d967f8d74f69c99f7e
+SHA256: ba48db7d7fd9da12e7b4eedadfb5b8f2cbb86f7ba21d522df6bf78bb97e8023e
+SHA512: 390d5cb17422044479a74c23f1c1a0536d11298f186b786f83887e2044c3b8e823582b2de60c93b5b47db0ffb952f9b4004f9ec1de4cb673f08634d086540db6
 
