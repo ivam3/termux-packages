@@ -3,7 +3,6 @@ IFS=$'\n\t'
 link="https://github.com/pxb1988/dex2jar/releases/download"
 releases="v2.2-SNAPSHOT-2021-10-31"
 zipFile="dex-tools-2.2-SNAPSHOT-2021-10-31.zip"
-iHDB="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.set"
 
 wget --quiet --tries=20 $link/$releases/$zipFile -O ${TMPDIR}/dex2jar.zip
 unzip ${TMPDIR}/dex2jar.zip -d ${PREFIX}/share

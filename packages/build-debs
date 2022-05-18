@@ -1,0 +1,18 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+
+pkgPATH=$(dirname $0)
+declare -a pkg=$(find $pkgPATH -type d|awk -F "/" '{print $NF}')
+
+for i in ${pkg[*]}
+do
+	[[ $i = packages ]] && {
+		continue;
+	} || {
+		pushd $pkgPATH/$i;read;
+		termux-create-package manifiest.json
+		mv *.deb $pkgPATH/../
+		popd
+	}
+done
+

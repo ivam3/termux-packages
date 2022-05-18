@@ -47,8 +47,7 @@ cat <<- CONF > $pkgName/manifiest.json
   "description": "",
   "files" :{
     "$pkgName-installer": "bin/$pkgName-installer",
-    "$pkgName": "bin/$pkgName",
-    "fixer": "bin/fixer"
+    "$pkgName": "bin/$pkgName"
 	}
 }
 CONF
@@ -83,27 +82,6 @@ exit 0
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
 CONF
 
-#FIXER 
-cat <<- CONF > $pkgName/fixer
-#!/data/data/com.termux/file/usr/bin/bash
-if [[ ! \$(command -v lolcat) ]] &>/dev/null 
-then
-  if [[ ! \$(command -v ruby) ]] &>/dev/null 
-  then
-    apt install ruby -y
-  fi
-  gem install lolcat
-fi
-
-if [[ ! \$(command -v curl) ]] &>/dev/null 
-then
-  apt install curl -y
-fi
-bash <(curl -fsSL https://raw.githubusercontent.com/ivam3/i-Haklab/master/.set/bin/fixer) \${@:1}
-
-####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
-CONF
-
 #PREINST
 cat <<- CONF > $pkgName/preinst
 #!/data/data/com.termux/files/usr/bin/bash
@@ -124,10 +102,9 @@ CONF
 #POSTINST
 cat <<- CONF > $pkgName/postinst
 #!/data/data/com.termux/files/usr/bin/bash
-if [[ -e \$PREFIX/bin/$pkgName-installer ]]; then
-  bash \${PREFIX}/bin/$pkgName-installer
-  rm -rf \${PREFIX}/bin/$pkgName-installer
-fi
+bash \${PREFIX}/bin/$pkgName-installer
+rm -rf \${PREFIX}/bin/$pkgName-installer
+wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 echo "[*] $pkgName installation finished."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."

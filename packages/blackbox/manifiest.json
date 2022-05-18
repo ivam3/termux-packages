@@ -1,0 +1,12 @@
+{
+  "name": "blackbox",
+  "version": "2.0",
+  "arch": "all",
+  "homepage": "https://github.com/jothatron/blackbox",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python2, wget"],
+  "description": "Tool for Bruteforcing attacks, Information Gathering, Dorking, Cracking and Exploit web vulnerabilities.",
+  "files" :{
+    "blackbox-installer": "bin/blackbox-installer"
+}
+}

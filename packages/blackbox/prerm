@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${PREFIX}/share/blackbox ]]; then
+  rm -rf ${PREFIX}/share/blackbox
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

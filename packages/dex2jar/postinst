@@ -1,8 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
-if [[ -e $PREFIX/bin/dex2jar-installer ]]; then
-  bash ${PREFIX}/bin/dex2jar-installer
-  rm -rf ${PREFIX}/bin/dex2jar-installer
-fi
+bash ${PREFIX}/bin/dex2jar-installer
+rm -rf ${PREFIX}/bin/dex2jar-installer
+wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/home/.local/bin/fixer
 echo "[*] dex2jar installation finished."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."

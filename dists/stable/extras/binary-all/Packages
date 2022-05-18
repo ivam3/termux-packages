@@ -1,16 +1,16 @@
-Package: metasploit-framework
-Version: 6.1.41
+Package: i-haklab
+Version: 3.5.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 6
-Depends: python, autoconf, patchelf, binutils, bison, yarn, clang, coreutils, curl, findutils, apr, apr-util, postgresql, openssl, readline, libffi, libgmp, libpcap, libsqlite, libgrpc, libtool, libxml2, libxslt, ncurses, make, ncurses-utils, ncurses, git, wget, unzip, zip, tar, termux-tools, termux-elf-cleaner, pkg-config, git, ruby, libcap, resolv-conf, build-essential
-Suggests: openjdk-17
-Homepage: https://github.com/rapid7/metasploit-framework
-Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
-Filename: dists/stable/extras/binary-all/metasploit-framework_6.1.41_all.deb
-Size: 3548
-MD5Sum: 6a44af3bac23ff030f8311fd1c7cd31a
-SHA1: bd1aa7ef43e6c8e6781bed75da9b97f067d82f64
-SHA256: 5337977762890a1ca6cb0ffcdc0e535f211d13d0a0e324c898413d888eb40078
-SHA512: b2dfe9142b280d0915dea83929fc59b12f84abeabbdd5e28e82a80076747c609e46f8b49c6c5261b54e4bbe4b89be33029846acb94432c3e48c20443ff38f97a
+Installed-Size: 92259
+Depends: termux-api, termux-elf-cleaner, termux-tools, util-linux, x11-repo, apr, apr-util, autoconf, axel, bat, bc, bison, clang, cmake, coreutils, curl, debianutils, dns2tcp, dnsutils, file, findutils, fish, gawk, git, gnupg, gpgme, hexedit, htop-legacy, irssi, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nmap, openjdk-17, openssh, openssl, openssl-tool, perl, php, php-apache, pkg-config, proxychains-ng, pulseaudio, pv, python, python2, readline, ruby, sqlite, strace, tar, tmux, torsocks, translate-shell, unzip, vim, w3m, weechat, wget, youtubedr, zip, zlib
+Suggests: Termux, Wayland, App
+Homepage: https://github.com/ivam3/i-Haklab
+Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
+Filename: dists/stable/extras/binary-all/i-haklab_3.5.0_all.deb
+Size: 40077016
+MD5Sum: ccb686c7f3c22fa8195e5b0c32426479
+SHA1: 1c4572c626ed2a2e5ef5601fe5519dcd378bbea4
+SHA256: b5db55d883188c7bc52a1c3f391622c41aa05d9914306606079332fa63891371
+SHA512: 6717bc4d75481d2dc7cac183d28d0d5028f915993d9423adafdb1144b8dcd353a99dba800c2fb0b55f6df8deca7605f194eb9366eadb95fe1d52f9b193afd8bc
 

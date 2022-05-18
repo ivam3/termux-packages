@@ -47,19 +47,6 @@ else
 fi
 
 case "$toInstall" in
-	dex2jar)
-		SearchTool
-		link="https://github.com/pxb1988/dex2jar/releases/download"
-		releases="v2.2-SNAPSHOT-2021-10-31"
-		zipFile="dex-tools-2.2-SNAPSHOT-2021-10-31.zip"
-		yes|apt install wget unzip openjdk-17
-		wget --quiet --tries=20 $iHDB/bin/$toInstall -O $HOME/.local/bin/$toInstall
-		wget --quiet --tries=20 $link/$releases/$zipFile -O $TMPDIR/$toInstall.zip
-		unzip $TMPDIR/$toInstall.zip -d $TOOLS
-		d2jDIR=$(ls $TOOLS|grep dex-tools)
-		mv $TOOLS/$d2jDIR $TOOLS/$toInstall
-		rm -rf $TMPDIR/$toInstall.zip
-		;;
 	kalilinux)
 		SearchTool
 		yes|pkg install wget curl proot tar && wget https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Installer/Kali/kali-xfce.sh -O kali-xfce.sh && chmod +x kali-xfce.sh && bash kali-xfce.sh 
@@ -399,17 +386,6 @@ case "$toInstall" in
 		SearchTool
 		yes|apt install git python2
 		git clone --quiet https://github.com/AndroBugs/AndroBugs_Framework $TOOLS/$toInstall
-		;;
-	blackbox)
-		SearchTool
-		yes|apt install wget python2
-		PIPup
-		PYv="2"
-		wget --tries=20 --quiet $iHDB/bin/blackbox -O $HOME/.local/bin/blackbox
-		chmod +x $HOME/.local/bin/blackbox
-		printf "requests\npasslib\npexpect" > $TMPDIR/requirements.txt
-		PYmodules
-		rm -rf $TMPDIR/requirements.txt
 		;;
 	d-tect)
 		SearchTool
