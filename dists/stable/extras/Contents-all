@@ -12,7 +12,6 @@ data/data/com.termux/files/usr/bin/embed                                        
 data/data/com.termux/files/usr/bin/embed-installer                               embed
 data/data/com.termux/files/usr/bin/exif                                          exif
 data/data/com.termux/files/home/.bashrc                                          i-haklab
-data/data/com.termux/files/home/.config/fish/conf.d/omf.fish                     i-haklab
 data/data/com.termux/files/home/.config/fish/config.fish                         i-haklab
 data/data/com.termux/files/home/.config/fish/fish_variables                      i-haklab
 data/data/com.termux/files/home/.config/fish/functions/LOCALHOST.fish            i-haklab
