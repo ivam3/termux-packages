@@ -9,6 +9,9 @@ then
 	exit 1
 else
   echo "Preparing enviroment ..."
+	[[ -d ${PREFIX}/share/nexphisher ]] || {
+		mkdir -p ${PREFIX}/share/nexphisher;
+	}
 	[[ -d ${PREFIX}/share/nexphisher/.htr ]] || {
 		mkdir ${PREFIX}/share/nexphisher/.htr;
 	}
