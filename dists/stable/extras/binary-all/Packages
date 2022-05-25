@@ -167,11 +167,11 @@ Suggests: ngrok
 Homepage: https://github.com/htr-tech/nexphisher
 Description: Advanced Phishing tool
 Filename: dists/stable/extras/binary-all/nexphisher_1.0_all.deb
-Size: 2600
-MD5Sum: 72b09af199479fdee414dd259ff4c6f4
-SHA1: 90827658affae9c84a5f85817cdaeed4cf9c4663
-SHA256: 64ae1ba346a67b53c366b64788fba2b6d7f533af4902feffd21b6031e4777107
-SHA512: 9a88edf47829b1a04768bbf8dbb17850be7bfafd20d523a79f48165ac5cbdaecd00c26806eb03b5caee3f040e851d471acf0a831bef5bbab87442c7f86a18229
+Size: 2608
+MD5Sum: 88393c490475d013bf87feaf1669df8a
+SHA1: aa2143da7b3778d384322efd1d7066bac29c6a4b
+SHA256: 8f2791a43a5e28b4b78327840f883ba8e716957d8626c44b858b0efae84d42cb
+SHA512: be2fdea7519143ad9146a465f39b8e1fb68426b23b0dc9e6fd75813513d00e2ce79ae818786356f2101fe5d8669b281982ce82346651a4ecc6b509cdefc96c26
 
 Package: ngrok
 Version: 2.3.40
