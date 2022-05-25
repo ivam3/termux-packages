@@ -67,7 +67,7 @@ then
   pushd \${PREFIX}/share/\$(basename \$0) >/dev/null
   \$(command -v ruby) \$(basename \$0).rb \${@:1}
 else
-  echo -en "\$R(_➤) ERROR :\$W \$(basename \$0) PATH missing ...\$Y Aborting.\$W"
+  echo -en \$R"E:\$W \$(basename \$0) PATH missing ...\$Y Aborting.\$W"
   exit 1
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
@@ -87,7 +87,7 @@ cat <<- CONF > $pkgName/preinst
 #!/data/data/com.termux/files/usr/bin/bash
 if [[ \$(id -u) -eq 0 ]]
 then
-  echo -en "\\e[31m(_➤)\\e[0m You need to be a common user"
+  echo -en "\\e[31mE:\\e[0m You need to be a common user\\n"
   exit 1
 else
   echo "Preparing enviroment ..."

@@ -47,24 +47,6 @@ else
 fi
 
 case "$toInstall" in
-	kalilinux)
-		SearchTool
-		yes|pkg install wget curl proot tar && wget https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Installer/Kali/kali-xfce.sh -O kali-xfce.sh && chmod +x kali-xfce.sh && bash kali-xfce.sh 
-		cat <<- CONF > ~/kali-fs/etc/apt/sources.list
-		deb [trusted=yes]  http://http.kali.org/kali kali-rolling main contrib non-free
-		#deb http://ftp.debian.org/debian buster main
-		#deb http://ftp.debian.org/debian buster-updates main
-		CONF
-		printf "$G(_➤)$W Follow the the next steps$G\t
-		(01)─➤$W run $toInstall < ./start-kali.sh >$G\t
-		(02)─➤$W update $toInstall < apt-get update && apt-get upgrade >$G\t
-		(03)─➤$W start vnc server < vncserver :1 > on this step you have to set a password$G\t
-		(04)─➤$W download vnc viewer app from https://bit.ly/2VUguQM$G\t
-		(05)─➤$W open the app, touch the plus(+) bottom and set a new connection with address as localhost:1 and name as Kali Linux$G\t
-		(06)─➤$W type your password and enjoy it!!\n"
-		;;
-		#::PYTHON3::#
-
 	binwalk)
 		SearchTool
 		yes|apt install git
@@ -579,42 +561,6 @@ case "$toInstall" in
 		;;
 
 	#::BIN::#
-	adbfastboot)
-		for BIN in adb adb.bin fastboot fastboot-armeabi;do
-			wget -q $iHDB/bin/$BIN -O $HOME/.local/bin/$BIN
-			chmod +x $HOME/.local/bin/$BIN
-		done
-		if [[ ! -d $HOME/adbfiles ]];then
-			mkdir $HOME/adbfiles
-		fi
-		;;
-	burpsuite)
-		SearchTool
-		printf "$G\n(_➤) Installing $toInstall (It could take a while)...\n";sleep 5
-		yes|apt install openjdk-17 wget
-#		wget -q --tries=20 https://github.com/termux/termux-packages/suites/4742204683/artifacts/131051875 -O $TMPDIR/termux-packages-aarch64.zip
-#		unzip $TMPDIR/termux-packages-aarch64.zip -d $TMPDIR
-#		tar xvf $TMPDIR/debs-aarch64-1e2023f351d547b82494edfb0f5baac0fd490370.tar -O debs/openjdk-17_17.0-17_aarch64.deb > $TMPDIR/openjdk-17_17.0-17_aarch64.deb
-#		dpkg -i $TMPDIR/openjdk-17_17.0-17_aarch64.deb
-#		rm -rf $TMPDIR/*
-		if [[ ! -e $PREFIX/opt/openjdk/lib/libgif.so.7 ]]
-		then
-			ln -s $PRERIX/lib/libgif.so.7.2.0 $PREFIX/opt/openjdk/lib/libgif.so.7
-		fi
-		wget -q --tries=20 https://portswigger.net/burp/releases/download -O $TOOLS/$toInstall.jar
-		cat <<- CONF $HOME/.local/bin/$toInstall
-#!/usr/bin/bash
-#This file execute a burp suite on Termux:Wayland interface
-#You should install it before to run this scripta
-[[ \$(uname -m) = "aarch64" ]] || { printf >&2 "\$R(_➤)\$W Incompatible architecture";exit;}
-[[ -e $TOOLS/burpsuite.jar ]] || { printf >&2 "\$R(_➤)\$W Burpsuite is not installed...\$R aborting.\$W";exit;}
-[[ \$(file \$TMPDIR/*|grep -o "socket") >/dev/null ]] || { printf >&2 "\$R(_➤)\$W Termux:Wayland server isn't running...\$R aborting.\$W";exit;}
-export DISPLAY=:0
-umask 000
-exec \$(command -v java) --add-opens=java.desktop/javax.swing=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -jar $TOOLS/burpsuite.jar
-CONF
-    chmod 755 $HOME/.local/bin/$toInstall
-		;;
 	code-server)
 		[[ $(uname -m) = "aarch64" ]] || { printf >&2 "$R(_➤)$W Incompatible architecture";exit;}
 		SearchTool

@@ -1,7 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
-mkdir -p ${HOME}/.local/bin 2>/dev/null
-wget --tries=20 "https://raw.githubusercontent.com/jothatron/blackbox/master/blackbox.py" -O ${HOME}/.local/bin/blackbox
+wget --tries=20 "https://raw.githubusercontent.com/jothatron/blackbox/master/blackbox.py" -O ${PREFIX}/bin/blackbox
 python2 -m pip install --upgrade pip
 python2 -m pip install passlib pexpect
 echo -en "\e[33mW:\e[0m If python modules installation present error. Try \e[33m'fixer PyMiR'\e[0m to fix it\n"

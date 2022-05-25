@@ -8,11 +8,11 @@ Suggests: bugjaeger-app
 Homepage: https://t.me/Ivam3_Bot
 Description: Open source of minimal Android Debug Bridge(ADB) and FastBoot suite
 Filename: dists/stable/extras/binary-all/adbfastboot_1.0.39a-8.0.0f_all.deb
-Size: 888348
-MD5Sum: d747cc6a8337f7945a096972d6baab99
-SHA1: bbeb80a0f87543f543db4c95ac40923b596141ba
-SHA256: 0291cb750ace5a74d2b2fd5d5249dda8281d0574736bdf4fd4e75452cbfadc78
-SHA512: 6a2a88adc944e5e18244da00c71a8ec72026faf5e710ab4b839bfd3196072fd6d04a96b1b65fa97b73d39bdbbd73a23e3a6740f9e433d2c89ce4add441532211
+Size: 888560
+MD5Sum: 8ac20376981ac42eb533432915c36cdf
+SHA1: 928d4b92417d18f32a3480a571e839a53f69ace2
+SHA256: db9b4748bd1c77022422e59c77d04d344cfed7fe862c56fdf9dfdf857ae5b74f
+SHA512: 5cbabb22ab8c7f7484b6eb7fd4f7c97bdd4f381b370c46dcd67bc22eab704091e5df85fb07a5150be4c148e0be9b243f544f1b47f098177df83963f6cdb992c8
 
 Package: blackbox
 Version: 2.0
@@ -23,11 +23,11 @@ Depends: python2, wget
 Homepage: https://github.com/jothatron/blackbox
 Description: Tool for Bruteforcing attacks, Information Gathering, Dorking, Cracking and Exploit web vulnerabilities.
 Filename: dists/stable/extras/binary-all/blackbox_2.0_all.deb
-Size: 1704
-MD5Sum: 586098de1542c15e9bb519a779dfad49
-SHA1: 72176a0e558593c3e7d84b45f7489984fc95897a
-SHA256: 818dd7a3623e306e5fcf7f6d9fcb85cb6b06dfbb6c45df36d9c83a5afc3ecda6
-SHA512: a2dc7b99c2df4f920308496ef1c9104f5b56b54a3f88ebd2332ca43d04fdcc37532ccfad794266ef19e78df323dff89a0e16aeb4c4efe81558068068d7f5103e
+Size: 1668
+MD5Sum: ab41a06937c182963cd322694fbb5522
+SHA1: 965cefaf50cb9b70fb15ffed470345592aef047e
+SHA256: 29eda41fff8e2bde936801cb4a6e652554932a9a0c64f7e3258b044038b2284d
+SHA512: 436667d9719843dc20f41bbdf23c204b227227cc9a6fd3e6f9c2d114f4db4af300ed1952a20ce4e4513bec897bad02d20d613444e1e277c4667c836ac3ac119b
 
 Package: botgram
 Version: 1.0
@@ -39,11 +39,11 @@ Suggests: fixer
 Homepage: https://github.com/ivam3/botgram
 Description: Scraper Telegram's groups information and manage it from CLi.
 Filename: dists/stable/extras/binary-all/botgram_1.0_all.deb
-Size: 1952
-MD5Sum: 23d56e3e47c609f2d15f3077dc93869a
-SHA1: 7e0686353580336fe35de308f3896146331d92ec
-SHA256: ef4a042d527235c397c76952040607d820ac97be377f6dda10a588450ddd402e
-SHA512: 925164e48837129bb3ff72fc22151d0d3ce2807948600e9dfdc7bae3214fbb3f27a5684d772cd1dc729611af78f570f803127540fa90f00924005256ea8c9dde
+Size: 1948
+MD5Sum: 6f22f45c0accacf0428a77a8a394d9d6
+SHA1: ab29336d26b6e566f5cbff2fee68526f7e10d980
+SHA256: 11a6867b849474609e65afd5732079758844967715b05ec8c821532354891103
+SHA512: 858faf4eb537e3a85fe1a86e52f413739864f377a587a89fba14d7f5c85572634314aa367fa80b79c0759d9318b5d73d1215e22626d59b1b733c0aaf485ec990
 
 Package: dex2jar
 Version: 2.1
@@ -55,11 +55,11 @@ Suggests: fixer
 Homepage: https://github.com/pxb1988/dex2jar
 Description: Tools to work with android .dex and java .class files
 Filename: dists/stable/extras/binary-all/dex2jar_2.1_all.deb
-Size: 2204
-MD5Sum: 7761f1207720f524d8d7c36ef181c8f3
-SHA1: 7ad2d43909e03db145d6b58baade039ef495d41b
-SHA256: 02739da1e3c56d5ca9353f446323ef9ae58bb9097590e5817c377c75f81173d6
-SHA512: 69a9a6b9d6c294dae6112c43170fe0d5ec2c500aec1a637caf8e78de1c5b118e54fe41fe24336da7486ee3fbb426060dcd0c7d2b6357612f88e4d057f40a8e1e
+Size: 2196
+MD5Sum: 6b4e6247d337b570f63b8d183cfbf081
+SHA1: 78849092dafc1ab631d6b05b68356b7872278404
+SHA256: 2a90f1096e36e9c55175403df11381282c964a4b1f842338bfb6abaa6d249b3d
+SHA512: 981e0c689d398d66b951f86ffb4fe6582f8ffb2de8a3d8ffb78f667118595c946ed9368ea4bf43c5871cb9ae3c41605e809b9b084e9a4b4cc17a8da053c32825
 
 Package: dos-a-tool
 Version: 2.0
@@ -72,10 +72,10 @@ Homepage: https://github.com/Ivam3/DoS-A-Tool
 Description: Sends a massive number of SYN requests to test a server to overwhelm its capacity with connections.
 Filename: dists/stable/extras/binary-all/dos-a-tool_2.0_all.deb
 Size: 3012
-MD5Sum: 5a5ded69a3a814c892323c30c4a5167e
-SHA1: 822e4fd37b30c4e5a5eaf3ac4c65c5501d9054c9
-SHA256: 330602382064af0494d2b897a9500ee521cc270c3083cf9d997732f653898e19
-SHA512: d0c6c7ed610b771a8cd31fa3e99f513f0120bff0c4f240697dcb9e039082d11b058112c5a2a9051d8edf31ba191255c2a77790bd632c46e9fb82e4b10d3551f3
+MD5Sum: 0c209454ebf3ddab368dcc3a729ba5d5
+SHA1: 19b40860a6fa3e5dc6eb5fd2ab797841bddcec6b
+SHA256: 4a8433000e9590fc0683eb1e6b046517e65832e3e5a04c42b0735c4b6abf225d
+SHA512: 1de3dab74944c5301c4466456e1a1c1d7af96d73807c6bbc6722568e4279b0de8555904d3b70fb82cdea56b8d747842635a19309776fbb48ba6ec06420799e02
 
 Package: embed
 Version: 2.0
@@ -87,11 +87,11 @@ Suggests: metasploit-framework
 Homepage: https://github.com/Ivam3/embed
 Description: Open source tool to Embed metasploit payload into legitim APK file. (git-release installer)
 Filename: dists/stable/extras/binary-all/embed_2.0_all.deb
-Size: 1976
-MD5Sum: f5ae2d30be5a4a060eee9d10113b97d6
-SHA1: c285cc3084912b324dbe2135d02f53bdde15bab6
-SHA256: f5690e690813bb80f6520c99830687ddc695ba5b5dc4ab9e061c41eb69d2abe4
-SHA512: 94cc9cc61a9b69b0a007f135d4d5aea297c51b522fa4d7822fca91341d1d76edb07aac966521c1e5b19194a651bd65d59aefc5887fa36bd643a8b2ee2f27ba28
+Size: 1968
+MD5Sum: 340e8a0203fc28ae5231195c250cd648
+SHA1: 2b471e92eb0f9589a8f560909666e79af51dc999
+SHA256: 75f07b412ad77f21d98257efc29b44adab364577d4eba5b8c6395db0e7b43a88
+SHA512: d51c54e98115f1a50690d35763fc1594d79d14630797cea9d883097d88a090c2a3271fbcacfc15ce13cda15fdecb200756857e7497dea5233b1786028d280d2c
 
 Package: exif
 Version: 2.0
@@ -103,11 +103,11 @@ Suggests: fixer
 Homepage: https://github.com/Ivam3/exif
 Description: Script in bash to automate exiftool usages.
 Filename: dists/stable/extras/binary-all/exif_2.0_all.deb
-Size: 2260
-MD5Sum: a80aa5e918b993b0e9291f60e1ef8b04
-SHA1: 057c74aeb53e78c082aeebb1e3502034a835d7c1
-SHA256: ed1ec8061b01ca794014942f7a23f6234f9b83f9da4e14fdca9dba995ed41876
-SHA512: 2452be995eab2dccbb9ba2623d23efee5f7fc212a43e18374f99678d0b7bc82dfddd91a26b06d52e2f8712cc97fa99c57ed0076dc1784504421f0ec6ab894315
+Size: 2256
+MD5Sum: 9224c50685b992532a9516ffccf1c801
+SHA1: c6e6477dafa12f9c78213b2ff461acf143034316
+SHA256: f33e09decfa8e70bac1070ebfae9a96b696192c11cafce3dd2292773e0ccc076
+SHA512: f2fd6da2b8f4e51a5f38d4b8392c2b9b91f68c643d0b7a889a0e4433ad4dae58e58b7f29e770b12e811ee6d7d175a1d02106b5b996e1b6e79a9f5cb4c0c61cc3
 
 Package: i-haklab
 Version: 3.5.0
@@ -119,11 +119,11 @@ Suggests: Termux, Wayland, App
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
 Filename: dists/stable/extras/binary-all/i-haklab_3.5.0_all.deb
-Size: 40080916
-MD5Sum: 222aa05a92c3e1fe23f2892a562e8ddb
-SHA1: 663443503c1276d4dde6e903738943eda0bbeac9
-SHA256: cf2e783015bb3053e1245455a5e13cced616bdb82b5b55b605254d010e77eb3e
-SHA512: a7c56d7ed757c5efbc7e3659494cbfc163d6c278546aaac69090b3e21f3e1ca86c4adffa600c4f62ea21bbbc69e86a362a4d30e0b134b2df46d87f99f9f8d970
+Size: 40075292
+MD5Sum: e822809c49c752861290dfdf8b2f6a3e
+SHA1: 981feb5ad66b41d58b7929cc12ad63cf6bb7465c
+SHA256: 60a39a70f30592faa898c834dcc609dd466faf017b2e27d97b94f2a7e5b68768
+SHA512: 240d13ea19949a4bd87d9d87e3eff1780f90168b469b156b081c6a2b48b5467541a25c88ab4ff2cc57d008b91b050f3fb37232e8d351fcdc41986508a6bec77e
 
 Package: kalilinux
 Version: 2022.1
@@ -152,8 +152,39 @@ Homepage: https://github.com/rapid7/metasploit-framework
 Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
 Filename: dists/stable/extras/binary-all/metasploit-framework_6.1.41_all.deb
 Size: 3620
-MD5Sum: 65661ee74182c4631cfd370aa3cfb273
-SHA1: 3599659428af9112014bd5d967f8d74f69c99f7e
-SHA256: ba48db7d7fd9da12e7b4eedadfb5b8f2cbb86f7ba21d522df6bf78bb97e8023e
-SHA512: 390d5cb17422044479a74c23f1c1a0536d11298f186b786f83887e2044c3b8e823582b2de60c93b5b47db0ffb952f9b4004f9ec1de4cb673f08634d086540db6
+MD5Sum: 68c89f07ded3e7c373ae611edf3e5032
+SHA1: 13ae3936dfe2a2e4bf3292475efcd952eecb80f2
+SHA256: a42bfb885e5bea332c9deca0a994edb44c5389ac5fb6391f064001f7a9036c58
+SHA512: 666541a98c3025f284632bb7e64945c52044e3e3d826794b0767ead67ac71b392f59391bbc2c99aeed2a06e71b42ffab224af1cf08bfa866a322a9a6560f4712
+
+Package: nexphisher
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 4
+Depends: wget, curl, openssh, php, unzip
+Suggests: ngrok
+Homepage: https://github.com/htr-tech/nexphisher
+Description: Advanced Phishing tool
+Filename: dists/stable/extras/binary-all/nexphisher_1.0_all.deb
+Size: 2600
+MD5Sum: 72b09af199479fdee414dd259ff4c6f4
+SHA1: 90827658affae9c84a5f85817cdaeed4cf9c4663
+SHA256: 64ae1ba346a67b53c366b64788fba2b6d7f533af4902feffd21b6031e4777107
+SHA512: 9a88edf47829b1a04768bbf8dbb17850be7bfafd20d523a79f48165ac5cbdaecd00c26806eb03b5caee3f040e851d471acf0a831bef5bbab87442c7f86a18229
+
+Package: ngrok
+Version: 2.3.40
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 4
+Depends: wget, proot, openssh
+Homepage: https://ngrok.com
+Description: A cross-platform application that exposes local server ports to the Internet.
+Filename: dists/stable/extras/binary-all/ngrok_2.3.40_all.deb
+Size: 2396
+MD5Sum: ad66a9d7c6b5154cda518a121ad2eec4
+SHA1: 5843cf7036539be8ac2f831df50f568e405cb736
+SHA256: 36c017c31b3cf60772877a1b61248ebeaf5c74c53911ccabee293db2e652abd2
+SHA512: 05070782c64e65586586f9ae3741639ac272c0442c80b6387567da3a64123b328cf0de3e2b5b9b38590db466bf4a79937328c2a46ccf84f226a9a90b1f57b086
 

@@ -1,0 +1,3 @@
+host tunnel.us.ngrok.com
+	HostkeyAlgorithms +ssh-rsa
+	PubkeyAcceptedAlgorithms +ssh-rsa

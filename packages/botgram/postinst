@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 bash ${PREFIX}/bin/botgram-installer
 rm -rf ${PREFIX}/bin/botgram-installer
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/home/.local/bin/fixer
+wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 echo "[*] botgram installation finished."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."

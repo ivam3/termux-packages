@@ -1,0 +1,14 @@
+{
+  "name": "nexphisher",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/htr-tech/nexphisher",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["wget, curl, openssh, php, unzip"],
+  "suggests": ["ngrok"],
+  "description": "Advanced Phishing tool",
+  "files" :{
+    "nexphisher-installer": "bin/nexphisher-installer",
+    "nexphisher": "bin/nexphisher"
+	}
+}
