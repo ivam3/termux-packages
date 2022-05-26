@@ -119,11 +119,11 @@ Suggests: Termux, Wayland, App
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
 Filename: dists/stable/extras/binary-all/i-haklab_3.5.0_all.deb
-Size: 40081120
-MD5Sum: b1274ea7ebe1f771bfe9136b1a67e72f
-SHA1: 1e9a22e146b56e975b064c5b49513b8c1eac857c
-SHA256: 9111d16b87032717b9f03dd6726eb79a296631c05e050614582762a1097e148b
-SHA512: fa7976433f834e2b69d3a32fcdf6ff3de0e8a5d362447d08e6da18e17079bcb501aecd67912fcba63677fdc8890a4218170d265052057298fc61b64b178386c8
+Size: 40080484
+MD5Sum: b1a8b7655e57e3f841c37c0cbfbb7d3f
+SHA1: 92d5398260d2543dc1759ebbed6f634aa7414098
+SHA256: ef602a1826ae00ac474c240a07ca1ab1e86d01d96a8f397297555ec2bae451e4
+SHA512: 69a1e6b41acc5e26756c1bcbf5300a6089017418cd5e98bca36acf3b5314d8ec12c283cb14babe208b5fd2512bd7b4fcb6763523729955f04ae2894c12001904
 
 Package: kalilinux
 Version: 2022.1
