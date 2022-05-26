@@ -10,20 +10,16 @@ G="\e[32m"
 Y="\e[33m"
 B="\e[34m"
 
-ctrl_c(){
-	printf "\n$Y\n   (¿) Need a help (?)$B\nTelegram : t.me/Ivam3_Bot$W\n"
-	exit 0
-}
+ctrl_c(){ printf "\n$Y\n   (¿) Need a help (?)$B\nTelegram : t.me/Ivam3_Bot$W\n";exit 0;}
 
-if [[ ! -e ${PREFIX}/share/dex2jar ]]
-then
-	echo -en "$R(_➤)$W dex2jar is not installed..$Y Aborting.$W"
-	exit 0
-fi
+[[ -e ${HOME}/.local/share/dex2jar ]] || {
+	echo -en "$R(➤_)$W dex2jar is not installed..$Y Aborting.$W";
+	exit 0;
+}
 
 file=$(mktemp)
 echo "AVAILABLE TOOLS" > $file
-echo "$(ls ${PREFIX}/share/dex2jar/*.sh|cut -d "/" -f10|cut -d "." -f1)" >> $file
+echo "$(ls ${HOME}/.local/share/dex2jar/*.sh|cut -d "/" -f10|cut -d "." -f1)" >> $file
 
 usage(){
 	printf "$Y(_>)_usage :─➤$W dex2jar <tool> <options + arguments>\n$Y ╰──➤$W Example : dex2jar d2j-dex2jar -f ~/path/to/apk_to_decompile.apk$G\n"
@@ -31,13 +27,12 @@ usage(){
 	rm $file 2>/dev/null;printf "$W\n";exit 0
 }
 
-
 tool=$(grep $1 $file)
 if [[ $# -eq 0 ]] || [[ -z $tool ]] 2>/dev/null
 then
 	usage
 else
-	bash $(ls ${PREFIX}/share/dex2jar/$tool.sh) ${@:2}
+	bash $(ls ${HOME}/.local/share/dex2jar/$tool.sh) ${@:2}
 	rm $file 2>/dev/null
 fi
 

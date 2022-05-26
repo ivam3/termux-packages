@@ -9,6 +9,8 @@ else
 		echo -en "Removing old version ...  "
 		rm -rf ${HOME}/.local/share/burpsuite.jar
 		echo -en "\bDone"
+	else
+		mkdir -p ${HOME}/.local/share 2>/dev/null
   fi
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

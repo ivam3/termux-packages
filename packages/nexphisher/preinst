@@ -9,14 +9,14 @@ then
 	exit 1
 else
   echo "Preparing enviroment ..."
-	[[ -d ${PREFIX}/share/nexphisher ]] || {
-		mkdir -p ${PREFIX}/share/nexphisher;
+	[[ -d ${HOME}/.local/share/nexphisher ]] || {
+		mkdir -p ${HOME}/.local/share/nexphisher;
 	}
-	[[ -d ${PREFIX}/share/nexphisher/.htr ]] || {
-		mkdir ${PREFIX}/share/nexphisher/.htr;
+	[[ -d ${HOME}/.local/share/nexphisher/.htr ]] || {
+		mkdir ${HOME}/.local/share/nexphisher/.htr;
 	}
-	[[ -d ${PREFIX}/share/nexphisher/logs ]] || {
-		mkdir ${PREFIX}/share/nexphisher/logs;
+	[[ -d ${HOME}/.local/share/nexphisher/logs ]] || {
+		mkdir ${HOME}/.local/share/nexphisher/logs;
 	}
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

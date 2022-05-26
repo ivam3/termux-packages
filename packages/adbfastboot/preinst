@@ -8,6 +8,8 @@ else
 	if [[ -d ${HOME}/.local/share/adbfastboot ]]
 	then
 		rm -rf ${HOME}/.local/share/adbfastboot
+	else
+		mkdir -p ${HOME}/.local/share 2>/dev/null
 	fi
 fi
 

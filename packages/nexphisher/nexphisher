@@ -5,9 +5,9 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 B="\e[34m"
-if [[ -d ${PREFIX}/share/$(basename $0) ]]
+if [[ -d ${HOME}/.local/share/$(basename $0) ]]
 then
-  pushd ${PREFIX}/share/$(basename $0) >/dev/null
+  pushd ${HOME}/.local/share/$(basename $0) >/dev/null
   $(command -v bash) $(basename $0)
 else
   echo -en $R"E:$W $(basename $0) PATH missing ...$Y Aborting.$W\n"

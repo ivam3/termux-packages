@@ -8,9 +8,9 @@ Suggests: termux-x11, xwayland
 Homepage: https://portswigger.net
 Description: An integrated platform/graphical tool for performing security testing of web applications.
 Filename: dists/stable/extras/binary-aarch64/burpsuite_2022.3.8_aarch64.deb
-Size: 2100
-MD5Sum: cbda79ed151a9b6a7cc25dd907876fae
-SHA1: 9f8fecc7775b5593aae98a57e3a7386001badc8c
-SHA256: 6c1f20fc3009d440a076ee906c0df08dfc2363b87f029bcf68ce87a80f468dfa
-SHA512: af5963340319ef67dace501519ee8231e4559619ab90051d4904a2910df294e2b34de0ab9f7171614ccdd244251a4355a5cef9ab97efbc69eabbf44650cecf31
+Size: 2108
+MD5Sum: 048b6cb1053783164341917cc2997d00
+SHA1: ccb3e8cf91c0ed2d4b9bfbe0677a4eebef6f13e9
+SHA256: bc2dfa6eb624e7188e4c2ec92018f5edd35b69741158554413d840a727345b6b
+SHA512: 75604ffe49de0fe77cc614295dc8f1b14bbc0ff1d31e272b8b8c2da8d104ff26e4c0c4207d58a972fbe1515833e31703652a1a5be90b8b7373cc213897870175
 

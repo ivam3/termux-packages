@@ -11,3 +11,4 @@ termux-apt-repo . . stable extras
 #gpg --default-key "ivam3.bh@gmail.com" -abs -o - Release > Release.gpg
 #gpg --default-key "ivam3.bh@gmail.com" --clearsign -o - Release > InRelease
 #popd
+

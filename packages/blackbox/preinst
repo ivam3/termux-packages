@@ -8,6 +8,8 @@ else
   if [[ -d ${PREFIX}/share/blackbox ]]
   then
     rm -rf ${PREFIX}/share/blackbox
+	else
+		mkdir -p ${HOME}/.local/share 2>/dev/null
   fi
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

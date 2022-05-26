@@ -5,9 +5,9 @@ releases="v2.2-SNAPSHOT-2021-10-31"
 zipFile="dex-tools-2.2-SNAPSHOT-2021-10-31.zip"
 
 wget --quiet --tries=20 $link/$releases/$zipFile -O ${TMPDIR}/dex2jar.zip
-unzip ${TMPDIR}/dex2jar.zip -d ${PREFIX}/share
-d2jDIR=$(ls ${PREFIX}/share|grep dex-tools)
-mv ${PREFIX}/share/$d2jDIR ${PREFIX}/share/dex2jar
+unzip ${TMPDIR}/dex2jar.zip -d ${HOME}/.local/share
+d2jDIR=$(ls ${HOME}/.local/share|grep dex-tools)
+mv ${HOME}/.local/share/$d2jDIR ${HOME}/.local/share/dex2jar
 rm -rf ${TMPDIR}/dex2jar.zip
 
 exit 0

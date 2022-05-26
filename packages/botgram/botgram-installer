@@ -1,9 +1,10 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
 echo "Cloning botgram ..."
-git clone --quiet https://github.com/ivam3/botgram ${PREFIX}/share/botgram
-pushd ${PREFIX}/share/botgram
+git clone --quiet https://github.com/ivam3/botgram ${HOME}/.local/share/botgram
+pushd ${HOME}/.local/share/botgram
 chmod 750 *
+echo "Installing requirements ..."
 python -m pip install --upgrade pip
 python setup.py --install
 python setup.py --config

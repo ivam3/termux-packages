@@ -5,17 +5,17 @@ echo -en """
     \e[36m|_)(_)|_\e[34m(_||(_|| | |
     \e[36m        \e[34m _|\e[36mby @Ivam3
 """
-if [[ -d ${PREFIX}/share/$(basename $0) ]]
+if [[ -d ${HOME}/.local/share/$(basename $0) ]]
 then
-	PS3="(_➤) "
-	printf "$Y(_➤)$W Choose an opcion to run $(basename $0).\n\n"
+	PS3="(➤_) "
+	printf "$Y(➤_)$W Choose an opcion to run $(basename $0).\n\n"
 	select opc in add2group getdata sendmsg setup exit;do
 		[[ $opc = "exit" ]] && exit
-		pushd ${PREFIX}/share/$(basename $0) >/dev/null
+		pushd ${HOME}/.local/share/$(basename $0) >/dev/null
 		$(command -v python) $opc.py ${@:1}
 	done
 else
-	echo -en "\e[31m(_➤) ERROR :\e[0m $(basename $0) PATH missing ...\e[33m Aborting.\e[0m"
+	echo -en "\e[31m(➤_) ERROR :\e[0m $(basename $0) PATH missing ...\e[33m Aborting.\e[0m"
 	exit 1
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

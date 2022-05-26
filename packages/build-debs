@@ -2,16 +2,19 @@
 IFS=$'\n\t'
 
 pkgPATH=$(dirname $0)
-declare -a pkg=$(find $pkgPATH -type d|awk -F "/" '{print $NF}')
+rm $pkgPATH/../*.deb
+
+declare -a pkg=$(find $pkgPATH -maxdepth 1 -type d|awk -F "/" '{print $NF}')
 
 for i in ${pkg[*]}
 do
 	[[ $i = packages ]] && {
 		continue;
 	} || {
-		pushd $pkgPATH/$i;read;
+		echo -en "Working with:\e[33m $i\e[0m\n"
+		pushd $i
 		termux-create-package manifiest.json
-		mv *.deb $pkgPATH/../
+		mv *.deb ../../
 		popd
 	}
 done

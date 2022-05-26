@@ -5,9 +5,11 @@ then
 	exit 1
 else
 	echo "Preparing enviroment ..."
-	if [[ -d ${PREFIX}/share/$pkgName ]]
+	if [[ -d ${HOME}/.local/share/botgram ]]
 	then
-		rm -rf ${PREFIX}/share/$pkgName
+		rm -rf ${HOME}/.local/share/botgram
+	else
+		mkdir -p ${HOME}/.local/share 2>/dev/null
 	fi
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
