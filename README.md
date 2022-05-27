@@ -89,25 +89,24 @@ This project is with the purpose of offering easy and fast access to the install
 
 ## How to get ...
 
-To add the list of available tools and/or frameworks to the package manager `apt` in [Termux](https://github.com/termux/termux-app) follow these 4 simple steps:
+To add the list of available tools and/or frameworks to the package manager `apt` in [Termux](https://github.com/termux/termux-app) follow those 5 simple steps:
 
-> Install `wget` package:
-
+- Install `wget` package:
 ```bash
 apt install wget
 ```
-> Create a directory:
 
+- Create a directory:
 ```bash
 mkdir -p $PREFIX/etc/apt/sources.list.d
 ```
-> Download sources file:
 
+- Download sources file:
 ```bash
 wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/ivam3-termux-packages.list -O $PREFIX/etc/apt/sources.list.d/ivam3-termux-packages.list
 ```
-> Update Termux:
 
+- Update Termux:
 ```bash
 apt update && apt upgrade
 ```
