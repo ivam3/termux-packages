@@ -188,3 +188,19 @@ SHA1: 21b177f6b128e1fa99796c17e536fb03a3599a41
 SHA256: 78f8b5de8f11bfc1a3464ee584af61207436aac443041d023867eaba59149ba0
 SHA512: 5ba6898a53690521a866ce6c61c0a15940e414aa9195178d1ef673f08466aeed6e613837fbe3dce7289f330cc52d2037110b7c892cf650f727ecca8571aa1653
 
+Package: routersploit
+Version: 3.4.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: python, git
+Suggests: i-haklab
+Homepage: https://github.com/threat9/routersploit
+Description: Exploitation Framework for Embedded Devices
+Filename: dists/stable/extras/binary-all/routersploit_3.4.1_all.deb
+Size: 1876
+MD5Sum: 068c5b75e708d3bbc09a4ff6e435b1b6
+SHA1: ca5c78b7c029260fb6f57edfa2d6e2aba256471f
+SHA256: c036fb686c353b99943899185a1d3427e50f8019e5e318167f3b51937dc5aa5b
+SHA512: 00356fcbedb50034a87681cf5f46111010121faa510eec8b42acb6e7b5a98e46e2e6f4480bf76f4b989d8902a872c711ba6f5f9cb9e18f5d29c9e7110f7d6834
+

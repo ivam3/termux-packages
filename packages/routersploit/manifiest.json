@@ -1,0 +1,14 @@
+{
+  "name": "routersploit",
+  "version": "3.4.1",
+  "arch": "all",
+  "homepage": "https://github.com/threat9/routersploit",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python, git"],
+  "suggests": ["i-haklab"],
+  "description": "Exploitation Framework for Embedded Devices",
+  "files" :{
+    "routersploit-installer": "bin/routersploit-installer",
+    "routersploit": "bin/routersploit"
+}
+}

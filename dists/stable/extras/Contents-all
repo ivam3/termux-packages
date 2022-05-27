@@ -3174,3 +3174,5 @@ data/data/com.termux/files/usr/bin/nexphisher-installer                         
 data/data/com.termux/files/home/.ssh/config                                      ngrok
 data/data/com.termux/files/usr/bin/ngrok                                         ngrok
 data/data/com.termux/files/usr/bin/ngrok-installer                               ngrok
+data/data/com.termux/files/usr/bin/routersploit                                  routersploit
+data/data/com.termux/files/usr/bin/routersploit-installer                        routersploit
