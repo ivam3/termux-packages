@@ -1,0 +1,14 @@
+{
+  "name": "sayhello",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/d093w1z/sayhello",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, wget, curl, unzip, php, openssh"],
+  "suggests": ["i-haklab, ngrok"],
+  "description": "Capturing audio (.wav) from target using a link",
+  "files" :{
+    "sayhello-installer": "bin/sayhello-installer",
+    "sayhello": "bin/sayhello"
+}
+}

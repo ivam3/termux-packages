@@ -94,8 +94,8 @@ else
   if [[ -d \${PREFIX}/share/$pkgName ]]
   then
     rm -rf \${PREFIX}/share/$pkgName
-	else
-		mkdir -p \${HOME}/.local/share 2>/dev/null
+  else
+    mkdir -p \${HOME}/.local/share 2>/dev/null
   fi
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -1,0 +1,13 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+echo "Cloning repository ..."
+git clone --quiet https://github.com/hangetzzu/saycheese ${HOME}/.local/share/saycheese
+chmod 750 ${HOME}/.local/share/saycheesea
+echo "Linking ngrok binary file ..."
+if [[ ${PREFIX}/bin/ngrok ]] && [[ ! -e ${HOME}/.local/share/saycheese/ngrok ]]
+then
+	ln -s ${PREFIX}/bin/ngrok ${HOME}/.local/share/saycheese/ngrok
+fi
+
+exit 0
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -1,0 +1,14 @@
+{
+  "name": "saycheese",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/hangetzzu/saycheese",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, wget, curl, unzip, openssh, php"],
+  "suggests": ["i-haklab, ngrok"],
+  "description": "Grab target's webcam shots by link",
+  "files" :{
+    "saycheese-installer": "bin/saycheese-installer",
+    "saycheese": "bin/saycheese"
+}
+}

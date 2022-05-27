@@ -252,18 +252,6 @@ case "$toInstall" in
 		PYmodules
 		rm -f $TMPDIR/requirements.txt
 		;;
-	routersploit)
-		SearchTool
-		apt install git python
-		PIPup
-		PYv=""
-		git clone --quiet https://github.com/threat9/$toInstall $TOOLS/$toInstall
-		chmod 750 -R $TOOLS/$toInstall
-		printf "future\nrequests\npysnmp\npycrypto\ncryptography\nparamiko\nbcrypt\npynacl" > $TMPDIR/requirements.txt
-		PYmodules
-		rm -f $TMPDIR/requirements.txt
-		;;
-
 	seeker)
 		SearchTool
 		[[ -e $HOME/.local/bin/ngrok.io ]] || { printf >&2 "$R\n(_➤) ERROR :$W ngrok is not installed\n";ctrl_c;}
@@ -535,16 +523,6 @@ case "$toInstall" in
 		mkdir $TOOLS/$toInstall/.htr
 		ln -s ${HOME}/.local/bin/ngrok.io $TOOLS/$toInstall/.htr/ngrok 2>$LOGFILE
 		wget -q $iHDB/fix-tools/$toInstall -O $TOOLS/$toInstall/$toInstall
-		;;
-	saycheese|sayhello)
-		SearchTool
-		[[ -e $PREFIX/bin/ngrok ]] || { printf >&2 "$R\n(_➤) ERROR :$W ngrok is not installed\n";ctrl_c;}
-		yes|apt install wget unzip openssh
-		wget -q $iHDB/to-install/$toInstall.zip -O $TMPDIR/$toInstall.zip
-		unzip -q $TMPDIR/$toInstall.zip -d $TOOLS
-		rm -rf $TMPDIR/$toInstall.zip
-		wget -q $iHDB/fix-tools/$toInstall -O $TOOLS/$toInstall/$toInstall
-		chmod +x $TOOLS/$toInstall/*
 		;;
 	userrecon)
 		SearchTool

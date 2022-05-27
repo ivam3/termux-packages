@@ -3176,3 +3176,7 @@ data/data/com.termux/files/usr/bin/ngrok                                        
 data/data/com.termux/files/usr/bin/ngrok-installer                               ngrok
 data/data/com.termux/files/usr/bin/routersploit                                  routersploit
 data/data/com.termux/files/usr/bin/routersploit-installer                        routersploit
+data/data/com.termux/files/usr/bin/saycheese                                     saycheese
+data/data/com.termux/files/usr/bin/saycheese-installer                           saycheese
+data/data/com.termux/files/usr/bin/sayhello                                      sayhello
+data/data/com.termux/files/usr/bin/sayhello-installer                            sayhello
