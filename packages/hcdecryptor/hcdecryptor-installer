@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "Cloning repository ..."
+git clone https://gitlab.com/PANCHO7532/HCDecryptor.git ${HOME}/.local/share/hcdecryptor
+cd ${HOME}/.local/share/hcdecryptor
+echo "Build executable ..."
+bash install-dep.sh
+npm update --save
+exit 0
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

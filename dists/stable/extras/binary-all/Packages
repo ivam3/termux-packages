@@ -8,11 +8,11 @@ Suggests: bugjaeger-app
 Homepage: https://t.me/Ivam3_Bot
 Description: Open source of minimal Android Debug Bridge(ADB) and FastBoot suite
 Filename: dists/stable/extras/binary-all/adbfastboot_1.0.39a-8.0.0f_all.deb
-Size: 888452
-MD5Sum: ec6e83d4a4381521b61fd6b036632a1d
-SHA1: e640e35aa2a557dc76980d6d345b2cae112a85d7
-SHA256: bcbb3092302f9560cc647b1fba177b53a6aefe748a85e6c1bb95dabcf007fd0c
-SHA512: ee648b5fe828f251ec84fb3ffcb07c676cbb7527d5a4fef8fdb993ff5461749ba88249d9490f030500b282e389816d0fcf5393c8425dddc881d89ab632c17b8b
+Size: 888440
+MD5Sum: fd3022c6b27a607a2fa0ead55f3a2027
+SHA1: 034ef16553e4781268c544f4d2595cd0642e673d
+SHA256: 5fa730c13b28b265a1c050f7078ac837dde29bcf4b1dee56a737ebec499606d4
+SHA512: 9f53a6c472740ace06c0ff23b93dbc53d6d21733d669bad1a59e2c7aedfb05eb51b99dfee94f4a6bae888d0caea7a113fd69317d7d6d435fa37cae040450e044
 
 Package: blackbox
 Version: 2.0
@@ -23,11 +23,11 @@ Depends: python2, wget
 Homepage: https://github.com/jothatron/blackbox
 Description: Tool for Bruteforcing attacks, Information Gathering, Dorking, Cracking and Exploit web vulnerabilities.
 Filename: dists/stable/extras/binary-all/blackbox_2.0_all.deb
-Size: 1716
-MD5Sum: e9ba45eb0f9426e4176f395b6e396e57
-SHA1: 1c04647c8e570d4610939ad4d44d739a1b3f3b37
-SHA256: 1441230614b9d76176e217a0ee7bc5736033ca5c00e8d33cb78b32b58bc1f327
-SHA512: b1906929ed10416fc0de4aab3f2c1a3efd18974669aef791cbbdee3ea98add2b2d84386f6cbb8a8081e8766d6fe4e60323db4d674c40e2c4a91cf3d19946aaf3
+Size: 1708
+MD5Sum: 9f79248b3cd8b80b5d721d6eb55c7723
+SHA1: 447e0b6d780852f6eebad13fbca7cd2e32963c08
+SHA256: abc5568c1ffd5ee2def5f0ae538327a85cba21d903c5e6bb0b9b7843cdd2e22f
+SHA512: 46b5abe46df404811fc02e45635177111ebbaeda021e628a9257ee38f785b56836bddbb74ec61fd7bf2f11595d02f308ec2191e54146552a6082a579bd76633e
 
 Package: botgram
 Version: 1.0
@@ -39,11 +39,27 @@ Suggests: fixer
 Homepage: https://github.com/ivam3/botgram
 Description: Scraper Telegram's groups information and manage it from CLi.
 Filename: dists/stable/extras/binary-all/botgram_1.0_all.deb
-Size: 2008
-MD5Sum: a6a04fb53429ba1a112b04118a8a7619
-SHA1: 225ba0a52fa900953ce8981579a2f748fe110c29
-SHA256: 86ddce7ab443a8b8ea4695934a2be87e1c17a27040978bd9604884cb53c57451
-SHA512: 181592d1686232dfeac67422ed4a0e4e9e8f669d715b8012288411007916c1d2090b8a8ce03635cd935699c7d893328ca1fcae0a1d72299dc3f80b6f47a43ee6
+Size: 1992
+MD5Sum: b27347d3e96db23e8c34d45d0042e8dc
+SHA1: 6e3d76f13b27918b10006203d6b7dc2f7092ae93
+SHA256: afb0e9f13c13b8bda090c111232b4ee5e1649da6391175342ca60b251728315b
+SHA512: 6afccb1c66dcd7d6fb18058e1f0cdb87dc89e84719c6697c4b9fc6b120ff8aa59b4821e9cb65e09920b80cfc29b1613b9bf90c88bdf68f30e6a384bf022dfb81
+
+Package: burpsuite
+Version: 2022.3.8
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: openjdk-17, wget
+Suggests: termux-x11, xwayland
+Homepage: https://portswigger.net
+Description: An integrated platform/graphical tool for performing security testing of web applications.
+Filename: dists/stable/extras/binary-all/burpsuite_2022.3.8_all.deb
+Size: 2092
+MD5Sum: 9d3c3ccc7e8bb5c042d6cb4c2e06d27d
+SHA1: b53a7462cb07dac37bdd9c42c595096afd65a985
+SHA256: 5f01430716de844c6daf83c1ab3c6f3166f79edcafdabdd2ad96b559bb70af2c
+SHA512: df347272b9f3e6568e213039ea17ab4d37f95ba1381a7c89ed69d472c59201c240e3ba49a207e4ba5750591dba62542950075671d82f519db53c5a51d562b84b
 
 Package: dex2jar
 Version: 2.1
@@ -55,11 +71,11 @@ Suggests: fixer
 Homepage: https://github.com/pxb1988/dex2jar
 Description: Tools to work with android .dex and java .class files
 Filename: dists/stable/extras/binary-all/dex2jar_2.1_all.deb
-Size: 2256
-MD5Sum: 91da44ef196058174f4f352bc8615942
-SHA1: 935c4f025aad9a19814f336eec1f626e12ca8242
-SHA256: 65b3a0446b980d66fc4a20b841a5ce8de9b025b030427c445e5e27f9af9797df
-SHA512: dcec13c7443b901a59b8172dc5dfbde17b99c278e0f301dc828394595dd83e45ff9a0c106ad021f9a43842db28ed7ec767e93952d417fc810fb2eafb3f06ece8
+Size: 2236
+MD5Sum: 62e81b7b61be88ad0947c03f72abeb14
+SHA1: 41a72da888e937b5fdf2161773b1d38cd30d3cf3
+SHA256: e886e351e59f7e7b6680703d181934976bb71fc7c8d475c05342b67f966e25d8
+SHA512: 3ce17afef6edb66b2e59d045579c123f44085be250583ef3b16dabff4d13af5cae1721018e10b41192887024f3f4924c58754c6c9fa0dd88062c6d5c222d652c
 
 Package: dos-a-tool
 Version: 2.0
@@ -71,11 +87,11 @@ Suggests: fixer
 Homepage: https://github.com/Ivam3/DoS-A-Tool
 Description: Sends a massive number of SYN requests to test a server to overwhelm its capacity with connections.
 Filename: dists/stable/extras/binary-all/dos-a-tool_2.0_all.deb
-Size: 3016
-MD5Sum: a1a458bd13020ee852ea55ac0b5b08ba
-SHA1: 9fec357761903a04f804ccae9460aa5d6f66f363
-SHA256: 1e92e28b69af4ad52b2987a6a6a96e9e5d81b73307060abe702ec58ea0299f0c
-SHA512: f28382fcc2c22b75e2bafe6cd313ae448dca81e2845e40cae4328a05624868979324802b7de44ae5fc317ebab236028f880cdc8e762d7631d0ac45c5f6bc709e
+Size: 3004
+MD5Sum: 2479b169b6f13578d0c919614568a942
+SHA1: 7d09341334181bbc1a650e835ad10826d26b1b2e
+SHA256: 1ca7173d9a172a7356c8a7f89cf4b9775f08beb6ae4c23f9d179cdb74968cec1
+SHA512: 8265b301e80bfabcefa22051e70e7688587652f3188ab0368a6ec798da5500a62ee6c028df96f14f924df4c9678fb4fbb03342d3cba6ad05bfdcca2ec40472a1
 
 Package: embed
 Version: 2.0
@@ -87,11 +103,11 @@ Suggests: metasploit-framework
 Homepage: https://github.com/Ivam3/embed
 Description: Open source tool to Embed metasploit payload into legitim APK file. (git-release installer)
 Filename: dists/stable/extras/binary-all/embed_2.0_all.deb
-Size: 1972
-MD5Sum: b2b734a6e80c8a7d58f514167caffed5
-SHA1: 77cb449a436336ea88c1159638709d250f3e7c8f
-SHA256: 794feeefdc525301a2a5349657f49ca2594ebf74d16ef1d55096df4dc442e581
-SHA512: b3016efdcce4bf720a8658b5c6b4815bd85807059e46511e62b68d1679569ba84d2039f2716aed7153878bc24154b4d217c6af071bf663fbe810dfbdc60ddae8
+Size: 1944
+MD5Sum: 7eb82a0be056c52d206cd1dc6cebff8f
+SHA1: f4549d32f475d8865d23813596b201555a6b1582
+SHA256: d2beeda2d6de4505527fee4c7a74dfdecc0942158e4fe3436c4f81674f1f02d8
+SHA512: 6ac4140a8c235de2399452310349265b9c7262fe83d04afdb9b14e2afc1f3d6066ef643baf5f8d3224efc37f9d9db3ded669a1ed92e0c0c89a64c3491ae3d2c9
 
 Package: exif
 Version: 2.0
@@ -103,11 +119,27 @@ Suggests: fixer
 Homepage: https://github.com/Ivam3/exif
 Description: Script in bash to automate exiftool usages.
 Filename: dists/stable/extras/binary-all/exif_2.0_all.deb
-Size: 2260
-MD5Sum: 1a48e047959a4878d437a6c6519fb601
-SHA1: 7c75c5a9ab960944736601abe8794af183af1e9c
-SHA256: e1df82761f7a7985bb2e5655d81dff57d71c7c8211ae573dde73f1dca7c2900d
-SHA512: 19d5133a2bc6053edd7d8ba82f902c676ce90c1b7765bc9b7b5451b8d95f6ec85d6f02239a8cccbd7dd022ad18721195cd1056862ddb0c14a9813b0fb9099c69
+Size: 2256
+MD5Sum: a2e233f4f2ad2bf9aeacdc4e3236b2e3
+SHA1: bc4db188ab81428bb4976db628bd53c4cad5035e
+SHA256: c104242d230e640de8026c3f2096247fd8fd037c620f84443d1992aa33abbe37
+SHA512: 7dac410c50f32e0434f1e04f14959e513343ab6162ec6c217baaca870368af1b81e020ff5e8aa0e4bba979f212aa57557eb3a2db5a01656befc19be1e0515ffa
+
+Package: hcdecryptor
+Version: 2.0.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, nodejs
+Suggests: i-haklab
+Homepage: https://gitlab.com/PANCHO7532/HCDecryptor
+Description: Decryptor for HTTP Custom, HTTP Injector, APK Custom, eProxy, NapsternetV and SocksHTTP-based configuration files.
+Filename: dists/stable/extras/binary-all/hcdecryptor_2.0.1_all.deb
+Size: 1860
+MD5Sum: d201050ed39d68b96fd2675169a8c339
+SHA1: 8b907376e3a98249d0140d2c4f0ba237ffec2a00
+SHA256: 65d7dceea94d8797a145f14bf4905fad2136f7877af2eb1c8ea67e7f898ec3d1
+SHA512: 8c61d08d13e3c55dc363489b74577d5fe545089bea4d40a8c42262a8436c4e562c2ed04d262076ebc1a3003429a341ba19df6cfae7a1ad2419df8b65ea23cd23
 
 Package: i-haklab
 Version: 3.5.1
@@ -119,11 +151,11 @@ Suggests: Termux, Wayland, App
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
 Filename: dists/stable/extras/binary-all/i-haklab_3.5.1_all.deb
-Size: 40081192
-MD5Sum: 9de732f4761fa6b60d72006965208303
-SHA1: 1195b7d7d3193d1f4cf0a603e98c310c1549d0fd
-SHA256: 2466226818ef40e4b59fc6665298d1f66ae709a153c06d949b545571eddd9fad
-SHA512: 3a387de6ce01185d9b9b38cecc24c52559411c0300f0686077ac2bac5e997fe9c790ebc129bf6686e6deebff8d9c70247d2b90edc0fcd569052fc7a1bd1bf104
+Size: 40080136
+MD5Sum: 2773bcf067b9b1037711d3c38223e217
+SHA1: cef666d6bede30610bcf35f512be3e3ab6d56aa3
+SHA256: 440d7a2e3fe313738e1bf66485bc3a31b07f111c350dc1757c24d200b7fcd884
+SHA512: 9e62c4add71d16a55a222bd7b66c93b5e40dbc479c15f7646a44d66032517a6ed5b6172252348dca3e362efaab81d149aa313e1dc980c090c62ab45c3c2ee062
 
 Package: kalilinux
 Version: 2022.1
@@ -135,11 +167,11 @@ Suggests: vncserver
 Homepage: https://github.com/ivam3/termux-packages
 Description: Open-source penetration testing platform for Android devices, allowing for access to the Kali toolset
 Filename: dists/stable/extras/binary-all/kalilinux_2022.1_all.deb
-Size: 1728
-MD5Sum: db4ba54cfe1aac787dd0175cda4c9011
-SHA1: 171e30fb95ca9dc6996ad14c8a350e904646da20
-SHA256: 5fe065fe014c76f66faff74b0cc2b8fc8804d177a02cb655938cc8b13009280f
-SHA512: 252fec98fa06389d486dd3a88c300ed9c1f4bb4fc3ba04db32e0a262991fc7370b3e750675b81aec06df5c25af83ba7f7b62be12edac22aa839cd8a39445c293
+Size: 1680
+MD5Sum: 08cf9261bedc5eb78d78422e0f94e27c
+SHA1: ffc9e9fe7e9032b5d249b4d7fb98070c152ef979
+SHA256: dadf3f33ae86b92f4faac510f25a744ce5c12b16b5b84688a32690449f12373c
+SHA512: 86a776db01db57b3d1d97ba303e8ea2cd4557d04acafecab16fcdc71df4331c4ec91c95baaf178b5f9cd23552ae6351b2f282dc2e2ba4f118fd952c6a16cd540
 
 Package: metasploit-framework
 Version: 6.1.41
@@ -151,11 +183,11 @@ Suggests: openjdk-17
 Homepage: https://github.com/rapid7/metasploit-framework
 Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
 Filename: dists/stable/extras/binary-all/metasploit-framework_6.1.41_all.deb
-Size: 3620
-MD5Sum: 1172c2e82cbc16eb8bf9cf35ffbf6e60
-SHA1: a6ad7552e8ec8c7cbf199ff5d94b7981115910eb
-SHA256: 32dfb478d47f222787cce223343939aee5c8745a63ed1a380678247605cb472e
-SHA512: 37657cbfdde549ee7af5ee9142fd754a56ad656148ea86d9720b35de481bd92e16e402f18c56a8196540af2ea953f5da7d4e72fb65ab97de15ae39ed3436cd19
+Size: 3608
+MD5Sum: b1e80a8cb018c89d36fb56b37a95031d
+SHA1: 4e8efa8b75ef5d1c0fb95e9a3154a90440b8fb86
+SHA256: 57aca9a5f58109a39fed3e5fd7060d60670a5ccfa3e6eb0437f66e6356fd013c
+SHA512: 5c03aef1887cd59ceb5e867f35341794098c23537971e92ad878e54c1e65d9e335a4c575ebc725aeae014c62d9ec0a2846c05b3edd312898df12f5159fa6e3bc
 
 Package: nexphisher
 Version: 1.0
@@ -167,11 +199,11 @@ Suggests: ngrok
 Homepage: https://github.com/htr-tech/nexphisher
 Description: Advanced Phishing tool
 Filename: dists/stable/extras/binary-all/nexphisher_1.0_all.deb
-Size: 2628
-MD5Sum: 9ec169597c1406d160e9a704a8985a44
-SHA1: 9cef674c6dbe7867a5be5d24db724b7c5e621959
-SHA256: 4f1046b880196d631bce7a0e8ebd1f7ac94884fcfdab096ff6d218b625908e1c
-SHA512: 5e92c3aa8384be09291fa555c8b5a5e9be0c1c30dca60618d2ee31cb0f4f7455ff9f3b0664be7a9312129d65ad90ec31afbc61475bab5e9d19ad3dc47e9d028c
+Size: 2620
+MD5Sum: ea458041199b0d507eba33d1fa5f4d74
+SHA1: 6691017ed923158ac97e58dae944963973f2fb2c
+SHA256: 810ec64221697b70cceae46b92438cf4f56a5477091b0adb0435477f25d75c5e
+SHA512: 27e8b79796c76b269619a9b476a658aa9202e70d855848ac229456a0fdb4d3099f4ded53fb32aa616aacc058eeb4c3305c112f93c22c734db1d6228725b6485a
 
 Package: ngrok
 Version: 2.3.40
@@ -182,11 +214,11 @@ Depends: wget, proot, openssh
 Homepage: https://ngrok.com
 Description: A cross-platform application that exposes local server ports to the Internet.
 Filename: dists/stable/extras/binary-all/ngrok_2.3.40_all.deb
-Size: 2408
-MD5Sum: d2af2f997194d7354237a3a89379944e
-SHA1: 21b177f6b128e1fa99796c17e536fb03a3599a41
-SHA256: 78f8b5de8f11bfc1a3464ee584af61207436aac443041d023867eaba59149ba0
-SHA512: 5ba6898a53690521a866ce6c61c0a15940e414aa9195178d1ef673f08466aeed6e613837fbe3dce7289f330cc52d2037110b7c892cf650f727ecca8571aa1653
+Size: 2384
+MD5Sum: f23ca40e720537e169c93f2bca9b727d
+SHA1: 161bbfab0c3b32fc17dcc66a370bfb058cbe6838
+SHA256: 984c6b88347255e6f4d26de36d7dc85d06f0710790308b63561527fb4b217368
+SHA512: dea68a6d5e140c7b73db87c23a22de20aede8a01d04657331678dcec6122af3f1d32918b6da0b6d9d9b1093584fa62a527739f14a03748a14ba21f686fdcd245
 
 Package: routersploit
 Version: 3.4.1
@@ -198,11 +230,11 @@ Suggests: i-haklab
 Homepage: https://github.com/threat9/routersploit
 Description: Exploitation Framework for Embedded Devices
 Filename: dists/stable/extras/binary-all/routersploit_3.4.1_all.deb
-Size: 1876
-MD5Sum: 346361b08a9bba17c73705d8f77a5e93
-SHA1: 5e59ffd77bd05017f5fa078d5533cbc132f067fe
-SHA256: 11b45047290cf240a60a8f58008573dcb08f5e242e1fe27e24d645d443acb9a2
-SHA512: b6214d99e4c58e4b91f30a0a361b7ae650999c5ff51e1d925ae24a495db2e95c652ff63303c8020a2ad9056deb4e33a7f1c2fa2aeff8733ae4381177ca8d9ed5
+Size: 1868
+MD5Sum: 39ddeb9a98edc562563af29f71b86292
+SHA1: 3117310ce8ff79d1eaf2b88f25ed85a281d0e54a
+SHA256: f6956025657069043ef746e02dfe59be55913b72257ed97ea818a0216ca65515
+SHA512: 22acdf4d545273099750e276da1dc6443982789417993c3e955947b06e65f10e8489fee9b2cb746d42703e80b9415c419134fff7a51b8a13a1aeb1e422034585
 
 Package: saycheese
 Version: 1.0
@@ -215,10 +247,10 @@ Homepage: https://github.com/hangetzzu/saycheese
 Description: Grab target's webcam shots by link
 Filename: dists/stable/extras/binary-all/saycheese_1.0_all.deb
 Size: 1928
-MD5Sum: 0efce8da8ace6206161cd2649be700f0
-SHA1: 3d352bd20e2f52810ffcdbbb2cc296026c1d08d1
-SHA256: 9ce112001b5d5eb875d8ea593cf457730634806cf023a6ec4a070205ea47ef1e
-SHA512: 2c1899a1339eff056947ee30a11272e778081a42b8f4705f12cfc1361e8faef39755b610b234533bd0b3603c23dd1431d5625d9757c7e1c44dc42e6a6d946304
+MD5Sum: dd551afe502bb00cbc01c7de5b2be3e4
+SHA1: 6deea6d9a063fa25c99672c4810d5edb85c88ca6
+SHA256: a962212482e04fe64e34be8b4633f7dd6c8598c0929eca8466bd70f557c7b4c7
+SHA512: b49c81506aa5b55f2b928a87651674ac122a4d300a0f703cb2bbe5a77c80e5f2942c4544fd66861eb447947ad09ea296b28218476bab7868de4e14f33b630be6
 
 Package: sayhello
 Version: 1.0
@@ -230,9 +262,9 @@ Suggests: i-haklab, ngrok
 Homepage: https://github.com/d093w1z/sayhello
 Description: Capturing audio (.wav) from target using a link
 Filename: dists/stable/extras/binary-all/sayhello_1.0_all.deb
-Size: 1932
-MD5Sum: 87bbb95dc8b2dc9bf39774f6788d2602
-SHA1: c08b47265d80f9c7922e13d45173fef4dc1f4c92
-SHA256: cc7bbd8a7c9a46298beff8c5cc73c122786f3d67fe6c640bcbc84e7d7dfb63c0
-SHA512: d2cb227e852841c3d3a6bfbfc94e3c9b6f456b8816a3502add5f1e4e9ca983e1694d983db9cb134f9e17d0dbeb034b0a587f2f78819a16f6211a65beaa01ebc1
+Size: 1928
+MD5Sum: 57dceb91e23f0e2e23402413b93eb561
+SHA1: 554a89e7a1aaccb6039f876eb4c7788d1c13066a
+SHA256: e9c74c0d48f2958ec9397a3bd89660f3351b511e2b6a5f94483a0caf1d6f2670
+SHA512: b6f161712b9088105c204914bd8defb5d34fe97534dbc3784ddfaef51f41d55b3575ae0d55596ffaba544dba55539e1656dd489658c7f702924b4fe49e5f8cd1
 

@@ -1,7 +1,7 @@
 {
   "name": "burpsuite",
   "version": "2022.3.8",
-  "arch": "aarch64",
+  "arch": "all",
   "homepage": "https://portswigger.net",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
   "depends": ["openjdk-17, wget"],

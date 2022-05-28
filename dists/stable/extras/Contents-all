@@ -5,12 +5,16 @@ data/data/com.termux/files/usr/bin/fastboot-armeabi                             
 data/data/com.termux/files/usr/bin/blackbox-installer                            blackbox
 data/data/com.termux/files/usr/bin/botgram                                       botgram
 data/data/com.termux/files/usr/bin/botgram-installer                             botgram
+data/data/com.termux/files/usr/bin/burpsuite                                     burpsuite
+data/data/com.termux/files/usr/bin/burpsuite-installer                           burpsuite
 data/data/com.termux/files/usr/bin/dex2jar                                       dex2jar
 data/data/com.termux/files/usr/bin/dex2jar-installer                             dex2jar
 data/data/com.termux/files/usr/bin/DoS-A-Tool                                    dos-a-tool
 data/data/com.termux/files/usr/bin/embed                                         embed
 data/data/com.termux/files/usr/bin/embed-installer                               embed
 data/data/com.termux/files/usr/bin/exif                                          exif
+data/data/com.termux/files/usr/bin/hcdecryptor                                   hcdecryptor
+data/data/com.termux/files/usr/bin/hcdecryptor-installer                         hcdecryptor
 data/data/com.termux/files/home/.bashrc                                          i-haklab
 data/data/com.termux/files/home/.config/fish/config.fish                         i-haklab
 data/data/com.termux/files/home/.config/fish/fish_variables                      i-haklab
