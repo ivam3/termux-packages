@@ -47,27 +47,6 @@ else
 fi
 
 case "$toInstall" in
-	binwalk)
-		SearchTool
-		yes|apt install git
-		PIPup
-		git clone --quiet https://github.com/ReFirmLabs/$toInstall $TOOLS/$toInstall
-		cd $TOOLS/$toInstall
-		chmod 750 *
-		python setup.py install
-		;;
-
-	evilurl)
-		SearchTool
-		yes|apt install git
-		PIPup
-		PYv=""
-		git clone --quiet https://github.com/UndeadSec/EvilURL $TOOLS/$toInstall
-		chmod +x -R $TOOLS/$toInstall
-		printf "python-nmap\npython-whois" > $TMPDIR/requirements.txt
-		PYmodules
-		rm -rf $TMPDIR/requirements.txt
-		;;
 	fuzzdb|wfuzz)
 		[[ $toInstall = wfuzz ]] && toInstall="fuzzdb"
 		SearchTool

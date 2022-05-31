@@ -1,0 +1,14 @@
+{
+  "name": "evilurl",
+  "version": "3.0",
+  "arch": "all",
+  "homepage": "https://github.com/UndeadSec/EvilURL",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python, git"],
+  "suggests": ["i-haklab"],
+  "description": "Generate unicode domains for IDN Homograph Attack and detect them.",
+  "files" :{
+    "evilurl-installer": "bin/evilurl-installer",
+    "evilurl": "bin/evilurl"
+	}
+}

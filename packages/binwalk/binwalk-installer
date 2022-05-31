@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/bash
+echo "Cloning repository ..."
+git clone --quiet https://github.com/ReFirmLabs/binwalk ${HOME}/.local/share/binwalk
+chmod 750 -R ${HOME}/.local/share/binwalk
+echo "Installing requirements ..."
+cd ${HOME}/.local/share/binwalk
+python setup.py install
+exit 0
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

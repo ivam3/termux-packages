@@ -1,0 +1,13 @@
+{
+  "name": "binwalk",
+  "version": "2.3.3",
+  "arch": "all",
+  "homepage": "https://github.com/ReFirmLabs/binwalk",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python, git"],
+  "suggests": ["i-haklab"],
+  "description": "Tool for analyzing, reverse engineering, and extracting firmware images.",
+  "files" :{
+    "binwalk-installer": "bin/binwalk-installer"
+}
+}

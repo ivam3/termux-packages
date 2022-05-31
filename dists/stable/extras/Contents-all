@@ -2,6 +2,7 @@ data/data/com.termux/files/usr/bin/adb                                          
 data/data/com.termux/files/usr/bin/adb.bin                                       adbfastboot
 data/data/com.termux/files/usr/bin/fastboot                                      adbfastboot
 data/data/com.termux/files/usr/bin/fastboot-armeabi                              adbfastboot
+data/data/com.termux/files/usr/bin/binwalk-installer                             binwalk
 data/data/com.termux/files/usr/bin/blackbox-installer                            blackbox
 data/data/com.termux/files/usr/bin/botgram                                       botgram
 data/data/com.termux/files/usr/bin/botgram-installer                             botgram
@@ -12,6 +13,8 @@ data/data/com.termux/files/usr/bin/dex2jar-installer                            
 data/data/com.termux/files/usr/bin/DoS-A-Tool                                    dos-a-tool
 data/data/com.termux/files/usr/bin/embed                                         embed
 data/data/com.termux/files/usr/bin/embed-installer                               embed
+data/data/com.termux/files/usr/bin/evilurl                                       evilurl
+data/data/com.termux/files/usr/bin/evilurl-installer                             evilurl
 data/data/com.termux/files/usr/bin/exif                                          exif
 data/data/com.termux/files/usr/bin/hcdecryptor                                   hcdecryptor
 data/data/com.termux/files/usr/bin/hcdecryptor-installer                         hcdecryptor
@@ -24,8 +27,10 @@ data/data/com.termux/files/home/.config/fish/functions/fish_greeting.fish       
 data/data/com.termux/files/home/.config/fish/functions/github.fish               i-haklab
 data/data/com.termux/files/home/.config/fish/functions/i-Haklab.fish             i-haklab
 data/data/com.termux/files/home/.config/fish/functions/lock.fish                 i-haklab
+data/data/com.termux/files/home/.config/fish/functions/mypip.fish                i-haklab
 data/data/com.termux/files/home/.config/fish/functions/osrframework.fish         i-haklab
 data/data/com.termux/files/home/.config/fish/functions/postgresql.fish           i-haklab
+data/data/com.termux/files/home/.config/fish/functions/proxy.fish                i-haklab
 data/data/com.termux/files/home/.config/fish/functions/serverapache.fish         i-haklab
 data/data/com.termux/files/home/.config/fish/functions/serverphp.fish            i-haklab
 data/data/com.termux/files/home/.config/fish/functions/sudo.fish                 i-haklab
@@ -169,6 +174,7 @@ data/data/com.termux/files/home/.local/libexec/i-Haklab/tunnel                  
 data/data/com.termux/files/home/.local/libexec/i-Haklab/weechat                  i-haklab
 data/data/com.termux/files/home/.local/libexec/osrframework                      i-haklab
 data/data/com.termux/files/home/.local/libexec/pkg2conf                          i-haklab
+data/data/com.termux/files/home/.local/libexec/proxy                             i-haklab
 data/data/com.termux/files/home/.local/libexec/serverphp                         i-haklab
 data/data/com.termux/files/home/.local/share/wordlist/adobe_top100_password.txt  i-haklab
 data/data/com.termux/files/home/.local/share/wordlist/fuzzdb/big.txt             i-haklab

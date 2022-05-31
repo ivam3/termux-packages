@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/bash
+echo "Cloning repository ..."
+git clone --quiet https://github.com/UndeadSec/EvilURL ${HOME}/.local/share/evilurl
+chmod 750 -R ${HOME}/.local/share/evilurl
+echo "Installing requirements ..."
+python -m pip --no-color --quiet --no-cache-dir install --upgrade pip
+python -m pip --no-color --quiet --no-cache-dir install python-nmap python-whois
+exit 0
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

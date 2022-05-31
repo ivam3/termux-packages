@@ -43,7 +43,7 @@ cat <<- CONF > $pkgName/manifiest.json
   "homepage": "https://$page",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
   "depends": [""],
-  "suggests": [""],
+  "suggests": ["i-haklab"],
   "description": "",
   "files" :{
     "$pkgName-installer": "bin/$pkgName-installer",

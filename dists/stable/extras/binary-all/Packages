@@ -14,6 +14,22 @@ SHA1: 034ef16553e4781268c544f4d2595cd0642e673d
 SHA256: 5fa730c13b28b265a1c050f7078ac837dde29bcf4b1dee56a737ebec499606d4
 SHA512: 9f53a6c472740ace06c0ff23b93dbc53d6d21733d669bad1a59e2c7aedfb05eb51b99dfee94f4a6bae888d0caea7a113fd69317d7d6d435fa37cae040450e044
 
+Package: binwalk
+Version: 2.3.3
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: python, git
+Suggests: i-haklab
+Homepage: https://github.com/ReFirmLabs/binwalk
+Description: Tool for analyzing, reverse engineering, and extracting firmware images.
+Filename: dists/stable/extras/binary-all/binwalk_2.3.3_all.deb
+Size: 1672
+MD5Sum: c75981970cbe9da3438e45bab1449f74
+SHA1: 156a52b86e840ddf7bd2cb4783964b92d6d9656c
+SHA256: 8a5b02efc03831de1fffe087e61060f9c2ebf9dffbd703db0c0cb53a351a17ab
+SHA512: 8c5179f285e1954384ec8da2cd986ef955e444a13e4903de053b5894c64d97c6ce0dd58bebbffa950de208b67832b2aaa22cf829e62426ef6bfe736bd7367610
+
 Package: blackbox
 Version: 2.0
 Architecture: all
@@ -109,6 +125,22 @@ SHA1: f4549d32f475d8865d23813596b201555a6b1582
 SHA256: d2beeda2d6de4505527fee4c7a74dfdecc0942158e4fe3436c4f81674f1f02d8
 SHA512: 6ac4140a8c235de2399452310349265b9c7262fe83d04afdb9b14e2afc1f3d6066ef643baf5f8d3224efc37f9d9db3ded669a1ed92e0c0c89a64c3491ae3d2c9
 
+Package: evilurl
+Version: 3.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: python, git
+Suggests: i-haklab
+Homepage: https://github.com/UndeadSec/EvilURL
+Description: Generate unicode domains for IDN Homograph Attack and detect them.
+Filename: dists/stable/extras/binary-all/evilurl_3.0_all.deb
+Size: 1868
+MD5Sum: 62c955b5aa467ff84a8060f48955d9f9
+SHA1: eda00b2abd6f8ad17f4581af0e2bbb84e9c5ea46
+SHA256: d90b6e5d9809487b4c4a2d38f387a4ba03c41cfb961cb6c7118bd2a1995be583
+SHA512: d3074d77e82fe1991b5121660ce1e1c4aa271e539803356f2cfbd0169b8ef4095613483ef48911363216eb1055616a149b4c654f9cc4e96ae1e36eef5776b520
+
 Package: exif
 Version: 2.0
 Architecture: all
@@ -145,17 +177,17 @@ Package: i-haklab
 Version: 3.5.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 92259
-Depends: termux-api, termux-elf-cleaner, termux-tools, util-linux, x11-repo, apr, apr-util, autoconf, axel, bat, bc, bison, clang, cmake, coreutils, curl, debianutils, dns2tcp, dnsutils, file, findutils, fish, gawk, git, gnupg, gpgme, hexedit, htop-legacy, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nmap, openjdk-17, openssh, openssl, openssl-tool, perl, php, php-apache, pkg-config, proxychains-ng, pulseaudio, pv, python, python2, readline, ruby, sqlite, strace, tar, tmux, torsocks, translate-shell, unzip, vim, w3m, weechat, wget, youtubedr, zip, zlib
+Installed-Size: 92263
+Depends: termux-api, termux-elf-cleaner, termux-tools, util-linux, x11-repo, apr, apr-util, autoconf, axel, bat, bc, bison, clang, cmake, coreutils, curl, debianutils, dns2tcp, dnsutils, file, findutils, fish, gawk, git, gnupg, gpgme, hexedit, htop-legacy, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nmap, openjdk-17, openssh, openssl, openssl-tool, perl, php, php-apache, pkg-config, proxychains-ng, pulseaudio, pv, python, python2, readline, ruby, sqlite, strace, tar, tmux, tor, torsocks, translate-shell, unzip, vim, w3m, weechat, wget, youtubedr, zip, zlib
 Suggests: Termux, Wayland, App
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
 Filename: dists/stable/extras/binary-all/i-haklab_3.5.1_all.deb
-Size: 40080136
-MD5Sum: 2773bcf067b9b1037711d3c38223e217
-SHA1: cef666d6bede30610bcf35f512be3e3ab6d56aa3
-SHA256: 440d7a2e3fe313738e1bf66485bc3a31b07f111c350dc1757c24d200b7fcd884
-SHA512: 9e62c4add71d16a55a222bd7b66c93b5e40dbc479c15f7646a44d66032517a6ed5b6172252348dca3e362efaab81d149aa313e1dc980c090c62ab45c3c2ee062
+Size: 40079284
+MD5Sum: d527d0c07123a519c6a579ce9853b88e
+SHA1: 9320b8d9bc7f35242a889564b23ce527bdb463f5
+SHA256: 32d29e4b140636e52ee5d273c2ff1af0b5d1db128df98da413a4eff3fa0fd221
+SHA512: bf9eb83cd70c703ca9b394da42bb65bb4b852d679ad608a28cb3af159d192975c47e1e8c6029323ef84fe4ee570e90c3ffef2cbf34e71f1654c16c8d8f2727ff
 
 Package: kalilinux
 Version: 2022.1
