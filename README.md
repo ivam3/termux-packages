@@ -35,56 +35,53 @@ This project is with the purpose of offering easy and fast access to the install
 | [fbi](https://github.com/xHak9x/fbi) | Facebook account information gathering |
 | [fuzzdb](https://github.com/fuzzdb-project/fuzzdb) | Dictionary of attack patterns and primitives for black-box application fault injection and resource discovery |
 | [getnpusers](https://github.com/SecureAuthCorp/impacket/blob/master/examples/GetNPUsers.py) | List and get TGT for those users who have ownership |
-| [ghost]() | |
-| [gobuster]() | |
-| [gophish]() | |
-| [hakku]() | |
-| [hasher]() | |
-| [hatcloud]() | |
-| [hunner]() | |
-| [hydra]() | |
-| [infoga]() | |
-| [ipgeolocations]() | |
-| [johntheripper]() | |
-| [kerbrute]() | |
-| [kalilinux]() | |
-| [lockphish]() | |
-| [metasploit-framework]() | |
-| [nexphisher]() | |
+| [ghost](https://github.com/EntySec/ghost) | Android post-exploitation framework that exploits the Android Debug Bridge to remotely access an Android device. |
+| [gobuster](https://github.com/OJ/gobuster/) | Directory/File, DNS and VHost busting tool written in Go |
+| [gophish](https://github.com/gophish/gophish) | Open-Source advance phishing toolkit |
+| [hakku](https://github.com/4shadoww/hakkuframework) | Open-source penetration testing platform used to perform web and network-related penetration testing. |
+| [hasher](https://github.com/CiKu370/hasher) | Hash cracker with auto detect hash |
+| [hatcloud](https://github.com/HatBashBR/HatCloud) | Make bypass in CloudFlare for discover real IP. |
+| [hunner](https://github.com/b3-v3r/Hunner) | Hacking framework to DOS sites, ftp|ssh bruteforce, scan sql and xxs vulnerabilities. |
+| [hydra](https://github.com/vanhauser-thc/thc-hydra) | Number one brute forcing tool in ciber security. |
+| [infoga](https://github.com/m4ll0k/infoga) | Gathering email accounts informations from different public source and check if emails was leaked using haveibeenpwned.com API. |
+| [ipgeolocations](https://github.com/maldevel/IPGeoLocation) | A tool to retrieve IP Geolocation information. |
+| [johntheripper](https://github.com/openwall/john) | Advanced offline password cracker, which supports hundreds of hash and cipher types, and runs on many operating systems, CPUs, GPUs, and even some FPGAs. |
+| [kerbrute](https://github.com/TarlogicSecurity/kerbrute) | An script to perform kerberos bruteforcing by using the Impacket library. |
+| [kalilinux](https://www.kali.org/get-kali/#kali-mobile) | The Kali-Linux Open-source project for Android devices |
+| [lockphish](https://github.com/JasonJerry/lockphish) | A tool for phishing attacks on the lock screen, designed to grab Windows credentials, Android PIN. |
+| [metasploit-framework](https://github.com/rapid7/metasploit-framework) | World's leading open-source penetrating framework |
+| [nexphisher](https://github.com/htr-tech/nexphisher) | Advanced Phishing tool for Termux. |
 | [ngrok](https://ngrok.com) | |
-| [osintgram]() | |
-| [phomber]() | |
-| [phonesploit]() | |
-| [pybelt]() | |
-| [quack]() | |
-| [recon-ng]() | |
-| [recondog]() | |
-| [rhawk]() | |
-| [routersploit]() | |
-| [saycheese]() | |
-| [sayhello]() | |
-| [seeker]() | |
-| [shc]() | |
-| [shellsploit]() | |
-| [sherlock]() | |
-| [slowhttptest]() | |
-| [sqliv]() | |
-| [stegsnow]() | |
-| [sublist3r]() | |
-| [tangalanga]() | |
-| [termux-desktop-xfce]() | |
-| [torvpn]() | |
-| [trape]() | |
-| [userrecon]() | |
-| [virustotal]() | |
-| [vulnx]() | |
-| [wbruter]() | |
-| [webhackshl]() | |
-| [websploit]() | |
-| [wfuzz]() | |
-| [whatweb]() | |
-| [wpscan]() | |
-| [xerosploit]() | |
+| [osintgram](https://github.com/datalux/Osintgram) | A OSINT tool on Instagram. It offers an interactive shell to perform analysis on Instagram account of any users by its nickname. |
+| [phomber](https://github.com/s41r4j/phomber) | Infomation grathering tool that reverse search phone numbers and get their details. |
+| [phonesploit](https://github.com/aerosol-can/PhoneSploit) | A tool for remote ADB exploitation for all Machines. |
+| [pybelt](https://github.com/Ekultek/Pybelt) | An open source hackers tool belt complete. |
+| [quack](https://github.com/Monkey-hk4/quack) | Toolkit with SMS attack tool, HTTP attack tool and many other attack tools. |
+| [recon-ng](https://github.com/lanmaster53/recon-ng) | Open Source Intelligence gathering tool aimed at reducing the time spent harvesting information from open sources. |
+| [recondog](https://github.com/s0md3v/ReconDog) | Reconnaissance Swiss Army Knife |
+| [red hawk](https://github.com/Tuhinshubhra/RED_HAWK) | All in one tool for Information Gathering, Vulnerability Scanning and Crawling. |
+| [routersploit](https://github.com/threat9/routersploit) | Open-source exploitation framework dedicated to embedded devices. |
+| [saycheese](https://github.com/hangetzzu/saycheese) | Grab target's webcam shots by link. |
+| [sayhello](https://github.com/d093w1z/sayhello) | Capturing audio (.wav) from target using a link. |
+| [seeker](https://github.com/thewhiteh4t/seeker) | Accurately Locate Smartphones using Social Engineering. |
+| [shc](http://www.datsi.fi.upm.es/~frosal/sources/shc.html) | The Shell Script Compiler (SHC) encodes and encrypts shell scripts into executable binaries. |
+| [shellsploit](https://github.com/vasco2016/shellsploit-framework) |It let's you generate customized shellcodes, backdoors, injectors for various operating system. And let's you obfuscation every byte via encoders. |
+| [sherlock](https://github.com/sherlock-project/sherlock) | Hunt down social media accounts by username across social networks. |
+| [slowhttptest](https://github.com/shekyan/slowhttptest) | A highly configurable tool that simulates some Application Layer Denial of Service attacks by prolonging HTTP connections in different ways. |
+| [sqliv](https://github.com/the-robot/sqliv) | Massive SQL injection vulnerability scanner. |
+| [stegsnow](https://www.kali.org/tools/stegsnow/) | Hide messages in ASCII text by appending whitespaces to the end of lines |
+| [sublist3r](https://github.com/aboul3la/Sublist3r) | Fast subdomains enumeration tool for penetration testers. |
+| [tangalanga](github.com/elcuervo/tangalanga) | : The Zoom conference scanner hacking tool. |
+| [termux-desktop-xfce](https://github.com/Yisus7u7/termux-desktop-xfce) | Set up a beautiful xfce desktop in termux. |
+| [trape](https://github.com/jofpin/trape) | OSINT analysis and research tool. |
+| [userrecon](https://github.com/issamelferkh/userrecon) | Find usernames across over 75 social networks. |
+| [vulnx](https://github.com/anouarbensaad/vulnx) | An intelligent bot auto shell injector that detects vulnerabilities in multiple types of cms. |
+| [wbruter](https://github.com/wuseman/WBRUTER) | Disable device pin code aslong as usb debugging and brute force methods like dictionary attacks for gmail, ftp, rar, zip and some other file extensions. |
+| [webhackshl](https://github.com/sechacklabs/webhackshl) | Set of tools to perform web security audits. |
+| [websploit](https://github.com/The404Hacking/websploit) | MITM framework. |
+| [whatweb](https://github.com/urbanadventurer/WhatWeb) | Recognises web technologies including content management systems (CMS), blogging platforms, statistic/analytics packages, JavaScript libraries, web servers, and embedded devices. |
+| [wpscan](https://github.com/wpscanteam/wpscan) | WordPress security scanner. |
+| [xerosploit](https://github.com/LionSec/xerosploit) | A penetration testing toolkit whose goal is to perform man in the middle attacks for testing purposes. |
 ##### Suggest a tool and/or framework to be add in our [Telegram Support Group](https://t.me/iHaklab)
 
 ## How to get ...
