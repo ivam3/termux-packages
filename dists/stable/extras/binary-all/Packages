@@ -177,17 +177,17 @@ Package: i-haklab
 Version: 3.5.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 92263
+Installed-Size: 92264
 Depends: termux-api, termux-elf-cleaner, termux-tools, util-linux, x11-repo, apr, apr-util, autoconf, axel, bat, bc, bison, clang, cmake, coreutils, curl, debianutils, dns2tcp, dnsutils, file, findutils, fish, gawk, git, gnupg, gpgme, hexedit, htop-legacy, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nmap, openjdk-17, openssh, openssl, openssl-tool, perl, php, php-apache, pkg-config, proxychains-ng, pulseaudio, pv, python, python2, readline, ruby, sqlite, strace, tar, tmux, tor, torsocks, translate-shell, unzip, vim, w3m, weechat, wget, youtubedr, zip, zlib
 Suggests: Termux, Wayland, App
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
 Filename: dists/stable/extras/binary-all/i-haklab_3.5.1_all.deb
-Size: 40079284
-MD5Sum: d527d0c07123a519c6a579ce9853b88e
-SHA1: 9320b8d9bc7f35242a889564b23ce527bdb463f5
-SHA256: 32d29e4b140636e52ee5d273c2ff1af0b5d1db128df98da413a4eff3fa0fd221
-SHA512: bf9eb83cd70c703ca9b394da42bb65bb4b852d679ad608a28cb3af159d192975c47e1e8c6029323ef84fe4ee570e90c3ffef2cbf34e71f1654c16c8d8f2727ff
+Size: 40079260
+MD5Sum: c18d4a356685bce344b630c4644c3272
+SHA1: be37fca35a18f45b9cc3d858ea4fc70f079e285f
+SHA256: 034ab878a8fc2d33decdc6ceb303e92900d046248d6c7fb1e83138ac6c67dfbd
+SHA512: bc9cfdc743095f0c213fa9d9925daf7af0eaaec5cb8e1823d87e1a5f899fa978d91464834de0a2afd6b72b0330cbf21e63f43cb986505b2f178126f33b654b15
 
 Package: kalilinux
 Version: 2022.1
@@ -199,11 +199,11 @@ Suggests: vncserver
 Homepage: https://github.com/ivam3/termux-packages
 Description: Open-source penetration testing platform for Android devices, allowing for access to the Kali toolset
 Filename: dists/stable/extras/binary-all/kalilinux_2022.1_all.deb
-Size: 1680
-MD5Sum: 08cf9261bedc5eb78d78422e0f94e27c
-SHA1: ffc9e9fe7e9032b5d249b4d7fb98070c152ef979
-SHA256: dadf3f33ae86b92f4faac510f25a744ce5c12b16b5b84688a32690449f12373c
-SHA512: 86a776db01db57b3d1d97ba303e8ea2cd4557d04acafecab16fcdc71df4331c4ec91c95baaf178b5f9cd23552ae6351b2f282dc2e2ba4f118fd952c6a16cd540
+Size: 1768
+MD5Sum: aaaef5aecaddc78fd8f26238c9e65429
+SHA1: 76809d7a7959c62b03a3fb86d4e31262144e2675
+SHA256: 2b8f2cc0d90a73afacb80eda50a26ad49127787898b1c03bc64a87e04a177610
+SHA512: 74c783cbda84fde9449f1b5c82c784a1c478b073efb70b5984c398d16ddfe8ee6c29384948274687416fbf9c52ba8038d6f2b190943b1c19cb31d97abfe37922
 
 Package: metasploit-framework
 Version: 6.1.41
