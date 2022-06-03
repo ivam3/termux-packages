@@ -199,11 +199,11 @@ Suggests: vncserver
 Homepage: https://github.com/ivam3/termux-packages
 Description: Open-source penetration testing platform for Android devices, allowing for access to the Kali toolset
 Filename: dists/stable/extras/binary-all/kalilinux_2022.1_all.deb
-Size: 2940
-MD5Sum: d779f832c9f76016bfe0899fd0db4e88
-SHA1: 17e2bca8a8fc50a5c568b6786c6991df285fb5af
-SHA256: b53d8e93d9c49fb7888aaaa528c42ac59c46acde4a35ddf125fb30f8dd9aba21
-SHA512: 3af792ed2fd815ea8ca6cd837c8b30d97130cfa7da8843817c43cb90293e07c8b92999185813598e16c6103a8dd0a9278da6b06de2a3c697106ac80868b5926f
+Size: 3032
+MD5Sum: 0b64ef01c80c73bdc35a1daa7b22964b
+SHA1: 797e9fc019e6c076b4f5643a8645197f4102375d
+SHA256: db1c3585814c36baec6cfc0a066f22034c6851bc48631b9afb45947b00be23dc
+SHA512: 0dac1f611b284b879b3fdd2c074da0034de790f299719047bf344ff8b949b8a40a5e2708830d4f55be2dd9dc5c58154e7b597325dd84565ebc56ab8e7d0487cb
 
 Package: metasploit-framework
 Version: 6.1.41

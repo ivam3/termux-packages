@@ -1,5 +1,17 @@
 #!/data/data/com.termux/files/usr/bin/bash
-if [[ -d ${PREFIX}/share/kalilinux ]]; then
-  rm -rf ${PREFIX}/share/kalilinux
-fi
-####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
+echo "Uninstalling Kali, please be patient..."
+
+chmod 777 -R kali-fs >/dev/null
+rm -rf kali-fs >/dev/null
+rm -rf kali-binds >/dev/null
+rm -rf kali.sh >/dev/null
+rm -rf start-kali.sh >/dev/null
+rm -rf ssh-apt.sh >/dev/null
+rm -rf de-apt.sh >/dev/null
+rm -rf de-apt-xfce4.sh >/dev/null
+rm -rf de-apt-mate.sh >/dev/null
+rm -rf de-apt-lxqt.sh >/dev/null
+rm -rf de-apt-lxde.sh >/dev/null
+rm -rf UNI-kali.sh >/dev/null
+
+echo "Done"
