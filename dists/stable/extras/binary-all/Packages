@@ -193,17 +193,17 @@ Package: kalilinux
 Version: 2022.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 1
+Installed-Size: 4
 Depends: wget, curl, proot, tar
 Suggests: vncserver
 Homepage: https://github.com/ivam3/termux-packages
 Description: Open-source penetration testing platform for Android devices, allowing for access to the Kali toolset
 Filename: dists/stable/extras/binary-all/kalilinux_2022.1_all.deb
-Size: 1768
-MD5Sum: aaaef5aecaddc78fd8f26238c9e65429
-SHA1: 76809d7a7959c62b03a3fb86d4e31262144e2675
-SHA256: 2b8f2cc0d90a73afacb80eda50a26ad49127787898b1c03bc64a87e04a177610
-SHA512: 74c783cbda84fde9449f1b5c82c784a1c478b073efb70b5984c398d16ddfe8ee6c29384948274687416fbf9c52ba8038d6f2b190943b1c19cb31d97abfe37922
+Size: 2940
+MD5Sum: d779f832c9f76016bfe0899fd0db4e88
+SHA1: 17e2bca8a8fc50a5c568b6786c6991df285fb5af
+SHA256: b53d8e93d9c49fb7888aaaa528c42ac59c46acde4a35ddf125fb30f8dd9aba21
+SHA512: 3af792ed2fd815ea8ca6cd837c8b30d97130cfa7da8843817c43cb90293e07c8b92999185813598e16c6103a8dd0a9278da6b06de2a3c697106ac80868b5926f
 
 Package: metasploit-framework
 Version: 6.1.41
