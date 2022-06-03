@@ -1,6 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
-folder=kali-fs
+folder=${HOME}/kali-fs
 dlink="https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/APT"
 
 if [ -d "$folder" ]; then
