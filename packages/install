@@ -47,65 +47,6 @@ else
 fi
 
 case "$toInstall" in
-	fuzzdb|wfuzz)
-		[[ $toInstall = wfuzz ]] && toInstall="fuzzdb"
-		SearchTool
-		yes|apt install git wget
-		PIPup
-		PYv=""
-		git clone --quiet https://github.com/fuzzdb-project/$toInstall --depth 1 $TOOLS/$toInstall
-		wget -q $iHDB/wordlist/$toInstall/big.txt -O $TOOLS/$toInstall/wordlists-user-passwd/big.txt
-		wget -q $iHDB/wordlist/$toInstall/common.txt -O $TOOLS/$toInstall/wordlists-misc/common.txt
-		chmod +x -R $TOOLS/$toInstall
-		printf "wfuzz" > $TMPDIR/requirements.txt
-		PYmodules
-		rm -f $TMPDIR/requirements.txt
-		;;
-	getnpusers)
-		SearchTool
-		yes|apt install git wget python rust
-		PIPup
-		Pyv=""
-		wget -q https://raw.githubusercontent.com/SecureAuthCorp/impacket/master/examples/GetNPUsers.py -O $HOME/.local/bin/$toInstall
-		printf "urllib3\nrequests\nmock\nidna\nbiopython\nrust\nimpacket" > $TMPDIR/requirements.txt
-		PYmodules
-		chmod 711 $HOME/.local/bin/$toInstall
-		rm -f $TMPDIR/requirements.txt
-		yes|apt remove rust;apt autoremove
-		;;
-	ghost)
-		SearchTool
-		yes|apt install python openssl git
-		git clone --quiet https://github.com/EntySec/ghost $TOOLS/$toInstall
-		chmod +x -R $TOOLS/$toInstall
-		;;
-	hakku)
-		SearchTool
-		yes|apt install git python
-		git clone --quiet https://github.com/4shadoww/hakkuframework $TOOLS/$toInstall
-		chmod 750 $TOOLS/$toInstall/$toInstall
-		;;
-	hunner)
-		SearchTool
-		yes|apt install git python
-		PIPup
-		PYv=""
-		git clone --quiet https://github.com/b3-v3r/Hunner $TOOL/$toInstall
-		chmod 750 -R $TOOLS/$toInstall
-		printf "httplib2" > $TMPDIR/requirements.txt
-		PYmodules
-		rm -f $TMPDIR/requirements.txt
-		;;
-	infoga)
-		SearchTool
-		yes|apt install python git
-		PIPup
-		PYv=""
-		git clone --quiet https://github.com/m4ll0k/$toInstall $TOOLS/$toInstall
-		cat $TOOLS/$toInstall/requirements.txt > $TMPDIR/requirements.txt
-		PYmodules
-		rm -f $TMPDIR/requirements.txt
-		;;
 	ipgeolocation)
 		SearchTool
 		yes|apt install git

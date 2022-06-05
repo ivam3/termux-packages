@@ -1,0 +1,14 @@
+{
+  "name": "hakku-framework",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/4shadoww/hakkuframework",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python, git"],
+  "suggests": ["i-haklab"],
+  "description": "Hakku is a simple framework that is made for penetration testing tools.",
+  "files" :{
+    "hakku-installer": "bin/hakku-installer",
+    "hakku": "bin/hakku"
+	}
+}

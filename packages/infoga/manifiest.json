@@ -1,0 +1,14 @@
+{
+  "name": "infoga",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/m4ll0k/infoga",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python, git"],
+  "suggests": ["i-haklab"],
+  "description": "A tool gathering email accounts informations from different public source and check if emails was leaked using haveibeenpwned.com API",
+  "files" :{
+    "infoga-installer": "bin/infoga-installer",
+    "infoga": "bin/infoga"
+}
+}

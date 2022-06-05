@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash
+[[ -d ${PREFIX}/bin/ghost ]] && rm ${PREFIX}/bin/ghost
+[[ -d ${PREFIX}/lib/python*/site-packages/ghost ]] && {
+	rm -rf ${PREFIX}/lib/python*/site-packages/ghost;
+}
+python -m pip --no-color --quiet --no-cache-dir uninstall adb-shell
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

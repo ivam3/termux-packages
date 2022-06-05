@@ -1,0 +1,14 @@
+{
+  "name": "hunner-framework",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/b3-v3r/Hunner",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python, git"],
+  "suggests": ["i-haklab"],
+  "description": "A framework for brute force, DoS and SQL attacks.",
+  "files" :{
+    "hunner-installer": "bin/hunner-installer",
+    "hunner": "bin/hunner"
+}
+}

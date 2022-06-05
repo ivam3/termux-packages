@@ -1,0 +1,16 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# COLORS
+W="\e[0m"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+B="\e[34m"
+if [[ -d ${HOME}/.local/share/hakku-framework ]]
+then
+  pushd ${HOME}/.local/share/hakku-framework >/dev/null
+  $(command -v python) $(basename $0) ${@:1}
+else
+  echo -en $R"E:$W $(basename $0) PATH missing ...$Y Aborting.$W"
+  exit 1
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -1,0 +1,14 @@
+{
+  "name": "ipgeolocation",
+  "version": "2.0.4",
+  "arch": "all",
+  "homepage": "https://github.com/maldevel/IPGeoLocation",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python, git"],
+  "suggests": ["i-haklab"],
+  "description": "A tool to retrieve IP Geolocation information.",
+  "files" :{
+    "ipgeolocation-installer": "bin/ipgeolocation-installer",
+    "ipgeolocation": "bin/ipgeolocation"
+  }
+}

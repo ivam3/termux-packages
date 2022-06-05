@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/osintgram ]]; then
+	pushd ${HOME}/.local/share/osintgram
+	python -m pip --no-color --quiet --no-chache-dir uninstall -r requirements.txt
+	popd
+  rm -rf ${HOME}/.local/share/osintgram
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

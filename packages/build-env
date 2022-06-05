@@ -48,14 +48,13 @@ cat <<- CONF > $pkgName/manifiest.json
   "files" :{
     "$pkgName-installer": "bin/$pkgName-installer",
     "$pkgName": "bin/$pkgName"
-	}
+  }
 }
 CONF
 
 #EXECUTABLE
 cat <<- CONF > $pkgName/$pkgName
 #!/data/data/com.termux/files/usr/bin/bash
-
 # COLORS
 W="\\e[0m"
 R="\\e[31m"
@@ -66,6 +65,7 @@ if [[ -d \${HOME}/.local/share/\$(basename \$0) ]]
 then
   pushd \${HOME}/.local/share/\$(basename \$0) >/dev/null
   \$(command -v ruby) \$(basename \$0).rb \${@:1}
+	popd
 else
   echo -en \$R"E:\$W \$(basename \$0) PATH missing ...\$Y Aborting.\$W"
   exit 1

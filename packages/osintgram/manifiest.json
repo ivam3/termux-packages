@@ -1,0 +1,14 @@
+{
+  "name": "osintgram",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/datalux/Osintgram",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python, git"],
+  "suggests": ["i-haklab"],
+  "description": "An interactive shell to perform analysis on Instagram account of any users by its nickname.",
+  "files" :{
+    "osintgram-installer": "bin/osintgram-installer",
+    "osintgram": "bin/osintgram"
+  }
+}

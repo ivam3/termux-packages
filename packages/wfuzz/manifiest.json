@@ -1,0 +1,13 @@
+{
+  "name": "wfuzz",
+  "version": "3.1.0",
+  "arch": "all",
+  "homepage": "https://github.com/fuzzdb-project/fuzzdb",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python, git"],
+  "suggests": ["i-haklab"],
+  "description": "Brute force attack tool with dictionary of attack patterns and primitives for black-box application fault injection and resource discovery.",
+  "files" :{
+    "wfuzz-installer": "bin/wfuzz-installer"
+	}
+}
