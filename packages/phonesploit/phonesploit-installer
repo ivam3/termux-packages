@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+echo "Cloning repository ..."
+git clone --quiet https://github.com/aerosol-can/PhoneSploit ${HOME}/.local/share/phonesploit
+echo "Installing requirements ..."
+python -m pip --no-color --quiet --no-chache-dir install colorama;
+exit 0
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

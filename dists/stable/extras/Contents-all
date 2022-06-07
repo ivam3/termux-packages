@@ -2,6 +2,8 @@ data/data/com.termux/files/usr/bin/adb                                          
 data/data/com.termux/files/usr/bin/adb.bin                                       adbfastboot
 data/data/com.termux/files/usr/bin/fastboot                                      adbfastboot
 data/data/com.termux/files/usr/bin/fastboot-armeabi                              adbfastboot
+data/data/com.termux/files/usr/bin/androbugs                                     androbugs
+data/data/com.termux/files/usr/bin/androbugs-installer                           androbugs
 data/data/com.termux/files/usr/bin/binwalk-installer                             binwalk
 data/data/com.termux/files/usr/bin/blackbox-installer                            blackbox
 data/data/com.termux/files/usr/bin/botgram                                       botgram
@@ -3196,6 +3198,10 @@ data/data/com.termux/files/usr/bin/ngrok                                        
 data/data/com.termux/files/usr/bin/ngrok-installer                               ngrok
 data/data/com.termux/files/usr/bin/osintgram                                     osintgram
 data/data/com.termux/files/usr/bin/osintgram-installer                           osintgram
+data/data/com.termux/files/usr/bin/phomber                                       phomber
+data/data/com.termux/files/usr/bin/phomber-installer                             phomber
+data/data/com.termux/files/usr/bin/phonesploit                                   phonesploit
+data/data/com.termux/files/usr/bin/phonesploit-installer                         phonesploit
 data/data/com.termux/files/usr/bin/routersploit                                  routersploit
 data/data/com.termux/files/usr/bin/routersploit-installer                        routersploit
 data/data/com.termux/files/usr/bin/saycheese                                     saycheese

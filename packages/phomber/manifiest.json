@@ -1,0 +1,14 @@
+{
+  "name": "phomber",
+  "version": "2.0",
+  "arch": "all",
+  "homepage": "https://github.com/s41r4j/phomber",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python, git"],
+  "suggests": ["i-haklab"],
+  "description": "A Infomation Grathering tool that reverse search phone numbers and get their details",
+  "files" :{
+    "phomber-installer": "bin/phomber-installer",
+    "phomber": "bin/phomber"
+  }
+}

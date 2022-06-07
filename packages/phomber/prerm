@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/phomber ]]; then
+	echo "Uninstalling requirements ..."
+  cd ${HOME}/.local/share/phomber
+	python -m pip --no-color --quiet --no-cache-dir uninstall -r requirements.txt
+	rm -rf ${HOME}/.local/share/phomber
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

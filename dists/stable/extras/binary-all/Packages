@@ -14,6 +14,22 @@ SHA1: 034ef16553e4781268c544f4d2595cd0642e673d
 SHA256: 5fa730c13b28b265a1c050f7078ac837dde29bcf4b1dee56a737ebec499606d4
 SHA512: 9f53a6c472740ace06c0ff23b93dbc53d6d21733d669bad1a59e2c7aedfb05eb51b99dfee94f4a6bae888d0caea7a113fd69317d7d6d435fa37cae040450e044
 
+Package: androbugs
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: python2, git
+Suggests: i-haklab
+Homepage: https://github.com/AndroBugs/AndroBugs_Framework
+Description: An efficient Android vulnerability scanner that helps developers or hackers find potential security vulnerabilities in Android applications.
+Filename: dists/stable/extras/binary-all/androbugs_1.0_all.deb
+Size: 1844
+MD5Sum: 1d0a920c57c983b9decbc351fb93434b
+SHA1: c545471457ed2e128284be9c05329ff0b5bb5e76
+SHA256: 33e93acbdf7142d5acc46ed6b1d7132cbe21779e32a4dd1cc01037b609954f31
+SHA512: 71eb7351bc37e36fe64c29619fdb4124b46e70116d1a23504f60c84adcc3ca7acf17b2d5ea7b345547cfabb1b8cba412d12f5bb208d0d944885548210fe151f0
+
 Package: binwalk
 Version: 2.3.3
 Architecture: all
@@ -363,6 +379,38 @@ MD5Sum: c82e324d6d345e7c7a1c38a48a5a9b39
 SHA1: 5256d1b63ba86a374b94ab256251752b24c5692b
 SHA256: 176a147b166499ff2a657a65b70b35eeee725bfa76f5c40c2e42387aa70d9e26
 SHA512: 56ac0996544d7539647c3dea766eb157818ef42070e826be79823ca05f221dd538f0653694e3fd50034d2cd7e7131474c5f6d11514587367749becdcd395614d
+
+Package: phomber
+Version: 2.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: python, git
+Suggests: i-haklab
+Homepage: https://github.com/s41r4j/phomber
+Description: A Infomation Grathering tool that reverse search phone numbers and get their details
+Filename: dists/stable/extras/binary-all/phomber_2.0_all.deb
+Size: 2184
+MD5Sum: 96f5505eb12791ee2a9596a43f3f6919
+SHA1: 98504b0e02548885031fb81f3fad922ab629540f
+SHA256: 5c10f3aa2038a54c517cab17e00194c73a4eb936afdd4253e8eeab65b342ce7d
+SHA512: 7b6876772cd073bab4bac8ebbd3abf48f3d3e1e91e62b05b20d1c9b328743d8f2d464d6b33e1507a30948ffdd5330ded8164cdd1e70a2892fba91a125471d3c8
+
+Package: phonesploit
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, python
+Suggests: adbfastboot, i-haklab
+Homepage: https://github.com/aerosol-can/PhoneSploit
+Description: A tool for remote ADB exploitation.
+Filename: dists/stable/extras/binary-all/phonesploit_1.0_all.deb
+Size: 1968
+MD5Sum: 6b943072c25127357a5edbb1b7fed03d
+SHA1: 9af57b3a519271c16fc6e46ca4cf5f26bf56b871
+SHA256: c11805cc25cb0db1d071e565148a8ecf8a7add9b3402e9277a97d20f42b6356b
+SHA512: 85d3c90d6babf3af08d359663fa483e6b88fe86d9d1f842d75f002556f1312acc0454a0065b71648f9cbcf2118089ffd9ce4d81b940ec141af227a6e56b6ce4d
 
 Package: routersploit
 Version: 3.4.1

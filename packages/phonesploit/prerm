@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/phonesploit ]]; then
+	echo "Uninstalling requirements ..."
+  rm -rf ${HOME}/.local/share/phonesploit
+	python -m pip --no-color --quiet --no-cache-dir uninstall colorama
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

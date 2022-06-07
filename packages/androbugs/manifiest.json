@@ -1,0 +1,14 @@
+{
+  "name": "androbugs",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/AndroBugs/AndroBugs_Framework",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python2, git"],
+  "suggests": ["i-haklab"],
+  "description": "An efficient Android vulnerability scanner that helps developers or hackers find potential security vulnerabilities in Android applications.",
+  "files" :{
+    "androbugs-installer": "bin/androbugs-installer",
+    "androbugs": "bin/androbugs"
+  }
+}

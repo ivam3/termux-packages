@@ -1,0 +1,18 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ $(id -u) -eq 0 ]]
+then
+  echo -en "\e[31mE:\e[0m You need to be a common user\n"
+  exit 1
+elif [[ ! $(command -v adb) ]] >/dev/null
+then
+	echo -en "\e[31mE:\e[0m adbfastboot packages needed, try it with \e[33m'apt install adbfastboot'\e[0m...\e[31m Aborting\e[0m.\n"
+else
+  echo "Preparing enviroment ..."
+  if [[ -d ${HOME}/.local/share/phonesploit ]]
+  then
+    rm -rf ${HOME}/.local/share/phonesploit
+  else
+    mkdir -p ${HOME}/.local/share 2>/dev/null
+  fi
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

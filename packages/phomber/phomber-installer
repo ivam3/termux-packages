@@ -1,0 +1,30 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+echo "Cloning repository ..."
+git clone --quiet https://github.com/s41r4j/phomber ${HOME}/.local/share/phomber
+echo "Installing requirements ..."
+cd ${HOME}/.local/share/phomber
+python -m pip --no-color --quiet --no-cache-dir install -r requiremets.txt
+echo -en $Y"W:$W Phomber needs an API key from opencagedata.com.\n"
+select way in Set_credentials Skip_this_step;do
+	case $way in
+		Set_credentials)
+			while read -p "(_>)_username─➤ " username && [ -z $username ]
+			do
+				continue
+			done
+			while read -p "(_>)_passwd─➤ " passwd && [ -z $passwd ]
+			do
+				continue
+			done
+			printf "[Credentials]\nusername = $username\npassword = $passwd" > ${HOME}/.local/share/phomber/config/credentials.ini
+			break
+			;;
+		*)
+			echo -en $Y"W:$W Don't forget set your credentials at file: ${HOME}/.local/share/phomber/config/credentials.ini\n"
+			ctrl_c
+			break
+			;;
+	esac
+exit 0
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

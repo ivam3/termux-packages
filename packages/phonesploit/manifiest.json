@@ -1,0 +1,14 @@
+{
+  "name": "phonesploit",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/aerosol-can/PhoneSploit",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, python"],
+  "suggests": ["adbfastboot, i-haklab"],
+  "description": "A tool for remote ADB exploitation.",
+  "files" :{
+    "phonesploit-installer": "bin/phonesploit-installer",
+    "phonesploit": "bin/phonesploit"
+  }
+}
