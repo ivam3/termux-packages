@@ -254,20 +254,20 @@ SHA256: b609285ee6296e5ffeea90a114977c7598279beb1c0963373c733dcdd18cf831
 SHA512: 978c55c707b56d1cfcf3526a4e6cb6c8f4bbdfb552cb4025e24ed8455a0dd1365b8420ce9b75058a38282d6341373edc9c657220cfd054303e10a9e28c02cc72
 
 Package: i-haklab
-Version: 3.5.1
+Version: 3.5.2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 92264
+Installed-Size: 92283
 Depends: termux-api, termux-elf-cleaner, termux-tools, util-linux, x11-repo, apr, apr-util, autoconf, axel, bat, bc, bison, clang, cmake, coreutils, curl, debianutils, dns2tcp, dnsutils, file, findutils, fish, gawk, git, gnupg, gpgme, hexedit, htop-legacy, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nmap, openjdk-17, openssh, openssl, openssl-tool, perl, php, php-apache, pkg-config, proxychains-ng, pulseaudio, pv, python, python2, readline, ruby, sqlite, strace, tar, tmux, tor, torsocks, translate-shell, unzip, vim, w3m, weechat, wget, youtubedr, zip, zlib
 Suggests: Termux, Wayland, App
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.5.1_all.deb
-Size: 40079340
-MD5Sum: 9c5de298bdf3bbfcc89c4dde7909c1d2
-SHA1: 793fbb3f7b650fd924b81bcc6a710c827c29e327
-SHA256: 89f9bb2b070fe332ff7508c29199849ecb58fc130d2970f1ab77190294711a20
-SHA512: 0574cb5bc85a022fa6da49200b26a9dd9abcbbc5748c12bfd1af41383fea2afed68f595cdd4d68b38d7d814be76f9a4744fdcb5f376991bf589100648765e482
+Filename: dists/stable/extras/binary-all/i-haklab_3.5.2_all.deb
+Size: 40086972
+MD5Sum: 185b3255ff5cb73fbf694727d8a7ca5e
+SHA1: dfa99fe9986a2783bacf17a637c897077421d702
+SHA256: 4b2570cabf9f5420a39cf7400b92cd53040a39c7d7adc834cec6e6425056abfd
+SHA512: 3efc6b4ac72db3229b1ab7cad9c8bdf01a2229ae3af314dc4c46ff81a063b3091060951457d562b87f5b8e1dba5339dc02d76ccdc814e4f84454c265a7d60bc1
 
 Package: infoga
 Version: 1.0
@@ -412,6 +412,38 @@ SHA1: 9af57b3a519271c16fc6e46ca4cf5f26bf56b871
 SHA256: c11805cc25cb0db1d071e565148a8ecf8a7add9b3402e9277a97d20f42b6356b
 SHA512: 85d3c90d6babf3af08d359663fa483e6b88fe86d9d1f842d75f002556f1312acc0454a0065b71648f9cbcf2118089ffd9ce4d81b940ec141af227a6e56b6ce4d
 
+Package: quack
+Version: 2.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: python, git
+Suggests: i-haklab
+Homepage: https://github.com/Monkey-hk4/quack
+Description: A set of tools to provide denial of service attacks, SMS attack, HTTP attack tool and many other attack tools.
+Filename: dists/stable/extras/binary-all/quack_2.0_all.deb
+Size: 2000
+MD5Sum: dfdc362978922e061c0f47ebc8b19f78
+SHA1: b77564078e22a4744e86678eabd6003784dc4883
+SHA256: 7d69f577d4e8b4c0d7657d9ff2ce1e91b850001975f9d8dba5e3f6f425845537
+SHA512: 597f5b5f46aa94135dbdfe15edb6baaef3381ee02ba00a8b49b553502b10636e518a69b7d2e67f6537feaf54ea7f0da639a370dedfd556a0af3634cd7305da04
+
+Package: recon-ng
+Version: 5.1.2
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, python, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static
+Suggests: i-haklab
+Homepage: https://github.com/lanmaster53/recon-ng
+Description: Open Source Intelligence gathering tool aimed at reducing the time spent harvesting information from open sources.
+Filename: dists/stable/extras/binary-all/recon-ng_5.1.2_all.deb
+Size: 2092
+MD5Sum: ff09a5a237bd6dc40f1142b33ee5da41
+SHA1: 10752add4eb00a4d66350a460444a5d4ed436161
+SHA256: 549263367b064b964f31333d9abdd3eeead77b8770e4924bdc01184e66d719ae
+SHA512: 10c48d87d130dea48b946439bfe38099642a34e26f7d492363e20f110e8633576b4a9d0f07534a79ba54990a745d1772df55b0f000ef11d7c2e6858f386d7dd8
+
 Package: routersploit
 Version: 3.4.1
 Architecture: all
@@ -459,6 +491,38 @@ MD5Sum: 57dceb91e23f0e2e23402413b93eb561
 SHA1: 554a89e7a1aaccb6039f876eb4c7788d1c13066a
 SHA256: e9c74c0d48f2958ec9397a3bd89660f3351b511e2b6a5f94483a0caf1d6f2670
 SHA512: b6f161712b9088105c204914bd8defb5d34fe97534dbc3784ddfaef51f41d55b3575ae0d55596ffaba544dba55539e1656dd489658c7f702924b4fe49e5f8cd1
+
+Package: seeker
+Version: 1.2.7
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, python, php
+Suggests: i-haklab, ngrok
+Homepage: https://github.com/thewhiteh4t/seeker
+Description: Accurately Locate Smartphones using Social Engineering.
+Filename: dists/stable/extras/binary-all/seeker_1.2.7_all.deb
+Size: 2036
+MD5Sum: 973e619539cfe037f8726bf24c5ffab8
+SHA1: aefee610c6ce897813302201e510e470f1fe4f4d
+SHA256: a57d3a4d607a8e0041c79081d7b7c886d861c1000b0e029bfe4cb6563cf61379
+SHA512: ab749469d9a0799e099cac519ddf606609ed28e05bbba15cd8e135fa8e0c4b238fbda3362463f915897c08ff6a7c6c52d508f0613d84c0d12b508d941c92e3c0
+
+Package: shellsploit-framework
+Version: 0.3
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, python
+Suggests: i-haklab
+Homepage: https://github.com/vasco2016/shellsploit-framework
+Description: Generate customized shellcodes, backdoors, injectors for various operating system. And let's you obfuscation every byte via encoders.
+Filename: dists/stable/extras/binary-all/shellsploit-framework_0.3_all.deb
+Size: 2076
+MD5Sum: bd03c33b87dafe65df5d70fd43587a64
+SHA1: a4db619efe0d313b64f1fe0aded8a91d4475cfd9
+SHA256: 189c117eaf591b272c365573859a7cd1010ad8e3b0ebd09f01c214e8d6364df6
+SHA512: 089b059d8eae7090e1fcaa35b2c0f5e9a377808963347f68a79431cd701df54744022e19ea7906604014f918a8ca8407b91c6131c841ba73ec3969aceaa43600
 
 Package: wfuzz
 Version: 3.1.0

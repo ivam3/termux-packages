@@ -50,6 +50,8 @@ data/data/com.termux/files/home/.local/bin/applets/sudo                         
 data/data/com.termux/files/home/.local/bin/fixer                                 i-haklab
 data/data/com.termux/files/home/.local/bin/snakegame                             i-haklab
 data/data/com.termux/files/home/.local/etc/fish/config.fish                      i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/     Tools/Readme/clamav     i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/     Tools/Readme/twifo-cli  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/.Ivam3byCinderella           i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/DoS-A-Tool      i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ExiF            i-haklab
@@ -3202,10 +3204,18 @@ data/data/com.termux/files/usr/bin/phomber                                      
 data/data/com.termux/files/usr/bin/phomber-installer                             phomber
 data/data/com.termux/files/usr/bin/phonesploit                                   phonesploit
 data/data/com.termux/files/usr/bin/phonesploit-installer                         phonesploit
+data/data/com.termux/files/usr/bin/quack                                         quack
+data/data/com.termux/files/usr/bin/quack-installer                               quack
+data/data/com.termux/files/usr/bin/recon-ng                                      recon-ng
+data/data/com.termux/files/usr/bin/recon-ng-installer                            recon-ng
 data/data/com.termux/files/usr/bin/routersploit                                  routersploit
 data/data/com.termux/files/usr/bin/routersploit-installer                        routersploit
 data/data/com.termux/files/usr/bin/saycheese                                     saycheese
 data/data/com.termux/files/usr/bin/saycheese-installer                           saycheese
 data/data/com.termux/files/usr/bin/sayhello                                      sayhello
 data/data/com.termux/files/usr/bin/sayhello-installer                            sayhello
+data/data/com.termux/files/usr/bin/seeker                                        seeker
+data/data/com.termux/files/usr/bin/seeker-installer                              seeker
+data/data/com.termux/files/usr/bin/shellsploit                                   shellsploit-framework
+data/data/com.termux/files/usr/bin/shellsploit-installer                         shellsploit-framework
 data/data/com.termux/files/usr/bin/wfuzz-installer                               wfuzz

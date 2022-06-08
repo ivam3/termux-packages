@@ -47,53 +47,6 @@ else
 fi
 
 case "$toInstall" in
-	quack)
-		SearchTool
-		yes|apt install wget python
-		PIPup
-		PYv=""
-		wget -q https://raw.githubusercontent.com/Monkey-hk4/quack/main/quack -O $HOME/.local/bin/quack
-		chmod +x $HOME/.local/bin/quack
-		printf "install\nsetuptools\nphonenumbers\nrequests\nscapy\nwget\nargparse" > $TMPDIR/requirements.txt
-		PYmodules
-		rm -f $TMPDIR/requirements.txt
-		;;
-	recon-ng)
-		SearchTool
-		yes|apt install git python libxml2 libxml2-static libxml2-utils libxslt libxslt-static
-		PIPup
-		PYv=""
-		git clone --quiet https://github.com/lanmaster53/$toInstall $TOOLS/$toInstall
-		chmod 750 -R $TOOLS/$toInstall
-		printf "PYyaml\nshodan\ndicttoxml\ndnspython\njsonrpclib\nlxml\nmechanize\nslowaes\nXlsxWriter\nolefile\nPyPDF2\nflask\nunicodecsv" > $TMPDIR/requirements.txt
-		PYmodules
-		rm -f $TMPDIR/requirements.txt
-		;;
-	seeker)
-		SearchTool
-		[[ -e $HOME/.local/bin/ngrok.io ]] || { printf >&2 "$R\n(_➤) ERROR :$W ngrok is not installed\n";ctrl_c;}
-		yes|apt install git python
-		PIPup
-		PYv=""
-		git clone --quiet https://github.com/thewhiteh4t/$toInstall $TOOLS/$toInstall
-		mkdir -p $TOOLS/$toInstall/Ngrok
-		cp ~/.ngrok2/ngrok $TOOLS/$toInstall/Ngrok/
-		chmod 750 -R $TOOLS/$toInstall/*
-		printf "requests\npackaging" > $TMPDIR/requirements.txt
-		PYmodules
-		rm -f $TMPDIR/requirements.txt
-		;;
-	shellsploit)
-		SearchTool
-		yes|apt install git python
-		PIPup
-		PYv=""
-		git clone --quiet https://github.com/vasco2016/$toInstall-framework $TOOLS/$toInstall
-		chmod 711 -R $TOOLS/$toInstall
-		printf "capstone\nreadline\npefile\ncolorama\npylzma" > $TMPDIR/requirements.txt
-		PYmodules
-		rm -f $TMPDIR/requirements.txt
-		;;
 	sherlock)
 		SearchTool
 		yes|apt install git python
@@ -168,11 +121,6 @@ case "$toInstall" in
 		git clone --quiet https://github.com/Techzindia/admin_penal $TOOLS/$toInstall
 		chmod 750 $TOOLS/$toInstall/admin_panel_finder.py
 		mv $TOOLS/$toInstall/admin_panel_finder.py $TOOLS/$toInstall/$toInstall.py
-		;;
-	androbugs)
-		SearchTool
-		yes|apt install git python2
-		git clone --quiet https://github.com/AndroBugs/AndroBugs_Framework $TOOLS/$toInstall
 		;;
 	d-tect)
 		SearchTool
@@ -374,44 +322,7 @@ case "$toInstall" in
 		cert: false
 		CONF
 		;;
-	desktop-xfce4|xfce4-about)
-		[[ $toInstall = desktop-xfce4 ]] && toInstall=xfce4-about
-		SearchTool
-		for i in vnc icons themes config; do
-			[[ -d ~/.$i ]] && rm -rf ~/.$i
-		done
-		echo "deb [trusted=yes arch=all] https://Yisus7u7.github.io/termux-desktop-xfce/packages desktop-xfce extras" > $PREFIX/etc/apt/sources.list.d/termux-desktop-xfce.list;apt update >/dev/null 2>/dev/null
-		for pkg in x11-repo termux-x11 termux-gui-package xwayland xfce4 xfce4-taskmanager xfce4-goodies termux-api cmake-curses-gui git-gui dosbox xfce4-terminal python-tkinter neofetch loqui the-powder-toy galculator xorg-xhost mpv ristretto xfce4-whiskermenu-plugin xfce4-clipman-plugin xarchiver libx11-static tigervnc geany geany-plugins gtk2 gtk3 mtpaint leafpad otter-browser recordmydesktop feh audacious lxqt-themes papirus-icon-theme lxappearance fluent-icon-theme fluent-gtk-theme kvantum zenity dbus-glib dconf $(apt search 'xfce4-' 2>/dev/null|grep '/'|awk -F '/' '{print $1}') breeze-cursor-theme ttf-microsoft-cascadia; do
-			ipkg=$(pkg list-installed 2>/dev/null|grep "$pkg"|awk -F "/" '{print $1}') >/dev/null
-#			checkpkg=${ipkg%/*}
-			if [[ -z $ipkg ]]
-			then
-				printf "$G(_➤)$W Installing package $pkg...$W\n"
-				yes|apt install $pkg 2>$LOGFILE
-			else
-				printf "$Y(_➤)$W Package $pkg installed successfully.$W\n"
-			fi
-		done
-		[[ -d $HOME/.backup ]] && rm -rf $HOME/.backup
-		mkdir -p $HOME/{Desktop,Downloads,Templates,Public,Documents,Pictures,Videos,.backup}
-		ln -s $HOME/storage/music $HOME/Music
-		[[ -d $HOME/.config ]] && mv $HOME/.config $HOME/.backup
-		wget -q https://github.com/Yisus7u7/termux-desktop-xfce/releases/download/desktop-5.0.3/data.tar.xz -O $TMPDIR/data.tar.xz
-		tar -xvf data.tar.xz -C $HOME
-		rm $TMPDIR/data.tar.xz
-		file2restore=$(diff -q $HOME/.backup/.config/ $HOME/.config/|grep -iv "backup"|awk -F ' ' '{print $NF}')
-		for f in ${file2restore[*]};do
-			cp -r $HOME/.config/$file2restore $HOME/.backup/.config
-		done
-		rm -rf $HOME/.config
-		mv $HOME/.backup/.config $HOME/.config
-		rm -rf $HOME/.backup
-		exec vncserver;sleep 3
-		sed 's|/twm &|xfce4-session &|g' -i ~/.vnc/xstartup
-		printf "$Y\nNOW GO TO PLAY STORE AND DOWNLOAD VNC SERVER APP\nOR GO TO GITHUB AND DOWNLOAD TERMUX WAYLAND APP$G\n[$green RUN BY VNC$G ]─➤$W vncserver$G\n      ╰─────────➤$W At first time, you will be prompted for setting up passwords$Y\n\nOPEN VNC APP AND SET NETWORK ADDRESS AS :$W localhost:1$G\n[$green TO STOP IT$G ]─➤$W vncserver -kill :1\n"
-		toInstall=Xwayland
-		;;
-	binchecker|crunch|i-Haklab|IbyC-fixer|converter|lock|pagekite|serverphp|torvpn)
+	converter)
 		SearchTool
 		yes|apt install curl
 		[[ $toInstall = blackbox ]] && {
@@ -481,66 +392,6 @@ fi
 #            i-Haklab by @Ivam3" > $HOME/.local/bin/john
 		chmod +x $HOME/.local/bin/john
 		;;
-
-	localtunnel-server|lt)
-		[[ $toInstall = localtunnel-server ]] && toInstall="lt"
-		SearchTool
-		yes|apt install nodejs git
-		git clone --quiet https://github.com/localtunnel/localtunnel $TMPDIR/localtunnel-server
-		cd $TMPDIR/localtunnel-server
-		npm install
-		npm install -g localtunnel
-		wget -q --tries=20 ${iHDB}/fix-tools/openurl.js -O $PREFIX/lib/node_modules/localtunnel/node_modules/openurl/openurl.js
-		rm -rf $TMPDIR/localtunnel-server
-		;;
-	ngrok)
-		SearchTool
-		arch1=$(uname -a|grep -o 'arm'|head -n1)
-		arch2=$(uname -a|grep -o 'Android'|head -n1)
-		command -v wget >/dev/null || yes|apt install wget
-		command -v termux-chroot >/dev/null || yes|apt install proot
-		[[ $(command -v ngrok) ]] && mv $(command -v ngrok) $(command -v ngrok).io
-		[[ -d ~/.ssh ]] || mkdir ~/.ssh
-		[[ -e ~/.ssh/config ]] || touch ~/.ssh/config
-		printf "host tunnel.us.ngrok.com\n\tHostkeyAlgorithms +ssh-rsa\n\tPubkeyAcceptedAlgorithms +ssh-rsa\n" >> ~/.ssh/config
-		bash <(curl -fsSL "http://git.io/abhacker-repo") --install ngrok-server
-		[[ $arch1 = 'arm' ]] || [[ $arch2 = 'Android' ]] && arch=arm || arch=386
-		wget -q https://bin.equinox.io/c/4VmDzA7iaHb/$1-stable-linux-$arch.zip -O $TMPDIR/$1-stable-linux-$arch.zip
-		if [[ -e $TMPDIR/$1-stable-linux-$arch.zip ]];then
-			[[ -d ~/.ngrok2 ]] || mkdir -p ~/.ngrok2
-			unzip -q $TMPDIR/$1-stable-linux-$arch.zip -d ~/.ngrok2/
-			rm -rf $TMPDIR/$1-stable-linux-$arch.zip
-			cat <<- EOF > $HOME/.local/bin/$1.io
-#!/usr/bin/bash
-#THIS SCRIPT EXECUTE NGROK TO AVOID 'bad address' ERROR
-
-[[ -e $PREFIX/bin/termux-chroot ]] || yes|apt install proot >/dev/null 2>/dev/null
-exec termux-chroot $HOME/.ngrok2/ngrok \${@:1}
-
-#     i-Haklab by Ivam3
-EOF
-			chmod +x $HOME/.local/bin/$1.io $HOME/.ngrok2/$1
-			PS3="(_➤) "
-			printf "$Y(_➤)$W $toInstall needs an authtoken from $1.com$Y\n"
-			select way in Set_authtoken Skip_this_step;do
-				case $way in
-					Set_authtoken)
-						while read -p "(_>)_authtoken─➤ " token && [ -z $token ];do
-							continue
-						done
-						exec $HOME/.local/bin/ngrok.io authtoken $token
-						break
-						;;
-					*)
-						printf "$Y(_➤)$W Don't forget set your token running:$Y\n ╰─────➤$W $toInstall authtoken <your-token>";exit
-						;;
-				esac
-			done
-		else
-			Err
-		fi
-		;;
-
 	shc|unshc)
 		SearchTool
 		shcVer="3.8.9"
@@ -578,24 +429,6 @@ EOF
 		rm -rf $TMPDIR/stegsnow_20130616.orig.tar.gz
 		chmod 750 $HOME/.local/bin/$toInstall
 		;;
-
-	torvpn)
-		SearchTool
-		yes|apt install tor torsocks proxychains-ng
-		wget -q $iHDB/etc/tor/torrc -O $PREFIX/etc/tor/torrc
-		wget -q $iHDB/etc/proxychains.conf -O $PREFIX/etc/proxychains.conf
-		for i in myip mypip swip ; do
-			wget -q $iHDB/bin/$i -O $HOME/.local/bin/$i
-			chmod 750 $HOME/.local/bin/$i
-		done
-		;;
-	twifo-cli|twifo)
-		[[ $toInstall = twifo-cli ]] && toInstall="twifo"
-		SearchTool
-		yes|apt install nodejs
-		npm install -global $toInstall-cli
-		;;
-
 	#::RUBY::#
 	beef)
 	  [[ -d $PREFIX/opt/$toInstall ]] || rm $HOME/.local/bin/$toInstall 2>/dev/null
@@ -820,19 +653,4 @@ EOF
 			wget -q $iHDB/fix-tools/$toInstall.py -O $TMPPATH/$toInstall.py
 		fi
 		;;
-	*)
-		printf "$R(_➤)$W Unable to locate $toInstall on i-Haklab\n"
-		sleep 0.5
-		printf "$G(_➤)$W Trying with Advance Packect Tool (APT)...\n"
-		pkg=$(pkg list-all 2>/dev/null|grep "$toInstall"|awk -F "/" '{print $1}') 
-		if [[ ! -z $pkg ]] && [[ $pkg = $toInstall ]];then
-			yes|apt install $toInstall
-		else
-			printf "$R(_➤)$W Tool $toInstall doesn't exist\n"
-			exit
-		fi
-		;;
 esac
-#ENDING SCRIPT
-printf "$G\n\n (_>)-> :::::::::::::::::: DONE !! ::::::::::::::::::: <-(<_)$Y\n\tTo run $1 execute :$G run $toInstall$W\nFor more information execute: i-Haklab about $1$Y\n\t   To fix issues going to$B t.me/Ivam3_Bot$W\n\n"
-#             i-Haklab by @Ivam3

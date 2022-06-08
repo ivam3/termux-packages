@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/recon-ng ]]; then
+	echo "Uninstalling requirements ..."
+  cd ${HOME}/.local/share/recon-ng
+	python -m pip --no-color --quiet --no-cache-dir uninstall -r REQUIREMENTS
+	rm -rf ${HOME}/.local/share/recon-ng
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

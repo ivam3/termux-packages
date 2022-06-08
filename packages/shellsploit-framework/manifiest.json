@@ -1,0 +1,14 @@
+{
+  "name": "shellsploit-framework",
+  "version": "0.3",
+  "arch": "all",
+  "homepage": "https://github.com/vasco2016/shellsploit-framework",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, python"],
+  "suggests": ["i-haklab"],
+  "description": "Generate customized shellcodes, backdoors, injectors for various operating system. And let's you obfuscation every byte via encoders.",
+  "files" :{
+    "shellsploit-installer": "bin/shellsploit-installer",
+    "shellsploit": "bin/shellsploit"
+  }
+}

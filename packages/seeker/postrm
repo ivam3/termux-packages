@@ -1,0 +1,3 @@
+#!/data/data/com.termux/files/usr/bin/bash
+echo "Uninstalling requirements ..."
+python -m pip --no-color --quiet --no-cache-dir uninstall requests packaging

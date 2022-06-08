@@ -1,0 +1,14 @@
+{
+  "name": "quack",
+  "version": "2.0",
+  "arch": "all",
+  "homepage": "https://github.com/Monkey-hk4/quack",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python, git"],
+  "suggests": ["i-haklab"],
+  "description": "A set of tools to provide denial of service attacks, SMS attack, HTTP attack tool and many other attack tools.",
+  "files" :{
+    "quack-installer": "bin/quack-installer",
+    "quack": "bin/quack"
+  }
+}
