@@ -1,0 +1,14 @@
+{
+  "name": "sherlock",
+  "version": "0.14.0",
+  "arch": "all",
+  "homepage": "https://github.com/sherlock-project/sherlock",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, python"],
+  "suggests": ["i-haklab"],
+  "description": "Hunt down social media accounts by username across social networks.",
+  "files" :{
+    "sherlock-installer": "bin/sherlock-installer",
+    "sherlock": "bin/sherlock"
+  }
+}

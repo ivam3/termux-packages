@@ -47,17 +47,6 @@ else
 fi
 
 case "$toInstall" in
-	sherlock)
-		SearchTool
-		yes|apt install git python
-		PIPup
-		PY=""
-		git clone --quiet https://github.com/$toInstall-project/$toInstall $TOOL/$toInstall
-		chmod 750 -R $TOOLS/$toInstall
-		printf "beautifulsoup\nbs\ncertifi\ncolorama\nlxml\nPySocks\nrequests\nrequests-futures\nsoupsieve\nstem\ntorrequest" >> $TMPDIR/requirements.txt
-		PYmodules
-		rm -f $TMPDIR/requirements.txt
-		;;
 	sublist3r)
 		SearchTool
 		yes|apt install python git

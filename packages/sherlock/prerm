@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/sherlock ]]; then
+	cd ${HOME}/.local/share/sherlock
+	python -m pip --no-color --quiet --no-cache-dir uninstall -r requirements.txt  
+	rm -rf ${HOME}/.local/share/sherlock
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

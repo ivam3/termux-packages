@@ -189,6 +189,22 @@ SHA1: 9f591ac054b2523deeaf3f6a867455b439fb8ccb
 SHA256: 3a55590e8745906c03dad0b569b60f2958bf5975fce8221881cabaab2a25c58c
 SHA512: c559b56ab61adb2607862bc7b6dd90cb05967f23770092a8c93e211572d1184b8cadb70c4376ff3adea890fcb8aa1ea38dcdf37c4bab9fe182216d0164aa895a
 
+Package: ghidra
+Version: 10.1.4
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: openjdk-17, termux-desktop-xfce
+Suggests: i-haklab, termux, wayland, app
+Homepage: https://github.com/NationalSecurityAgency/ghidra
+Description: Ghidra is a software reverse engineering (SRE) framework
+Filename: dists/stable/extras/binary-all/ghidra_10.1.4_all.deb
+Size: 2112
+MD5Sum: 4d179a0dd382f1e0ca44d7eff465ee3e
+SHA1: 55d69c6c3d196eecad49e4f27eca71cb15113c21
+SHA256: e0b9948919d37f75a2bb98e6aed236b861053970f9decc060ef7b76fcca90823
+SHA512: cbc906df353180272a525b74ce5c2e3fef519c5d0d1135a842af084853ba5d419f08de365b6ca946db22b5bc86cc7e0f169a9ef2dbe3c07bdeb183675d3dbdbf
+
 Package: ghost
 Version: 8.0.0
 Architecture: all
@@ -523,6 +539,22 @@ MD5Sum: 4983f3943d70b784e11e39b80f41c16e
 SHA1: 8f23c882ee4210fce5ada90482d1faf263a2577a
 SHA256: 7864f1efeedda327cd8e96e70bd6c21bfd63084083ec758972d8ee5f8a79bb86
 SHA512: 20e1b4f8462e89d9756574881086ba3545a98e7b24c3ddcac83377d7739c45f07eae751d089d586f64a86fd640db71deb5199712963e6808f7a3ce71199c6e0a
+
+Package: sherlock
+Version: 0.14.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, python
+Suggests: i-haklab
+Homepage: https://github.com/sherlock-project/sherlock
+Description: Hunt down social media accounts by username across social networks.
+Filename: dists/stable/extras/binary-all/sherlock_0.14.0_all.deb
+Size: 2020
+MD5Sum: bd0737f4a952ea0a76b69f52462bbf30
+SHA1: 599c396ebfb345df246521fb05cb706c56ee3d06
+SHA256: 418dff5f9c2273fee69230feeee217cfdcfcd037b2754fa424c0b5e47961c501
+SHA512: 3f88f2138b96474db537d429e3f91c0c01451a22681f794fc60013370cf2d22173ac368c3d0853e23f1d8895279668db72ad038480984f4ba4224a4318c9183c
 
 Package: wfuzz
 Version: 3.1.0

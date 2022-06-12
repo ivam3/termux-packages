@@ -35,6 +35,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [fbi](https://github.com/xHak9x/fbi) | Facebook account information gathering |
 | [fuzzdb](https://github.com/fuzzdb-project/fuzzdb) | Dictionary of attack patterns and primitives for black-box application fault injection and resource discovery |
 | [getnpusers](https://github.com/SecureAuthCorp/impacket/blob/master/examples/GetNPUsers.py) | List and get TGT for those users who have ownership |
+| [ghidra](https://github.com/NationalSecurityAgency/ghidra) | A software reverse engineering (SRE) framework. |
 | [ghost](https://github.com/EntySec/ghost) | Android post-exploitation framework that exploits the Android Debug Bridge to remotely access an Android device. |
 | [gobuster](https://github.com/OJ/gobuster/) | Directory/File, DNS and VHost busting tool written in Go |
 | [gophish](https://github.com/gophish/gophish) | Open-Source advance phishing toolkit |
