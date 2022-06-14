@@ -195,15 +195,15 @@ Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
 Depends: openjdk-17
-Suggests: i-haklab, termux-desktop-xfce, termux:wayland_app
+Suggests: i-haklab, termux-desktop-xfce
 Homepage: https://github.com/NationalSecurityAgency/ghidra
 Description: Ghidra is a software reverse engineering (SRE) framework
 Filename: dists/stable/extras/binary-all/ghidra_10.1.4_all.deb
-Size: 2104
-MD5Sum: 4cd5d34b4f71003a69fdbaf7194deb70
-SHA1: 8434fb20f0f07751048c286bbfd17e497e288b00
-SHA256: 7ab58a57c609584a340c812fcf87df4343049ed6ad65656ec8480e7924d0885a
-SHA512: a2f27a543e971b6208e34cd3f682ab6af991edc35d89b47003f5a9f274ae06404078aa551a1e95b01b341b56243c1767c5b872bda5227765808139761742c9d5
+Size: 2100
+MD5Sum: 20028cce7fb810104fdb1882f1274f34
+SHA1: 914867f9d41bca60d18617328d5e705afae5b440
+SHA256: e5b6e000bb9bf73116f13f5dd862b20129320eac86d0330e41070cd81ef9e5cd
+SHA512: 42456bce93279f244eaff846a421a5987af40fe713f8df926800338e625a279ed2862434fce178d565b537301828f927ae4aed02a498451d0c6293a6dd7443cd
 
 Package: ghost
 Version: 8.0.0
