@@ -3222,4 +3222,10 @@ data/data/com.termux/files/usr/bin/shellsploit                                  
 data/data/com.termux/files/usr/bin/shellsploit-installer                         shellsploit-framework
 data/data/com.termux/files/usr/bin/sherlock                                      sherlock
 data/data/com.termux/files/usr/bin/sherlock-installer                            sherlock
+data/data/com.termux/files/usr/bin/sublist3r                                     sublist3r
+data/data/com.termux/files/usr/bin/sublist3r-installer                           sublist3r
+data/data/com.termux/files/usr/bin/trape                                         trape
+data/data/com.termux/files/usr/bin/trape-installer                               trape
+data/data/com.termux/files/usr/bin/vulnx                                         vulnx
+data/data/com.termux/files/usr/bin/vulnx-installer                               vulnx
 data/data/com.termux/files/usr/bin/wfuzz-installer                               wfuzz

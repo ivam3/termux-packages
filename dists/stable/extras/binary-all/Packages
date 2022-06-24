@@ -318,7 +318,7 @@ SHA256: 2fda97fe521d0efc4a5617431cf160f27a7ed57f833e8735efe6dfc2f7e78db1
 SHA512: afe5c73ae0a82a14b99d57000a7e23e4857083a814f96508753eb5dbff1232b7772b19627b1921be2693ca53ce5d2650314ce23b64a466d11d8803ba7c3fdb9d
 
 Package: kalilinux
-Version: 2022.1
+Version: 2019.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 4
@@ -326,12 +326,12 @@ Depends: wget, curl, proot, tar
 Suggests: vncserver
 Homepage: https://github.com/ivam3/termux-packages
 Description: Open-source penetration testing platform for Android devices, allowing for access to the Kali toolset
-Filename: dists/stable/extras/binary-all/kalilinux_2022.1_all.deb
-Size: 3048
-MD5Sum: a63821e3a75722c0b17f7a6e4f6853a3
-SHA1: 4c9190979495b5b4ab89a36e423b34a701c5ef52
-SHA256: 116668c33c54ab627814e3c5f9890c44bf1ee70d41ac776ea684ac9e8fc2e5e9
-SHA512: ae8916801fc88b615bbfacf4e6e2786c85be9ca2b680891ab6fec74f36b76c0ba73f299363ead1bfbbd5d78584290813894430eaed225113d53617e8851701a1
+Filename: dists/stable/extras/binary-all/kalilinux_2019.1_all.deb
+Size: 3100
+MD5Sum: 2667339dcfb3b99e4607c1035a031b2e
+SHA1: 17bb2f89111641f0fd2dbd8a6422dbe9f458897d
+SHA256: 90c67ee289ea0f5fe8f44207ab336cd3235974bb3747335a4c1e8047e6859b2c
+SHA512: 5cb1cb25d3c253bfe929c7b9eb1da177080d125bc6962a8b06c141168f5fe734022c23ab0ec941dce427cb72ce1e5906e2526c50f4d178b8b8d4b906bbc63404
 
 Package: metasploit-framework
 Version: 6.2.3
@@ -555,6 +555,54 @@ MD5Sum: bd0737f4a952ea0a76b69f52462bbf30
 SHA1: 599c396ebfb345df246521fb05cb706c56ee3d06
 SHA256: 418dff5f9c2273fee69230feeee217cfdcfcd037b2754fa424c0b5e47961c501
 SHA512: 3f88f2138b96474db537d429e3f91c0c01451a22681f794fc60013370cf2d22173ac368c3d0853e23f1d8895279668db72ad038480984f4ba4224a4318c9183c
+
+Package: sublist3r
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: python, git
+Suggests: i-haklab
+Homepage: https://github.com/aboul3la/Sublist3r
+Description: Fast subdomains enumeration tool for penetration testers
+Filename: dists/stable/extras/binary-all/sublist3r_1.0_all.deb
+Size: 1976
+MD5Sum: b969073077ebc7294df8e1d26586042f
+SHA1: 0814d954b887523437bfd0f3c5c93b73eeebfd21
+SHA256: 2dc756183c4c281071e7d57703acb261a62021a4a8834539733199db6e92782f
+SHA512: 2e71ab52db1711f6744da5bacb60885caf18aea72e373b91f157fcc02d9706768590d80d5fc182ee4c6aa0c381008a0fccf68c2e2df037e9e495eb017f8af7b7
+
+Package: trape
+Version: 2.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, python
+Suggests: i-haklab
+Homepage: https://github.com/jofpin/trape
+Description: People tracker on the Internet
+Filename: dists/stable/extras/binary-all/trape_2.0_all.deb
+Size: 1948
+MD5Sum: c4382eb1e9e47fbe5a8d9254ad9ff321
+SHA1: 9c465e0d7b9512e12324264c52d7d7314bd0c315
+SHA256: 23e7bb2329a0190bb1857b7c2aa46498da780e91091094c1e596734ef4e514ff
+SHA512: 94203adb0c7d449e1691362f949ba0ca54d9b4e60927f37ffbe3e99d44f85f549f8df7d9739ec095a768a3834189c15533a65456513344aca54848dbb6c631ac
+
+Package: vulnx
+Version: 2.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, python
+Suggests: i-haklab
+Homepage: https://github.com/anouarbensaad/vulnx
+Description: An Intelligent Bot Auto Shell Injector that detects vulnerabilities in multiple types of Cms.
+Filename: dists/stable/extras/binary-all/vulnx_2.0_all.deb
+Size: 2004
+MD5Sum: 1eb1fa4d4f923ec41ae6a656952fb82e
+SHA1: 92e858b6ef542b9361eda0803c634f0748ca5052
+SHA256: d49d6d02eba225f18bf10b89a0a50f7d54aea921a6b5990a92d17f0dfe59724d
+SHA512: 559091b91240be266fca12608871c14e31f83f664d66c478a905cd536a480533f22cccca5267d2de356d63aca3a51b89614960347843f439516252e050e2613f
 
 Package: wfuzz
 Version: 3.1.0

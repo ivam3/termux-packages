@@ -1,0 +1,14 @@
+{
+  "name": "sublist3r",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/aboul3la/Sublist3r",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python, git"],
+  "suggests": ["i-haklab"],
+  "description": "Fast subdomains enumeration tool for penetration testers",
+  "files" :{
+    "sublist3r-installer": "bin/sublist3r-installer",
+    "sublist3r": "bin/sublist3r"
+  }
+}

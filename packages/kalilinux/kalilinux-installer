@@ -2,15 +2,13 @@
 IFS=$'\n\t'
 folder=${HOME}/kali-fs
 dlink="https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/APT"
+tarball="kali-rootfs.tar.xz"
 
 if [ -d "$folder" ]; then
-	first=1
-	echo "skipping downloading"
-fi
-tarball="kali-rootfs.tar.xz"
-if [ "$first" != 1 ];then
+	echo -en "\e[33mW:\e[0m Skipping downloading.\n"
+else
 	if [ ! -f $tarball ]; then
-		echo "Download Rootfs, this may take a while base on your internet speed."
+		echo "Download Rootfs, this may take a while based on your internet speed."
 		case `dpkg --print-architecture` in
 		aarch64)
 			archurl="arm64" ;;
@@ -29,17 +27,22 @@ if [ "$first" != 1 ];then
 		esac
 
 		if [ $archurl == "arm64" ]; then
-			wget "https://github.com/AndronixApp/AndronixOrigin/releases/download/kali-arm64-tarball/kali-rootfs-arm64.tar.xz" -O $tarball
+			wget --tries=20 "https://github.com/AndronixApp/AndronixOrigin/releases/download/kali-arm64-tarball/kali-rootfs-arm64.tar.xz" -O ${HOME}/$tarball
 		else
-			wget "https://github.com/Techriz/AndronixOrigin/blob/master/Rootfs/Kali/${archurl}/kali-rootfs-${archurl}.tar.xz?raw=true" -O $tarball
+			wget --tries=20 "https://github.com/Techriz/AndronixOrigin/blob/master/Rootfs/Kali/${archurl}/kali-rootfs-${archurl}.tar.xz?raw=true" -O ${HOME}/$tarball
 		fi
 	fi
-	cur=`pwd`
-	mkdir -p "$folder"
-	cd "$folder"
-	echo "Decompressing Rootfs, please be patient."
-	proot --link2symlink tar -xJf ${cur}/${tarball}||:
-	cd "$cur"
+	if [[ -e ${HOME}/$tarball ]]
+	then
+		mkdir -p "$folder"
+		cd "$folder"
+		echo "Decompressing Rootfs, please be patient."
+		proot --link2symlink tar -xJf ${HOME}/${tarball}||:
+		cd
+	else
+		echo -en \e[31m"E:\e[0m Rootfs missing ...\e[33mAborting.\e[0m\n"
+		exit 1
+	fi
 fi
 mkdir -p kali-binds
 bin=start-kali.sh
@@ -87,23 +90,25 @@ pkill dbus*
 pkill ssh*
 EOM
 
-echo -e "\e[31m Patching mirrorlist temporarily until further source update. Don't worry about GPG errors\e[0m"
-echo "deb [trusted=yes]  https://http.kali.org/kali kali-rolling main contrib non-free" > $folder/etc/apt/sources.list
-
+echo -en "\e[33mW:\e[0m Patching mirrorlist temporarily until further source update.\n   Don't worry about GPG errors.\e[0m\n"
+echo "deb [trusted=yes] https://http.kali.org/kali kali-rolling main contrib non-free" > $folder/etc/apt/sources.list
 echo "fixing shebang of $bin"
 termux-fix-shebang $bin
 echo "making $bin executable"
 chmod +x $bin
 echo "removing image for some space"
-rm $tarball
+[[ -e ${HOME}/$tarball ]] && { rm ${HOME}/$tarball;}
 
 #DE installation addition
-
 wget --tries=20 $dlink/XFCE4/xfce4_de.sh -O $folder/root/xfce4_de.sh
 clear
 echo "Setting up the installation of XFCE VNC"
 
+[[ -d $folder/etc/apt/apt.conf.d/ ]] || {
+	mkdir -p $folder/etc/apt/apt.conf.d;
+}
 echo "APT::Acquire::Retries \"3\";" > $folder/etc/apt/apt.conf.d/80-retries #Setting APT retry count
+
 echo "#!/bin/bash
 apt update -y && apt install wget sudo dbus-x11 -y
 clear

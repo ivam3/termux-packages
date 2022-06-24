@@ -47,17 +47,6 @@ else
 fi
 
 case "$toInstall" in
-	sublist3r)
-		SearchTool
-		yes|apt install python git
-		PIPup
-		PYv=""
-		git clone --quiet https://github.com/aboul3la/Sublist3r $TOO
-		cat $TOOLS/$toInstall/requirements.txt > $TMPDIR/requirements.txt
-		PYmodules
-		rm -f $TMPDIR/requirements.txt
-		;;
-
 	NULL-theharvester-NULL)
 		SearchTool
 		yes|apt install git python libxml2 libxml2-static libxml2-utils libxslt libxslt-static rust
@@ -71,34 +60,14 @@ case "$toInstall" in
 		rm -f $TMPDIR/requirements.txt
 		yes|apt remove rust && apt autoremove
 		;;
-	trape)
-		SearchTool
-		yes|apt install git python
-		PIPup
-		Pyv=""
-		git clone --quiet https://github.com/jofpin/$toinstall $TOOLS/$toInstall
-		cat $TOOLS/$toInstall/requirements.txt > $TMPDIR/requirements.txt
-		PYmodules
-		rm -rf $TMPDIR/requirements.txt
-		;;
-	vulnx)
-		SearchTool
-		yes|apt install git python
-		PIPup
-		PYv=""
-		git clone --quiet https://github.com/anouarbensaad/$toInstall $TOOLS/$toInstall
-		rm $TOOLS/$toInstall/install.sh
-		cat $TOOLS/$toInstall/requirements.txt > $TMPDIR/requirements.txt
-		PYmodules
-		rm -rf $TMPDIR/requirements.txt
-		;;
+
 	#::PYTHON2::#
 	a2sv)
 	  SearchTool
 		yes|apt install git python2 openssl
 		PIPup
 		Pyv="2"
-		git clone --quiet https://github.com/hahwul/$toInstall $TOOLS/$toInstall
+		git clone --quiet https://github.com/hahwul/a2sv $TOOLS/$toInstall
 		chmod +x $TOOLS/$toInstall/*
 		printf "argparse\nnetaddr" > $TMPDIR/requirements.txt
 		PYmodules
@@ -240,8 +209,10 @@ case "$toInstall" in
 		printf "numpy\n" > $TMPDIR/requirements.txt
 		PYmodules
 		rm -rf $TMPDIR/requirements.txt
-		;;#::BASH::#
+		;;
 
+
+		#::BASH::#
 	exploitdb)
 		SearchTool
 		yes|apt install git wget

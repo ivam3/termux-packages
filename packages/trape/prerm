@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/trape ]]; then
+	cd ${HOME}/.local/share/trape
+  python -m pip --no-color --quiet --no-cache uninstall requirements.txt
+	rm -rf ${HOME}/.local/share/trape
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
