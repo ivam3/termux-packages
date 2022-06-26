@@ -1,0 +1,14 @@
+{
+  "name": "gobuster",
+  "version": "3.1",
+  "arch": "all",
+  "homepage": "https://github.com/OJ/gobuster",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["golang"],
+  "suggests": ["i-haklab"],
+  "description": "Directory/File, DNS and VHost busting tool written in Go",
+  "files" :{
+    "gobuster-installer": "bin/gobuster-installer",
+    "gobuster": "bin/gobuster"
+  }
+}

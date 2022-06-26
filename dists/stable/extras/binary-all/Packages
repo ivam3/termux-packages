@@ -221,6 +221,22 @@ SHA1: 5725682803d9c5fa99ef4cfeff675d30acc1297e
 SHA256: d389f35baa33dcda9863f7fa6b58b2df78d72b2d93d6883c4202e65b5f98d6bf
 SHA512: d99ac74d439bb2d7c85aad713c3fcd84900c1a89e9b20f22dc8cbf04e0092e90695f6791eac75b874e55f73391a907136a99cc5464b81cf7372c9d4d29275e02
 
+Package: gobuster
+Version: 3.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: golang
+Suggests: i-haklab
+Homepage: https://github.com/OJ/gobuster
+Description: Directory/File, DNS and VHost busting tool written in Go
+Filename: dists/stable/extras/binary-all/gobuster_3.1_all.deb
+Size: 2056
+MD5Sum: b7a9378291b76fb1f16ce0cca3abb7c5
+SHA1: 14699b2085d6f9cfd2286e9dafc417090444cd7e
+SHA256: 81b21880269b2b84a070802ba1f512eff659cfc482c57cc5258aa4e8222031d0
+SHA512: 21c966d8e2aa3e7b675bb67b48badaa07775749accca7a0db71844967133529021ae66eaa5646681784aad4f7cb2f2ca1fe9e830e6dfae8373bad6507ff34f6b
+
 Package: hakku-framework
 Version: 1.0
 Architecture: all

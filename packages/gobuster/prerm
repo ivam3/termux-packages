@@ -1,0 +1,11 @@
+#!/data/data/com.termux/files/usr/bin/bash
+[[ -d ${HOME}/go/pkg/mod/github.com ]] && {
+	gob=$(find ${HOME}/go/pkg/mod/github.com -iname gobuster)
+	if [[ -d $gob/$(ls $gob) ]]
+	then
+		rm -rf $gob/$(ls $gob)
+		rm ${PREFIX}/lib/go/src/gobuster
+		rm ${HOME}/go/bin/gobuster
+	fi;
+}
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

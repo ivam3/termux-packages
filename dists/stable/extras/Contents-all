@@ -22,6 +22,8 @@ data/data/com.termux/files/usr/bin/getnpusers-installer                         
 data/data/com.termux/files/usr/bin/ghidra                                        ghidra
 data/data/com.termux/files/usr/bin/ghidra-installer                              ghidra
 data/data/com.termux/files/usr/bin/ghost-installer                               ghost
+data/data/com.termux/files/usr/bin/gobuster                                      gobuster
+data/data/com.termux/files/usr/bin/gobuster-installer                            gobuster
 data/data/com.termux/files/usr/bin/hakku                                         hakku-framework
 data/data/com.termux/files/usr/bin/hakku-installer                               hakku-framework
 data/data/com.termux/files/usr/bin/hcdecryptor                                   hcdecryptor
