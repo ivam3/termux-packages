@@ -477,16 +477,6 @@ fi
 		wget -q $iHDB/bin/$toInstall -O $HOME/.local/bin/$toInstall
 		gem install --quiet --silent $toInstall
 		;;
-	gobuster)
-		SearchTool
-		goEnv
-		go install github.com/OJ/$toInstall/v3@latest
-		chmod 751 -R ~/go
-		gob=$(find ~/go/pkg/mod/github.com -iname $toInstall)
-		ln -s $gob/$(ls $gob) $PREFIX/lib/go/src/$toInstall
-		cd $gob/$(ls $gob)
-		go get && go build && go install
-		;;
 	gophish)
 		SearchTool
 		goEnv
