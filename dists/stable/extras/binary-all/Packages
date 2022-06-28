@@ -340,14 +340,14 @@ Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 3
 Depends: wget, tar
 Suggests: i-haklab
-Homepage: https://openwall.info/wiki/john/custom-builds#Compiled-for-Android
+Homepage: https://github.com/openwall/john
 Description: Open Source password security auditing and password recovery tool.
 Filename: dists/stable/extras/binary-all/johntheripper_1.8.0_all.deb
-Size: 2160
-MD5Sum: a80124de9bd75101376dbfdb576c1ab2
-SHA1: 31f3e50089f7e2abe8b665e3e5fedf25d6b524d8
-SHA256: 9c467f42cb0a0d1a8263efb02b9e807d37e01c001682026807d31d7edc75b29f
-SHA512: 43c06ce3fb03e8884698004a144c491b075939407d163675f097a134132eb43e2b76225c6249e99edf771fdb7d0d0036638efa06f863abf1bf79ebcb6489b9cd
+Size: 2152
+MD5Sum: 173f57813527b7a0914ef8ff4172ee55
+SHA1: e148d2bf43457cf7d450d6d4caf3386f17d6d368
+SHA256: 4890f4ebc42674609df51465f710039bf55b6b9bcc9b8a5b88effe7a1658c3b9
+SHA512: 7fb739ba6af31480d776bfa9532005c497ca2516dc710d4fb337a8bea9025fb32ad48dd6db66a78c794684714bc82aee9f06c8a9c8404943a8af5def5bc51766
 
 Package: kalilinux
 Version: 2019.1

@@ -2,7 +2,7 @@
   "name": "johntheripper",
   "version": "1.8.0",
   "arch": "all",
-  "homepage": "https://openwall.info/wiki/john/custom-builds#Compiled-for-Android",
+  "homepage": "https://github.com/openwall/john",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
   "depends": ["wget, tar"],
   "suggests": ["i-haklab"],

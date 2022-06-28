@@ -4,11 +4,11 @@ JTRv="1.8.0"
 JTRtar="https://download.openwall.net/pub/projects/john/contrib/android/john-$JTRv-android-1.tar.gz"
 JTR="${HOME}/.local/share/johntheripper"
 
-echo "Cloning repository ..."
+echo "Cloning repository (It could take a while)..."
 git clone --quiet https://github.com/openwall/john $JTR
 wget --tries=20 --quiet $JTRtar -O ${TMPDIR}/john-$JTRv-android-1.tar.gz
 
-[[ -d ${HOME}/.local/share/johntgeripper ]] && [[ -e ${TMPDIR}/john-$JTRv-android-1.tar.gz ]] && {
+[[ -d ${HOME}/.local/share/johntheripper ]] && [[ -e ${TMPDIR}/john-$JTRv-android-1.tar.gz ]] && {
   tar -xvzf ${TMPDIR}/john-$JTRv-android-1.tar.gz -C $TMPDIR
   rm -rf $TMPDIR/john-$JTRv-android-1.tar.gz
   mv $TMPDIR/john-$JTRv-android/user/* $JTR
