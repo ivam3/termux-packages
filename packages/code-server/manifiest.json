@@ -1,0 +1,13 @@
+{
+  "name": "code-server",
+  "version": "4.4.0",
+  "arch": "all",
+  "homepage": "https://coder.com/docs/code-server/latest/npm",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["build-essential", "nodejs-lts", "npm", "yarn"],
+  "suggests": ["i-haklab"],
+  "description": "Code-server is VS Code with Node.js development environment running on a remote server, accessible through the browser.",
+  "files" :{
+    "code-server-installer": "bin/code-server-installer"
+  }
+}

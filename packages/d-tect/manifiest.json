@@ -1,0 +1,14 @@
+{
+  "name": "d-tect",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/shawarkhanethicalhacker/D-TECT-1",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, python2"],
+  "suggests": ["i-haklab"],
+  "description": "Pentesting the Modern Web.",
+  "files" :{
+    "d-tect-installer": "bin/d-tect-installer",
+    "d-tect": "bin/d-tect"
+  }
+}

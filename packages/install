@@ -73,64 +73,6 @@ case "$toInstall" in
 		PYmodules
 		rm -f $TMPDIR/requirements.txt
 		;;
-	adminpanel)
-		SearchTool
-		yes|apt install git python2
-		git clone --quiet https://github.com/Techzindia/admin_penal $TOOLS/$toInstall
-		chmod 750 $TOOLS/$toInstall/admin_panel_finder.py
-		mv $TOOLS/$toInstall/admin_panel_finder.py $TOOLS/$toInstall/$toInstall.py
-		;;
-	d-tect)
-		SearchTool
-		yes|apt install git python2
-		PIPup
-		PYv="2"
-		git clone --quiet https://github.com/shawarkhanethicalhacker/D-TECT-1 $TOOLS/$toInstall
-		chmod +x -R $TOOLS/$1/*
-		printf "colorama\nbeautifulsoup" > $TMPDIR/requirements.txt
-		PYmodules
-		rm -f $TMPDIR/requirements.txt
-		;;
-	cc-genpro)
-		SearchTool
-		yes|apt install git python2 neofetch
-		git clone --quiet https://github.com/HackeRStrategy/cc-genpro1.2 $TOOLS/$toInstall
-		chmod 750 $TOOLS/$toInstall/*
-		;;
-	cloudbunny)
-		SearchTool
-		yes|apt install python2 git
-		PIPup
-		PYv="2"
-		git clone --quiet https://github.com/Warflop/CloudBunny $TOOLS/$toInstall
-		chmod +x -R $TOOLS/$toInstall
-		printf "certificates" > $TMPDIR/requirements.txt
-		PYmodules
-		rm -f $TMPDIR/requirements.txt
-		;;
-	credmap)
-		SearchTool
-		yes|apt install python2 git
-		PIPup
-		PYv="2"
-		git clone --quiet https://github.com/lightos/$toInstall $TOOLS/$toInstall
-		chmod 750 $TOOLS/$toInstall/$toInstall.py
-		printf "urllib2" > $TMPDIR/requirements.txt
-		PYmodules
-		rm -f $TMPDIR/requirements.txt
-		;;
-	cryptovenom)
-		SearchTool
-		yes|apt install git python2
-		PIPup
-		PYv="2"
-		git clone --quiet https://github.com/lockedbyte/$toInstall $TOOLS/$toInstall
-		cp $TOOLS/$toInstall/aux/$toInstall.py $TOOLS/$toInstall
-		chmod 711 -R $TOOLS/$toInstall
-		printf "base58\nscrypt\npyblake2\npycrypto\ncrypto\nbcrypt\nrc2\ntwofish\ngeesefly\nskein pycipher\nnumpy\nCrypto\npasslib\nbase91\nmom\ngmpy2\nmore_itertools\nargon2_cffi" > $TMPDIR/requirements.txt
-		PYmodules
-		rm -f $TMPDIR/requirements.txt
-		;;
 	fbi)
 		yes|apt install git python2
 		PIPup
@@ -237,18 +179,6 @@ case "$toInstall" in
 		chmod 711 $TOOLS/$toInstall/*
 		;;
 
-	nexphisher)
-		SearchTool
-		[[ -e $PREFIX/bin/ngrok ]] || { printf >&2 "$R\n(_➤) ERROR :$W ngrok is not installed\n";ctrl_c;exit;}
-		yes|apt install git
-		git clone --quiet https://github.com/htr-tech/$toInstall $TOOLS/$toInstall
-		chmod +x $TOOLS/$toInstall/*
-		cd $TOOLS/$toInstall
-		bash tmux_setup
-		mkdir $TOOLS/$toInstall/.htr
-		ln -s ${HOME}/.local/bin/ngrok.io $TOOLS/$toInstall/.htr/ngrok 2>$LOGFILE
-		wget -q $iHDB/fix-tools/$toInstall -O $TOOLS/$toInstall/$toInstall
-		;;
 	userrecon)
 		SearchTool
 		yes|apt install git
@@ -264,24 +194,6 @@ case "$toInstall" in
 		;;
 
 	#::BIN::#
-	code-server)
-		[[ $(uname -m) = "aarch64" ]] || { printf >&2 "$R(_➤)$W Incompatible architecture";exit;}
-		SearchTool
-		yes|apt install build-essential python git nodejs-lts yarn
-		yarn config set ignore-engines true
-		yarn global add $toInstall --ignore-engines
-		printf "$G(_>)_Set_a_login_password$W "
-		while read -p ":─➤ " passwd && [ -z $passwd ];do
-			continue
-		done
-		[[ -d ~/.config/code-server ]] || mkdir -p ~/.config/$toInstall
-		cat <<- CONF > ~/.config/$toInstall/config.yaml
-		bind-addr: 127.0.0.1:8080
-		auth: password
-		password: $passwd
-		cert: false
-		CONF
-		;;
 	converter)
 		SearchTool
 		yes|apt install curl
@@ -306,52 +218,7 @@ case "$toInstall" in
 		done
 		rm -rf $hpath
 		;;
-	JohnTheRipper|john)
-		[[ $toInstall = JohnTheRipper ]] && toInstall="john"
-		SearchTool
-		JTRv="1.8.0"
-		JTRtar="https://download.openwall.net/pub/projects/john/contrib/android/john-$JTRv-android-1.tar.gz"
-		yes|apt install wget
-		wget -q $JTRtar -O $TMPDIR/john-$JTRv-android-1.tar.gz
-		tar -xvzf $TMPDIR/john-$JTRv-android-1.tar.gz -C $TMPDIR
-		rm -rf $TMPDIR/john-$JTRv-android-1.tar.gz
-		mkdir -p $PREFIX/opt/john
-		JTR="$PREFIX/opt/john"
-		mv $TMPDIR/john-$JTRv-android/user/* $JTR
-		ln -s $JTR/john.conf $JTR/john.ini
-		sleep 2
-		case $(uname -m) in
-			aarch64)
-				mv $TMPDIR/john-$JTRv-android/libs/arm64-v8a/* $JTR
-				;;
-			arm)
-				mv $TMPDIR/john-$JTRv-android/libs/armeabi/* $JTR
-				;;
-			armhf)
-				mv $TMPDIR/john-$JTRv-android/libs/armeabi-v7a/* $JTR
-				;;
-			i686)
-				mv $TMPDIR/john-$JTRv-android/libs/x86/* $JTR
-				;;
-			x86_64)
-				mv $TMPDIR/john-$JTRv-android/libs/x86_64/* $JTR
-				;;
-		esac
-		rm -rf $TMPDIR/john-$JTRv-android
-		chmod +x $JTR/*
-		printf "#!/usr/bin/bash
-#This script find and execute johntheripper tool
-R='\\033[1;31m'
-W='\\033[0m'
-if [ -d \$PREFIX/opt/john ];then
-	cd \$PREFIX/opt/john
-	./john \$@
-else
-	printf \"\$R(_➤)\$W JohnTheRipper is not installed\$W\"
-fi
-#            i-Haklab by @Ivam3" > $HOME/.local/bin/john
-		chmod +x $HOME/.local/bin/john
-		;;
+
 	shc|unshc)
 		SearchTool
 		shcVer="3.8.9"

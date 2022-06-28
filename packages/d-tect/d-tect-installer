@@ -1,0 +1,15 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+echo "Cloning repository ..."
+git clone --quiet https://github.com/shawarkhanethicalhacker/D-TECT-1 ${HOME}/.local/share/d-tect
+[[ -d ${HOME}/.local/share/d-tect ]] && {
+  echo "Installing requirements ...";
+  chmod 751 -R ${HOME}/.local/share/d-tect;
+  cd ${HOME}/.local/share/d-tect;
+  python2 -m pip --no-color --quiet --no-cache-dir install colorama beautifulsoup
+} || {
+  echo -en "\e[31mE:\e[0m d-tect directory missing ... \e[33mAborting.\e[0m\n";
+  exit 1;
+}
+exit 0
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

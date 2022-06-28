@@ -1,0 +1,19 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+yarn config set ignore-engines true
+yarn global add code-server --ignore-engines
+echo -en "\e[33m[?] Set a login password:\e[0m "
+while read passwd && [ -z $passwd ];do
+  continue
+done
+[[ -d ${HOME}/.config/code-server ]] || {
+  mkdir -p ${HOME}/.config/code-server;
+}
+cat <<- CONF > ${HOME}/.config/code-server/config.yaml
+bind-addr: 127.0.0.1:8080
+auth: password
+password: $passwd
+cert: false
+CONF
+exit 0
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -1,0 +1,14 @@
+{
+  "name": "credmap",
+  "version": "0.1",
+  "arch": "all",
+  "homepage": "https://github.com/lightos/credmap",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, python2"],
+  "suggests": ["i-haklab"],
+  "description": "The Credential Social Network Mapper.",
+  "files" :{
+    "credmap-installer": "bin/credmap-installer",
+    "credmap": "bin/credmap"
+  }
+}

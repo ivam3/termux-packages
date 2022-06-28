@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+yarn global remove code-server --ignore-engines
+if [[ -d ${HOME}/.config/code-server ]]; then
+  rm -rf ${HOME}/.config/code-server
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

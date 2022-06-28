@@ -14,6 +14,22 @@ SHA1: 44a5b4abcc42d03437e52153a084af9546642d08
 SHA256: f1b0a0750c0a94a46422870a5e7d0ec4fc21a3017bae9f7c5e9bdfbc1f3b1542
 SHA512: 4aa984ddc1c8269b6fde0612649fa81b2e125c658e35ea559324dee02e06299a3e8b9e211f3172cf52612fa4afb66dc36e9e8949b3b60fd1e0171cf678bd93b2
 
+Package: adminpanel
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, python2
+Suggests: i-haklab
+Homepage: https://github.com/Techzindia/admin_penal
+Description: Find Your Website Admin Panel.
+Filename: dists/stable/extras/binary-all/adminpanel_1.0_all.deb
+Size: 1896
+MD5Sum: 5a685c843fd5df0c1b3d9e19b4f8a0d3
+SHA1: 589a8dd8442161ddf602bf2a79e39577150a9f4e
+SHA256: 60b2fcbf47b51212565b89418101aa3784e28a5f0eb1044ad048ab412bb584af
+SHA512: 7139c21e077d92db08932f9c81b2d178a9397bc9e3389c5caf2bfc676cf157fb37a299468c93adf7f2901d5ceb69ab6f73dffccf73eda7e05d17aca44c49afaf
+
 Package: androbugs
 Version: 1.0
 Architecture: all
@@ -92,6 +108,86 @@ MD5Sum: 57989d9cee1fc9aa3e31f4b49d73cbe1
 SHA1: eaa9bb1fc8e0daa57942950a95233205f472d892
 SHA256: c2894d774a0de149c732aa6db30714d4850e17cc4b1257a223dd78c801505fcc
 SHA512: af933341c8e97603465ab5bb16c11b7ab4e070631bfff2a6f080f08e489b686f7291647ab06fdb0f9ecf8c8bc96e4390140fae47ca855025ae8b39fc4b5e9b25
+
+Package: cloudbunny
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, python2
+Suggests: i-haklab
+Homepage: https://github.com/Warflop/CloudBunny
+Description: Tool to capture the real IP of the server that uses a WAF as a proxy or protection.
+Filename: dists/stable/extras/binary-all/cloudbunny_1.0_all.deb
+Size: 1960
+MD5Sum: 420158447809c3ae92df2bbec8db1dc1
+SHA1: 76d0060f30f9da9a8b453af3e731549682bc553e
+SHA256: 1601b2513205743a4790e15838b5b67e5b15b0c9e17cf12bd1082bb8d54952db
+SHA512: c713528892d4ba4a4fa429acb578644a930d78f0ec4cf05ae9d96bc08800fea54445164cdea8c56318729eaf0c532b95f7d07d7a459a92956009dee1e7092136
+
+Package: code-server
+Version: 4.4.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: build-essential, nodejs-lts, npm, yarn
+Suggests: i-haklab
+Homepage: https://coder.com/docs/code-server/latest/npm
+Description: Code-server is VS Code with Node.js development environment running on a remote server, accessible through the browser.
+Filename: dists/stable/extras/binary-all/code-server_4.4.0_all.deb
+Size: 1824
+MD5Sum: e4932dc1d411476b2ee4b27c2e06c8f0
+SHA1: b08c553a38556d0b18d7a8718b2b2b76d9b05374
+SHA256: 12acffac96acb8655f123eca7cb26c046182793ab3479eb2f134b37f8bf74025
+SHA512: 4b6ef46cc3a2c807584440f705432f8a98994551419a974aa7043fb192ab899a51c84faf82ceeb78dc64629e8ff0f4a028ac71607b266403bc88995a6963c992
+
+Package: credmap
+Version: 0.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, python2
+Suggests: i-haklab
+Homepage: https://github.com/lightos/credmap
+Description: The Credential Social Network Mapper.
+Filename: dists/stable/extras/binary-all/credmap_0.1_all.deb
+Size: 1892
+MD5Sum: 850332e00c97ad185cf78bb38769c034
+SHA1: 3afbfa22600376a0f1254c7a6104e22cc870d82d
+SHA256: 1a193a262a41566073d8bfc4a22966957776f9e233a2c9b07e34e0357c0e01b4
+SHA512: f3c048d8b86220d83dc92eab1f87afa225d9d30554f2ae989b8dd8c74faab07c2c58322fa558cd567eb51e0873f4b983607be1d6eef9af0fea3d16b649cdf0be
+
+Package: cryptovenom
+Version: 1.0.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 221135
+Depends: python2
+Suggests: i-haklab
+Homepage: https://https://github.com/lockedbyte/cryptovenom
+Description: OpenSource tool which contains a lot of cryptosystems and cryptoanalysis methods all in one.
+Filename: dists/stable/extras/binary-all/cryptovenom_1.0.1_all.deb
+Size: 27481632
+MD5Sum: 72834ebc21c5b68cff2a8282148f5c80
+SHA1: e0f10e51a26266ada9e7adcc30e1643318b980bd
+SHA256: 99c1a7d6b6cfba39209bbd245c715b75e797d0d534940d0bf47be9d028c32852
+SHA512: 81713024f83ff4d8e9b99f633a395c951f09a7f4105ef4e620c15d031ab5954b3d8a23cc94531ba4c7b7c7999613659b32469b4910f059f177970b47b3b4b5bb
+
+Package: d-tect
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, python2
+Suggests: i-haklab
+Homepage: https://github.com/shawarkhanethicalhacker/D-TECT-1
+Description: Pentesting the Modern Web.
+Filename: dists/stable/extras/binary-all/d-tect_1.0_all.deb
+Size: 1924
+MD5Sum: eb6d58e015e70c71c1a381205717cf14
+SHA1: e5c1d0225b27377d1c39f5d34941e030222652de
+SHA256: f57076c29fd4155e916c49950bdaaced953846f7e69621587394f5ee5de02077
+SHA512: cae2d3debb3ff56e05d7892853221996f880739373ba6d9139ac77dcf1584b510a0c6d9aab018da4c1421d4a0a11f390f067ee263239ba046150df6e8e48926b
 
 Package: dex2jar
 Version: 2.1
