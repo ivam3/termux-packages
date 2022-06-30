@@ -6,7 +6,7 @@ wget --tries=20 --quiet http://www.datsi.fi.upm.es/~frosal/sources/shc-$v.tgz \
   -O ${TMPDIR}/shc-$v.tgz
 [[ -e ${TMPDIR}/shc-$v.tgz ]] && {
   echo "Decompressing ..."
-  tar -xzf ${TMPDIR}/shc-$v.tgz -C ${HOME}/.local/share;
+  tar -xzf ${TMPDIR}/shc-$v.tgz -C ${HOME}/.local/share/;
   rm -f ${TMPDIR}/shc-$v.tgz;
   echo "Compiling ..."
   chmod 751 -R ${HOME}/.local/share/shc-$v;

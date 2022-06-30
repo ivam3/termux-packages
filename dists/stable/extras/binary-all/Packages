@@ -813,20 +813,20 @@ SHA256: 4835b094ee066048d39b5390bc6ac091cc5a65f87dfd7e25e2311c7235ddf82d
 SHA512: dbd943e51a186e2f979fa198bf3878a656486d29787d2ed765c57ae65b261c47d48436476dd9e298607fa34a5590042dbb68dd7e6d3dd4582b729e4e939f2bb9
 
 Package: shc
-Version: 3.8.9
+Version: 3.8.9b
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: cmake make automake
+Depends: wget, tar, cmake, make, automake
 Suggests: i-haklab, unshc
 Homepage: https://github.com/yanncam/UnSHc
 Description: Shell script compiler.
-Filename: dists/stable/extras/binary-all/shc_3.8.9_all.deb
-Size: 1856
-MD5Sum: 443a534eb1ecc4786cfdf5ff305b650c
-SHA1: 43804dae925d6ee48194e27f9a3a86e6016ee142
-SHA256: 495b4efe8642c18b46d5f93b126f0e90a96f675c4e9246c11648abca5359f4dd
-SHA512: e285a0bf97b9fe409a32cc9647013c2d25349a5eef390731c3c5a3e05d61713e798344724a2daad94151115df78aa528698d8ddf86a3ba7a948a30b69e9b7f3e
+Filename: dists/stable/extras/binary-all/shc_3.8.9b_all.deb
+Size: 1868
+MD5Sum: 4853316c84b0228790ddfea74dd3672c
+SHA1: 531f975da54e6bd205d74bed6f60e7e465dcc513
+SHA256: da43b7f13a5dc964619df07b4bab689b2ea8663f0a3a2d35257b5f3cd4c3ca7a
+SHA512: 4bd2a1b23ff97f848be6a0d2c4e4f62e2eaae69b8d664fe5db7c68ab6af3acf67b75c0553564fe385f1b1d5dc7e5bbf7469ae9284255888c3ab839d59884cbbf
 
 Package: shellsploit-framework
 Version: 0.3
