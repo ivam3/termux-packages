@@ -9,7 +9,6 @@
   "description": "Penetration testing tool that focuses on the web browser.",
   "files" :{
     "beef-installer": "bin/beef-installer",
-    "beef": "bin/beef",
-    "GeoIP/GeoLite2-City.mmdb": "/data/data/com.termux/files/usr/opt/GeoIP/GeoLite2-City.mmdb"
+    "beef": "bin/beef"
   }
 }

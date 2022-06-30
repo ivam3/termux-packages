@@ -50,17 +50,17 @@ Package: beef
 Version: 0.5.4.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 66644
+Installed-Size: 3
 Depends: git, ruby, nodejs
 Suggests: i-haklab, metasploit-framework
 Homepage: https://github.com/beefproject/beef
 Description: Penetration testing tool that focuses on the web browser.
 Filename: dists/stable/extras/binary-all/beef_0.5.4.0_all.deb
-Size: 21348152
-MD5Sum: 7d93ddef5c276bf18f29e12b2f8d0deb
-SHA1: 73730cc36d7a3d298f8235233f5033a4bcd623c8
-SHA256: 38f3d421af8260782f7f0348a71a777d9b387994e6f5f67a0e50a8af7caaaaa4
-SHA512: f2d15e49148848d9501981910b4a53f388966e2ee43bc3d3257a75056525a9094550a556eb59ed8cf1c5820f2f266832f79274340d269e21fafe85c6b6e550ee
+Size: 2708
+MD5Sum: aba17779390cb08b5b79498590644f61
+SHA1: a6504cc5a465d299ab71fea5088663cb863f6e16
+SHA256: 76a280c871d579e656fa89b664f9525d97f0bc4bcfefd7a5c8e457f5b7949588
+SHA512: a42b70e3410ba9f9648885692ed3f489d22c1b732b636b552a0a7a29a84bf5b79e1bc75655cdba2c8ceb16c59c0127132e457928fb454f5be282ba90cf3b931b
 
 Package: binwalk
 Version: 2.3.3

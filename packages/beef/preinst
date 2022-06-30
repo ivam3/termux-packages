@@ -12,6 +12,7 @@ else
   if [[ -d ${HOME}/.local/share/beef ]]
   then
     rm -rf ${HOME}/.local/share/beef
+    [[ -d ${PREFIX}/opt/GeoIP ]] && { rm -rf ${PREFIX}/opt/GeoIP;}
   else
     mkdir -p ${HOME}/.local/share 2>/dev/null
   fi
