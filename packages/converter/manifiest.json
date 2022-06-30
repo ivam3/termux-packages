@@ -1,0 +1,13 @@
+{
+  "name": "converter",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/miluxmil/milux/blob/master/converter",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["wget, ffmpeg, imagemagick"],
+  "suggests": ["i-haklab"],
+  "description": "Easy multimedia file converter.",
+  "files" :{
+    "converter-installer": "bin/converter-installer"
+  }
+}

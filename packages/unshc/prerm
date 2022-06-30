@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -e ${PRERIX}/bin/unshc ]]; then
+  rm -f ${PRERIX}/bin/unshc
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

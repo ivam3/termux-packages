@@ -1,0 +1,13 @@
+{
+  "name": "unshc",
+  "version": "0.1",
+  "arch": "all",
+  "homepage": "https://github.com/yanncam/UnSHc",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["wget"],
+  "suggests": ["i-haklab, shc"],
+  "description": "UnSHc is a tool to unpack SHC files.",
+  "files" :{
+    "unshc-installer": "bin/unshc-installer"
+  }
+}

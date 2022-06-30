@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/fbi ]]; then
+  cd ${HOME}/.local/share/fbi
+  python2 -m pip --no-color --quiet --no-cache-dir uninstall -r requirements.txt
+  rm -rf ${HOME}/.local/share/fbi
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

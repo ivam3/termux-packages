@@ -1,0 +1,13 @@
+{
+  "name": "shc",
+  "version": "3.8.9b",
+  "arch": "all",
+  "homepage": "https://github.com/yanncam/UnSHc",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["cmake make automake"],
+  "suggests": ["i-haklab, unshc"],
+  "description": "Shell script compiler.",
+  "files" :{
+    "shc-installer": "bin/shc-installer"
+  }
+}

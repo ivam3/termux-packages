@@ -1,0 +1,26 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+echo "Cloning repository ..."
+git clone --quiet https://github.com/beefproject/beef ${HOME}/.local/share/beef
+[[ -d ${HOME}/.local/share/beef ]] && {
+  echo "Configuring beef ..."
+  chmod 751 -R ${HOME}/.local/share/beef;
+  sed -i "5a gem 'net-smtp', require: false" ${HOME}/.local/share/beef/Gemfile;
+  sed "s|database: '/opt/GeoIP/GeoLite2-City.mmdb'|database: '${PREFIX}/opt/GeoIP/GeoLite2-City.mmdb'|g" \
+    -i ${HOME}/.local/share/beef/config.yaml
+  sed 's|passwd: "beef"|passwd: "Ivam3byCinderella"|g' -i ${HOME}/.local/share/beef/config.yaml
+  sed '155 s|enable: false|enable: true|g' -i ${HOME}/.local/share/beef/config.yaml
+  sed "s|ssl_version: 'TLS1'|ssl_version: 'TLS1.2'|g" -i \
+    ${HOME}/.local/share/beef/extensions/metasploit/config.yaml
+  echo "Installing gems ..."
+  cd ${HOME}/.local/share/beef;
+  update --system
+  gem install bundler
+  bundle install
+  curl -Ls https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/libexec/fixbigdecimal|bash;
+} || {
+  echo -en "\e[31mE:\e[0m beef directory missing ... \e[33mAborting.\e[0m\n";
+  exit 1;
+}
+exit 0
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

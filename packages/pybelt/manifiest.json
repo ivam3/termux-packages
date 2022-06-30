@@ -1,0 +1,14 @@
+{
+  "name": "pybelt",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/Ekultek/Pybelt",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python2, git"],
+  "suggests": ["i-haklab"],
+  "description": "A cracking hashes tool without prior knowledge of the algorithm.",
+  "files" :{
+    "pybelt-installer": "bin/pybelt-installer",
+    "pybelt": "bin/pybelt"
+  }
+}

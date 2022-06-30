@@ -1,0 +1,14 @@
+{
+  "name": "fbi",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/xHak9x/fbi",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, python2"],
+  "suggests": ["i-haklab"],
+  "description": "Accurate facebook account information gathering.",
+  "files" :{
+    "fbi-installer": "bin/fbi-installer",
+    "fbi": "bin/fbi"
+  }
+}

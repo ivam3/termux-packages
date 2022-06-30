@@ -1,0 +1,13 @@
+{
+  "name": "hydra-gtk",
+  "version": "9.4",
+  "arch": "all",
+  "homepage": "https://github.com/vanhauser-thc/thc-hydra",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, cmake, make, automake, libgcrypt, libssh, libidn, openssl, openssl-tool"],
+  "suggests": ["i-haklab, x11-repo, xwayland"],
+  "description": "Number one brute forcing tool in ciber security on cli and x11(graphical interface).",
+  "files" :{
+    "hydra-installer": "bin/hydra-installer"
+  }
+}

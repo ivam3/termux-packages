@@ -1,0 +1,15 @@
+{
+  "name": "beef",
+  "version": "0.5.4.0",
+  "arch": "all",
+  "homepage": "https://github.com/beefproject/beef",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, ruby, nodejs"],
+  "suggests": ["i-haklab, metasploit-framework"],
+  "description": "Penetration testing tool that focuses on the web browser.",
+  "files" :{
+    "beef-installer": "bin/beef-installer",
+    "beef": "bin/beef",
+    "GeoIP/GeoLite2-City.mmdb": "/data/data/com.termux/files/usr/opt/GeoIP/GeoLite2-City.mmdb"
+  }
+}

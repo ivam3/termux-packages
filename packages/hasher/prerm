@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/hasher ]]; then
+  rm -rf ${HOME}/.local/share/hasher
+fi
+python2 -m pip --no-color --quiet --no-cache-dir uninstall progressbar passlib
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

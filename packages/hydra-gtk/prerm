@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/hydra ]]; then
+  rm -rf ${HOME}/.local/share/hydra
+fi
+for i in hydra xhydra; do
+  [[ -e ${PREFIX}/bin/$i ]] && rm -rf ${PREFIX}/bin/$i
+done
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

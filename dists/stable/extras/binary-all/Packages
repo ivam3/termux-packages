@@ -46,6 +46,22 @@ SHA1: 698cb1bf25581cf7783be0a646002387838c6fe2
 SHA256: 9335598e9b931497d3a0a298b7c9ccfb21f2ec46578a95a28fb3597ce8ad5a02
 SHA512: 9d7e42918802c6c0549384dd032feaefbc71a99bd479881911def6585e0680cd67f7abb7bf865d1edc9a3728e9835127ee5922479cc0c6077a1761d0cc3dd4f1
 
+Package: beef
+Version: 0.5.4.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 66644
+Depends: git, ruby, nodejs
+Suggests: i-haklab, metasploit-framework
+Homepage: https://github.com/beefproject/beef
+Description: Penetration testing tool that focuses on the web browser.
+Filename: dists/stable/extras/binary-all/beef_0.5.4.0_all.deb
+Size: 21348152
+MD5Sum: 7d93ddef5c276bf18f29e12b2f8d0deb
+SHA1: 73730cc36d7a3d298f8235233f5033a4bcd623c8
+SHA256: 38f3d421af8260782f7f0348a71a777d9b387994e6f5f67a0e50a8af7caaaaa4
+SHA512: f2d15e49148848d9501981910b4a53f388966e2ee43bc3d3257a75056525a9094550a556eb59ed8cf1c5820f2f266832f79274340d269e21fafe85c6b6e550ee
+
 Package: binwalk
 Version: 2.3.3
 Architecture: all
@@ -130,16 +146,32 @@ Version: 4.4.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: build-essential, nodejs-lts, npm, yarn
+Depends: build-essential, nodejs-lts, yarn
 Suggests: i-haklab
 Homepage: https://coder.com/docs/code-server/latest/npm
 Description: Code-server is VS Code with Node.js development environment running on a remote server, accessible through the browser.
 Filename: dists/stable/extras/binary-all/code-server_4.4.0_all.deb
-Size: 1824
-MD5Sum: e4932dc1d411476b2ee4b27c2e06c8f0
-SHA1: b08c553a38556d0b18d7a8718b2b2b76d9b05374
-SHA256: 12acffac96acb8655f123eca7cb26c046182793ab3479eb2f134b37f8bf74025
-SHA512: 4b6ef46cc3a2c807584440f705432f8a98994551419a974aa7043fb192ab899a51c84faf82ceeb78dc64629e8ff0f4a028ac71607b266403bc88995a6963c992
+Size: 1828
+MD5Sum: 0ef3b7e6003aff5bd4b3cd2b086504fc
+SHA1: 08241077b21e4aa24049abdd9bc00aadb261a668
+SHA256: b3fd48e4aef8fc015ef7656dd0ecf3929ab8fab256fb2d9c566985bcae890d50
+SHA512: 5ad429a02a929a827c91a5b297019d51d09b074199bcbbd22633f6dfde4365c9f7a7a539d777e1519a14981d6dd53b97d3adae8bd4fc4a1d92c0456e66925e2f
+
+Package: converter
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: wget, ffmpeg, imagemagick
+Suggests: i-haklab
+Homepage: https://github.com/miluxmil/milux/blob/master/converter
+Description: Easy multimedia file converter.
+Filename: dists/stable/extras/binary-all/converter_1.0_all.deb
+Size: 1616
+MD5Sum: a04790617505f9aa9d3c84da0107828f
+SHA1: 970864cc0bf73b20548d9958d240b6b0059b412f
+SHA256: c496a11af12f0d83f1a5b1bae7181aeb4922e99487707cdc3853375709a8209b
+SHA512: b923c7526bfcaf325443c2ebd0275bab414a3cd5db55909413f455f0ca6c70e7656d45af8006c925537740cf8ab50e28024de652ea9c859bd66be91d1365af41
 
 Package: credmap
 Version: 0.1
@@ -161,17 +193,17 @@ Package: cryptovenom
 Version: 1.0.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 221135
+Installed-Size: 163082
 Depends: python2
 Suggests: i-haklab
 Homepage: https://https://github.com/lockedbyte/cryptovenom
 Description: OpenSource tool which contains a lot of cryptosystems and cryptoanalysis methods all in one.
 Filename: dists/stable/extras/binary-all/cryptovenom_1.0.1_all.deb
-Size: 27481632
-MD5Sum: 72834ebc21c5b68cff2a8282148f5c80
-SHA1: e0f10e51a26266ada9e7adcc30e1643318b980bd
-SHA256: 99c1a7d6b6cfba39209bbd245c715b75e797d0d534940d0bf47be9d028c32852
-SHA512: 81713024f83ff4d8e9b99f633a395c951f09a7f4105ef4e620c15d031ab5954b3d8a23cc94531ba4c7b7c7999613659b32469b4910f059f177970b47b3b4b5bb
+Size: 27517408
+MD5Sum: 97731591d11d52c4bd333265c2e870e1
+SHA1: 43cbc96dd2151a20e37df4eb3fe936e0210329ec
+SHA256: 53d4178ff7495d3800c1c2fc939617faad4e4ffb02a307ab08ae00fbbe5d8fa1
+SHA512: 818c859b7932057e0cb0955634ed49e2086357ffb71bc397693a45d34918c3cf61a96ab327485cc65261555f37159ecedae37b6c7e147c7b200346e4f28bfce9
 
 Package: d-tect
 Version: 1.0
@@ -269,6 +301,38 @@ SHA1: 45ec34fa16061f826d39cea8613efa45536dfdc3
 SHA256: 99f00cae88eed809ace4f2e89b612967fce6876023115f3a28f081226c27beed
 SHA512: be21dca673603adc33ca09da92f8fe7e1ef0ebff485371aea527318ffc017108b1665709987e3979e557aad640cebbdcc3086bd868d64e607d058c060991b12b
 
+Package: exploitdb
+Version: 4.1.3
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, wget
+Suggests: i-haklab
+Homepage: https://github.com/offensive-security/exploitdb
+Description: The official Exploit Database repository.
+Filename: dists/stable/extras/binary-all/exploitdb_4.1.3_all.deb
+Size: 1972
+MD5Sum: f2b65d7b495159b3dc41ca475d51bb1f
+SHA1: a21886562be18ecd8dc205cc1903635655e15c38
+SHA256: 6b884fc8afbfd3188b0e1c6a476f81b2ade8c034490d0e6f29db8df165aa6ed5
+SHA512: 487fe751adf03d498ddcac08043d8d404a926dd8650748b8160f24a5acbc5015efd1e97a7322d7303ae2ac900606f1dac933215fa885b53abe0e2ae7be1e8140
+
+Package: fbi
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, python2
+Suggests: i-haklab
+Homepage: https://github.com/xHak9x/fbi
+Description: Accurate facebook account information gathering.
+Filename: dists/stable/extras/binary-all/fbi_1.0_all.deb
+Size: 1956
+MD5Sum: 8024bdf67b94e9f66c1efac66a6cb477
+SHA1: c1763532af2bc621863071cb6fdd90d1c25b0386
+SHA256: b5d96b7dd43725d84a49ee2237b364cf18058e4a91b0b08204adc062cf5eedf7
+SHA512: e0e63038972cf26c19f67b03c2671b94a82e82e81ea4b9e01e8e062c67566c43ccbc2acaee9b5b3b76b586a70405330ac067e3b60a8c521eff513130aa183773
+
 Package: getnpusers
 Version: 0.10.0
 Architecture: all
@@ -349,6 +413,22 @@ SHA1: 6189bafbbe610c7d9db9ca0de03f9bfcc3694fb6
 SHA256: a0559618a4efd5e3557dde4606f9dee054e71103ebf42901da3fa0552597a707
 SHA512: 6c8dd5b22a722f0f11c1fd0909629bce87d58a033a2d52b174255c1d114565127b1cab8233e4ae96520296c4b36d85fcb3c27b816dce68c2887aefbf89eeb12e
 
+Package: hasher
+Version: 3.0.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: python2, git
+Suggests: i-haklab
+Homepage: https://github.com/CiKu370/hasher
+Description: Hash cracker with auto detect hash.
+Filename: dists/stable/extras/binary-all/hasher_3.0.1_all.deb
+Size: 1948
+MD5Sum: 319658972a584febd27e51a7ab4214a8
+SHA1: 8317b7abb14bd7cfadc8ed24e5499ca666fe472d
+SHA256: 878f8aed49fe460a8e95d116ca87f5cffebef431498d88e34e550319c723f52c
+SHA512: 292391e7c628f4dc18fb626ac5df1b5154387a35ffb81b67364e318f72511e896ba9de15ea5270bc8f4b956299a884bed350e7e40674b1f58c302178ad9fbbed
+
 Package: hcdecryptor
 Version: 2.0.1
 Architecture: all
@@ -380,6 +460,22 @@ MD5Sum: acf2cf314636c9b910355027a9269b6b
 SHA1: 0d7e4ccda14bedd0f14f2f04283760112979b106
 SHA256: 6122644aac782379e84315f34df5bf68c56e075168672776ecf46d1d72ad275c
 SHA512: 337580bb3870dc6ea1c0a32adff60871dd8b01081c4e1bfd17857c018b2bb8bc7bf9cf14d28f07aca80c8e106c9d08436abe7769427931d1ad85b9cfaa9de6e6
+
+Package: hydra-gtk
+Version: 9.4
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: git, cmake, make, automake, libgcrypt, libssh, libidn, openssl, openssl-tool
+Suggests: i-haklab, x11-repo, xwayland
+Homepage: https://github.com/vanhauser-thc/thc-hydra
+Description: Number one brute forcing tool in ciber security on cli and x11(graphical interface).
+Filename: dists/stable/extras/binary-all/hydra-gtk_9.4_all.deb
+Size: 2024
+MD5Sum: db8dcd8e583e56003a11a85d285631ea
+SHA1: fb1381bc0aede872cc6a48ae7c78feb2a572611a
+SHA256: 9d0749108ec211c4773e0d58ef66ebcf04f2cf0472a855c46be0a80ae135e44e
+SHA512: 057301d95fa63233b6d866c235a2464ad921443b224382a7232a84106b632b345411a168614da01cd6fc3faa70e35210d4095e939e14555d5bfffb18c7ee8343
 
 Package: i-haklab
 Version: 3.5.2
@@ -460,6 +556,38 @@ MD5Sum: 2667339dcfb3b99e4607c1035a031b2e
 SHA1: 17bb2f89111641f0fd2dbd8a6422dbe9f458897d
 SHA256: 90c67ee289ea0f5fe8f44207ab336cd3235974bb3747335a4c1e8047e6859b2c
 SHA512: 5cb1cb25d3c253bfe929c7b9eb1da177080d125bc6962a8b06c141168f5fe734022c23ab0ec941dce427cb72ce1e5906e2526c50f4d178b8b8d4b906bbc63404
+
+Package: kerbrute
+Version: 0.9.18
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: python2, git, rust
+Suggests: i-haklab
+Homepage: https://github.com/TarlogicSecurity/kerbrute
+Description: An script to perform kerberos bruteforcing by using the Impacket library.
+Filename: dists/stable/extras/binary-all/kerbrute_0.9.18_all.deb
+Size: 2000
+MD5Sum: 95529db8d6b64be42fb5cc4b443142ff
+SHA1: be5103ee21bf3cd1d8e97de2c013458e283bfef7
+SHA256: e53e60cf54e17f430a263527686e6f5c1397bfb87a3413fb62d204e0cc783723
+SHA512: 0511b56fb4e6d145d8641732fc3a4c7082d53854116d95c63c647dca7d0c7622597ebef753245e64e2ea3957522f0e2403be79850413c4bcf3b7f135c3d849bb
+
+Package: lockphish
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, php, openssh
+Suggests: i-haklab, ngrok
+Homepage: https://github.com/JasonJerry/lockphish
+Description: Tool for phishing attacks on the lock screen, designed to grab Windows credentials, Android PIN.
+Filename: dists/stable/extras/binary-all/lockphish_1.0_all.deb
+Size: 1988
+MD5Sum: cae3673539e8e91efeac02a76ef8b8c6
+SHA1: 7aa081cb006b7da1a0fdc178f0816b4d6844441a
+SHA256: f94eb8fb1e099adfa407cd51d5ef92899b4e215f88f5a70ed56d960e59222f97
+SHA512: f49bd56365d86a19bb4953c208e8d2cefd53ffcaa1c9106e97eed65d40275b57c1e495f9dc509a845f171d881996140fe6b9bf6eb7fe55c491b8f1f585a2042f
 
 Package: metasploit-framework
 Version: 6.2.3
@@ -556,6 +684,22 @@ SHA1: 6ddf37a08a15a309f19a5e3c8f9cbfe708d30e66
 SHA256: 44927a59cc5891c9f9727a865430dd7f2216046e4807828cb5ba4c3e7e850ff7
 SHA512: 848cdb4747777a7142808001e72bb0cdfb7ce50671fbebb7d6907ce0a9e41858d20c1ffda5732614d5099dc0771363fe41147d6caffe6d2512d4e32deb54a04b
 
+Package: pybelt
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: python2, git
+Suggests: i-haklab
+Homepage: https://github.com/Ekultek/Pybelt
+Description: A cracking hashes tool without prior knowledge of the algorithm.
+Filename: dists/stable/extras/binary-all/pybelt_1.0_all.deb
+Size: 1984
+MD5Sum: 25da4d2c4492c0c6c6881a7d2dfebd04
+SHA1: 10e062c1132e7ded8f26155fed253dc153c0dba3
+SHA256: a99f89571a1d99bbef2e78c1d083b1d2d9384b2ff0ed12a9f0be750e83f62bd6
+SHA512: ff83fdca03588a3d0727fc005548a49e96b578de657fb40baac6665d83ccbc57498dbc6e4a16be2630b946d9f22f03178fe833e7478810f3cd871adaa48722a1
+
 Package: quack
 Version: 2.0
 Architecture: all
@@ -587,6 +731,22 @@ MD5Sum: 3f45aaf124bc8ef80c94b9671f007479
 SHA1: acecef9e7b96fa3698a98f7ab6c264b63a38a67f
 SHA256: e2fc74748086c9395ab4495cf271767e3af48e01b66feb18008b7f2b35e7bbdf
 SHA512: f3dd78419857075fe7c1693828ccbec934b131ccd73d0dbfc798ff21ce4bc5272146ff9c5d3d57cb87025d93931a0f17ec27d882b4cbea360b7561c775a8102a
+
+Package: recondog
+Version: 2.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: python, git
+Suggests: i-haklab
+Homepage: https://github.com/s0md3v/ReconDog
+Description: Reconnaissance Swiss Army Knife
+Filename: dists/stable/extras/binary-all/recondog_2.0_all.deb
+Size: 1956
+MD5Sum: e8b628739e0d8450369c39e75bef86ee
+SHA1: a353ae934c6027f45126425049cdd0f65645b28a
+SHA256: 1b6b7d203a06b55595e2eb6db7a9bbf455d2d3e71813afc6b763f8db514f157a
+SHA512: 3f1bdd85b3f1064ac22deb01eb7f2df5e06dd76b09ce896af09ace032d3e93d4fa66e876729e08877eaa13062733b2b1e35a502c7e212d3b957c760f4dd4b56d
 
 Package: routersploit
 Version: 3.4.1
@@ -652,6 +812,22 @@ SHA1: e5402adbbfb3db5d3298cd6adccc28ffb78dcf82
 SHA256: 4835b094ee066048d39b5390bc6ac091cc5a65f87dfd7e25e2311c7235ddf82d
 SHA512: dbd943e51a186e2f979fa198bf3878a656486d29787d2ed765c57ae65b261c47d48436476dd9e298607fa34a5590042dbb68dd7e6d3dd4582b729e4e939f2bb9
 
+Package: shc
+Version: 3.8.9b
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: cmake make automake
+Suggests: i-haklab, unshc
+Homepage: https://github.com/yanncam/UnSHc
+Description: Shell script compiler.
+Filename: dists/stable/extras/binary-all/shc_3.8.9b_all.deb
+Size: 1860
+MD5Sum: 9befd7f62f00ad2a770a6593e1279a1d
+SHA1: e2999bd4ce7ec0c876054015581512a8a1ec99ce
+SHA256: 49a6ae38128d50c53594da079d6c2ae83b2e07ee589d0cc32eb7a8a5d02173f5
+SHA512: c9861bb71da46fee07a8f4cfc5912971bee9145c0d12a745e1e6bc184ac6ee0ce3bfa7a5effd1963ef1968e118273c4feafa42ad7d54035c63eade49f2255fba
+
 Package: shellsploit-framework
 Version: 0.3
 Architecture: all
@@ -683,6 +859,22 @@ MD5Sum: bd0737f4a952ea0a76b69f52462bbf30
 SHA1: 599c396ebfb345df246521fb05cb706c56ee3d06
 SHA256: 418dff5f9c2273fee69230feeee217cfdcfcd037b2754fa424c0b5e47961c501
 SHA512: 3f88f2138b96474db537d429e3f91c0c01451a22681f794fc60013370cf2d22173ac368c3d0853e23f1d8895279668db72ad038480984f4ba4224a4318c9183c
+
+Package: sqliv
+Version: 2.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: python2, git, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static
+Suggests: i-haklab
+Homepage: https://github.com/the-robot/sqliv
+Description: Massive SQL injection vulnerability scanner.
+Filename: dists/stable/extras/binary-all/sqliv_2.0_all.deb
+Size: 1992
+MD5Sum: 0f5495530a68b69049ae3a2e2706f8e8
+SHA1: e4ec04e2f6709db2603964806907456e618fa917
+SHA256: b2234ea07f3c875b924d05628f5d7d181407723ee318362b898de1ee0dc64dd4
+SHA512: 0657453babf3317d1470e08944b2a12d0c1072e3c108ebd586c4ca3effb46de6ace303e3c115f52a97c90a54363fd1c6e7c57026f6d170ce43265bdb4d72d611
 
 Package: sublist3r
 Version: 1.0
@@ -716,6 +908,38 @@ SHA1: 9c465e0d7b9512e12324264c52d7d7314bd0c315
 SHA256: 23e7bb2329a0190bb1857b7c2aa46498da780e91091094c1e596734ef4e514ff
 SHA512: 94203adb0c7d449e1691362f949ba0ca54d9b4e60927f37ffbe3e99d44f85f549f8df7d9739ec095a768a3834189c15533a65456513344aca54848dbb6c631ac
 
+Package: unshc
+Version: 0.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: wget
+Suggests: i-haklab, shc
+Homepage: https://github.com/yanncam/UnSHc
+Description: UnSHc is a tool to unpack SHC files.
+Filename: dists/stable/extras/binary-all/unshc_0.1_all.deb
+Size: 1688
+MD5Sum: 851664897620fec247ae82920926e798
+SHA1: d60460b66db9f4d1df8c1aeb3dc135cecffd16a0
+SHA256: 1b91cb3b46c57b011913350c8fd8a2321d4623c3d53625663bbf459059a0a64e
+SHA512: 7976f4e5091785b0357bd82449191365a8a7846cd8e31d651b0df41c60234f28281295277806fade184728df27af147c94eea1d4af1b8f02d3f9d20a087c6a1e
+
+Package: userrecon
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git
+Suggests: i-haklab
+Homepage: https://github.com/issamelferkh/userrecon
+Description: Find usernames across over 75 social networks.
+Filename: dists/stable/extras/binary-all/userrecon_1.0_all.deb
+Size: 1860
+MD5Sum: cfde30317c184dbb38dba017c00897ca
+SHA1: a88a4fcf4d2e0f748bdad07bc88ec3b8e80ed143
+SHA256: c6cd998a9eb0cdc138516b63f86dfe6a1cdcbf1be063ba60c728113f08f4f090
+SHA512: 853fe049cf8fcadb579dbf3dd2ecb711215334948cc47d2699c4f9364c0e05131e98cd1c3cd4259b23fcfdc0f12250869de2c229839145ae039ac8d929912252
+
 Package: vulnx
 Version: 2.0
 Architecture: all
@@ -731,6 +955,38 @@ MD5Sum: 1eb1fa4d4f923ec41ae6a656952fb82e
 SHA1: 92e858b6ef542b9361eda0803c634f0748ca5052
 SHA256: d49d6d02eba225f18bf10b89a0a50f7d54aea921a6b5990a92d17f0dfe59724d
 SHA512: 559091b91240be266fca12608871c14e31f83f664d66c478a905cd536a480533f22cccca5267d2de356d63aca3a51b89614960347843f439516252e050e2613f
+
+Package: wbruter
+Version: 3.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git
+Suggests: i-haklab, adbfastboot
+Homepage: https://github.com/wuseman/WBRUTER
+Description: WBRUTER is a tool that brute-forces a target's web-based password
+Filename: dists/stable/extras/binary-all/wbruter_3.0_all.deb
+Size: 1872
+MD5Sum: f0461e001aca97655f15530e940eaddb
+SHA1: 2f3607ec3ab628403450a5d6e83a57e8ebb13b0f
+SHA256: 0d6e990d8aeffef197335a2f3e5875e2f1b47b29205f6d7aabce14d5279a3d12
+SHA512: f444d9aa9130208d0aab29452956120fab803e8bfe64042a0689e7c47a1b10eb0b6b0dc7f2818900183f38948633fef4912640c8b078237c96ba269a77455c24
+
+Package: websploit
+Version: 3.0.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: python2, git
+Suggests: i-haklab
+Homepage: https://github.com/The404Hacking/websploit
+Description: Advanced MITM framework.
+Filename: dists/stable/extras/binary-all/websploit_3.0.0_all.deb
+Size: 1940
+MD5Sum: 85ca56c2d62f0575fb7e166875be7fc0
+SHA1: df7bc29edcdb2886cb180daa4b7d945ad911b9af
+SHA256: 66fafa2fd7c0ca240a3938d78ae46d2b44547d67522bc50a21d76fd75d4aca58
+SHA512: 688d39f9afee23f0a2c7556de73822d505764e9142b292e2275c4ff52833ae6f1819bb85595c67b7b7193b45309b3e0ed6f35621ac342d4dba429368b764c2ae
 
 Package: wfuzz
 Version: 3.1.0

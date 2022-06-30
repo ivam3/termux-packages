@@ -1,0 +1,14 @@
+{
+  "name": "sqliv",
+  "version": "2.0",
+  "arch": "all",
+  "homepage": "https://github.com/the-robot/sqliv",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python2, git, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static"],
+  "suggests": ["i-haklab"],
+  "description": "Massive SQL injection vulnerability scanner.",
+  "files" :{
+    "sqliv-installer": "bin/sqliv-installer",
+    "sqliv": "bin/sqliv"
+  }
+}

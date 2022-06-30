@@ -43,7 +43,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [hasher](https://github.com/CiKu370/hasher) | Hash cracker with auto detect hash |
 | [hatcloud](https://github.com/HatBashBR/HatCloud) | Make bypass in CloudFlare for discover real IP. |
 | [hunner](https://github.com/b3-v3r/Hunner) | Hacking framework to DOS sites, ftp|ssh bruteforce, scan sql and xxs vulnerabilities. |
-| [hydra](https://github.com/vanhauser-thc/thc-hydra) | Number one brute forcing tool in ciber security. |
+| [hydra-gtk](https://github.com/vanhauser-thc/thc-hydra) | Number one brute forcing tool in ciber security. |
 | [infoga](https://github.com/m4ll0k/infoga) | Gathering email accounts informations from different public source and check if emails was leaked using haveibeenpwned.com API. |
 | [ipgeolocations](https://github.com/maldevel/IPGeoLocation) | A tool to retrieve IP Geolocation information. |
 | [johntheripper](https://github.com/openwall/john) | Advanced offline password cracker, which supports hundreds of hash and cipher types, and runs on many operating systems, CPUs, GPUs, and even some FPGAs. |
@@ -75,6 +75,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [tangalanga](github.com/elcuervo/tangalanga) | : The Zoom conference scanner hacking tool. |
 | [termux-desktop-xfce](https://github.com/Yisus7u7/termux-desktop-xfce) | Set up a beautiful xfce desktop in termux. |
 | [trape](https://github.com/jofpin/trape) | OSINT analysis and research tool. |
+| [unshc](https://github.com/yanncam/UnSHc) | The Shell Script UnCompiler (UNSHC) decode and decrypt SHC file on X86/x64 architecture. |
 | [userrecon](https://github.com/issamelferkh/userrecon) | Find usernames across over 75 social networks. |
 | [vulnx](https://github.com/anouarbensaad/vulnx) | An intelligent bot auto shell injector that detects vulnerabilities in multiple types of cms. |
 | [wbruter](https://github.com/wuseman/WBRUTER) | Disable device pin code aslong as usb debugging and brute force methods like dictionary attacks for gmail, ftp, rar, zip and some other file extensions. |

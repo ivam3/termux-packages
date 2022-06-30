@@ -1,0 +1,14 @@
+{
+  "name": "websploit",
+  "version": "3.0.0",
+  "arch": "all",
+  "homepage": "https://github.com/The404Hacking/websploit",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python2, git"],
+  "suggests": ["i-haklab"],
+  "description": "Advanced MITM framework.",
+  "files" :{
+    "websploit-installer": "bin/websploit-installer",
+    "websploit": "bin/websploit"
+  }
+}

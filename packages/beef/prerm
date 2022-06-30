@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/beef ]]; then
+  rm -rf ${HOME}/.local/share/beef
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

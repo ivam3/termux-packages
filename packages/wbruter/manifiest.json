@@ -1,0 +1,14 @@
+{
+  "name": "wbruter",
+  "version": "3.0",
+  "arch": "all",
+  "homepage": "https://github.com/wuseman/WBRUTER",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git"],
+  "suggests": ["i-haklab, adbfastboot"],
+  "description": "WBRUTER is a tool that brute-forces a target's web-based password",
+  "files" :{
+    "wbruter-installer": "bin/wbruter-installer",
+    "wbruter": "bin/wbruter"
+  }
+}

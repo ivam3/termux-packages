@@ -1,0 +1,14 @@
+{
+  "name": "userrecon",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/issamelferkh/userrecon",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git"],
+  "suggests": ["i-haklab"],
+  "description": "Find usernames across over 75 social networks.",
+  "files" :{
+    "userrecon-installer": "bin/userrecon-installer",
+    "userrecon": "bin/userrecon"
+  }
+}
