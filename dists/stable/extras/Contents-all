@@ -3755,6 +3755,7 @@ data/data/com.termux/files/usr/bin/shellsploit                                  
 data/data/com.termux/files/usr/bin/shellsploit-installer                         shellsploit-framework
 data/data/com.termux/files/usr/bin/sherlock                                      sherlock
 data/data/com.termux/files/usr/bin/sherlock-installer                            sherlock
+data/data/com.termux/files/usr/bin/slowhttptest-installer                        slowhttptest
 data/data/com.termux/files/usr/bin/sqliv                                         sqliv
 data/data/com.termux/files/usr/bin/sqliv-installer                               sqliv
 data/data/com.termux/files/usr/bin/sublist3r                                     sublist3r

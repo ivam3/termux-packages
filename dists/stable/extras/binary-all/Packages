@@ -51,16 +51,16 @@ Version: 0.5.4.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 3
-Depends: git, ruby, nodejs
+Depends: git, ruby, nodejs, imagemagick
 Suggests: i-haklab, metasploit-framework
 Homepage: https://github.com/beefproject/beef
 Description: Penetration testing tool that focuses on the web browser.
 Filename: dists/stable/extras/binary-all/beef_0.5.4.0_all.deb
-Size: 2708
-MD5Sum: aba17779390cb08b5b79498590644f61
-SHA1: a6504cc5a465d299ab71fea5088663cb863f6e16
-SHA256: 76a280c871d579e656fa89b664f9525d97f0bc4bcfefd7a5c8e457f5b7949588
-SHA512: a42b70e3410ba9f9648885692ed3f489d22c1b732b636b552a0a7a29a84bf5b79e1bc75655cdba2c8ceb16c59c0127132e457928fb454f5be282ba90cf3b931b
+Size: 2720
+MD5Sum: 44fe2fe0e625f7f16659d9784c8c3528
+SHA1: 65628e1dde952b450aed94bd9a6a80c2b5b1dd0b
+SHA256: e9808cffa841384500e7775565fddb355f8559a36dfb0ea050af55ecc51cf448
+SHA512: a278d4510e8910d437d44d66784ae57559db2e4994e89a65f9e6d264c5d3dd430243b51adb07c383b1894fa4761b62167da38c1d5579166f532f22dc6824b5a6
 
 Package: binwalk
 Version: 2.3.3
@@ -859,6 +859,22 @@ MD5Sum: bd0737f4a952ea0a76b69f52462bbf30
 SHA1: 599c396ebfb345df246521fb05cb706c56ee3d06
 SHA256: 418dff5f9c2273fee69230feeee217cfdcfcd037b2754fa424c0b5e47961c501
 SHA512: 3f88f2138b96474db537d429e3f91c0c01451a22681f794fc60013370cf2d22173ac368c3d0853e23f1d8895279668db72ad038480984f4ba4224a4318c9183c
+
+Package: slowhttptest
+Version: 1.8.3
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: git, make, automake
+Suggests: i-haklab, dos-a-tool
+Homepage: https://github.com/shekyan/slowhttptest
+Description: SlowHTTPTest is a highly configurable tool that simulates some Application Layer Denial of Service attacks by prolonging HTTP connections in different ways.
+Filename: dists/stable/extras/binary-all/slowhttptest_1.8.3_all.deb
+Size: 1888
+MD5Sum: 9517866ed44d16ccbbd0f9ab4f0deede
+SHA1: 0546fa1e16cb43abc906a5130e2ced05d4511eb5
+SHA256: 8973b5ed6919652db363e0cdd543b531e77b53bfcb2ba6582ee3914c2a2d9059
+SHA512: 55fd3b51be5a1cd759efe3fa68f17da7368a94f9bbdc36045977ce6511aca5e0e7e213d76d4333cf09e624521de0ecf454a7f55c33bfd0b2eefca94949b58e6f
 
 Package: sqliv
 Version: 2.0

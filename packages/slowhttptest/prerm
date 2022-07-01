@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/slowhttptest ]]; then
+  rm -rf ${HOME}/.local/share/slowhttptest
+fi
+if [[ -e $PREFIX/bin/slowhttptest ]]; then
+  rm $PREFIX/bin/slowhttptest
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

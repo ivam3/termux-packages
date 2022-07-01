@@ -1,0 +1,13 @@
+{
+  "name": "slowhttptest",
+  "version": "1.8.3",
+  "arch": "all",
+  "homepage": "https://github.com/shekyan/slowhttptest",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, make, automake"],
+  "suggests": ["i-haklab, dos-a-tool"],
+  "description": "SlowHTTPTest is a highly configurable tool that simulates some Application Layer Denial of Service attacks by prolonging HTTP connections in different ways.",
+  "files" :{
+    "slowhttptest-installer": "bin/slowhttptest-installer"
+  }
+}

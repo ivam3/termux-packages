@@ -4,7 +4,7 @@
   "arch": "all",
   "homepage": "https://github.com/beefproject/beef",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["git, ruby, nodejs"],
+  "depends": ["git, ruby, nodejs, imagemagick"],
   "suggests": ["i-haklab, metasploit-framework"],
   "description": "Penetration testing tool that focuses on the web browser.",
   "files" :{

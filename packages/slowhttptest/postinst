@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/bash
+bash ${PREFIX}/bin/slowhttptest-installer
+rm -rf ${PREFIX}/bin/slowhttptest-installer
+wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+chmod 750 /data/data/com.termux/files/usr/bin/fixer
+echo "[*] slowhttptest installation finished."
+echo "[!] For help going to https://t.me/Ivam3_Bot."
+echo "[*] @Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

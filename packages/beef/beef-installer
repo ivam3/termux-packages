@@ -14,10 +14,11 @@ git clone --quiet https://github.com/beefproject/beef ${HOME}/.local/share/beef
     ${HOME}/.local/share/beef/extensions/metasploit/config.yaml
   echo "Installing gems ..."
   cd ${HOME}/.local/share/beef;
-  update --system;
+  gem update --system;
   gem install bundler;
   bundle install;
   curl -Ls https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/libexec/fixbigdecimal|bash;
+  echo "Installing GeoIP ..."
   wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/beef/GeoIP.zip \
     -O ${TMPDIR}/GeoIP.zip;
   [[ -d ${PREFIX}/opt/ ]] || mkdir -p ${PREFIX}/opt;
