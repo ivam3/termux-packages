@@ -1,0 +1,14 @@
+{
+  "name": "tangalanga",
+  "version": "0.1",
+  "arch": "all",
+  "homepage": "https://github.com/elcuervo/tangalanga",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["golang, wget, unzip"],
+  "suggests": ["i-haklab"],
+  "description": "The Zoom conference scanner hacking tool.",
+  "files" :{
+    "tangalanga-installer": "bin/tangalanga-installer",
+    "tangalanga": "bin/tangalanga"
+  }
+}

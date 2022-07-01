@@ -1,0 +1,13 @@
+{
+  "name": "wpscan",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://https://github.com/wpscanteam/wpscan",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, ruby"],
+  "suggests": ["i-haklab"],
+  "description": "WordPress security scanner.",
+  "files" :{
+    "wpscan-installer": "bin/wpscan-installer"
+  }
+}

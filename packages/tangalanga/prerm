@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/go/pkg/mod/github.com/elcuervo ]]; then
+  rm -rf ${HOME}/go/pkg/mod/github.com/elcuervo
+fi
+if [[ -e ${HOME}/go/bin/tangalanga ]]; then
+  rm -rf ${HOME}/go/bin/tangalanga
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

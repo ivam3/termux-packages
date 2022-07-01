@@ -1,0 +1,14 @@
+{
+  "name": "redhawk",
+  "version": "2.0",
+  "arch": "all",
+  "homepage": "https://github.com/Tuhinshubhra/RED_HAWK",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, php"],
+  "suggests": ["i-haklab"],
+  "description": "All in one tool for Information Gathering, Vulnerability Scanning and Crawling.",
+  "files" :{
+    "redhawk-installer": "bin/redhawk-installer",
+    "redhawk": "bin/redhawk"
+  }
+}

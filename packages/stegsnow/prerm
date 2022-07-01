@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/stegsnow ]]; then
+  rm -rf ${HOME}/.local/share/stegsnow
+fi
+if [[ -e ${PREFIX}/bin/stegsnow ]]; then
+  rm -f ${PREFIX}/bin/stegsnow
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

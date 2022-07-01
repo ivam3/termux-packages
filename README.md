@@ -13,7 +13,6 @@ This project is with the purpose of offering easy and fast access to the install
 | [adminpanel](https://github.com/Techzindia/admin_penal) | Find website's admin panel |
 | [amass](https://github.com/OWASP/Amass) | In-depth Attack Surface Mapping and Asset Discovery |
 | [androbugs](https://github.com/AndroBugs/AndroBugs_Framework) | Android vulnerability scanner |
-| [aquatone](https://github.com/michenriksen/aquatone) | A Tool for Domain Flyovers |
 | [beef](https://www.beefproject.com) | powerful and intuitive security tool focuses on leveraging browser vulnerabilities to assess the security posture of a target |
 | [binwalk](https://github.com/ReFirmLabs/binwalk) | Tool for analyzing, reverse engineering, and extracting firmware images | 
 | [blackbox](https://github.com/jothatron/blackbox) | A penetration testing framework|

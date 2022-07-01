@@ -1,3 +1,19 @@
+Package: acccheck
+Version: 0.2.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, perl
+Suggests: i-haklab
+Homepage: https://github.com/qashqao/acccheck
+Description: Windows SMB Password Dictionary Attack Tool.
+Filename: dists/stable/extras/binary-all/acccheck_0.2.1_all.deb
+Size: 1872
+MD5Sum: 5de12c7d086a06985108e9abed54a1f1
+SHA1: 3c0181f9ec71cf0bf9fbbf201141afb2be3faa75
+SHA256: 5ab191a3bed8e8d4f90cff70f2b285fb984f478f452049ccd70705b2aa457cd4
+SHA512: fd4bb8c084fbc5db3d2916217386eae0262a5ba2219b1ad3bada92e0580ffc600eb24d42103c022321cf0910e25a55f396da68ca62ef29664ff76abfa064b623
+
 Package: adbfastboot
 Version: 1.0.39a-8.0.0f
 Architecture: all
@@ -29,6 +45,22 @@ MD5Sum: 5a685c843fd5df0c1b3d9e19b4f8a0d3
 SHA1: 589a8dd8442161ddf602bf2a79e39577150a9f4e
 SHA256: 60b2fcbf47b51212565b89418101aa3784e28a5f0eb1044ad048ab412bb584af
 SHA512: 7139c21e077d92db08932f9c81b2d178a9397bc9e3389c5caf2bfc676cf157fb37a299468c93adf7f2901d5ceb69ab6f73dffccf73eda7e05d17aca44c49afaf
+
+Package: amass
+Version: 3.19.3
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: golang
+Suggests: i-haklab
+Homepage: https://github.com/OWASP/Amass
+Description: Performs network mapping of attack surfaces and external asset discovery using open source information gathering and active reconnaissance techniques.
+Filename: dists/stable/extras/binary-all/amass_3.19.3_all.deb
+Size: 2124
+MD5Sum: ac14a8a8a1a24e1962d7ad905c0b7354
+SHA1: dc464d38bec3c9ba8fd0582a4ecda66d2416f590
+SHA256: e914c3cc773598a37d0fd69e9388fd49d2990eb6da251988507af6f321e11993
+SHA512: 0a5829717ceba7b67ad2f4da041c4af931b22ada11a1d272017bd8cf5b144593a62467825d165b8ff618829506456961ce2c98a274380a8207225e2ec4b63dd9
 
 Package: androbugs
 Version: 1.0
@@ -124,6 +156,22 @@ MD5Sum: 57989d9cee1fc9aa3e31f4b49d73cbe1
 SHA1: eaa9bb1fc8e0daa57942950a95233205f472d892
 SHA256: c2894d774a0de149c732aa6db30714d4850e17cc4b1257a223dd78c801505fcc
 SHA512: af933341c8e97603465ab5bb16c11b7ab4e070631bfff2a6f080f08e489b686f7291647ab06fdb0f9ecf8c8bc96e4390140fae47ca855025ae8b39fc4b5e9b25
+
+Package: cewl
+Version: 5.5.2
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, ruby
+Suggests: i-haklab
+Homepage: https://github.com/digininja/CeWL
+Description: Create a custom word lists spidering a targets website.
+Filename: dists/stable/extras/binary-all/cewl_5.5.2_all.deb
+Size: 2096
+MD5Sum: 16ec07e47cb7468e642ae65295cc678d
+SHA1: ea0e05c0f1c1bbd3e6d8987bb97718b47a826d00
+SHA256: b967816593d345574cff549275ba95a08606f655c15c7526fe9712870b7a8a74
+SHA512: a02460e95bbbdadbc1f36e82580f05e5f5f5557a7426c2e23e87d4315e2f8da6e9560b85b7b386e48f2e6caa9b2d22794be848fe21545050e99c0722b795f586
 
 Package: cloudbunny
 Version: 1.0
@@ -397,6 +445,22 @@ SHA1: 14699b2085d6f9cfd2286e9dafc417090444cd7e
 SHA256: 81b21880269b2b84a070802ba1f512eff659cfc482c57cc5258aa4e8222031d0
 SHA512: 21c966d8e2aa3e7b675bb67b48badaa07775749accca7a0db71844967133529021ae66eaa5646681784aad4f7cb2f2ca1fe9e830e6dfae8373bad6507ff34f6b
 
+Package: gophish
+Version: 0.11.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: golang
+Suggests: i-haklab
+Homepage: https://github.com/gophish/gophish
+Description: Gophish is a tool for automating the process of sending email campaigns to your target audience.
+Filename: dists/stable/extras/binary-all/gophish_0.11.0_all.deb
+Size: 2152
+MD5Sum: 12ae3c674d99d22ad355e72de0548092
+SHA1: d9252634d1db1d545a408022626b4470b058ca6d
+SHA256: b8b47aa52eae942f56c5f5257e1f60f3efdf63028d99a11aa07f766c4ecca522
+SHA512: 5a48631bd85093b36acec483b6ad6b3d4d4754a0d096522db6712cd79fc0bf5e0904d69eab9d4f37e1fb0aebd73287d899f14411885faa6ae5b36f301e7c716c
+
 Package: hakku-framework
 Version: 1.0
 Architecture: all
@@ -428,6 +492,22 @@ MD5Sum: 319658972a584febd27e51a7ab4214a8
 SHA1: 8317b7abb14bd7cfadc8ed24e5499ca666fe472d
 SHA256: 878f8aed49fe460a8e95d116ca87f5cffebef431498d88e34e550319c723f52c
 SHA512: 292391e7c628f4dc18fb626ac5df1b5154387a35ffb81b67364e318f72511e896ba9de15ea5270bc8f4b956299a884bed350e7e40674b1f58c302178ad9fbbed
+
+Package: hatcloud
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, ruby
+Suggests: i-haklab
+Homepage: https://github.com/HatBashBR/HatCloud
+Description: It makes bypass in CloudFlare for discover real IP.
+Filename: dists/stable/extras/binary-all/hatcloud_1.0_all.deb
+Size: 1948
+MD5Sum: 97e9ac1ffd23fd435798f64481d7d83a
+SHA1: 672a4685f918352e195bf2e55dd40ac856fca556
+SHA256: f4ca60ed19b346d629bae851d324de55fcabb0e670cd205ea4492a8133edcbf9
+SHA512: 298f084bb4ecf32e0d7f8807bd51cc7cc9c3588e2f514aa0e683916d077a5285ecab3f231083724887ec346a78db9d95ec6d3a6edde231c047bd35c8667dd19f
 
 Package: hcdecryptor
 Version: 2.0.1
@@ -748,6 +828,22 @@ SHA1: a353ae934c6027f45126425049cdd0f65645b28a
 SHA256: 1b6b7d203a06b55595e2eb6db7a9bbf455d2d3e71813afc6b763f8db514f157a
 SHA512: 3f1bdd85b3f1064ac22deb01eb7f2df5e06dd76b09ce896af09ace032d3e93d4fa66e876729e08877eaa13062733b2b1e35a502c7e212d3b957c760f4dd4b56d
 
+Package: redhawk
+Version: 2.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, php
+Suggests: i-haklab
+Homepage: https://github.com/Tuhinshubhra/RED_HAWK
+Description: All in one tool for Information Gathering, Vulnerability Scanning and Crawling.
+Filename: dists/stable/extras/binary-all/redhawk_2.0_all.deb
+Size: 1936
+MD5Sum: 7fd3585224d211c23e67a599719415b8
+SHA1: ef3514b8c2d528ce605e36c3a07d1000f6fff2f4
+SHA256: bbc0972702dbe5a3cca2c3385b1a00524e8bcbdf9e5830e7dc7db0d8abfae76b
+SHA512: 1f661676164f19dbbcc306b4d43a0340215b8c152c468058677a2d4e0cc170f024b14b2e058a73721af043e7411dbb469a0f982f1c5f45a1247982284c6540ab
+
 Package: routersploit
 Version: 3.4.1
 Architecture: all
@@ -892,6 +988,22 @@ SHA1: e4ec04e2f6709db2603964806907456e618fa917
 SHA256: b2234ea07f3c875b924d05628f5d7d181407723ee318362b898de1ee0dc64dd4
 SHA512: 0657453babf3317d1470e08944b2a12d0c1072e3c108ebd586c4ca3effb46de6ace303e3c115f52a97c90a54363fd1c6e7c57026f6d170ce43265bdb4d72d611
 
+Package: stegsnow
+Version: 20130616
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: wget, make, automake
+Suggests: i-haklab
+Homepage: https://www.kali.org/tools/stegsnow/
+Description: Hide messages in ASCII text by appending whitespaces to the end of lines.
+Filename: dists/stable/extras/binary-all/stegsnow_20130616_all.deb
+Size: 1912
+MD5Sum: ab5e00523ea7e08f2c4ba5b925733b0e
+SHA1: 804022d13660a913a5d0773ee853a9de706799fd
+SHA256: 5dc70b8d5805db38fea3fd9f6bb01fbbd301260782f96cfa221acdb86b1dbe08
+SHA512: 11521ecc3e72872d48f27ee4700e8c6efe280d84aaba5d1d99e30235bc99eca4c3bf5df273e5895b7128be0e2e1f6734b28ab2ee4317a5ee19af9fe62ccfc5ac
+
 Package: sublist3r
 Version: 1.0
 Architecture: all
@@ -907,6 +1019,22 @@ MD5Sum: b969073077ebc7294df8e1d26586042f
 SHA1: 0814d954b887523437bfd0f3c5c93b73eeebfd21
 SHA256: 2dc756183c4c281071e7d57703acb261a62021a4a8834539733199db6e92782f
 SHA512: 2e71ab52db1711f6744da5bacb60885caf18aea72e373b91f157fcc02d9706768590d80d5fc182ee4c6aa0c381008a0fccf68c2e2df037e9e495eb017f8af7b7
+
+Package: tangalanga
+Version: 0.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: golang, wget, unzip
+Suggests: i-haklab
+Homepage: https://github.com/elcuervo/tangalanga
+Description: The Zoom conference scanner hacking tool.
+Filename: dists/stable/extras/binary-all/tangalanga_0.1_all.deb
+Size: 2152
+MD5Sum: 68fd2a401256ea3897aa381281bff0ba
+SHA1: 48a5e837c89d6cb5bc95d591f3527c0cecf78fc7
+SHA256: 051d27977530e9e0509f133aab0e9e978afad2fc2e1f3849a05b297fc142d916
+SHA512: 17b761daf8f8cbb8afa96c83af508701e30520808cbd5d7417d4898de0655503d753d71cefece21d2cf3c7fa8d73d5d804956976bed6d3b8c9f56a8033c8ff3d
 
 Package: trape
 Version: 2.0
@@ -1019,4 +1147,20 @@ MD5Sum: d3a7cc3d2dc62bf4971fa6e66e749b9c
 SHA1: 11dc3b251bd637f1d0eb36e8828dc7c6e5b4007f
 SHA256: f192dd1781f78b478d724a59792bc9c4f4eb8558c2c3f176e42b23489e11a25e
 SHA512: eebd6ca568487d783647801592a3ec9c69edbb73dc89b16869925ced660156c72337ff9f9655989db88835af3f6fc45b4f4bbeb52646f90a6303f4b83405574a
+
+Package: wpscan
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: git, ruby
+Suggests: i-haklab
+Homepage: https://https://github.com/wpscanteam/wpscan
+Description: WordPress security scanner.
+Filename: dists/stable/extras/binary-all/wpscan_1.0_all.deb
+Size: 1804
+MD5Sum: 02254a5e2f70645438471a81af0c5387
+SHA1: 93ab947dffb3b93e639f87a5ac97288edf2bd2fc
+SHA256: de32cedffa541be387027c5e61968d7787d4159f8b3bc47b46761702a437395f
+SHA512: 37557fd77ca6161cf449957d9809de47354bb3987d73560a6162778415fa638921c4295e62b11477f50680d339aa164a917cb066d328bddc964a20f13c4ed96f
 

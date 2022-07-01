@@ -1,0 +1,13 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+echo "Cloning repository ..."
+git clone --quiet https://github.com/Tuhinshubhra/RED_HAWK ${HOME}/.local/share/redhawk
+[[ -d ${HOME}/.local/share/redhawk ]] && {
+  echo "Installing requirements ...";
+  chmod 751 -R ${HOME}/.local/share/redhawk;
+} || {
+  echo -en "\e[31mE:\e[0m redhawk directory missing ... \e[33mAborting.\e[0m\n";
+  exit 1;
+}
+exit 0
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/wpscan ]]; then
+  rm -rf ${HOME}/.local/share/wpscan
+fi
+gem uninstall wpscan
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

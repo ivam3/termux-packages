@@ -1,0 +1,21 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ $(id -u) -eq 0 ]]
+then
+  echo -en "\e[31mE:\e[0m You need to be a common user\n"
+  exit 1
+else
+  echo "Preparing enviroment ..."
+	[[ -e ${HOME}/.bashrc ]] || touch ${HOME}/.bashrc
+	INITFILE=${HOME}/.bashrc
+	[[ -d ${HOME}/go/pkg/mod/github.com ]] || mkdir -p ${HOME}/go/pkg/mod/github.com
+	[[ -d ${PREFIX}/lib/go/src ]] || mkdir -p ${PREFIX}/lib/go/src
+	if ! $(grep -oE "GOPATH" $INITFILE)
+	then
+		sed -i "21a set GOPATH ${HOME}/go" $INITFILE
+	fi
+	if ! $(grep -oE "GOROOT" $INITFILE)
+	then
+		sed -i "22a set GOROOT ${PREFIX}/lib/go" $INITFILE
+	fi
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

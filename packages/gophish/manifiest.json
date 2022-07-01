@@ -1,0 +1,14 @@
+{
+  "name": "gophish",
+  "version": "0.11.0",
+  "arch": "all",
+  "homepage": "https://github.com/gophish/gophish",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["golang"],
+  "suggests": ["i-haklab"],
+  "description": "Gophish is a tool for automating the process of sending email campaigns to your target audience.",
+  "files" :{
+    "gophish-installer": "bin/gophish-installer",
+    "gophish": "bin/gophish"
+  }
+}

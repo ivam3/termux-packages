@@ -1,0 +1,14 @@
+{
+  "name": "acccheck",
+  "version": "0.2.1",
+  "arch": "all",
+  "homepage": "https://github.com/qashqao/acccheck",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, perl"],
+  "suggests": ["i-haklab"],
+  "description": "Windows SMB Password Dictionary Attack Tool.",
+  "files" :{
+    "acccheck-installer": "bin/acccheck-installer",
+    "acccheck": "bin/acccheck"
+  }
+}

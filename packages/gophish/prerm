@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/go/pkg/mod/github.com/gophish ]]; then
+  rm -rf ${HOME}/go/pkg/mod/github.com/gophish
+fi
+if [[ -e ${HOME}/go/bin/gophish ]]; then
+  rm -rf ${HOME}/go/bin/gophish
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

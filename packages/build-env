@@ -42,7 +42,7 @@ cat <<- CONF > $pkgName/manifiest.json
   "arch": "$arch",
   "homepage": "https://$page",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["git"],
+  "depends": ["git, ruby"],
   "suggests": ["i-haklab"],
   "description": "",
   "files" :{
@@ -64,7 +64,7 @@ B="\\e[34m"
 if [[ -d \${HOME}/.local/share/$pkgName ]]
 then
   cd \${HOME}/.local/share/\$(basename \$0) >/dev/null
-  \$(command -v bash) \$(basename \$0).sh \${@:1}
+  \$(command -v ruby) \$(basename \$0).rb \${@:1}
 else
   echo -en \$R"E:\$W \$(basename \$0) PATH missing ...\$Y Aborting.\$W"
   exit 1
@@ -116,6 +116,8 @@ rm -rf \${PREFIX}/bin/$pkgName-installer
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] $pkgName installation finished."
+echo "[*] Run \`$pkgName\` to execute it."
+echo "[*] Run \`fixer\` to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

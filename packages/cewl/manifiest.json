@@ -1,0 +1,14 @@
+{
+  "name": "cewl",
+  "version": "5.5.2",
+  "arch": "all",
+  "homepage": "https://github.com/digininja/CeWL",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, ruby"],
+  "suggests": ["i-haklab"],
+  "description": "Create a custom word lists spidering a targets website.",
+  "files" :{
+    "cewl-installer": "bin/cewl-installer",
+    "cewl": "bin/cewl"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "stegsnow",
+  "version": "20130616",
+  "arch": "all",
+  "homepage": "https://www.kali.org/tools/stegsnow/",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["wget, make, automake"],
+  "suggests": ["i-haklab"],
+  "description": "Hide messages in ASCII text by appending whitespaces to the end of lines.",
+  "files" :{
+    "stegsnow-installer": "bin/stegsnow-installer"
+  }
+}
