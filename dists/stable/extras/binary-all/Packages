@@ -285,6 +285,22 @@ SHA1: 0956702ec6b615106fcad0af4f3f9ff4d4a6ecc5
 SHA256: 771f77dd9bc335c87db60b8a6e5cce08dd62239fd5d646e93b7c974b0b3f5208
 SHA512: 619cad3bd1e5fa19783de9f02d23b724283644229368663c5e99f5b9e2af874268f180f4f3e85fdfb4912c8707adffc65315fab6770f0040cfe88406ca14cb9b
 
+Package: dnsenum
+Version: 1.2.4
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, perl
+Suggests: i-haklab
+Homepage: https://github.com/fwaeytens/dnsenum
+Description: Multithreaded perl script to enumerate DNS information of a domain and to discover non-contiguous ip blocks.
+Filename: dists/stable/extras/binary-all/dnsenum_1.2.4_all.deb
+Size: 2048
+MD5Sum: ef54235c996ce0f1c9c9051300649c7e
+SHA1: 61488250d25cef6321fe01a86325960f99ec6646
+SHA256: b03ccb4e9a9f5cea9161c3962947af1aab042eaf43d3db3b53b9ec84f0a38bc7
+SHA512: 0c73de631d8067cff75ee3085cd1e03ceeffc150faba8b9d7a9f79ab083271ddc9cff6094aa1109772eae01070cf2f3175b8308786a5f4d1ae5c29d2818787fe
+
 Package: dos-a-tool
 Version: 2.0
 Architecture: all
@@ -558,7 +574,7 @@ SHA256: 9d0749108ec211c4773e0d58ef66ebcf04f2cf0472a855c46be0a80ae135e44e
 SHA512: 057301d95fa63233b6d866c235a2464ad921443b224382a7232a84106b632b345411a168614da01cd6fc3faa70e35210d4095e939e14555d5bfffb18c7ee8343
 
 Package: i-haklab
-Version: 3.5.3
+Version: 3.5.4
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 92284
@@ -566,12 +582,12 @@ Depends: termux-api, termux-elf-cleaner, termux-tools, util-linux, x11-repo, apr
 Suggests: Termux, Wayland, App
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.5.3_all.deb
-Size: 40087004
-MD5Sum: b19634b4fbdf1fe40d74227278ae6bf7
-SHA1: ab6a45cf0881c784ed3d1d3a77f322fd4e976332
-SHA256: 696d7842c061d5a57bec3517d61a67c79d49634cc2243f2f17a2d1edd27ed1bd
-SHA512: 701a992b0ed0d7731673818261a38b7264f93c5fe6a8f59eea00937ee933d8f0e6816d937112716a0aa8c99db08bd9a3f01218d122e20536f0fb503c3998a819
+Filename: dists/stable/extras/binary-all/i-haklab_3.5.4_all.deb
+Size: 40087304
+MD5Sum: 34b11754929f32cc08bb6aa33d2c29b6
+SHA1: ad5dd65dd6491e0a125834a5d690b248fae4ef59
+SHA256: 913a42e947db0237f1a6bfb05f4ea98041faf6237cfc2f17e2864cf0c4d7ef18
+SHA512: bafc96ce17494994b10266e9427ad11f2f5c11827c7ea2347cd6ce43d37c63a412f520f63dd8b5c581571b0612bb346bd7eeb86ecc97fab3ea389e558d844e35
 
 Package: infoga
 Version: 1.0
@@ -715,6 +731,22 @@ MD5Sum: 179ccf34930ba3f497adc52afaa8a060
 SHA1: 231ef499d74d49354d7feb025efcd9ad7dfd8d12
 SHA256: c20eece09b2a8f65f5561d2a38c38b12f31045c19c8002cdd40bb3fca6c3948b
 SHA512: 8afbb1e6bbe1a13b1c4b8fefcc208587609cf995c27314729a12b8925542a6d444da575692f19058b7d0260b1b08674138a9ae6dbc3c80dc47b78c4b1da55f23
+
+Package: nikto
+Version: 2.1.6
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, perl
+Suggests: i-haklab
+Homepage: https://https://github.com/sullo/nikto
+Description: A web server scanner.
+Filename: dists/stable/extras/binary-all/nikto_2.1.6_all.deb
+Size: 1860
+MD5Sum: 0317e1926eb38b3b50dc600488a0d56a
+SHA1: 975cabbebc387d79cdf89035f1a482c65d6423ec
+SHA256: 73f79a1fd5728a9c9d7908f3c1af030779d4d1267b8d99747386f6a8cb52a375
+SHA512: 166d5ece49acb4579edc246c33aeca5ab787226376a5bb413ec7466fcfab6dd09ba8f536ca22896d17be9f88e46b2b6b744baa9773bfd8107b1075302054392d
 
 Package: osintgram
 Version: 1.0
@@ -1148,6 +1180,22 @@ SHA1: 11dc3b251bd637f1d0eb36e8828dc7c6e5b4007f
 SHA256: f192dd1781f78b478d724a59792bc9c4f4eb8558c2c3f176e42b23489e11a25e
 SHA512: eebd6ca568487d783647801592a3ec9c69edbb73dc89b16869925ced660156c72337ff9f9655989db88835af3f6fc45b4f4bbeb52646f90a6303f4b83405574a
 
+Package: whatweb
+Version: 0.5.5
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, ruby
+Suggests: i-haklab
+Homepage: https://github.com/urbanadventurer/WhatWeb
+Description: Next generation web scanner.
+Filename: dists/stable/extras/binary-all/whatweb_0.5.5_all.deb
+Size: 1972
+MD5Sum: b3bfbd8f29e2b1bc4f0fd9cdef459cda
+SHA1: c36839955b446816a14694cd7e664a4480e75ab5
+SHA256: 80db621169452e6379ebee3f38524a20296adde038a277edcb57c2223b9a0e60
+SHA512: 582e0cdc79dbc322f7d5316d134dacee3e38441fe6842dda1ea7e822ff4f9a1b1e554c1b9082ff5bf976eda0cdf967f417be499ac244911a6db3be542abcb9f4
+
 Package: wpscan
 Version: 1.0
 Architecture: all
@@ -1163,4 +1211,20 @@ MD5Sum: 02254a5e2f70645438471a81af0c5387
 SHA1: 93ab947dffb3b93e639f87a5ac97288edf2bd2fc
 SHA256: de32cedffa541be387027c5e61968d7787d4159f8b3bc47b46761702a437395f
 SHA512: 37557fd77ca6161cf449957d9809de47354bb3987d73560a6162778415fa638921c4295e62b11477f50680d339aa164a917cb066d328bddc964a20f13c4ed96f
+
+Package: xerosploit
+Version: 0.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 3
+Depends: root-repo, git, nmap, build-essential, python2, ruby, libpcap, hping3
+Suggests: i-haklab
+Homepage: https://github.com/LionSec/xerosploit
+Description: Efficient and advanced man in the middle framework.
+Filename: dists/stable/extras/binary-all/xerosploit_0.1_all.deb
+Size: 2288
+MD5Sum: c117a85bc2450c37004a75d2b19a416e
+SHA1: d7d6499b24194dbce3e3ad6c021ab2da58644108
+SHA256: cb19a72b7f6c54001068346390e215774655de0d258a44b99264d64238b7c692
+SHA512: 6646dbf6c3e68b0f08c94e27d850186e1f034639f823892391cd3e66b256e10c62bef2e5c034cc6581023e254c8995e7872f2f4024759b81288c986082da477e
 

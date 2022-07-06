@@ -1,0 +1,14 @@
+{
+  "name": "whatweb",
+  "version": "0.5.5",
+  "arch": "all",
+  "homepage": "https://github.com/urbanadventurer/WhatWeb",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, ruby"],
+  "suggests": ["i-haklab"],
+  "description": "Next generation web scanner.",
+  "files" :{
+    "whatweb-installer": "bin/whatweb-installer",
+    "whatweb": "bin/whatweb"
+  }
+}

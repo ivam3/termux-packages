@@ -531,6 +531,8 @@ data/data/com.termux/files/usr/bin/d-tect                                       
 data/data/com.termux/files/usr/bin/d-tect-installer                              d-tect
 data/data/com.termux/files/usr/bin/dex2jar                                       dex2jar
 data/data/com.termux/files/usr/bin/dex2jar-installer                             dex2jar
+data/data/com.termux/files/usr/bin/dnsenum                                       dnsenum
+data/data/com.termux/files/usr/bin/dnsenum-installer                             dnsenum
 data/data/com.termux/files/usr/bin/DoS-A-Tool                                    dos-a-tool
 data/data/com.termux/files/usr/bin/embed                                         embed
 data/data/com.termux/files/usr/bin/embed-installer                               embed
@@ -3738,6 +3740,8 @@ data/data/com.termux/files/usr/bin/nexphisher-installer                         
 data/data/com.termux/files/home/.ssh/config                                      ngrok
 data/data/com.termux/files/usr/bin/ngrok                                         ngrok
 data/data/com.termux/files/usr/bin/ngrok-installer                               ngrok
+data/data/com.termux/files/usr/bin/nikto                                         nikto
+data/data/com.termux/files/usr/bin/nikto-installer                               nikto
 data/data/com.termux/files/usr/bin/osintgram                                     osintgram
 data/data/com.termux/files/usr/bin/osintgram-installer                           osintgram
 data/data/com.termux/files/usr/bin/phomber                                       phomber
@@ -3787,4 +3791,8 @@ data/data/com.termux/files/usr/bin/wbruter-installer                            
 data/data/com.termux/files/usr/bin/websploit                                     websploit
 data/data/com.termux/files/usr/bin/websploit-installer                           websploit
 data/data/com.termux/files/usr/bin/wfuzz-installer                               wfuzz
+data/data/com.termux/files/usr/bin/whatweb                                       whatweb
+data/data/com.termux/files/usr/bin/whatweb-installer                             whatweb
 data/data/com.termux/files/usr/bin/wpscan-installer                              wpscan
+data/data/com.termux/files/usr/bin/xerosploit                                    xerosploit
+data/data/com.termux/files/usr/bin/xerosploit-installer                          xerosploit

@@ -1,0 +1,14 @@
+{
+  "name": "nikto",
+  "version": "2.1.6",
+  "arch": "all",
+  "homepage": "https://https://github.com/sullo/nikto",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, perl"],
+  "suggests": ["i-haklab"],
+  "description": "A web server scanner.",
+  "files" :{
+    "nikto-installer": "bin/nikto-installer",
+    "nikto": "bin/nikto"
+  }
+}

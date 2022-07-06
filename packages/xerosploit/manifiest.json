@@ -1,0 +1,14 @@
+{
+  "name": "xerosploit",
+  "version": "0.1",
+  "arch": "all",
+  "homepage": "https://github.com/LionSec/xerosploit",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["root-repo, git, nmap, build-essential, python2, ruby, libpcap, hping3"],
+  "suggests": ["i-haklab"],
+  "description": "Efficient and advanced man in the middle framework.",
+  "files" :{
+    "xerosploit-installer": "bin/xerosploit-installer",
+    "xerosploit": "bin/xerosploit"
+  }
+}
