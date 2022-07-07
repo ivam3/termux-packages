@@ -71,7 +71,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [sqliv](https://github.com/the-robot/sqliv) | Massive SQL injection vulnerability scanner. |
 | [stegsnow](https://www.kali.org/tools/stegsnow/) | Hide messages in ASCII text by appending whitespaces to the end of lines |
 | [sublist3r](https://github.com/aboul3la/Sublist3r) | Fast subdomains enumeration tool for penetration testers. |
-| [tangalanga](github.com/elcuervo/tangalanga) | : The Zoom conference scanner hacking tool. |
+| [tangalanga](github.com/elcuervo/tangalanga) | The Zoom conference scanner hacking tool. |
 | [termux-desktop-xfce](https://github.com/Yisus7u7/termux-desktop-xfce) | Set up a beautiful xfce desktop in termux. |
 | [trape](https://github.com/jofpin/trape) | OSINT analysis and research tool. |
 | [unshc](https://github.com/yanncam/UnSHc) | The Shell Script UnCompiler (UNSHC) decode and decrypt SHC file on X86/x64 architecture. |
