@@ -583,11 +583,11 @@ Suggests: Termux, Wayland, App
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
 Filename: dists/stable/extras/binary-all/i-haklab_3.5.4_all.deb
-Size: 40087304
-MD5Sum: 34b11754929f32cc08bb6aa33d2c29b6
-SHA1: ad5dd65dd6491e0a125834a5d690b248fae4ef59
-SHA256: 913a42e947db0237f1a6bfb05f4ea98041faf6237cfc2f17e2864cf0c4d7ef18
-SHA512: bafc96ce17494994b10266e9427ad11f2f5c11827c7ea2347cd6ce43d37c63a412f520f63dd8b5c581571b0612bb346bd7eeb86ecc97fab3ea389e558d844e35
+Size: 40087520
+MD5Sum: d9e97dfad5c512757b5907310b9d307e
+SHA1: ca7ac6fb628b2daf6cb3270551548641df39bfd1
+SHA256: 8c2fe7d263f74cea0d16fb4d8122f0c56305885ab3b365fd7910f21c48a2cfc6
+SHA512: a43725c0979b9d86bc3e765bff5beb48b095dc4b094a116cba728609a8d01afc58b8f64a1bc5345769ff13b909c4d1cc0d912ca359350bd091cbf3a7aca44f43
 
 Package: infoga
 Version: 1.0
