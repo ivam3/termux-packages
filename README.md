@@ -71,14 +71,13 @@ This project is with the purpose of offering easy and fast access to the install
 | [sqliv](https://github.com/the-robot/sqliv) | Massive SQL injection vulnerability scanner. |
 | [stegsnow](https://www.kali.org/tools/stegsnow/) | Hide messages in ASCII text by appending whitespaces to the end of lines |
 | [sublist3r](https://github.com/aboul3la/Sublist3r) | Fast subdomains enumeration tool for penetration testers. |
-| [tangalanga](github.com/elcuervo/tangalanga) | : The Zoom conference scanner hacking tool. |
+| [tangalanga](github.com/elcuervo/tangalanga) | The Zoom conference scanner hacking tool. |
 | [termux-desktop-xfce](https://github.com/Yisus7u7/termux-desktop-xfce) | Set up a beautiful xfce desktop in termux. |
 | [trape](https://github.com/jofpin/trape) | OSINT analysis and research tool. |
 | [unshc](https://github.com/yanncam/UnSHc) | The Shell Script UnCompiler (UNSHC) decode and decrypt SHC file on X86/x64 architecture. |
 | [userrecon](https://github.com/issamelferkh/userrecon) | Find usernames across over 75 social networks. |
 | [vulnx](https://github.com/anouarbensaad/vulnx) | An intelligent bot auto shell injector that detects vulnerabilities in multiple types of cms. |
 | [wbruter](https://github.com/wuseman/WBRUTER) | Disable device pin code aslong as usb debugging and brute force methods like dictionary attacks for gmail, ftp, rar, zip and some other file extensions. |
-| [webhackshl](https://github.com/sechacklabs/webhackshl) | Set of tools to perform web security audits. |
 | [websploit](https://github.com/The404Hacking/websploit) | MITM framework. |
 | [whatweb](https://github.com/urbanadventurer/WhatWeb) | Recognises web technologies including content management systems (CMS), blogging platforms, statistic/analytics packages, JavaScript libraries, web servers, and embedded devices. |
 | [wpscan](https://github.com/wpscanteam/wpscan) | WordPress security scanner. |
