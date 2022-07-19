@@ -583,11 +583,11 @@ Suggests: Termux, Wayland, App
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
 Filename: dists/stable/extras/binary-all/i-haklab_3.5.4_all.deb
-Size: 40087520
-MD5Sum: d9e97dfad5c512757b5907310b9d307e
-SHA1: ca7ac6fb628b2daf6cb3270551548641df39bfd1
-SHA256: 8c2fe7d263f74cea0d16fb4d8122f0c56305885ab3b365fd7910f21c48a2cfc6
-SHA512: a43725c0979b9d86bc3e765bff5beb48b095dc4b094a116cba728609a8d01afc58b8f64a1bc5345769ff13b909c4d1cc0d912ca359350bd091cbf3a7aca44f43
+Size: 40087668
+MD5Sum: 44f4b918e7d0ae3c90bd2a1d0bbe8a60
+SHA1: f5db898b5920f5e053aaea042d7fc41054b9b506
+SHA256: 8e71d200fc4931dbdefaf58634cd35ff9d4ede6ba4dd289803042832134ee6fc
+SHA512: fdb3ecaf52ecd6895a5aee4bb139c234f02527681877bb464170ea3626aac2e08f72a89f8198fe552d274054782ff116d0ad7835d031de93fd77dee6d2deca9e
 
 Package: infoga
 Version: 1.0
@@ -686,7 +686,7 @@ SHA256: f94eb8fb1e099adfa407cd51d5ef92899b4e215f88f5a70ed56d960e59222f97
 SHA512: f49bd56365d86a19bb4953c208e8d2cefd53ffcaa1c9106e97eed65d40275b57c1e495f9dc509a845f171d881996140fe6b9bf6eb7fe55c491b8f1f585a2042f
 
 Package: metasploit-framework
-Version: 6.2.3
+Version: 6.2.8
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 6
@@ -694,12 +694,12 @@ Depends: python, autoconf, patchelf, binutils, bison, yarn, clang, coreutils, cu
 Suggests: openjdk-17
 Homepage: https://github.com/rapid7/metasploit-framework
 Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
-Filename: dists/stable/extras/binary-all/metasploit-framework_6.2.3_all.deb
-Size: 3628
-MD5Sum: 0dd0358cf50f3d4e21dcadeb32589617
-SHA1: d7c4e294658cc38e0db3909ed1c1179ff53e94d4
-SHA256: d97fcae403b52aec82569f9d9f6338c2a28e34bfd563cb9b9bb8b362a80e2096
-SHA512: 901cae3f711ea060be12a52723b4b3511497e64104e7853a475777d321f9dd8387a9345f0d890f97402ac96ef23d1df3a38c219002d60eb6397c40e7c27fceca
+Filename: dists/stable/extras/binary-all/metasploit-framework_6.2.8_all.deb
+Size: 3636
+MD5Sum: 28042510a8b7c4c428c1968ea94a66bf
+SHA1: 6d7e74f78d8da2f0a5230ca0cf9a9b35805cf863
+SHA256: a57c6517d629ea6cc4efc9c077e5949158bae663ff70e59b3e5c21e0f84d56ad
+SHA512: 035b884750d9a74720591ca40cf4b3a95a10a9bac69db45c6ec1094916fd99edf341b911607e49b622be16d2416d22516bea21c18faae92c94cddaac621b72d2
 
 Package: nexphisher
 Version: 1.0

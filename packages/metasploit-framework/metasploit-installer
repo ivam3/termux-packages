@@ -13,7 +13,7 @@ sed -i "5a gem 'net-smtp', require: false" $msfDir/Gemfile
 gem install --no-document --verbose rubygems-update
 update_rubygems
 gem install --no-document --verbose bundler
-gem install actionpack
+gem install actionpack ruby-nessus
 gem install rails --platform=ruby -- --use-system-libraries
 bundle install -j$(nproc --all) --verbose
 
@@ -104,7 +104,7 @@ sleep 10
 echo -en "\e[33mWARNING:\e[0m Please answer questions with an 'y'(YES) or '3'(ALL)"
 sleep 5
 gem uninstall nokogiri
-gem install nokogiri --platform=ruby -- --use-system-libraries
+gem install nokogiri -v '1.13.6' --platform=ruby -- --use-system-libraries
 bundle config build.nokogiri --use-system-libraries
 
 echo "Setting metasploit database"
