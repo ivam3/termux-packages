@@ -1,8 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
 echo "Downloading repository ..."
-wget --tries=20 --quiet http://http.kali.org/pool/main/s/stegsnow/stegsnow_20130616.orig.tar.gz -O ${TMPDIR}/stegsnow
-tar -xvzf ${TMPDIR}/stegsnow_20130616.orig.tar.gz -C ${HOME}/.local/share
+wget --tries=20 --quiet http://http.kali.org/pool/main/s/stegsnow/stegsnow_20130616.orig.tar.gz -O ${TMPDIR}/stegsnow.tar.gz
+tar -xvzf ${TMPDIR}/stegsnow.tar.gz -C ${HOME}/.local/share
 [[ -d ${HOME}/.local/share/snow-20130616 ]] && {
   echo "Compiling ..."
   mv ${HOME}/.local/share/snow-20130616 ${HOME}/.local/share/stegsnow;

@@ -1030,11 +1030,11 @@ Suggests: i-haklab
 Homepage: https://www.kali.org/tools/stegsnow/
 Description: Hide messages in ASCII text by appending whitespaces to the end of lines.
 Filename: dists/stable/extras/binary-all/stegsnow_20130616_all.deb
-Size: 1912
-MD5Sum: ab5e00523ea7e08f2c4ba5b925733b0e
-SHA1: 804022d13660a913a5d0773ee853a9de706799fd
-SHA256: 5dc70b8d5805db38fea3fd9f6bb01fbbd301260782f96cfa221acdb86b1dbe08
-SHA512: 11521ecc3e72872d48f27ee4700e8c6efe280d84aaba5d1d99e30235bc99eca4c3bf5df273e5895b7128be0e2e1f6734b28ab2ee4317a5ee19af9fe62ccfc5ac
+Size: 1904
+MD5Sum: f5d6823f096f8bf017a1206f7572e5b9
+SHA1: 463bfebeb7f71ad82209464085557bc5ae3b0ddb
+SHA256: f8096155ef07e620de6b0e287206e9b2fbde9b19010ff62b9238880c1fb1abc2
+SHA512: 6f711b54436f389c8cb64cbd4f4ce756ef1b45a761142bc55bbdaa193d9c5c1fc897df23f5039c549fbd728bbac22cf01b31711a1d7133134fccf1fdccb3aca2
 
 Package: sublist3r
 Version: 1.0
