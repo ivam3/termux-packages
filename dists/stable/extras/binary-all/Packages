@@ -381,6 +381,22 @@ SHA1: a21886562be18ecd8dc205cc1903635655e15c38
 SHA256: 6b884fc8afbfd3188b0e1c6a476f81b2ade8c034490d0e6f29db8df165aa6ed5
 SHA512: 487fe751adf03d498ddcac08043d8d404a926dd8650748b8160f24a5acbc5015efd1e97a7322d7303ae2ac900606f1dac933215fa885b53abe0e2ae7be1e8140
 
+Package: fake-sms
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git
+Suggests: i-haklab
+Homepage: https://github.com/machine1337/fake-sms
+Description: A small script to send messages anonymously. very fast and secure SMS sending script.
+Filename: dists/stable/extras/binary-all/fake-sms_1.0_all.deb
+Size: 1920
+MD5Sum: 8a5ded6c02859f33d8da608c9405c286
+SHA1: 5b4dfc10a55abfa2c4649b695568a6ca98d747e8
+SHA256: e326416521bd3d1431ad6d67a6b7757f018f1d92095fe670af92af6dac426a2a
+SHA512: b34913d85d013698178d2584872bbacdfadeb65721841ffb5b791b1409d4000187d4f7b0ce22a77fe42d8f648e86e2842f02c3079eb91160caf528194e77430c
+
 Package: fbi
 Version: 1.0
 Architecture: all

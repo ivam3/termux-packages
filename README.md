@@ -31,6 +31,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [evilurl](https://github.com/UndeadSec/EvilURL) | Generate unicode domains for IDN Homograph Attack and detect them. |
 | [exif](https://github.com/ivam3/ExiF) | Extract information (meta data) from files. |
 | [exploitdb](https://github.com/offensive-security/exploitdb) | The official [Exploit Database](https://www.exploit-db.com) repository |
+| [fake-sms](https://github.com/machine1337/fake-sms) | Send messages (sms) anonymously. |
 | [fbi](https://github.com/xHak9x/fbi) | Facebook account information gathering |
 | [fuzzdb](https://github.com/fuzzdb-project/fuzzdb) | Dictionary of attack patterns and primitives for black-box application fault injection and resource discovery |
 | [getnpusers](https://github.com/SecureAuthCorp/impacket/blob/master/examples/GetNPUsers.py) | List and get TGT for those users who have ownership |

@@ -1,0 +1,13 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+echo "Cloning repository ..."
+git clone --quiet https://github.com/machine1337/fake-sms ${HOME}/.local/share/fake-sms
+[[ -d ${HOME}/.local/share/fake-sms ]] && {
+  echo "Installing requirements ...";
+  chmod 751 -R ${HOME}/.local/share/fake-sms;
+} || {
+  echo -en "\e[31mE:\e[0m fake-sms directory missing ... \e[33mAborting.\e[0m\n";
+  exit 1;
+}
+exit 0
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -1,0 +1,14 @@
+{
+  "name": "fake-sms",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/machine1337/fake-sms",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git"],
+  "suggests": ["i-haklab"],
+  "description": "A small script to send messages anonymously. very fast and secure SMS sending script.",
+  "files" :{
+    "fake-sms-installer": "bin/fake-sms-installer",
+    "fake-sms": "bin/fake-sms"
+  }
+}
