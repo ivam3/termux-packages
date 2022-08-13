@@ -1,0 +1,14 @@
+{
+  "name": "webscan",
+  "version": "1.2",
+  "arch": "all",
+  "homepage": "https://github.com/Fenrir-00/investigar-web",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python, git, dirb"],
+  "suggests": ["i-haklab"],
+  "description": "lightweight webscanner",
+  "files" :{
+    "webscan-installer": "bin/webscan-installer",
+    "webscan": "bin/webscan"
+  }
+}
