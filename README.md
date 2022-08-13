@@ -83,7 +83,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [whatweb](https://github.com/urbanadventurer/WhatWeb) | Recognises web technologies including content management systems (CMS), blogging platforms, statistic/analytics packages, JavaScript libraries, web servers, and embedded devices. |
 | [wpscan](https://github.com/wpscanteam/wpscan) | WordPress security scanner. |
 | [xerosploit](https://github.com/LionSec/xerosploit) | A penetration testing toolkit whose goal is to perform man in the middle attacks for testing purposes. |
-##### Suggest a tool and/or framework to be add in our [Telegram Support Group](https://t.me/iHaklab)
+##### Suggest a tool and/or framework to be add in our [Telegram Support Group](https://t.me/Ivam3by_Cinderella)
 
 ## How to get ...
 
