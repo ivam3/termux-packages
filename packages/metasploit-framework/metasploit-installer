@@ -100,9 +100,9 @@ for i in msfd msfrpc msfrpcd msfvenom;do
 	ln -sfr ${PREFIX}/bin/msfconsole ${PREFIX}/bin/$i
 done
 
-#sleep 10
-#echo -en "\e[33mWARNING:\e[0m Please answer questions with an 'y'(YES) or the number for ALL."
-#sleep 5
+echo -en "\e[33mWARNING:\e[0m Please answer questions with an 'y'(YES) or the number for ALL."
+sleep 5
+gem uninstall nokogiri
 for gem in nokogiri bcrypt msgpack network_interface bson redcarpet sqlite3;do
 #  gem uninstall $i
   gemPATH=$(find $rubyLIB/gems -type f -iname "$gem*.so"|awk -F "/" '{print $12}')
