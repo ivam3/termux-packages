@@ -702,7 +702,7 @@ SHA256: f94eb8fb1e099adfa407cd51d5ef92899b4e215f88f5a70ed56d960e59222f97
 SHA512: f49bd56365d86a19bb4953c208e8d2cefd53ffcaa1c9106e97eed65d40275b57c1e495f9dc509a845f171d881996140fe6b9bf6eb7fe55c491b8f1f585a2042f
 
 Package: metasploit-framework
-Version: 6.2.8
+Version: 6.2.13
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 6
@@ -710,12 +710,12 @@ Depends: python, autoconf, patchelf, binutils, bison, yarn, clang, coreutils, cu
 Suggests: openjdk-17
 Homepage: https://github.com/rapid7/metasploit-framework
 Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
-Filename: dists/stable/extras/binary-all/metasploit-framework_6.2.8_all.deb
-Size: 3636
-MD5Sum: 28042510a8b7c4c428c1968ea94a66bf
-SHA1: 6d7e74f78d8da2f0a5230ca0cf9a9b35805cf863
-SHA256: a57c6517d629ea6cc4efc9c077e5949158bae663ff70e59b3e5c21e0f84d56ad
-SHA512: 035b884750d9a74720591ca40cf4b3a95a10a9bac69db45c6ec1094916fd99edf341b911607e49b622be16d2416d22516bea21c18faae92c94cddaac621b72d2
+Filename: dists/stable/extras/binary-all/metasploit-framework_6.2.13_all.deb
+Size: 3760
+MD5Sum: 16bcbd98b3267b51604fab30d149824b
+SHA1: d8b3b8adbe763f7824f1aaee54407dc667e232e8
+SHA256: e1be2fdc93998adf303847d3b137bcf8d5667397de18becc48dd408e78c7310e
+SHA512: 234d642b987437703a69e1a113ee6d0767ef31b663805d1e73c698dab20e2af1198354412dc61eaafecdbcda79689aa1100983246892b0dcbd20b826a4d9f3cc
 
 Package: nexphisher
 Version: 1.0

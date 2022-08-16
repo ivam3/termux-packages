@@ -100,10 +100,20 @@ for i in msfd msfrpc msfrpcd msfvenom;do
 	ln -sfr ${PREFIX}/bin/msfconsole ${PREFIX}/bin/$i
 done
 
-sleep 10
-echo -en "\e[33mWARNING:\e[0m Please answer questions with an 'y'(YES) or '3'(ALL)"
-sleep 5
-gem uninstall nokogiri
+#sleep 10
+#echo -en "\e[33mWARNING:\e[0m Please answer questions with an 'y'(YES) or the number for ALL."
+#sleep 5
+for gem in nokogiri bcrypt msgpack network_interface bson redcarpet sqlite3;do
+#  gem uninstall $i
+  gemPATH=$(find $rubyLIB/gems -type f -iname "$gem*.so"|awk -F "/" '{print $12}')
+  [[ -d $rubyLIB/gems/$gemPATH ]] && rm -rf $rubyLIB/gems/$gemPATH
+done
+gem install sqlite3 --platform=ruby -- --use-system-libraries
+gem install redcarpet --platform=ruby -- --use-system-libraries
+gem install bson --platform=ruby -- --use-system-libraries
+gem install network_interface --platform=ruby -- --use-system-libraries
+gem install bcrypt --platform=ruby -- --use-system-libraries
+gem install msgpack -v '1.5.3' --platform=ruby -- --use-system-libraries
 gem install nokogiri -v '1.13.6' --platform=ruby -- --use-system-libraries
 bundle config build.nokogiri --use-system-libraries
 
