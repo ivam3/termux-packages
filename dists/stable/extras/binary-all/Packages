@@ -589,22 +589,6 @@ SHA1: fb1381bc0aede872cc6a48ae7c78feb2a572611a
 SHA256: 9d0749108ec211c4773e0d58ef66ebcf04f2cf0472a855c46be0a80ae135e44e
 SHA512: 057301d95fa63233b6d866c235a2464ad921443b224382a7232a84106b632b345411a168614da01cd6fc3faa70e35210d4095e939e14555d5bfffb18c7ee8343
 
-Package: i-haklab
-Version: 3.5.6
-Architecture: all
-Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 92291
-Depends: termux-api, termux-elf-cleaner, termux-tools, util-linux, x11-repo, apr, apr-util, autoconf, axel, bat, bc, bison, clang, cmake, coreutils, curl, debianutils, dns2tcp, dnsutils, file, findutils, fish, gawk, git, gnupg, gpgme, hexedit, htop-legacy, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openjdk-17, openssh, openssl, openssl-tool, perl, php, php-apache, pkg-config, proxychains-ng, pulseaudio, pv, python, python2, readline, ruby, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, youtubedr, zip, zlib
-Suggests: Termux, Wayland, App
-Homepage: https://github.com/ivam3/i-Haklab
-Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.5.6_all.deb
-Size: 40086380
-MD5Sum: 8a697c4b9bc874a5c541a6fe68b939ce
-SHA1: fda4cc6999952e5968975251baed7d822888bbef
-SHA256: 4e0663b671c1e8a0163f80a70d9b47dc9eff7758b60d8c8030f9630ef2dea413
-SHA512: 69f7997d3cf82e7ce4208c3a0bac5e6a66e8b000082cde8b228717ec63433f0bd5bef4996fef8b6b32c647ac2dce8cf49895209ab4ece6eef7dfcabdb7e68b7a
-
 Package: infoga
 Version: 1.0
 Architecture: all
@@ -711,11 +695,11 @@ Suggests: openjdk-17
 Homepage: https://github.com/rapid7/metasploit-framework
 Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
 Filename: dists/stable/extras/binary-all/metasploit-framework_6.2.13_all.deb
-Size: 3760
-MD5Sum: a7b300834d3369a2723510f6d2202e41
-SHA1: db0b60185db916ec7e3198ad092a7fdd57bd9337
-SHA256: 778d654dcdd4b8603a6ea6c568958912472bfef358557b2fb26c14c0e748a524
-SHA512: 61f20c835b407b49a14df1fe15d87418d3ff56492907b06bebae776a5175eb1871c73958629f7c43689048b8eb6ab51b7b96da19af918f1379104b540f9e1fbe
+Size: 3780
+MD5Sum: 40a60d7f7152097bfac3a1c81febd45f
+SHA1: 6a55a2a9db49f23038a427f36495934a01af22b4
+SHA256: 6b53660266340a6d4bb4b2870c4a8c2b441391c2a7767830201d132ca4964fb0
+SHA512: eb1b664fce90363231f0d07e3c8ec082c4be277e56afde4053be11bc7c0002942a546e202a02164757087d1167dc3982cb60ca1ad48fe09c1afeed65c78a3997
 
 Package: nexphisher
 Version: 1.0
