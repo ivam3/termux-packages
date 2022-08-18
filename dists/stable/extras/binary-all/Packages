@@ -1174,11 +1174,11 @@ Suggests: i-haklab
 Homepage: https://github.com/Fenrir-00/investigar-web
 Description: lightweight webscanner
 Filename: dists/stable/extras/binary-all/webscan_1.4_all.deb
-Size: 1984
-MD5Sum: 86c0a23497449eff219410e182fe083a
-SHA1: 41c529f90d842e021b8633f4e304495a0489129b
-SHA256: a6a1cc297f7399debf6cf137473d15a7fd26dd517f6dbd7df6f5f84073901d32
-SHA512: 3c85e611baf232cc219feb22e9799d3fa631a7a06547a5798865cb9e938429b40881e4e750412a89359ca7eb16bdf66c1ad73f8db9b6f56061113e0a46a63cd7
+Size: 2012
+MD5Sum: 35eb474b4a89d40beead014b2818b04a
+SHA1: 321132b0666f3c731f0bb8ed93a7245ce6d43783
+SHA256: 49364161ff0c0ac5f8a6a961fa6c48068dbe973db9c5c8b7e2e493c7e0d69a07
+SHA512: 9e1e67f7b0e094d219338462d6b2c2d5dbad826dd4052897bebfdb8b58c40ebf11a9468fbbb0ea419fa8dca27c2ed70a1a3a764298037cbf22630aa4064cd9c9
 
 Package: websploit
 Version: 3.0.0
