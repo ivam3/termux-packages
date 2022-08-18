@@ -8,8 +8,8 @@ declare -a pkg=$(find $pkgPATH -maxdepth 1 -type d|awk -F "/" '{print $NF}')
 
 for i in ${pkg[*]}
 do
-	[[ $i = packages ]] && {
-		continue;
+	[[ ! -e $i/maniciest.json ]] && {
+		echo "$i is not a package"
 	} || {
 		echo -en "Working with:\e[33m $i\e[0m\n"
 		pushd $i
@@ -18,4 +18,3 @@ do
 		popd
 	}
 done
-
