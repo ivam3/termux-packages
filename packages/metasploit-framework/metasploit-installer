@@ -109,7 +109,7 @@ for gem in nokogiri bcrypt msgpack network_interface bson redcarpet sqlite3;do
 #  [[ -d $rubyLIB/gems/$gemPATH ]] && rm -rf $rubyLIB/gems/$gemPATH
 done
 mkdir -p $PREFIX/include/libxml/
-ln -s $PREFIX/include/libxml2/libxml/* $PREFIX/include/libxml/
+ln -s $PREFIX/include/libxml2/libxml/* $PREFIX/include/libxml/ >/dev/null 2>/dev/null
 gem install mini_portile2
 gem install sqlite3 --platform=ruby -- --use-system-libraries
 gem install redcarpet --platform=ruby -- --use-system-libraries
