@@ -34,6 +34,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [fake-sms](https://github.com/machine1337/fake-sms) | Send messages (sms) anonymously. |
 | [fbi](https://github.com/xHak9x/fbi) | Facebook account information gathering |
 | [fuzzdb](https://github.com/fuzzdb-project/fuzzdb) | Dictionary of attack patterns and primitives for black-box application fault injection and resource discovery |
+| [geo-recon](https://github.com/radioactivetobi/geo-recon) | An OSINT CLI tool desgined to fast track IP Reputation and Geo-locaton look up for Security Analysts. |
 | [getnpusers](https://github.com/SecureAuthCorp/impacket/blob/master/examples/GetNPUsers.py) | List and get TGT for those users who have ownership |
 | [ghidra](https://github.com/NationalSecurityAgency/ghidra) | A software reverse engineering (SRE) framework. |
 | [ghost](https://github.com/EntySec/ghost) | Android post-exploitation framework that exploits the Android Debug Bridge to remotely access an Android device. |
@@ -52,7 +53,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [lockphish](https://github.com/JasonJerry/lockphish) | A tool for phishing attacks on the lock screen, designed to grab Windows credentials, Android PIN. |
 | [metasploit-framework](https://github.com/rapid7/metasploit-framework) | World's leading open-source penetrating framework |
 | [nexphisher](https://github.com/htr-tech/nexphisher) | Advanced Phishing tool for Termux. |
-| [ngrok](https://ngrok.com) | |
+| [ngrok](https://ngrok.com) | Globally distributed reverse proxy fronting your web services running in any cloud or private network, or your machine. |
 | [osintgram](https://github.com/datalux/Osintgram) | A OSINT tool on Instagram. It offers an interactive shell to perform analysis on Instagram account of any users by its nickname. |
 | [phomber](https://github.com/s41r4j/phomber) | Infomation grathering tool that reverse search phone numbers and get their details. |
 | [phonesploit](https://github.com/aerosol-can/PhoneSploit) | A tool for remote ADB exploitation for all Machines. |
