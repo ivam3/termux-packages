@@ -1,0 +1,14 @@
+{
+  "name": "geo-recon",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/radioactivetobi/geo-recon",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, python"],
+  "suggests": ["i-haklab"],
+  "description": "An OSINT CLI tool desgined to fast track IP Reputation and Geo-locaton look up for Security Analysts.",
+  "files" :{
+    "geo-recon-installer": "bin/geo-recon-installer",
+    "geo-recon": "bin/geo-recon"
+  }
+}

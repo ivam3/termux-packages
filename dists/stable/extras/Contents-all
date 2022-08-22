@@ -545,6 +545,8 @@ data/data/com.termux/files/usr/bin/fake-sms                                     
 data/data/com.termux/files/usr/bin/fake-sms-installer                            fake-sms
 data/data/com.termux/files/usr/bin/fbi                                           fbi
 data/data/com.termux/files/usr/bin/fbi-installer                                 fbi
+data/data/com.termux/files/usr/bin/geo-recon                                     geo-recon
+data/data/com.termux/files/usr/bin/geo-recon-installer                           geo-recon
 data/data/com.termux/files/usr/bin/getnpusers-installer                          getnpusers
 data/data/com.termux/files/usr/bin/ghidra                                        ghidra
 data/data/com.termux/files/usr/bin/ghidra-installer                              ghidra

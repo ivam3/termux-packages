@@ -413,6 +413,22 @@ SHA1: 68c53731c5e4e897ce00b498c16cbd0e4b2b09ab
 SHA256: cb6699819c08c01e5a7624e462e1f61de55ea7b34c100c0143c1ddf184221a2a
 SHA512: 99782d9f5316af718fb27ef82c503d9a4a893a29d060a82ef30b1c7af1589d2537af1ac1635ab7cb1fb1a94977581976c2f07e07a1bd8a381ab6709234194e9c
 
+Package: geo-recon
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, python
+Suggests: i-haklab
+Homepage: https://github.com/radioactivetobi/geo-recon
+Description: An OSINT CLI tool desgined to fast track IP Reputation and Geo-locaton look up for Security Analysts.
+Filename: dists/stable/extras/binary-all/geo-recon_1.0_all.deb
+Size: 2060
+MD5Sum: e1706df6c5a8a66048f1517d2c3b3f4e
+SHA1: ecfd40e394befadbede5916420d1fc703d05bb45
+SHA256: 8b54f7fe311053e68b26e38cf6542d8be53d844fa15e422bfa9bf645dd2a465a
+SHA512: cd290ffece5cfb32614408bd1cbf0e2b47a1e5a1f044534dc24260761fc3cfc4c5f63555ca4096d6f976aa37bf9d71a27dcbfdc12e6381f6ce72450a77fe37fb
+
 Package: getnpusers
 Version: 0.10.0
 Architecture: all
