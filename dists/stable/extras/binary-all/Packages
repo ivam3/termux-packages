@@ -115,16 +115,16 @@ Version: 1.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
-Depends: git, ptthon
+Depends: git, python
 Suggests: i-haklab
 Homepage: https://github.com/surya-dev-singh/BITB-framwork
 Description: Phishing technique that simulates a browser window within the browser to spoof a legitimate domain.
 Filename: dists/stable/extras/binary-all/bitb_1.0_all.deb
 Size: 2136
-MD5Sum: c2710fe334e160252c7e2eadf699b81d
-SHA1: 74313845a8520bd7d61e6e848628667ff96357af
-SHA256: 248b0eb02a350f8e42a9ad54c93579600cd6a3f4b5f9571d99ed45243a4a2d90
-SHA512: 6e71288f998d7f560b1329d792ff5a9ed28941c36ca8691c64743c0e34dc63fa6d15bea64cb2409dd81449832c2364f4d9e9adc9e5ed869786d490d0a6def37c
+MD5Sum: fad9b6f6e2ac4f1896ec1bfb960936b5
+SHA1: 2971b54df4a044ca6bcebc95e21290b9738fca68
+SHA256: 69d6ebc8e77089b5182822e96452f8936f91f70fffae7d356a8f11384b05e95f
+SHA512: bbff030e9492303c81ba53831c933287a9bd8d5a6cfc69c0e1d8acb888a340a1838947d8fb45033bea06d4fbf315342d3414dbbac0db28aee062dd8972689220
 
 Package: blackbox
 Version: 2.0
