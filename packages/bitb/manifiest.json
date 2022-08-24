@@ -1,0 +1,14 @@
+{
+  "name": "bitb",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/surya-dev-singh/BITB-framwork",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, ptthon"],
+  "suggests": ["i-haklab"],
+  "description": "Phishing technique that simulates a browser window within the browser to spoof a legitimate domain.",
+  "files" :{
+    "bitb-installer": "bin/bitb-installer",
+    "bitb": "bin/bitb"
+  }
+}
