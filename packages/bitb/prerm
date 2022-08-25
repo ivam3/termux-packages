@@ -2,6 +2,5 @@
 if [[ -d ${HOME}/.local/share/bitb ]]; then
   rm -rf ${HOME}/.local/share/bitb
 fi
-python -m pip --no-color --quiet uninstall -r ${HOME}/.local/share/bitb/requirements.txt; 
 
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
