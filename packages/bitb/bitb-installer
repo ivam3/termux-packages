@@ -1,7 +1,9 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
 echo "Cloning repository ..."
-git clone --quiet https://github.com/surya-dev-singh/BITB-framework ${HOME}/.local/share/bitb
+git clone --quiet 
+
+https://github.com/surya-dev-singh/BITB-framwork ${HOME}/.local/share/bitb
 [[ -d ${HOME}/.local/share/bitb ]] && {
   echo "Installing requirements ...";
   chmod 751 -R ${HOME}/.local/share/bitb;
