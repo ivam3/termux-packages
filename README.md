@@ -15,9 +15,9 @@ This project is with the purpose of offering easy and fast access to the install
 | [androbugs](https://github.com/AndroBugs/AndroBugs_Framework) | Android vulnerability scanner |
 | [beef](https://www.beefproject.com) | powerful and intuitive security tool focuses on leveraging browser vulnerabilities to assess the security posture of a target |
 | [binwalk](https://github.com/ReFirmLabs/binwalk) | Tool for analyzing, reverse engineering, and extracting firmware images | 
+| [bitb](https://github.com/surya-dev-singh/BITB-framework) | Phishing technique that simulates a browser window within the browser to spoof a legitimate domain. |
 | [blackbox](https://github.com/jothatron/blackbox) | A penetration testing framework|
 | [botgram](https://github.com/ivam3/botgram) | Fetch all information about Telegram group members |
-| [bitb](https://github.com/surya-dev-singh/BITB-framwork) | Phishing technique that simulates a browser window within the browser to spoof a legitimate domain. |
 | [burpsuite](https://portswigger.net/burp) | Graphical tool for performing security testing of web applications |
 | [cewl](https://github.com/digininja/CeWL) | Custom word lists spidering a targets website |
 | [cloudbunny](https://github.com/Warflop/CloudBunny) | Capture the real IP of the server that uses a WAF as a proxy or protection |

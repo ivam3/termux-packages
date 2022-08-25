@@ -2,7 +2,7 @@
   "name": "bitb",
   "version": "1.0",
   "arch": "all",
-  "homepage": "https://github.com/surya-dev-singh/BITB-framwork",
+  "homepage": "https://github.com/surya-dev-singh/BITB-framework",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
   "depends": ["git, python"],
   "suggests": ["i-haklab"],
