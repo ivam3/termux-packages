@@ -1,11 +1,27 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/bitb-installer
-rm -rf ${PREFIX}/bin/bitb-installer
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
-chmod 750 /data/data/com.termux/files/usr/bin/fixer
-echo "[*] bitb installation finished."
-echo "[*] Run \'bitb\' to execute it."
-echo "[*] Run \'fixer\' to fix any posible issue."
-echo "[!] For help going to https://t.me/Ivam3_Bot."
-echo "[*] @Ivam3: thank you for use my package."
+IFS=$'\n\t'
+
+echo "Cloning repository ..."
+git clone --quiet https://github.com/surya-dev-singh/BITB-framwork ${HOME}/.local/share/bitb
+
+[[ -d ${HOME}/.local/share/bitb ]] && {
+  echo "Installing requirements ...";
+  chmod 751 -R ${HOME}/.local/share/bitb;
+  wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/bitb/style2.css \
+    -O ${HOME}/.local/share/bitb/style2.css;
+  python -m pip --no-color --quiet --no-cache-dir install termcolor; 
+  
+  wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+  chmod 750 /data/data/com.termux/files/usr/bin/fixer
+  echo "[*] bitb installation finished."
+  echo "[*] Run \'bitb\' to execute it."
+  echo "[*] Run \'fixer\' to fix any posible issue."
+  echo "[!] For help going to https://t.me/Ivam3_Bot."
+  echo "[*] @Ivam3: thank you for use my package."
+} || {
+  echo -en "\e[31mE:\e[0m bitb directory missing ... \e[33mAborting.\e[0m\n";
+  echo "[!] For help going to https://t.me/Ivam3_Bot."
+  exit 1
+}
+
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

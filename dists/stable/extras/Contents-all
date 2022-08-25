@@ -13,8 +13,8 @@ data/data/com.termux/files/usr/bin/androbugs-installer                          
 data/data/com.termux/files/usr/bin/beef                                          beef
 data/data/com.termux/files/usr/bin/beef-installer                                beef
 data/data/com.termux/files/usr/bin/binwalk-installer                             binwalk
-data/data/com.termux/files/usr/bin/bitb                                          bitb-framework
-data/data/com.termux/files/usr/bin/bitb-installer                                bitb-framework
+data/data/com.termux/files/usr/bin/bitb                                          bitb
+data/data/com.termux/files/usr/bin/bitb-installer                                bitb
 data/data/com.termux/files/usr/bin/blackbox-installer                            blackbox
 data/data/com.termux/files/usr/bin/botgram                                       botgram
 data/data/com.termux/files/usr/bin/botgram-installer                             botgram
