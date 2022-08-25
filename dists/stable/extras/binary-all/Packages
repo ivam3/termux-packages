@@ -120,11 +120,11 @@ Suggests: i-haklab
 Homepage: https://github.com/surya-dev-singh/BITB-framwork
 Description: Phishing technique that simulates a browser window within the browser to spoof a legitimate domain.
 Filename: dists/stable/extras/binary-all/bitb-framework_1.0_all.deb
-Size: 2152
-MD5Sum: 685b99a95d78ce7007a04280a05cb9a9
-SHA1: 31f055ac7653dcf4d15c054dfe87e3ac9621c70b
-SHA256: 960ff4388060604639f8eccff127e874ba7c7a293664dc500d09e7100e46d435
-SHA512: e9c11534221fd47ff7061da6f7d1da9e2fa75a2eb93293a469b987cd5d065514b729bffb7034ed5550a00c188abec80d64d3d2e220018a503d767d3549b07e2d
+Size: 2144
+MD5Sum: cdb1e59685f61e29adeed4217bd7a1ba
+SHA1: 7e18299a443978309f377ae35c96ab79b774405a
+SHA256: d725941a9c8404e6a2aa6ddd2e1052133ee2259f2154e62f79c80c017e549d1b
+SHA512: cbe382a8f8a94987154f3e718881598944b9aadb3bcce03715bf9c6896c5d2f11c10aec38c4eded83bab4877af3249f586f6cd1abde7b7101a4eb9489e83891d
 
 Package: blackbox
 Version: 2.0
