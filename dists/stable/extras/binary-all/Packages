@@ -1197,7 +1197,7 @@ SHA256: d82028a2c3fb06fd36f9150c68a17b06296c7433e93868d9401ddc21dbc893f7
 SHA512: df35837130b2ba7162536b0c80d94932570552a360ce67bc7ea38fa47dd7506b5ee1f68649cb08e2e2472dae509b98a426a109c4d53f2c5b7f35cac72bf0a300
 
 Package: webscan
-Version: 1.5
+Version: 1.6
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
@@ -1205,12 +1205,12 @@ Depends: python, git, dirb
 Suggests: i-haklab
 Homepage: https://github.com/Fenrir-00/investigar-web
 Description: lightweight webscanner
-Filename: dists/stable/extras/binary-all/webscan_1.5_all.deb
-Size: 2020
-MD5Sum: 8388309ed44a9cef6375cf78a94e8477
-SHA1: e70abdfaab23b30b567d1ed7f8f26dec22e549e2
-SHA256: 160d18c961596dc9663f639c8b42fcc53b0e8f2dfb10c2abc51267202bf4ea1d
-SHA512: 4f12758d76a3f6ed6a12c9353e0a87785dad35d2007528a98d23c3bb8a3cdbc0eac9ece9ac8f4e20c79754a476b5f2f1a3a125d1b7272059206af46ab8fbb75c
+Filename: dists/stable/extras/binary-all/webscan_1.6_all.deb
+Size: 2000
+MD5Sum: f51372e13b27913d45fc99371c4d4962
+SHA1: eeb4e593cb8b49e8774a1bb52afd4012083c35e1
+SHA256: e8f47019bb60007e20f103a48ad10afb7d99593fe6bfeb1a2e5dbf0358bda0af
+SHA512: bccab1f8b842454117d01b9f79ed4c7b80ab63da5e5aa1de9cfa789dfa3802ccfbe84cc35a5b2e5ef026a5c291e8e2dc75baecfc9e942eb73629f317ad9c7d18
 
 Package: websploit
 Version: 3.0.0
