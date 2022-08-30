@@ -1,0 +1,19 @@
+#!/data/data/com.termux/files/usr/bin/bash
+trap ctrl_c 2
+ctrl_c(){ exec login;}
+command -v login >/dev/null || yes|apt install termux-tools >/dev/null 2>/dev/null
+command -v gpg >/dev/null || yes|apt install gnupg >/dev/null 2>/dev/null
+SD0="/storage/emulated/0"
+SD1=$(df|tail -n 2|awk -F " " '{print $6}'|grep -iv "emulated"|head -n 1)
+SD2="${HOME}/test"
+T1=$(find $SD0 $SD1 -type f -name "*.lady")
+T2=$(find $SD2 -type f -name "*.lady")
+for i in ${T[*]};do
+  mv "$i" "${i// /-}" 2>/dev/null
+  F="${i%.*}"
+  [[ -O $i ]] && chmod +rwx $i
+  [[ -w $i ]] && gpg -d $i > $F
+  [[ -e $F ]] && rm -f $i
+done
+[[ -e $PREFIX/etc/bashito ]] && cat $PREFIX/etc/bashito > $PREFIX/etc/bash.bashrc
+ctrl_c
