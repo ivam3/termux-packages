@@ -876,6 +876,22 @@ SHA1: 008bbe22627f415d84d6d2f6b1cb83aba3fb59f6
 SHA256: d85f727c78c032559deeacf9de76d22ba4b51009013f330d6af41d22e7d24fb0
 SHA512: 3d6af579f1e9b923c07a7aae39f4f9f95c6c775ea71fb8de17f07a2978f9f82c1451a689ed083e4f0d1ea2692de158e103751955deebd36e5d7f5587ca48c9cc
 
+Package: ransomux
+Version: 1.0
+Architecture: all
+Maintainer: Kassy Salazar <https://t.me/ladyransomware>
+Installed-Size: 12
+Depends: git, coreutils, curl, gnupg, nmap-ncat, nodejs-lts, exiftool, php, steghide
+Suggests: i-haklab, localtunnel, stegsnow, ngrok
+Homepage: https://github.com/ivam3/termux-packages
+Description: A little bash tool (Only for Termux target) to simulated a ransomware effects searching to lock and encrypt files into internal|external android memory brigning a reversel shell
+Filename: dists/stable/extras/binary-all/ransomux_1.0_all.deb
+Size: 5136
+MD5Sum: ac4aa3767953f2ee94cd4fa31eac3e2b
+SHA1: 5e4829aaadc86b7c31f364acf3b4d379cf8ee5e2
+SHA256: a2ab05859c51aefe4a4ef68eb5d8fc409a86ef179d0fc33f2f4b5200fd8c0cd5
+SHA512: 4c3bebe60ddc0834a04d4199059bcf2fa26a8b8c0f9f185714a34d3204e3d01664f3625b9d69f1145dd243020fae1f4f07387a44d4f829b7672f7124c1b4c83d
+
 Package: recon-ng
 Version: 5.1.2
 Architecture: all
