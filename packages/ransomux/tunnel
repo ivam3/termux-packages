@@ -1,0 +1,25 @@
+ _______  __   __  ______    ______    _______  _     _        ___   _______
+|  _    ||  | |  ||    _ |  |    _ |  |       || | _ | |      |   | |       |
+| |_|   ||  | |  ||   | ||  |   | ||  |   _   || || || |      |   | |   _   |
+|       ||  |_|  ||   |_||_ |   |_||_ |  | |  ||       |      |   | |  | |  |
+|  _   | |       ||    __  ||    __  ||  |_|  ||       | ___  |   | |  |_|  |
+| |_|   ||       ||   |  | ||   |  | ||       ||   _   ||   | |   | |       |
+|_______||_______||___|  |_||___|  |_||_______||__| |__||___| |___| |_______|
+
+             Hey there! I hope you are having an awesome day :)
+
+ *** You are currently subscribed to the free trial plan,
+ *** and you have 1 minute left.
+ ***
+ *** Upgrade your plan at https://burrow.io/upgrade so you
+ *** can keep using Burrow after the trial!
+ 
+Opening tunnel...
+
+Your tunnel is now open and redirecting traffic to your machine on port 4546.
+Hit CTRL-C to close the tunnel and quit.
+
+io.burrow.io:11889 -> localhost:4546
+
+Your subscription has expired. To continue using Burrow, please subscribe to one of the plans at https://burrow.io/subscription.
+
