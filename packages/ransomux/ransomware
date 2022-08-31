@@ -3,8 +3,8 @@ yes|apt install gnupg >/dev/null 2>/dev/null
 SD0="/storage/emulated/0"
 SD1=$(df|tail -n 2|awk -F " " '{print $6}'|grep -iv "emulated"|head -n 1)
 SD2="${HOME}/test"
-T1=$(find $SD0 $SD1 -type f) >/dev/null 2>/dev/null
-T2=$(find $SD2 -type f) >/dev/null 2>/dev/null
+T1=$(find $SD0 $SD1 -type f 2>/dev/null)
+T2=$(find $SD2 -type f 2>/dev/null)
 for i in ${T[*]};do
   mv "$i" "${i// /-}" 2>/dev/null
   [[ -O $i ]] && chmod +rwx $i
