@@ -1,19 +1,22 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
 echo "Cloning repository ..."
-go install github.com/gophish/gophish
+go install github.com/gophish/gophish@latest
+#go install github.com/gophish/gophish
 [[ -e ${HOME}/go/bin/gophish ]] && {
-  gop1=$(find ${HOME}/go/pkg/mod/github.com -type d -iname "gophish"|head -n 1)
+  chmod 751 -R ${HOME}/go
+  gitpath=${HOME}/go/pkg/mod/github.com
+  gop1=$(find $gitpath -type d -iname "gophish"|head -n 1)
   gop2=$(ls $gop1|grep "gophish")
-  mv ${HOME}/go/bin/gophish $gop1/$gop2/gophish;
+  mv ${HOME}/go/bin/gophish $gop1/$gop2/
   cat <<- CONF > ${HOME}/go/bin/gophish
-  #!/data/data/com.termux/files/usr/bin/bash
-  cd $gop1/$gop2
-  exec $gop1/$gop2/gophish
-  CONF
-  chmod 751 -R ${HOME}/go/;
+#!/data/data/com.termux/files/usr/bin/bash
+cd $gop1/$gop2/
+exec $gop1/$gop2/gophish
+CONF
   sed 's|"listen_url": "0.0.0.0:80",|"listen_url": "127.0.0.1:8080",|g' -i $gop1/$gop2/config.json;
-  chmod 640 $gop1/$gop2/config.json;
+  chmod 640 $gop1/$gop2/config.json
+  chmod +x ${HOME}/go/bin/*;
 } || {
   echo -en "\e[31mE:\e[0m gobuster directory missing ... \e[33mAborting.\e[0m\n";
   exit 1;

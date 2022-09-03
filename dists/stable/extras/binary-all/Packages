@@ -510,7 +510,7 @@ SHA256: 3a12af87d81feedfd1cf588b2e3ccb5c065dc1f250183dbba6abb0b48d603c93
 SHA512: 097f83b4dfb07f9a1e5e82e5da67c71c351824ecbfe7afddbb6a26f55da5c92124cd02d8ba9b9bc4ddbd9efd394e9475b40656cbb132ea04ffb35acf340dfc93
 
 Package: gophish
-Version: 0.11.0
+Version: 0.12.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
@@ -518,12 +518,12 @@ Depends: golang
 Suggests: i-haklab
 Homepage: https://github.com/gophish/gophish
 Description: Gophish is a tool for automating the process of sending email campaigns to your target audience.
-Filename: dists/stable/extras/binary-all/gophish_0.11.0_all.deb
-Size: 2152
-MD5Sum: c2bde3c0b30af06e39cc92dd87c12e98
-SHA1: 2ab3417fcb98debb49d6c10d01c1b6a954102c51
-SHA256: 4d258b1d55b8328c60e006a3872426500571f32f36f476161b202d4561f1f578
-SHA512: 3d6d4ec2bcce52e7e0a7443602d6221036212465156f60482b951119ea58722ebce27d61b41128a94929e471f3ea2590b51244f3fcee55137c0ab8cdf1ed3a11
+Filename: dists/stable/extras/binary-all/gophish_0.12.0_all.deb
+Size: 2176
+MD5Sum: 69f617e97ebe505f86a7cc088f9e3254
+SHA1: 1b86c60f07c1c0b4a2a96dc84e23bd5c9722d6d8
+SHA256: 8c1219e714a4764daf56291f85fb85c44ef10ad826d8372cc969e414fa9f3a83
+SHA512: 410450be25b366cceee8772840876540bb60e940d086570f260196a35a55e7f0496ae441c74332cf24ec5b71a4844e12f5a0f234d762156d4383f3557fdb59e9
 
 Package: hakku-framework
 Version: 1.0
