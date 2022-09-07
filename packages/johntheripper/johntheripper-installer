@@ -18,7 +18,7 @@ wget --tries=20 --quiet $JTRtar -O ${TMPDIR}/john-$JTRv-android-1.tar.gz
     aarch64)
       mv $TMPDIR/john-$JTRv-android/libs/arm64-v8a/* $JTR
       ;;
-    arm)
+    arm|armeabi|armvl7|armvl8)
       mv $TMPDIR/john-$JTRv-android/libs/armeabi/* $JTR
       ;;
     armhf)
