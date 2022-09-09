@@ -86,6 +86,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [websploit](https://github.com/The404Hacking/websploit) | MITM framework. |
 | [whatweb](https://github.com/urbanadventurer/WhatWeb) | Recognises web technologies including content management systems (CMS), blogging platforms, statistic/analytics packages, JavaScript libraries, web servers, and embedded devices. |
 | [wpscan](https://github.com/wpscanteam/wpscan) | WordPress security scanner. |
+| [xapt-management](https://github.com/ivam3/xapt/management) | X-Desktop graphical interface for advance package tool(APT) written in python. |
 | [xerosploit](https://github.com/LionSec/xerosploit) | A penetration testing toolkit whose goal is to perform man in the middle attacks for testing purposes. |
 ##### Suggest a tool and/or framework to be add in our [Telegram Support Group](https://t.me/Ivam3by_Cinderella)
 
