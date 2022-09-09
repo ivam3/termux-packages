@@ -622,7 +622,7 @@ SHA256: 8668f02ffc22d1a25db4d53f747340c4e4dde6baba585b93bb042f73bcbb34ab
 SHA512: a33df518d52ec0c9fa2ef336434db6fb52e7512bd5f801548d79535c9777f795a84737e437474bfc69a6c1612924979dc78c489be44345dff4369724d2873ff9
 
 Package: i-haklab
-Version: 3.5.6
+Version: 3.5.7
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 92291
@@ -630,12 +630,12 @@ Depends: termux-api, termux-elf-cleaner, termux-tools, util-linux, x11-repo, apr
 Suggests: Termux, Wayland, App
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.5.6_all.deb
-Size: 40085616
-MD5Sum: bae242acf5f0e08b481ef608cfd56bf9
-SHA1: a497ebb5c742831235658dad741eefce1190e441
-SHA256: 3286c641900b184143bc13ab06327c39f004ab71d7885d939f371870059e4f4e
-SHA512: 114cfd0171cde6f462579d8fc1f0f28eb7b58df4247ec3524864b09095127ef3328eadf91380c08a4b8a8b5e37090f492cf5516110d793e09b5c277ec9842034
+Filename: dists/stable/extras/binary-all/i-haklab_3.5.7_all.deb
+Size: 40086468
+MD5Sum: 076f069dd33fde64c330fdaf775d7607
+SHA1: e6769b4f97b229d7f8236e7fe3def606bb15847f
+SHA256: 4b4606f70e690ae4725ba123d88169e5922208c5279a1a349f247f4e485c8e4c
+SHA512: 8421341aff6401a11dc1514623bc4e08b507af61acc4b69ef4e42d68f33e411d9a353cd86c29ea525e9311e9f8fb607315f9fb265437825b4b6689c2f9345b3c
 
 Package: infoga
 Version: 1.0
@@ -1291,6 +1291,22 @@ MD5Sum: 4fb147b97a12385f50d2ae88a5412335
 SHA1: 2da74fcd6ceb32d6a5af12e1decdaccc8970df60
 SHA256: 9cf2b4164ec9d2bad8d173c423924dd764dce307f6785080c86691bf3f947703
 SHA512: ed6f85cddc44b06f4b70d8647ba24bc9f19b392016085715b4977a4f0ae1ab2c9e7cadd03c4ca606e2c396dae206584aeb6531bdc283603920de05f7d0533035
+
+Package: xapt-management
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: x11-repo, xwayland, python, python-tkinter
+Suggests: i-haklab
+Homepage: https://github.com/ivam3/xapt-management
+Description: Graphical interface for Advance Package Tool (APT) written in python.
+Filename: dists/stable/extras/binary-all/xapt-management_1.0_all.deb
+Size: 2108
+MD5Sum: fdd98c371511b72f5d9d0cc34bb8bc8c
+SHA1: 3a1cbbfbb2592464738152058f77d7de573f6a38
+SHA256: 4e14d13ffd0571cc46f8ccbae469bbb9cc66d7db5706e142eb66ed8695ebff03
+SHA512: 6c4cca7eaf190581ea1b1dff0e9b22e2fb2b2bcd529828025d03c4bac450f859987a3f276b3f9d15b881f68dbe670e8b31b0b7a999c204ab25edab80d3ec7443
 
 Package: xerosploit
 Version: 0.1

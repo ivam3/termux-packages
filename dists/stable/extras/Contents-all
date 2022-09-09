@@ -3804,5 +3804,7 @@ data/data/com.termux/files/usr/bin/wfuzz-installer                              
 data/data/com.termux/files/usr/bin/whatweb                                       whatweb
 data/data/com.termux/files/usr/bin/whatweb-installer                             whatweb
 data/data/com.termux/files/usr/bin/wpscan-installer                              wpscan
+data/data/com.termux/files/usr/bin/xapt                                          xapt-management
+data/data/com.termux/files/usr/bin/xapt-installer                                xapt-management
 data/data/com.termux/files/usr/bin/xerosploit                                    xerosploit
 data/data/com.termux/files/usr/bin/xerosploit-installer                          xerosploit
