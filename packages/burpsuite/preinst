@@ -6,9 +6,9 @@ then
 else
   if [[ -e ${HOME}/.local/share/burpsuite.jar ]]
   then
-		echo -en "Removing old version ...  "
+		echo -en "Removing old version ... "
 		rm -rf ${HOME}/.local/share/burpsuite.jar
-		echo -en "\bDone"
+		echo -en "\bDone\n"
 	else
 		mkdir -p ${HOME}/.local/share 2>/dev/null
   fi
