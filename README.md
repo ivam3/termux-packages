@@ -29,6 +29,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [dex2jar](https://github.com/pxb1988/dex2jar) | Toolkit to work with android .dex and java .class files |
 | [dnsenum](https://github.com/fwaeytens/dnsenum) | Enumerate DNS information |
 | [embed](https://github.com/ivam3/embed) | Embed metasploit payload into a legtim APK |
+| [evilginx2](https://github.com/kgretzky/evilginx2) | Standalone man-in-the-middle attack framework used for phishing login credentials along with session cookies, allowing for the bypass of 2-factor authentication. |
 | [evilurl](https://github.com/UndeadSec/EvilURL) | Generate unicode domains for IDN Homograph Attack and detect them. |
 | [exif](https://github.com/ivam3/ExiF) | Extract information (meta data) from files. |
 | [exploitdb](https://github.com/offensive-security/exploitdb) | The official [Exploit Database](https://www.exploit-db.com) repository |
