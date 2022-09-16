@@ -538,6 +538,7 @@ data/data/com.termux/files/usr/bin/dnsenum-installer                            
 data/data/com.termux/files/usr/bin/DoS-A-Tool                                    dos-a-tool
 data/data/com.termux/files/usr/bin/embed                                         embed
 data/data/com.termux/files/usr/bin/embed-installer                               embed
+data/data/com.termux/files/usr/bin/evilginx2                                     evilginx2
 data/data/com.termux/files/usr/bin/evilurl                                       evilurl
 data/data/com.termux/files/usr/bin/evilurl-installer                             evilurl
 data/data/com.termux/files/usr/bin/exif                                          exif

@@ -349,6 +349,22 @@ SHA1: 3cff1d33ca6327ee4039a516d99c28f8e7e45357
 SHA256: cfc0cbfd7c525eba2ac22f4348eea6796ff78cab7eb80cef008b912ce7be6050
 SHA512: 23df84ac4d505dbe6cfb0a30a1428174b9a482027f76479608a9caa185751ac9fe0d3ae76655f71a1f391605ccd38068f5918c19079b09ce4ab621f4950f26dc
 
+Package: evilginx2
+Version: 2.4.2
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: git, golang, make, wget
+Suggests: i-haklab
+Homepage: https://github.com/kgretzky/evilginx2.git
+Description: Standalone man-in-the-middle attack framework used for phishing login credentials along with session cookies, allowing for the bypass of 2-factor authentication.
+Filename: dists/stable/extras/binary-all/evilginx2_2.4.2_all.deb
+Size: 2136
+MD5Sum: cf4e67d5ad96746b6da6b85f7b448f9f
+SHA1: 6ade5ae4c1b7f50e82264612242b9c8eaefc418a
+SHA256: 5fd709d58ef1e43ea05a8a9f891c3f3f0430198535d480df46a60e416b11beb2
+SHA512: 438676164a8edf31f091d7567a8ed6895732db8308d99fbf8cf9f92c6ad07dc527c0a1a811cf6dd34d6cd36c2b8c62dc30068f458032bc6fa810cf5bf9c4bc2a
+
 Package: evilurl
 Version: 3.0
 Architecture: all
