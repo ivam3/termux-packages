@@ -10,6 +10,7 @@ msfPATH="$PREFIX/opt/metasploit-framework"
 RUBYv=$(ls $PREFIX/lib/ruby |grep -m 1 '[0-9].[0-9].[0-9]')
 LINUXANDROID=$(find $PREFIX/lib/ruby/$RUBYv -iname "bigdecimal.so"|awk -F "/" '{print $10}')
 export LD_PRELOAD="$LD_PRELOAD:$PREFIX/lib/ruby/$RUBYv/$LINUXANDROID/bigdecimal.so"
+export LD_LIBRARY_PATH=$PREFIX/lib/
 
 if [[ -d ${HOME}/.local/share/beef ]]
 then
