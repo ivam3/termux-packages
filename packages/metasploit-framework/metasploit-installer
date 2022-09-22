@@ -118,7 +118,7 @@ gem install network_interface --platform=ruby -- --use-system-libraries
 gem install bcrypt --platform=ruby -- --use-system-libraries
 gem install bundler -v '2.3.20' --platform=ruby -- --use-system-libraries
 gem install msgpack -v '1.5.6' --platform=ruby -- --use-system-libraries
-gem install nokogiri -v '1.13.6' --platform=ruby -- --use-system-libraries
+gem install nokogiri -v '1.13.8' --platform=ruby -- --use-system-libraries
 bundle config build.nokogiri --use-system-libraries
 
 echo "Setting metasploit database"
