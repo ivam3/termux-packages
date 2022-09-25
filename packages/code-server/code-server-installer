@@ -1,7 +1,23 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
-yarn config set ignore-engines true
-yarn global add code-server --ignore-engines
+v="v0.29.1"
+
+case $(uname -m) in 
+  aarch64) arch="arm64" ;;
+  x86_64) arch="x64" ;;
+esac
+
+#yarn config set ignore-engines true //DEPRECATED
+#yarn global add code-server --ignore-engines //DEPRECATED
+
+wget https://github.com/ranisalt/node-argon2/releases/download/$v/argon2-$v-napi-v3-linux-$arch-glibc.tar.gz \
+  -O ${TMPDIR}/argon2-$v-napi-v3-linux-$arch-glibc.tar.gz
+[[ -d ${PREFIX}/lib/node_modules ]] || { mkdir -p ${PREFIX}/lib/node_modules;}
+tar -xzvf argon2-$v-napi-v3-linux-$arch-glibc.tar.gz -C /data/data/com.termux/files/usr/lib/node_modules/
+rm ${TMPDIR}/argon2-$v-napi-v3-linux-$arch-glibc.tar.gz
+npm install --location=global --unsafe-perm code-server
+npm install --location=global --unsafe-perm minist yazl yauzl @microsoft/1ds-core-js
+
 echo -en "\e[33m[?] Set a login password:\e[0m "
 while read passwd && [ -z $passwd ];do
   continue

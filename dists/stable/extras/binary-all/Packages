@@ -206,20 +206,20 @@ SHA256: 01aca292027ae2de6bbaeff741a7d3d86f40c402e5481495d7883a4bd06b33f0
 SHA512: 3ad5403a9486e0352d36c0b989980bdd411289d77a97b5970e3035d193f4d52d4ca31436da762a8f93ee0f10b1a44cd6f47023dfb9f6e6314b261dee1cf4cfa1
 
 Package: code-server
-Version: 4.4.0
+Version: 4.7.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 1
-Depends: build-essential, nodejs-lts, yarn
+Installed-Size: 2
+Depends: build-essential, tar, wget, nodejs-lts, yarn
 Suggests: i-haklab
 Homepage: https://coder.com/docs/code-server/latest/npm
 Description: Code-server is VS Code with Node.js development environment running on a remote server, accessible through the browser.
-Filename: dists/stable/extras/binary-all/code-server_4.4.0_all.deb
-Size: 1824
-MD5Sum: 262377830d096cc6f5c272f63a956288
-SHA1: 49e07bb7b5b7fb687b4c4c1796c8b72dad9882f8
-SHA256: 7b3798d2504b29f544eed45aeceede26d33944ff4a037ef109b58dc71cf20b3d
-SHA512: f57316b851d138f582dacd307aad0a27a8ed8f6ef3d44b7db3bfc0d95ca3c1f34dd33c8dae6fa683b1770407293f4545a7c0c5b23d5c9c2dd75f96e6731c1291
+Filename: dists/stable/extras/binary-all/code-server_4.7.0_all.deb
+Size: 2168
+MD5Sum: df8997d1c704322893e3a235d05be1bb
+SHA1: 48ef9d1f4c3a62c8c606b95d632f5c1080f939e4
+SHA256: d8351be32a390b0134e1fb911f29a7dc16b477627ad99b4ca230263ec1c18228
+SHA512: 858fb843552ae0d0706deec08e5e009227bcbe939d2497dbba27343b7c106ff123ab4c48ec6999b69fe4339301ac8f0b5c32d9830bb1189856c6ba2e6e865342
 
 Package: converter
 Version: 1.0
