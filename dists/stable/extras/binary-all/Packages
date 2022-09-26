@@ -215,11 +215,11 @@ Suggests: i-haklab
 Homepage: https://coder.com/docs/code-server/latest/npm
 Description: Code-server is VS Code with Node.js development environment running on a remote server, accessible through the browser.
 Filename: dists/stable/extras/binary-all/code-server_4.7.0_all.deb
-Size: 2180
-MD5Sum: df68c8dd42279da427746aea463f2408
-SHA1: 5191bd3fec79c0facc9a3706c45d73ac5f57fe9e
-SHA256: 78375e085a56e177ddc0a7bc0c97bc81f2e80687732621d54f346b373f7f097d
-SHA512: 515d0f8249680d6d1182dc55a0cf73a0e4578beee358917968eefb4f6230881ae2e5b44188fa68e2471c3258a6987851a66c2b63e6ff23fcf6559cdb3b263f9b
+Size: 2196
+MD5Sum: 3b8fd910f0bc6fa4c5a2dfe5d8058850
+SHA1: 86a7c8816baf8591522894990ed76f42336247cb
+SHA256: f5164af1f5d962c126164ff962ede2d466f838cb862b64852b81befe28c60599
+SHA512: ad1ddd50f091f0f381b4599362db5e702a11e07f35454a5b75b1dfdd19eb2cbcccdc22e38787e2d5f916cdcd9fe040323b337b163eaa509c0cc80ade826ab5aa
 
 Package: converter
 Version: 1.0

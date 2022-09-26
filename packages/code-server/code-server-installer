@@ -16,7 +16,10 @@ wget https://github.com/ranisalt/node-argon2/releases/download/$v/argon2-$v-napi
 tar -xzvf argon2-$v-napi-v3-linux-$arch-glibc.tar.gz -C /data/data/com.termux/files/usr/lib/node_modules/
 rm ${TMPDIR}/argon2-$v-napi-v3-linux-$arch-glibc.tar.gz
 npm install --location=global --unsafe-perm code-server
-npm install --location=global --unsafe-perm minimist yazl yauzl @microsoft/1ds-core-js
+for i in minimist yazl yauzl @microsoft/1ds-core-js
+do
+  npm install --location=global --unsafe-perm $i
+done
 
 echo -en "\e[33m[?] Set a login password:\e[0m "
 while read passwd && [ -z $passwd ];do
