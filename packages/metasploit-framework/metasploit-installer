@@ -100,8 +100,8 @@ for i in msfd msfrpc msfrpcd msfvenom;do
 	ln -sfr ${PREFIX}/bin/msfconsole ${PREFIX}/bin/$i
 done
 
-echo -en "\e[33mWARNING:\e[0m Please answer questions with an 'y'(YES) or the number for ALL."
-sleep 5
+#echo -en "\e[33mWARNING:\e[0m Please answer questions with an 'y'(YES) or the number for ALL."
+#sleep 5
 for gem in nokogiri bcrypt msgpack network_interface bson redcarpet sqlite3;do
   find ${PREFIX}/lib/ruby/gems/$rubyLIBv -type d -iname "$gem-[0-9].[0-9].[0-9]"|xargs rm -rf
 #  gem uninstall $gem
@@ -109,11 +109,11 @@ done
 mkdir -p $PREFIX/include/libxml/
 ln -s $PREFIX/include/libxml2/libxml/* $PREFIX/include/libxml/ >/dev/null 2>/dev/null
 gem install mini_portile2
-gem install sqlite3 '1.5.0' --platform=ruby -- --use-system-libraries
 gem install redcarpet --platform=ruby -- --use-system-libraries
 gem install bson --platform=ruby -- --use-system-libraries
 gem install network_interface --platform=ruby -- --use-system-libraries
 gem install bcrypt --platform=ruby -- --use-system-libraries
+gem install sqlite3 -v '1.5.0' --platform=ruby -- --use-system-libraries
 gem install bundler -v '2.3.7' --platform=ruby -- --use-system-libraries
 gem install msgpack -v '1.5.6' --platform=ruby -- --use-system-libraries
 gem install nokogiri -v '1.13.8' --platform=ruby -- --use-system-libraries
