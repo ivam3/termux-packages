@@ -17,10 +17,13 @@ git clone --quiet https://github.com/beefproject/beef ${HOME}/.local/share/beef
   cd ${HOME}/.local/share/beef
   gem update --system
   gem install bundler -v '2.3.14' --platform=ruby -- --use-system-libraries
+  gem install msgpack -v '1.5.4' --platform=ruby -- --use-system-libraries
   bundle -j$(nproc --all) --verbose
-  curl -fsSL https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/libexec/fixbigdecimal|bash
+  curl -fsSL \
+    https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/libexec/fixbigdecimal|bash
   echo "Installing GeoIP ..."
-  wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/beef/GeoIP.zip \
+  wget --tries=20 --quiet \
+    https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/beef/GeoIP.zip \
     -O ${TMPDIR}/GeoIP.zip;
   [[ -d ${PREFIX}/opt/ ]] || { mkdir -p ${PREFIX}/opt;}
   unzip -q ${TMPDIR}/GeoIP.zip -d ${PREFIX}/opt
