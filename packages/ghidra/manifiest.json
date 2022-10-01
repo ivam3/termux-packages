@@ -1,6 +1,6 @@
 {
   "name": "ghidra",
-  "version": "10.1.4",
+  "version": "10.1.5",
   "arch": "all",
   "homepage": "https://github.com/NationalSecurityAgency/ghidra",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
@@ -9,6 +9,8 @@
   "description": "Ghidra is a software reverse engineering (SRE) framework",
   "files" :{
     "ghidra-installer": "bin/ghidra-installer",
-    "ghidra": "bin/ghidra"
+    "ghidra": "bin/ghidra",
+    "ghidra.desktop": "/data/data/com.termux/files/usr/share/applications/ghidra/ghidra.desktop",
+    "img/ghidra.png": "/data/data/com.termux/files/usr/share/applications/ghidra/img/ghidra.png"
   }
 }

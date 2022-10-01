@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=ghidra
+GenericName=ghidra
+Comment=A software reverse engineering (SRE) framework
+Comment[es]=Software de ingenieria inversa (SRE).
+Version=10.1.5
+Exec=ghidra
+Icon=/data/data/com.termux/files/usr/share/applications/xhydra/img/ghidra.png
+Terminal=false
+Type=Application
+Categories=System
+X-Desktop-File-Install-Version=10.1.5

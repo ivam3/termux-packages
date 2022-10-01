@@ -1,7 +1,9 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
 echo "Downloading ghidra ..."
-wget --tries=20 --quiet https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.1.4_build/ghidra_10.1.4_PUBLIC_20220519.zip -O ${TMPDIR}/ghidra.zip
+wget --tries=20 --quiet \
+  https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.1.5_build/ghidra_10.1.5_PUBLIC_20220726.zip \
+  -O ${TMPDIR}/ghidra.zip
 [[ -e ${TMPDIR}/ghidra.zip ]] && {
 	echo "Installing ghidra (It could take a while) ..."
 	unzip -q ${TMPDIR}/ghidra.zip -d ${HOME}/.local/share;
