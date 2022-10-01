@@ -20,6 +20,8 @@ data/data/com.termux/files/usr/bin/botgram                                      
 data/data/com.termux/files/usr/bin/botgram-installer                             botgram
 data/data/com.termux/files/usr/bin/burpsuite                                     burpsuite
 data/data/com.termux/files/usr/bin/burpsuite-installer                           burpsuite
+data/data/com.termux/files/usr/share/applications/burpsuite/burpsuite.desktop    burpsuite
+data/data/com.termux/files/usr/share/applications/burpsuite/img/burpsuite.png    burpsuite
 data/data/com.termux/files/usr/bin/cewl                                          cewl
 data/data/com.termux/files/usr/bin/cewl-installer                                cewl
 data/data/com.termux/files/usr/bin/cloudbunny                                    cloudbunny
@@ -553,6 +555,8 @@ data/data/com.termux/files/usr/bin/geo-recon-installer                          
 data/data/com.termux/files/usr/bin/getnpusers-installer                          getnpusers
 data/data/com.termux/files/usr/bin/ghidra                                        ghidra
 data/data/com.termux/files/usr/bin/ghidra-installer                              ghidra
+data/data/com.termux/files/usr/share/applications/ghidra/ghidra.desktop          ghidra
+data/data/com.termux/files/usr/share/applications/ghidra/img/ghidra.png          ghidra
 data/data/com.termux/files/usr/bin/ghost-installer                               ghost
 data/data/com.termux/files/usr/bin/gobuster                                      gobuster
 data/data/com.termux/files/usr/bin/gobuster-installer                            gobuster
@@ -569,6 +573,8 @@ data/data/com.termux/files/usr/bin/hcdecryptor-installer                        
 data/data/com.termux/files/usr/bin/hunner                                        hunner-framework
 data/data/com.termux/files/usr/bin/hunner-installer                              hunner-framework
 data/data/com.termux/files/usr/bin/hydra-installer                               hydra-gtk
+data/data/com.termux/files/usr/share/applications/xhydra/img/hydra.png           hydra-gtk
+data/data/com.termux/files/usr/share/applications/xhydra/xhydra.desktop          hydra-gtk
 data/data/com.termux/files/home/.bashrc                                          i-haklab
 data/data/com.termux/files/home/.config/fish/config.fish                         i-haklab
 data/data/com.termux/files/home/.config/fish/fish_variables                      i-haklab

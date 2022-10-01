@@ -158,20 +158,20 @@ SHA256: 92641366b14f6193a4c05c11a9cb8e49e8fa00fbd62c6d9bdaab3c0d61ade603
 SHA512: 37107395c092e6d1dcfb8554eeb0ab05ace424bc386dc25a5e0c2f73d8b691975f131bfd3c4f3de6986bc63f4a38fa8f72a494e84d1fb58c5ecc88bad4e0011a
 
 Package: burpsuite
-Version: 2022.8.4
+Version: 2022.8.5
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
+Installed-Size: 39
 Depends: openjdk-17, wget
 Suggests: termux-x11, xwayland
 Homepage: https://portswigger.net
 Description: An integrated platform/graphical tool for performing security testing of web applications.
-Filename: dists/stable/extras/binary-all/burpsuite_2022.8.4_all.deb
-Size: 2116
-MD5Sum: 3d84be08288228e3f04a1ef700c9b1f8
-SHA1: 21d803ad4510bf41ef1257b1727caeca25bc7428
-SHA256: c121554e90bf4231d11a0062dc8cbdb196f05d42076354f512588751363d795a
-SHA512: 23738269454fe79c34f54570d7b2d94da6c007927a836f35987bd9d79e5c9423a547ed203f5da0e60f191902955c24e53d10b360a190b19bbaa774243ee73426
+Filename: dists/stable/extras/binary-all/burpsuite_2022.8.5_all.deb
+Size: 38616
+MD5Sum: aa0c0e0ef137445700fde6f18d853b94
+SHA1: cc2848b2fc8fccca77552fb3f48216cddd2b83a9
+SHA256: 66dda5b5317c7e2ee673f199a155eab72e545643d25636244a8dc1a7da249980
+SHA512: f0ba4f815a36fd1317aa908b3895b0989034bd3d02ef51361ca66aca5c760ce94232f5267901e2334576d9de84f438f548493e38b50a79016204a36afa8517b9
 
 Package: cewl
 Version: 5.5.2
@@ -478,20 +478,20 @@ SHA256: e25aef6aa32e94e3b71cdd2893c96c01a68124d1a1f6ccc8fd2dbc0c4ddf48a3
 SHA512: c03099230f18f0fcf7172271d10a6db0cc4fadf1abc5882b02b2bb65863bc791d58e04f60fd1fefcb52bd4be631b15afea47e470690b8e4657c9c4592f402157
 
 Package: ghidra
-Version: 10.1.4
+Version: 10.1.5
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
+Installed-Size: 54
 Depends: openjdk-17
 Suggests: i-haklab, termux-desktop-xfce
 Homepage: https://github.com/NationalSecurityAgency/ghidra
 Description: Ghidra is a software reverse engineering (SRE) framework
-Filename: dists/stable/extras/binary-all/ghidra_10.1.4_all.deb
-Size: 2092
-MD5Sum: 30a3ca893c4cb0569fa8998b5c4faa82
-SHA1: faefda8a84ae7b7b69659d73f66de79dee570242
-SHA256: 98a8cc45d457e4459f0c2c485b70a920e688110c91b46914fc97ce4938b075c5
-SHA512: 34eeadc98d03d8697ed1a083c6e94d6a3cc2022118d378fa6d14a34f1ef464881c8341bc5f44f74c5a533062e0728505a55e0d8b22058b2f867f6e5c22c8bb04
+Filename: dists/stable/extras/binary-all/ghidra_10.1.5_all.deb
+Size: 54272
+MD5Sum: 94b0739a65bc6bb903363ec8bb0acf93
+SHA1: 5893323007c4749adc40277c9d3179bd3c7ce4ef
+SHA256: a9368447136b476d9a1e821ddc3bd905848f42e2d03ec73b9f97a26954b04482
+SHA512: 7a873e8449ff90f632f9cbe2466931251ce8a415c62b8deaa50fbbe7076856563cff80dd05d097825be17a5abfc66804e50339ad51cf76379cdfb9b8b75ada1e
 
 Package: ghost
 Version: 8.0.0
@@ -625,17 +625,17 @@ Package: hydra-gtk
 Version: 9.4
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 1
+Installed-Size: 38
 Depends: git, cmake, make, automake, libgcrypt, libssh, libidn, openssl, openssl-tool
 Suggests: i-haklab, x11-repo, xwayland
 Homepage: https://github.com/vanhauser-thc/thc-hydra
 Description: Number one brute forcing tool in ciber security on cli and x11(graphical interface).
 Filename: dists/stable/extras/binary-all/hydra-gtk_9.4_all.deb
-Size: 2012
-MD5Sum: 48381b10554ac4f90f66b6a379445dca
-SHA1: d5be1fa7a6e9ebd70b7a115a57513b278de81d1f
-SHA256: 8668f02ffc22d1a25db4d53f747340c4e4dde6baba585b93bb042f73bcbb34ab
-SHA512: a33df518d52ec0c9fa2ef336434db6fb52e7512bd5f801548d79535c9777f795a84737e437474bfc69a6c1612924979dc78c489be44345dff4369724d2873ff9
+Size: 38020
+MD5Sum: a2b50f0f73d8509e20a2440879e0ee2f
+SHA1: f27242ac3f86f804090eb404f9a7dc550859bf8a
+SHA256: 1d779c5915b70323cd81e81ed60b6004bb8fdafdc604976f795d66414dc03fe7
+SHA512: 18b742e0898b2c391a0ea86f5a06628f42e6317694c2869d1ed257b21d9f54996359d8cae0179fb69fcd705d61669f5e4f70dd03285a7c8eaab08e3f5a03847b
 
 Package: i-haklab
 Version: 3.5.7
