@@ -1,6 +1,6 @@
 {
   "name": "burpsuite",
-  "version": "2022.8.4",
+  "version": "2022.8.5",
   "arch": "all",
   "homepage": "https://portswigger.net",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
@@ -9,6 +9,8 @@
   "description": "An integrated platform/graphical tool for performing security testing of web applications.",
   "files" :{
     "burpsuite-installer": "bin/burpsuite-installer",
-    "burpsuite": "bin/burpsuite"
-}
+    "burpsuite": "bin/burpsuite",
+    "img/burpsuite.png": "/data/data/com.termux/files/usr/share/applications/burpsuite/img/burpsuite.png",
+    "burpsuite.desktop": "/data/data/com.termux/files/usr/share/applications/burpsuite/burpsuite.desktop"
+  }
 }
