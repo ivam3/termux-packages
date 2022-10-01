@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Xhydra
+GenericName=Xhydra
+Comment=Number one brute forcing tool in ciber security on cli and x11(graphical interface).
+Comment[es]=Interfaz grafica de la herramienta de fuerza bruta numero uno en ciber seguridad en CLI.
+Version=9.4
+Exec=xhydra
+Icon=/data/data/com.termux/files/usr/share/applications/xhydra/img/hydra.png
+Terminal=false
+Type=Application
+Categories=System
+X-Desktop-File-Install-Version=9.4
