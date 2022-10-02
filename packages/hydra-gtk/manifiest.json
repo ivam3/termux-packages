@@ -8,7 +8,6 @@
   "suggests": ["i-haklab, x11-repo, xwayland"],
   "description": "Number one brute forcing tool in ciber security on cli and x11(graphical interface).",
   "files" :{
-    "hydra-installer": "bin/hydra-installer",
     "img/hydra.png": "/data/data/com.termux/files/usr/share/applications/xhydra/img/hydra.png",
     "xhydra.desktop": "/data/data/com.termux/files/usr/share/applications/xhydra/xhydra.desktop"
   }
