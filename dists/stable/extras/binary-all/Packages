@@ -637,22 +637,6 @@ SHA1: 6c64a9cfdfad49aa9d954320b13bd11ba568931a
 SHA256: 087391bf54ad6dd1e09b9732f3156b6f667786c85454234afcfdec3745db7075
 SHA512: cd67869bc09f0df12989761fe7556c4c3d43a7dd3a8ac8440c27d7b07a5c96b6b8da577c2ed0467588350985c4532141c83f79501925589d00a5536754fff053
 
-Package: i-haklab
-Version: 3.5.7
-Architecture: all
-Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 92291
-Depends: termux-api, termux-elf-cleaner, termux-tools, util-linux, x11-repo, apr, apr-util, autoconf, axel, bat, bc, bison, clang, cmake, coreutils, curl, debianutils, dns2tcp, dnsutils, file, findutils, fish, gawk, git, gnupg, gpgme, hexedit, htop-legacy, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openjdk-17, openssh, openssl, openssl-tool, perl, php, php-apache, pkg-config, proxychains-ng, pulseaudio, pv, python, python2, readline, ruby, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, youtubedr, zip, zlib
-Suggests: Termux, Wayland, App
-Homepage: https://github.com/ivam3/i-Haklab
-Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.5.7_all.deb
-Size: 40086360
-MD5Sum: ddc4cd126516919e50335df76364abd1
-SHA1: 5fa0fee841baa56b655eb260abdee1b47bd34c42
-SHA256: 9a5ed6178a03df72d1590085b33eccc23372638e54732a81ea0db7939e512422
-SHA512: cbc9a7cc6a06cd931ff7f7e0a4587e66dbb76df7893a5c884112d3e488acb36a4aae8d8034c2a1f2cd44eb18e60eb013d1155ba9e20e9105f4be5c5e86ecee4c
-
 Package: infoga
 Version: 1.0
 Architecture: all
