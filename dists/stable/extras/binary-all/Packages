@@ -870,11 +870,11 @@ Suggests: i-haklab
 Homepage: https://www.ssh.com/academy/ssh/putty/linux
 Description: Graphical terminal program that supports the SSH, telnet, and rlogin protocols and connecting to serial ports.
 Filename: dists/stable/extras/binary-all/putty_0.77_all.deb
-Size: 55328
-MD5Sum: 7f22ff16e39cd1ce00f2a898629c471d
-SHA1: 9b9165215d50553dff1862cfa2f55d93e0534276
-SHA256: 9173854f0c82c3f9f7624f29f16be3c314d21df94863d6a7f8f724c4d5f3b52a
-SHA512: 02ead7fda926d3c4a7ea9bbef4128978018c800abf0f5dc038ac4c82cdf7638ec972b13e855e5d5180ef453f53cb3a492040d105270f5fe6a7e29087dbff0595
+Size: 55384
+MD5Sum: 1f92243e9f5e5164ee1a02a68f72b5b4
+SHA1: f3643ae50c8887fd936726191c6ba73e89a9506e
+SHA256: 5d0d7f328ea0c9d7ba8c3f623f6e26b97e55c97d1ab8d0f7c99f16bb339ed5ad
+SHA512: ea84da6d5d88b799f3d1e7d1fcef93a95caf7840fa1817bd037fe0d85a96add5069a17092b6195cc8ead4df33aa8b02661e7203c6d3d7127e936d8528628894e
 
 Package: pybelt
 Version: 1.0

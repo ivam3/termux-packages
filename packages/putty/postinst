@@ -11,6 +11,8 @@ tar -xzvf ${TMPDIR}/putty-$v.tar.gz -C ${HOME}/.local/share/
   cmake .
   sed -i "s|G_APPLICATION_FLAGS_NONE|G_APPLICATION_DEFAULT_FLAGS|g" \
     ${HOME}/.local/share/putty/unix/main-gtk-application.c
+  sed -i "s|/usr/local|/data/data/com.termux/files/usr|g" \
+    cmake_install.cmake
   cmake --build .
   cmake --build . --target install
   chmod 751 -R ${HOME}/.local/share/putty
