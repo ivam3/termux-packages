@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=putty
+GenericName=putty
+Comment=Graphical terminal program that supports the SSH, telnet and rlogin protocols and connecting to serial ports.
+Comment[es]=Programa de terminal grafica que soporta los protocolos SSH, telnet y rlogin y conectandolos a una seria de puertos.
+Version=0.77
+Exec=putty
+Icon=/data/data/com.termux/files/usr/share/applications/putty/img/putty.png
+Terminal=false
+Type=Application
+Categories=System
+X-Desktop-File-Install-Version=0.77

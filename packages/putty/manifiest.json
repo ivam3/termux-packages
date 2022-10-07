@@ -1,0 +1,14 @@
+{
+  "name": "putty",
+  "version": "0.77",
+  "arch": "all",
+  "homepage": "https://www.ssh.com/academy/ssh/putty/linux",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["clang, cmake, openssh, wget, tar"],
+  "suggests": ["i-haklab"],
+  "description": "Graphical terminal program that supports the SSH, telnet, and rlogin protocols and connecting to serial ports.",
+  "files" :{
+    "img/putty.png":"/data/data/com.termux/files/usr/share/applications/putty/img/putty.png",
+    "putty.desktop":"/data/data/com.termux/files/usr/share/applications/putty/putty.desktop"
+  }
+}

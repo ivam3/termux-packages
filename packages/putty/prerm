@@ -1,0 +1,20 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/putty ]]; then
+  rm -rf ${HOME}/.local/share/putty
+fi
+
+if [[ -d ${PREFIX}/share/applications/putty ]]; then
+  rm -rf ${PREFIX}/share/applications/putty
+fi
+
+for manfile in plink.1 pscp.1 psftp.1 psusan.1 puttygen.1 pageant.1 pterm.1 putty.1;do
+  if [[ -e ${PREFIX}/share/man/man1/$manfile ]]; then
+    rm -rf ${PREFIX}/share/man/man1/$manfile
+  fi
+done
+
+for binfile in plink pscp psftp psusan puttygen pageant pterm putty; do
+  if [[ -e ${PREFIX}/bin/$binfile ]]; then
+    rm -rf ${PREFIX}/bin/$binfile
+  fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

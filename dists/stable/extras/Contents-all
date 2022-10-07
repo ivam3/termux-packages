@@ -655,6 +655,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/osrframework   
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/pasterm         i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/phoneinfoga     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/phonesploit     i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/putty           i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/pybelt          i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/quack           i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/radare2         i-haklab
@@ -3761,6 +3762,8 @@ data/data/com.termux/files/usr/bin/phomber                                      
 data/data/com.termux/files/usr/bin/phomber-installer                             phomber
 data/data/com.termux/files/usr/bin/phonesploit                                   phonesploit
 data/data/com.termux/files/usr/bin/phonesploit-installer                         phonesploit
+data/data/com.termux/files/usr/share/applications/putty/img/putty.png            putty
+data/data/com.termux/files/usr/share/applications/putty/putty.desktop            putty
 data/data/com.termux/files/usr/bin/pybelt                                        pybelt
 data/data/com.termux/files/usr/bin/pybelt-installer                              pybelt
 data/data/com.termux/files/usr/bin/quack                                         quack
