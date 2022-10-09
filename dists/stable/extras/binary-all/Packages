@@ -487,11 +487,11 @@ Suggests: i-haklab, termux-desktop-xfce
 Homepage: https://github.com/NationalSecurityAgency/ghidra
 Description: Ghidra is a software reverse engineering (SRE) framework
 Filename: dists/stable/extras/binary-all/ghidra_10.1.5_all.deb
-Size: 54272
-MD5Sum: 94b0739a65bc6bb903363ec8bb0acf93
-SHA1: 5893323007c4749adc40277c9d3179bd3c7ce4ef
-SHA256: a9368447136b476d9a1e821ddc3bd905848f42e2d03ec73b9f97a26954b04482
-SHA512: 7a873e8449ff90f632f9cbe2466931251ce8a415c62b8deaa50fbbe7076856563cff80dd05d097825be17a5abfc66804e50339ad51cf76379cdfb9b8b75ada1e
+Size: 54276
+MD5Sum: 57ee234d2df299ca0efe9534932df67c
+SHA1: 172b5a84e7808f27bdc4d1c4246955b56d50ce38
+SHA256: 8a8e2421893c228e2285692ecb5cb945e9cb5e84b86b1bac14e8f1d028292dd9
+SHA512: 66f567307252e03c453fad75e4b5fd4ebafe4a25a0ada5168179c3769b9d4d1703f9b28307e38f75c177c288746299fe25eda50df08a1b1be77656a594a05567
 
 Package: ghost
 Version: 8.0.0
