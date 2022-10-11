@@ -2,7 +2,7 @@
 IFS=$'\n\t'
 echo "Cloning repository ..."
 path="${HOME}/go/pkg/mod/github.com/evilginx2"
-git clone --quite https://github.com/kgretzky/evilginx2 $path
+git clone --quiet https://github.com/kgretzky/evilginx2 $path
 [[ -d $path ]] && {
 	chmod 751 -R $path
   cd $path

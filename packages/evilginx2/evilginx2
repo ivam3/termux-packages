@@ -5,10 +5,10 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 B="\e[34m"
-if [[ -d ${HOME}/.local/share/evilginx2 ]]
+if [[ -e ${HOME}/go/pkg/mod/github.com/evilginx2/bin/evilginx ]]
 then
   cd ${HOME}/go/pkg/mod/github.com/evilginx2/bin >/dev/null
-  ./$(basename $0) ${@:1}
+  ./evilginx ${@:1}
 else
   echo -en $R"E:$W $(basename $0) PATH missing ...$Y Aborting.$W"
   exit 1

@@ -359,11 +359,11 @@ Suggests: i-haklab
 Homepage: https://github.com/kgretzky/evilginx2.git
 Description: Standalone man-in-the-middle attack framework used for phishing login credentials along with session cookies, allowing for the bypass of 2-factor authentication.
 Filename: dists/stable/extras/binary-all/evilginx2_2.4.2_all.deb
-Size: 2136
-MD5Sum: cf4e67d5ad96746b6da6b85f7b448f9f
-SHA1: 6ade5ae4c1b7f50e82264612242b9c8eaefc418a
-SHA256: 5fd709d58ef1e43ea05a8a9f891c3f3f0430198535d480df46a60e416b11beb2
-SHA512: 438676164a8edf31f091d7567a8ed6895732db8308d99fbf8cf9f92c6ad07dc527c0a1a811cf6dd34d6cd36c2b8c62dc30068f458032bc6fa810cf5bf9c4bc2a
+Size: 2120
+MD5Sum: 027c670c2b4324d0d9f47ad4337f42d4
+SHA1: fd3bac082b4013adb1fff8805233092e03e228d8
+SHA256: ee3de6d091e213fad85cadba8ca87403a4e83d1b9170f17b405de1495f07bcaf
+SHA512: b11d3e5dc096f301bc551676b03273d8dc0ba129595d03ed80d6a500226ba048c98f90ec51447e8daf4d091625ff57bc377ad8ce7520c1f147f3b84d24dbf477
 
 Package: evilurl
 Version: 3.0
