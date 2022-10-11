@@ -15,9 +15,9 @@ This project is with the purpose of offering easy and fast access to the install
 | [androbugs](https://github.com/AndroBugs/AndroBugs_Framework) | Android vulnerability scanner |
 | [beef](https://www.beefproject.com) | powerful and intuitive security tool focuses on leveraging browser vulnerabilities to assess the security posture of a target |
 | [binwalk](https://github.com/ReFirmLabs/binwalk) | Tool for analyzing, reverse engineering, and extracting firmware images | 
+| [bitb](https://github.com/surya-dev-singh/BITB-framwork) | Phishing technique that simulates a browser window within the browser to spoof a legitimate domain. |
 | [blackbox](https://github.com/jothatron/blackbox) | A penetration testing framework|
 | [botgram](https://github.com/ivam3/botgram) | Fetch all information about Telegram group members |
-| [bitb](https://github.com/surya-dev-singh/BITB-framwork) | Phishing technique that simulates a browser window within the browser to spoof a legitimate domain. |
 | [burpsuite](https://portswigger.net/burp) | Graphical tool for performing security testing of web applications |
 | [cewl](https://github.com/digininja/CeWL) | Custom word lists spidering a targets website |
 | [cloudbunny](https://github.com/Warflop/CloudBunny) | Capture the real IP of the server that uses a WAF as a proxy or protection |
@@ -59,8 +59,10 @@ This project is with the purpose of offering easy and fast access to the install
 | [osintgram](https://github.com/datalux/Osintgram) | A OSINT tool on Instagram. It offers an interactive shell to perform analysis on Instagram account of any users by its nickname. |
 | [phomber](https://github.com/s41r4j/phomber) | Infomation grathering tool that reverse search phone numbers and get their details. |
 | [phonesploit](https://github.com/aerosol-can/PhoneSploit) | A tool for remote ADB exploitation for all Machines. |
+| [PuTTY](https://www.ssh.com/academy/ssh/putty/linux) | Graphical terminal program that supports the SSH, telnet, and rlogin protocols and connecting to serial ports. |
 | [pybelt](https://github.com/Ekultek/Pybelt) | An open source hackers tool belt complete. |
 | [quack](https://github.com/Monkey-hk4/quack) | Toolkit with SMS attack tool, HTTP attack tool and many other attack tools. |
+| [ransomux](https://github.com/ivam3/termux-packages) | "Simulate a ransomware effects searching to lock and encrypt files into internal|external android memory brigning a reversel shell. |
 | [recon-ng](https://github.com/lanmaster53/recon-ng) | Open Source Intelligence gathering tool aimed at reducing the time spent harvesting information from open sources. |
 | [recondog](https://github.com/s0md3v/ReconDog) | Reconnaissance Swiss Army Knife |
 | [red hawk](https://github.com/Tuhinshubhra/RED_HAWK) | All in one tool for Information Gathering, Vulnerability Scanning and Crawling. |
@@ -86,7 +88,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [websploit](https://github.com/The404Hacking/websploit) | MITM framework. |
 | [whatweb](https://github.com/urbanadventurer/WhatWeb) | Recognises web technologies including content management systems (CMS), blogging platforms, statistic/analytics packages, JavaScript libraries, web servers, and embedded devices. |
 | [wpscan](https://github.com/wpscanteam/wpscan) | WordPress security scanner. |
-| [xapt-management](https://github.com/ivam3/xapt/management) | X-Desktop graphical interface for advance package tool(APT) written in python. |
+| [xapt-management](https://github.com/ivam3/xapt-management) | X-Desktop graphical interface for advance package tool(APT) written in python. |
 | [xerosploit](https://github.com/LionSec/xerosploit) | A penetration testing toolkit whose goal is to perform man in the middle attacks for testing purposes. |
 ##### Suggest a tool and/or framework to be add in our [Telegram Support Group](https://t.me/Ivam3by_Cinderella)
 
