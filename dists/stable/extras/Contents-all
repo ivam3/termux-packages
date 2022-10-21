@@ -3796,6 +3796,7 @@ data/data/com.termux/files/usr/bin/sublist3r                                    
 data/data/com.termux/files/usr/bin/sublist3r-installer                           sublist3r
 data/data/com.termux/files/usr/bin/tangalanga                                    tangalanga
 data/data/com.termux/files/usr/bin/tangalanga-installer                          tangalanga
+data/data/com.termux/files/usr/bin/termux-docker-qemu                            termux-docker-qemu
 data/data/com.termux/files/usr/bin/trape                                         trape
 data/data/com.termux/files/usr/bin/trape-installer                               trape
 data/data/com.termux/files/usr/bin/unshc-installer                               unshc

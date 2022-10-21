@@ -750,7 +750,7 @@ SHA256: 2d096212503025c84b82a4d202a82d17b496155dbfb61f220dfe7f04c4a72dba
 SHA512: 1d13ba293fb1c0bc7cee7453ee746adb8a1459e2a3d4f4529244ab57afbbe5a2aa28253b94ab4b7a95855347c931cfae03ae2a49f5fa7fea80eec7e1a359ba71
 
 Package: metasploit-framework
-Version: 6.2.22
+Version: 6.2.23
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 6
@@ -758,12 +758,12 @@ Depends: python, autoconf, patchelf, binutils, bison, yarn, clang, coreutils, cu
 Suggests: openjdk-17
 Homepage: https://github.com/rapid7/metasploit-framework
 Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
-Filename: dists/stable/extras/binary-all/metasploit-framework_6.2.22_all.deb
-Size: 3808
-MD5Sum: 5be4f4398947b8886762060a8004a7a9
-SHA1: 9fe96234e1832e7e92353e5002cb4324b8697aa6
-SHA256: b1765c8cb864ac7f2b121bcaa41e5ee12268e7e3172b9fa0063d83ef2ac5ef23
-SHA512: e4c8f45f00e992ab885401141d14d654118b0ce2eb2b60c177fc1c233a11057d523d2f05069d15422c58c66d4cd6748bf6f2c913c20816eeab9bdc5d260ea371
+Filename: dists/stable/extras/binary-all/metasploit-framework_6.2.23_all.deb
+Size: 3804
+MD5Sum: 2d67e856941eff4f5c6fe3afbdea727e
+SHA1: 97ac7ce37e6519fa292132e81ac39a58e1ad144d
+SHA256: 5f95fabc013cd1dc6f17f39ae24c3b26d667fc5e79afef2313999b3476272e43
+SHA512: fac4d41010058512bfd1cd24a0409cff200b9ffb0f50aa462a14993720b295c37d7b06fac1e8692dd92b70e3643651226e2e5539fa9f08ac8d1f97a9ca7ff9b5
 
 Package: nexphisher
 Version: 1.0
@@ -1163,6 +1163,22 @@ MD5Sum: cee11b2d0bd28414e675799d8ee7604b
 SHA1: deb672199f3d87dc21f9bfb91403c911ee276427
 SHA256: 434041e91d4fb70203dfdcafd6c96a679ac2947d152d16d80f054eaeaef740f7
 SHA512: 1278135e433b817e22ff137e18363e6243c6299e5b22792e3b6f098bb02364b3701ff68cde6290a615190000a45a6d5635efe023a804053ad574863997844e6d
+
+Package: termux-docker-qemu
+Version: 0.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: wget, qemu-utils, qemu-common, qemu-system-x86-64-headless
+Suggests: i-haklab
+Homepage: https://www.docker.com/products/docker-desktop/
+Description: Docker container for running x86_64 Linux virtual machines using QEMU
+Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.1_all.deb
+Size: 2800
+MD5Sum: b34a0baf69352b662e31a4c019b71a91
+SHA1: be0a651db2ee8f947f6868bdfbdc6723210b73fb
+SHA256: 9ce33a43c02241697b30bcdd66c8fbf71e55511761a6fcd30ef204a087fadabb
+SHA512: efc0d8551be520b4b33196d62dabd1d55d97d4ea7bacc0360bb099f00246841e95b23537b058d958eea41a78f9f2bf289c026e11467554d441463fa45d326cd4
 
 Package: trape
 Version: 2.0

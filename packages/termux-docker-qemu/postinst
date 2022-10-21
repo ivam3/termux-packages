@@ -30,7 +30,7 @@ Once in OS terminal run the next commands one by one.'''
 echo "
   $ setup-interfaces
   $ ifup eth0
-  $ curl http.... /answerfile-alpine
+  $ curl https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.alpine
   $ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk
   $ setup-$os -f answerfile
   $ poweroff"
