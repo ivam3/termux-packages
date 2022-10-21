@@ -1174,11 +1174,11 @@ Suggests: i-haklab
 Homepage: https://www.docker.com/products/docker-desktop/
 Description: Docker container for running x86_64 Linux virtual machines using QEMU
 Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.1_all.deb
-Size: 2808
-MD5Sum: 2abe56b83cb46036bada2aca59bc4ae6
-SHA1: 83d35d32f4504cc7be851105525100f018a76be6
-SHA256: 1745af288111cdc1faac39b4e318a4e29828d263babc68d16ed0ad3c995146fc
-SHA512: dba0de80b7eb677ce7299aa5022afc0ae64307ed4520ebb5c8fe7a8e7c7a0f31080cdfe3c51e6a5cf08d3b83531032f2971c4a3c37b8f1c92c9541dbe13a9711
+Size: 2860
+MD5Sum: 6197c382aa2ddfd30d61b2f43a89d177
+SHA1: 57a8b642941e33f92f78ae71c324a049b00961f4
+SHA256: 55a8fa6b5a5b8651b23c81e77c5fb4cde651bbe4a5102f80ad696f29924ee4ff
+SHA512: c72e0fb7fa0216fe6bb59ecb22224a77702b05a66f6e34a0b98b83e0b56891f9f0980307d1c9fd23f698fdc164818f1f6605ab21a8337b20e363a421fbb6d408
 
 Package: trape
 Version: 2.0

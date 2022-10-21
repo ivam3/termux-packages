@@ -6,7 +6,7 @@ G="\e[32m"
 Y="\e[33m"
 B="\e[34m"
 
-[[ $# -eq 0 ]] && { echo "Usage: $0 <operative system name>";exit;}
+[[ $# -eq 0 ]] && { echo -en "\e[33mUsage:\e[0m $0 <operative system name>";exit;}
 
 if [[ -d ${HOME}/.local/share/docker/$1 ]]
 then
