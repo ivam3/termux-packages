@@ -2,10 +2,10 @@
 #
 echo "[?] Choose an Operative System:"
 select os in alpine;do
-  case os in
+  case $os in
     alpine)
-      ref="http://dl-cdn.alpinelinux.org/alpine/v3.12/releases/x86_64"
-      iso="alpine-virt-3.12.3-x86_64.iso"
+      declare ref=http://dl-cdn.alpinelinux.org/alpine/v3.12/releases/x86_64/
+      declare iso=alpine-virt-3.12.3-x86_64.iso
       ;;
   esac
   break
@@ -13,7 +13,7 @@ done
 # Create father dir
 mkdir -p ${HOME}/.local/share/termux-docker-qemu/$os && cd $_
 # Download iso
-wget --tries=20 --progress=dot $ref/$iso
+wget --tries=20 --progress=dot $ref$iso
 # Create disk (note it won't actually take 4GB of space, more like 500MB)
 qemu-img create -f qcow2 $os.img 4G
 
