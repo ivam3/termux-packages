@@ -4,7 +4,7 @@ echo "[?] Choose an Operative System:"
 select os in alpine;do
   case os in
     alpine)
-      ref="http://dl-cdn.alpinelinux.org/alpine/v3.12/releases/x86_64/"
+      ref="http://dl-cdn.alpinelinux.org/alpine/v3.12/releases/x86_64"
       iso="alpine-virt-3.12.3-x86_64.iso"
       ;;
   esac
@@ -13,7 +13,7 @@ done
 # Create father dir
 mkdir -p ${HOME}/.local/share/termux-docker-qemu/$os && cd $_
 # Download iso
-wget --tries=20 --progress=dot $ref$iso
+wget --tries=20 --progress=dot $ref/$iso
 # Create disk (note it won't actually take 4GB of space, more like 500MB)
 qemu-img create -f qcow2 $os.img 4G
 
@@ -33,7 +33,9 @@ echo "
   $ curl https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.alpine
   $ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk
   $ setup-$os -f answerfile
-  $ poweroff"
+  $ poweroff
+
+press ENTER to continue"
 
 # Boot it up
 qemu-system-x86_64 -machine q35 -m 1024 -smp cpus=2 -cpu qemu64 \
