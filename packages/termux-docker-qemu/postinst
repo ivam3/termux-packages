@@ -1,0 +1,57 @@
+#!/data/data/com.termux/files/usr/bin/bash
+#
+echo "[?] Choose an Operative System:"
+select os in alpine;do
+  case os in
+    alpine)
+      ref="http://dl-cdn.alpinelinux.org/alpine/v3.12/releases/x86_64/"
+      iso="alpine-virt-3.12.3-x86_64.iso"
+      ;;
+  esac
+  break
+done
+# Create father dir
+mkdir -p ${HOME}/.local/share/termux-docker-qemu/$os && cd $_
+# Download iso
+wget --tries=20 --progress=dot $ref$iso
+# Create disk (note it won't actually take 4GB of space, more like 500MB)
+qemu-img create -f qcow2 $os.img 4G
+
+echo '''
+ ____  _____    _    ____  __  __ _____
+|  _ \| ____|  / \  |  _ \|  \/  | ____|
+| |_) |  _|   / _ \ | | | | |\/| |  _|
+|  _ <| |___ / ___ \| |_| | |  | | |___
+|_| \_\_____/_/   \_\____/|_|  |_|_____|
+::::::::::::::::::::::::::::::::::::::::
+Boot process will start, in middle of it you will login to Linux OS
+Do it as ROOT user with empty password.
+Once in OS terminal run the next commands one by one.'''
+echo "
+  $ setup-interfaces
+  $ ifup eth0
+  $ curl http.... /answerfile-alpine
+  $ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk
+  $ setup-$os -f answerfile
+  $ poweroff"
+
+# Boot it up
+qemu-system-x86_64 -machine q35 -m 1024 -smp cpus=2 -cpu qemu64 \
+  -drive if=pflash,format=raw,read-only,file=$PREFIX/share/qemu/edk2-x86_64-code.fd \
+  -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 \
+  -cdrom $iso \
+  -nographic $os.img
+
+wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+chmod 750 /data/data/com.termux/files/usr/bin/fixer
+echo "[*] termux-docker-qemu $os installation finished."
+echo "[*] Run \'termux-docker-qemu\' to execute it."
+echo "[!] Once running $os and only for the 1st time"
+echo "    you must install docker and enable on boot with :"
+echo "      $os:~# apk update && apk add docker"
+echo "      $os:~# service docker start"
+echo "      $os:~# rc-update add docker"
+echo "[*] Run \'fixer\' to fix any posible issue."
+echo "[!] For help going to https://t.me/Ivam3_Bot."
+echo "[*] @Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

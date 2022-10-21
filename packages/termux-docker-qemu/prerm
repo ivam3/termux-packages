@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/termux-docker-qemu ]]; then
+  rm -rf ${HOME}/.local/share/termux-docker-qemu
+fi
+
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

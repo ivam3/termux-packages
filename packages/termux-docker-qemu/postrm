@@ -1,0 +1,3 @@
+#!/data/data/com.termux/files/usr/bin/bash
+[[ -d $PREFIX/share/qemu ]] && rm -rf $PREFIX/share/qemu/
+echo "Done. Package 'termux-docker-qemu' removed."
