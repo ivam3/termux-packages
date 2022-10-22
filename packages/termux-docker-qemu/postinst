@@ -31,11 +31,11 @@ echo -en "\e[0mBoot process will start, in middle of it you will login to Linux 
 Do it as \e[31mROOT\e[0m user with \e[32mempty\e[0m password.
 Once in OS terminal run the next commands one by one.
 
-  $ setup-interfaces
+  $ setup-interfaces # On it response at all question pressing 'enter' for default settings
   $ ifup eth0
-  $ curl https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os
+  $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os
   $ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk
-  $ setup-$os -f answerfile
+  $ setup-$os -f answerfile.$os # On question 'erase the above disk(s) and continue? [y/N]:' answer 'y'
   $ poweroff
 
 press \e[33mENTER\e[0m to continue"
