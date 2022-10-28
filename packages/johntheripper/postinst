@@ -1,9 +1,32 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/johntheripper-installer
-rm -rf ${PREFIX}/bin/johntheripper-installer
+echo "Cloning repository (It could take a while)..."
+git clone --quiet https://github.com/openwall/john ${HOME}/.local/share/johntheripper
+python -m pip --no-color --quiet --no-cache-dir install --upgrade pip
+
+echo "Compiling binary files (It could take a while)..."
+cd ${HOME}/.local/share/johntheripper/src
+./configure --prefix=${PREFIX}
+make -s clean 2>/dev/null
+make -sj$(nproc --all) 2>/dev/null
+[[ ${HOME}/.local/share/johntheripper/src/john ]] && {
+  ln -s ${HOME}/.local/share/johntheripper/run/john ${PREFIX}/bin/john
+} || {
+  echo -en \e[31m"E:\e[0m Principal binary file missing.\n"
+}
+
+echo "Creating symbolic links."
+ln -s ${HOME}/.local/share/johntheripper/run ${PREFIX}/share/john
+for i in $(find $HOME/.local/share/johntheripper/run -type f -executable -iname "*.*");do
+  addon=$(echo $i|awk -F "/" '{print $NF}')
+  ex=${addon:(-2)}
+  ln -s $i ${PREFIX}/bin/${addon%.$ex} 2>/dev/null
+done
+
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] johntheripper installation finished."
+echo "[*] Run 'john' to execute it."
+echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

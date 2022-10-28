@@ -3741,8 +3741,7 @@ data/data/com.termux/files/usr/bin/infoga                                       
 data/data/com.termux/files/usr/bin/infoga-installer                              infoga
 data/data/com.termux/files/usr/bin/ipgeolocation                                 ipgeolocation
 data/data/com.termux/files/usr/bin/ipgeolocation-installer                       ipgeolocation
-data/data/com.termux/files/usr/bin/john                                          johntheripper
-data/data/com.termux/files/usr/bin/johntheripper-installer                       johntheripper
+data/data/com.termux/files/usr/bin/fixer                                         johntheripper
 data/data/com.termux/files/usr/bin/kalilinux-installer                           kalilinux
 data/data/com.termux/files/usr/bin/kerbrute                                      kerbrute
 data/data/com.termux/files/usr/bin/kerbrute-installer                            kerbrute

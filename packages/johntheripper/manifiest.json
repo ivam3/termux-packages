@@ -1,14 +1,13 @@
 {
   "name": "johntheripper",
-  "version": "1.8.0-1",
+  "version": "1.9.0",
   "arch": "all",
   "homepage": "https://github.com/openwall/john",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["wget, tar"],
+  "depends": ["git, make, clang, python"],
   "suggests": ["i-haklab"],
   "description": "Open Source password security auditing and password recovery tool.",
-  "files" :{
-    "johntheripper-installer": "bin/johntheripper-installer",
-    "john": "bin/john"
+  "files":{
+    "fixer": "/data/data/com.termux/files/usr/bin/fixer"
   }
 }

@@ -1,1 +1,9 @@
 #!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/johntheripper ]]; then
+  for i in $(find $HOME/.local/share/johntheripper/run -type f -executable -iname "*.*");do
+    addon=$(echo $i|awk -F "/" '{print $NF}')
+    ex=${addon:(-2)}
+    rm ${PREFIX}/bin/${addon%.$ex} 2>/dev/null
+  done
+  rm -rf ${HOME}/.local/share/johntheripper ${PREFIX}/share/john
+fi
