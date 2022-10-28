@@ -8,6 +8,6 @@
   "suggests": ["i-haklab"],
   "description": "Open Source password security auditing and password recovery tool.",
   "files":{
-    "fixer": "/data/data/com.termux/files/usr/bin/fixer"
+    "john": "/data/data/com.termux/files/usr/bin/john"
   }
 }

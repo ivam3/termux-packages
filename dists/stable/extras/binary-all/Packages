@@ -695,11 +695,11 @@ Suggests: i-haklab
 Homepage: https://github.com/openwall/john
 Description: Open Source password security auditing and password recovery tool.
 Filename: dists/stable/extras/binary-all/johntheripper_1.9.0_all.deb
-Size: 2076
-MD5Sum: f63f39fe912c74a480b2b79d352d4632
-SHA1: 95f2829cac218d3514f3094e2db06b27d04729e9
-SHA256: 2614eac3d28bdc91e770346cf0a047191dc43acae05c8cf8f4f336e897b1462d
-SHA512: c6c9352d9278d3a0d4b297394d182bd5efc574d0c847d2cfcb7326e9dd1837d8b6ed222df8e4459621466dfd008a9ad678ab4a05366a7733f6daebc1c2582bb7
+Size: 2016
+MD5Sum: d2b2310e22dad05e1f2e083450c32897
+SHA1: 3bd0ef8e21bf7de1704ffa8c6fe7fd8f2e3c76b4
+SHA256: f50f1dc062a1fdec42ba612754e3f68fffd8d23d0bf72e1496d96870cf401bcd
+SHA512: 0ea764149d8164a0aaffcbc43c6e52ba90d81b4b4eede736f2c9d3905800f4c9a82294a10728a4effb989141dabeee883d5d5f9dc6c5402b6310f67df0245b33
 
 Package: kalilinux
 Version: 2019.1

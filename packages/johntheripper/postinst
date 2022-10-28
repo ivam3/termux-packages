@@ -8,15 +8,10 @@ cd ${HOME}/.local/share/johntheripper/src
 ./configure --prefix=${PREFIX}
 make -s clean 2>/dev/null
 make -sj$(nproc --all) 2>/dev/null
-[[ ${HOME}/.local/share/johntheripper/src/john ]] && {
-  ln -s ${HOME}/.local/share/johntheripper/run/john ${PREFIX}/bin/john
-} || {
-  echo -en \e[31m"E:\e[0m Principal binary file missing.\n"
-}
 
 echo "Creating symbolic links."
 ln -s ${HOME}/.local/share/johntheripper/run ${PREFIX}/share/john
-for i in $(find $HOME/.local/share/johntheripper/run -type f -executable -iname "*.*");do
+for i in $(find $HOME/.local/share/johntheripper/run -executable);do
   addon=$(echo $i|awk -F "/" '{print $NF}')
   ex=${addon:(-2)}
   ln -s $i ${PREFIX}/bin/${addon%.$ex} 2>/dev/null
