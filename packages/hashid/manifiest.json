@@ -1,0 +1,13 @@
+{
+  "name": "hashid",
+  "version": "1.2",
+  "arch": "all",
+  "homepage": "https://https://gitlab.com/kalilinux/packages/hash-identifier",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["wget, python"],
+  "suggests": ["i-haklab"],
+  "description": "A python script to identify the different types of hashes used to encrypt data and especially passwords.",
+  "files" :{
+    "hashid-installer": "bin/hashid-installer"
+  }
+}

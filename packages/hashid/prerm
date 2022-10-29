@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -e ${PREFIX}/bin/hashid ]]; then
+  rm -rf ${PREFIX}/bin/hashid
+fi
+#python -m pip --no-color --quiet uninstall -r ${HOME}/.local/share/hashid/requirements.txt; 
+
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

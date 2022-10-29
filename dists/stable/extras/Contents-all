@@ -566,6 +566,7 @@ data/data/com.termux/files/usr/bin/hakku                                        
 data/data/com.termux/files/usr/bin/hakku-installer                               hakku-framework
 data/data/com.termux/files/usr/bin/hasher                                        hasher
 data/data/com.termux/files/usr/bin/hasher-installer                              hasher
+data/data/com.termux/files/usr/bin/hashid-installer                              hashid
 data/data/com.termux/files/usr/bin/hatcloud                                      hatcloud
 data/data/com.termux/files/usr/bin/hatcloud-installer                            hatcloud
 data/data/com.termux/files/usr/bin/hcdecryptor                                   hcdecryptor

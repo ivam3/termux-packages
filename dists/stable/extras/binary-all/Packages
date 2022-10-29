@@ -573,6 +573,22 @@ SHA1: fd2f899b930c6d3531466e10d3ce112ea251b390
 SHA256: 188ec3086ad2bbf762100f723f031b61fc152ef7b3556f26fc07e55c402ac22a
 SHA512: 05fcab1ee1d430702d7b423981080b30a1bfcf8b94c4a4410cca279403314e9003b04c7d5b052aad5777f9119afb631b51ce7f68e7e013c1a33abc8de8462223
 
+Package: hashid
+Version: 1.2
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: wget, python
+Suggests: i-haklab
+Homepage: https://https://gitlab.com/kalilinux/packages/hash-identifier
+Description: A python script to identify the different types of hashes used to encrypt data and especially passwords.
+Filename: dists/stable/extras/binary-all/hashid_1.2_all.deb
+Size: 1868
+MD5Sum: 3349902e08627063cb995ee9d500e5a1
+SHA1: ec64c6154c2465bd04205be358bda4f5290b3c9e
+SHA256: d80761848c7f7790a7d307065dac479149c7f34321f2df19bb441270e099eeae
+SHA512: 6d753ce6345aba77796e666224e73a33817cfe61154ffb36bf82e8ced1d9753d42c3950aafc4ca4dcab7b80699f303ac8b72e7c070c78620c1f85f97da853daa
+
 Package: hatcloud
 Version: 1.0
 Architecture: all
