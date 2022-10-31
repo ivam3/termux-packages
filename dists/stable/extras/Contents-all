@@ -19,7 +19,6 @@ data/data/com.termux/files/usr/bin/blackbox-installer                           
 data/data/com.termux/files/usr/bin/botgram                                       botgram
 data/data/com.termux/files/usr/bin/botgram-installer                             botgram
 data/data/com.termux/files/usr/bin/burpsuite                                     burpsuite
-data/data/com.termux/files/usr/bin/burpsuite-installer                           burpsuite
 data/data/com.termux/files/usr/share/applications/burpsuite/burpsuite.desktop    burpsuite
 data/data/com.termux/files/usr/share/applications/burpsuite/img/burpsuite.png    burpsuite
 data/data/com.termux/files/usr/bin/cewl                                          cewl

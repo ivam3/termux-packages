@@ -8,7 +8,6 @@
   "suggests": ["termux-x11, xwayland"],
   "description": "An integrated platform/graphical tool for performing security testing of web applications.",
   "files" :{
-    "burpsuite-installer": "bin/burpsuite-installer",
     "burpsuite": "bin/burpsuite",
     "img/burpsuite.png": "/data/data/com.termux/files/usr/share/applications/burpsuite/img/burpsuite.png",
     "burpsuite.desktop": "/data/data/com.termux/files/usr/share/applications/burpsuite/burpsuite.desktop"

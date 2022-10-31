@@ -2,4 +2,7 @@
 if [[ -e ${HOME}/.local/share/burpsuite.jar ]]; then
   rm -rf ${HOME}/.local/share/burpsuite.jar
 fi
+if [[ -e ${HOME}/.local/share/jython.jar ]]; then
+  rm -rf ${HOME}/.local/share/jython.jar
+fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

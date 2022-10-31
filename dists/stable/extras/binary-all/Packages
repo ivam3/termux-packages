@@ -161,17 +161,17 @@ Package: burpsuite
 Version: 2022.9.5
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 39
+Installed-Size: 38
 Depends: openjdk-17, wget
 Suggests: termux-x11, xwayland
 Homepage: https://portswigger.net
 Description: An integrated platform/graphical tool for performing security testing of web applications.
 Filename: dists/stable/extras/binary-all/burpsuite_2022.9.5_all.deb
-Size: 38612
-MD5Sum: 8ca9c70ed99defee4a18d97fe3d08239
-SHA1: 13ecdfa94a6c57173b24db39e6dfa5e7fdc25e5d
-SHA256: 9d909171843afd26b99140ba56e7c837ce34e27a013b182a0d43695234c7273f
-SHA512: 2735003a51fde888d1154033bbb378cef9284cb3b450d19024b6e748144608a547c7d8bc8bb98958ed0aadfb1308c9827627c86a2f8861439819a480f8b2bfe1
+Size: 38620
+MD5Sum: ab7d30b23789e65c09130c9fd6f4e794
+SHA1: 1ec384a7e613765bdfc7ee58a80e1f8af7224348
+SHA256: 13fbcc0898686eb42130408b6f38382240d952abae858acebfb8db15e8725e33
+SHA512: dd6ff73f23193d96d0bec60818bd0b8758f8aacd2717c872f067a21267b2175b434b060aa99aec121ddcac5c373a9b8e2bc22519ee1e8aab2e371d3727c210fc
 
 Package: cewl
 Version: 5.5.2
