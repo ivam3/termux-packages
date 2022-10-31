@@ -776,10 +776,10 @@ Homepage: https://github.com/rapid7/metasploit-framework
 Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
 Filename: dists/stable/extras/binary-all/metasploit-framework_6.2.23_all.deb
 Size: 3804
-MD5Sum: 2d67e856941eff4f5c6fe3afbdea727e
-SHA1: 97ac7ce37e6519fa292132e81ac39a58e1ad144d
-SHA256: 5f95fabc013cd1dc6f17f39ae24c3b26d667fc5e79afef2313999b3476272e43
-SHA512: fac4d41010058512bfd1cd24a0409cff200b9ffb0f50aa462a14993720b295c37d7b06fac1e8692dd92b70e3643651226e2e5539fa9f08ac8d1f97a9ca7ff9b5
+MD5Sum: ef837097eab4ba3a2515861e12dddcea
+SHA1: 8537c439ac053c7bbbf5bbe54d473b8c997c9ca5
+SHA256: b6981696a9bd907172504ebee9d3588306c710e4f0cb2981bd30ecc09d17635e
+SHA512: d9df398ab4234bda0ee7184abdd9f5c8b14ea672070d88016707aa13ebc29d565a61c4121764ba95d5ba44d5e3d9e54ba5e0b3d00a6fb047c079e20d8f457920
 
 Package: nexphisher
 Version: 1.0
