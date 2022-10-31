@@ -113,9 +113,9 @@ gem install redcarpet --platform=ruby -- --use-system-libraries
 gem install bson --platform=ruby -- --use-system-libraries
 gem install network_interface --platform=ruby -- --use-system-libraries
 gem install bcrypt --platform=ruby -- --use-system-libraries
-gem install sqlite3 -v '1.5.0' --platform=ruby -- --use-system-libraries
+gem install sqlite3 -v '1.5.3' --platform=ruby -- --use-system-libraries
 gem install bundler -v '2.3.7' --platform=ruby -- --use-system-libraries
-gem install msgpack -v '1.5.6' --platform=ruby -- --use-system-libraries
+gem install msgpack -v '1.6.0' --platform=ruby -- --use-system-libraries
 gem install nokogiri -v '1.13.8' --platform=ruby -- --use-system-libraries
 bundle config build.nokogiri --use-system-libraries
 
