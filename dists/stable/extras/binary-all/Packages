@@ -654,20 +654,20 @@ SHA256: 087391bf54ad6dd1e09b9732f3156b6f667786c85454234afcfdec3745db7075
 SHA512: cd67869bc09f0df12989761fe7556c4c3d43a7dd3a8ac8440c27d7b07a5c96b6b8da577c2ed0467588350985c4532141c83f79501925589d00a5536754fff053
 
 Package: i-haklab
-Version: 3.5.8
+Version: 3.6.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 92295
-Depends: termux-api, termux-elf-cleaner, termux-tools, util-linux, x11-repo, apr, apr-util, autoconf, axel, bat, bc, fontconfig-utils, bison, clang, cmake, coreutils, curl, debianutils, dns2tcp, dnsutils, file, findutils, fish, gawk, git, gnupg, gpgme, hexedit, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openjdk-17, openssh, openssl, openssl-tool, perl, php, php-apache, pkg-config, proxychains-ng, pulseaudio, pv, python, python2, readline, ruby, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, youtubedr, zip, zlib
+Installed-Size: 93223
+Depends: termux-api, termux-elf-cleaner, termux-tools, util-linux, x11-repo, apr, apr-util, autoconf, axel, bat, bc, fontconfig-utils, bison, clang, cmake, coreutils, curl, debianutils, dns2tcp, dnsutils, file, findutils, fish, gawk, git, gnupg, gpgme, hexedit, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openjdk-17, openssh, openssl, openssl-tool, perl, php, php-apache, pkg-config, procps, proxychains-ng, pulseaudio, pv, python, python2, readline, ruby, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, youtubedr, zip, zlib
 Suggests: Termux, Wayland, App
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.5.8_all.deb
-Size: 40087440
-MD5Sum: e111c49a52defb02405fd3236293ee85
-SHA1: a1a4281a83eee2f4b27282e157f43e556eacdc75
-SHA256: 68974dfbf594a92358f71847b0b0a462076ef9058f44b7506a6d5ef041db5821
-SHA512: 1419ffe1f18345dd65ce63e779f7d2597fbfb9d9aff2f606284bd561169abec800d9d6d0a3715dadd0e71989fbab9df663d72ecb3e516b5353acd3d95b311b26
+Filename: dists/stable/extras/binary-all/i-haklab_3.6.0_all.deb
+Size: 40576164
+MD5Sum: 087697519b0676b71a34a356921da65f
+SHA1: e3edeabe128228615b746a43a16263c42dce74bf
+SHA256: 00d320d8d99550e6f5f74ce76e202a458d686ed2bb17cec0d46957eefd21d692
+SHA512: a7144d8d56df35215758a26803866fa1e07c2bf056db64df4b09fc33d24e7bf6d3be4181ad217ee2c68dfc25cb691f093f80f24f3c308a6ad42279c343e67964
 
 Package: infoga
 Version: 1.0

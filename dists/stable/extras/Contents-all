@@ -580,6 +580,7 @@ data/data/com.termux/files/home/.config/fish/fish_variables                     
 data/data/com.termux/files/home/.config/fish/functions/LOCALHOST.fish            i-haklab
 data/data/com.termux/files/home/.config/fish/functions/apt.fish                  i-haklab
 data/data/com.termux/files/home/.config/fish/functions/fish_greeting.fish        i-haklab
+data/data/com.termux/files/home/.config/fish/functions/followps.fish             i-haklab
 data/data/com.termux/files/home/.config/fish/functions/github.fish               i-haklab
 data/data/com.termux/files/home/.config/fish/functions/i-Haklab.fish             i-haklab
 data/data/com.termux/files/home/.config/fish/functions/lock.fish                 i-haklab
@@ -707,6 +708,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/shodan/usrpasswd.txt        
 data/data/com.termux/files/home/.local/etc/i-Haklab/variables                    i-haklab
 data/data/com.termux/files/home/.local/libexec/QG_aircrack-ng                    i-haklab
 data/data/com.termux/files/home/.local/libexec/QG_nmap                           i-haklab
+data/data/com.termux/files/home/.local/libexec/followps                          i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab.login                    i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/ESmsg                    i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/Xwayland                 i-haklab
@@ -725,6 +727,7 @@ data/data/com.termux/files/home/.local/libexec/i-Haklab/phishing.CXC            
 data/data/com.termux/files/home/.local/libexec/i-Haklab/phonescan                i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/ransomux                 i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/servers4test             i-haklab
+data/data/com.termux/files/home/.local/libexec/i-Haklab/setbanner                i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/setuser                  i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/share                    i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/show                     i-haklab
@@ -738,6 +741,7 @@ data/data/com.termux/files/home/.local/libexec/serverphp                        
 data/data/com.termux/files/home/.local/share/wordlist/adobe_top100_password.txt  i-haklab
 data/data/com.termux/files/home/.local/share/wordlist/fuzzdb/big.txt             i-haklab
 data/data/com.termux/files/home/.local/share/wordlist/fuzzdb/common.txt          i-haklab
+data/data/com.termux/files/home/.local/share/wordlist/fuzzdb/subdomains-top1million-20000.txt i-haklab
 data/data/com.termux/files/home/.local/share/wordlist/hydra.restore              i-haklab
 data/data/com.termux/files/home/.local/share/wordlist/pass_list.rar              i-haklab
 data/data/com.termux/files/home/.local/share/wordlist/passlist.txt               i-haklab
@@ -1368,6 +1372,7 @@ data/data/com.termux/files/home/.local/var/service/www/servers4test/bWAPP/clickj
 data/data/com.termux/files/home/.local/var/service/www/servers4test/bWAPP/commandi.php i-haklab
 data/data/com.termux/files/home/.local/var/service/www/servers4test/bWAPP/commandi_blind.php i-haklab
 data/data/com.termux/files/home/.local/var/service/www/servers4test/bWAPP/config.inc i-haklab
+data/data/com.termux/files/home/.local/var/service/www/servers4test/bWAPP/config.inc.php i-haklab
 data/data/com.termux/files/home/.local/var/service/www/servers4test/bWAPP/connect.php i-haklab
 data/data/com.termux/files/home/.local/var/service/www/servers4test/bWAPP/connect_i.php i-haklab
 data/data/com.termux/files/home/.local/var/service/www/servers4test/bWAPP/credits.php i-haklab
