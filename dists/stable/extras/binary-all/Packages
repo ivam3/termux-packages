@@ -881,16 +881,16 @@ Version: 0.77
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 53
-Depends: clang, cmake, openssh, wget, tar
+Depends: x11-repo, clang, cmake, openssh, wget, tar, putty-tools
 Suggests: i-haklab
 Homepage: https://www.ssh.com/academy/ssh/putty/linux
 Description: Graphical terminal program that supports the SSH, telnet, and rlogin protocols and connecting to serial ports.
 Filename: dists/stable/extras/binary-all/putty_0.77_all.deb
-Size: 55368
-MD5Sum: a2a9ce3381f0f5817fb66c67bc357cd7
-SHA1: a1071c243866be53fc924747f2bec3335edd6021
-SHA256: ffa8f2d903dc694078a462b41cc5971c1210b2aacc988472ae93f7da3d68ff8d
-SHA512: e5f25fcb124abc28c7d49e978efe7b5000feae4f2d89346dd49ed6c469a7458d5e0979ad7014d142e36f52e6b831233d1af603675974269dda745d4306145662
+Size: 55388
+MD5Sum: 52e000713d2b2a01d419dbae66cf4e9a
+SHA1: 68e564db3155908fab4a568d6521d4e070c41452
+SHA256: f6bb7d4f06ee24e7c0ffc439a1b4f110220c46c5ff00d4c973261c5a115e24ef
+SHA512: 4ed18f91830ddba2c3e894ed8388120b645dd4884646a460e7c13571adac0f9911ddd11c5fb99021ef806471d6a38f6b44a5b3b245a8693aeb9e48463faf681f
 
 Package: pybelt
 Version: 1.0

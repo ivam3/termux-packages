@@ -4,7 +4,7 @@
   "arch": "all",
   "homepage": "https://www.ssh.com/academy/ssh/putty/linux",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["clang, cmake, openssh, wget, tar"],
+  "depends": ["x11-repo, clang, cmake, openssh, wget, tar, putty-tools"],
   "suggests": ["i-haklab"],
   "description": "Graphical terminal program that supports the SSH, telnet, and rlogin protocols and connecting to serial ports.",
   "files" :{
