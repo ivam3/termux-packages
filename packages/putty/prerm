@@ -17,4 +17,5 @@ for binfile in plink pscp psftp psusan puttygen pageant pterm putty; do
   if [[ -e ${PREFIX}/bin/$binfile ]]; then
     rm -rf ${PREFIX}/bin/$binfile
   fi
+done
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
