@@ -78,6 +78,22 @@ SHA1: 3f602f17d887b208ace83c14bb014c43d657156c
 SHA256: 63db8f7fd261f4a8b205fb31cf26e9ac88aca6aa044daa5ef0648a2b1ba76969
 SHA512: 9a012facbfc6e511dd8eab7881a57e998c75a6c6c65162c6adc63610e1f273b30c1023f910530777f856fc8bff727736737b95f9c74035c3949f678e63153889
 
+Package: appshark
+Version: 0.1.2
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: openjdk-17, git
+Suggests: i-haklab
+Homepage: https://github.com/bytedance/appshark
+Description: An static taint analysis platform to scan vulnerabilities in an Android app.
+Filename: dists/stable/extras/binary-all/appshark_0.1.2_all.deb
+Size: 2212
+MD5Sum: b37a9a49fb192c0ac282810e8dc483a4
+SHA1: 148fb82122e221692e3a9ae0727a85ec5593c8b1
+SHA256: 08d934a057db8ea500f6036794fd8df54b2bd8572ddd50b69edb7465f91234c2
+SHA512: dec7421f4218e718e0b4fca726dc2ac9950fb59dbee25620ef86460c89daf95baed57bd7c83eff9280a7a9257e86a1167865fd97c4697cdc83fb807ace7342b2
+
 Package: beef
 Version: 0.5.4.0-dev
 Architecture: all

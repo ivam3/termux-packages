@@ -1,0 +1,42 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# COLORS
+W="\e[0m"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+B="\e[34m"
+dirpath="${HOME}/.local/share/$(basename $0)"
+confile="$dirpath/config/config.json5"
+jarfile=$(find $dirpath/build/libs -iname "*all.jar")
+apkfile=$1
+
+if [[ ! -z $jarfile ]]
+then
+  [[ -z $apkfile ]] && {
+    echo -en $Y"usage:$W appshark <path/to/file.apk>"
+    exit 0
+  } || [[ -e $apkfile ]] || {
+    echo -en $R"E:$W Not such apk file"
+    exit 0
+  }
+  cd $dirpath
+  cat <<- CONF > $confile
+{
+  //apk to anlayze
+  "apkPath": "$apkfile",
+  //result output directory
+  "out": "$dirpath/out/",
+  "rules": "unZipSlip.json",
+  "maxPointerAnalyzeTime": 600,
+  //print more info about this rule
+  "debugRule": "unZipSlip"
+}
+CONF
+  echo -en "$Y!:$W Running $(basename $0) with default configurations$Y\n╰─➤$W You can modify those in:$Y config/config.json5$W file.\n"
+  sleep 4
+  exec java -jar $jarfile $confile
+else
+  echo -en $R"E:$W appshark PATH missing ...$Y Aborting.$W"
+  exit 1
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
