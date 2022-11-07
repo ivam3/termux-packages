@@ -595,9 +595,6 @@ data/data/com.termux/files/home/.config/fish/functions/sudo.fish                
 data/data/com.termux/files/home/.config/fish/functions/telegram.fish             i-haklab
 data/data/com.termux/files/home/.config/fish/functions/traductor.fish            i-haklab
 data/data/com.termux/files/home/.config/fish/functions/unset.fish                i-haklab
-data/data/com.termux/files/home/.local/bin/IbyC-mountex                          i-haklab
-data/data/com.termux/files/home/.local/bin/applets/sudo                          i-haklab
-data/data/com.termux/files/home/.local/bin/snakegame                             i-haklab
 data/data/com.termux/files/home/.local/etc/fish/config.fish                      i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/     Tools/Readme/clamav     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/     Tools/Readme/twifo-cli  i-haklab
@@ -3740,7 +3737,6 @@ data/data/com.termux/files/home/.vim/snippets/vim.snippets                      
 data/data/com.termux/files/home/.vim/snippets/zsh.snippets                       i-haklab
 data/data/com.termux/files/home/.vim/syntax/snippet.vim                          i-haklab
 data/data/com.termux/files/home/.vimrc                                           i-haklab
-data/data/com.termux/files/usr/bin/fixer                                         i-haklab
 data/data/com.termux/files/usr/bin/i-Haklab-installer                            i-haklab
 data/data/com.termux/files/usr/bin/termux-url-opener                             i-haklab
 data/data/com.termux/files/usr/bin/infoga                                        infoga

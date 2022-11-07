@@ -2,4 +2,7 @@
 if [[ -d ${HOME}/.local/share/appshark ]]; then
   rm -rf ${HOME}/.local/share/appshark
 fi
+if [[ -d ${HOME}/.local/share/kotlin ]]; then
+  rm -rf ${HOME}/.local/share/kotlin
+fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

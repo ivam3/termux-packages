@@ -88,11 +88,11 @@ Suggests: i-haklab
 Homepage: https://github.com/bytedance/appshark
 Description: An static taint analysis platform to scan vulnerabilities in an Android app.
 Filename: dists/stable/extras/binary-all/appshark_0.1.2_all.deb
-Size: 2212
-MD5Sum: b37a9a49fb192c0ac282810e8dc483a4
-SHA1: 148fb82122e221692e3a9ae0727a85ec5593c8b1
-SHA256: 08d934a057db8ea500f6036794fd8df54b2bd8572ddd50b69edb7465f91234c2
-SHA512: dec7421f4218e718e0b4fca726dc2ac9950fb59dbee25620ef86460c89daf95baed57bd7c83eff9280a7a9257e86a1167865fd97c4697cdc83fb807ace7342b2
+Size: 2228
+MD5Sum: da808ffba253dc75bb691e43c45f16d1
+SHA1: 2db672ebb208ab8cf1439e15def0213f23f2b967
+SHA256: 70df299e746c9e32705c08a931d6dfe84c8623918d1ecb03a712dbffde56ac4d
+SHA512: 6f155ccc83097a2dfe648726628ad23cc3160ee12d20f6028ed9ec2d90350087543f514f7007e65bea9b3270a82ab44d58e3c77846ea68555bb6c73919c2f4c1
 
 Package: beef
 Version: 0.5.4.0-dev
@@ -375,11 +375,11 @@ Suggests: i-haklab
 Homepage: https://github.com/kgretzky/evilginx2.git
 Description: Standalone man-in-the-middle attack framework used for phishing login credentials along with session cookies, allowing for the bypass of 2-factor authentication.
 Filename: dists/stable/extras/binary-all/evilginx2_2.4.2_all.deb
-Size: 2120
-MD5Sum: 027c670c2b4324d0d9f47ad4337f42d4
-SHA1: fd3bac082b4013adb1fff8805233092e03e228d8
-SHA256: ee3de6d091e213fad85cadba8ca87403a4e83d1b9170f17b405de1495f07bcaf
-SHA512: b11d3e5dc096f301bc551676b03273d8dc0ba129595d03ed80d6a500226ba048c98f90ec51447e8daf4d091625ff57bc377ad8ce7520c1f147f3b84d24dbf477
+Size: 2116
+MD5Sum: d83d06f35937b16dee748654eddc8ff4
+SHA1: d8a701942f4609445ceeebcc68e9c784691f28be
+SHA256: 083e8f92a95a82f95ebc95e893307b6ac7e058a72c1d501ac1963ba60fc90070
+SHA512: e1ea299f676f70a79afb49d7f896db4b4f93a1d39f91bfdb449733ad44462cec73ee85e4896d9e93f0308453143c8d19891c0c27855eb18307cbf35f1b358c2f
 
 Package: evilurl
 Version: 3.0
@@ -673,17 +673,17 @@ Package: i-haklab
 Version: 3.6.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 93223
-Depends: termux-api, termux-elf-cleaner, termux-tools, util-linux, x11-repo, apr, apr-util, autoconf, axel, bat, bc, fontconfig-utils, bison, clang, cmake, coreutils, curl, debianutils, dns2tcp, dnsutils, file, findutils, fish, gawk, git, gnupg, gpgme, hexedit, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openjdk-17, openssh, openssl, openssl-tool, perl, php, php-apache, pkg-config, procps, proxychains-ng, pulseaudio, pv, python, python2, readline, ruby, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, youtubedr, zip, zlib
-Suggests: Termux, Wayland, App
+Installed-Size: 93194
+Depends: termux-api, termux-elf-cleaner, termux-tools, util-linux, x11-repo, apr, apr-util, autoconf, axel, bat, bc, fontconfig-utils, bison, clang, cmake, coreutils, curl, debianutils, dns2tcp, dnsutils, file, findutils, fish, gawk, git, gpgme, hexedit, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, gnupg, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python2, readline, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, youtubedr, zip, zlib
+Suggests: openjdk-17, perl, ruby, nodejs-lts
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
 Filename: dists/stable/extras/binary-all/i-haklab_3.6.0_all.deb
-Size: 40576164
-MD5Sum: 087697519b0676b71a34a356921da65f
-SHA1: e3edeabe128228615b746a43a16263c42dce74bf
-SHA256: 00d320d8d99550e6f5f74ce76e202a458d686ed2bb17cec0d46957eefd21d692
-SHA512: a7144d8d56df35215758a26803866fa1e07c2bf056db64df4b09fc33d24e7bf6d3be4181ad217ee2c68dfc25cb691f093f80f24f3c308a6ad42279c343e67964
+Size: 40563404
+MD5Sum: ae6c2e6f55524ac19b3342c35e51b575
+SHA1: eab750c4109bf251f2a4c465df3eabdff9de28bd
+SHA256: 362aec95d2410039aa3a9bb9f820d62ffb920ec9ec1f71370ef787ec1ca134ee
+SHA512: f4ce69e1bb6f955a124a956fb1ea7702b9defa2ded704f47c28600f3cfd2f662fd2e7aea6a2d2a52ab0bb7083e5e56a0d0d0b64a029891410fdb80aec2b86c78
 
 Package: infoga
 Version: 1.0
