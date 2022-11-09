@@ -4,7 +4,7 @@
   "arch": "all",
   "homepage": "https://github.com/EntySec/ghost",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["python, openssl, git"],
+  "depends": ["openssl, git, android-tools, python, python-cryptography"],
   "suggests": ["i-haklab", "adbfastboot"],
   "description": "An Android post-exploitation framework that exploits the Android Debug Bridge to remotely access an Android device.",
   "files" :{

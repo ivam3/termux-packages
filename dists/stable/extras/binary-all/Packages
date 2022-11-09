@@ -514,16 +514,16 @@ Version: 8.0.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: python, openssl, git
+Depends: openssl, git, android-tools, python, python-cryptography
 Suggests: i-haklab, adbfastboot
 Homepage: https://github.com/EntySec/ghost
 Description: An Android post-exploitation framework that exploits the Android Debug Bridge to remotely access an Android device.
 Filename: dists/stable/extras/binary-all/ghost_8.0.0_all.deb
-Size: 1664
-MD5Sum: 70401145fb610f4e609b21e60293d530
-SHA1: f25041ab9313bbad665746ae913cc0adc1f5e281
-SHA256: 898e0fcaa270dabd3e040317d6b43747b2087ac7bb418b80383806f9675e353e
-SHA512: 04b49fbff509d90b08e602f74962c27eec7e6054abad1fb9561cbfae3abf7eff24fad2ed0d82fc673f08fe27da4ae57ee2fd2fafc33d9e61e4d6f0f4b1285b7a
+Size: 1720
+MD5Sum: ed0e1081d5e11c322a6a61a41e696e9d
+SHA1: d2181672c0ce5aff97ef510b5cd49f54141f1d2d
+SHA256: d2741642d3dd2b038f6e965ddaed95fef46b10125a7f894cae1f29b4586e72d9
+SHA512: 330ff687e74ccb7b301dac60adb7eb024a731cc22657229c705c820bed4aa152985ccc16d00176b9b4869ad23b19e339d228411d78f6d142c4ccce233bd6a409
 
 Package: gobuster
 Version: 3.1
