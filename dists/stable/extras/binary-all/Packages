@@ -519,11 +519,11 @@ Suggests: i-haklab, adbfastboot
 Homepage: https://github.com/EntySec/ghost
 Description: An Android post-exploitation framework that exploits the Android Debug Bridge to remotely access an Android device.
 Filename: dists/stable/extras/binary-all/ghost_8.0.0_all.deb
-Size: 1720
-MD5Sum: ed0e1081d5e11c322a6a61a41e696e9d
-SHA1: d2181672c0ce5aff97ef510b5cd49f54141f1d2d
-SHA256: d2741642d3dd2b038f6e965ddaed95fef46b10125a7f894cae1f29b4586e72d9
-SHA512: 330ff687e74ccb7b301dac60adb7eb024a731cc22657229c705c820bed4aa152985ccc16d00176b9b4869ad23b19e339d228411d78f6d142c4ccce233bd6a409
+Size: 1796
+MD5Sum: 83d67a81c927e7fe51557665be3b41c5
+SHA1: eee8f473175878b91da3a1bca9836d25d1becef2
+SHA256: 6a34603273adc037284f5dcf10ec1317faad5d1591c537b214a48254558142ac
+SHA512: ae65e2734c6b2d0185d438a02ffeb2363c2726ef637229b645955bfd1a1090647c39c0521eebff5f45d0c5c298024b96e29e1480c1fe5944dac4c868ce18abfb
 
 Package: gobuster
 Version: 3.1
