@@ -1,4 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
+yes|python -m pip --no-color --quiet --no-cache-dir uninstall \
+  -r ${HOME}/.local/share/routersploit/requirements.txt
 if [[ -d ${HOME}/.local/share/routersploit ]]; then
   rm -rf ${HOME}/.local/share/routersploit
 fi

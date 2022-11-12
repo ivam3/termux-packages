@@ -1,9 +1,18 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/routersploit-installer
-rm -rf ${PREFIX}/bin/routersploit-installer
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+export CARGO_BUILD_TARGET=$(rustc --version --verbose|sed -n 's|host: ||p')
+echo "Cloning repository ..."
+git clone --quiet https://github.com/threat9/routersploit ${HOME}/.local/share/routersploit
+chmod 750 -R ${HOME}/.local/share/routersploit
+cd ${HOME}/.local/share/routersploit
+echo "Installing requirements ..."
+python -m pip --no-cache-dir install -r ${HOME}/.local/share/routersploit/requirements.txt
+wget --tries=20 --quiet \
+  https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer \
+  -O /data/data/com.termux/files/usr/bin/fixer
 chmod 751 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] routersploit installation finished."
+echo "[*] Run 'routersploit' to execute it."
+echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

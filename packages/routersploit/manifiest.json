@@ -4,11 +4,10 @@
   "arch": "all",
   "homepage": "https://github.com/threat9/routersploit",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["git, python, python-cryptography, rust"],
+  "depends": ["git, clang, make, rust, python, python-cryptography, python-bcrypt"],
   "suggests": ["i-haklab"],
   "description": "Exploitation Framework for Embedded Devices",
   "files" :{
-    "routersploit-installer": "bin/routersploit-installer",
     "routersploit": "bin/routersploit"
   }
 }
