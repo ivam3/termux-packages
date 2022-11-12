@@ -5,6 +5,6 @@ git clone --quiet https://github.com/threat9/routersploit ${HOME}/.local/share/r
 chmod 750 -R ${HOME}/.local/share/routersploit
 echo "Installing requirements ..."
 python -m pip --no-color --quiet --no-cache-dir install \
-	future requests pysnmp pycrypto cryptography paramiko bcrypt pynacl
+	future requests pysnmp pycrypto paramiko bcrypt pynacl
 exit 0
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -1009,16 +1009,16 @@ Version: 3.4.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
-Depends: python, git
+Depends: git, python, python-cryptography, rust
 Suggests: i-haklab
 Homepage: https://github.com/threat9/routersploit
 Description: Exploitation Framework for Embedded Devices
 Filename: dists/stable/extras/binary-all/routersploit_3.4.1_all.deb
 Size: 1888
-MD5Sum: 03cf2398377b07dbcd75b14d8d991f49
-SHA1: b837fa7d6f2a5a67928bce65d6657ea3984b5807
-SHA256: d58e92120ca71ec931dc723c0aff14e87cab386a98f06ba65179554412738db4
-SHA512: 3f14d50c27a3eedb13613a47e07f39e76b5ef31f58ce2252e5b19c1b4c5403b75c23c83ec58d1371366ead9b3dffb259ca5812cf7270aa244001da1730ef9f5d
+MD5Sum: 74945e20bd3848babad88c2c413cd125
+SHA1: 8e4d54121d7d7fa6f5ad54528c4dcce84e483735
+SHA256: e454a2ce6052ce24e8f35aa9b81fdfbd5be203adb4a52d5a655ede478822df2e
+SHA512: 376c39499ef6d8ba6bc6e0481c80ba210b64dad2c32fa2ea5fda4e022aaac05fe02798c0b09c168b90f84da7f966a99bb5f18e18c8873041da2d1e696a39e119
 
 Package: saycheese
 Version: 1.0

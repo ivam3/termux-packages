@@ -1,12 +1,26 @@
 #!/data/data/com.termux/files/usr/bin/bash
 #
+finalmsg(){
+  if [[ $os = alpina ]]; then
+    echo "      $os:~# apk update && apk add docker"
+  elif [[ $os = kalilinux ]]; then
+    echo "      $os:~# apt update && apt upgrade"
+    echo "      $os:~# apt install docker"
+
+  fi
+}
+
 echo "[?] Choose an Operative System:"
-select os in alpine;do
+select os in alpine kalilinux;do
   case $os in
     alpine)
       declare ref=http://dl-cdn.alpinelinux.org/alpine/v3.12/releases/x86_64/
       declare iso=alpine-virt-3.12.12-x86_64.iso
       break
+      ;;
+    kalilinux)
+      declare ref=http://cdimage.kali.org/kali-images/kali-weekly/
+      declare iso=kali-linux-2022-W45-qemu-i386.7z
       ;;
     *) echo -en "\e[31mE:\e[0m wrong answer ... try again.\n"
       ;;
@@ -19,43 +33,50 @@ mkdir -p ${HOME}/.local/share/termux-docker-qemu/$os && cd $_
 wget --tries=20 --progress=dot $ref$iso
 # Create disk (note it won't actually take 4GB of space, more like 500MB)
 [[ $os.img ]] && rm -rf $os.img
-qemu-img create -f qcow2 $os.img 4G
+qemu-img create -f qcow2 $os.img 30G
 
-printf "\e[33m"
-echo '''
- ____  _____    _    ____  __  __ _____
-|  _ \| ____|  / \  |  _ \|  \/  | ____|
-| |_) |  _|   / _ \ | | | | |\/| |  _|
-|  _ <| |___ / ___ \| |_| | |  | | |___
-|_| \_\_____/_/   \_\____/|_|  |_|_____|
-::::::::::::::::::::::::::::::::::::::::'''
-echo -en "\e[0mBoot process will start, in middle of it you will login to Linux OS
-Do it as \e[31mROOT\e[0m user with \e[32mempty\e[0m password.
-Once in OS terminal run the next commands one by one.
+if [[ $os = alpine ]]
+then 
+  printf "\e[33m"
+  echo '''
+  ____  _____    _    ____  __  __ _____
+  |  _ \| ____|  / \  |  _ \|  \/  | ____|
+  | |_) |  _|   / _ \ | | | | |\/| |  _|
+  |  _ <| |___ / ___ \| |_| | |  | | |___
+  |_| \_\_____/_/   \_\____/|_|  |_|_____|
+  ::::::::::::::::::::::::::::::::::::::::'''
+  echo -en "\e[0mBoot process will start, in middle of it you will login to Linux OS
+  Do it as \e[31mROOT\e[0m user with \e[32mempty\e[0m password.
+  Once in OS terminal run the next commands one by one.
 
-  $ setup-interfaces # On it response at all question pressing 'enter' for default settings
-  $ ifup eth0
-  $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os
-  $ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk
-  $ setup-$os -f answerfile.$os # On question 'erase the above disk(s) and continue? [y/N]:' answer 'y'
-  $ poweroff
+    $ setup-interfaces # On it response at all question pressing 'enter' for default settings
+    $ ifup eth0
+    $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os
+    $ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk
+    $ setup-$os -f answerfile.$os # On question 'erase the above disk(s) and continue? [y/N]:' answer 'y'
+    $ poweroff
 
-press \e[33mENTER\e[0m to continue"
-read enter
-# Boot it up
-qemu-system-x86_64 -machine q35 -m 1024 -smp cpus=2 -cpu qemu64 \
-  -drive if=pflash,format=raw,read-only=on,file=$PREFIX/share/qemu/edk2-x86_64-code.fd \
-  -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 \
-  -cdrom $iso \
-  -nographic $os.img
+  press \e[33mENTER\e[0m to continue"
+  read enter
+  # Boot it up
+  qemu-system-x86_64 -machine q35 -m 1024 -smp cpus=2 -cpu qemu64 \
+    -drive if=pflash,format=raw,read-only=on,file=$PREFIX/share/qemu/edk2-x86_64-code.fd \
+    -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 \
+    -cdrom $iso \
+    -nographic $os.img
+
+elif [[ $os = kalilinux ]] 
+then
+  qemu-system-x86_64 -hda ./kalilinux.img -boot d -cdrom kali-linux-2022.3-installer-i386.iso -m 1024 -usb
+fi
 
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] termux-docker-qemu installation finished."
-echo "[*] Run 'termux-docker-qemu $os' to execute it."
+echo "[*/] Run 'termux-docker-qemu $os' to execute it."
 echo "[!] Once running $os and only for the 1st time"
 echo "    you must install docker and enable on boot with :"
-echo "      $os:~# apk update && apk add docker"
+finalmsg
 echo "      $os:~# service docker start"
 echo "      $os:~# rc-update add docker"
 echo "[*] Run 'fixer' to fix any posible issue."
