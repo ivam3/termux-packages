@@ -5,7 +5,7 @@ git clone --quiet https://github.com/threat9/routersploit ${HOME}/.local/share/r
 chmod 750 -R ${HOME}/.local/share/routersploit
 cd ${HOME}/.local/share/routersploit
 echo "Installing requirements (It could take a while)..."
-python -m pip --quiet -no-color --no-cache-dir install \
+python -m pip --quiet --no-color --no-cache-dir install \
   -r ${HOME}/.local/share/routersploit/requirements.txt
 wget --tries=20 --quiet \
   https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer \
