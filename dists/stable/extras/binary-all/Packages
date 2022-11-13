@@ -1014,11 +1014,11 @@ Suggests: i-haklab
 Homepage: https://github.com/threat9/routersploit
 Description: Exploitation Framework for Embedded Devices
 Filename: dists/stable/extras/binary-all/routersploit_3.4.1_all.deb
-Size: 1900
-MD5Sum: 7ee4bf0e200247e3e25684150f81fb29
-SHA1: abb47cba7804920483f4554658c6b29ddad15a08
-SHA256: c4beca5f362fa80e423e51baad54ee0c98466c1536f7aa6a1dc12991d3d6e370
-SHA512: 2fefd4ffc3c57db611020818db9472c5571a587cfb0defd3bf86d9f59ea38f029d3291bac3ec8ba36b76862f879d396d4b361c66ab4da18270dd7814eccdb154
+Size: 1960
+MD5Sum: 34c42da6fed6610da4ff6ec866a4b5c4
+SHA1: dc639c4a0c7b7ae533b65d8b96ac3b11f2456556
+SHA256: 22d939dadbe3474c7ee4416b4b18cd08878928e1d56838de5da40f7f0405a6f7
+SHA512: 40c0161cb8ceee8aacba290822e004807399def3f9c5f28f40f5057b76eed8dff4bba658b64ebbab00e7fd92fcdbebfad1b24dc7f18c619b3faeca608472cc60
 
 Package: saycheese
 Version: 1.0
