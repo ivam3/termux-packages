@@ -674,16 +674,16 @@ Version: 3.6.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 93194
-Depends: termux-api, termux-elf-cleaner, termux-tools, util-linux, x11-repo, apr, apr-util, autoconf, axel, bat, bc, fontconfig-utils, bison, clang, cmake, coreutils, curl, debianutils, dns2tcp, dnsutils, file, findutils, fish, gawk, git, gpgme, hexedit, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, gnupg, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python2, readline, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, youtubedr, zip, zlib
+Depends: termux-api, termux-elf-cleaner, termux-tools, util-linux, x11-repo, apr, apr-util, autoconf, axel, bat, bc, fontconfig-utils, bison, clang, cmake, coreutils, curl, debianutils, dns2tcp, dnsutils, file, findutils, fish, gawk, git, gpgme, hexedit, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, gnupg, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, readline, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, youtubedr, zip, zlib
 Suggests: openjdk-17, perl, ruby, nodejs-lts
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
 Filename: dists/stable/extras/binary-all/i-haklab_3.6.0_all.deb
-Size: 40563404
-MD5Sum: ae6c2e6f55524ac19b3342c35e51b575
-SHA1: eab750c4109bf251f2a4c465df3eabdff9de28bd
-SHA256: 362aec95d2410039aa3a9bb9f820d62ffb920ec9ec1f71370ef787ec1ca134ee
-SHA512: f4ce69e1bb6f955a124a956fb1ea7702b9defa2ded704f47c28600f3cfd2f662fd2e7aea6a2d2a52ab0bb7083e5e56a0d0d0b64a029891410fdb80aec2b86c78
+Size: 40563324
+MD5Sum: 5663d8775bae95b31649dc753ceccf57
+SHA1: 98629a9c64431fba9a196ffb39d933d0fd8a712c
+SHA256: e9215e9439cb63567da77cf5498b5a854c4d7c73e4236d219671cb43f2efca5c
+SHA512: 9c6155b671ebb39bebff22f3d5353ff01b2eb217efe00fd3fbba5272359c609f24bbceb203a8085559b01a04629aa3509104ac6f183cd8991e96ca5e1f5313f2
 
 Package: infoga
 Version: 1.0
