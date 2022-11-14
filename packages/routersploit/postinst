@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 export CARGO_BUILD_TARGET=$(rustc --version --verbose|sed -n 's|host: ||p')
 echo "Cloning repository ..."
-#git clone --quiet https://github.com/threat9/routersploit ${HOME}/.local/share/routersploit
+git clone --quiet https://github.com/threat9/routersploit ${HOME}/.local/share/routersploit
 chmod 750 -R ${HOME}/.local/share/routersploit
 cd ${HOME}/.local/share/routersploit
 echo "Installing requirements (It could take a while)..."
