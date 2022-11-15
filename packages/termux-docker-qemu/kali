@@ -4,8 +4,7 @@ wget http://cdimage.kali.org/kali-images/kali-2022.3/kali-linux-2022.3-installer
 
 # Create qemu img file
 qemu-img create -f qcow2 kali.qcow2 30G
-  Formatting 'kali.qcow2', fmt=qcow2 size=32212254720 encryption=off cluster_size=65536 lazy_refcounts=off 
 
 # Run installation. Here we use the run-qemu script which has been generated before under the same directory:
-[Trusty@DashArch kali]$ ./run-qemu -hda ./kali.qcow2 -boot d -cdrom /media/nfs/iso/kali-linux-1.0.5-i386.iso  -m 1024 -enable-kvm -usb
+qemu-system-x86_64 -hda ./kali.qcow2 -boot d -cdrom /media/nfs/iso/kali-linux-1.0.5-i386.iso -m 1024 -usb
   
