@@ -78,6 +78,22 @@ SHA1: 3f602f17d887b208ace83c14bb014c43d657156c
 SHA256: 63db8f7fd261f4a8b205fb31cf26e9ac88aca6aa044daa5ef0648a2b1ba76969
 SHA512: 9a012facbfc6e511dd8eab7881a57e998c75a6c6c65162c6adc63610e1f273b30c1023f910530777f856fc8bff727736737b95f9c74035c3949f678e63153889
 
+Package: apktool
+Version: 2.6.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: apenjdk-17, aapt, wget
+Suggests: i-haklab
+Homepage: https://bitbucket.org/iBotPeaches/apktool/src/master/
+Description: A tool for reverse engineering Android apk files
+Filename: dists/stable/extras/binary-all/apktool_2.6.1_all.deb
+Size: 1828
+MD5Sum: edaa3769aa0cfee5642a6b113daa232b
+SHA1: 06584405527496c784f3383d6b0b7ebc0f214810
+SHA256: 423d4288b9848337a9892ea2538b771884551bf47d90ddb4ba844234ac7552a4
+SHA512: df89c924fd4112aefe4f4478f391a64dd6cddfc1c45ebafe1648e6656b6e5eea9a617b15d968b87d019210e9285d21aeca77e59d23c9b7a3cbbf2be4b6d7fdab
+
 Package: appshark
 Version: 0.1.2
 Architecture: all
@@ -786,16 +802,16 @@ Version: 6.2.27
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 7
-Depends: build-essential, ruby, python, libcap, openjdk-17, termux-tools, autoconf, patchelf, binutils, bison, yarn, clang, coreutils, curl, findutils, apr, apr-util, postgresql, openssl, readline, libffi, libgmp, libpcap, libsqlite, libgrpc, libtool, libxml2, libxslt, ncurses, make, ncurses-utils, ncurses, git, wget, unzip, zip, tar, termux-elf-cleaner, pkg-config, git, resolv-conf, aapt, apksigner
+Depends: build-essential, ruby, python, libcap, openjdk-17, termux-tools, autoconf, patchelf, binutils, bison, yarn, clang, coreutils, curl, findutils, apr, apr-util, postgresql, openssl, readline, libffi, libgmp, libpcap, libsqlite, libgrpc, libtool, libxml2, libxslt, ncurses, make, ncurses-utils, ncurses, git, wget, unzip, zip, tar, termux-elf-cleaner, pkg-config, git, resolv-conf, aapt, apksigner, apktool
 Suggests: embed
 Homepage: https://github.com/rapid7/metasploit-framework
 Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
 Filename: dists/stable/extras/binary-all/metasploit-framework_6.2.27_all.deb
-Size: 4032
-MD5Sum: 467b2fa00d79a631e7a134a1e198b478
-SHA1: 7d8c62798f1e2a8bd11f1c4e2c51e86d71b7e816
-SHA256: daf0e582843f05222412ec40c375ae85ed7cf657eba255c4e847329a7e800a08
-SHA512: 7974fa2decd28c044b0d603a8a4af251debdb9c9976479a917343a69d38ab5c45c15601cb1ebce9fc9fa687fb7af3736fdad86fdebd4df07f00271aedb620b27
+Size: 4036
+MD5Sum: 747e7e7878d6a9c0f5f87f6d84e39f8b
+SHA1: e37d400e50245c90c30c16d9991ae46e465b003e
+SHA256: 4983b668ba65db7c48e8cdf435aa1fee30a069326d94772263bd1bc13ccd7968
+SHA512: 5b13164493fe27a6a59900e6c9f5edbe6484e30998fd5536b41a4bcd33b4ca474fcd0cacb7d60c06e2c354637c7317e45ca48d8d2db64f274a46623ebf3d78e5
 
 Package: nexphisher
 Version: 1.0

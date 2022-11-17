@@ -1,0 +1,13 @@
+{
+  "name": "apktool",
+  "version": "2.6.1",
+  "arch": "all",
+  "homepage": "https://bitbucket.org/iBotPeaches/apktool/src/master/",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["apenjdk-17, aapt, wget"],
+  "suggests": ["i-haklab"],
+  "description": "A tool for reverse engineering Android apk files",
+  "files" :{
+    "apktool": "bin/apktool"
+  }
+}

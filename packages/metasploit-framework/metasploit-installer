@@ -16,7 +16,7 @@ exec ${PREFIX}/bin/java -jar ${PREFIX}/var/spool/apktool.jar  "\$@"
 CONF
   chmod 751 ${PREFIX}/bin/apktool
 }
-instaAPKtool
+#instaAPKtool
 
 git clone --quiet --depth 1 $msfGit $msfDir
 [[ -d $msfDir ]] || { echo "(_➤) Metasploit directory missing... Aborting.";exit 1;}

@@ -10,6 +10,7 @@ data/data/com.termux/files/usr/bin/amass                                        
 data/data/com.termux/files/usr/bin/amass-installer                               amass
 data/data/com.termux/files/usr/bin/androbugs                                     androbugs
 data/data/com.termux/files/usr/bin/androbugs-installer                           androbugs
+data/data/com.termux/files/usr/bin/apktool                                       apktool
 data/data/com.termux/files/usr/bin/appshark                                      appshark
 data/data/com.termux/files/usr/bin/beef                                          beef
 data/data/com.termux/files/usr/bin/beef-installer                                beef

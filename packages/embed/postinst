@@ -13,7 +13,7 @@ wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/java/master/.emb
   -O ${PREFIX}/opt/metasploit-framework/lib/msf/core/payload/apk.rb
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/embed/master/.IbyC/debug.keystore \
   -O ${HOME}/.android/debug.keystore
-bash setup apktool
+#bash setup apktool
 gem install bundle
 bundle update --bundler
 bundle install -j$(nproc --all) --verbose
