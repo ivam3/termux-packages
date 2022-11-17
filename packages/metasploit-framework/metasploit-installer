@@ -4,6 +4,20 @@ echo "Cloning metasploit-framework ..."
 msfGit="https://github.com/rapid7/metasploit-framework.git"
 mkdir -p ${PREFIX}/opt
 msfDir="${PREFIX}/opt/metasploit-framework"
+apktoolV="2.6.1"
+apktool_releases="https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_$apktoolV.jar"
+
+instaAPKtool(){
+  [[ -d ${PREFIX}/var/spool ]] || mkdir -p ${PREFIX}/var/spool
+  wget --tries=20 --progress=dot $apktool_releases -O ${PREFIX}/var/spool/apktool.jar
+  cat <<- CONF > ${PREFIX}/bin/apktool
+#!/data/data/com.termux/files/usr/bin/bash
+exec ${PREFIX}/bin/java -jar ${PREFIX}/var/spool/apktool.jar  "\$@"
+CONF
+  chmod 751 ${PREFIX}/bin/apktool
+}
+instaAPKtool
+
 git clone --quiet --depth 1 $msfGit $msfDir
 [[ -d $msfDir ]] || { echo "(_➤) Metasploit directory missing... Aborting.";exit 1;}
 

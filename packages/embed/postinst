@@ -1,8 +1,27 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/embed-installer
-rm -rf ${PREFIX}/bin/embed-installer
+mkdir -p ${HOME}/{.android,.local/share}/
+git clone --quiet https://github.com/ivam3/embed.git \
+  ${HOME}/.local/share/embed && cd $_
+[[ -d ${HOME}/.local/share/embed ]] || {
+	echo -en "\e[31mERROR:\e[0m Embed PATH missing ...\e[33mAborting.\e[0m";exit 1
+}
+[[ -d ${HOME}/.android ]] || mkdir ${HOME}/.android
+[[ -d ${PREFIX}/opt/metasploit-framework/lib/msf/core/payload ]] || {
+  mkdir -p ${PREFIX}/opt/metasploit-framework/lib/msf/core/payload
+}
+wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/java/master/.embed/apk.rb \
+  -O ${PREFIX}/opt/metasploit-framework/lib/msf/core/payload/apk.rb
+wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/embed/master/.IbyC/debug.keystore \
+  -O ${HOME}/.android/debug.keystore
+bash setup apktool
+gem install bundle
+bundle update --bundler
+bundle install -j$(nproc --all) --verbose
+
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 751 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] Embed installation finished."
+echo "[*] Run 'embed' to execute it."
+echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."
