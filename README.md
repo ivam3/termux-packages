@@ -13,7 +13,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [adminpanel](https://github.com/Techzindia/admin_penal) | Find website's admin panel |
 | [amass](https://github.com/OWASP/Amass) | In-depth Attack Surface Mapping and Asset Discovery |
 | [androbugs](https://github.com/AndroBugs/AndroBugs_Framework) | Android vulnerability scanner |
-| [appshare](https://github.com/bytedance/appshark) | An a static taint analysis platform to scan vulnerabilities in an Android app |
+| [appshark](https://github.com/bytedance/appshark) | An a static taint analysis platform to scan vulnerabilities in an Android app |
 | [beef](https://www.beefproject.com) | powerful and intuitive security tool focuses on leveraging browser vulnerabilities to assess the security posture of a target |
 | [binwalk](https://github.com/ReFirmLabs/binwalk) | Tool for analyzing, reverse engineering, and extracting firmware images | 
 | [bitb](https://github.com/surya-dev-singh/BITB-framwork) | Phishing technique that simulates a browser window within the browser to spoof a legitimate domain. |
