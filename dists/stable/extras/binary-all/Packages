@@ -104,11 +104,11 @@ Suggests: i-haklab
 Homepage: https://github.com/bytedance/appshark
 Description: An static taint analysis platform to scan vulnerabilities in an Android app.
 Filename: dists/stable/extras/binary-all/appshark_0.1.2_all.deb
-Size: 2228
-MD5Sum: da808ffba253dc75bb691e43c45f16d1
-SHA1: 2db672ebb208ab8cf1439e15def0213f23f2b967
-SHA256: 70df299e746c9e32705c08a931d6dfe84c8623918d1ecb03a712dbffde56ac4d
-SHA512: 6f155ccc83097a2dfe648726628ad23cc3160ee12d20f6028ed9ec2d90350087543f514f7007e65bea9b3270a82ab44d58e3c77846ea68555bb6c73919c2f4c1
+Size: 2232
+MD5Sum: 29856fa1468c29f2b136d092c155dff1
+SHA1: 5f993dbc2ddd16e13c3e9e66d0c5fec2f0714951
+SHA256: 022cad8aba44c5068a2931eac4b0e4a7e9c075856b0beee3cf32e1dfd31ec793
+SHA512: 7840fe9672ad1210bb5cbc252caf3dbbc60b0ab3fd7dce83430d429fe5f90d4839c1eb10baa7a9fe4f66463533edf84de3108aa5ba9c55b62ffa330323018e26
 
 Package: beef
 Version: 0.5.4.0-dev

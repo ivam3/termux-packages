@@ -3,6 +3,7 @@ IFS=$'\n\t'
 echo "Cloning repository ..."
 git clone --quiet https://github.com/bytedance/appshark ${HOME}/.local/share/appshark
 [[ -d ${HOME}/.local/share/appshark ]] && {
+  cd ${HOME}/.local/share/appshark
   echo "Compiling jar file ..."
   chmod 751 -R ${HOME}/.local/share/appshark
   ./gradlew build -x test
@@ -13,8 +14,8 @@ git clone --quiet https://github.com/bytedance/appshark ${HOME}/.local/share/app
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] appshark installation finished."
-echo "[*] Run \'appshark\' to execute it."
-echo "[*] Run \'fixer\' to fix any posible issue."
+echo "[*] Run 'appshark' to execute it."
+echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
