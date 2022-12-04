@@ -4,7 +4,7 @@ echo "Cloning metasploit-framework ..."
 msfGit="https://github.com/rapid7/metasploit-framework.git"
 mkdir -p ${PREFIX}/opt
 msfDir="${PREFIX}/opt/metasploit-framework"
-apktoolV="2.6.1"
+apktoolV="2.7.0"
 apktool_releases="https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_$apktoolV.jar"
 
 instaAPKtool(){
