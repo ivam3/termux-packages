@@ -1,9 +1,17 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/botgram-installer
-rm -rf ${PREFIX}/bin/botgram-installer
+IFS=$'\n\t'
+echo "Cloning botgram ..."
+git clone --quiet https://github.com/ivam3/botgram ${HOME}/.local/share/botgram && cd $_
+chmod 751 -R *
+echo "Installing requirements ..."
+python -m pip --no-color --quiet --no-cache-dir install --upgrade pip
+python setup.py --install
+python setup.py --config
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 751 /data/data/com.termux/files/usr/bin/fixer
-echo "[*] botgram installation finished."
+echo "[*] Botgram installation finished."
+echo "[*] Run 'botgram' to execute it."
+echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

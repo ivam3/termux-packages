@@ -1,5 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
-if [[ -d ${PREFIX}/share/botgram ]]; then
-	rm -rf ${PREFIX}/share/botgram
+if [[ -d ${HOME}/.local/share/botgram ]]; then
+	rm -rf ${HOME}/.local/share/botgram
 fi
+python -m pip --no-color --no-cache-dir uninstall cython pandas telethon requests configparser
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
