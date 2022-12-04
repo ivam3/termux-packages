@@ -178,16 +178,16 @@ Version: 1.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: git, python, python-numpy
+Depends: git, python, numpy
 Suggests: i-haklab
 Homepage: https://github.com/ivam3/botgram
 Description: Scraper Telegram's groups information and manage it from CLi.
 Filename: dists/stable/extras/binary-all/botgram_1.0_all.deb
-Size: 1992
-MD5Sum: 4b12c6b6446c960e816cbb15f75bd607
-SHA1: 3847b6fcb24eacced46ce24ad5833392320e6359
-SHA256: 72defeb21e9bd78c7737c875ef67a3180c9fcb36f78bb1c7e7d268a9a6f99af5
-SHA512: e978adbe86c7c79442824390fa06ecd442f46187ee4697616e673b9448985bb694f77955a4994f6475724f24e9e7d868ca0555eac5851c376a1a4913ded5eb62
+Size: 1996
+MD5Sum: 1daffa8f8bccb66862163984483ca182
+SHA1: f6f7e47e839c0ec7b643566af93f24cb4023ee0d
+SHA256: c9cdb5d5295d224276c0281291302da4ed1ad82d1c7fb72a1f1044ea698640db
+SHA512: 34015068df89ac0ba018f104f991ed9dd7543922a75549990e16d8878ad7ad9e5b3e2ecfc9867f723cc3db86988426ad1f5e885c431b3555bb49d02e29035fd2
 
 Package: burpsuite
 Version: 2022.9.6
