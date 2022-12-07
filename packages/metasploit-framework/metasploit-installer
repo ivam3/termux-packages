@@ -73,7 +73,7 @@ done
 
 echo "Fixing option '-x' on msfvenom command...";sleep 2
 JAVADB="https://raw.githubusercontent.com/ivam3/java/master"
-#wget --tries=20 --quiet $JAVADB/.embed/apk.rb -O $msfDir/lib/msf/core/payload/apk.rb
+wget --tries=20 --quiet $JAVADB/.embed/apk.rb -O $msfDir/lib/msf/core/payload/apk.rb
 find $msfDir -type f -executable -print0 | xargs -0 -r termux-fix-shebang
 find ${PREFIX}/lib/ruby/gems -type f -iname \*.so -print0 | xargs -0 -r termux-elf-cleaner
 cat <<- EOF > ${PREFIX}/bin/msfconsole
