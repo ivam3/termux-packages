@@ -1430,9 +1430,9 @@ Suggests: i-haklab
 Homepage: https://www.kali.org/tools/zaproxy/
 Description: The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications.
 Filename: dists/stable/extras/binary-all/zaproxy_2.12.0_all.deb
-Size: 58240
-MD5Sum: 4442f06e659491151e5d9c682532d93c
-SHA1: 8e541fd4bee4db75ce5e8f5608a09581e47a137a
-SHA256: b1323c76ae610fec696d107d0111ff57f9c9e91b2ccf5a6b769a3cb759490eff
-SHA512: 2a7bff7894085ed83d52ceb81f9f1caf99d3897e06a59dda18eda943cb4dbb8e9d878bf4ef79035852feaa2dc34d4abfcf2877624e4c39f944926cbe38b27611
+Size: 58236
+MD5Sum: c6929505d380122645c7a72e91d1ffcd
+SHA1: 6bcf59480e1ae4b568c0707a1daf516f3e18c491
+SHA256: cab274f1b8af1b2cf048d0097c4320f8a0687bbfaa64cfb1688602d9d76d14b3
+SHA512: e7c9ccb774d6d893c45b3eb5dba8b507e0ccf3b6cf276a780c56ccb36a811ea13e6de6dd7665cf7379e6e0bf5a0602cf5c9ff59465b8df1077c1eb70f36c97f1
 
