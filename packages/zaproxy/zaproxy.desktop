@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=zaproxy
+GenericName=zaproxy
+Comment=The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications
+Comment[es]=El OWASP Zed Attack Proxy (ZAP) es una herramienta de prueba de penetración integrada fácil de usar para encontrar vulnerabilidades en aplicaciones web
+Version=2.12.0
+Exec=zaproxy
+Icon=/data/data/com.termux/files/usr/share/applications/zaproxy/img/zaproxy-logo.png
+Terminal=false
+Type=Application
+Categories=System
+X-Desktop-File-Install-Version=2.12.0

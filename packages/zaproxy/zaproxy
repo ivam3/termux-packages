@@ -1,0 +1,21 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# COLORS
+W="\e[0m"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+B="\e[34m"
+v="2.12.0"
+
+if [[ -e ${HOME}/.local/share/zaproxy/zap-$v.jar ]]
+then
+#	[[ $(uname -m) = "aarch64" ]] || { printf >&2 $R"(➤_)$W Incompatible architecture";exit;}
+	[[ $(file $TMPDIR/*|grep -o "socket") >/dev/null ]] || { printf >&2 "$R(➤_)\$W Termux:Wayland server isn't running...$R aborting.$W";exit;}
+	export DISPLAY=:0
+	umask 000
+	exec $(command -v java) -jar ${HOME}/.local/share/zap-$v.jar
+else
+	echo -en "$R(➤_)$W Jar file missing...$R aborting.$W"
+	exit 1
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

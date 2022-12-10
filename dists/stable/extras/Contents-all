@@ -3818,3 +3818,6 @@ data/data/com.termux/files/usr/bin/xapt                                         
 data/data/com.termux/files/usr/bin/xapt-installer                                xapt-management
 data/data/com.termux/files/usr/bin/xerosploit                                    xerosploit
 data/data/com.termux/files/usr/bin/xerosploit-installer                          xerosploit
+data/data/com.termux/files/usr/bin/zaproxy                                       zaproxy
+data/data/com.termux/files/usr/share/applications/zaproxy/img/zaproxy-logo.png   zaproxy
+data/data/com.termux/files/usr/share/applications/zaproxy/zaproxy.desktop        zaproxy

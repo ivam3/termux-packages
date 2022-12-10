@@ -199,11 +199,11 @@ Suggests: termux-x11, xwayland
 Homepage: https://portswigger.net
 Description: An integrated platform/graphical tool for performing security testing of web applications.
 Filename: dists/stable/extras/binary-all/burpsuite_2022.11.4_all.deb
-Size: 38608
-MD5Sum: cc08ba9ff207b79f68a544ad06e96600
-SHA1: 75176e3c974cab0dcf0b7b5586970fbfd3ca4e8c
-SHA256: 288297d6e98ccdb647a7679efdc9755a397adad6e6f4f84b62deaf637d0fa56d
-SHA512: 6c42724da22175870396c99c5f538ba967e46ac38be099120d0b7eeee0756f353b471bf38faad575bb53dfcaf0dfb3d9e7f13b36e915284714e71b7827fff625
+Size: 38620
+MD5Sum: a98b1e3dab82c767526b5d4fafda959a
+SHA1: ede616f8dad4229a9a59c4d6eb23f166eae74ea8
+SHA256: d0b8e33eaf6ca58af95007248cb1e9fa579352ec54f5d59f61635b8d808d8636
+SHA512: 4ab13d5ff2b64bd2b04af14c66caa5bff274209d754dd074da464f8c1d5b3ba7962ba574504ef3906738db33bc2db4dc3fe049923646e7647475584cac5ed9fa
 
 Package: cewl
 Version: 5.5.2
@@ -1419,4 +1419,20 @@ MD5Sum: b0e6502cd05c60c52c2c34e45e2084dc
 SHA1: a8192e5f5bda189f2557603258457d38d39b0ebd
 SHA256: 6fb4953337227394dae57d01db647b32587792cdfcc5a9f6b7de7f1917af5969
 SHA512: faaaa000ad22e11b9c2cdc9c13461f3e4c32ffd07f1e157939e068950223e83844d4ee95a231b8b76b6ab9c6802d18a407da61e2c01acbd0278ec3c86d8b6c75
+
+Package: zaproxy
+Version: 2.12.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 58
+Depends: wget, openjdk-17
+Suggests: i-haklab
+Homepage: https://www.kali.org/tools/zaproxy/
+Description: The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications.
+Filename: dists/stable/extras/binary-all/zaproxy_2.12.0_all.deb
+Size: 58232
+MD5Sum: dea8e65640ff45a74c5787c924a66441
+SHA1: c1b594f60def00d383996c7f9cdce73015c5f8ed
+SHA256: 7c4d47dbe0c8060015fcad2a0f09f93d1c4163be3e360ead813657a1ab63959a
+SHA512: 2d97a3f2a5a8bcce7454e478741876c65e756744c0ac754fc25cc03f16a15b3fc91c68160eeffbc298a4bbfdff5fd3fddf682c5640b8558c5fb89de10908eb0b
 
