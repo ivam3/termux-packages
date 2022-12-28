@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 #
 finalmsg(){
-  if [[ $os = alpina ]]; then
+  if [[ $os = alpine ]]; then
     echo "      $os:~# apk update && apk add docker"
   elif [[ $os = kalilinux ]]; then
     echo "      $os:~# apt update && apt upgrade"

@@ -10,7 +10,7 @@ v="2.12.0"
 if [[ -e ${HOME}/.local/share/zaproxy/zap-$v.jar ]]
 then
 #	[[ $(uname -m) = "aarch64" ]] || { printf >&2 $R"(➤_)$W Incompatible architecture";exit;}
-	[[ $(file $TMPDIR/*|grep -o "socket") >/dev/null ]] || { printf >&2 "$R(➤_)\$W Termux:Wayland server isn't running...$R aborting.$W";exit;}
+	[[ $(file $TMPDIR/*|grep -o "socket") >/dev/null ]] || { printf >&2 "$R(➤_)$W Termux:Wayland server isn't running...$R aborting.$W";exit;}
 	cd ${HOME}/.local/share/zaproxy/
   export DISPLAY=:0
 	umask 000
