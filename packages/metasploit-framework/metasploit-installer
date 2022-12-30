@@ -70,6 +70,8 @@ sed -i '13,15 {s/^/#/}' $GEMPATH/encryption_algorithm/functionable.rb
 for i in 256 384 521;do
 	sed -i '14 {s/^/#/}' $GEMPATH/server_host_key_algorithm/ecdsa_sha2_nistp$i.rb
 done
+PRYCODEFILE=$(find $PREFIX/lib/ruby/ -iname "code.rb"|grep "pry")
+sed -i '342 {s/^/#/}' $PRYCODEFILE
 
 echo "Fixing option '-x' on msfvenom command...";sleep 2
 JAVADB="https://raw.githubusercontent.com/ivam3/java/master"
