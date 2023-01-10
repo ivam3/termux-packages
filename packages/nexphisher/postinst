@@ -1,9 +1,44 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/nexphisher-installer
-rm -rf ${PREFIX}/bin/nexphisher-installer
+IFS=$'\n\t'
+wget --quiet https://raw.githubusercontent.com/htr-tech/nexphisher/master/nexphisher \
+	-O ${HOME}/.local/share/nexphisher/nexphisher
+wget --tries=20 --quiet \
+	https://raw.githubusercontent.com/htr-tech/nexphisher/master/Modules.zip \
+	-O ${TMPDIR}/Modules.zip
+
+if [[ -e ${TMPDIR}/Modules.zip ]]
+then
+	unzip -qq ${TMPDIR}/Modules.zip -d ${HOME}/.local/share/nexphisher
+	rm ${TMPDIR}/Modules.zip
+else
+	echo -en "\e[31mE:\e[0m Modules missing.\n"
+fi
+
+[[ ${PREFIX}/bin/ngrok ]] && [[ -e ${HOME}/.local/share/nexphisher/.htr/ngrok ]] || {
+	ln -s ${PREFIX}/bin/ngrok ${HOME}/.local/share/nexphisher/.htr/ngrok
+}
+
+[[ -e ${HOME}/.local/share/nexphisher/.htr/loclx ]] || {
+	arch1=$(uname -a|grep -o 'arm'|head -n1)
+	arch2=$(uname -a|grep -o 'Android'|head -n1)
+	[[ $arch1 = 'arm' ]] || [[ $arch2 = 'Android' ]] && arch=arm || arch=386
+	curl -sLO https://lxpdownloads.sgp1.digitaloceanspaces.com/cli/loclx-linux-$arch.zip \
+		-o ${TMPDIR}/loclx-linux-$arch.zip
+	[[ -e ${TMPDIR}/loclx-linux-$arch.zip ]] && {
+		unzip -qq loclx-linux-$arch.zip -d ${HOME}/.local/share/nexphisher/.htr;
+		rm -rf ${TMPDIR}/loclx-linux-$arch.zip;
+		chmod +x ${HOME}/.local/share/nexphisher/.htr/loclx;
+	}
+}
+
+[[ -d ${HOME}/.ssh ]] || { mkdir ${HOME}/.ssh;touch ${HOME}/.ssh/known_hosts;}
+printf "|1|SVjtt9mtL4P/5lsqaielF1pJHvM=|6QmJXxfPd9A5uUaFI1RV2H4brTs= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3lJnhW1oCXuAYV9IBdcJA+Vx7AHL5S/ZQvV2fhceOAPgO2kNQZla6xvUwoE4iw8lYu3zoE1KtieCU9yInWOVI6W/wFaT/ETH1tn55T2FVsK/zaxPiHZVJGLPPdEEid0vS2p1JDfc9onZ0pNSHLl1QusIOeMUyZ2bUMMLLgw46KOT9S3s/LmxgoJ3PocVUn5rVXz/Dng7Y8jYNe4IFrZOAUsi7hNBa+OYja6ceefpDvNDEJ1BdhbYfGolBdNA7f+FNl0kfaWru4Cblr843wBe2ckO/sNqgeAMXO/qH+SSgQxUXF2AgAw+TGp3yCIyYoOPvOgvcPsQziJLmDbUuQpnH\n|1|PiraXMKgzzt9DdPRSLAtRvRad0Y=|2W162QXfHJvKKZWIaRyZO6VFWJI= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3lJnhW1oCXuAYV9IBdcJA+Vx7AHL5S/ZQvV2fhceOAPgO2kNQZla6xvUwoE4iw8lYu3zoE1KtieCU9yInWOVI6W/wFaT/ETH1tn55T2FVsK/zaxPiHZVJGLPPdEEid0vS2p1JDfc9onZ0pNSHLl1QusIOeMUyZ2bUMMLLgw46KOT9S3s/LmxgoJ3PocVUn5rVXz/Dng7Y8jYNe4IFrZOAUsi7hNBa+OYja6ceefpDvNDEJ1BdhbYfGolBdNA7f+FNl0kfaWru4Cblr843wBe2ckO/sNqgeAMXO/qH+SSgQxUXF2AgAw+TGp3yCIyYoOPvOgvcPsQziJLmDbUuQpnH\n" >> ${HOME}/.ssh/known_hosts
+exit 0
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 751 /data/data/com.termux/files/usr/bin/fixer
-echo "[*] nexphisher installation finished."
+echo "[*] Nexphisher installation finished."
+echo "[*] Run 'nexphisher' to execute it."
+echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

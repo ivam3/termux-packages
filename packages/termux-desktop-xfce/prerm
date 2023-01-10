@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/termux-desktop-xfce ]]; then
+  rm -rf ${HOME}/.local/share/termux-desktop-xfce
+fi
+python -m pip --no-color --quiet uninstall -r ${HOME}/.local/share/termux-desktop-xfce/requirements.txt; 
+
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

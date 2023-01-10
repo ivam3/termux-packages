@@ -1,0 +1,13 @@
+{
+  "name": "termux-desktop-xfce",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/ivam3/termux-packages",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["htop, neofetch, loqui, the-powder-toy, mpv-x, xarchiver, geany, geany-plugins, mtpaint, leafpad, xwayland, dosbox, python-tkinter, htop, neofetch, vim-gtk, the-powder-toy, galculator, xorg-xhost, ristretto, gtk3, recordmydesktop, feh, zenity, dbus-glib, dconf, termux-api"],
+  "suggests": ["i-haklab"],
+  "description": "A Meta-package and data, themes, icons and wallpapers to configurate a desktop enviroment for Termux with xfce4 as window manager.",
+  "files" :{
+    "termux-desktop-xfce": "bin/termux-desktop-xfce"
+  }
+}
