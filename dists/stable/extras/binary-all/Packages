@@ -814,20 +814,20 @@ SHA256: 6a1e18cf2692ce26aff4d66435f7d8f53bb0290d5dbe6c24092506398fff1a92
 SHA512: 5afbaa0f23fccedb79fbe2020a008f93882b231f47d922da9b75fdb2304dc0e7d4f4c4a5e5cf9c7cc447e537e3dd4f2ea5413d89e3babc1ec9e773346b03b0bf
 
 Package: nexphisher
-Version: 1.0
+Version: 1.0.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 4
-Depends: wget, curl, openssh, php, unzip
+Installed-Size: 1
+Depends: wget, curl, openssh, php, unzip, ngrok
 Suggests: ngrok
 Homepage: https://github.com/htr-tech/nexphisher
 Description: Advanced Phishing tool
-Filename: dists/stable/extras/binary-all/nexphisher_1.0_all.deb
-Size: 2628
-MD5Sum: ef1506fbc93f14bec13bb4d47de04294
-SHA1: e7a501e94ada6101b8255b3f560a78ef17e44a78
-SHA256: 1af1f68194c3c2bcafd32d8edb02de5c69aab2f34041e69f738600e9a6656c08
-SHA512: b76a73dc53f99112beb604e36580e34b4b2bb0159857f64cdcfa0dcb1eeb9332e30ee5bd4300f0e311ff0f37d0d44ec0dc39d8fd4b35b60122808fe3e0ad9b2b
+Filename: dists/stable/extras/binary-all/nexphisher_1.0.1_all.deb
+Size: 2484
+MD5Sum: db832092d1f8e8f160b7f7f1b30935c1
+SHA1: fd6784cd9bb1b489cdd848abe97319fe4aaa1c34
+SHA256: 784067f1f65f422998afc37326ad56ad7bf362265c382febcda08b7674822fcf
+SHA512: 804dc0db4afd6a0f82920cddef6682739aea1ff3bb63beae31ad26ca012a16de5933f272c9f2c1a8f1388f394ef48c7b53890b4692df190993389721cdc7b43d
 
 Package: ngrok
 Version: 2.3.40
@@ -1120,17 +1120,17 @@ Package: sherlock
 Version: 0.14.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
-Depends: git, python
+Installed-Size: 1
+Depends: git, python, python-numpy
 Suggests: i-haklab
 Homepage: https://github.com/sherlock-project/sherlock
 Description: Hunt down social media accounts by username across social networks.
 Filename: dists/stable/extras/binary-all/sherlock_0.14.0_all.deb
-Size: 2008
-MD5Sum: 9958d516ef9cc5bedbb17f5974c50c50
-SHA1: a166060b5bca6a5e13fe857b8637d430ad101101
-SHA256: af5ca2bc7a07f703b02d417d3b693700402a5903a72301706b38c20a96112b44
-SHA512: c990de32aaa37e612a7ed3bc3a2e02e30b8fa21d1f6f6087bc774b0a9612d83347e5be9a5862ad6180a638efed535d53dc21b71a460cfa51ecd29869b4548b18
+Size: 1904
+MD5Sum: b3035d9b5a363051f84221cad628f63b
+SHA1: 332e05e781540c31372e1479d0a0e4aa49bf8fdf
+SHA256: 0cc278d36a2e0e8cb759310ff3a47788c8fa39bd841ede1c00083701d217e9d7
+SHA512: b63f20e70e9408f81db7414be6446bda328849d93f66823460044dc8b526156e7c9e51123d8f2da9125a203fdfd6e3f1d13b55fe4a2b340e28f6786c15ecc63b
 
 Package: slowhttptest
 Version: 1.8.3

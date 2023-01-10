@@ -3751,7 +3751,6 @@ data/data/com.termux/files/usr/bin/lockphish                                    
 data/data/com.termux/files/usr/bin/lockphish-installer                           lockphish
 data/data/com.termux/files/usr/bin/metasploit-installer                          metasploit-framework
 data/data/com.termux/files/usr/bin/nexphisher                                    nexphisher
-data/data/com.termux/files/usr/bin/nexphisher-installer                          nexphisher
 data/data/com.termux/files/home/.ssh/config                                      ngrok
 data/data/com.termux/files/usr/bin/ngrok                                         ngrok
 data/data/com.termux/files/usr/bin/ngrok-installer                               ngrok
@@ -3787,7 +3786,6 @@ data/data/com.termux/files/usr/bin/shc-installer                                
 data/data/com.termux/files/usr/bin/shellsploit                                   shellsploit-framework
 data/data/com.termux/files/usr/bin/shellsploit-installer                         shellsploit-framework
 data/data/com.termux/files/usr/bin/sherlock                                      sherlock
-data/data/com.termux/files/usr/bin/sherlock-installer                            sherlock
 data/data/com.termux/files/usr/bin/slowhttptest-installer                        slowhttptest
 data/data/com.termux/files/usr/bin/sqliv                                         sqliv
 data/data/com.termux/files/usr/bin/sqliv-installer                               sqliv
