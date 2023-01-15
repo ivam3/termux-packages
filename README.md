@@ -52,6 +52,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [infoga](https://github.com/m4ll0k/infoga) | Gathering email accounts informations from different public source and check if emails was leaked using haveibeenpwned.com API. |
 | [ipgeolocations](https://github.com/maldevel/IPGeoLocation) | A tool to retrieve IP Geolocation information. |
 | [johntheripper](https://github.com/openwall/john) | Advanced offline password cracker, which supports hundreds of hash and cipher types, and runs on many operating systems, CPUs, GPUs, and even some FPGAs. |
+| [jython](https://www.jython.org/) | The Jython project provides implementations of Python in Java, providing to Python the benefits of running on the JVM and access to classes written in java |
 | [kerbrute](https://github.com/TarlogicSecurity/kerbrute) | An script to perform kerberos bruteforcing by using the Impacket library. |
 | [kalilinux](https://www.kali.org/get-kali/#kali-mobile) | The Kali-Linux Open-source project for Android devices |
 | [lockphish](https://github.com/JasonJerry/lockphish) | A tool for phishing attacks on the lock screen, designed to grab Windows credentials, Android PIN. |
@@ -124,4 +125,3 @@ apt update && apt upgrade
 GNU
 
 ##### Follow me on [Socials Network](https://wlo.link/@Ivam3)
-
