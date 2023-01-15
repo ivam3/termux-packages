@@ -199,11 +199,11 @@ Suggests: termux-x11, xwayland, i-haklab
 Homepage: https://portswigger.net
 Description: An integrated platform/graphical tool for performing security testing of web applications.
 Filename: dists/stable/extras/binary-all/burpsuite_2022.12.6_all.deb
-Size: 38608
-MD5Sum: 847c3823c27623c45430ce4b3aed547e
-SHA1: 749c07eb6a450f4514eaf2efc458866bde0a37e7
-SHA256: d5a6a03d86467f193fb59730394a47921f0ad6fe4ae53231634f5aa9d3661364
-SHA512: 99cca784cc5dfc106aa16abf21c0474e67e6feec2dfdf7b6e4421d2d029f2ae989bd83332cb3e38df5d7826dd831f563e838533ed9b02fc042a764c0f088d935
+Size: 38672
+MD5Sum: c70ee8493092d2364d984524c9240016
+SHA1: 0ca67e774d28ad38bb9016fa324f04071f318749
+SHA256: 56ff974e9466701529cbefac02707541624e433af0b618dcad6ad3ac04d0c6a4
+SHA512: 132f90b87c4fe2fcd9f9ce2ce43faebdc4be553367591d92ece1dc01d43cda1e8e790dea4987ba08505bf5a62091f48dfa5c10a4e90e03291944191386e1e675
 
 Package: cewl
 Version: 5.5.2
@@ -759,11 +759,11 @@ Suggests: i-haklab, burpsuite
 Homepage: https://https://www.jython.org/
 Description: The Jython project provides implementations of Python in Java, providing to Python the benefits of running on the JVM and access to classes written in java
 Filename: dists/stable/extras/binary-all/jython-lts_2.7.3_all.deb
-Size: 2088
-MD5Sum: ea328591ea28d550fc9ee61cc0ed79ae
-SHA1: ab23af2f683525e777b69dcac9ba1bfa73e4b6c4
-SHA256: 0def137dd490627a279cbf87c90ad1596f1b4fc111d69e9ac9cb4b2135610362
-SHA512: 73513960c5a5a045c0ca6ec87eef095bfe0d486858d73dcc485c9a2636c228f01aecd102fbc60e55dd84671d0d954fe56cf96d666bd68ff22a8f9d204ebc1779
+Size: 2092
+MD5Sum: 8918611a5bc2e5a919dacc0bb818c3e8
+SHA1: e07252e3947acc75031b745a01ba365ebc12970b
+SHA256: d42dba1e4c761df4f928200e047665396804aa6aed2669fb2bf6202eb1591ba6
+SHA512: ce09caed45b939c83edf635ec8c57f69c3c3eefc715a3a370686a1e988af9d01ff63baef65fb8046c8941967328a39e5eab0db77e84fe3bb239b14126d442575
 
 Package: kalilinux
 Version: 2019.1
