@@ -1,0 +1,13 @@
+{
+  "name": "jython",
+  "version": "2.7.3",
+  "arch": "all",
+  "homepage": "https://https://www.jython.org/",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["openjdk-17, python, wget"],
+  "suggests": ["i-haklab"],
+  "description": "The Jython project provides implementations of Python in Java, providing to Python the benefits of running on the JVM and access to classes written in java",
+  "files" :{
+    "jython": "bin/jython"
+  }
+}

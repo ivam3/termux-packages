@@ -190,20 +190,20 @@ SHA256: c9cdb5d5295d224276c0281291302da4ed1ad82d1c7fb72a1f1044ea698640db
 SHA512: 34015068df89ac0ba018f104f991ed9dd7543922a75549990e16d8878ad7ad9e5b3e2ecfc9867f723cc3db86988426ad1f5e885c431b3555bb49d02e29035fd2
 
 Package: burpsuite
-Version: 2022.11.4
+Version: 2022.12.6
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 38
-Depends: openjdk-17, wget
+Depends: openjdk-17, wget, jython
 Suggests: termux-x11, xwayland
 Homepage: https://portswigger.net
 Description: An integrated platform/graphical tool for performing security testing of web applications.
-Filename: dists/stable/extras/binary-all/burpsuite_2022.11.4_all.deb
-Size: 38620
-MD5Sum: a98b1e3dab82c767526b5d4fafda959a
-SHA1: ede616f8dad4229a9a59c4d6eb23f166eae74ea8
-SHA256: d0b8e33eaf6ca58af95007248cb1e9fa579352ec54f5d59f61635b8d808d8636
-SHA512: 4ab13d5ff2b64bd2b04af14c66caa5bff274209d754dd074da464f8c1d5b3ba7962ba574504ef3906738db33bc2db4dc3fe049923646e7647475584cac5ed9fa
+Filename: dists/stable/extras/binary-all/burpsuite_2022.12.6_all.deb
+Size: 38612
+MD5Sum: 6b72fd30462eec6053a787744c81193a
+SHA1: e27432554ed494aa2cbd8c1ec5eeab653b804167
+SHA256: c89e1428f704c4aa0291302013ce35cf9bbef58d8b59d744bf484db9d070ee2f
+SHA512: 401b5afe2693c6504d71648db11d180958801782d111f61c467aa86cc541cd0524b549797c11007c8fa5c1a6d056bf46dba15ff2fb5c241b4e4a46e3cc1da6f4
 
 Package: cewl
 Version: 5.5.2
@@ -748,6 +748,22 @@ MD5Sum: 59097fd43574d9ea9381513b362dabbb
 SHA1: 2c3647a3c3636b0cf4e698a1c23fa1097028b6ae
 SHA256: 7727df1d57e7a1cbe6b3e68639b7a56669e45efd743285de54cf79317751478c
 SHA512: 21275fe82b871d8bbab3e670c1f320076cb50d05b198cce0152373060b9207b7788e1b03c27202fe970b74d87154602ea6497f7441d4bbfa2b734025297362c6
+
+Package: jython
+Version: 2.7.3
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: openjdk-17, python, wget
+Suggests: i-haklab
+Homepage: https://https://www.jython.org/
+Description: The Jython project provides implementations of Python in Java, providing to Python the benefits of running on the JVM and access to classes written in java
+Filename: dists/stable/extras/binary-all/jython_2.7.3_all.deb
+Size: 2088
+MD5Sum: 295766ccb48184b5ea17e726c6ea1340
+SHA1: cda688e743db719ff65c9deffca218da90170bd3
+SHA256: a553d3da348c7c9d657d00ec7192879ec005af6b04d0a47ed0335edf3c6565ba
+SHA512: 88adf2390d435fb2b2643dbb8426a84d0ab6c92ae5f1310449bda6659c9cbf068112f6769f87daec8ae3177e0fb9a8562ec2f3078b889eac49f7f9ca029ea895
 
 Package: kalilinux
 Version: 2019.1

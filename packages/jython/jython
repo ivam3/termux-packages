@@ -1,0 +1,16 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# COLORS
+W="\e[0m"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+B="\e[34m"
+if [[ -e ${HOME}/.local/share/jython.jar ]]
+then
+#	[[ $(uname -m) = "aarch64" ]] || { printf >&2 $R"(➤_)$W Incompatible architecture";exit;}
+	exec $(command -v java) --add-opens=java.desktop/javax.swing=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -jar ${HOME}/.local/share/jython.jar
+else
+	echo -en "$R(➤_)$W Jar file is not installed...$R aborting.$W"
+	exit 1
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

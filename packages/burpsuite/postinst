@@ -1,21 +1,17 @@
 #!/data/data/com.termux/files/usr/bin/bash
-jv="2.7.3"
 lv="7.2.0"
-
 [[ ! -e $PREFIX/opt/openjdk/lib/libgif.so.7 ]] && [[ -e $PRERIX/lib/libgif.so.$lv ]] && {
 	ln -s $PRERIX/lib/libgif.so.$lv $PREFIX/opt/openjdk/lib/libgif.so.7;
 }
-
 echo "Downloading jar files (It could take a while) ..."
 wget -q --tries=20 https://portswigger.net/burp/releases/download \
 	-O ${HOME}/.local/share/burpsuite.jar
-wget -q --tries=20 https://repo1.maven.org/maven2/org/python/jython-standalone/$jv/jython-standalone-$jv.jar \
-	-O ${HOME}/.local/share/jython.jar
 exit 0
-
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 751 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] burpsuite installation finished."
+echo "[*] Run 'burpsuite' to execute it."
+echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
