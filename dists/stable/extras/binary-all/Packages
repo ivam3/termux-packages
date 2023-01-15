@@ -759,11 +759,11 @@ Suggests: i-haklab, burpsuite
 Homepage: https://https://www.jython.org/
 Description: The Jython project provides implementations of Python in Java, providing to Python the benefits of running on the JVM and access to classes written in java
 Filename: dists/stable/extras/binary-all/jython-lts_2.7.3_all.deb
-Size: 2080
-MD5Sum: d58925886ba9072e0b7cb4054621ba04
-SHA1: 3d23504f92c7f7cd0d64ca11ea7e410549adfe8f
-SHA256: c6a14ed009da6c6bcf8dcb130c6f0b323570cbbaeddb3356cac0b006bcb7d0db
-SHA512: 56987f5141d004ff81b5b6779ab67356a29fb5e6e018a8fafdb32fe39bf26e6fb4024b890021b37b4fbed9d2d272ec53ffea30e6cd7e59e331b0ae01b6cbb742
+Size: 2088
+MD5Sum: ea328591ea28d550fc9ee61cc0ed79ae
+SHA1: ab23af2f683525e777b69dcac9ba1bfa73e4b6c4
+SHA256: 0def137dd490627a279cbf87c90ad1596f1b4fc111d69e9ac9cb4b2135610362
+SHA512: 73513960c5a5a045c0ca6ec87eef095bfe0d486858d73dcc485c9a2636c228f01aecd102fbc60e55dd84671d0d954fe56cf96d666bd68ff22a8f9d204ebc1779
 
 Package: kalilinux
 Version: 2019.1
