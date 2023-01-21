@@ -1053,20 +1053,20 @@ SHA256: 8653905a1896604cd8dc4c785cf98c1dd54ecc45badbe3fe87fab30da644572d
 SHA512: fb325463bc962f93e0b7d41ff30c9f63fcb4c43d3e5b47a4aebb3a912aaac68adf9a4d959b75ffef5bf8b321a370e4fcfba499914ded91d7b2f71da3b243d75a
 
 Package: saycheese
-Version: 1.0
+Version: 1.2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
-Depends: git, wget, curl, unzip, openssh, php
+Installed-Size: 1
+Depends: git, httrack, wget, curl, unzip, openssh, php
 Suggests: i-haklab, ngrok
-Homepage: https://github.com/hangetzzu/saycheese
+Homepage: https://github.com/TechnicalHeadquarter/saycheese
 Description: Grab target's webcam shots by link
-Filename: dists/stable/extras/binary-all/saycheese_1.0_all.deb
-Size: 1928
-MD5Sum: bd6046f8dd4244f4bf63f2541db7fddf
-SHA1: 12765c957ada91b69014cd2dcf82d974770b629d
-SHA256: 652960f95fc8e01a68f154ad83a34368071f5aa52a12e185218471a953a114be
-SHA512: a039774e3dc0f34a737d9aa04f561d25d3e54257b25fa3a91a7a1fce8a4640e0dd57bbfc2c1215daa4b3daf4183cbb96865afa81c23b755cb88d57c83c475b77
+Filename: dists/stable/extras/binary-all/saycheese_1.2_all.deb
+Size: 1996
+MD5Sum: 2b1439f2c71c2531057f2fc492441b0d
+SHA1: b60b8f3bdad5e222aa5c2fdc33e64dae1e952338
+SHA256: 75565cf1aeb0f53e627f779f3411d62f21bdff8091ded18cf4c8b46e36d4ac46
+SHA512: c9d93f66e40ad87d811d81ef7bdf0ae33ddce0e25100834f7f03fd7add6eaed0abfc718c0a194b1cb72be24d8fb4c8c7b3c0da39eab112c796da3aa1d16d7ff5
 
 Package: sayhello
 Version: 1.0

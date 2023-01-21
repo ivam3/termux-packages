@@ -3778,7 +3778,6 @@ data/data/com.termux/files/usr/bin/redhawk                                      
 data/data/com.termux/files/usr/bin/redhawk-installer                             redhawk
 data/data/com.termux/files/usr/bin/routersploit                                  routersploit
 data/data/com.termux/files/usr/bin/saycheese                                     saycheese
-data/data/com.termux/files/usr/bin/saycheese-installer                           saycheese
 data/data/com.termux/files/usr/bin/sayhello                                      sayhello
 data/data/com.termux/files/usr/bin/sayhello-installer                            sayhello
 data/data/com.termux/files/usr/bin/seeker                                        seeker
