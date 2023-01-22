@@ -686,20 +686,20 @@ SHA256: 087391bf54ad6dd1e09b9732f3156b6f667786c85454234afcfdec3745db7075
 SHA512: cd67869bc09f0df12989761fe7556c4c3d43a7dd3a8ac8440c27d7b07a5c96b6b8da577c2ed0467588350985c4532141c83f79501925589d00a5536754fff053
 
 Package: i-haklab
-Version: 3.6.1
+Version: 3.6.2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 93194
-Depends: termux-api, termux-elf-cleaner, termux-tools, util-linux, apr, apr-util, autoconf, axel, bat, bc, fontconfig-utils, bison, clang, cmake, coreutils, curl, debianutils, dnsutils, file, findutils, fish, gawk, git, gpgme, hexedit, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, gnupg, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, readline, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, zip, zlib
+Installed-Size: 93169
+Depends: termux-api, termux-elf-cleaner, termux-tools, tur-repo, util-linux, apr, apr-util, autoconf, axel, bat, bc, fontconfig-utils, bison, clang, cmake, coreutils, curl, debianutils, dnsutils, file, findutils, fish, gawk, git, gpgme, hexedit, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, gnupg, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, readline, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, zip, zlib
 Suggests: openjdk-17, perl, ruby, nodejs-lts
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.6.1_all.deb
-Size: 40562772
-MD5Sum: 34509b1cfffe8c7f73f6d1d8111761a2
-SHA1: 320df76bf06b2182b07787233714836fc760270e
-SHA256: cf16cafd02fa2e467b7c10ec9b24a92bd1903c7234b59884a1c42f3e2e152e52
-SHA512: 229950d49b14edcd91237bf07e6f2bd2cb57b7acd1ff870711ca6e8f5039c038a93669ed1b87a70dd78e6d60b3716ae813000fdf242e53797e240bad79b4729d
+Filename: dists/stable/extras/binary-all/i-haklab_3.6.2_all.deb
+Size: 40554364
+MD5Sum: 8ceee50b80c0f237883ab04f7669a34f
+SHA1: 8f8f155f2b3b7e489a3438f79cb4be1b71540f23
+SHA256: dc1ff5e2465e10a85639ec634d73a7856897438b02d49acb45c4720a96011660
+SHA512: c6c4ab0d6d4d089f6bbe60f4d66dbea0df6f472dc1f3d0383da749b27700b8122547c092df6872ea06a2320dba7621fb75a3d4adfae99d2bb2864ac1e85502de
 
 Package: infoga
 Version: 1.0
