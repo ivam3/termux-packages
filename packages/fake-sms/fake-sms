@@ -8,7 +8,7 @@ B="\e[34m"
 if [[ -d ${HOME}/.local/share/fake-sms ]]
 then
   cd ${HOME}/.local/share/$(basename $0) >/dev/null
-  $(command -v bash) run.sh ${@:1}
+  $(command -v python) fakesms.py ${@:1}
 else
   echo -en $R"E:$W $(basename $0) PATH missing ...$Y Aborting.$W"
   exit 1
