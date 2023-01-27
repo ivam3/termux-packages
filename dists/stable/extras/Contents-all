@@ -3749,6 +3749,9 @@ data/data/com.termux/files/usr/bin/kerbrute                                     
 data/data/com.termux/files/usr/bin/kerbrute-installer                            kerbrute
 data/data/com.termux/files/usr/bin/lockphish                                     lockphish
 data/data/com.termux/files/usr/bin/lockphish-installer                           lockphish
+data/data/com.termux/files/usr/bin/maltego                                       maltego
+data/data/com.termux/files/usr/share/applications/maltego/img/maltego.png        maltego
+data/data/com.termux/files/usr/share/applications/maltego/maltego.desktop        maltego
 data/data/com.termux/files/usr/bin/metasploit-installer                          metasploit-framework
 data/data/com.termux/files/usr/bin/nexphisher                                    nexphisher
 data/data/com.termux/files/home/.ssh/config                                      ngrok

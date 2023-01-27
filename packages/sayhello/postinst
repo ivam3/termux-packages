@@ -1,9 +1,28 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/sayhello-installer
-rm -rf ${PREFIX}/bin/sayhello-installer
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+IFS=$'\n\t'
+echo "Cloning repository ..."
+git clone --quiet https://github.com/d093w1z/sayhello ${HOME}/.local/share/sayhello
+if [[ -d ${HOME}/.local/share/sayhello ]]; then
+  chmod 750 ${HOME}/.local/share/sayhello
+  echo "Linking ngrok binary file."
+  if [[ ${PREFIX}/bin/ngrok ]] && [[ ! -e ${HOME}/.local/share/sayhello/ngrok ]]
+  then
+    ln -s ${PREFIX}/bin/ngrok ${HOME}/.local/share/sayhello/ngrok 2>/dev/null
+  fi
+  ln=$(grep -n "link=\$(curl" ${HOME}/.local/share/sayhello/sayhello.sh|awk -F ":" '{print $1}')
+  sed -i "$ln {s/^/#/}" ${HOME}/.local/share/sayhello/sayhello.sh
+  sed -i "${ln}a link=\$(curl -s -N http://127.0.0.1:4040/api/tunnels|cut -d '\"' -f18)" \
+    ${HOME}/.local/share/sayhello/sayhello.sh
+  echo "[*] sayhello installation finished."
+  echo "[*] Run 'sayhello' to execute it."
+else
+  echo -en "\e[31mE:\e[0m sayhello main directory missing ... \e[33mAborting.\e[0m\n"
+fi
+wget --tries=20 --quiet \
+  https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer \
+  -O /data/data/com.termux/files/usr/bin/fixer
 chmod 751 /data/data/com.termux/files/usr/bin/fixer
-echo "[*] sayhello installation finished."
+echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

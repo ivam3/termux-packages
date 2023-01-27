@@ -813,6 +813,22 @@ SHA1: 599b618265d3dcf46ac98a16aaffca7daf56c3bc
 SHA256: 2d096212503025c84b82a4d202a82d17b496155dbfb61f220dfe7f04c4a72dba
 SHA512: 1d13ba293fb1c0bc7cee7453ee746adb8a1459e2a3d4f4529244ab57afbbe5a2aa28253b94ab4b7a95855347c931cfae03ae2a49f5fa7fea80eec7e1a359ba71
 
+Package: maltego
+Version: 4.3.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 15
+Depends: openjdk-17, wget, findutils
+Suggests: i-haklab, xwayland
+Homepage: https://https://www.maltego.com
+Description: Maltego is a software focused mainly on forensic analysis and developed to make link analysis and data mining more conducive from IP domains, emails, telephones, geographic locations... that is, the starting point of an investigation.
+Filename: dists/stable/extras/binary-all/maltego_4.3.1_all.deb
+Size: 15980
+MD5Sum: 832132c817828529c04d0b75f68051cf
+SHA1: 7c514101d769432829ecae88e5e77d04853b1701
+SHA256: c97878f21c84f2d11e85a98195d02557dcdefd58924806c32aab8187687c66db
+SHA512: 64e9084afc95b94303c4e567d62db1cc510b367c0a0517a8c8505231b40999dae71387b3be7693f3c5f680696209f19e3926435ab1edd522a6bf1c8e37431a94
+
 Package: metasploit-framework
 Version: 6.2.34
 Architecture: all
@@ -1078,11 +1094,11 @@ Suggests: i-haklab, ngrok
 Homepage: https://github.com/d093w1z/sayhello
 Description: Capturing audio (.wav) from target using a link
 Filename: dists/stable/extras/binary-all/sayhello_1.0_all.deb
-Size: 1936
-MD5Sum: 2ca534eaad7ba74d158e1b55abdaab55
-SHA1: 040515cae1ab555db6c84a8aeecd27c850359122
-SHA256: 01769002c2489b0aa1c4b64dc00d5a5c40357287f467a5658ad5f77c81df911b
-SHA512: bc6df53b04eadf7834f86d0d7b8a22e2a3908b7cc8b10bd32b1ab05a564e43d1c5d775d5ba20af88e9f74cd7ad61ca74b06f14087bb69f75aa08a6469db5571a
+Size: 2228
+MD5Sum: 60ae819d6b5bd13672094777ca534522
+SHA1: b59e8e53e84f9b2d4309e0fe8878f166a79e5ff8
+SHA256: 1ac564672203e1abd2583bbcefc9b23a4ffe6d57abf60afd87c6e346a89b5f41
+SHA512: 9408d4fcdfdcddd1cda304e084faa1c3a05d8a3df8716a6fafdb43d4d0efe7a9c8c3c342c3d9ad64f0d4deb380ec9061148960b6365fdba308cf7eb189315b89
 
 Package: seeker
 Version: 1.2.7

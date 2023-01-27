@@ -1,0 +1,24 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+v="v4.3.1"
+echo "Downloading Maltego (It could take a while)..."
+wget --tries=20 --quiet https://maltego-downloads.s3.us-east-2.amazonaws.com/linux/Maltego.$v.linux.zip \
+  -O ${TMPDIR}/maltego.zip
+[[ -e ${TMPDIR}/maltego.zip ]] && {
+  echo "Installing requirements ...";
+  unzip -q ${TMPDIR}/maltego.zip -d ${HOME}/.local/share
+  rm ${TMPDIR}/maltego.zip
+  maltegoDir=$(find ${HOME}/.local/share/ -maxdepth 1 -iname "maltego*" -type d)
+  mv $maltegoDir ${HOME}/.local/share/maltego
+  chmod 751 -R ${HOME}/.local/share/maltego
+} || {
+  echo -en "\e[31mE:\e[0m maltego directory missing ... \e[33mAborting.\e[0m\n";
+}
+wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+chmod 750 /data/data/com.termux/files/usr/bin/fixer
+echo "[*] maltego installation finished."
+echo "[*] Run 'maltego' to execute it."
+echo "[*] Run 'fixer' to fix any posible issue."
+echo "[!] For help going to https://t.me/Ivam3_Bot."
+echo "[*] @Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

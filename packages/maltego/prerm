@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/maltego ]]; then
+  rm -rf ${HOME}/.local/share/maltego
+fi
+if [[ -d ${PREFIX}/share/applications/maltego ]]; then
+  rm -rf ${PREFIX}/share/applications/maltego
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
