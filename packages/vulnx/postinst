@@ -1,9 +1,21 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/vulnx-installer
-rm -rf ${PREFIX}/bin/vulnx-installer
+IFS=$'\n\t'
+echo "Cloning repository ..."
+git clone --quiet https://github.com/anouarbensaad/vulnx ${HOME}/.local/share/vulnx
+[[ -d ${HOME}/.local/share/vulnx ]] && {
+  echo "Installing requirements ...";
+  chmod 751 -R ${HOME}/.local/share/vulnx;
+  cd ${HOME}/.local/share/vulnx;
+	python -m pip --no-color --quiet --no-cache install -r requirements.txt
+} || {
+  echo -en "\e[31mE:\e[0m vulnx directory missing ... \e[33mAborting.\e[0m\n";
+  exit 1;
+}
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] vulnx installation finished."
+echo "[*] Run 'vulnx' to execute it."
+echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

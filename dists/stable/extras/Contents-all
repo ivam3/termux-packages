@@ -542,7 +542,6 @@ data/data/com.termux/files/usr/bin/embed                                        
 data/data/com.termux/files/usr/bin/embed-installer                               embed
 data/data/com.termux/files/usr/bin/evilginx2                                     evilginx2
 data/data/com.termux/files/usr/bin/evilurl                                       evilurl
-data/data/com.termux/files/usr/bin/evilurl-installer                             evilurl
 data/data/com.termux/files/usr/bin/exif                                          exif
 data/data/com.termux/files/usr/bin/exploitdb                                     exploitdb
 data/data/com.termux/files/usr/bin/exploitdb-installer                           exploitdb
@@ -3794,17 +3793,14 @@ data/data/com.termux/files/usr/bin/sqliv                                        
 data/data/com.termux/files/usr/bin/sqliv-installer                               sqliv
 data/data/com.termux/files/usr/bin/stegsnow-installer                            stegsnow
 data/data/com.termux/files/usr/bin/sublist3r                                     sublist3r
-data/data/com.termux/files/usr/bin/sublist3r-installer                           sublist3r
 data/data/com.termux/files/usr/bin/tangalanga                                    tangalanga
 data/data/com.termux/files/usr/bin/tangalanga-installer                          tangalanga
 data/data/com.termux/files/usr/bin/termux-docker-qemu                            termux-docker-qemu
 data/data/com.termux/files/usr/bin/trape                                         trape
-data/data/com.termux/files/usr/bin/trape-installer                               trape
 data/data/com.termux/files/usr/bin/unshc-installer                               unshc
 data/data/com.termux/files/usr/bin/userrecon                                     userrecon
 data/data/com.termux/files/usr/bin/userrecon-installer                           userrecon
 data/data/com.termux/files/usr/bin/vulnx                                         vulnx
-data/data/com.termux/files/usr/bin/vulnx-installer                               vulnx
 data/data/com.termux/files/usr/bin/wbruter                                       wbruter
 data/data/com.termux/files/usr/bin/wbruter-installer                             wbruter
 data/data/com.termux/files/usr/bin/webscan                                       webscan
@@ -3818,7 +3814,6 @@ data/data/com.termux/files/usr/bin/wpscan-installer                             
 data/data/com.termux/files/usr/bin/xapt                                          xapt-management
 data/data/com.termux/files/usr/bin/xapt-installer                                xapt-management
 data/data/com.termux/files/usr/bin/xerosploit                                    xerosploit
-data/data/com.termux/files/usr/bin/xerosploit-installer                          xerosploit
 data/data/com.termux/files/usr/bin/zaproxy                                       zaproxy
 data/data/com.termux/files/usr/share/applications/zaproxy/img/zaproxy-logo.png   zaproxy
 data/data/com.termux/files/usr/share/applications/zaproxy/zaproxy.desktop        zaproxy

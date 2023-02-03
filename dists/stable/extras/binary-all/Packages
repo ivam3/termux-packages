@@ -167,27 +167,27 @@ Depends: python2, wget
 Homepage: https://github.com/jothatron/blackbox
 Description: Tool for Bruteforcing attacks, Information Gathering, Dorking, Cracking and Exploit web vulnerabilities.
 Filename: dists/stable/extras/binary-all/blackbox_2.0_all.deb
-Size: 1724
-MD5Sum: d3f4e057b44cdf87540a953494a2a82d
-SHA1: 11cf96b20bf359a60aea74e4a19e82c4af3fa96e
-SHA256: 6bfb121b90810fbd2d23c5702036ba9dace9efc14de224130c13ca4fc1693eaa
-SHA512: 9e8ce3a8f4c32ef680327dcd5ff4ac91b869dc6ee6d667c5c0150d9d216f00aee4de6a96f10f6a8b33146aeaf408b78996fe2df8a216a626950ef4c77d5ca8f5
+Size: 1664
+MD5Sum: 1663a3c461da136a242a9d9c324d7f8b
+SHA1: 4a152c3ee8d1b38a718fdf18a5ba81df4baf4749
+SHA256: ac4e4d5958a71607de0f758b859da321b16214e6cb7fdb1ba5ce0920c7d26f47
+SHA512: 32ab281aca70c18ba7150f104a8c1622e969463c3df490e5d3d5202e0f2e9a98a90b59e61070ada0439a73eb6659ca6cb706248517b622ea3eed350e863f0497
 
 Package: botgram
 Version: 1.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: git, python, numpy
+Depends: git, python, python-pip, python-numpy
 Suggests: i-haklab
 Homepage: https://github.com/ivam3/botgram
 Description: Scraper Telegram's groups information and manage it from CLi.
 Filename: dists/stable/extras/binary-all/botgram_1.0_all.deb
-Size: 1996
-MD5Sum: 1daffa8f8bccb66862163984483ca182
-SHA1: f6f7e47e839c0ec7b643566af93f24cb4023ee0d
-SHA256: c9cdb5d5295d224276c0281291302da4ed1ad82d1c7fb72a1f1044ea698640db
-SHA512: 34015068df89ac0ba018f104f991ed9dd7543922a75549990e16d8878ad7ad9e5b3e2ecfc9867f723cc3db86988426ad1f5e885c431b3555bb49d02e29035fd2
+Size: 1976
+MD5Sum: fad96a1e2aa329e2df30acad544015ac
+SHA1: 025b650472967b5a702083992514c8682ce673f7
+SHA256: feef86991f89fffe0dc5c60e439511da84ebefa4b14a280d8daf61480fab5358
+SHA512: b9c69836d23f95a1e35d7dc5bb6795aea6aab750ee697dabbb86342f472078035e03080bc455aa219771c871b3f0c21fd8547f3ec9e9c8907404d54cbe0f9230
 
 Package: burpsuite
 Version: 2022.12.7
@@ -401,17 +401,17 @@ Package: evilurl
 Version: 3.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
-Depends: python, git
+Installed-Size: 1
+Depends: python, python-pip, git
 Suggests: i-haklab
 Homepage: https://github.com/UndeadSec/EvilURL
 Description: Generate unicode domains for IDN Homograph Attack and detect them.
 Filename: dists/stable/extras/binary-all/evilurl_3.0_all.deb
-Size: 1872
-MD5Sum: 03efb19c43d68719b4f2a7346011aefc
-SHA1: 9110b260030aaf2ba9d1e0005381a84005471814
-SHA256: 7ebbe641a6a2a4e505bc51a2f1bab589815c6fd6d24aa8ad30f04b3f32c6119e
-SHA512: d85e242019ab7a2a4c9d0847fd68400d1897f8244c00736fac82c3fe631a30b4435312a110945309fc370c7a2e47084228209b533735b220542b37f7ab539498
+Size: 1792
+MD5Sum: 533dfa370301734e7d9a9191368a7503
+SHA1: f4f8114168ffbaeff18e717191d088753e1e3ef0
+SHA256: 20beb25525537c6bd43c07cd08ba1a96dc0dee6754d21aa19e55e4d4492f0741
+SHA512: 286c7c1b0cb8f694e5dd7a051e52a55c557183dc33eb67c76ff61514cb7e50e8c06a7edf6fb15e2e39b09a54b519c2280ae17762062ae6261fcdfbe7225b4972
 
 Package: exif
 Version: 2.0
@@ -450,16 +450,16 @@ Version: 2.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: git
+Depends: git, python, python-pip
 Suggests: i-haklab
 Homepage: https://github.com/machine1337/fake-sms
 Description: A small script to send messages anonymously. very fast and secure SMS sending script.
 Filename: dists/stable/extras/binary-all/fake-sms_2.0_all.deb
-Size: 1876
-MD5Sum: 8c9a325b3058a535d4f2d85ded9f146d
-SHA1: dbd1b546d0b057afa6d07950f1129f17eee9f928
-SHA256: 90bb3bee6fc94986099cf2521099595e39bc2857cf67694da7b184c25e7f891b
-SHA512: ba6ee33d44fbb2e929a9548d49896e79876c1e0c74f73e7a914f509c0ed43c3fe344ddb359e4fd92f62a86cb87d3a5dd5a004bb1939a4bf67361c915a2fbabc8
+Size: 1868
+MD5Sum: ec586276dd8b301b191f5d8eb4cc96b5
+SHA1: 6b8078ba8b55ca0f1fbb2e018f7b9c9269e41ed9
+SHA256: 6d8120779b94c7593e2e3809942eb726a706a509c91203b16e59e48e4c2b2971
+SHA512: e7c07bf102014ac17da234346e21fbea58117a9fd381e09f6be1f2a09fc66f6e5a99f964d1642286956a012fcc2d69549254852ef7b6b7c7cbb96bcb2b27a4ab
 
 Package: fbi
 Version: 1.0
@@ -738,16 +738,16 @@ Version: 1.9.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: git, make, clang, python
+Depends: git, make, clang, python, python-pip
 Suggests: i-haklab
 Homepage: https://github.com/openwall/john
 Description: Open Source password security auditing and password recovery tool.
 Filename: dists/stable/extras/binary-all/johntheripper_1.9.0_all.deb
-Size: 1996
-MD5Sum: 59097fd43574d9ea9381513b362dabbb
-SHA1: 2c3647a3c3636b0cf4e698a1c23fa1097028b6ae
-SHA256: 7727df1d57e7a1cbe6b3e68639b7a56669e45efd743285de54cf79317751478c
-SHA512: 21275fe82b871d8bbab3e670c1f320076cb50d05b198cce0152373060b9207b7788e1b03c27202fe970b74d87154602ea6497f7441d4bbfa2b734025297362c6
+Size: 1964
+MD5Sum: 438dce7a3c136781692b5b5de5472e15
+SHA1: f53c7b16cf68e8f356afde9eab548e93f49c4c11
+SHA256: 313de076815323954633a1a8c8ac44a89d0138fa9c34137c13f49c501c9733c5
+SHA512: 343fe9f8759c447351bb4c9a6f55f2321a38b9af68931efe1bafaf5ffb42f8e2cf2a4a5a22dd0b5bd990eb469a345564b0f95ecfe2ba4eb715446f348c88f522
 
 Package: jython-lts
 Version: 2.7.3
@@ -1216,17 +1216,17 @@ Package: sublist3r
 Version: 1.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
-Depends: python, git
+Installed-Size: 1
+Depends: python, python-pip, git
 Suggests: i-haklab
 Homepage: https://github.com/aboul3la/Sublist3r
 Description: Fast subdomains enumeration tool for penetration testers
 Filename: dists/stable/extras/binary-all/sublist3r_1.0_all.deb
-Size: 1972
-MD5Sum: 358bca14cefee9ae05efea64f90154e3
-SHA1: c5a9caf2e64889f319361fb1c4da769f991e39fb
-SHA256: 0f3ac5f450941837dc50634dc09cc0a8de6efc4ea264e6f99796f6ebc6581267
-SHA512: e5a028ceebb0237523399adba7383ca32760c9207e70d17885ef6239b00c40add97941ce66f06caa263f06268a5f4703b0c4b0a779ffde434c6b198f52785498
+Size: 1852
+MD5Sum: 544659ed99dcd703d1025ab875c6863f
+SHA1: c9e5627041cf8b1ee12a6be794154717d9b57e39
+SHA256: e288acf8a3dcf00083456c02a72f369ff342e94e37561346ae76705c70736a80
+SHA512: d89eafeb96f340522c2acb4d99c6e9ce2e5731eee3bbadbba302bcb096173d5607178a6cbe141029130e23b02399c4801e8c56604156da1e94c210c8905fe9b0
 
 Package: tangalanga
 Version: 0.1
@@ -1264,17 +1264,17 @@ Package: trape
 Version: 2.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
-Depends: git, python
+Installed-Size: 1
+Depends: git, python, python-pip
 Suggests: i-haklab
 Homepage: https://github.com/jofpin/trape
 Description: People tracker on the Internet
 Filename: dists/stable/extras/binary-all/trape_2.0_all.deb
-Size: 1944
-MD5Sum: 50c86d0ec3f66b133afb81156c7ce506
-SHA1: 89a7c21d0d87beb1bfe1a7f59472b74d73845abe
-SHA256: d5be633a7d03c520a19322cae4d6d62d4a7206634483b12ebaf598092f3d1fa6
-SHA512: a30fe813582f1bff58a5817c92641a0cddf4452184065a1098d2db85855ef468d636ef2be01da01990a632243d8a6bacb4eff10dfbc92d0787155dbc4dccadb5
+Size: 1828
+MD5Sum: 09d13a061441e37eea5da6573e5535ad
+SHA1: b67c432bd61c151067afcdbb450106e14e6a3aee
+SHA256: 5036774eecafcac42cfe137246bf6c85ef54111fda911e84bef82ccecb233cf5
+SHA512: 0fef4c60a419babe8230c1a293ef0f5b7f12702575a9fdac78cb04500d4d98781b32619e2c381ed4f07fb7c8044f92c34f3a5ef8d9a3235810bfca671f4d0a8e
 
 Package: unshc
 Version: 0.1
@@ -1312,17 +1312,17 @@ Package: vulnx
 Version: 2.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
-Depends: git, python
+Installed-Size: 1
+Depends: git, python, python-pip
 Suggests: i-haklab
 Homepage: https://github.com/anouarbensaad/vulnx
 Description: An Intelligent Bot Auto Shell Injector that detects vulnerabilities in multiple types of Cms.
 Filename: dists/stable/extras/binary-all/vulnx_2.0_all.deb
-Size: 2000
-MD5Sum: 34a94766d4211ec74ec6aa6f094220e8
-SHA1: bad3944140da0c60aab845357d98015c54f45e66
-SHA256: 5b9628f0c55c784ea9426943c2a13e7ea2c5b739c91bccf17f977ce213f16035
-SHA512: 5286c44c1f01e61b42141339fd989d4c5dd4a5176f1458d931de1caeb0d651a6a01a2565de9f21c46cc9ccfbe61180c866673564ff61aa3149cd8ef5ffdc7589
+Size: 1880
+MD5Sum: 92fe7285d806294f51f72595c6c1d33f
+SHA1: ef05552d8fe14286cbde4576e545a1b145111b12
+SHA256: 40b0052188b286864a767e63eeeec47910796be10c8e7c926f63d59dbf70be5b
+SHA512: b8ff499118a029ca5642615a0c8af599470e41868ceaa57cb3e68d8c72b4b65f406e059e040e31275452894d8b3195ab1725c594c30d9cec69ab1bb985c0442c
 
 Package: wbruter
 Version: 3.0
@@ -1440,17 +1440,17 @@ Package: xerosploit
 Version: 0.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 3
+Installed-Size: 1
 Depends: root-repo, git, nmap, build-essential, python2, ruby, libpcap, hping3
 Suggests: i-haklab
 Homepage: https://github.com/LionSec/xerosploit
 Description: Efficient and advanced man in the middle framework.
 Filename: dists/stable/extras/binary-all/xerosploit_0.1_all.deb
-Size: 2292
-MD5Sum: b0e6502cd05c60c52c2c34e45e2084dc
-SHA1: a8192e5f5bda189f2557603258457d38d39b0ebd
-SHA256: 6fb4953337227394dae57d01db647b32587792cdfcc5a9f6b7de7f1917af5969
-SHA512: faaaa000ad22e11b9c2cdc9c13461f3e4c32ffd07f1e157939e068950223e83844d4ee95a231b8b76b6ab9c6802d18a407da61e2c01acbd0278ec3c86d8b6c75
+Size: 2076
+MD5Sum: fed7d492651f9b1447b2fab48a2ce816
+SHA1: a4ace9ee9fe93a2359507ab20414218845801bd9
+SHA256: 1a5c605b022c409ac46b910cafd3c6656687278d926314b8a3fb07f5ae88703a
+SHA512: 92ce715a9eb624c47461e901980fc8969276d04eaef6bf21bb47b89e31fab9cb1c84bda1e9d68121e8e1ea4e038a21cebc6467915cefa50a93c7ee63710d59aa
 
 Package: zaproxy
 Version: 2.12.0

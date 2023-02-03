@@ -1,9 +1,21 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/sublist3r-installer
-rm -rf ${PREFIX}/bin/sublist3r-installer
+IFS=$'\n\t'
+echo "Cloning repository ..."
+git clone --quiet https://github.com/aboul3la/Sublist3r ${HOME}/.local/share/sublist3r
+[[ -d ${HOME}/.local/share/sublist3r ]] && {
+  echo "Installing requirements ...";
+  chmod 751 -R ${HOME}/.local/share/sublist3r;
+  cd ${HOME}/.local/share/sublist3r;
+	python -m pip --no-color --quiet --no-cache install -r requirements.txt
+} || {
+  echo -en "\e[31mE:\e[0m sublist3r directory missing ... \e[33mAborting.\e[0m\n";
+  exit 1;
+}
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] sublist3r installation finished."
+echo "[*] Run 'sublist3r' to execute it."
+echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

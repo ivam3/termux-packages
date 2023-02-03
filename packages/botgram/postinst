@@ -4,7 +4,6 @@ echo "Cloning botgram ..."
 git clone --quiet https://github.com/ivam3/botgram ${HOME}/.local/share/botgram && cd $_
 chmod 751 -R *
 echo "Installing requirements ..."
-python -m pip --no-color --quiet --no-cache-dir install --upgrade pip
 python setup.py --install
 python setup.py --config
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer

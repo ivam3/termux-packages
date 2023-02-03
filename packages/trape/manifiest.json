@@ -4,11 +4,10 @@
   "arch": "all",
   "homepage": "https://github.com/jofpin/trape",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["git, python"],
+  "depends": ["git, python, python-pip"],
   "suggests": ["i-haklab"],
   "description": "People tracker on the Internet",
   "files" :{
-    "trape-installer": "bin/trape-installer",
     "trape": "bin/trape"
   }
 }

@@ -4,11 +4,10 @@
   "arch": "all",
   "homepage": "https://github.com/anouarbensaad/vulnx",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["git, python"],
+  "depends": ["git, python, python-pip"],
   "suggests": ["i-haklab"],
   "description": "An Intelligent Bot Auto Shell Injector that detects vulnerabilities in multiple types of Cms.",
   "files" :{
-    "vulnx-installer": "bin/vulnx-installer",
     "vulnx": "bin/vulnx"
   }
 }

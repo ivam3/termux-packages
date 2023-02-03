@@ -8,7 +8,6 @@
   "suggests": ["i-haklab"],
   "description": "Efficient and advanced man in the middle framework.",
   "files" :{
-    "xerosploit-installer": "bin/xerosploit-installer",
     "xerosploit": "bin/xerosploit"
   }
 }
