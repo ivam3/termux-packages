@@ -10,7 +10,7 @@
   "files" :{
     "adb": "bin/adb",
 		"adb.bin": "bin/adb.bin",
-		"fastboot": "bin/fastboot",
-		"fastboot-armeabi": "bin/fastboot-armeabi"
+		"fastboot.bin": "bin/fastboot.bin",
+		"fastboot-armeabi.bin": "bin/fastboot-armeabi.bin"
 	}
 }
