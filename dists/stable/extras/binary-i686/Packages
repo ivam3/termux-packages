@@ -1,0 +1,16 @@
+Package: adbfastboot
+Version: 1.0.41a-33.0.3f
+Architecture: i686
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 10577
+Depends: brotli, libc++, liblz4, libprotobuf, libusb, pcre2, zlib, zstd
+Suggests: i-haklab
+Homepage: https://t.me/Ivam3_Bot
+Description: Open source of minimal Android Debug Bridge(ADB) and FastBoot suite
+Filename: dists/stable/extras/binary-i686/adbfastboot_1.0.41a-33.0.3f_i686.deb
+Size: 2811632
+MD5Sum: bf04b54b6555aa6da443535888c7d0a8
+SHA1: 71bf31328206f17e24026a208e3eb74b7ed353a8
+SHA256: 615d244cf132736f1cd01d6ac75c5f3a0e1703fbd07c1057458edc770f53b770
+SHA512: a4549c06d9e3500a2a86e3f878192f52c86a1fae5326cedbfac94005689cf231671246b1d1f0c37bfb30def09af01df54845d7ef7595ddfe27f8b25142bb8738
+

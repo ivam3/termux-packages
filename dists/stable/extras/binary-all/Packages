@@ -14,22 +14,6 @@ SHA1: 8955e765538edfb0f75c09fa10f4abf1f8759b11
 SHA256: c9c5cfc4ffd715af7fe6aecd4b764739cf80b883780764e8b045a64c5ac5b4d7
 SHA512: e8df769025ebb5cb90d94ddb542891104258e2fa163970eea65341054372899e77a324707b809a1d79c17a3c80868cdda2c612e2974d863f9e408276f354b810
 
-Package: adbfastboot
-Version: 1.0.39a-8.0.0f
-Architecture: all
-Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 1967
-Depends: openjdk-17
-Suggests: bugjaeger-app
-Homepage: https://t.me/Ivam3_Bot
-Description: Open source of minimal Android Debug Bridge(ADB) and FastBoot suite
-Filename: dists/stable/extras/binary-all/adbfastboot_1.0.39a-8.0.0f_all.deb
-Size: 889636
-MD5Sum: 912a720389d725665e5f7ef339d1c646
-SHA1: 457596d48e41db9a66f50d6142027488bb4e1e4a
-SHA256: f39c2e5085a3b4ed15a20617a375678dba933d3bb7ada2eb2cc9aa049512d854
-SHA512: 6d2b4c04467b9335b06e2ee83cf0b5537e05b4c674d9d22e2c878efe293d66508d17341a1ba0adb1b70fd4138edeb597be69c5fc0d0c5b4eb305d62d1b8abd2f
-
 Package: adminpanel
 Version: 1.0
 Architecture: all

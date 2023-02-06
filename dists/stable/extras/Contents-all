@@ -1,9 +1,5 @@
 data/data/com.termux/files/usr/bin/acccheck                                      acccheck
 data/data/com.termux/files/usr/bin/acccheck-installer                            acccheck
-data/data/com.termux/files/usr/bin/adb                                           adbfastboot
-data/data/com.termux/files/usr/bin/adb.bin                                       adbfastboot
-data/data/com.termux/files/usr/bin/fastboot-armeabi.bin                          adbfastboot
-data/data/com.termux/files/usr/bin/fastboot.bin                                  adbfastboot
 data/data/com.termux/files/usr/bin/adminpanel                                    adminpanel
 data/data/com.termux/files/usr/bin/adminpanel-installer                          adminpanel
 data/data/com.termux/files/usr/bin/amass                                         amass

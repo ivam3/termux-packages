@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+for i in fastboot fastboot-armeabi;do
+  [[ -h ${PREFIX}/bin/$i ]] && { rm ${PREFIX}/bin/$i;}
+done
+#

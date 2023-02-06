@@ -1,7 +1,4 @@
 #!/data/data/com.termux/files/usr/bin/bash
-for i in fastboot fastboot-armeabi;do
-  ln -s ${PREFIX}/bin/adb ${PREFIX}/bin/$i
-done
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer \
   -O /data/data/com.termux/files/usr/bin/fixer
 chmod 751 /data/data/com.termux/files/usr/bin/fixer

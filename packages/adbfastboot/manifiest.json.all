@@ -1,0 +1,22 @@
+{
+	"name": "adbfastboot",
+	"version": "1.0.41a-33.0.3f",
+	"arch": "debarch",
+	"homepage": "https://t.me/Ivam3_Bot",
+	"maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+	"depends": ["brotli, libc++, liblz4, libprotobuf, libusb, pcre2, zlib, zstd"],
+	"suggests": ["i-haklab"],
+	"description": "Open source of minimal Android Debug Bridge(ADB) and FastBoot suite",
+  "files" :{
+    "adb": "bin/adb",
+		"all/bin/adb": "bin/adb.bin",
+		"all/bin/dmtracedump": "bin/dmtracedump",
+		"all/bin/e2fsdroid": "bin/e2fsdroid",
+		"all/bin/etc1tool": "bin/etc1tool",
+		"all/bin/fastboot": "bin/fastboot",
+		"all/bin/hprof-conv": "bin/hprof-conv",
+		"all/bin/make_f2fs": "bin/make_f2fs",
+		"all/bin/make_f2fs_casefold": "bin/adb.make_f2fs_casefold",
+		"all/bin/sload_f2fs": "bin/sload_f2fs"
+	}
+}
