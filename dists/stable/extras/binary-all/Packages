@@ -24,11 +24,11 @@ Suggests: bugjaeger-app
 Homepage: https://t.me/Ivam3_Bot
 Description: Open source of minimal Android Debug Bridge(ADB) and FastBoot suite
 Filename: dists/stable/extras/binary-all/adbfastboot_1.0.39a-8.0.0f_all.deb
-Size: 889596
-MD5Sum: c86edec7a59bb30b0e547674be131e8e
-SHA1: 8778909fa01107b08dfc6e48253d3c4e50e7429f
-SHA256: c6d01e1d8e30cef5179b6fda83c3f4d43bd8222d6b23297f8847fe7e356dd200
-SHA512: c850ac44e056b847d1d1df08bbf0d4c7eb35ba1de37597911ac6fd0e530aaf33b2f367f0c710c0f56bafe1930b703b041670f0ad97d1712044258984196d41e4
+Size: 889636
+MD5Sum: 912a720389d725665e5f7ef339d1c646
+SHA1: 457596d48e41db9a66f50d6142027488bb4e1e4a
+SHA256: f39c2e5085a3b4ed15a20617a375678dba933d3bb7ada2eb2cc9aa049512d854
+SHA512: 6d2b4c04467b9335b06e2ee83cf0b5537e05b4c674d9d22e2c878efe293d66508d17341a1ba0adb1b70fd4138edeb597be69c5fc0d0c5b4eb305d62d1b8abd2f
 
 Package: adminpanel
 Version: 1.0
