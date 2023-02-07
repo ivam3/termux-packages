@@ -14,23 +14,21 @@ case $arch in
     echo "E: Unknown architecture: $arch"; exit 1 ;;
 esac
 
-echo "Installing ADB and FastBoot binaries ..."
+echo "Installing Android Platform tools (It could take a while) ..."
 for i in adb dmtracedump e2fsdroid etc1tool fastboot hprof-conv make_f2fs make_f2fs_casefold sload_f2fs; do
+  echo -en "$i .. \b"
+  [[ "$i" == "adb" ]] && { ii="$i.bin";} || { ii="$i";}
   wget --tries=20 --quiet https://github.com/ivam3/termux-packages/raw/gh-pages/packages/adbfastboot/$archurl/bin/$i \
-    -O ${PREFIX}/bin/$i
-  chmod 755 ${PREFIX}/bin/$i
-done
-mv ${PREFIX}/bin/adb.1 ${PREFIX}/bin/adb.bin
+    -O ${PREFIX}/bin/$ii
+  chmod 755 ${PREFIX}/bin/$ii
+  [[ -e ${PREFIX}/bin/$ii ]] && { echo -en "DONE.\n";} || { echo -en "ERROR.\n";}
+done 
 
-if [[ -e ${PREFIX}/bin/adb.bin ]]; then
-  echo "[*] adbfastboot installation finished."
-  echo "[*] Run 'adb' or 'fastboot' to execute it."
-else
-  echo "E: Main binaries missing ...Aborting."
-fi
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer \
   -O /data/data/com.termux/files/usr/bin/fixer
 chmod 751 /data/data/com.termux/files/usr/bin/fixer
+echo "[*] adbfastboot installation finished."
+echo "[*] Run 'adb' or 'fastboot' to execute it."
 echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."

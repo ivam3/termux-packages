@@ -24,11 +24,11 @@ Suggests: i-haklab
 Homepage: https://t.me/Ivam3_Bot
 Description: Open source of minimal Android Debug Bridge(ADB) and FastBoot suite
 Filename: dists/stable/extras/binary-all/adbfastboot_1.0.41a-33.0.3f_all.deb
-Size: 2172
-MD5Sum: 1272db5f4b3cda5a087c25edf19c0eb8
-SHA1: d230e8bc98909ff3df87d765abff6a0bf381ea4e
-SHA256: 4e0bb2a584e09aebe7e1b07db62a47369430ba9cc5f663388afae7f03f938b4c
-SHA512: e805ce2f5d50c132493db86a8c61ee2a648d598ef875de2744d58a091282ba39c72a007893d5461e68ed178ea8f9e729a2c36a72a64d81ea0ce1db6cfe5f03bd
+Size: 2200
+MD5Sum: c95c4538d607a85c4c9712ab6419bfcf
+SHA1: 707552504598658f82813b1c1dc073579cb555b1
+SHA256: 7a6d554fa665853451706926a3896fb3405a9958beab1a849a4eba06d67b7139
+SHA512: 1d9cdc4f0c19d7f92da96a78c427937cc3546cffd1f6d2c4cf8b009ddff71d75e05252b5aef7f2149966e538740c1f1d1af56116625782cff46e5d254acc1d9c
 
 Package: adminpanel
 Version: 1.0

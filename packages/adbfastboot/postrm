@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
-for i in fastboot fastboot-armeabi;do
-  [[ -h ${PREFIX}/bin/$i ]] && { rm ${PREFIX}/bin/$i;}
+for i in adb.bin dmtracedump e2fsdroid etc1tool fastboot hprof-conv make_f2fs make_f2fs_casefold sload_f2fs;do
+  [[ -e ${PREFIX}/bin/$i ]] && { rm ${PREFIX}/bin/$i;}
 done
 #
