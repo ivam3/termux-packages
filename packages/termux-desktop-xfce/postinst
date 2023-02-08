@@ -1,6 +1,44 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/termux-desktop-xfce-installer
-rm -rf ${PREFIX}/bin/termux-desktop-xfce-installer
+maindir=$(df|grep fuse|awk -F "/" '{print $NF}'|grep -iv emulated)
+[[ -z $maindir ]] && { maindir="${HOME}";} || { maindir="$maindir/Android/data/com.termux/files";}
+mkdir -p ${HOME}/Desktop $maindir/{Documents,downloads,Pictures,Public,Video}
+for i in Documents downloads Pictures Public Video;do
+  ln -s $maindir/$i ${HOME}/$i 2>/dev/null
+done
+
+echo "Setting the Termux properties."
+mkdir -p ${HOME}/.termux
+wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.termux/termux.properties \
+  -O ${HOME}/.termux/termux.properties
+
+echo "Downloading Termux Wayland apk (It could take a while) ..."
+wget --tries=20 --quiet https://github.com/ivam3/termux-packages/raw/gh-pages/packages/termux-desktop-xfce/termux-x11.zip \
+  -O ${TMPDIR}/termux-x11.zip
+[[ -e ${TMPDIR}/termux-x11.zip ]] && {
+  mkdir -p ${TMPDIR}/desktmp
+  unzip --quiet ${TMPDIR}/termux-x11.zip -d ${TMPDIR}/desktmp/ && cd $_
+  app=$(find ${TMPDIR}/desktmp/ -iname "*.apk")
+  deb=$(find ${TMPDIR}/desktmp/ -iname "*.deb")
+  [[ ! -z $app ]] && {
+    echo "Installing Termux Wayland apk (please accept the installation) ..."
+    termux-open ${TMPDIR}/desktmp/$app
+    sleep 10
+  }
+  [[ ! -z $deb ]] && {
+    echo "Uncompressing & installing debs files."
+    ar -x $deb
+    tar=$(find ${TMPDIR}/desktmp/ -iname "*.tar.xz")
+    tar -xvf $tar
+    find data -type d -exec mkdir -p "{}" \;
+    declare -a d=$(find data -mindepth 5 -type d)
+    declare -a f=$(find data -mindepth 5 -type f)
+    for file in ${f[*]}; do
+        cp "$f" "/$file"
+    done
+  }
+} || { echo "E: Termux Wayland app missing ... Please install it manually.";}
+rm -rf ${TMPDIR}/*
+
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] termux-desktop-xfce installation finished."

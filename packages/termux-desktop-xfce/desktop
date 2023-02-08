@@ -1,0 +1,18 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+trap ctrl_c 2
+
+export DISPLAY=:0
+export XDG_RUNTIME_DIR=${TMPDIR}
+#pulseaudio --start --exit-idle-time=-1 2>/dev/null
+#pacmd load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1
+#am start -n com.termux.x11/com.termux.x11.MainActivity;sleep 3
+[[ "$1" == "Xwayland" ]] && {
+  Xwayland :0 >/dev/null &
+} || {
+  termux-x11 :1 >/dev/null &
+  [[ -e ${TMPDIR}/wayland-0 ]] || { echo "E: Display unrechable | Try with $(basename $0) Xwayland";}
+}
+sleep 3
+env DISPLAY=:0 xfce4-session
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

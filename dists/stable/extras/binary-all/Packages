@@ -830,20 +830,20 @@ SHA256: c97878f21c84f2d11e85a98195d02557dcdefd58924806c32aab8187687c66db
 SHA512: 64e9084afc95b94303c4e567d62db1cc510b367c0a0517a8c8505231b40999dae71387b3be7693f3c5f680696209f19e3926435ab1edd522a6bf1c8e37431a94
 
 Package: metasploit-framework
-Version: 6.3.1
+Version: 6.3.2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 7
+Installed-Size: 2
 Depends: build-essential, ruby, python, libcap, openjdk-17, termux-tools, autoconf, patchelf, binutils, bison, yarn, clang, coreutils, curl, findutils, apr, apr-util, postgresql, openssl, readline, libffi, libgmp, libpcap, libsqlite, libgrpc, libtool, libxml2, libxslt, ncurses, make, ncurses-utils, ncurses, git, wget, unzip, zip, tar, termux-elf-cleaner, pkg-config, git, resolv-conf, aapt, apksigner, apktool
 Suggests: embed, i-haklab
 Homepage: https://github.com/rapid7/metasploit-framework
 Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
-Filename: dists/stable/extras/binary-all/metasploit-framework_6.3.1_all.deb
-Size: 4092
-MD5Sum: 87805436705db5c0b97a78848ca5dc8e
-SHA1: 1f0ad9acdc8acc1d6d8d0e6d69cda08101fc931b
-SHA256: 7d421b437065d2fa31388522df1511b6f961d9a3307cc6f5a188c812cf618eb3
-SHA512: 25ef508de75b8cb15e7826c0ce150ebd7bc50d6cd45c123500ced96303460a840cdbdd4da212a43bdf1d8f913756538a60eb8e3a75ab995ba17e70389ac5e648
+Filename: dists/stable/extras/binary-all/metasploit-framework_6.3.2_all.deb
+Size: 4236
+MD5Sum: 3c598fa5d6fd6b2ba7782111c7b08ed0
+SHA1: 1f2270a061677a2e8bb07d1ccad3606aea2976fc
+SHA256: 61e2bf7c1491c764af5ad9def5fd0cf7d81d16cf04de4d8fa2a5e99b408fbccd
+SHA512: 4085dcb93e5b5afb413ae678bd5362fe39513f8abfdcbd4e81397b8c8bde84f1e81be1e56748f0ffbf555d062ec52f1efe76bea9741058d10190250142fe44a6
 
 Package: nexphisher
 Version: 1.0.2

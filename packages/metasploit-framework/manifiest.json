@@ -1,6 +1,6 @@
 {
   "name": "metasploit-framework",
-  "version": "6.3.1",
+  "version": "6.3.2",
   "arch": "all",
   "homepage": "https://github.com/rapid7/metasploit-framework",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
@@ -8,6 +8,6 @@
   "suggests": ["embed", "i-haklab"],
   "description": "Advanced open-source platform for developing, testing and using exploit code. (git-release installer)",
   "files" :{
-    "metasploit-installer": "bin/metasploit-installer"
+    "msfconsole": "bin/msfconsole"
   }
 }

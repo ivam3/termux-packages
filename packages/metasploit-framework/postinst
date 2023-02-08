@@ -1,8 +1,148 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/metasploit-installer
-rm -rf ${PREFIX}/bin/metasploit-installer
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+#!/data/data/com.termux/files/usr/bin/bash
+#
+echo "Cloning metasploit-framework ..."
+msfGit="https://github.com/rapid7/metasploit-framework.git"
+mkdir -p ${PREFIX}/opt
+msfDir="${PREFIX}/opt/metasploit-framework"
+apktoolV="2.7.0"
+apktool_releases="https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_$apktoolV.jar"
+
+instaAPKtool(){
+  [[ -d ${PREFIX}/var/spool ]] || mkdir -p ${PREFIX}/var/spool
+  wget --tries=20 --progress=dot $apktool_releases -O ${PREFIX}/var/spool/apktool.jar
+  cat <<- CONF > ${PREFIX}/bin/apktool
+#!/data/data/com.termux/files/usr/bin/bash
+exec ${PREFIX}/bin/java -jar ${PREFIX}/var/spool/apktool.jar  "\$@"
+CONF
+  chmod 751 ${PREFIX}/bin/apktool
+}
+#instaAPKtool
+
+git clone --quiet --depth 1 $msfGit $msfDir
+[[ -d $msfDir ]] || { echo "(_➤) Metasploit directory missing... Aborting.";exit 1;}
+
+echo "Installing and updating ruby gems ..."
+cd $msfDir
+sed -i "5a gem 'net-smtp', require: false" $msfDir/Gemfile
+gem install --no-document --verbose rubygems-update
+update_rubygems
+gem install --no-document --verbose bundler
+gem install actionpack --platform=ruby -- --use-system-libraries
+gem install rails --platform=ruby -- --use-system-libraries
+bundle install -j$(nproc --all) --verbose
+
+echo "Running RuGiR(Ruby Gem Issues Resolved)";sleep 5
+bundle update --bundler
+rubyLIBv=$(ls ${PREFIX}/lib/ruby|sort -r|grep -m 1 '[0-9].[0-9].[0-9]')
+rubyLIB="${PREFIX}/lib/ruby/gems/$rubyLIBv"
+sed -i "s@/etc/resolv.conf@${PREFIX}/etc/resolv.conf@g" $msfDir/lib/net/dns/resolver.rb
+for i in aarch64-linux-android arm-linux-androideabi \
+	i686-linux-android x86_64-linux-android;do
+	if [[ -e "$rubyLIB/${i}/bigdecimal.so" ]]
+	then
+		if [[ -e "$rubyLIB/${i}/bigdecimal/util.so" ]]
+		then
+			if [[ -n "$(patchelf --print-needed "$rubyLIB/${i}/bigdecimal/util.so"|grep bigdecimal.so)" ]]
+			then
+				exit 0
+			fi
+		fi
+		if [[ -e "$rubyLIB/${i}/bigdecimal/util.so" ]]
+		then
+			patchelf --add-needed \
+				"$rubyLIB/${i}/bigdecimal/util.so"
+		fi
+		if [[ -e "$rubyLIB/${i}/bigdecimal.so" ]]
+		then
+			patchelf --add-needed \
+				"$rubyLIB/${i}/bigdecimal.so"
+		fi
+	fi
+done
+for i in $(find ${PREFIX}/lib/ruby/ -type f -iname ruby_thread_local_var.rb);do
+	sed -i "s|ObjectSpace.define_finalizer(self, self.class.threadlocal_finalizer(@index))| |g" $i
+	sleep 1
+done
+sed -i "s|\\\c|\\\C\\-\\\s|g" $msfDir/lib/msf/core/exploit/remote/vim_soap.rb
+sleep 1
+GEMPATH=${PREFIX}/lib/ruby/gems/$rubyLIBv/gems/hrr_rb_ssh-0.4.2/lib/hrr_rb_ssh/transport
+sed -i '13,15 {s/^/#/}' $GEMPATH/encryption_algorithm/functionable.rb
+for i in 256 384 521;do
+	sed -i '14 {s/^/#/}' $GEMPATH/server_host_key_algorithm/ecdsa_sha2_nistp$i.rb
+done
+PRYCODEFILE=$(find $PREFIX/lib/ruby/ -iname "code.rb"|grep "pry")
+sed -i '342 {s/^/#/}' $PRYCODEFILE
+
+echo "Fixing option '-x' on msfvenom command..."
+JAVADB="https://raw.githubusercontent.com/ivam3/java/master"
+wget --tries=20 --quiet $JAVADB/.embed/apk.rb -O $msfDir/lib/msf/core/payload/apk.rb
+find $msfDir -type f -executable -print0 | xargs -0 -r termux-fix-shebang
+find ${PREFIX}/lib/ruby/gems -type f -iname \*.so -print0 | xargs -0 -r termux-elf-cleaner
+for i in msfd msfrpc msfrpcd msfvenom;do
+	ln -sfr ${PREFIX}/bin/msfconsole ${PREFIX}/bin/$i
+done
+
+#echo -en "\e[33mWARNING:\e[0m Please answer questions with an 'y'(YES) or the number for ALL."
+#sleep 5
+for gem in nokogiri bcrypt msgpack network_interface bson redcarpet sqlite3;do
+  find ${PREFIX}/lib/ruby/gems/$rubyLIBv -type d -iname "$gem-[0-9].[0-9].[0-9]"|xargs rm -rf
+#  gem uninstall $gem
+done
+mkdir -p $PREFIX/include/libxml/
+ln -s $PREFIX/include/libxml2/libxml/* $PREFIX/include/libxml/ >/dev/null 2>/dev/null
+gem install mini_portile2
+gem install redcarpet --platform=ruby -- --use-system-libraries
+gem install bson --platform=ruby -- --use-system-libraries
+gem install network_interface --platform=ruby -- --use-system-libraries
+gem install bcrypt --platform=ruby -- --use-system-libraries
+gem install rake -v '13.0.6' --platform=ruby -- --use-system-libraries
+gem install sqlite3 -v '1.6.0' --platform=ruby -- --use-system-libraries
+gem install bundler -v '2.4.5' --platform=ruby -- --use-system-libraries
+gem install msgpack -v '1.6.0' --platform=ruby -- --use-system-libraries
+gem install nokogiri -v '1.13.10' --platform=ruby -- --use-system-libraries
+bundle config build.nokogiri --use-system-libraries
+
+echo "Setting metasploit database"
+mkdir -p $msfDir/config
+cat <<- EOF > $msfDir/config/database.yml
+production:
+  adapter: postgresql
+  database: msf_database
+  username: msf
+  password:
+  host: 127.0.0.1
+  port: 5432
+  pool: 75
+  timeout: 5
+EOF
+mkdir -p ${PREFIX}/var/lib/postgresql
+pg_ctl -D ${PREFIX}/var/lib/postgresql stop > /dev/null 2>&1 || true
+if ! pg_ctl -D ${PREFIX}/var/lib/postgresql start --silent;then
+	initdb ${PREFIX}/var/lib/postgresql
+	pg_ctl -D ${PREFIX}/var/lib/postgresql start --silent
+fi
+[[ -z "$(psql postgres -tAc "SELECT 1 FROM pg_roles WHERE rolname='msf'")" ]] && createuser msf
+[[ -z "$(psql -l|grep msf_database)" ]] && createdb msf_database
+pg_ctl -D ${PREFIX}/var/lib/postgresql restart
+psql -d msf_database -c "ALTER DATABASE msf_database OWNER TO msf;ALTER USER msf WITH PASSWORD ' ';"
+cd;rm -rf $msfDir/.git*
+if [[ ${SHELL} = ${PREFIX}/bin/fish ]]
+then
+	INITFILE="$PREFIX/etc/fish/config.fish"
+else
+  INITFILE="$PREFIX/etc/bash.bashrc"
+fi
+if ! cat $INITFILE | grep -oE "postgresql" --silent;then
+sed -i "4a alias postgresql=\"pg_ctl -D ${PREFIX}/var/lib/postgresql\"" $INITFILE
+fi
+
+wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer \
+  -O /data/data/com.termux/files/usr/bin/fixer
 chmod 751 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] Metasploit Framework installation finished."
+echo "[*] Run 'msfconsole' or 'msfvenom' to execute it."
+echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -5,11 +5,7 @@ then
   exit 1
 else
   echo "Preparing enviroment ..."
-  if [[ -d ${HOME}/.local/share/termux-desktop-xfce ]]
-  then
-    rm -rf ${HOME}/.local/share/termux-desktop-xfce
-  else
-    mkdir -p ${HOME}/.local/share 2>/dev/null
-  fi
+  yes|termux-setup-storage
+  [[ -d ${HOME}/Desktop ]] || { mkdir -p ${HOME}/Desktop;}
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
