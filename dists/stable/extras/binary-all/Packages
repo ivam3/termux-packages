@@ -1238,11 +1238,11 @@ Suggests: i-haklab, burpsuite, ghidra, hydra, putty, maltego, zaproxy
 Homepage: https://github.com/ivam3/termux-packages
 Description: A Meta-package and data, themes, icons and wallpapers to configurate a desktop enviroment for Termux with xfce4 as window manager.
 Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0_all.deb
-Size: 3416
-MD5Sum: 181f15b12c9302fe8bd27bee67bf4e2d
-SHA1: 77538cf837460e4b5178eb607a58b3c39a98ba16
-SHA256: f469ce95750942125ba304bfc69ce836184640e7143e12eb85d479a9bf9b371c
-SHA512: 08992282e2e74d3bf787407d6ece7e6cdd4536c396d0a19cc0339488639124bfe49221fddaf68e6d3b6358a7bc7e0e54a5a403aff26fcce8fe54510d66870c9f
+Size: 3492
+MD5Sum: 2db3b7f146636d6c34d78f363d70acec
+SHA1: 51cedaf211d64f3b6ffe5604f3aeca54308b702d
+SHA256: 8fbc8df6cf1503e38abf360997f7f88e8c3d89e4d4fc9eec65b00c9840055c46
+SHA512: d39f7ba5ea622f2f3136a3b099879b33cabb2a43bf6b9fd5230ee672792321c8f29d4f5929335e64b5b497763f19c66ca58df965ee3ddd79fec57f753c6a3ac2
 
 Package: termux-docker-qemu
 Version: 0.1

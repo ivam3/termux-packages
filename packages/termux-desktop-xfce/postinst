@@ -39,9 +39,13 @@ wget --tries=20 --quiet https://github.com/ivam3/termux-packages/raw/gh-pages/pa
 } || { echo "E: Termux Wayland app missing ... Please install it manually.";}
 rm -rf ${TMPDIR}/*
 
+
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] termux-desktop-xfce installation finished."
+echo "[!] don't forget join to your device settings
+    and bring to Termux Wayland app the permissions
+    'run commands in Termux-app' & 'super potitions' too."
 echo "[*] Run 'termux-desktop-xfce' to execute it."
 echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
