@@ -1,7 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
-if [[ -d ${HOME}/.local/share/termux-desktop-xfce ]]; then
-  rm -rf ${HOME}/.local/share/termux-desktop-xfce
-fi
-python -m pip --no-color --quiet uninstall -r ${HOME}/.local/share/termux-desktop-xfce/requirements.txt; 
-
+maindir=$(df|grep fuse|awk -F "/" '{print $NF}'|grep -iv emulated)
+rm -rf ${HOME}/Desktop 2>/dev/null
+rm ${HOME}/{Documents,downloads,Pictures,Public,Video} 2>/dev/null
+rm -rf $maindir/{Documents,downloads,Pictures,Public,Video} 2>/dev/null
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

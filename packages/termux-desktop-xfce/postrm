@@ -1,2 +1,4 @@
 #!/data/data/com.termux/files/usr/bin/bash
 echo "Done. Package 'termux-desktop-xfce' removed."
+echo "[*] @Ivam3: thank you for used my package."
+exit 0

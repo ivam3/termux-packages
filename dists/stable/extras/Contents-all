@@ -3742,7 +3742,6 @@ data/data/com.termux/files/usr/bin/ipgeolocation                                
 data/data/com.termux/files/usr/bin/ipgeolocation-installer                       ipgeolocation
 data/data/com.termux/files/usr/bin/john                                          johntheripper
 data/data/com.termux/files/usr/bin/jython                                        jython-lts
-data/data/com.termux/files/usr/bin/kalilinux-installer                           kalilinux
 data/data/com.termux/files/usr/bin/kerbrute                                      kerbrute
 data/data/com.termux/files/usr/bin/kerbrute-installer                            kerbrute
 data/data/com.termux/files/usr/bin/lockphish                                     lockphish
@@ -3792,6 +3791,7 @@ data/data/com.termux/files/usr/bin/stegsnow-installer                           
 data/data/com.termux/files/usr/bin/sublist3r                                     sublist3r
 data/data/com.termux/files/usr/bin/tangalanga                                    tangalanga
 data/data/com.termux/files/usr/bin/tangalanga-installer                          tangalanga
+data/data/com.termux/files/usr/bin/desktop                                       termux-desktop-xfce
 data/data/com.termux/files/usr/bin/termux-docker-qemu                            termux-docker-qemu
 data/data/com.termux/files/usr/bin/trape                                         trape
 data/data/com.termux/files/usr/bin/unshc-installer                               unshc

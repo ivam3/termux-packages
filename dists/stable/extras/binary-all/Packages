@@ -765,22 +765,6 @@ SHA1: e07252e3947acc75031b745a01ba365ebc12970b
 SHA256: d42dba1e4c761df4f928200e047665396804aa6aed2669fb2bf6202eb1591ba6
 SHA512: ce09caed45b939c83edf635ec8c57f69c3c3eefc715a3a370686a1e988af9d01ff63baef65fb8046c8941967328a39e5eab0db77e84fe3bb239b14126d442575
 
-Package: kalilinux
-Version: 2019.1
-Architecture: all
-Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 4
-Depends: wget, curl, proot, tar
-Suggests: vncserver
-Homepage: https://github.com/ivam3/termux-packages
-Description: Open-source penetration testing platform for Android devices, allowing for access to the Kali toolset
-Filename: dists/stable/extras/binary-all/kalilinux_2019.1_all.deb
-Size: 3096
-MD5Sum: 2d998b217b93d64c3a12a1f830c51972
-SHA1: dcbcc4c0c3663b7331061819f4cddc8e7323b60b
-SHA256: 815ae5ca754c0074b0ce16e9f0d4dc9d68a34eca8561d337574e83f998bee4d6
-SHA512: 80ea5e7d2eaafebb0137a4d563634ec006472fa9ef6f3d1763eb2999a119f60013818477cf271379bc7007279fd7a3618bd9c839b9a9c7faa0c1055f294fe604
-
 Package: kerbrute
 Version: 0.9.18
 Architecture: all
@@ -1243,6 +1227,22 @@ MD5Sum: cee11b2d0bd28414e675799d8ee7604b
 SHA1: deb672199f3d87dc21f9bfb91403c911ee276427
 SHA256: 434041e91d4fb70203dfdcafd6c96a679ac2947d152d16d80f054eaeaef740f7
 SHA512: 1278135e433b817e22ff137e18363e6243c6299e5b22792e3b6f098bb02364b3701ff68cde6290a615190000a45a6d5635efe023a804053ad574863997844e6d
+
+Package: termux-desktop-xfce
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: x11-repo, termux-x11, adwaita-icon-theme, atk, binutils-is-llvm, dbus-glib, dconf, desktop-file-utils, dosbox, exo-static, exo, feh, file-roller, firefox, findutils, fluent-gtk-theme, fluent-icon-theme, galculator, garcon-static, garcon, gcr, geany, geany-plugins, gnome-themes-extra, gsettings-desktop-schemas, gtk-update-icon-cache, gtk2-engines-murrine-static, gtk2-engines-murrine, gtk2-static, gtk2, gtk3, gtksourceview4, gvfs, hicolor-icon-theme, htop, iso-codes, leafpad, libcanberra-s'tatic, libcanberra, libepoxy, libfontenc, libhandy, libmatekbd-static, libmatekbd, libnotify, libpciaccess, libvte, libwayland-protocols, libwayland, libwnck, libx11-static, libx11, libxcomposite,libxdamage, libxfce4ui-static, libxfce4ui, libxfce4util, libxfont2, libxinerama, libxkbfile, libxklavier, libxmu, loqui, lxappearance, lxde-icon-theme, mousepad, mpv-x, mtpaint, neofetch, openjdk-17, papirus-icon-theme, parole, python, python-pip, python-tkinter, recordmydesktop, ristretto, sdl-net, sdl2, sdl, shared-mime-info, startup-notification, termux-api, the-powder-toy, thunar-archive-plugin-static, thunar-archive-plugin, thunar-static, thunar, tumbler, vim, vim-gtk, webkit2gtk-4.1, wget, xarchiver, xapt-management, xcb-util, xfce4-appfinder, xfce4-calculator-plugin-static, xfce4-calculator-plugin, xfce4-clipman-plugin-static, xfce4-clipman-plugin, xfce4-datetime-plugin-static, xfce4-datetime-plugin, xfce4-eyes-plugin-static, xfce4-eyes-plugin, xfce4-mailwatch-plugin-static, xfce4-mailwatch-plugin, xfce4-netload-plugin-static, xfce4-netload-plugin, xfce4-notifyd-static, xfce4-notifyd, xfce4-panel-profiles, xfce4-panel-static, xfce4-panel, xfce4-places-plugin-static, xfce4-places-plugin, xfce4-screensaver, xfce4-screenshooter-static, xfce4-screenshooter, xfce4-session, xfce4-settings, xfce4-taskmanager, xfce4-terminal, xfce4-timer-plugin-static, xfce4-timer-plugin, xfce4-wavelan-plugin-static, xfce4-wavelan-plugin, xfce4-whiskermenu-plugin, xfce4, xfconf,xfdesktop, xfwm4, xkeyboard-config, xorg-iceauth, xorg-xauth, xorg-xhost, xorg-xkbcomp, xorg-xrdb, xwayland, zenity
+Suggests: i-haklab, burpsuite, ghidra, hydra, putty, maltego, zaproxy
+Homepage: https://github.com/ivam3/termux-packages
+Description: A Meta-package and data, themes, icons and wallpapers to configurate a desktop enviroment for Termux with xfce4 as window manager.
+Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0_all.deb
+Size: 3416
+MD5Sum: 181f15b12c9302fe8bd27bee67bf4e2d
+SHA1: 77538cf837460e4b5178eb607a58b3c39a98ba16
+SHA256: f469ce95750942125ba304bfc69ce836184640e7143e12eb85d479a9bf9b371c
+SHA512: 08992282e2e74d3bf787407d6ece7e6cdd4536c396d0a19cc0339488639124bfe49221fddaf68e6d3b6358a7bc7e0e54a5a403aff26fcce8fe54510d66870c9f
 
 Package: termux-docker-qemu
 Version: 0.1
