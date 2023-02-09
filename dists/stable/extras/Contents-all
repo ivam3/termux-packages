@@ -585,6 +585,7 @@ data/data/com.termux/files/home/.config/fish/functions/mypip.fish               
 data/data/com.termux/files/home/.config/fish/functions/osrframework.fish         i-haklab
 data/data/com.termux/files/home/.config/fish/functions/postgresql.fish           i-haklab
 data/data/com.termux/files/home/.config/fish/functions/proxy.fish                i-haklab
+data/data/com.termux/files/home/.config/fish/functions/rmcache.fish              i-haklab
 data/data/com.termux/files/home/.config/fish/functions/serverapache.fish         i-haklab
 data/data/com.termux/files/home/.config/fish/functions/serverphp.fish            i-haklab
 data/data/com.termux/files/home/.config/fish/functions/sudo.fish                 i-haklab
