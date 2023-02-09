@@ -551,11 +551,11 @@ Suggests: i-haklab
 Homepage: https://github.com/OJ/gobuster
 Description: Directory/File, DNS and VHost busting tool written in Go
 Filename: dists/stable/extras/binary-all/gobuster_3.4.0_all.deb
-Size: 1944
-MD5Sum: d746a8d302a40da832c251b504def859
-SHA1: 62e500518e843c2fa58a7fbb94db9c046924403d
-SHA256: b186752882f4c24379f15f2a70a75af8f40c92df1680e49dbbf9d241085cc357
-SHA512: 8e7aec8734f5a04a290fc6cca8673ac4c3ac674cb79bcc2299dbd2c7f424d8453ac8df237d76a075acc3cd65ac55a259df786dcba238ef39eb7a97c05854712a
+Size: 1992
+MD5Sum: 28df4f2cb0291e9a0deb4c2889ab3125
+SHA1: 464aad9b09d5ceb10078daf42ed9fd94cf822a1d
+SHA256: 5ebe227fa399b529cfc327b8eabe7b98dfa5a755e646a7f5321e28d19ea43606
+SHA512: 8217336ab5742abf2336772399c3fd3530b63437b5b2ff29c97146e299a00a6350d591fe25703a44dfe120659aaab0cdbf5b27961c0ab41d30a04bd8f76f1e08
 
 Package: gophish
 Version: 0.12.0
