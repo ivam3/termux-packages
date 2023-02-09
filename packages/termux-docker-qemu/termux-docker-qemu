@@ -5,16 +5,14 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 B="\e[34m"
+os="$1"
 
-[[ $2 == 'x11' ]] 2>/dev/null || { XorCLi="-nographic";}
 [[ $# -eq 0 ]] && { echo -en "\e[33mUsage:\e[0m $0 <operative system name> x11[for a grafical enviroment]";exit;}
-os=$1
-
-if [[ -d ${HOME}/.local/share/termux-docker-qemu/$os ]]
-then
+[[ $2 == 'x11' ]] 2>/dev/null || { XorCLi="-nographic";}
+[[ -d ${HOME}/.local/share/termux-docker-qemu/$os ]] && {
   cd ${HOME}/.local/share/termux-docker-qemu/$os
-  case $os in
-    alpine/kalilinux)
+  case "$os" in
+    alpine|kalilinux)
       qemu-system-x86_64 -machine q35 -m 1024 -smp cpus=2 -cpu qemu64 \
         -drive if=pflash,format=raw,read-only=on,file=$PREFIX/share/qemu/edk2-x86_64-code.fd \
         -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 \
@@ -26,8 +24,8 @@ then
 #        -hda ./$os.img -usb $XorCLi
 #      ;;
   esac
-else
+} || {
   echo -en $R"E:$W $(basename $0) PATH missing ...$Y Aborting.$W"
   exit 1
-fi
+}
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

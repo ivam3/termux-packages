@@ -7,7 +7,7 @@
   "depends": ["x11-repo", "termux-x11", "adwaita-icon-theme", "atk", "binutils-is-llvm", "dbus-glib", "dconf", "desktop-file-utils", "dosbox", "exo-static", "exo", "feh", 
     "file-roller", "firefox", "findutils", "fluent-gtk-theme", "fluent-icon-theme", "galculator", "garcon-static", "garcon", "gcr", "geany", "geany-plugins", "gnome-themes-extra",
     "gsettings-desktop-schemas", "gtk-update-icon-cache", "gtk2-engines-murrine-static", "gtk2-engines-murrine", "gtk2-static", "gtk2", "gtk3", 
-    "gtksourceview4", "gvfs", "hicolor-icon-theme", "htop", "iso-codes", "leafpad", "libcanberra-s'tatic", "libcanberra", "libepoxy", "libfontenc", "libhandy", 
+    "gtksourceview4", "gvfs", "hicolor-icon-theme", "htop", "iso-codes", "leafpad", "libcanberra-static", "libcanberra", "libepoxy", "libfontenc", "libhandy", 
     "libmatekbd-static", "libmatekbd", "libnotify", "libpciaccess","libvte", "libwayland-protocols", "libwayland", "libwnck", "libx11-static", "libx11", 
     "libxcomposite,libxdamage", "libxfce4ui-static", "libxfce4ui", "libxfce4util", "libxfont2", "libxinerama", "libxkbfile", "libxklavier", "libxmu",
     "loqui", "lxappearance", "lxde-icon-theme", "mousepad", "mpv-x", "mtpaint", "neofetch", "openjdk-17", "papirus-icon-theme", "parole", "python", "python-pip",
