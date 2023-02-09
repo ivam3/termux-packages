@@ -1245,20 +1245,36 @@ SHA256: 8fbc8df6cf1503e38abf360997f7f88e8c3d89e4d4fc9eec65b00c9840055c46
 SHA512: d39f7ba5ea622f2f3136a3b099879b33cabb2a43bf6b9fd5230ee672792321c8f29d4f5929335e64b5b497763f19c66ca58df965ee3ddd79fec57f753c6a3ac2
 
 Package: termux-docker-qemu
+Version: 0.1.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: wget, qemu-utils, qemu-common, qemu-system-x86-64-headless
+Suggests: i-haklab
+Homepage: https://www.docker.com/products/docker-desktop/
+Description: Docker container for running x86_64 Linux virtual machines using QEMU
+Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.1.1_all.deb
+Size: 3372
+MD5Sum: 5b2df18cbda7b5c9b75c8b7dd8336593
+SHA1: 34a882c123875c6b371d02ade4d5aebbcb9a4a61
+SHA256: fd0b4da93fe0d93d782b01a72c8194727ca0cd0c309fdb29fdc0098f46f8d3a8
+SHA512: d9e0ba9b1cd820b714ad03f1bba3d02d2e9b5d7bbd087b64bf2bd652298168af58b744e7423123aea885f5efe577d0ce0a3cf704388ba1c1f66421b50f3832cf
+
+Package: termux-docker-qemu
 Version: 0.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 1
+Installed-Size: 2
 Depends: wget, qemu-utils, qemu-common, qemu-system-x86-64-headless
 Suggests: i-haklab
 Homepage: https://www.docker.com/products/docker-desktop/
 Description: Docker container for running x86_64 Linux virtual machines using QEMU
 Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.1_all.deb
-Size: 2948
-MD5Sum: 21fe139ac183047e40b6e9c9b29162cb
-SHA1: 61f9a74cbe82937eab87968b07be957a3752403c
-SHA256: 46b938093863784c1fddd2e856a1de4c1f9c1bb7aae9fd47fd3687505da8b70d
-SHA512: 355f07928e3b70027c9cd47af94386c7ff872265b3c4f08b3641d496fd638a76622e3d117dc1396f8a553af74ec40ed968925430af6579bb237163e1fe663276
+Size: 3360
+MD5Sum: 035cf3f2fb1d15acc7cb2cc5779f344e
+SHA1: 78275646c83a2aec4c23a633545a6c96606d6f87
+SHA256: c49c1c861873f7a77fc5ab9b183b3d290d5a531d35fcbd48f2ecd3431370e7b5
+SHA512: 83746ec1e4ad2cd54376f06c7a481c8985d9833142dd0a09743e9f2b63187a85ae441c3154be4dfcae645baf0dc081749aa115465e5f66dc21379adbad8c2617
 
 Package: trape
 Version: 2.0

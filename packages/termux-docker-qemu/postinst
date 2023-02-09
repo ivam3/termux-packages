@@ -15,7 +15,7 @@ select os in alpine kalilinux;do
   case $os in
     alpine)
       declare ref=http://dl-cdn.alpinelinux.org/alpine/v3.12/releases/x86_64/
-      declare iso=alpine-virt-3.12.9-x86_64.iso #alpine-virt-3.12.12-x86_64.iso
+      declare iso=alpine-virt-3.12.12-x86_64.iso
       break
       ;;
     kalilinux)
