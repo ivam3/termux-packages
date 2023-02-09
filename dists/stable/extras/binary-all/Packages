@@ -542,20 +542,20 @@ SHA256: 6a34603273adc037284f5dcf10ec1317faad5d1591c537b214a48254558142ac
 SHA512: ae65e2734c6b2d0185d438a02ffeb2363c2726ef637229b645955bfd1a1090647c39c0521eebff5f45d0c5c298024b96e29e1480c1fe5944dac4c868ce18abfb
 
 Package: gobuster
-Version: 3.1
+Version: 3.4.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
+Installed-Size: 1
 Depends: golang
 Suggests: i-haklab
 Homepage: https://github.com/OJ/gobuster
 Description: Directory/File, DNS and VHost busting tool written in Go
-Filename: dists/stable/extras/binary-all/gobuster_3.1_all.deb
-Size: 2044
-MD5Sum: 39dc12ab2d2fdbd38dd0b62a9cc4c068
-SHA1: fbf177519e1e160af8211a0db61e3acfb8260b47
-SHA256: 3a12af87d81feedfd1cf588b2e3ccb5c065dc1f250183dbba6abb0b48d603c93
-SHA512: 097f83b4dfb07f9a1e5e82e5da67c71c351824ecbfe7afddbb6a26f55da5c92124cd02d8ba9b9bc4ddbd9efd394e9475b40656cbb132ea04ffb35acf340dfc93
+Filename: dists/stable/extras/binary-all/gobuster_3.4.0_all.deb
+Size: 1944
+MD5Sum: d746a8d302a40da832c251b504def859
+SHA1: 62e500518e843c2fa58a7fbb94db9c046924403d
+SHA256: b186752882f4c24379f15f2a70a75af8f40c92df1680e49dbbf9d241085cc357
+SHA512: 8e7aec8734f5a04a290fc6cca8673ac4c3ac674cb79bcc2299dbd2c7f424d8453ac8df237d76a075acc3cd65ac55a259df786dcba238ef39eb7a97c05854712a
 
 Package: gophish
 Version: 0.12.0

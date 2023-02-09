@@ -1,13 +1,4 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/gobuster-installer
-rm -rf ${PREFIX}/bin/gobuster-installer
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
-chmod 750 /data/data/com.termux/files/usr/bin/fixer
-echo "[*] gobuster installation finished."
-echo "[!] For help going to https://t.me/Ivam3_Bot."
-echo "[*] @Ivam3: thank you for use my package."
-####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
-#!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
 echo "Cloning repository ..."
 go install github.com/OJ/gobuster/v3@latest
@@ -23,5 +14,11 @@ gob=$(find ${HOME}/go/pkg/mod/github.com -iname gobuster)
   echo -en "\e[31mE:\e[0m gobuster directory missing ... \e[33mAborting.\e[0m\n";
   exit 1;
 }
-exit 0
+wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+chmod 750 /data/data/com.termux/files/usr/bin/fixer
+echo "[*] gobuster installation finished."
+echo "[*] Run 'gobuster' to execute it."
+echo "[*] Run 'fixer' to fix any posible issue."
+echo "[!] For help going to https://t.me/Ivam3_Bot."
+echo "[*] @Ivam3: thank you for use my package."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -554,7 +554,6 @@ data/data/com.termux/files/usr/share/applications/ghidra/ghidra.desktop         
 data/data/com.termux/files/usr/share/applications/ghidra/img/ghidra.png          ghidra
 data/data/com.termux/files/usr/bin/ghost-installer                               ghost
 data/data/com.termux/files/usr/bin/gobuster                                      gobuster
-data/data/com.termux/files/usr/bin/gobuster-installer                            gobuster
 data/data/com.termux/files/usr/bin/gophish                                       gophish
 data/data/com.termux/files/usr/bin/gophish-installer                             gophish
 data/data/com.termux/files/usr/bin/hakku                                         hakku-framework
