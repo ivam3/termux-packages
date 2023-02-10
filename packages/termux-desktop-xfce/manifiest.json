@@ -12,7 +12,7 @@
     "libxcomposite,libxdamage", "libxfce4ui-static", "libxfce4ui", "libxfce4util", "libxfont2", "libxinerama", "libxkbfile", "libxklavier", "libxmu",
     "loqui", "lxappearance", "lxde-icon-theme", "mousepad", "mpv-x", "mtpaint", "neofetch", "openjdk-17", "papirus-icon-theme", "parole", "python", "python-pip",
     "python-tkinter", "recordmydesktop", "ristretto", "sdl-net", "sdl2", "sdl", "shared-mime-info", "startup-notification", "termux-api", "the-powder-toy", 
-    "thunar-archive-plugin-static", "thunar-archive-plugin", "thunar-static", "thunar", "tumbler", "vim", "vim-gtk", "webkit2gtk-4.1", "wget", "xarchiver", "xapt-management",
+    "thunar-archive-plugin-static", "thunar-archive-plugin", "thunar-static", "thunar", "tumbler", "vim-gtk", "webkit2gtk-4.1", "wget", "xarchiver", "xapt-management",
     "xcb-util", "xfce4-appfinder", "xfce4-calculator-plugin-static", "xfce4-calculator-plugin", "xfce4-clipman-plugin-static", "xfce4-clipman-plugin", 
     "xfce4-datetime-plugin-static", "xfce4-datetime-plugin", "xfce4-eyes-plugin-static", "xfce4-eyes-plugin", "xfce4-mailwatch-plugin-static", 
     "xfce4-mailwatch-plugin", "xfce4-netload-plugin-static", "xfce4-netload-plugin", "xfce4-notifyd-static", "xfce4-notifyd", "xfce4-panel-profiles", 

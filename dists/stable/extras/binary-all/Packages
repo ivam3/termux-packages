@@ -689,17 +689,17 @@ Package: i-haklab
 Version: 3.6.6
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 93173
+Installed-Size: 93184
 Depends: termux-api, termux-elf-cleaner, termux-tools, tur-repo, util-linux, lsd, apr, apr-util, autoconf, axel, bat, bc, fontconfig-utils, bison, clang, cmake, coreutils, curl, debianutils, dnsutils, file, findutils, fish, gawk, git, gpgme, hexedit, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, gnupg, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, readline, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, zip, zlib
 Suggests: openjdk-17, perl, ruby, nodejs-lts
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
 Filename: dists/stable/extras/binary-all/i-haklab_3.6.6_all.deb
-Size: 40557912
-MD5Sum: eecfefdd40d814bbd1c39f3b03fffefa
-SHA1: 12cb1c4e3c38bcd8a1eebf264b9303601b8182db
-SHA256: 8671bd714132d9901e8f0027ef98e194429ff7010f502fcfc3e36bfae9f75ea3
-SHA512: 2d74f4441d4030599472fbd24283da457dfc3f6101249637a99039284e90f8d3776a6a6bcd62fdb5553f72275bb743b2a594748e3bcdf86f829378f2c75ac0ae
+Size: 40557432
+MD5Sum: bcc10233615c623c3427265172c24478
+SHA1: c6d07fccf177c5807bb5dfae3fd05247af313e4c
+SHA256: 5801b5fc4a97d7afb095589328736f3cd4bbedcbe9e88f89c8e71842d1b8294f
+SHA512: 7c4e492f37e4ce631cd22923b2de0b4807bf66f2d5a04c916a9f377c87fed04a05a4e1c07657a9c0bc14ca7585e8cae8fabbfba9e655036c3d876c9bb2d640ca
 
 Package: infoga
 Version: 1.0
@@ -1233,16 +1233,16 @@ Version: 1.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: x11-repo, termux-x11, adwaita-icon-theme, atk, binutils-is-llvm, dbus-glib, dconf, desktop-file-utils, dosbox, exo-static, exo, feh, file-roller, firefox, findutils, fluent-gtk-theme, fluent-icon-theme, galculator, garcon-static, garcon, gcr, geany, geany-plugins, gnome-themes-extra, gsettings-desktop-schemas, gtk-update-icon-cache, gtk2-engines-murrine-static, gtk2-engines-murrine, gtk2-static, gtk2, gtk3, gtksourceview4, gvfs, hicolor-icon-theme, htop, iso-codes, leafpad, libcanberra-static, libcanberra, libepoxy, libfontenc, libhandy, libmatekbd-static, libmatekbd, libnotify, libpciaccess, libvte, libwayland-protocols, libwayland, libwnck, libx11-static, libx11, libxcomposite,libxdamage, libxfce4ui-static, libxfce4ui, libxfce4util, libxfont2, libxinerama, libxkbfile, libxklavier, libxmu, loqui, lxappearance, lxde-icon-theme, mousepad, mpv-x, mtpaint, neofetch, openjdk-17, papirus-icon-theme, parole, python, python-pip, python-tkinter, recordmydesktop, ristretto, sdl-net, sdl2, sdl, shared-mime-info, startup-notification, termux-api, the-powder-toy, thunar-archive-plugin-static, thunar-archive-plugin, thunar-static, thunar, tumbler, vim, vim-gtk, webkit2gtk-4.1, wget, xarchiver, xapt-management, xcb-util, xfce4-appfinder, xfce4-calculator-plugin-static, xfce4-calculator-plugin, xfce4-clipman-plugin-static, xfce4-clipman-plugin, xfce4-datetime-plugin-static, xfce4-datetime-plugin, xfce4-eyes-plugin-static, xfce4-eyes-plugin, xfce4-mailwatch-plugin-static, xfce4-mailwatch-plugin, xfce4-netload-plugin-static, xfce4-netload-plugin, xfce4-notifyd-static, xfce4-notifyd, xfce4-panel-profiles, xfce4-panel-static, xfce4-panel, xfce4-places-plugin-static, xfce4-places-plugin, xfce4-screensaver, xfce4-screenshooter-static, xfce4-screenshooter, xfce4-session, xfce4-settings, xfce4-taskmanager, xfce4-terminal, xfce4-timer-plugin-static, xfce4-timer-plugin, xfce4-wavelan-plugin-static, xfce4-wavelan-plugin, xfce4-whiskermenu-plugin, xfce4, xfconf,xfdesktop, xfwm4, xkeyboard-config, xorg-iceauth, xorg-xauth, xorg-xhost, xorg-xkbcomp, xorg-xrdb, xwayland, zenity
+Depends: x11-repo, termux-x11, adwaita-icon-theme, atk, binutils-is-llvm, dbus-glib, dconf, desktop-file-utils, dosbox, exo-static, exo, feh, file-roller, firefox, findutils, fluent-gtk-theme, fluent-icon-theme, galculator, garcon-static, garcon, gcr, geany, geany-plugins, gnome-themes-extra, gsettings-desktop-schemas, gtk-update-icon-cache, gtk2-engines-murrine-static, gtk2-engines-murrine, gtk2-static, gtk2, gtk3, gtksourceview4, gvfs, hicolor-icon-theme, htop, iso-codes, leafpad, libcanberra-static, libcanberra, libepoxy, libfontenc, libhandy, libmatekbd-static, libmatekbd, libnotify, libpciaccess, libvte, libwayland-protocols, libwayland, libwnck, libx11-static, libx11, libxcomposite,libxdamage, libxfce4ui-static, libxfce4ui, libxfce4util, libxfont2, libxinerama, libxkbfile, libxklavier, libxmu, loqui, lxappearance, lxde-icon-theme, mousepad, mpv-x, mtpaint, neofetch, openjdk-17, papirus-icon-theme, parole, python, python-pip, python-tkinter, recordmydesktop, ristretto, sdl-net, sdl2, sdl, shared-mime-info, startup-notification, termux-api, the-powder-toy, thunar-archive-plugin-static, thunar-archive-plugin, thunar-static, thunar, tumbler, vim-gtk, webkit2gtk-4.1, wget, xarchiver, xapt-management, xcb-util, xfce4-appfinder, xfce4-calculator-plugin-static, xfce4-calculator-plugin, xfce4-clipman-plugin-static, xfce4-clipman-plugin, xfce4-datetime-plugin-static, xfce4-datetime-plugin, xfce4-eyes-plugin-static, xfce4-eyes-plugin, xfce4-mailwatch-plugin-static, xfce4-mailwatch-plugin, xfce4-netload-plugin-static, xfce4-netload-plugin, xfce4-notifyd-static, xfce4-notifyd, xfce4-panel-profiles, xfce4-panel-static, xfce4-panel, xfce4-places-plugin-static, xfce4-places-plugin, xfce4-screensaver, xfce4-screenshooter-static, xfce4-screenshooter, xfce4-session, xfce4-settings, xfce4-taskmanager, xfce4-terminal, xfce4-timer-plugin-static, xfce4-timer-plugin, xfce4-wavelan-plugin-static, xfce4-wavelan-plugin, xfce4-whiskermenu-plugin, xfce4, xfconf,xfdesktop, xfwm4, xkeyboard-config, xorg-iceauth, xorg-xauth, xorg-xhost, xorg-xkbcomp, xorg-xrdb, xwayland, zenity
 Suggests: i-haklab, burpsuite, ghidra, hydra, putty, maltego, zaproxy
 Homepage: https://github.com/ivam3/termux-packages
 Description: A Meta-package and data, themes, icons and wallpapers to configurate a desktop enviroment for Termux with xfce4 as window manager.
 Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0_all.deb
-Size: 3488
-MD5Sum: ade7c3660446c2dd0f46b1a2b47f5581
-SHA1: c7faf052d1bafeee060c1afb783452000f4988d9
-SHA256: c90c16cf72511f8a636ab164392c18cc59dd971ef3da6e47401cac2f5f5c7a23
-SHA512: 9bbae8fe122a53af51840fd63ea8ff018d08cd2e0a95455627c92a00308325a4515e6280892c9f956009706b642b62bd11f2bb6206c902483c4980f58bc5c964
+Size: 3484
+MD5Sum: e24e4bdac0ec3f5c6b2a8b2fee24a77d
+SHA1: ad31236dd96c03688f33eb9ac9e8f3b2902baf54
+SHA256: 72acea719886fad34544c15d0f0c908f7b837a71611ad6f30ceecb85934ae3b2
+SHA512: 7c4f95b45c0a4fccdf0dbbe6002d9375b50b0358eb6fd1a37b2b3bd2453535e206c21728860763c4323d153778910140648d23bf4b8e7bc35c2f6c88f14d6e3b
 
 Package: termux-docker-qemu
 Version: 0.1.1

@@ -1,0 +1,12 @@
+
+binutils-is-llvm
+geany
+geany-plugins
+leafpad
+libxcompositelibxdamage
+loqui
+mpv-x
+mtpaint
+xarchiver
+xapt-management
+xfconfxfdesktop
