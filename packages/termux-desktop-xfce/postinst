@@ -16,7 +16,7 @@ wget --tries=20 --quiet https://github.com/ivam3/termux-packages/raw/gh-pages/pa
   -O ${TMPDIR}/termux-x11.zip
 [[ -e ${TMPDIR}/termux-x11.zip ]] && {
   mkdir -p ${TMPDIR}/desktmp
-  unzip --quiet ${TMPDIR}/termux-x11.zip -d ${TMPDIR}/desktmp/ && cd $_
+  unzip -q ${TMPDIR}/termux-x11.zip -d ${TMPDIR}/desktmp/ && cd $_
   app=$(find ${TMPDIR}/desktmp/ -iname "*.apk")
   deb=$(find ${TMPDIR}/desktmp/ -iname "*.deb")
   [[ ! -z $app ]] && {

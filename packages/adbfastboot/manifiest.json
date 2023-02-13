@@ -5,7 +5,8 @@
 	"homepage": "https://t.me/Ivam3_Bot",
 	"maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
 	"depends": ["brotli, libc++, liblz4, libprotobuf, libusb, pcre2, zlib, zstd"],
-	"suggests": ["i-haklab"],
+  "conflicts": ["android-tools"],
+	"suggests": ["i-haklab", "ghost", "phonesploit"],
 	"description": "Open source of minimal Android Debug Bridge(ADB) and FastBoot suite",
   "files" :{
     "adb": "bin/adb"
