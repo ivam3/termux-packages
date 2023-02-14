@@ -1047,11 +1047,11 @@ Suggests: i-haklab
 Homepage: https://github.com/threat9/routersploit
 Description: Exploitation Framework for Embedded Devices
 Filename: dists/stable/extras/binary-all/routersploit_3.4.1_all.deb
-Size: 1964
-MD5Sum: 06620c57feb188d494354ffe2992e1c8
-SHA1: 6e289f94e4d511ae949ea20eaee1a5cb7e8d7439
-SHA256: 8653905a1896604cd8dc4c785cf98c1dd54ecc45badbe3fe87fab30da644572d
-SHA512: fb325463bc962f93e0b7d41ff30c9f63fcb4c43d3e5b47a4aebb3a912aaac68adf9a4d959b75ffef5bf8b321a370e4fcfba499914ded91d7b2f71da3b243d75a
+Size: 1992
+MD5Sum: 01c2eda2c5ceba3e5567018d6c73a0f4
+SHA1: 81d4ce72fbd3f40746e677ae3c8900fd741f99ff
+SHA256: 0b59761c2a798cc75870a72dbabf59a2339cf8b7f0363f260c1f5b21e9e52316
+SHA512: be42f11eabac95bc06fc9deaf5a5728593f637c191d709a81c4fc30d0cf1c862cb5dfd83db771bb027ef90ee84fa735adcbce056b7b1261ee399d22de4df6591
 
 Package: saycheese
 Version: 1.2
@@ -1239,11 +1239,11 @@ Suggests: i-haklab, burpsuite, ghidra, hydra, putty, maltego, zaproxy
 Homepage: https://github.com/ivam3/termux-packages
 Description: A Meta-package and data, themes, icons and wallpapers to configurate a desktop enviroment for Termux with xfce4 as window manager.
 Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0_all.deb
-Size: 3488
-MD5Sum: 4bfd7d457531528930c1aee10c7e2aa8
-SHA1: f3db5700850932fdd98bc104ab8e696ad99c4ecf
-SHA256: 930e9f3c65b1664ed77c04eaa2bb714e4d8b9adc6ea6ed6cdb06c40639ed65b1
-SHA512: b4deb820221e93d6c49719e4e1721c2388035adb452c58d04f44e3f2af53bf29f508c82e69e9bf53d7d927cfc247d8b2eb73c885faf35911b5d7ab2368f51979
+Size: 3496
+MD5Sum: 0de5b6351f8cee6ecc4ca4ab8b40cc93
+SHA1: f3b67a2c2fba1f7581e6eacbe70e79e4b3533859
+SHA256: 9744e429e36ced02d7e2a8ecd93efc579eafb8f57c401938f44e8e6ed2481161
+SHA512: 99de149be1b541b57a3e56143e04afe2e2c077bb23a43d1edd8a2475dcc0ca9c47c6387a2713b5bd33d6ce86144ad07624f9bd9f33ce7abf8d195919fa9853cf
 
 Package: termux-docker-qemu
 Version: 0.1.1

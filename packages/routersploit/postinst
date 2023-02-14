@@ -1,4 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
+export RUSTFLAGS=" -C lto=no"
 export CARGO_BUILD_TARGET=$(rustc --version --verbose|sed -n 's|host: ||p')
 echo "Cloning repository ..."
 git clone --quiet https://github.com/threat9/routersploit ${HOME}/.local/share/routersploit
