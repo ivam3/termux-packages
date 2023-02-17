@@ -696,11 +696,11 @@ Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
 Filename: dists/stable/extras/binary-all/i-haklab_3.6.9_all.deb
-Size: 40501676
-MD5Sum: ff405ba02a5f2537b939e261e0a8d6d1
-SHA1: 484d9583b07e4846a632a742867a14727f201aba
-SHA256: b1ffd99df94f5da72d4f79f423e69326c4d2ca466ab2bca4741da98234073f1e
-SHA512: 6a2dc4279e0406b178315f2703cef7b75533e7ff09f45d7923793482450fa3015d9fba29df0de5b1335a42ca25129679beceee3149dc50f44e02a00b94557f97
+Size: 40505052
+MD5Sum: a62eda48a7b8a99f08d6414bceb40180
+SHA1: 41b7a5616e9f25bf56294168b159960fe7c7845a
+SHA256: 580d5d4ea7713066c4045a981f45a37a1325f0ec1ea9ec91e47268618fac8633
+SHA512: 8cb908f244eef9143554100cb56268b9ec24d28407a04ec1afd582e724e45d2c3c2d5b4d0c8073d4faf50bbbf7c1a65ca12fc38030ec324c04b2b964748219a2
 
 Package: infoga
 Version: 1.0
