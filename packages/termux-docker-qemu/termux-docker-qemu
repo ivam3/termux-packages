@@ -22,7 +22,11 @@ os="$1"
 #      qemu-system-x86_64 -machine q35 -m 1024 -smp cpus=4 -cpu qemu64 \ 
 #        -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 \ 
 #        -hda ./$os.img -usb $XorCLi
-#      ;;
+#     ;;
+    *)
+      echo "${R}E:$W Invalid $os."
+      exit 1
+      ;;
   esac
 } || {
   echo -en $R"E:$W $(basename $0) PATH missing ...$Y Aborting.$W"
