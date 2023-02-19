@@ -11,6 +11,14 @@ mkdir -p ${HOME}/.termux
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.termux/termux.properties \
   -O ${HOME}/.termux/termux.properties
 
+echo "Setting x11 fonts ..."
+mkdir -p ${PREFIX}/share/fonts/
+wget --tries=20 --quiet https://github.com/ryanoasis/nerd-fonts/releases/download/$fontsV/ProFont.zip \
+  -O ${PREFIX}/share/fonts/ProFont.zip
+[[ -e ${PREFIX}/share/fonts/ProFont.zip ]] && {
+  unzip ${PREFIX}/share/fonts/ProFont.zip -d ${PREFIX}/share/fonts/
+} || { echo "W: Fonts are unreachable.";}
+
 echo "Downloading Termux Wayland apk (It could take a while) ..."
 wget --tries=20 --quiet https://github.com/ivam3/termux-packages/raw/gh-pages/packages/termux-desktop-xfce/termux-x11.zip \
   -O ${TMPDIR}/termux-x11.zip
