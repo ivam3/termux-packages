@@ -7,7 +7,7 @@ Y="\e[33m"
 B="\e[34m"
 os="$1"
 
-[[ $# -eq 0 ]] && { echo -en "\e[33mUsage:\e[0m $0 <operative system name> x11[for a grafical enviroment]";exit;}
+[[ $# -eq 0 ]] && { echo -en "\e[33mUsage:\e[0m termux-docker-qemu <operative system name> x11[for a grafical enviroment]";exit;}
 [[ $2 == 'x11' ]] 2>/dev/null || { XorCLi="-nographic";}
 [[ -d ${HOME}/.local/share/termux-docker-qemu/$os ]] && {
   cd ${HOME}/.local/share/termux-docker-qemu/$os

@@ -27,15 +27,15 @@ select os in alpine kalilinux;do
   esac
 done
 # Create father dir
-echo "Preparing to download $os.iso"
+echo "Downloading $os ISO file (It could take a while) ..."
 mkdir -p ${HOME}/.local/share/termux-docker-qemu/$os && cd $_
 # Download iso
 [[ -e $iso ]] && rm -rf $iso 
-wget --tries=20 --progress=dot $ref$iso
+wget --tries=20 --quiet --progress=dot $ref$iso
 # Create disk (note it won't actually take 4GB of space, more like 500MB)
-echo "Creating $os image"
+echo "Creating $os image."
 [[ $os.img ]] && rm -rf $os.img
-qemu-img create -f qcow2 $os.img 4G
+qemu-img create -f qcow2 $os.img 5G
 
 if [[ $os = alpine ]]
 then 
@@ -49,17 +49,22 @@ then
   ::::::::::::::::::::::::::::::::::::::::'''
   echo -en "\e[0mBoot process will start, in middle of it you will login to Linux OS
   Do it as \e[31mROOT\e[0m user with \e[32mempty\e[0m password.
-  Once in OS terminal run the next commands one by one.
+  Once in OS terminal run one by one the next commands:
 
-    $ setup-interfaces # On it response at all question pressing 'enter' for default settings
-    $ echo \"nameserver 8.8.8.8\" >> /etc/resolv.conf
     $ ifup eth0
+    $ echo \"nameserver 8.8.8.8\" >> /etc/resolv.conf
+    $ setup-interfaces
+    ╰─➤# On it response at all question pressing 'enter' for default settings
     $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os
     $ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk
-    $ setup-$os -f answerfile.$os # On question 'erase the above disk(s) and continue? [y/N]:' answer 'y'
+    $ setup-$os -f answerfile.$os
+    ╰─➤# Respond with a 'y' On question 'erase the above disk(s) and continue? [y/N]:'
     $ poweroff
 
+  Or press ctrl+alt+v to page it from the clipboard.
+  
   press \e[33mENTER\e[0m to continue"
+  echo "ifup eth0 && echo \"nameserver 8.8.8.8\" >> /etc/resolv.conf && setup-interfaces && wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os && sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk && setup-$os -f answerfile.$os && poweroff"|termux-clipboard-set
   read enter
   # Boot it up
   qemu-system-x86_64 -machine q35 -m 1024 -smp cpus=2 -cpu qemu64 \
@@ -87,7 +92,7 @@ fi
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] termux-docker-qemu installation finished."
-echo "[*/] Run 'termux-docker-qemu $os' to execute it."
+echo "[*] Run 'termux-docker-qemu $os' to execute it."
 echo "[!] Once running $os and only for the 1st time"
 echo "    you must install docker and enable on boot with :"
 finalmsg
