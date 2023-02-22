@@ -687,7 +687,7 @@ SHA256: 087391bf54ad6dd1e09b9732f3156b6f667786c85454234afcfdec3745db7075
 SHA512: cd67869bc09f0df12989761fe7556c4c3d43a7dd3a8ac8440c27d7b07a5c96b6b8da577c2ed0467588350985c4532141c83f79501925589d00a5536754fff053
 
 Package: i-haklab
-Version: 3.6.9
+Version: 3.6.10
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 92955
@@ -695,12 +695,12 @@ Depends: termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-r
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.6.9_all.deb
-Size: 40505052
-MD5Sum: a62eda48a7b8a99f08d6414bceb40180
-SHA1: 41b7a5616e9f25bf56294168b159960fe7c7845a
-SHA256: 580d5d4ea7713066c4045a981f45a37a1325f0ec1ea9ec91e47268618fac8633
-SHA512: 8cb908f244eef9143554100cb56268b9ec24d28407a04ec1afd582e724e45d2c3c2d5b4d0c8073d4faf50bbbf7c1a65ca12fc38030ec324c04b2b964748219a2
+Filename: dists/stable/extras/binary-all/i-haklab_3.6.10_all.deb
+Size: 40504404
+MD5Sum: 56bd09e85cd5200c608d088f78edaadf
+SHA1: 32f99b7175a2c360bb427f84e87170e076980cf3
+SHA256: 61e586814fb867d33e6c8b1c1edbb7c0334e7b7769d1195f6a02acf08e94dffa
+SHA512: b0a5221bd8c72849c05e6c6264b130e28e072a201358c9fb11b5b4d8a84ef60ec6bc3504739b7fe102f423a53b83c646c8a526a3f8f2e78b41fcffdff8c9ab17
 
 Package: infoga
 Version: 1.0

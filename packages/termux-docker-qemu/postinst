@@ -52,6 +52,7 @@ then
   Once in OS terminal run the next commands one by one.
 
     $ setup-interfaces # On it response at all question pressing 'enter' for default settings
+    $ echo \"nameserver 8.8.8.8\" >> /etc/resolv.conf
     $ ifup eth0
     $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os
     $ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk

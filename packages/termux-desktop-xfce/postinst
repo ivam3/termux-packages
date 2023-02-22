@@ -41,7 +41,7 @@ wget --tries=20 --quiet https://github.com/ivam3/termux-packages/raw/gh-pages/pa
     declare -a d=$(find data -mindepth 5 -type d)
     declare -a f=$(find data -mindepth 5 -type f)
     for file in ${f[*]}; do
-        cp "$f" "/$file"
+        cp "$f" "\/$file"
     done
   }
 } || { echo "E: Termux Wayland app missing ... Please install it manually.";}
