@@ -11,7 +11,7 @@ finalmsg(){
 }
 
 echo "[?] Choose an Operative System:"
-select os in alpine kalilinux;do
+select os in alpine;do
   case $os in
     alpine)
       declare ref=http://dl-cdn.alpinelinux.org/alpine/v3.12/releases/x86_64/
@@ -26,22 +26,22 @@ select os in alpine kalilinux;do
       ;;
   esac
 done
+
 # Create father dir
 echo "Downloading $os ISO file (It could take a while) ..."
 mkdir -p ${HOME}/.local/share/termux-docker-qemu/$os && cd $_
 # Download iso
-[[ -e $iso ]] && rm -rf $iso 
+[[ -e $iso ]] && rm -rf $iso
 wget --tries=20 --quiet --progress=dot $ref$iso
 # Create disk (note it won't actually take 4GB of space, more like 500MB)
 echo "Creating $os image."
 [[ $os.img ]] && rm -rf $os.img
 qemu-img create -f qcow2 $os.img 5G
 
-if [[ $os = alpine ]]
-then 
+if [[ $os = alpine ]]; then 
   printf "\e[33m"
   echo '''
-  ____  _____    _    ____  __  __ _____
+   ____  _____    _    ____  __  __ _____
   |  _ \| ____|  / \  |  _ \|  \/  | ____|
   | |_) |  _|   / _ \ | | | | |\/| |  _|
   |  _ <| |___ / ___ \| |_| | |  | | |___
@@ -51,21 +51,21 @@ then
   Do it as \e[31mROOT\e[0m user with \e[32mempty\e[0m password.
   Once in OS terminal run one by one the next commands:
 
-    $ ifup eth0
-    $ echo \"nameserver 8.8.8.8\" >> /etc/resolv.conf
     $ setup-interfaces
     ╰─➤# On it response at all question pressing 'enter' for default settings
+    $ ifup eth0
+    $ echo \"nameserver 8.8.8.8\" >> /etc/resolv.conf
     $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os
     $ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk
     $ setup-$os -f answerfile.$os
+    ╰─➤# It will ask you to set a new password
     ╰─➤# Respond with a 'y' On question 'erase the above disk(s) and continue? [y/N]:'
+    $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/ashrc.sh
+    $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/ash.sh
     $ poweroff
+ 
+  press \e[33mENTER\e[0m to continue" && read enter
 
-  Or press ctrl+alt+v to page it from the clipboard.
-  
-  press \e[33mENTER\e[0m to continue"
-  echo "ifup eth0 && echo \"nameserver 8.8.8.8\" >> /etc/resolv.conf && setup-interfaces && wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os && sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk && setup-$os -f answerfile.$os && poweroff"|termux-clipboard-set
-  read enter
   # Boot it up
   qemu-system-x86_64 -machine q35 -m 1024 -smp cpus=2 -cpu qemu64 \
     -drive if=pflash,format=raw,read-only=on,file=$PREFIX/share/qemu/edk2-x86_64-code.fd \
@@ -76,7 +76,7 @@ then
 elif [[ $os = kalilinux ]] 
 then
   echo '''
-  ____  _____    _    ____  __  __ _____
+   ____  _____    _    ____  __  __ _____
   |  _ \| ____|  / \  |  _ \|  \/  | ____|
   | |_) |  _|   / _ \ | | | | |\/| |  _|
   |  _ <| |___ / ___ \| |_| | |  | | |___
