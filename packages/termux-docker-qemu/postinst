@@ -45,15 +45,13 @@ if [[ $os = alpine ]]; then
     ╰─➤# On it response at all question pressing 'enter' for default settings
     $ ifup eth0
     $ echo \"nameserver 8.8.8.8\" >> /etc/resolv.conf
+    $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/ashrc.sh -O /etc/profile.d/ashrc.sh
+    $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/ash.sh -O /etc/profile.d/ash.sh
     $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os
     $ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk
     $ setup-$os -f answerfile.$os
     ╰─➤# It will ask you to set a new password
     ╰─➤# Respond with a 'y' On question 'erase the above disk(s) and continue? [y/N]:'
-    $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/ashrc.sh \
-      -O /etc/profile.d/ashrc.sh
-    $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/ash.sh \
-      -O /etc/profile.d/ash.sh
     $ poweroff
  
   press \e[33mENTER\e[0m to continue" && read enter
