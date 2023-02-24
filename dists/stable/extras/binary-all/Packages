@@ -687,7 +687,7 @@ SHA256: 087391bf54ad6dd1e09b9732f3156b6f667786c85454234afcfdec3745db7075
 SHA512: cd67869bc09f0df12989761fe7556c4c3d43a7dd3a8ac8440c27d7b07a5c96b6b8da577c2ed0467588350985c4532141c83f79501925589d00a5536754fff053
 
 Package: i-haklab
-Version: 3.6.10
+Version: 3.6.11
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 92955
@@ -695,12 +695,12 @@ Depends: termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-r
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.6.10_all.deb
-Size: 40504404
-MD5Sum: 56bd09e85cd5200c608d088f78edaadf
-SHA1: 32f99b7175a2c360bb427f84e87170e076980cf3
-SHA256: 61e586814fb867d33e6c8b1c1edbb7c0334e7b7769d1195f6a02acf08e94dffa
-SHA512: b0a5221bd8c72849c05e6c6264b130e28e072a201358c9fb11b5b4d8a84ef60ec6bc3504739b7fe102f423a53b83c646c8a526a3f8f2e78b41fcffdff8c9ab17
+Filename: dists/stable/extras/binary-all/i-haklab_3.6.11_all.deb
+Size: 40502016
+MD5Sum: c488352e07f05157710275e4b3495eed
+SHA1: e3fdca49a98bf99bf3f49efd0d5a002fa92e76d3
+SHA256: e5b8d68e3bcfeec603db373e3058ae67419b45eff7fb12d28eb8d0024cfb5f49
+SHA512: 10d2bbe6496a01f082f18479913f30032bd6b93a973709e2d5c456f1aee2e43276970908adfa362955881f04dd74f94ec84031464a0c6c45cc2190a03182058f
 
 Package: infoga
 Version: 1.0
@@ -1246,7 +1246,7 @@ SHA256: 9744e429e36ced02d7e2a8ecd93efc579eafb8f57c401938f44e8e6ed2481161
 SHA512: 99de149be1b541b57a3e56143e04afe2e2c077bb23a43d1edd8a2475dcc0ca9c47c6387a2713b5bd33d6ce86144ad07624f9bd9f33ce7abf8d195919fa9853cf
 
 Package: termux-docker-qemu
-Version: 0.1.3
+Version: 0.1.4
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
@@ -1254,12 +1254,12 @@ Depends: termux-api, openssh, wget, xorg-xauth, tigervnc, qemu-utils, qemu-commo
 Suggests: i-haklab
 Homepage: https://www.docker.com/products/docker-desktop/
 Description: Docker container for running x86_64 Linux virtual machines using QEMU
-Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.1.3_all.deb
-Size: 3528
-MD5Sum: fd550a9f346ea3ce0d65d246be3c167a
-SHA1: 2caad0fa51a571575861eb02b1c53b5b02f449c0
-SHA256: b155714d9294e32bde5f2329b04ebb741aaaa94bda7ce79b3bea0440b0b84c85
-SHA512: bc8bbf7a9b8f38b8e582fe5acf10e40c7a60630a882bcb3c7d0e5dbffe91ea4031eac6fa58b100426fd1d493fb1cee3afd76b740296eb580cbbff72ab59b28e0
+Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.1.4_all.deb
+Size: 3400
+MD5Sum: 2e8cabe9089d984e03e8797a3198ebec
+SHA1: bc2870181d7107d1e40924e4b451399001cce118
+SHA256: 783de504629b1b525f7cfac63e74666686fe284723097529e51462f097a79979
+SHA512: 86b012de2d8d0b58550679b06e66be0895b3566f4a9f4afe0493dc54a0ab61dd674e5cf290aeb7538e7181a1be3028226d2dfc19e58df72fc0e5d20f9caf5cad
 
 Package: trape
 Version: 2.0

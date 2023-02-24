@@ -1,15 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
 #
-finalmsg(){
-  if [[ $os = alpine ]]; then
-    echo "      $os:~# apk update && apk add docker"
-  elif [[ $os = kalilinux ]]; then
-    echo "      $os:~# apt update && apt upgrade"
-    echo "      $os:~# apt install docker"
-
-  fi
-}
-
 echo "[?] Choose an Operative System:"
 select os in alpine;do
   case $os in
@@ -33,7 +23,7 @@ mkdir -p ${HOME}/.local/share/termux-docker-qemu/$os && cd $_
 # Download iso
 [[ -e $iso ]] && rm -rf $iso
 wget --tries=20 --quiet --progress=dot $ref$iso
-# Create disk (note it won't actually take 4GB of space, more like 500MB)
+# Create disk (note it won't actually take 5GB of space, more like 500MB)
 echo "Creating $os image."
 [[ $os.img ]] && rm -rf $os.img
 qemu-img create -f qcow2 $os.img 5G
@@ -60,8 +50,10 @@ if [[ $os = alpine ]]; then
     $ setup-$os -f answerfile.$os
     ╰─➤# It will ask you to set a new password
     ╰─➤# Respond with a 'y' On question 'erase the above disk(s) and continue? [y/N]:'
-    $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/ashrc.sh
-    $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/ash.sh
+    $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/ashrc.sh \
+      -O /etc/profile.d/ashrc.sh
+    $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/ash.sh \
+      -O /etc/profile.d/ash.sh
     $ poweroff
  
   press \e[33mENTER\e[0m to continue" && read enter
@@ -73,7 +65,7 @@ if [[ $os = alpine ]]; then
     -cdrom $iso \
     -nographic $os.img
 
-elif [[ $os = kalilinux ]] 
+elif [[ $os = kalilinux ]]
 then
   echo '''
    ____  _____    _    ____  __  __ _____
@@ -85,19 +77,14 @@ then
   echo -en "\e[0mBoot process will start\nNow open your VNC viewer over 127.0.0.1:5900 and set it"
   echo -en "Press \e[33mENTER\e[0m to start";read enter
   #Boot it up
-  qemu-system-x86_64 -hda ./$os.img -boot d \
-    -cdrom kali-linux-2022.3-installer-i386.iso -m 1024 -usb &
+  qemu-system-x86_64 -hda ./$os.img -boot d -cdrom kali-linux-2022.3-installer-i386.iso -m 1024 -usb &
 fi
 
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer \
+  -O /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] termux-docker-qemu installation finished."
 echo "[*] Run 'termux-docker-qemu $os' to execute it."
-echo "[!] Once running $os and only for the 1st time"
-echo "    you must install docker and enable on boot with :"
-finalmsg
-echo "      $os:~# service docker start"
-echo "      $os:~# rc-update add docker"
 echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."
