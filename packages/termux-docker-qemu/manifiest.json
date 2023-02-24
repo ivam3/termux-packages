@@ -4,7 +4,7 @@
   "arch": "all",
   "homepage": "https://www.docker.com/products/docker-desktop/",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["termux-api, openssh, wget, xorg-xauth, tigervnc, qemu-utils, qemu-common, qemu-system-x86-64-headless"],
+  "depends": ["termux-api, openssh, wget, qemu-utils, qemu-common, qemu-system-x86-64-headless"],
   "suggests": ["i-haklab"],
   "description": "Docker container for running x86_64 Linux virtual machines using QEMU",
   "files" :{
