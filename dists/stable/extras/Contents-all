@@ -573,6 +573,7 @@ data/data/com.termux/files/home/.bashrc                                         
 data/data/com.termux/files/home/.config/fish/config.fish                         i-haklab
 data/data/com.termux/files/home/.config/fish/fish_variables                      i-haklab
 data/data/com.termux/files/home/.config/fish/functions/LOCALHOST.fish            i-haklab
+data/data/com.termux/files/home/.config/fish/functions/adminfiles.fish           i-haklab
 data/data/com.termux/files/home/.config/fish/functions/apt.fish                  i-haklab
 data/data/com.termux/files/home/.config/fish/functions/df.fish                   i-haklab
 data/data/com.termux/files/home/.config/fish/functions/fish_greeting.fish        i-haklab
@@ -702,12 +703,12 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/shodan/usrpasswd.txt        
 data/data/com.termux/files/home/.local/etc/i-Haklab/variables                    i-haklab
 data/data/com.termux/files/home/.local/libexec/QG_aircrack-ng                    i-haklab
 data/data/com.termux/files/home/.local/libexec/QG_nmap                           i-haklab
-data/data/com.termux/files/home/.local/libexec/followps                          i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab.login                    i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/ESmsg                    i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/Xwayland                 i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/about                    i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/apkactivity              i-haklab
+data/data/com.termux/files/home/.local/libexec/i-Haklab/backup                   i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/binchecker               i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/bruteforce               i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/chatGPT                  i-haklab
