@@ -431,20 +431,20 @@ SHA256: b3091bf9b1252b61c23568a49d66ee7722fa7989b7a238522a17a9601ac362b8
 SHA512: 400133f8797ae79dda0e788ad0eded1d0fe9a4c04787a859b5cda9057c38f723edd05c47431baa3da11866234ae1d84f649dd967ec02c7f8dcb11d20f76a915c
 
 Package: exploitdb
-Version: 4.1.3
+Version: 2023.03.01
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
-Depends: git, wget
+Installed-Size: 1
+Depends: coreutils, libxml2, git, wget
 Suggests: i-haklab
-Homepage: https://github.com/offensive-security/exploitdb
+Homepage: https://gitlab.com/exploit-database/exploitdb
 Description: The official Exploit Database repository.
-Filename: dists/stable/extras/binary-all/exploitdb_4.1.3_all.deb
-Size: 1972
-MD5Sum: 44a4f0e0f6d2ec99d8ae4602c3a06f38
-SHA1: 1275dc9de08a033230efae93676a3b94e447ebde
-SHA256: 274046f4165b81c3dd192f3f5893d4a81a61d3ac216fb4344e2687181f5f21af
-SHA512: 31d04df79c040c9b4ebd29ecd05e630d1b9719b1f8f5e5369f5f4aaf22ea865a4b2cf32ca66d8148d30d20026e01731949df71d40766438b59321a5072321a7a
+Filename: dists/stable/extras/binary-all/exploitdb_2023.03.01_all.deb
+Size: 1896
+MD5Sum: 341cd29c241c80a1cbecb6e4c5c0dad0
+SHA1: 56687f020839078b654f9e5326f87d3b789666b4
+SHA256: ef1f145d19a4cfd428faa83a8e4d0bc2f9cd9db8267cba2bc2c8d57d98aa486a
+SHA512: ff6f4db16ca79b7471fe77817fff3d94d11758b4a4f6fb17050e76452861697263e62756e399ae0e32b9942ad745f049ccf957412817d9c591169b424aba6234
 
 Package: fake-sms
 Version: 2.0
