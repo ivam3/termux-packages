@@ -1230,20 +1230,20 @@ SHA256: 434041e91d4fb70203dfdcafd6c96a679ac2947d152d16d80f054eaeaef740f7
 SHA512: 1278135e433b817e22ff137e18363e6243c6299e5b22792e3b6f098bb02364b3701ff68cde6290a615190000a45a6d5635efe023a804053ad574863997844e6d
 
 Package: termux-desktop-xfce
-Version: 1.0
+Version: 1.0.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: x11-repo, termux-x11, adwaita-icon-theme, atk, binutils-is-llvm, dbus-glib, dconf, desktop-file-utils, dosbox, exo-static, exo, feh, file-roller, firefox, findutils, fluent-gtk-theme, fluent-icon-theme, galculator, garcon-static, garcon, gcr, geany, geany-plugins, gnome-themes-extra, gsettings-desktop-schemas, gtk-update-icon-cache, gtk2-engines-murrine-static, gtk2-engines-murrine, gtk2-static, gtk2, gtk3, gtksourceview4, gvfs, hicolor-icon-theme, htop, iso-codes, leafpad, libcanberra-static, libcanberra, libepoxy, libfontenc, libhandy, libmatekbd-static, libmatekbd, libnotify, libpciaccess, libvte, libwayland-protocols, libwayland, libwnck, libx11-static, libx11, libxcomposite,libxdamage, libxfce4ui-static, libxfce4ui, libxfce4util, libxfont2, libxinerama, libxkbfile, libxklavier, libxmu, loqui, lxappearance, lxde-icon-theme, mousepad, mpv-x, mtpaint, neofetch, openjdk-17, papirus-icon-theme, parole, python, python-pip, python-tkinter, recordmydesktop, ristretto, sdl-net, sdl2, sdl, shared-mime-info, startup-notification, tar, termux-api, the-powder-toy, thunar-archive-plugin-static, thunar-archive-plugin, thunar-static, thunar, tumbler, unzip, vim-gtk, webkit2gtk-4.1, wget, xarchiver, xapt-management, xcb-util, xfce4-appfinder, xfce4-calculator-plugin-static, xfce4-calculator-plugin, xfce4-clipman-plugin-static, xfce4-clipman-plugin, xfce4-datetime-plugin-static, xfce4-datetime-plugin, xfce4-eyes-plugin-static, xfce4-eyes-plugin, xfce4-mailwatch-plugin-static, xfce4-mailwatch-plugin, xfce4-netload-plugin-static, xfce4-netload-plugin, xfce4-notifyd-static, xfce4-notifyd, xfce4-panel-profiles, xfce4-panel-static, xfce4-panel, xfce4-places-plugin-static, xfce4-places-plugin, xfce4-screensaver, xfce4-screenshooter-static, xfce4-screenshooter, xfce4-session, xfce4-settings, xfce4-taskmanager, xfce4-terminal, xfce4-timer-plugin-static, xfce4-timer-plugin, xfce4-wavelan-plugin-static, xfce4-wavelan-plugin, xfce4-whiskermenu-plugin, xfce4, xfconf,xfdesktop, xfwm4, xkeyboard-config, xorg-iceauth, xorg-xauth, xorg-xhost, xorg-xkbcomp, xorg-xrdb, xwayland, zenity
+Depends: x11-repo, adwaita-icon-theme, atk, binutils-is-llvm, dbus-glib, dconf, desktop-file-utils, dosbox, exo-static, exo, feh, file-roller, firefox, findutils, fluent-gtk-theme, fluent-icon-theme, galculator, garcon-static, garcon, gcr, geany, geany-plugins, gnome-themes-extra, gsettings-desktop-schemas, gtk-update-icon-cache, gtk2-engines-murrine-static, gtk2-engines-murrine, gtk2-static, gtk2, gtk3, gtksourceview4, gvfs, hicolor-icon-theme, htop, iso-codes, leafpad, libcanberra-static, libcanberra, libepoxy, libfontenc, libhandy, libmatekbd-static, libmatekbd, libnotify, libpciaccess, libvte, libwayland-protocols, libwayland, libwnck, libx11-static, libx11, libxcomposite,libxdamage, libxfce4ui-static, libxfce4ui, libxfce4util, libxfont2, libxinerama, libxkbfile, libxklavier, libxmu, loqui, lxappearance, lxde-icon-theme, mousepad, mpv-x, mtpaint, neofetch, openjdk-17, papirus-icon-theme, parole, python, python-pip, python-tkinter, recordmydesktop, ristretto, sdl-net, sdl2, sdl, shared-mime-info, startup-notification, tar, termux-api, the-powder-toy, thunar-archive-plugin-static, thunar-archive-plugin, thunar-static, thunar, tumbler, unzip, vim-gtk, webkit2gtk-4.1, wget, xarchiver, xapt-management, xcb-util, xfce4-appfinder, xfce4-calculator-plugin-static, xfce4-calculator-plugin, xfce4-clipman-plugin-static, xfce4-clipman-plugin, xfce4-datetime-plugin-static, xfce4-datetime-plugin, xfce4-eyes-plugin-static, xfce4-eyes-plugin, xfce4-mailwatch-plugin-static, xfce4-mailwatch-plugin, xfce4-netload-plugin-static, xfce4-netload-plugin, xfce4-notifyd-static, xfce4-notifyd, xfce4-panel-profiles, xfce4-panel-static, xfce4-panel, xfce4-places-plugin-static, xfce4-places-plugin, xfce4-screensaver, xfce4-screenshooter-static, xfce4-screenshooter, xfce4-session, xfce4-settings, xfce4-taskmanager, xfce4-terminal, xfce4-timer-plugin-static, xfce4-timer-plugin, xfce4-wavelan-plugin-static, xfce4-wavelan-plugin, xfce4-whiskermenu-plugin, xfce4, xfconf,xfdesktop, xfwm4, xkeyboard-config, xorg-iceauth, xorg-xauth, xorg-xhost, xorg-xkbcomp, xorg-xrdb, xwayland, zenity
 Suggests: i-haklab, burpsuite, ghidra, hydra, putty, maltego, zaproxy
 Homepage: https://github.com/ivam3/termux-packages
 Description: A Meta-package and data, themes, icons and wallpapers to configurate a desktop enviroment for Termux with xfce4 as window manager.
-Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0_all.deb
-Size: 3496
-MD5Sum: 0de5b6351f8cee6ecc4ca4ab8b40cc93
-SHA1: f3b67a2c2fba1f7581e6eacbe70e79e4b3533859
-SHA256: 9744e429e36ced02d7e2a8ecd93efc579eafb8f57c401938f44e8e6ed2481161
-SHA512: 99de149be1b541b57a3e56143e04afe2e2c077bb23a43d1edd8a2475dcc0ca9c47c6387a2713b5bd33d6ce86144ad07624f9bd9f33ce7abf8d195919fa9853cf
+Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0.1_all.deb
+Size: 3604
+MD5Sum: cd58b10fcbdcc076b19a78b36b668cc6
+SHA1: 77f2e58614f7b6833d0258a45cc791f201765e55
+SHA256: 7b9342c2bc9f1e6156a4aafc7a5a6dabd137cc4097c048084d420b33f43049d5
+SHA512: d92722ed4bc63baebe432f42e40a9098fa2006ae8af6bd93f4f5a0a66d76c7635b6f5c0eb87de12fe5aa6418471af8df77bb16c6a77df9dfb5dde4ada1a78d7b
 
 Package: termux-docker-qemu
 Version: 0.2.0

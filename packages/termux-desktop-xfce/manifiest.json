@@ -1,10 +1,10 @@
 {
   "name": "termux-desktop-xfce",
-  "version": "1.0",
+  "version": "1.0.1",
   "arch": "all",
   "homepage": "https://github.com/ivam3/termux-packages",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["x11-repo", "termux-x11", "adwaita-icon-theme", "atk", "binutils-is-llvm", "dbus-glib", "dconf", "desktop-file-utils", "dosbox", "exo-static", "exo", "feh", 
+  "depends": ["x11-repo", "adwaita-icon-theme", "atk", "binutils-is-llvm", "dbus-glib", "dconf", "desktop-file-utils", "dosbox", "exo-static", "exo", "feh", 
     "file-roller", "firefox", "findutils", "fluent-gtk-theme", "fluent-icon-theme", "galculator", "garcon-static", "garcon", "gcr", "geany", "geany-plugins", "gnome-themes-extra",
     "gsettings-desktop-schemas", "gtk-update-icon-cache", "gtk2-engines-murrine-static", "gtk2-engines-murrine", "gtk2-static", "gtk2", "gtk3", 
     "gtksourceview4", "gvfs", "hicolor-icon-theme", "htop", "iso-codes", "leafpad", "libcanberra-static", "libcanberra", "libepoxy", "libfontenc", "libhandy", 
