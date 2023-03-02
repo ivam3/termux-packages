@@ -514,17 +514,17 @@ Package: ghidra
 Version: 10.1.5
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 54
+Installed-Size: 52
 Depends: openjdk-17
 Suggests: i-haklab, termux-desktop-xfce
 Homepage: https://github.com/NationalSecurityAgency/ghidra
 Description: Ghidra is a software reverse engineering (SRE) framework
 Filename: dists/stable/extras/binary-all/ghidra_10.1.5_all.deb
-Size: 54276
-MD5Sum: 57ee234d2df299ca0efe9534932df67c
-SHA1: 172b5a84e7808f27bdc4d1c4246955b56d50ce38
-SHA256: 8a8e2421893c228e2285692ecb5cb945e9cb5e84b86b1bac14e8f1d028292dd9
-SHA512: 66f567307252e03c453fad75e4b5fd4ebafe4a25a0ada5168179c3769b9d4d1703f9b28307e38f75c177c288746299fe25eda50df08a1b1be77656a594a05567
+Size: 52096
+MD5Sum: 44732fd1fb860635f9eb0fc6501142b4
+SHA1: 830b0c13d8d17441cf9b9fffe77f4e3340584781
+SHA256: b0e6c421bd05f4fc6156a1393916818d4dafcebbd93f0ea80cf7db616665cde0
+SHA512: 0b46d600da429918d31c48b9841e0acbda9712b7854c882d481157757aef4eb93383833fd6b85796fd85d8a96527fcc122c4f2c6e940143b41683f73d46cd0c7
 
 Package: ghost
 Version: 8.0.0
@@ -1457,15 +1457,15 @@ Package: zaproxy
 Version: 2.12.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 58
+Installed-Size: 57
 Depends: wget, openjdk-17
 Suggests: i-haklab
 Homepage: https://www.kali.org/tools/zaproxy/
 Description: The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications.
 Filename: dists/stable/extras/binary-all/zaproxy_2.12.0_all.deb
-Size: 58236
-MD5Sum: c6929505d380122645c7a72e91d1ffcd
-SHA1: 6bcf59480e1ae4b568c0707a1daf516f3e18c491
-SHA256: cab274f1b8af1b2cf048d0097c4320f8a0687bbfaa64cfb1688602d9d76d14b3
-SHA512: e7c9ccb774d6d893c45b3eb5dba8b507e0ccf3b6cf276a780c56ccb36a811ea13e6de6dd7665cf7379e6e0bf5a0602cf5c9ff59465b8df1077c1eb70f36c97f1
+Size: 56760
+MD5Sum: d79ab46358d47563cc521aae7e6e1ae6
+SHA1: 4e374ba865e2139234d827b4198afaff379d77bc
+SHA256: 5380bf937263d44b9e735a70187aa2d3b4ad72c9b62d61ebe73a877f698fc99c
+SHA512: a9cb565dd45caa192e344bfbfd168fff8ea063da9ba3caa3a308c1c2461420936fc80af155af3b79e49b763596c95744b662acf025483f85df8ec89ac0144e70
 
