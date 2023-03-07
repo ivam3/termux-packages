@@ -1,0 +1,13 @@
+{
+  "name": "termux-desktop-xfce",
+  "version": "1.0.1",
+  "arch": "all",
+  "homepage": "https://github.com/ivam3/termux-packages",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["x11-repo, xfce4, xwayland, binutils-is-llvm, findutils, geany, geany-plugins, htop, leafpad, libwayland-protocols, libwayland, loqui, mpv-x, mtpaint, neofetch, openjdk-17, papirus-icon-theme, python, python-pip, python-tkinter, tar, termux-api, unzip, vim-gtk, wget, xarchiver ,xapt-management, adwaita-icon-theme, atk, dbus-glib, dconf, desktop-file-utils, exo, feh, file-roller, firefox, fluent-gtk-theme, fluent-icon-theme, galculator, garcon, gcr, gnome-themes-extra, gsettings-desktop-schemas, gtk2, gtk3, gtksourceview4, gvfs, hicolor-icon-theme, iso-codes, libcanberra, libepoxy, libfontenc, libhandy, libmatekbd, libnotify, libpciaccess, libvte, libwnck, libx11, libxcomposite, libxcvt, libxdamage, libxfce4ui, libxfce4util, libxfont2, libxinerama, libxkbfile, libxklavier, libxmu, lxappearance, lxde-icon-theme, mousepad, parole, putty, recordmydesktop, ristretto, sdl-net, sdl2, sdl, shared-mime-info, startup-notification, the-powder-toy,thunar-archive-plugin, thunar, tumbler, webkit2gtk-4.1, xcb-util, xfce4-appfinder, xfce4-calculator-plugin, xfce4-clipman-plugin, xfce4-datetime-plugin, xfce4-eyes-plugin, xfce4-mailwatch-plugin, xfce4-netload-plugin, xfce4-notifyd, xfce4-panel-profiles, xfce4-panel, xfce4-places-plugin, xfce4-screensaver, xfce4-screenshooter, xfce4-session, xfce4-settings,xfce4-taskmanager, xfce4-terminal, xfce4-timer-plugin, xfce4-wavelan-plugin, xfce4-whiskermenu-plugin, xfconf, xfdesktop, xfwm4, xkeyboard-config, xorg-iceauth, xorg-protocol-txt, xorg-xauth, xorg-xhost, xorg-xkbcomp, xorg-xrdb, zenity],
+  "suggests": ["i-haklab, burpsuite, ghidra, hydra, , maltego, zaproxy"],
+  "description": "A Meta-package and data, themes, icons and wallpapers to configurate a desktop enviroment for Termux with  as window manager.",
+  "files" :{
+    "desktop": "bin/desktop"
+  }
+}

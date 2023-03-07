@@ -74,8 +74,13 @@ echo "[?] Choose an Operative System:"
 select os in alpine;do
   case $os in
     alpine)
-      declare ref=http://dl-cdn.alpinelinux.org/alpine/v3.12/releases/x86_64/
-      declare iso=alpine-virt-3.12.12-x86_64.iso
+#      echo "[?] Choose an architecture:"
+#      select arch in x86 x86_64 aarch64 armv7;do
+#        m="$arch";break
+#      done
+      m="x86_64"
+      declare ref=https://dl-cdn.alpinelinux.org/alpine/v3.17/releases/$m/
+      declare iso=alpine-virt-3.17.2-$m.iso
       break
       ;;
     kalilinux)
