@@ -79,6 +79,22 @@ SHA1: 3f602f17d887b208ace83c14bb014c43d657156c
 SHA256: 63db8f7fd261f4a8b205fb31cf26e9ac88aca6aa044daa5ef0648a2b1ba76969
 SHA512: 9a012facbfc6e511dd8eab7881a57e998c75a6c6c65162c6adc63610e1f273b30c1023f910530777f856fc8bff727736737b95f9c74035c3949f678e63153889
 
+Package: androidsdk-cli
+Version: 3.6.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: termux-api, wget, aapt, apksigner, adbfastboot, gradle, openjdk-17
+Suggests: i-haklab
+Homepage: https://https://developer.android.com/studio/command-line
+Description: Official command line Integrated Development Environment (IDE) for Android app development
+Filename: dists/stable/extras/binary-all/androidsdk-cli_3.6.0_all.deb
+Size: 2568
+MD5Sum: f64cf3589d5602861ccb726ac46cf4ed
+SHA1: c791dc4852aeb007a6ced26ab6337727c1c69e2c
+SHA256: 536305743035e5e7e2bacc3e42e76e820a88511dc6a108cc83a71e3d6a68d192
+SHA512: 29a5056695d10defabda83494c97097d3fcce8a16c2d9d4d164138869f4405837fb9e76880bf8c19531aab4a6c25d9887c1ffa9e5a41a559b26dd50021a637ea
+
 Package: apktool
 Version: 2.7.0
 Architecture: all
@@ -687,20 +703,20 @@ SHA256: 087391bf54ad6dd1e09b9732f3156b6f667786c85454234afcfdec3745db7075
 SHA512: cd67869bc09f0df12989761fe7556c4c3d43a7dd3a8ac8440c27d7b07a5c96b6b8da577c2ed0467588350985c4532141c83f79501925589d00a5536754fff053
 
 Package: i-haklab
-Version: 3.6.12
+Version: 3.6.13
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 92957
-Depends: termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, apr-util, autoconf, axel, bat, bc, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, file, findutils, fish, gawk, git, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, gnupg, mariadb, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nodejs-lts, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, zip, zlib
+Installed-Size: 105208
+Depends: termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, apr-util, autoconf, axel, bat, bc, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, fd, file, findutils, fish, gawk, git, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, gnupg, mariadb, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nodejs-lts, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.6.12_all.deb
-Size: 40501912
-MD5Sum: 4ae9b56dec969026753f7ff5ffe4e57e
-SHA1: 7bbe51cd37725a51b2adfac147d07b53be5a4db8
-SHA256: 0557e75bb0b10002db36833d7231cf9bdcf558d0f344b4d7a9927715a66a4acb
-SHA512: 8dc1fee239623ff206cf8a0c56e9faeba1be4ec709065d0a069bbcbccd89e76b45a12b2cb6345d37d2334cd23e9d08a1f62c016f07a4ee0082f28accd2a3c80b
+Filename: dists/stable/extras/binary-all/i-haklab_3.6.13_all.deb
+Size: 52416616
+MD5Sum: 945a5ce2d4908fd1be403ba15167ccd9
+SHA1: 25e63e95869aabc8e73e1462dd89de1a1606a19f
+SHA256: b7031739b508e666be59525acbfbfb3d089bdd5b675d8027698559fd9709ed01
+SHA512: a88cd95b778450bff453349c814930b766d604dbbbee0074e9b9ccf992966d2bb55131ea5c954b3d9ff1c67601e5f50c9051588436b65bef08c229803c7ca962
 
 Package: infoga
 Version: 1.0

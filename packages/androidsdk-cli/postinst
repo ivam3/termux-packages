@@ -1,0 +1,46 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+v="6200805"
+shell=$(echo ${SHELL}|awk -F "/" '{print $NF}')
+
+echo "Downloading suite ..."
+wget --tries=20 --quiet https://dl.google.com/android/repository/commandlinetools-linux-6200805_latest.zip \
+  -O ${TMPDIR}/commandlinetools-linux-6200805_latest.zip
+
+[[ -e ${TMPDIR}/commandlinetools-linux-6200805_latest.zip ]] && {
+  echo "Unpacking development tools ..."
+  mkdir -p ${HOME}/.local/share/androidsdk-cli/cmdline-tools
+  unzip --quiet ${TMPDIR}/commandlinetools-linux-${v}_latest.zip -d ${HOME}/.local/share/androidsdk-cli/cmdline-tools/
+  chmod 751 -R ${HOME}/.local/share/androidsdk-cli
+  rm -rf ${TMPDIR}/commandlinetools-linux-${v}_latest.zip
+  if [[ $shell = "fish" ]]; then 
+    echo "set JAVA_HOME ${PREFIX}/opt/openjdk" >> ${HOME}/.config/fish/config.fish
+    echo "set ANDROID_SDK_ROOT ${HOME}/.local/share/androidsdk-cli" >> ${HOME}/.config/fish/config.fish
+    echo "set PATH \$PATH:\$ANDROID_SDK_ROOT/cmdline-tools/tools/bin" >> ${HOME}/.config/fish/config.fish
+    reset
+  else
+    [[ -e ${HOME}/.bashrc ]] || { touch ${HOME}/.bashrc;}
+    echo "export JAVA_HOME=${PREFIX}/opt/openjdk" >> ${HOME}/.bashrc   
+    echo "export ANDROID_SDK_ROOT=${HOME}/.local/share/androidsdk-cli" >> ${HOME}/.bashrc
+    echo "export PATH=\$JAVA_HOME:\$PATH:\$ANDROID_SDK_ROOT/cmdline-tools/tools/bin" >> ${HOME}/.bashrc
+    source ${HOME}/.bashrc
+  fi
+  
+  echo "Installing platform for Android 29" 
+  sdkmanager "platform-tools" "platforms;android-29"
+  echo "Build tools for Android 29"
+  sdkmanager "build-tools" "build-tools;29.0.3"
+  echo "Accept Android licenses"
+  sdkmanager --licenses
+  
+  echo "[*] androidsdk-cli installation finished."
+  echo "[*] Run 'androidsdk-cli' to execute it."
+} || {
+  echo -en "\e[31mE:\e[0m androidsdk-cli zip file missing ... \e[33mAborting.\e[0m\n";
+}
+wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+chmod 750 /data/data/com.termux/files/usr/bin/fixer
+echo "[*] Run 'fixer' to fix any posible issue."
+echo "[!] For help going to https://t.me/Ivam3_Bot."
+echo "[*] @Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
