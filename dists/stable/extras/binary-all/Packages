@@ -831,20 +831,20 @@ SHA256: c97878f21c84f2d11e85a98195d02557dcdefd58924806c32aab8187687c66db
 SHA512: 64e9084afc95b94303c4e567d62db1cc510b367c0a0517a8c8505231b40999dae71387b3be7693f3c5f680696209f19e3926435ab1edd522a6bf1c8e37431a94
 
 Package: metasploit-framework
-Version: 6.3.6
+Version: 6.3.11
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
-Depends: build-essential, ruby, python, libcap, openjdk-17, termux-tools, autoconf, patchelf, binutils, bison, yarn, clang, coreutils, curl, findutils, apr, apr-util, postgresql, openssl, readline, libffi, libgmp, libpcap, libsqlite, libgrpc, libtool, libxml2, libxslt, ncurses, make, ncurses-utils, ncurses, git, wget, unzip, zip, tar, termux-elf-cleaner, pkg-config, git, resolv-conf, aapt, apksigner, apktool
+Depends: build-essential, ruby, python, libcap, openjdk-17, termux-tools, autoconf, patchelf, binutils, bison, yarn, clang, coreutils, curl, findutils, apr, apr-util, postgresql, openssl, readline, libffi, libgmp, libpcap, libsqlite, libgrpc, libtool, libxml2, libxslt, ncurses, make, ncurses-utils, ncurses, git, wget, unzip, zip, tar, termux-elf-cleaner, pkg-config, resolv-conf, aapt, apksigner, apktool
 Suggests: embed, i-haklab
 Homepage: https://github.com/rapid7/metasploit-framework
 Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
-Filename: dists/stable/extras/binary-all/metasploit-framework_6.3.6_all.deb
-Size: 4244
-MD5Sum: 68fedcde3386762251beef87cb9670bf
-SHA1: 85a1dae4df5d43ee4d7846ae037823f68dda55ba
-SHA256: 194554a2db41493c156790f07fad5775cf1d0e0574c5a226aff0bca912288afb
-SHA512: fec0647f6b121373fc5909d4005ed91fe9f23916640eddd4693e30d3e51afa6044c676fd375ff46168f0c114c099890d02db7289b981c57fb66b5de0df7f0347
+Filename: dists/stable/extras/binary-all/metasploit-framework_6.3.11_all.deb
+Size: 4236
+MD5Sum: bd51bb872d4f115a83a8ccb988a912e6
+SHA1: a3180c4c16bb0c63634dab6db5d17f3aa88d526a
+SHA256: 361d6bdd0f5550ddf958e5e9bb1724675fd4663ba11bd5488378987c714a5904
+SHA512: 040b7cf1d589c38255828ca3d0d053f8967077823359c8c2ec2fde69aea2a9344abf2e5a61154b063b3af5f1cb3f2cc0e498cea6c8b920ede178b7fcc11bae01
 
 Package: nexphisher
 Version: 1.0.2
