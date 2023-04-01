@@ -1,39 +1,29 @@
 #!/data/data/com.termux/files/usr/bin/bash
-#!/data/data/com.termux/files/usr/bin/bash
 #
-echo "Cloning metasploit-framework ..."
 msfGit="https://github.com/rapid7/metasploit-framework.git"
 mkdir -p ${PREFIX}/opt
 msfDir="${PREFIX}/opt/metasploit-framework"
-apktoolV="2.7.0"
-apktool_releases="https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_$apktoolV.jar"
 
-instaAPKtool(){
-  [[ -d ${PREFIX}/var/spool ]] || mkdir -p ${PREFIX}/var/spool
-  wget --tries=20 --progress=dot $apktool_releases -O ${PREFIX}/var/spool/apktool.jar
-  cat <<- CONF > ${PREFIX}/bin/apktool
-#!/data/data/com.termux/files/usr/bin/bash
-exec ${PREFIX}/bin/java -jar ${PREFIX}/var/spool/apktool.jar  "\$@"
-CONF
-  chmod 751 ${PREFIX}/bin/apktool
-}
-#instaAPKtool
-
+echo "Cloning metasploit-framework ..."
 git clone --quiet --depth 1 $msfGit $msfDir
-[[ -d $msfDir ]] || { echo "(_➤) Metasploit directory missing... Aborting.";exit 1;}
+[[ -d $msfDir ]] || { echo "E: Metasploit directory missing... Aborting.";exit 1;}
 
 echo "Installing and updating ruby gems ..."
 cd $msfDir
-sed -i "5a gem 'net-smtp', require: false" $msfDir/Gemfile
-gem install --no-document --verbose rubygems-update
+#sed -i "5a gem 'net-smtp', require: false" $msfDir/Gemfile
+[[ -d ${HOME}/.local/share/gem ]] && { rm -rf ${HOME}/.local/share/gem;}
+gem install --no-document --verbose rubygems-update > $msfDir/output.ps
+verToUp=$(grep "gem update" $msfDir/output.ps|grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+')
+rm -rf $msfDir/output.ps
+[[ -z $update ]] || { gem update --system $verToUp;}
 update_rubygems
-gem install --no-document --verbose bundler
-gem install actionpack --platform=ruby -- --use-system-libraries
-gem install rails --platform=ruby -- --use-system-libraries
+#gem install --no-document --verbose bundler
+#gem install actionpack --platform=ruby -- --use-system-libraries
+#gem install rails --platform=ruby -- --use-system-libraries
+bundle update --bundler
 bundle install -j$(nproc --all) --verbose
 
 echo "Running RuGiR(Ruby Gem Issues Resolved)";sleep 5
-bundle update --bundler
 rubyLIBv=$(ls ${PREFIX}/lib/ruby|sort -r|grep -m 1 '[0-9].[0-9].[0-9]')
 rubyLIB="${PREFIX}/lib/ruby/gems/$rubyLIBv"
 sed -i "s@/etc/resolv.conf@${PREFIX}/etc/resolv.conf@g" $msfDir/lib/net/dns/resolver.rb
@@ -60,19 +50,19 @@ for i in aarch64-linux-android arm-linux-androideabi \
 		fi
 	fi
 done
-for i in $(find ${PREFIX}/lib/ruby/ -type f -iname ruby_thread_local_var.rb);do
-	sed -i "s|ObjectSpace.define_finalizer(self, self.class.threadlocal_finalizer(@index))| |g" $i
-	sleep 1
-done
-sed -i "s|\\\c|\\\C\\-\\\s|g" $msfDir/lib/msf/core/exploit/remote/vim_soap.rb
-sleep 1
-GEMPATH=${PREFIX}/lib/ruby/gems/$rubyLIBv/gems/hrr_rb_ssh-0.4.2/lib/hrr_rb_ssh/transport
-sed -i '13,15 {s/^/#/}' $GEMPATH/encryption_algorithm/functionable.rb
-for i in 256 384 521;do
-	sed -i '14 {s/^/#/}' $GEMPATH/server_host_key_algorithm/ecdsa_sha2_nistp$i.rb
-done
-PRYCODEFILE=$(find $PREFIX/lib/ruby/ -iname "code.rb"|grep "pry")
-sed -i '342 {s/^/#/}' $PRYCODEFILE
+#for i in $(find ${PREFIX}/lib/ruby/ -type f -iname ruby_thread_local_var.rb);do
+#	sed -i "s|ObjectSpace.define_finalizer(self, self.class.threadlocal_finalizer(@index))| |g" $i
+#	sleep 1
+#done
+#sed -i "s|\\\c|\\\C\\-\\\s|g" $msfDir/lib/msf/core/exploit/remote/vim_soap.rb
+#sleep 1
+#GEMPATH=${PREFIX}/lib/ruby/gems/$rubyLIBv/gems/hrr_rb_ssh-0.4.2/lib/hrr_rb_ssh/transport
+#sed -i '13,15 {s/^/#/}' $GEMPATH/encryption_algorithm/functionable.rb
+#for i in 256 384 521;do
+#	sed -i '14 {s/^/#/}' $GEMPATH/server_host_key_algorithm/ecdsa_sha2_nistp$i.rb
+#done
+#PRYCODEFILE=$(find $PREFIX/lib/ruby/ -iname "code.rb"|grep "pry")
+#sed -i '342 {s/^/#/}' $PRYCODEFILE
 
 echo "Fixing option '-x' on msfvenom command..."
 JAVADB="https://raw.githubusercontent.com/ivam3/java/master"
@@ -83,27 +73,25 @@ for i in msfd msfrpc msfrpcd msfvenom;do
 	ln -sfr ${PREFIX}/bin/msfconsole ${PREFIX}/bin/$i
 done
 
-#echo -en "\e[33mWARNING:\e[0m Please answer questions with an 'y'(YES) or the number for ALL."
-#sleep 5
-for gem in nokogiri bcrypt msgpack network_interface bson redcarpet sqlite3;do
-  find ${PREFIX}/lib/ruby/gems/$rubyLIBv -type d -iname "$gem-[0-9].[0-9].[0-9]"|xargs rm -rf
-#  gem uninstall $gem
-done
+#for gem in nokogiri bcrypt msgpack network_interface bson redcarpet sqlite3;do
+#  find ${PREFIX}/lib/ruby/gems/$rubyLIBv -type d -iname "$gem-[0-9].[0-9].[0-9]"|xargs rm -rf
+#done
 mkdir -p $PREFIX/include/libxml/
 ln -s $PREFIX/include/libxml2/libxml/* $PREFIX/include/libxml/ >/dev/null 2>/dev/null
-gem install mini_portile2
-gem install redcarpet --platform=ruby -- --use-system-libraries
-gem install bson --platform=ruby -- --use-system-libraries
-gem install network_interface --platform=ruby -- --use-system-libraries
-gem install bcrypt --platform=ruby -- --use-system-libraries
-gem install rake -v '13.0.6' --platform=ruby -- --use-system-libraries
-gem install sqlite3 -v '1.6.0' --platform=ruby -- --use-system-libraries
-gem install msgpack -v '1.6.1' --platform=ruby -- --use-system-libraries
-gem install nokogiri -v '1.14.2' --platform=ruby -- --use-system-libraries
-bundle config build.nokogiri --use-system-libraries
+#gem install mini_portile2
+#gem install redcarpet -v '3.6.0' --platform=ruby -- --use-system-libraries
+#gem install bson --platform=ruby -- --use-system-libraries
+#gem install network_interface -v '0.0.2' --platform=ruby -- --use-system-libraries
+#gem install bcrypt --platform=ruby -- --use-system-libraries
+#gem install rake -v '13.0.6' --platform=ruby -- --use-system-libraries
+#gem install sqlite3 -v '1.6.1' --platform=ruby -- --use-system-libraries
+#gem install msgpack -v '1.6.1' --platform=ruby -- --use-system-libraries
+#gem install nokogiri -v '1.14.2' --platform=ruby -- --use-system-libraries
+#bundle config build.nokogiri --use-system-libraries
 
 echo "Setting metasploit database"
 mkdir -p $msfDir/config
+mkdir -p ${PREFIX}/var/lib/postgresql
 cat <<- EOF > $msfDir/config/database.yml
 production:
   adapter: postgresql
@@ -115,7 +103,6 @@ production:
   pool: 75
   timeout: 5
 EOF
-mkdir -p ${PREFIX}/var/lib/postgresql
 pg_ctl -D ${PREFIX}/var/lib/postgresql stop > /dev/null 2>&1 || true
 if ! pg_ctl -D ${PREFIX}/var/lib/postgresql start --silent;then
 	initdb ${PREFIX}/var/lib/postgresql
