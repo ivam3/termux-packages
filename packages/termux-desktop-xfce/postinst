@@ -23,30 +23,28 @@ echo "Downloading Termux Wayland apk (It could take a while) ..."
 wget --tries=20 --quiet https://github.com/ivam3/termux-packages/raw/gh-pages/packages/termux-desktop-xfce/termux-x11.zip \
   -O ${TMPDIR}/termux-x11.zip
 [[ -e ${TMPDIR}/termux-x11.zip ]] && {
-  mkdir -p ${TMPDIR}/desktmp
-  unzip -q ${TMPDIR}/termux-x11.zip -d ${TMPDIR}/desktmp/ && cd $_
+  mkdir -p ${TMPDIR}/desktmp && cd $_
+  unzip -q ${TMPDIR}/termux-x11.zip -d ${TMPDIR}/desktmp/
   app=$(find ${TMPDIR}/desktmp/ -iname "*.apk")
   deb=$(find ${TMPDIR}/desktmp/ -iname "*.deb")
+  [[ ! -z $deb ]] && {
+    echo "Uncompressing & installing debs files."
+    ar -x $deb
+    tar=$(find ${TMPDIR}/desktmp/ -iname "data.tar.xz")
+    tar -xvf $tar
+    find data -type d -exec mkdir -p /"{}" \;
+    declare -a f=$(find data -mindepth 5 -type f)
+    for file in ${f[*]}; do
+        cp "$file" "/$file"
+    done
+  }
   [[ ! -z $app ]] && {
     echo "Installing Termux Wayland apk (please accept the installation) ..."
     termux-open ${TMPDIR}/desktmp/$app
     sleep 10
   }
-  [[ ! -z $deb ]] && {
-    echo "Uncompressing & installing debs files."
-    ar -x $deb
-    tar=$(find ${TMPDIR}/desktmp/ -iname "*.tar.xz")
-    tar -xvf $tar
-    find data -type d -exec mkdir -p "{}" \;
-    declare -a d=$(find data -mindepth 5 -type d)
-    declare -a f=$(find data -mindepth 5 -type f)
-    for file in ${f[*]}; do
-        cp "$f" "\/$file"
-    done
-  }
 } || { echo "E: Termux Wayland app missing ... Please install it manually.";}
 rm -rf ${TMPDIR}/*
-
 
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
