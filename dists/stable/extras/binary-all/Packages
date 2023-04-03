@@ -703,20 +703,20 @@ SHA256: 087391bf54ad6dd1e09b9732f3156b6f667786c85454234afcfdec3745db7075
 SHA512: cd67869bc09f0df12989761fe7556c4c3d43a7dd3a8ac8440c27d7b07a5c96b6b8da577c2ed0467588350985c4532141c83f79501925589d00a5536754fff053
 
 Package: i-haklab
-Version: 3.6.13
+Version: 3.6.14
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 105208
+Installed-Size: 105213
 Depends: termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, apr-util, autoconf, axel, bat, bc, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, fd, file, findutils, fish, gawk, git, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, gnupg, mariadb, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nodejs-lts, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.6.13_all.deb
-Size: 52416616
-MD5Sum: 945a5ce2d4908fd1be403ba15167ccd9
-SHA1: 25e63e95869aabc8e73e1462dd89de1a1606a19f
-SHA256: b7031739b508e666be59525acbfbfb3d089bdd5b675d8027698559fd9709ed01
-SHA512: a88cd95b778450bff453349c814930b766d604dbbbee0074e9b9ccf992966d2bb55131ea5c954b3d9ff1c67601e5f50c9051588436b65bef08c229803c7ca962
+Filename: dists/stable/extras/binary-all/i-haklab_3.6.14_all.deb
+Size: 52417172
+MD5Sum: 0c361a243effdfc2a1db05b78e840fac
+SHA1: 503ed780ae8af653ec0ba2c492779264862c3129
+SHA256: cf11dad7fde67f5819cb5aa0203cfcad91fbd8ce23c2944f9c21002f1a7c6f90
+SHA512: 924cee04e8e704ee5c336c8df4f72907a59b5facb2480647fa462e3e67733337271811d1a82b05f065469f5a77c716ee4ed6d00ff93606dc912fe16204b82930
 
 Package: infoga
 Version: 1.0

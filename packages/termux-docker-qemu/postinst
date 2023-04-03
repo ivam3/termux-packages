@@ -102,7 +102,7 @@ if [[ -e ${HOME}/.local/share/termux-docker-qemu/$os/$os.img ]]; then
   if [[ "$answ" == "Yes" ]] || [[ "$answ" == "yes" ]] || [[ "$answ" == "Y" ]] || [[ "$answ" == "y" ]]; then
     echo "Deleting $os image."
     rm -rf ${HOME}/.local/share/termux-docker-qemu/
-    install
+    install && update
   else
     update
   fi
