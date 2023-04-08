@@ -6,7 +6,7 @@ git clone --quiet https://github.com/threat9/routersploit ${HOME}/.local/share/r
 chmod 750 -R ${HOME}/.local/share/routersploit
 cd ${HOME}/.local/share/routersploit
 echo "Installing requirements (It could take a while)..."
-for i in future requests==2.21.0 paramiko pysnmp==4.4.6 pycryptodome; do
+for i in setuptools future requests==2.21.0 paramiko pysnmp==4.4.6 pycryptodome; do
   python -m pip --quiet --no-color --no-cache-dir install $i 2>/dev/null 
 done
 wget --tries=20 --quiet \

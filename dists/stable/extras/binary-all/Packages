@@ -1064,10 +1064,10 @@ Homepage: https://github.com/threat9/routersploit
 Description: Exploitation Framework for Embedded Devices
 Filename: dists/stable/extras/binary-all/routersploit_3.4.1_all.deb
 Size: 1992
-MD5Sum: 01c2eda2c5ceba3e5567018d6c73a0f4
-SHA1: 81d4ce72fbd3f40746e677ae3c8900fd741f99ff
-SHA256: 0b59761c2a798cc75870a72dbabf59a2339cf8b7f0363f260c1f5b21e9e52316
-SHA512: be42f11eabac95bc06fc9deaf5a5728593f637c191d709a81c4fc30d0cf1c862cb5dfd83db771bb027ef90ee84fa735adcbce056b7b1261ee399d22de4df6591
+MD5Sum: 27709c51d8187bd4ef40d0da61e032c3
+SHA1: 0e2d165488003c30d7730f00cdf7373a6e3f53dd
+SHA256: e7ff72b3e077c45c01678bc8ea542f328ae01a6664ff4a527d554b83867fa5e0
+SHA512: bcb1e3eb77d7c9ab1f49dbfac4590a6894fd65aaa720a985384d0a890479b3b6ed931faa51a754d51e9914e8aa63526bcb129ee31129098d87c20f3c033d2aff
 
 Package: saycheese
 Version: 1.2
