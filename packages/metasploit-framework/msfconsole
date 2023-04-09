@@ -15,7 +15,7 @@ case "$(basename $0)" in
     [[ -z "$(psql -l | grep msf_database)" ]] && { createdb msf_database;}
     exec ruby "$METASPLOIT_PATH/$(basename $0)" "$@"
     ;;
-  msfd|msfrpc|msfrpcd|msfvenom)
+  msfd|msfdb|msfrpc|msfrpcd|msfvenom)
     [[ -e ${HOME}/.local/share/apktool/framework/1.apk ]] && { rm ${HOME}/.local/share/apktool/framework/1.apk;}
     exec ruby "$METASPLOIT_PATH/$(basename $0)" "$@"
     ;;

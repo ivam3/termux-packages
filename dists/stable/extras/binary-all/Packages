@@ -840,11 +840,11 @@ Suggests: embed, i-haklab
 Homepage: https://github.com/rapid7/metasploit-framework
 Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
 Filename: dists/stable/extras/binary-all/metasploit-framework_6.3.12_all.deb
-Size: 4128
-MD5Sum: 159e182f5ce70e0e815c5b72b0faff89
-SHA1: bbf6e7c96360c2e2b55ef44faa179e24eddaf1aa
-SHA256: 52b5169a6e4aa94c3f68e8ce5dde727f92ed611c0f03f14ebd57ce711e25eb9f
-SHA512: dc5a27737b7e07c60520d4a8daa065c9bd76cf094048fa1e073eb3ea715a80ea099a705fa2fb830fbcd54851d9774b9ac7f950d2b12e111a57166545e3987ba3
+Size: 4132
+MD5Sum: 3567cbfdab9ec231c80aeba73d1fdac2
+SHA1: d6d115132cf6a8292b8da88c7956e624b3098a88
+SHA256: 7c5b7091d1630d506070ebba758029570aa146852d79f27955cc2674c7bdeeca
+SHA512: e13e63a3948372e58f2f5f92932cdfda836575f538fc62c7e1b37d0eb5a9c17645f3449a5535a8f9ea4e2daf7349b301b6202d4dde8b56e57197616d688aaedd
 
 Package: nexphisher
 Version: 1.0.2
