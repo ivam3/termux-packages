@@ -17,7 +17,7 @@ verToUp=$(grep "gem update" $msfDir/rubygems-update.log|grep -o '[0-9]\+\.[0-9]\
 rm -rf $msfDir/rubygems-update.log
 [[ -z $verToUp ]] || { gem update --system $verToUp;}
 update_rubygems
-#gem install --no-document --verbose bundler
+gem install --no-document --verbose bundle bundler
 #gem install actionpack --platform=ruby -- --use-system-libraries
 #gem install rails --platform=ruby -- --use-system-libraries
 bundle update --bundler 2>/dev/null
