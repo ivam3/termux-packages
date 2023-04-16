@@ -18,6 +18,7 @@ rm -rf $msfDir/rubygems-update.log
 [[ -z $verToUp ]] || { gem update --system $verToUp;}
 update_rubygems
 gem install --no-document --verbose bundle bundler
+gem install nokogiri -v '1.14.3' --platform=ruby -- --use-system-libraries
 #gem install actionpack --platform=ruby -- --use-system-libraries
 #gem install rails --platform=ruby -- --use-system-libraries
 bundle update --bundler 2>/dev/null
@@ -87,7 +88,7 @@ done
 #gem install rake -v '13.0.6' --platform=ruby -- --use-system-libraries
 #gem install sqlite3 -v '1.6.1' --platform=ruby -- --use-system-libraries
 #gem install msgpack -v '1.6.1' --platform=ruby -- --use-system-libraries
-#gem install nokogiri -v '1.14.2' --platform=ruby -- --use-system-libraries
+#gem install nokogiri -v '1.14.3' --platform=ruby -- --use-system-libraries
 #bundle config build.nokogiri --use-system-libraries
 
 echo "Setting metasploit database"
