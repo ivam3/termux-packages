@@ -30,7 +30,9 @@ ln -s $PREFIX/include/libxml2/libxml/* $PREFIX/include/libxml/ >/dev/null 2>/dev
 echo "Running RuGiR (Ruby Gem Issues Resolved) ...";
 rubyLIBv=$(ls ${PREFIX}/lib/ruby|sort -r|grep -m 1 '[0-9].[0-9].[0-9]')
 rubyLIB="${PREFIX}/lib/ruby/gems/$rubyLIBv"
+gemPost_adap=$(find $rubyLIB -iname "postgresql_adapter.rb")
 sed -i "s@/etc/resolv.conf@${PREFIX}/etc/resolv.conf@g" $msfDir/lib/net/dns/resolver.rb
+sed -i "s|@timestamp_decoder.to_h|**@timestamp_decoder.to_h|g" $gemPost_adap
 for i in aarch64-linux-android arm-linux-androideabi \
 	i686-linux-android x86_64-linux-android;do
 	if [[ -e "$rubyLIB/${i}/bigdecimal.so" ]]
@@ -105,7 +107,7 @@ production:
   pool: 75
   timeout: 5
 EOF
-pg_ctl -D ${PREFIX}/var/lib/postgresql stop > /dev/null 2>&1 || true
+pg_ctl -D ${PREFIX}/var/lib/postgresql stop > /dev/null 2>/dev/null || true
 if ! pg_ctl -D ${PREFIX}/var/lib/postgresql start --silent;then
 	initdb ${PREFIX}/var/lib/postgresql
 	pg_ctl -D ${PREFIX}/var/lib/postgresql start --silent
