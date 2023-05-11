@@ -11,8 +11,5 @@ else
   else
     mkdir -p ${HOME}/.local/share 2>/dev/null
   fi
-	echo "Setting Yisus7u7 repositories at Advance Package Tool(APT)."
-	mkdir -p ${PREFIX}/etc/apt/sources.list.d 2>/dev/null
-	wget --tries=20 --quiet "https://raw.githubusercontent.com/Yisus7u7/termux-desktop-xfce/gh-pages/termux-desktop-xfce.list" -O ${PREFIX}/etc/apt/sources.list.d/termux-desktop-xfce.list
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

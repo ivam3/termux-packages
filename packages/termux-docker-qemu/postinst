@@ -34,6 +34,7 @@ install(){
       $ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk
       $ setup-$os -f answerfile.$os
       ╰─➤# It will ask you to set a new password
+      ╰─➤# Respond with a 'no' On question 'Setup a user? (enter a lower-case loginname, or 'no') [no]'
       ╰─➤# Respond with a 'y' On question 'erase the above disk(s) and continue? [y/N]:'
       $ poweroff
   

@@ -527,20 +527,20 @@ SHA256: e25aef6aa32e94e3b71cdd2893c96c01a68124d1a1f6ccc8fd2dbc0c4ddf48a3
 SHA512: c03099230f18f0fcf7172271d10a6db0cc4fadf1abc5882b02b2bb65863bc791d58e04f60fd1fefcb52bd4be631b15afea47e470690b8e4657c9c4592f402157
 
 Package: ghidra
-Version: 10.1.5
+Version: 10.2.3
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 52
-Depends: openjdk-17
+Installed-Size: 51
+Depends: tur-repo, openjdk-17, clang, llvm, lldb, gradle, ndk-multilib, gcc-12, swig
 Suggests: i-haklab, termux-desktop-xfce
 Homepage: https://github.com/NationalSecurityAgency/ghidra
 Description: Ghidra is a software reverse engineering (SRE) framework
-Filename: dists/stable/extras/binary-all/ghidra_10.1.5_all.deb
-Size: 52096
-MD5Sum: 44732fd1fb860635f9eb0fc6501142b4
-SHA1: 830b0c13d8d17441cf9b9fffe77f4e3340584781
-SHA256: b0e6c421bd05f4fc6156a1393916818d4dafcebbd93f0ea80cf7db616665cde0
-SHA512: 0b46d600da429918d31c48b9841e0acbda9712b7854c882d481157757aef4eb93383833fd6b85796fd85d8a96527fcc122c4f2c6e940143b41683f73d46cd0c7
+Filename: dists/stable/extras/binary-all/ghidra_10.2.3_all.deb
+Size: 52108
+MD5Sum: 1290aab3068f110a5203b3648800aaff
+SHA1: 02f7dd87ab214c69bb17bc20200ffc2dfe7d9057
+SHA256: 315ba7fd5ff4daa2afd41845cb534b6134c0ba9d3350a974c2d3abb8e9e1fdae
+SHA512: 5ef7a697e496bcd0fbb909a9fca90b81f121b68e580579e8e33b918f35ba72b99d30e1addddd8c66524e634b0ea1f01952baeb730b4f0aa4293792be08c360a6
 
 Package: ghost
 Version: 8.0.0
@@ -703,20 +703,20 @@ SHA256: 087391bf54ad6dd1e09b9732f3156b6f667786c85454234afcfdec3745db7075
 SHA512: cd67869bc09f0df12989761fe7556c4c3d43a7dd3a8ac8440c27d7b07a5c96b6b8da577c2ed0467588350985c4532141c83f79501925589d00a5536754fff053
 
 Package: i-haklab
-Version: 3.6.14
+Version: 3.6.15
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 105213
-Depends: termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, apr-util, autoconf, axel, bat, bc, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, fd, file, findutils, fish, gawk, git, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, gnupg, mariadb, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nodejs-lts, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, zip, zlib
+Installed-Size: 105214
+Depends: termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, fd, file, findutils, fish, gawk, git, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, gnupg, mariadb, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nodejs-lts, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.6.14_all.deb
-Size: 52417172
-MD5Sum: 0c361a243effdfc2a1db05b78e840fac
-SHA1: 503ed780ae8af653ec0ba2c492779264862c3129
-SHA256: cf11dad7fde67f5819cb5aa0203cfcad91fbd8ce23c2944f9c21002f1a7c6f90
-SHA512: 924cee04e8e704ee5c336c8df4f72907a59b5facb2480647fa462e3e67733337271811d1a82b05f065469f5a77c716ee4ed6d00ff93606dc912fe16204b82930
+Filename: dists/stable/extras/binary-all/i-haklab_3.6.15_all.deb
+Size: 52417876
+MD5Sum: a1d98f88899dbba651e81aafedb24423
+SHA1: 8e0a2e74ea8b8d79a4d8f7f82df6840cbb6b841e
+SHA256: 5116966b7e390402069dffc4f801d54c194b69911da0d1e3526960224a7112cd
+SHA512: e71da50701349890786fa426d6f17e60f8a9d7cc95965c4e478e29caa6e58a46f20af51e1e03cfa1474d010358f79d6d6993ce18ba0532c9b39f2b89c2b3a7df
 
 Package: infoga
 Version: 1.0

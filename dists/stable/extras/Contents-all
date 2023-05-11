@@ -549,7 +549,6 @@ data/data/com.termux/files/usr/bin/geo-recon                                    
 data/data/com.termux/files/usr/bin/geo-recon-installer                           geo-recon
 data/data/com.termux/files/usr/bin/getnpusers-installer                          getnpusers
 data/data/com.termux/files/usr/bin/ghidra                                        ghidra
-data/data/com.termux/files/usr/bin/ghidra-installer                              ghidra
 data/data/com.termux/files/usr/share/applications/ghidra/ghidra.desktop          ghidra
 data/data/com.termux/files/usr/share/applications/ghidra/img/ghidra.png          ghidra
 data/data/com.termux/files/usr/bin/ghost-installer                               ghost
@@ -576,6 +575,7 @@ data/data/com.termux/files/home/.config/fish/functions/LOCALHOST.fish           
 data/data/com.termux/files/home/.config/fish/functions/adminfiles.fish           i-haklab
 data/data/com.termux/files/home/.config/fish/functions/apt.fish                  i-haklab
 data/data/com.termux/files/home/.config/fish/functions/df.fish                   i-haklab
+data/data/com.termux/files/home/.config/fish/functions/du.fish                   i-haklab
 data/data/com.termux/files/home/.config/fish/functions/fish_greeting.fish        i-haklab
 data/data/com.termux/files/home/.config/fish/functions/i-Haklab.fish             i-haklab
 data/data/com.termux/files/home/.config/fish/functions/lock.fish                 i-haklab

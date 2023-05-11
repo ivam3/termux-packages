@@ -1,14 +1,13 @@
 {
   "name": "ghidra",
-  "version": "10.1.5",
+  "version": "10.2.3",
   "arch": "all",
   "homepage": "https://github.com/NationalSecurityAgency/ghidra",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["openjdk-17, clang, llvm, gradle"],
+  "depends": ["tur-repo, openjdk-17, clang, llvm, lldb, gradle, ndk-multilib, gcc-12, swig"],
   "suggests": ["i-haklab, termux-desktop-xfce"],
   "description": "Ghidra is a software reverse engineering (SRE) framework",
   "files" :{
-    "ghidra-installer": "bin/ghidra-installer",
     "ghidra": "bin/ghidra",
     "ghidra.desktop": "/data/data/com.termux/files/usr/share/applications/ghidra/ghidra.desktop",
     "img/ghidra.png": "/data/data/com.termux/files/usr/share/applications/ghidra/img/ghidra.png"
