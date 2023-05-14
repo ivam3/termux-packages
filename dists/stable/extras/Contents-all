@@ -541,7 +541,7 @@ data/data/com.termux/files/usr/bin/embed-installer                              
 data/data/com.termux/files/usr/bin/evilginx2                                     evilginx2
 data/data/com.termux/files/usr/bin/evilurl                                       evilurl
 data/data/com.termux/files/usr/bin/exif                                          exif
-data/data/com.termux/files/usr/bin/exploitdb                                     exploitdb
+data/data/com.termux/files/usr/bin/searchsploit                                  exploitdb
 data/data/com.termux/files/usr/bin/fake-sms                                      fake-sms
 data/data/com.termux/files/usr/bin/fbi                                           fbi
 data/data/com.termux/files/usr/bin/fbi-installer                                 fbi
