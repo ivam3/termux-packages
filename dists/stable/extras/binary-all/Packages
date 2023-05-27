@@ -128,20 +128,20 @@ SHA256: 022cad8aba44c5068a2931eac4b0e4a7e9c075856b0beee3cf32e1dfd31ec793
 SHA512: 7840fe9672ad1210bb5cbc252caf3dbbc60b0ab3fd7dce83430d429fe5f90d4839c1eb10baa7a9fe4f66463533edf84de3108aa5ba9c55b62ffa330323018e26
 
 Package: beef
-Version: 0.5.4.0-dev
+Version: 0.5.4.0-soa
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 3
-Depends: git, ruby, nodejs, imagemagick
+Installed-Size: 1
+Depends: git, ruby, nodejs-lts, imagemagick
 Suggests: i-haklab, metasploit-framework
 Homepage: https://github.com/beefproject/beef
 Description: Penetration testing tool that focuses on the web browser.
-Filename: dists/stable/extras/binary-all/beef_0.5.4.0-dev_all.deb
-Size: 2796
-MD5Sum: 3f6fef80323dc26d195c22b5a821e807
-SHA1: d5fb506fc2cb0d703fe09dab71c805906e9339b7
-SHA256: 317288e7737dbbb6efed1b0fe1be76c1d9fabd0fa8d00a2768af72ed6cac5700
-SHA512: 750c16ac0c4eb77c322413096d13053f4efbb8ab973beb107fd541296bdc26411c30372f8617312d501e3564c79cbc8aafb5074eb801ab399c206851b7af8415
+Filename: dists/stable/extras/binary-all/beef_0.5.4.0-soa_all.deb
+Size: 2728
+MD5Sum: 5362d4f7fdb3b57278735ac125bc1724
+SHA1: 1f2d05043eaad1a2c74a58f4f760562140ba739a
+SHA256: d745017cc2da554ce33e22fd28dee27123924dba925b047591c117fa1a326d84
+SHA512: d7d2a04150a628a27e3e348bc8cf71cf7de1c149e4935247183c3249512760696edf1fd1a428a291cfb0c98b55747503bed5c991291606727998e6153398778d
 
 Package: binwalk
 Version: 2.3.3
@@ -659,16 +659,16 @@ Version: 2.0.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
-Depends: git, nodejs
+Depends: git, nodejs-lts
 Suggests: i-haklab
 Homepage: https://gitlab.com/PANCHO7532/HCDecryptor
 Description: Decryptor for HTTP Custom, HTTP Injector, APK Custom, eProxy, NapsternetV and SocksHTTP-based configuration files.
 Filename: dists/stable/extras/binary-all/hcdecryptor_2.0.1_all.deb
-Size: 1872
-MD5Sum: 0e113b9791434423920fe4be43f8d900
-SHA1: 99ce5080759c9fbc21ffeb8bab5659f66469db44
-SHA256: c027a6c47bcaf7e7292a56a73ce00dab8d3a74c5e6b0f20516b6baf7bcb062de
-SHA512: 02ca2a4f24ab9182861b2720879178fb83fcd21609a27348991f03c3128b6c2ae6276c609b5ae5c3ad0439c981d38348b85c6acd2f3d55fc8c0829b2e931e802
+Size: 1876
+MD5Sum: f8ae506a0283861e17944beaf15a813f
+SHA1: 7df8a3ce22195b5a977a0e4ea94f8a24862b9670
+SHA256: 6f4b5d437570652986e969d468206915f37c794e20c9dca4cc81a980bef3e30d
+SHA512: 4b8ba5b4ea51d7ee74b5e6d49b0c990c2da6ad93af6d83944ebb7c0c4e8afd3a47ff3084d30b50f9592d0b5544574014f9331b28d49efe3395d662c73f6a378d
 
 Package: hunner-framework
 Version: 1.0
@@ -999,11 +999,11 @@ Suggests: i-haklab, localtunnel, stegsnow, ngrok
 Homepage: https://github.com/ivam3/termux-packages
 Description: A little bash tool (Only for Termux target) to simulated a ransomware effects searching to lock and encrypt files into internal|external android memory brigning a reversel shell
 Filename: dists/stable/extras/binary-all/ransomux_1.0_all.deb
-Size: 5136
-MD5Sum: ac4aa3767953f2ee94cd4fa31eac3e2b
-SHA1: 5e4829aaadc86b7c31f364acf3b4d379cf8ee5e2
-SHA256: a2ab05859c51aefe4a4ef68eb5d8fc409a86ef179d0fc33f2f4b5200fd8c0cd5
-SHA512: 4c3bebe60ddc0834a04d4199059bcf2fa26a8b8c0f9f185714a34d3204e3d01664f3625b9d69f1145dd243020fae1f4f07387a44d4f829b7672f7124c1b4c83d
+Size: 5120
+MD5Sum: aa6847a11bbafa5e1982de8fcb9eff4d
+SHA1: d28acc69b3558d419be78d0089cd3056fbb87fab
+SHA256: 7151d1c4467a332acdf32c5ea7637600eee62bc9fc88ec1078fb12a1f15e38b3
+SHA512: 069f93b64e4343f6b7ff222011838ca654bec8ef5811080d89d0363dd93f8c7acf7dcb3382151ecaab890007e2889ae1b0606ca2c97d476eb21ad3cf6b8d8135
 
 Package: recon-ng
 Version: 5.1.2

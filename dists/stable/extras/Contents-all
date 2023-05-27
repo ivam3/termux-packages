@@ -11,7 +11,6 @@ data/data/com.termux/files/usr/bin/androidsdk-cli                               
 data/data/com.termux/files/usr/bin/apktool                                       apktool
 data/data/com.termux/files/usr/bin/appshark                                      appshark
 data/data/com.termux/files/usr/bin/beef                                          beef
-data/data/com.termux/files/usr/bin/beef-installer                                beef
 data/data/com.termux/files/usr/bin/binwalk-installer                             binwalk
 data/data/com.termux/files/usr/bin/bitb                                          bitb-framework
 data/data/com.termux/files/usr/bin/bitb-installer                                bitb-framework

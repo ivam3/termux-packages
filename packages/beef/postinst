@@ -1,9 +1,43 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/beef-installer
-rm -rf ${PREFIX}/bin/beef-installer
+IFS=$'\n\t'
+echo "Cloning repository ..."
+git clone --quiet https://github.com/beefproject/beef ${HOME}/.local/share/beef
+[[ -d ${HOME}/.local/share/beef ]] && {
+  echo "Configuring beef ..."
+  chmod 751 -R ${HOME}/.local/share/beef
+  sed -i "5a gem 'net-smtp', require: false" ${HOME}/.local/share/beef/Gemfile
+  sed "s|database: '/opt/GeoIP/GeoLite2-City.mmdb'|database: '${PREFIX}/opt/GeoIP/GeoLite2-City.mmdb'|g" \
+    -i ${HOME}/.local/share/beef/config.yaml
+  sed 's|passwd: "beef"|passwd: "Ivam3byCinderella"|g' -i ${HOME}/.local/share/beef/config.yaml
+  sed '155 s|enable: false|enable: true|g' -i ${HOME}/.local/share/beef/config.yaml
+  sed "s|ssl_version: 'TLS1'|ssl_version: 'TLS1.2'|g" -i \
+    ${HOME}/.local/share/beef/extensions/metasploit/config.yaml
+  echo "Installing gems ..."
+  export LD_LIBRARY_PATH=/data/data/com.termux/files/usr/lib
+  cd ${HOME}/.local/share/beef
+  gem install --no-document --verbose bundle bundler
+  gem update --system
+#  gem install bundler -v '2.3.14' --platform=ruby -- --use-system-libraries
+#  gem install msgpack -v '1.5.4' --platform=ruby -- --use-system-libraries
+  bundle update --bundler 2>/dev/null
+  bundle -j$(nproc --all) --verbose
+  curl -fsSL \
+    https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/libexec/fixbigdecimal|bash
+  echo "Installing GeoIP ..."
+  wget --tries=20 --quiet \
+    https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/beef/GeoIP.zip \
+    -O ${TMPDIR}/GeoIP.zip;
+  [[ -d ${PREFIX}/opt/ ]] || { mkdir -p ${PREFIX}/opt;}
+  unzip -q ${TMPDIR}/GeoIP.zip -d ${PREFIX}/opt
+  echo "[*] beef installation finished."
+  echo "[*] Run 'beef' to execute it."
+} || {
+  echo -en "\e[31mE:\e[0m beef directory missing ... \e[33mAborting.\e[0m\n";
+  exit 1;
+}
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
-echo "[*] beef installation finished."
+echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
