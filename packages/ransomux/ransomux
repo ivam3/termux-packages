@@ -44,7 +44,7 @@ chk-pkg wget wget apt
 chk-pkg gpg gnupg apt
 chk-pkg ncat nmap-ncat apt
 chk-pkg ngrok ngrok apt
-chk-pkg npm nodejs apt
+chk-pkg npm nodejs-lts apt
 chk-pkg exiftool exiftool apt
 chk-pkg php php apt
 chk-pkg steghide steghide apt
