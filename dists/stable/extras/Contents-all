@@ -3846,7 +3846,6 @@ data/data/com.termux/files/usr/bin/wbruter                                      
 data/data/com.termux/files/usr/bin/wbruter-installer                             wbruter
 data/data/com.termux/files/usr/bin/webscan                                       webscan
 data/data/com.termux/files/usr/bin/webscan-installer                             webscan
-data/data/com.termux/files/usr/bin/websploit                                     websploit
 data/data/com.termux/files/usr/bin/websploit-installer                           websploit
 data/data/com.termux/files/usr/bin/wfuzz-installer                               wfuzz
 data/data/com.termux/files/usr/bin/whatweb                                       whatweb
