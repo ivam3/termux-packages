@@ -1246,7 +1246,7 @@ SHA256: 434041e91d4fb70203dfdcafd6c96a679ac2947d152d16d80f054eaeaef740f7
 SHA512: 1278135e433b817e22ff137e18363e6243c6299e5b22792e3b6f098bb02364b3701ff68cde6290a615190000a45a6d5635efe023a804053ad574863997844e6d
 
 Package: termux-desktop-xfce
-Version: 1.0.2
+Version: 1.0.3
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
@@ -1254,12 +1254,12 @@ Depends: x11-repo, adwaita-icon-theme, atk, binutils-is-llvm, dbus-glib, dconf, 
 Suggests: i-haklab, burpsuite, ghidra, hydra, putty, maltego, zaproxy
 Homepage: https://github.com/ivam3/termux-packages
 Description: A Meta-package and data, themes, icons and wallpapers to configurate a desktop enviroment for Termux with xfce4 as window manager.
-Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0.2_all.deb
-Size: 3588
-MD5Sum: 9038ce8b5e870e6d771b8de5eb9bdd96
-SHA1: 075df16b33eaa05b60379b7fded10abdc2500b4f
-SHA256: ec89622210a117fec3cd8a8185cb53d7515035402bbcde6df3e359e0e23f3742
-SHA512: d7f0ad61ebc6cd6ead1a3fe5f67ae864d04a6b6012f7da2ca25ce72f3d17be0858872d1a7530199f90dc2805505913aa8f0b4c9afc9e0576b64d9bac52b48d61
+Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0.3_all.deb
+Size: 3596
+MD5Sum: 0a0c3ad309af451bf3606b75d0ec13eb
+SHA1: ab3c07877e6e0b5ecb9881238400a6b4f1858f35
+SHA256: c3d46385ce1c36edc7db2cf8ff10b87daf3fce00870436e4b0d11938cc3c9a62
+SHA512: e77e65c90d269815db2fd5663b5e63e030355e2785e57b3f7e2cfcbacabf38c22976f1b77dc68ba135e13e772350c47ca55aa3eba80ccd73af14ad83ed9b33cd
 
 Package: termux-docker-qemu
 Version: 0.3.3

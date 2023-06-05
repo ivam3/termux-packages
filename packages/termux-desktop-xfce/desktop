@@ -5,10 +5,11 @@ trap ctrl_c 2
 export DISPLAY=:0
 export XDG_RUNTIME_DIR=${TMPDIR}
 command -v termux-x11 >/dev/null || { echo -en "\e[31mE:\e[0m You need to install the Termux-Wayland(apk) deb file's.";exit;}
-#pulseaudio --start --exit-idle-time=-1 2>/dev/null
-#pacmd load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1
-#am start -n com.termux.x11/com.termux.x11.MainActivity;sleep 3
+pulseaudio --start --exit-idle-time=-1 2>/dev/null
+pacmd load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1
+am start -n com.termux.x11/com.termux.x11.MainActivity;sleep 3
 [[ ! -z "$1" ]] && [[ "$1" == "Xwayland" ]] && { Xbin="$1";} || { Xbin="termux-x11";tip="Xwayland";}
 $(command -v $Xbin) :0 >/dev/null &
 sleep 6;env DISPLAY=:0 xfce4-session || echo -en "\e[31mE: Display unrechable \e[0m|\e[33m Try it with: \e[32m$(basename $0) $tip\e[0m"
+killall main pulseaudio 2>/dev/null
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
