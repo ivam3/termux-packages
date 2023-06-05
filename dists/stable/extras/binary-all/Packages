@@ -1383,11 +1383,11 @@ Suggests: i-haklab
 Homepage: https://github.com/The404Hacking/websploit
 Description: Advanced MITM framework.
 Filename: dists/stable/extras/binary-all/websploit_4.0.4_all.deb
-Size: 1820
-MD5Sum: eec717ac7f49440d18141bb90365a878
-SHA1: 084e937442430effd0b1a8efbe34f090f811fc27
-SHA256: afd0dc080f6f7b2a5945e8d4c03fe9dec1f6648ed5b77fb058dcaae35bc9b5cc
-SHA512: 1758f19f47a5aefd13287d703726453bd6b57a1301d2a88089b6f40ee6b881b80ab4f411e76dd91c935b3c06f3b3fc2c30d8390210021e34da6257a4865eeb93
+Size: 1828
+MD5Sum: f470f73cf2ab99a7dd9482a6f077a11e
+SHA1: bdf4c5d4bc38cb017e5b08295f5c9dcb17663250
+SHA256: ab53d68c2c06800b3bc0d81d00677e83360b04b3b62cce9750ea455cdcff46d0
+SHA512: 8c20c3b26baabce6e0639fa307bbbd6d6a5c080d2ecc90c9ce0d0ef7f7235870a085078fd29bfb374ebf34c33f62e1cb40503fa2394aae3ed7d8e2950c034906
 
 Package: wfuzz
 Version: 3.1.0

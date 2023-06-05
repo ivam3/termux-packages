@@ -6,7 +6,7 @@ wget -q --tries=20 https://portswigger.net/burp/releases/download \
 if [[ -e ${HOME}/.local/share/burpsuite.jar ]]; then
   echo "Installing requirements ..."
   chmod 751 ${HOME}/.local/share/burpsuite.jar
-  [[ ! -e $PREFIX/opt/openjdk/lib/libgif.so.7 ]] && [[ -e $PRERIX/lib/libgif.so.$lv ]] && {
+  [[ ! -e $PREFIX/opt/openjdk/lib/libgif.so.7 ]] && [[ -e $PREFIX/lib/libgif.so.$lv ]] && {
     ln -s $PRERIX/lib/libgif.so.$lv $PREFIX/opt/openjdk/lib/libgif.so.7;
   }
   echo "[*] burpsuite installation finished."
