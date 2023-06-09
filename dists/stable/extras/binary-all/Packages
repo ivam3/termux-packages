@@ -703,20 +703,20 @@ SHA256: 087391bf54ad6dd1e09b9732f3156b6f667786c85454234afcfdec3745db7075
 SHA512: cd67869bc09f0df12989761fe7556c4c3d43a7dd3a8ac8440c27d7b07a5c96b6b8da577c2ed0467588350985c4532141c83f79501925589d00a5536754fff053
 
 Package: i-haklab
-Version: 3.6.15
+Version: 3.7.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 105214
-Depends: termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, fd, file, findutils, fish, gawk, git, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, gnupg, mariadb, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nodejs-lts, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, zip, zlib
+Installed-Size: 105213
+Depends: termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, fd, file, findutils, fish, fzf, gawk, git, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, gnupg, mariadb, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nodejs-lts, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.6.15_all.deb
-Size: 52417876
-MD5Sum: a1d98f88899dbba651e81aafedb24423
-SHA1: 8e0a2e74ea8b8d79a4d8f7f82df6840cbb6b841e
-SHA256: 5116966b7e390402069dffc4f801d54c194b69911da0d1e3526960224a7112cd
-SHA512: e71da50701349890786fa426d6f17e60f8a9d7cc95965c4e478e29caa6e58a46f20af51e1e03cfa1474d010358f79d6d6993ce18ba0532c9b39f2b89c2b3a7df
+Filename: dists/stable/extras/binary-all/i-haklab_3.7.0_all.deb
+Size: 52417620
+MD5Sum: a21e04718a41c885d53e15e59a5bc9c3
+SHA1: 11840deedb35c2c7749e37f6f66c94c021761c48
+SHA256: 0d19fc7ce52826a78a2fa952f8b28ac30b7ea7d5becbf3d0ccd690dea5a403eb
+SHA512: 92e279e6f6a1a304d0dcc5794507b5eedde0f1c27c6f9a641c074fa9faa39bc129b9ae361f8f3f2266910f5329b5fa7c64d4e9fe4a929c520817e6528b1a7b34
 
 Package: infoga
 Version: 1.0
@@ -831,7 +831,7 @@ SHA256: c97878f21c84f2d11e85a98195d02557dcdefd58924806c32aab8187687c66db
 SHA512: 64e9084afc95b94303c4e567d62db1cc510b367c0a0517a8c8505231b40999dae71387b3be7693f3c5f680696209f19e3926435ab1edd522a6bf1c8e37431a94
 
 Package: metasploit-framework
-Version: 6.3.14
+Version: 6.3.21
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
@@ -839,12 +839,12 @@ Depends: build-essential, ruby, python, libcap, openjdk-17, termux-tools, autoco
 Suggests: embed, i-haklab
 Homepage: https://github.com/rapid7/metasploit-framework
 Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
-Filename: dists/stable/extras/binary-all/metasploit-framework_6.3.14_all.deb
-Size: 4256
-MD5Sum: 3fb478e09b67322d7b0bdf7514e008c2
-SHA1: 3046599fb0cc46cd21a1ef803920a825b0945943
-SHA256: 7e9f8cde4dc7af39644b134043ab6f9fd282a5694fc81340dea81345c57ff06e
-SHA512: 426d284e713d15badfa46daafc7b069cda8007f2ed64afe7295bd74aa3d255d312886b75a9c0249d80294869104cb09a80b94f71b2575e87e72815894383ad5d
+Filename: dists/stable/extras/binary-all/metasploit-framework_6.3.21_all.deb
+Size: 4244
+MD5Sum: 83f7794e3bc80afa8227ae33163b9038
+SHA1: 8f0c3b959529cb65eb8edc300ed54c3b36f51742
+SHA256: d128fd047cab89b876dbaae1832c97733f18c72cae4b39c05ae28ebe13e31f82
+SHA512: dd1767fcabf2e1ad40270f496d7c7969300d3dc37212c8666c2813e4812e5138ca43c38a5f7e7cf5bd9bc0743344bdfc544109c984bdcc90a6c3d8b7ade62330
 
 Package: nexphisher
 Version: 1.0.2
