@@ -573,6 +573,7 @@ data/data/com.termux/files/home/.config/fish/fish_variables                     
 data/data/com.termux/files/home/.config/fish/functions/LOCALHOST.fish            i-haklab
 data/data/com.termux/files/home/.config/fish/functions/adminfiles.fish           i-haklab
 data/data/com.termux/files/home/.config/fish/functions/apt.fish                  i-haklab
+data/data/com.termux/files/home/.config/fish/functions/cmd.fish                  i-haklab
 data/data/com.termux/files/home/.config/fish/functions/df.fish                   i-haklab
 data/data/com.termux/files/home/.config/fish/functions/du.fish                   i-haklab
 data/data/com.termux/files/home/.config/fish/functions/fish_greeting.fish        i-haklab
@@ -581,6 +582,7 @@ data/data/com.termux/files/home/.config/fish/functions/lock.fish                
 data/data/com.termux/files/home/.config/fish/functions/ls.fish                   i-haklab
 data/data/com.termux/files/home/.config/fish/functions/mypip.fish                i-haklab
 data/data/com.termux/files/home/.config/fish/functions/osrframework.fish         i-haklab
+data/data/com.termux/files/home/.config/fish/functions/pm.fish                   i-haklab
 data/data/com.termux/files/home/.config/fish/functions/postgresql.fish           i-haklab
 data/data/com.termux/files/home/.config/fish/functions/proxy.fish                i-haklab
 data/data/com.termux/files/home/.config/fish/functions/rmcache.fish              i-haklab
