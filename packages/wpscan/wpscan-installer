@@ -4,6 +4,7 @@ echo "Cloning repository ..."
 git clone --quiet https://github.com/wpscanteam/wpscan ${HOME}/.local/share/wpscan
 [[ -d ${HOME}/.local/share/wpscan ]] && {
   echo "Installing requirements ...";
+  cd ${HOME}/.local/share/wpscan
   chmod 751 -R ${HOME}/.local/share/wpscan;
   gem install --no-document --verbose rubygems-update;
   update_rubygems;

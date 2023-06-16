@@ -1431,11 +1431,11 @@ Suggests: i-haklab
 Homepage: https://https://github.com/wpscanteam/wpscan
 Description: WordPress security scanner.
 Filename: dists/stable/extras/binary-all/wpscan_1.0_all.deb
-Size: 1804
-MD5Sum: 4fb147b97a12385f50d2ae88a5412335
-SHA1: 2da74fcd6ceb32d6a5af12e1decdaccc8970df60
-SHA256: 9cf2b4164ec9d2bad8d173c423924dd764dce307f6785080c86691bf3f947703
-SHA512: ed6f85cddc44b06f4b70d8647ba24bc9f19b392016085715b4977a4f0ae1ab2c9e7cadd03c4ca606e2c396dae206584aeb6531bdc283603920de05f7d0533035
+Size: 1796
+MD5Sum: ad5b5fa2b2ac47e648514e09327bb766
+SHA1: 7f975f578a0e71f897f35665c7a119b1619fd346
+SHA256: 30c7b91e5873a2c91201a09b771d49c57d1ab55b51f702a2a9f687886d874a5d
+SHA512: 169e40457189790040c2df02be2a65040b2874ea2306b24f7d84ec1da1ddc44a0feea67c6c5357f3bae3053f0eaacaf72251d3803d00042556619fea30711aa8
 
 Package: xapt-management
 Version: 1.0
