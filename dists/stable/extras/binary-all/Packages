@@ -1422,20 +1422,20 @@ SHA256: 12c89b16b1aae820f66ac83ae88014f2be1d3c25ac9f0be852a49bbf76eb9dc6
 SHA512: cd65f3b795ce5fff796090d5da7d9d233db894256fbe68e59a4d142597758d2530f620a1a8048317c220d0eeaacfd62018436ee8b21e5b29d4053bcbeaa43092
 
 Package: wpscan
-Version: 1.0
+Version: 1.0-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: git, ruby
+Depends: git, ruby, ndk-multilib
 Suggests: i-haklab
 Homepage: https://https://github.com/wpscanteam/wpscan
 Description: WordPress security scanner.
-Filename: dists/stable/extras/binary-all/wpscan_1.0_all.deb
-Size: 1796
-MD5Sum: ad5b5fa2b2ac47e648514e09327bb766
-SHA1: 7f975f578a0e71f897f35665c7a119b1619fd346
-SHA256: 30c7b91e5873a2c91201a09b771d49c57d1ab55b51f702a2a9f687886d874a5d
-SHA512: 169e40457189790040c2df02be2a65040b2874ea2306b24f7d84ec1da1ddc44a0feea67c6c5357f3bae3053f0eaacaf72251d3803d00042556619fea30711aa8
+Filename: dists/stable/extras/binary-all/wpscan_1.0-1_all.deb
+Size: 1860
+MD5Sum: cdd7770cfce8e3f934e4f28e7b1401ce
+SHA1: b141d22795aa7f4ce30d03681ba9fcba598d24fb
+SHA256: 91f562a30391bec171069baf6b29a9c3dddc897a9ea225ca37c8e2b3f19a273d
+SHA512: 88ae8eea62c834eb3a6d925b7721d2e1ceb381765efa74595b6d942664541c4a460edac2b32817f5196e75486ff7539ad750df62e88aa48c92266af2bc9be352
 
 Package: xapt-management
 Version: 1.0

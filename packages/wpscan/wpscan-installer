@@ -7,6 +7,7 @@ git clone --quiet https://github.com/wpscanteam/wpscan ${HOME}/.local/share/wpsc
   cd ${HOME}/.local/share/wpscan
   chmod 751 -R ${HOME}/.local/share/wpscan;
   gem install --no-document --verbose rubygems-update;
+  gem install nokogiri -v '1.13.10' --platform=ruby -- --use-system-libraries
   update_rubygems;
   gem install --no-document --verbose bundler;
   bundle install -j$(nproc --all) --verbose;
