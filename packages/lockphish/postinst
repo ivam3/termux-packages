@@ -1,9 +1,23 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/lockphish-installer
-rm -rf ${PREFIX}/bin/lockphish-installer
+IFS=$'\n\t'
+echo "Cloning repository ..."
+git clone --quiet https://github.com/Heroboycloud/lockphish-master ${HOME}/.local/share/lockphish
+[[ -d ${HOME}/.local/share/lockphish ]] && {
+  echo "Installing requirements ...";
+  chmod 751 -R ${HOME}/.local/share/lockphish;
+  ln=$(grep -n "link=\$(curl" ${HOME}/.local/share/lockphish/lockphish.sh|awk -F ":" '{print $1}')
+  sed -i "$ln {s/^/#/}" ${HOME}/.local/share/lockphish/lockphish.sh
+  sed -i "${ln}a link=\$(curl -s -N http://127.0.0.1:4040/api/tunnels|cut -d '\"' -f18)" \
+    ${HOME}/.local/share/lockphish/lockphish.sh
+  ln -s $(command -v ngrok) ${HOME}/.local/share/lockphish/ngrok
+  echo "[*] lockphish installation finished."
+  echo "[*] Run 'lockphish' to execute it."
+} || {
+  echo -en "\e[31mE:\e[0m lockphish directory missing ... \e[33mAborting.\e[0m\n";
+}
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
-echo "[*] lockphish installation finished."
+echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

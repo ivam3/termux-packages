@@ -799,20 +799,20 @@ SHA256: caec3615599e609c6fdfdaa541f3f1ab81ae54602908345cc27cd4ab521559b9
 SHA512: 62e0799be53c5f32c869dad5165bf36c62a0937509e0788c2478e24b66c7e79f89005001ce3a38ad26e023c005225c36022886b15f6921ff26cad89cba24df9f
 
 Package: lockphish
-Version: 1.0
+Version: 1.0-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
-Depends: git, php, openssh
-Suggests: i-haklab, ngrok
-Homepage: https://github.com/JasonJerry/lockphish
-Description: Tool for phishing attacks on the lock screen, designed to grab Windows credentials, Android PIN.
-Filename: dists/stable/extras/binary-all/lockphish_1.0_all.deb
-Size: 1988
-MD5Sum: 9b983b1e8604e71919426d2ae4775fed
-SHA1: 599b618265d3dcf46ac98a16aaffca7daf56c3bc
-SHA256: 2d096212503025c84b82a4d202a82d17b496155dbfb61f220dfe7f04c4a72dba
-SHA512: 1d13ba293fb1c0bc7cee7453ee746adb8a1459e2a3d4f4529244ab57afbbe5a2aa28253b94ab4b7a95855347c931cfae03ae2a49f5fa7fea80eec7e1a359ba71
+Installed-Size: 1
+Depends: git, php, openssh, ngrok
+Suggests: i-haklab
+Homepage: https://github.com/Heroboycloud/lockphish-master
+Description: Tool for phishing attacks on the lock screen, designed to grab Windows credentials, Windows, iPhone and Android PIN.
+Filename: dists/stable/extras/binary-all/lockphish_1.0-1_all.deb
+Size: 2040
+MD5Sum: 3273c22b9c7aab6f37925558e95852bc
+SHA1: 1e7bbda4db08b2928960526ee1c4d393c3036ac1
+SHA256: 6fc29856e57a221f94e81ff8b4e855993542514c91e01dc1ab6941d72411c695
+SHA512: dc20a03a5f541aa730e5bd5f03879eb45ff435933029532452c72bd3e1e2d652a12afb4371e6a37361c88ab9ad20f03b8c6229f73c3a9703ecaf1dd67f7f03a6
 
 Package: maltego
 Version: 4.3.1
