@@ -1,4 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
+dos2unix ${PREFIX}/bin/DoS-A-Tool
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 751 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] DoS-A-Tool installation finished."

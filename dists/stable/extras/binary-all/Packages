@@ -371,16 +371,16 @@ Version: 2.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 5
-Depends: perl
+Depends: perl, dos2unix
 Suggests: fixer
 Homepage: https://github.com/Ivam3/DoS-A-Tool
 Description: Sends a massive number of SYN requests to test a server to overwhelm its capacity with connections.
 Filename: dists/stable/extras/binary-all/dos-a-tool_2.0_all.deb
-Size: 3020
-MD5Sum: 841154851918a4762020d5e7f9a07249
-SHA1: 604ffa5d9545f78bfde3d8500b51f41f58d3a330
-SHA256: a9536602a21c727219376b33e8dcba8f0ff2e4dc5220209dac1e303130211ca3
-SHA512: 53cfb454215a7115037531c1ba6f7ab12c225f473103ebada4a0287aa70e020d0949ad8bc0d6c3b23095112adf7fd2f4af23938543c22f024b545174ad7e6f66
+Size: 3040
+MD5Sum: be4c7f68d2bd08d172824471b6c11c64
+SHA1: 00601f76a18b642611d01a510e09dbce0a361b11
+SHA256: f9be02431a835f37f6e3dd8da836d9104f9c8a5b05705db0b980f8890114baa8
+SHA512: 15309423e29349552517ef1abdb670bc08355ba74cf4e8585150288b207d588e4f5620ff0f185c6a52959a5c29304f13cfff52bfb56fc8c524093e674f66c67b
 
 Package: embed
 Version: 2.0
@@ -712,11 +712,11 @@ Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
 Filename: dists/stable/extras/binary-all/i-haklab_3.7.0_all.deb
-Size: 52417248
-MD5Sum: 18466ac567925051adcf5235b6e42920
-SHA1: f2e7129c48f9a599e7bb1a7e684b34893b36423f
-SHA256: 35fb4f1defbb9b15cd2800759a9ecb963853b1b44fc40784673b45a75be5d428
-SHA512: e4c125562ea8d935c07ab13d9884ff06057fcedbcdb82b031cfb7bd37d6e5bcb6742c373464e57a28aa5a39aa58f5baa08111283784b9c8dd33dd815863267ed
+Size: 52417892
+MD5Sum: 0e99496455ec99ea2bdb89818d5e047c
+SHA1: b8098bae25a4e7525c441247faefe7de0998d8fd
+SHA256: 88de561715fb329bbc6266ff5f7c3c97d2cc7bd5ca00126d68a62f65bdb1e5e4
+SHA512: fe9d0d3e6a3f3b91571382d0462ee45ce195a42bf62ebbb5f4b925681fe87f789b254838f33642e3162ca5d4c8dbda572b6ad29f360631cbb332f9eb6fdc5fd3
 
 Package: infoga
 Version: 1.0
@@ -831,7 +831,7 @@ SHA256: c97878f21c84f2d11e85a98195d02557dcdefd58924806c32aab8187687c66db
 SHA512: 64e9084afc95b94303c4e567d62db1cc510b367c0a0517a8c8505231b40999dae71387b3be7693f3c5f680696209f19e3926435ab1edd522a6bf1c8e37431a94
 
 Package: metasploit-framework
-Version: 6.3.21
+Version: 6.3.22
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
@@ -839,12 +839,12 @@ Depends: build-essential, ruby, python, libcap, openjdk-17, termux-tools, autoco
 Suggests: embed, i-haklab
 Homepage: https://github.com/rapid7/metasploit-framework
 Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
-Filename: dists/stable/extras/binary-all/metasploit-framework_6.3.21_all.deb
-Size: 4244
-MD5Sum: 83f7794e3bc80afa8227ae33163b9038
-SHA1: 8f0c3b959529cb65eb8edc300ed54c3b36f51742
-SHA256: d128fd047cab89b876dbaae1832c97733f18c72cae4b39c05ae28ebe13e31f82
-SHA512: dd1767fcabf2e1ad40270f496d7c7969300d3dc37212c8666c2813e4812e5138ca43c38a5f7e7cf5bd9bc0743344bdfc544109c984bdcc90a6c3d8b7ade62330
+Filename: dists/stable/extras/binary-all/metasploit-framework_6.3.22_all.deb
+Size: 4256
+MD5Sum: 2beb97fee5d423beba6bc87a0ce43151
+SHA1: 71302bc821fd92fc9a21f67c07cb2f87ee6da087
+SHA256: ae2305ab644a0a9de759fd9f5329b8cd385a712e5801fc433c73baf9c48763ca
+SHA512: 502bf7fc8243bf872631b70f5425e70f194fb4adcaa2d04f1522c734c45dd6ec5865f29de8ebd30dca203fdc7f483928c6bd731c821e132e60f43910910c968e
 
 Package: nexphisher
 Version: 1.0.2

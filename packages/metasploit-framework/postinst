@@ -18,7 +18,7 @@ rm -rf $msfDir/rubygems-update.log
 [[ -z $verToUp ]] || { gem update --system $verToUp;}
 update_rubygems
 gem install --no-document --verbose bundle bundler
-gem install nokogiri -v '1.14.3' --platform=ruby -- --use-system-libraries
+gem install nokogiri -v '1.14.5' --platform=ruby -- --use-system-libraries
 #gem install actionpack --platform=ruby -- --use-system-libraries
 #gem install rails --platform=ruby -- --use-system-libraries
 bundle update --bundler 2>/dev/null
