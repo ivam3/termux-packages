@@ -735,6 +735,7 @@ data/data/com.termux/files/home/.local/libexec/i-Haklab/payvid                  
 data/data/com.termux/files/home/.local/libexec/i-Haklab/phonescan                i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/ransomux                 i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/servers4test             i-haklab
+data/data/com.termux/files/home/.local/libexec/i-Haklab/setapikey                i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/setbanner                i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/setuser                  i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/share                    i-haklab

@@ -207,7 +207,7 @@ SHA256: feef86991f89fffe0dc5c60e439511da84ebefa4b14a280d8daf61480fab5358
 SHA512: b9c69836d23f95a1e35d7dc5bb6795aea6aab750ee697dabbb86342f472078035e03080bc455aa219771c871b3f0c21fd8547f3ec9e9c8907404d54cbe0f9230
 
 Package: burpsuite
-Version: 2023.3.2
+Version: 2023.6.2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 37
@@ -215,12 +215,12 @@ Depends: openjdk-17, wget, jython-lts
 Suggests: termux-x11, xwayland, i-haklab
 Homepage: https://portswigger.net
 Description: An integrated platform/graphical tool for performing security testing of web applications.
-Filename: dists/stable/extras/binary-all/burpsuite_2023.3.2_all.deb
-Size: 36964
-MD5Sum: 8ea5146ec04666ba7f09fd3a37f8cc7e
-SHA1: bb356e5da5860f511607ac8e1499fd821434d496
-SHA256: 57b271a078a05d16cc5f728025609e041075f3c37493290c94e2f35662bbc310
-SHA512: 3fd30c491d4c59792dbdb28664242f146fe8ebc5167c3b018ad932a40a3750333e51926d8b3ad2faa53f9bc94ee48eedd177f8cb22bf349f1c0fcd3d78da5a46
+Filename: dists/stable/extras/binary-all/burpsuite_2023.6.2_all.deb
+Size: 36968
+MD5Sum: 0f36707632b893c3ef132b52eccd6391
+SHA1: 1bdce7df3934669061dc2142d8e5a215f581fcc0
+SHA256: d77534c8b7c407b388f8cf0a76053d9b543522e2d8b0734aa27906c66878dfee
+SHA512: 08c934fcb28dd44e91933913c06850cbdd8ccf0a8d22149fb2c02e08ffcfa003eada0ff48a059c2bb64297fbfa05d0e87a9235ccf4504ad8b87c7e810b83bb04
 
 Package: cewl
 Version: 5.5.2
@@ -703,20 +703,20 @@ SHA256: 087391bf54ad6dd1e09b9732f3156b6f667786c85454234afcfdec3745db7075
 SHA512: cd67869bc09f0df12989761fe7556c4c3d43a7dd3a8ac8440c27d7b07a5c96b6b8da577c2ed0467588350985c4532141c83f79501925589d00a5536754fff053
 
 Package: i-haklab
-Version: 3.7.0
+Version: 3.7.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 105215
+Installed-Size: 105217
 Depends: termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, fd, file, findutils, fish, fzf, gawk, git, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, gnupg, mariadb, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nodejs-lts, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.7.0_all.deb
-Size: 52417660
-MD5Sum: eaf05c78efc4a305bee6cf771cfec1c6
-SHA1: 6c15550261ece7168e610c7fce4a267145213a26
-SHA256: 82986b8360a0ae59a2868c25b3bd39e2ddd50eb4054f027918abf94c2d87f798
-SHA512: 1a9dde61cee3f8aa78545937ec7951557881fb1f21e6212cdd56473b69da4a67022665e664cede03bdcc706e9d98e85a0d73a4bced32be1f611c5d94aae872cf
+Filename: dists/stable/extras/binary-all/i-haklab_3.7.1_all.deb
+Size: 52420708
+MD5Sum: f05727b8012080dfe023809440884a0c
+SHA1: 6a9f137bd8a53926fb31093d33e207736f90a98b
+SHA256: 4bb99c7c5e75be925431390f4f176ffa3a18cadad312501c75c9b66f6f1a1005
+SHA512: f0ba5c26f501cc7fa08d673b9f5915f2b148b9c56c597a9b72fef6715313f50e51eb0a2068f2aabbf7cdf3359d0ecaf975f945e33e18c63c43b54f743c38b931
 
 Package: infoga
 Version: 1.0
