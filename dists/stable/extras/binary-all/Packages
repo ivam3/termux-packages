@@ -1150,20 +1150,20 @@ SHA256: a877ff2fb1e6b3956481ea53e7d7b11fe6509d8d3b6ab49bb46d0c967e92d860
 SHA512: 67137f3e9776c433fdf9c56cd427edbe7851090b99a3985fa74292e1210c6d6caa23e811e926de2f3431438f81502636560874dabbe9200512aaf1141382341c
 
 Package: sherlock
-Version: 0.14.0
+Version: 0.14.3
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: git, python, python-numpy
+Depends: git, python, python-numpy, python-pandas
 Suggests: i-haklab
 Homepage: https://github.com/sherlock-project/sherlock
 Description: Hunt down social media accounts by username across social networks.
-Filename: dists/stable/extras/binary-all/sherlock_0.14.0_all.deb
+Filename: dists/stable/extras/binary-all/sherlock_0.14.3_all.deb
 Size: 1904
-MD5Sum: b3035d9b5a363051f84221cad628f63b
-SHA1: 332e05e781540c31372e1479d0a0e4aa49bf8fdf
-SHA256: 0cc278d36a2e0e8cb759310ff3a47788c8fa39bd841ede1c00083701d217e9d7
-SHA512: b63f20e70e9408f81db7414be6446bda328849d93f66823460044dc8b526156e7c9e51123d8f2da9125a203fdfd6e3f1d13b55fe4a2b340e28f6786c15ecc63b
+MD5Sum: 4c7019577b91b69298ff989af37ad048
+SHA1: 01d1f03ea0edc33aaffa1a3aa31af71da6e719ba
+SHA256: cd9e1b928258a0c6c2fb4a01410aa5dff0169e76504928c36acf6556650be646
+SHA512: 8fb59ed0cb560deb699eb2ac4dfec6c4a53aa43aab4c9be8f7bb1c0d3cbbac6a7fddc3da411754d1eb34324ab369e6fc7adb5e2be393ac2d8b2e58ad08df7a8f
 
 Package: slowhttptest
 Version: 1.8.3
