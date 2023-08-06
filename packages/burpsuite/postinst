@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
-lv="7.2.0"
+lv="7.3.0"
 echo "Downloading jar files (It could take a while) ..."
 wget -q --tries=20 https://portswigger.net/burp/releases/download \
 	-O ${HOME}/.local/share/burpsuite.jar
