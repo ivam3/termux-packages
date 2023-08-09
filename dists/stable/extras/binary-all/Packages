@@ -712,11 +712,11 @@ Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
 Filename: dists/stable/extras/binary-all/i-haklab_3.7.2_all.deb
-Size: 52418116
-MD5Sum: bcee43f370ae3d39ffd873640022ba2f
-SHA1: d4f4c30648d195d72f16c4ea60aa3f161617630f
-SHA256: 93c0d784a21bb9d51bc6a564e84432879196e426d5860d0732aa5be1722ae93b
-SHA512: 8fb98cd6e41958d724ce8a4fd646185c8a2da26961c41dd47b50e51ba193e9646a4f1bf341928718a4edfdafa37f60822b2b3b2826ac0d3329ff575e6d184d29
+Size: 52418412
+MD5Sum: d6961e3776e88f9f81b7c5ae002b3311
+SHA1: d1f41f49fe82030f5a657dfa898f220b6d639999
+SHA256: 82029822ae7b33e3706512c164863da1d277c8b9afb15ba1e26cbca55f0f3460
+SHA512: bf62b40ae7bf2a27bd72fe427def59cb3d98d0033c567b1848a7089526c298a2abdd2c314938e2694ec49f8dc1eeee47cb9725e81e42fcccded02c847f1cb04f
 
 Package: infoga
 Version: 1.0
@@ -1246,7 +1246,7 @@ SHA256: 434041e91d4fb70203dfdcafd6c96a679ac2947d152d16d80f054eaeaef740f7
 SHA512: 1278135e433b817e22ff137e18363e6243c6299e5b22792e3b6f098bb02364b3701ff68cde6290a615190000a45a6d5635efe023a804053ad574863997844e6d
 
 Package: termux-desktop-xfce
-Version: 1.0.3
+Version: 1.0.4
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
@@ -1254,12 +1254,12 @@ Depends: x11-repo, adwaita-icon-theme, atk, binutils-is-llvm, dbus-glib, dconf, 
 Suggests: i-haklab, burpsuite, ghidra, hydra, putty, maltego, zaproxy
 Homepage: https://github.com/ivam3/termux-packages
 Description: A Meta-package and data, themes, icons and wallpapers to configurate a desktop enviroment for Termux with xfce4 as window manager.
-Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0.3_all.deb
-Size: 3596
-MD5Sum: 0a0c3ad309af451bf3606b75d0ec13eb
-SHA1: ab3c07877e6e0b5ecb9881238400a6b4f1858f35
-SHA256: c3d46385ce1c36edc7db2cf8ff10b87daf3fce00870436e4b0d11938cc3c9a62
-SHA512: e77e65c90d269815db2fd5663b5e63e030355e2785e57b3f7e2cfcbacabf38c22976f1b77dc68ba135e13e772350c47ca55aa3eba80ccd73af14ad83ed9b33cd
+Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0.4_all.deb
+Size: 3652
+MD5Sum: 387bbb6bfdf8bb98563918353632044d
+SHA1: 4b72eea0fefcb95a5a15b1b1c9b0915ab382364c
+SHA256: 1acc75d8b15bb6a8fd7773e010b4d97ed6952aafaa45e96d04b4ca684036aa2c
+SHA512: 88fff468b34f47d722ed37d0ce33a998141fc4b5aef75430d84c58123f3ac37dbdc39b84fba8be660a1302efd71d50fd9afa5bf952784a2c536b996a644af69d
 
 Package: termux-docker-qemu
 Version: 0.3.3
