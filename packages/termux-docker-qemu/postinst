@@ -81,8 +81,8 @@ select os in alpine;do
 #        m="$arch";break
 #      done
       m="x86_64"
-      declare ref=https://dl-cdn.alpinelinux.org/alpine/v3.17/releases/$m/
-      declare iso=alpine-virt-3.17.2-$m.iso
+      declare ref=https://dl-cdn.alpinelinux.org/alpine/v3.18/releases/$m/
+      declare iso=alpine-virt-3.18.0-$m.iso
       break
       ;;
     kalilinux)
