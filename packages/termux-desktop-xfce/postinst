@@ -44,9 +44,9 @@ wget --tries=20 --quiet https://github.com/ivam3/termux-packages/raw/gh-pages/pa
     sleep 10
   }
   echo "Installing submodules ..."
-  git clone --recurse-submodules https://github.com/termux/termux-x11 ${TMPDIR}/desktmp/termux-x11@
+  git clone --recurse-submodules https://github.com/termux/termux-x11 ${TMPDIR}/desktmp/termux-x11
 } || { echo "E: Termux Wayland app missing ... Please install it manually.";}
-rm -rf ${TMPDIR}/*
+rm -rf ${TMPDIR}/desktmp
 
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
