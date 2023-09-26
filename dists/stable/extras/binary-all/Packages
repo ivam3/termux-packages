@@ -96,7 +96,7 @@ SHA256: 536305743035e5e7e2bacc3e42e76e820a88511dc6a108cc83a71e3d6a68d192
 SHA512: 29a5056695d10defabda83494c97097d3fcce8a16c2d9d4d164138869f4405837fb9e76880bf8c19531aab4a6c25d9887c1ffa9e5a41a559b26dd50021a637ea
 
 Package: apktool
-Version: 2.7.0
+Version: 2.8.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
@@ -104,12 +104,12 @@ Depends: openjdk-17, aapt, wget
 Suggests: i-haklab
 Homepage: https://bitbucket.org/iBotPeaches/apktool/src/master/
 Description: A tool for reverse engineering Android apk files
-Filename: dists/stable/extras/binary-all/apktool_2.7.0_all.deb
-Size: 1824
-MD5Sum: d6c4e975020f6939f1b20ea202fa77b9
-SHA1: e8cbdf59c77cadc4d492758dbbfad62b12f52198
-SHA256: 57ddabf1819bba8b4e4d789c38e335d0b64bb50ef361e85dd6377b8535c9bd45
-SHA512: 60a37061bb35d54e6da103f11b94dc6d62c42d4c3782bb959f7afeb3f32335f5032e261b44e9e8473e668a15d31ee751c8ce1ad8d5ecb54fe53af8cb29032c84
+Filename: dists/stable/extras/binary-all/apktool_2.8.1_all.deb
+Size: 1828
+MD5Sum: d5676fb13c7cb8b8799afc17fe040747
+SHA1: 27242f3c7d18eead5737e035f80249e06afda256
+SHA256: fbcb71b11bd8f301538654811a3004ed07b5e379c28d3bb878d8d5f62bb5ecbe
+SHA512: ce97833c864d8baedf01f2466b85cb61101fe7ad251f57e46a52591c0a9876b0be72bdc9fc81268ae9909cf63b68b0237be7a41646c9771ac2b1410b54d0fda9
 
 Package: appshark
 Version: 0.1.2
@@ -354,17 +354,17 @@ Package: dnsenum
 Version: 1.2.4
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
+Installed-Size: 1
 Depends: git, perl
 Suggests: i-haklab
 Homepage: https://github.com/fwaeytens/dnsenum
 Description: Multithreaded perl script to enumerate DNS information of a domain and to discover non-contiguous ip blocks.
 Filename: dists/stable/extras/binary-all/dnsenum_1.2.4_all.deb
-Size: 2048
-MD5Sum: 4c545f0e26216d45e12ed87cca06ebdd
-SHA1: 0d5396cadb9ce8972be61c55db20927de9874874
-SHA256: 50f4534da4d35b84781afb233bf41b14b0293596085ae1842520eb8ee304f0d5
-SHA512: 5a455ddb0ff195cbb81fe9b8e58f99c15d97ad47c6eaa9cd550c701695da9525b773464decdf1893b3307782475fc2a342ae085f5687b020cab8a97b9fdcde89
+Size: 1932
+MD5Sum: c872721dd120cdf4502cb4ccea48971a
+SHA1: faf629f7f60b4094275662c01096a96a2c6cca75
+SHA256: a036a1636b15ca87ea4c5e6e8179628991a865d5a1be9af213287e5b975027a8
+SHA512: 39e2572c934ea96cee13a5f7196a5a09ae707600366f2b370fd51825895e5f70cfe4c9f9ce3b70f51266b5867a07495ecdd08f35b64818d477d5349e62c59d93
 
 Package: dos-a-tool
 Version: 2.0
@@ -783,20 +783,20 @@ SHA256: d42dba1e4c761df4f928200e047665396804aa6aed2669fb2bf6202eb1591ba6
 SHA512: ce09caed45b939c83edf635ec8c57f69c3c3eefc715a3a370686a1e988af9d01ff63baef65fb8046c8941967328a39e5eab0db77e84fe3bb239b14126d442575
 
 Package: kerbrute
-Version: 0.9.18
+Version: 0.11.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
-Depends: python2, git, rust
+Installed-Size: 1
+Depends: python, git
 Suggests: i-haklab
 Homepage: https://github.com/TarlogicSecurity/kerbrute
 Description: An script to perform kerberos bruteforcing by using the Impacket library.
-Filename: dists/stable/extras/binary-all/kerbrute_0.9.18_all.deb
-Size: 2000
-MD5Sum: 6985aa1daacc40d82bc722e0b7423596
-SHA1: 58b3e00f93608926a690c476fec7abc84d102a80
-SHA256: caec3615599e609c6fdfdaa541f3f1ab81ae54602908345cc27cd4ab521559b9
-SHA512: 62e0799be53c5f32c869dad5165bf36c62a0937509e0788c2478e24b66c7e79f89005001ce3a38ad26e023c005225c36022886b15f6921ff26cad89cba24df9f
+Filename: dists/stable/extras/binary-all/kerbrute_0.11.0_all.deb
+Size: 1880
+MD5Sum: d62eb0b4a016f54d6ce8cc6331740c9a
+SHA1: 29f4be01535a3976a5f668b10c2013b77a2bb13d
+SHA256: 4ddd29aeb7987c7a3f4ead2e95452074b0e17993a2e73d916ea41dcb105f83dc
+SHA512: be0563b6b52a6e381ace929166646e56e96d8a039405195674e62eae177444d7ba2807e23ae9320e6b235e82eaaaff6305d96806bbb11650ff9fe9d35d6718fe
 
 Package: lockphish
 Version: 1.0-1
@@ -1262,20 +1262,20 @@ SHA256: 1acc75d8b15bb6a8fd7773e010b4d97ed6952aafaa45e96d04b4ca684036aa2c
 SHA512: 88fff468b34f47d722ed37d0ce33a998141fc4b5aef75430d84c58123f3ac37dbdc39b84fba8be660a1302efd71d50fd9afa5bf952784a2c536b996a644af69d
 
 Package: termux-docker-qemu
-Version: 0.3.4
+Version: 0.3.5
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
-Depends: termux-api, openssh, wget, procps, qemu-utils, qemu-common, qemu-system-x86-64-headless
+Depends: termux-api, openssh, wget, samba, procps, qemu-utils, qemu-common, qemu-system-x86-64-headless
 Suggests: i-haklab
 Homepage: https://www.docker.com/products/docker-desktop/
 Description: Docker container for running x86,x86_64,armv7 and aarch64 Linux virtual machines using QEMU
-Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.3.4_all.deb
-Size: 3880
-MD5Sum: 87a96d74613f6dbc3333607451e2cccc
-SHA1: 4063bd9d9cb0e532ff06b32430859c676cc5a20e
-SHA256: 3b7d2f56420826c2d6dfc6e2144a654234ce94a1a206e11d4df15143f42000cc
-SHA512: 2dc90f5e4837cd305445cc762218d586fbcfd720e1556bd564b45bd4f0dc940299c8c2f94bd77999a35e55efb5f907757cf3c99bdadb7ef98658ca43a5053ae8
+Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.3.5_all.deb
+Size: 4124
+MD5Sum: aa7048a17375887a7c940b9e6f8b531e
+SHA1: d49a9e9f89df84dd3f74ee87e352bf511383a5e4
+SHA256: 642afa9d255e06d65dcbe83c6448ee29089b4a5ca7de9374ff66b52713954fcc
+SHA512: e1d4e0c023cde2c2e36eb5745dd4ba7dcaf12c86bfbd7b97cddb91ed0a1e476086a1115aa213ca3d0ceb586a2117b575de9c31dd4e9377d3996d4bbdbd1f7238
 
 Package: trape
 Version: 2.0

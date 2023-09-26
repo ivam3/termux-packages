@@ -8,21 +8,23 @@ install(){
   [[ -e $iso ]] && rm -rf $iso
   wget --tries=20 --quiet --progress=dot $ref$iso
   # Create disk (note it won't actually take 5GB of space, more like 500MB)
+  read -p "Image size [default: 10G]? " size
   echo "Creating $os image."
   [[ $os.img ]] && rm -rf $os.img
-  qemu-img create -f qcow2 $os.img 5G
+  [[ -z $size ]] && size="10G"
+  qemu-img create -f qcow2 $os.img $size
 
   if [[ $os = alpine ]]; then 
     printf "\e[33m"
     echo '''
-    ____  _____    _    ____  __  __ _____
+     ____  _____    _    ____  __  __ _____
     |  _ \| ____|  / \  |  _ \|  \/  | ____|
     | |_) |  _|   / _ \ | | | | |\/| |  _|
     |  _ <| |___ / ___ \| |_| | |  | | |___
     |_| \_\_____/_/   \_\____/|_|  |_|_____|
     ::::::::::::::::::::::::::::::::::::::::'''
     echo -en "\e[0mBoot process will start, in middle of it you will login to Linux OS
-    Do it as \e[31mROOT\e[0m user with \e[32mempty\e[0m password.
+    Do it as \e[31mroot\e[0m user.
     Once in OS terminal run one by one the next commands:
 
       $ setup-interfaces
@@ -41,17 +43,27 @@ install(){
     press \e[33mENTER\e[0m to continue" && read enter
 
     # Boot it up
+    ip="$(ifconfig 2>/dev/null|grep -oE '([0-9]{1,3}\.){3}'|grep -v 255|grep -v 127|tail -n 1)"
+
+#    qemu-system-x86_64 -machine q35 -m $(free --mega|grep "Mem"|awk '{print $2}') -smp \
+#      cpus=$(nproc) -cpu qemu64 -vga virtio -full-screen -usb \
+#      -drive if=pflash,format=raw,read-only=on,file=$PREFIX/share/qemu/edk2-x86_64-code.fd \
+#      -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 \
+#      -cdrom $iso \
+#      -nographic $os.img
+          
     qemu-system-x86_64 -machine q35 -m $(free --mega|grep "Mem"|awk '{print $2}') -smp \
       cpus=$(nproc) -cpu qemu64 -vga virtio -full-screen -usb \
       -drive if=pflash,format=raw,read-only=on,file=$PREFIX/share/qemu/edk2-x86_64-code.fd \
-      -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 \
+      -netdev user,id=n1,net=$ip.0/24,dhcpstart=$ip.9,smb=mnt/,smbserver=$ip.9,hostfwd=tcp::2222-:22 \
+      -device virtio-net,netdev=n1 \
       -cdrom $iso \
       -nographic $os.img
 
   elif [[ $os = kalilinux ]]
   then
     echo '''
-    ____  _____    _    ____  __  __ _____
+     ____  _____    _    ____  __  __ _____
     |  _ \| ____|  / \  |  _ \|  \/  | ____|
     | |_) |  _|   / _ \ | | | | |\/| |  _|
     |  _ <| |___ / ___ \| |_| | |  | | |___
@@ -66,8 +78,7 @@ install(){
 
 update(){
   echo -en """[+] Last updates:
-   + Fixed E: unmmet dependencies
-   - KaliLinux OS removed for incompatibility
+   + Share files between Termux and Alpine with PATH $HOME/.local/share/termux-docker-qemu/mnt and /mnt
    + Enable graphical enviroment with xfce4+vncserver
    + Enable option to keep the image previous installed\n"""
 }

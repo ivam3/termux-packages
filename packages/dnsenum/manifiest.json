@@ -8,7 +8,6 @@
   "suggests": ["i-haklab"],
   "description": "Multithreaded perl script to enumerate DNS information of a domain and to discover non-contiguous ip blocks.",
   "files" :{
-    "dnsenum-installer": "bin/dnsenum-installer",
     "dnsenum": "bin/dnsenum"
   }
 }

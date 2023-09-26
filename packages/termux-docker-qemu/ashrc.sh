@@ -1,4 +1,4 @@
-[[ ! -e /dev/net/tun ]] || { mkdir -p /dev/net/ && mknod /dev/net/tun c 10 200;}
+[[ ! -e /dev/net/tun ]] || { mkdir -p /dev/net/ 2>/dev/null && mknod /dev/net/tun c 10 200;}
 [[ -e /etc/resolv.conf ]] || { touch /etc/resolv.conf;}
 chk=$(grep -oE "8.8.8.8" /etc/resolv.conf)
 if [[ -z $chk ]]; then

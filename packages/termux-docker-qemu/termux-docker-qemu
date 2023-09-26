@@ -13,10 +13,13 @@ os="$1"
   cd ${HOME}/.local/share/termux-docker-qemu/$os
   case "$os" in
     alpine|kalilinux)
+      ip=$(ifconfig 2>/dev/null|grep -oE '([0-9]{1,3}\.){3}'|grep -v 255|grep -v 127|tail -n 1)
       qemu-system-x86_64 -machine q35 -m $(free --mega|grep "Mem"|awk '{print $2}') -smp \
         cpus=$(nproc) -cpu qemu64 -vga virtio -full-screen -usb \
         -drive if=pflash,format=raw,read-only=on,file=$PREFIX/share/qemu/edk2-x86_64-code.fd \
-        -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 \
+        -netdev user,id=n1,net=$ip.0/24,dhcpstart=$ip.9,smb=mnt,smbserver=$ip.9,hostfwd=tcp::2222-:22 \
+        -device virtio-net,netdev=n1 \
+#        -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 \
         $XorCLi $os.img
       ;;
 #    kakalilinux)

@@ -533,7 +533,6 @@ data/data/com.termux/files/usr/bin/d-tect-installer                             
 data/data/com.termux/files/usr/bin/dex2jar                                       dex2jar
 data/data/com.termux/files/usr/bin/dex2jar-installer                             dex2jar
 data/data/com.termux/files/usr/bin/dnsenum                                       dnsenum
-data/data/com.termux/files/usr/bin/dnsenum-installer                             dnsenum
 data/data/com.termux/files/usr/bin/DoS-A-Tool                                    dos-a-tool
 data/data/com.termux/files/usr/bin/embed                                         embed
 data/data/com.termux/files/usr/bin/embed-installer                               embed
@@ -3790,7 +3789,6 @@ data/data/com.termux/files/usr/bin/ipgeolocation-installer                      
 data/data/com.termux/files/usr/bin/john                                          johntheripper
 data/data/com.termux/files/usr/bin/jython                                        jython-lts
 data/data/com.termux/files/usr/bin/kerbrute                                      kerbrute
-data/data/com.termux/files/usr/bin/kerbrute-installer                            kerbrute
 data/data/com.termux/files/usr/bin/lockphish                                     lockphish
 data/data/com.termux/files/usr/bin/maltego                                       maltego
 data/data/com.termux/files/usr/share/applications/maltego/img/maltego.png        maltego
