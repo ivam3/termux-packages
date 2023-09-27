@@ -75,6 +75,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [routersploit](https://github.com/threat9/routersploit) | Open-source exploitation framework dedicated to embedded devices. |
 | [saycheese](https://github.com/hangetzzu/saycheese) | Grab target's webcam shots by link. |
 | [sayhello](https://github.com/d093w1z/sayhello) | Capturing audio (.wav) from target using a link. |
+| [seclists](https://github.com/danielmiessler/SecLists) | SecLists it's a collection of multiple types of lists used during security assessments, collected in one place. |
 | [seeker](https://github.com/thewhiteh4t/seeker) | Accurately Locate Smartphones using Social Engineering. |
 | [shc](http://www.datsi.fi.upm.es/~frosal/sources/shc.html) | The Shell Script Compiler (SHC) encodes and encrypts shell scripts into executable binaries. |
 | [shellsploit](https://github.com/vasco2016/shellsploit-framework) |It let's you generate customized shellcodes, backdoors, injectors for various operating system. And let's you obfuscation every byte via encoders. |
