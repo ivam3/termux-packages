@@ -3822,6 +3822,7 @@ data/data/com.termux/files/usr/bin/routersploit                                 
 data/data/com.termux/files/usr/bin/saycheese                                     saycheese
 data/data/com.termux/files/usr/bin/sayhello                                      sayhello
 data/data/com.termux/files/usr/bin/sayhello-installer                            sayhello
+data/data/com.termux/files/usr/bin/seclists-installer                            seclists
 data/data/com.termux/files/usr/bin/seeker                                        seeker
 data/data/com.termux/files/usr/bin/seeker-installer                              seeker
 data/data/com.termux/files/usr/bin/shc-installer                                 shc

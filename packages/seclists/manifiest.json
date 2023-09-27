@@ -1,0 +1,13 @@
+{
+  "name": "seclists",
+  "version": "8.23.0",
+  "arch": "all",
+  "homepage": "https://github.com/danielmiessler/SecLists",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["unzip, wget"],
+  "suggests": ["i-haklab, dirb, gobuster"],
+  "description": "SecLists it's a collection of multiple types of lists used during security assessments, collected in one place.",
+  "files" :{
+    "seclists-installer": "bin/seclists-installer"
+  }
+}

@@ -1101,6 +1101,22 @@ SHA1: b59e8e53e84f9b2d4309e0fe8878f166a79e5ff8
 SHA256: 1ac564672203e1abd2583bbcefc9b23a4ffe6d57abf60afd87c6e346a89b5f41
 SHA512: 9408d4fcdfdcddd1cda304e084faa1c3a05d8a3df8716a6fafdb43d4d0efe7a9c8c3c342c3d9ad64f0d4deb380ec9061148960b6365fdba308cf7eb189315b89
 
+Package: seclists
+Version: 8.23.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: unzip, wget
+Suggests: i-haklab, dirb, gobuster
+Homepage: https://github.com/danielmiessler/SecLists
+Description: SecLists it's a collection of multiple types of lists used during security assessments, collected in one place.
+Filename: dists/stable/extras/binary-all/seclists_8.23.0_all.deb
+Size: 1936
+MD5Sum: 3d15b29a4a68f87040b0bb426601ae4d
+SHA1: 1acd4677a647c0d9e738ed3516bb23dbdaabdac0
+SHA256: 108df85471d460865ad87e5d2fc0dd8e9c011665b562f5f441e83cb475423636
+SHA512: 85cc8de08b733c14b1384e35f67f2df7483986ca8dbeba85be08ef1c756a5f3eb397979c21cb5497d42bc1d8202798141c9a322307c6e105baf69d28333ade44
+
 Package: seeker
 Version: 1.2.7
 Architecture: all
