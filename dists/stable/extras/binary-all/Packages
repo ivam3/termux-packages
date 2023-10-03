@@ -783,20 +783,20 @@ SHA256: d42dba1e4c761df4f928200e047665396804aa6aed2669fb2bf6202eb1591ba6
 SHA512: ce09caed45b939c83edf635ec8c57f69c3c3eefc715a3a370686a1e988af9d01ff63baef65fb8046c8941967328a39e5eab0db77e84fe3bb239b14126d442575
 
 Package: kerbrute
-Version: 0.11.0
+Version: 10.03.2023
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: python, git
+Depends: go, git, make
 Suggests: i-haklab
-Homepage: https://github.com/TarlogicSecurity/kerbrute
+Homepage: https://github.com/ropnop/kerbrute
 Description: An script to perform kerberos bruteforcing by using the Impacket library.
-Filename: dists/stable/extras/binary-all/kerbrute_0.11.0_all.deb
-Size: 1880
-MD5Sum: d62eb0b4a016f54d6ce8cc6331740c9a
-SHA1: 29f4be01535a3976a5f668b10c2013b77a2bb13d
-SHA256: 4ddd29aeb7987c7a3f4ead2e95452074b0e17993a2e73d916ea41dcb105f83dc
-SHA512: be0563b6b52a6e381ace929166646e56e96d8a039405195674e62eae177444d7ba2807e23ae9320e6b235e82eaaaff6305d96806bbb11650ff9fe9d35d6718fe
+Filename: dists/stable/extras/binary-all/kerbrute_10.03.2023_all.deb
+Size: 1980
+MD5Sum: af885897e678706056b0f3295453e09e
+SHA1: 2a0db269c547253e205e70491f42c5c889b2e4c2
+SHA256: f1d0856fb70365dcfe74344bccea3d052328f769212318659b82a37fbb4dc547
+SHA512: aaf6de7ef41d62921a7c37f67af73aa4d405e37b487a587569df880e2a44e59ac0cc80c3ff5708bdb3dbc90f97b5d6e971a57985247666b6daf06378b798d8c7
 
 Package: lockphish
 Version: 1.0-1
@@ -1278,7 +1278,7 @@ SHA256: 1acc75d8b15bb6a8fd7773e010b4d97ed6952aafaa45e96d04b4ca684036aa2c
 SHA512: 88fff468b34f47d722ed37d0ce33a998141fc4b5aef75430d84c58123f3ac37dbdc39b84fba8be660a1302efd71d50fd9afa5bf952784a2c536b996a644af69d
 
 Package: termux-docker-qemu
-Version: 0.3.5
+Version: 0.3.6
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
@@ -1286,12 +1286,12 @@ Depends: termux-api, openssh, wget, samba, procps, qemu-utils, qemu-common, qemu
 Suggests: i-haklab
 Homepage: https://www.docker.com/products/docker-desktop/
 Description: Docker container for running x86,x86_64,armv7 and aarch64 Linux virtual machines using QEMU
-Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.3.5_all.deb
-Size: 4124
-MD5Sum: aa7048a17375887a7c940b9e6f8b531e
-SHA1: d49a9e9f89df84dd3f74ee87e352bf511383a5e4
-SHA256: 642afa9d255e06d65dcbe83c6448ee29089b4a5ca7de9374ff66b52713954fcc
-SHA512: e1d4e0c023cde2c2e36eb5745dd4ba7dcaf12c86bfbd7b97cddb91ed0a1e476086a1115aa213ca3d0ceb586a2117b575de9c31dd4e9377d3996d4bbdbd1f7238
+Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.3.6_all.deb
+Size: 4220
+MD5Sum: cfcf2028e0addd0596ebb722032efe80
+SHA1: a8acdbdd0d2103845c0081a16f55d87f5b050900
+SHA256: f905fe0831b1712df98dc75fbd55aeec730e3eaf3ca397e8796e1c38dfe2a969
+SHA512: 22c5eeea3c337f3f3a893980ec800b284c7d452d865db0038ea888c723464b4c9245203fdf2aa0e26699fcd59576dc5a13d87f03821aa5a4bcd3076dab97057e
 
 Package: trape
 Version: 2.0

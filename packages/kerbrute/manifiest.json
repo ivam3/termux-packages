@@ -1,10 +1,10 @@
 {
   "name": "kerbrute",
-  "version": "0.11.0",
+  "version": "10.03.2023",
   "arch": "all",
-  "homepage": "https://github.com/TarlogicSecurity/kerbrute",
+  "homepage": "https://github.com/ropnop/kerbrute",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["python, git"],
+  "depends": ["go, git, make"],
   "suggests": ["i-haklab"],
   "description": "An script to perform kerberos bruteforcing by using the Impacket library.",
   "files" :{

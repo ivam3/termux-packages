@@ -5,10 +5,20 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 B="\e[34m"
+
+case `dpkg --print-architecture` in 
+  aarch64|amd64|x86_64) 
+    arch="amd64" ;;
+  arm|i*86|x86)
+    arch="386" ;;
+  *)
+    echo "unknown architecture"; exit 1 ;;
+esac
+
 if [[ -d ${HOME}/.local/share/kerbrute/dist ]]
 then
   cd ${HOME}/.local/share/$(basename $0)/dist >/dev/null
-  ./$(basename $0) ${@:1}
+  ./$(basename $0)_linux_$arch ${@:1}
 else
   echo -en $R"E:$W $(basename $0) PATH missing ...$Y Aborting.$W"
   exit 1
