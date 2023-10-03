@@ -8,10 +8,10 @@ install(){
   [[ -e $iso ]] && rm -rf $iso
   wget --tries=20 --quiet --progress=dot $ref$iso
   # Create disk (note it won't actually take 5GB of space, more like 500MB)
-  read -p "Image size [default: 10G]? " size
+  read -p "Image size [default: 30G]? " size
   echo "Creating $os image."
   [[ $os.img ]] && rm -rf $os.img
-  [[ -z $size ]] && size="10G"
+  [[ -z $size ]] && size="30G"
   qemu-img create -f qcow2 $os.img $size
 
   if [[ $os = alpine ]]; then 
@@ -44,21 +44,20 @@ install(){
 
     # Boot it up
     ip="$(ifconfig 2>/dev/null|grep -oE '([0-9]{1,3}\.){3}'|grep -v 255|grep -v 127|tail -n 1)"
-
+    mRAM="12288" #$(free --mega|grep "Mem"|awk '{print $2}')
+    
+    qemu-system-x86_64 -machine q35 -m $mRAM -smp \
+      cpus=$(nproc) -cpu qemu64 -vga virtio -full-screen -usb \
+      -drive if=pflash,format=raw,read-only=on,file=$PREFIX/share/qemu/edk2-x86_64-code.fd \
+      -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 \
+      -cdrom $iso \
+      -nographic $os.img      
 #    qemu-system-x86_64 -machine q35 -m $(free --mega|grep "Mem"|awk '{print $2}') -smp \
 #      cpus=$(nproc) -cpu qemu64 -vga virtio -full-screen -usb \
 #      -drive if=pflash,format=raw,read-only=on,file=$PREFIX/share/qemu/edk2-x86_64-code.fd \
-#      -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 \
+#      -netdev user,id=n1,net=$ip.0/24,dhcpstart=$ip.9,smb=mnt/,smbserver=$ip.9,hostfwd=tcp::2222-:22 \
+#      -device virtio-net,netdev=n1 \
 #      -cdrom $iso \
-#      -nographic $os.img
-          
-    qemu-system-x86_64 -machine q35 -m $(free --mega|grep "Mem"|awk '{print $2}') -smp \
-      cpus=$(nproc) -cpu qemu64 -vga virtio -full-screen -usb \
-      -drive if=pflash,format=raw,read-only=on,file=$PREFIX/share/qemu/edk2-x86_64-code.fd \
-      -netdev user,id=n1,net=$ip.0/24,dhcpstart=$ip.9,smb=mnt/,smbserver=$ip.9,hostfwd=tcp::2222-:22 \
-      -device virtio-net,netdev=n1 \
-      -cdrom $iso \
-      -nographic $os.img
 
   elif [[ $os = kalilinux ]]
   then
@@ -72,7 +71,7 @@ install(){
     echo -en "\e[0mBoot process will start\nNow open your VNC viewer over 127.0.0.1:5900 and set it"
     echo -en "Press \e[33mENTER\e[0m to start";read enter
     #Boot it up
-    qemu-system-x86_64 -hda ./$os.img -boot d -cdrom kali-linux-2022.3-installer-i386.iso -m 1024 -usb &
+    qemu-system-x86_64 -hda ./$os.img -boot d -cdrom kali-linux-2022.3-installer-i386.iso -m $mRAM -usb &
   fi
 }
 
@@ -87,13 +86,13 @@ echo "[?] Choose an Operative System:"
 select os in alpine;do
   case $os in
     alpine)
-#      echo "[?] Choose an architecture:"
-#      select arch in x86 x86_64 aarch64 armv7;do
-#        m="$arch";break
-#      done
-      m="x86_64"
-      declare ref=https://dl-cdn.alpinelinux.org/alpine/v3.18/releases/$m/
-      declare iso=alpine-virt-3.18.0-$m.iso
+      echo "[?] Choose an architecture [recommended x86_64]:" 
+      select arch in x86 x86_64 aarch64 armv7 armhf;do
+        m="$arch";break
+      done
+      #m="x86_64"
+      declare ref=https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/$m/
+      declare iso=alpine-virt-3.18.4-$m.iso
       break
       ;;
     kalilinux)
