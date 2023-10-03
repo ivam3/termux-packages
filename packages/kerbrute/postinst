@@ -1,12 +1,12 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
 echo "Cloning repository ..."
-git clone --quiet https://github.com/TarlogicSecurity/kerbrute ${HOME}/.local/share/kerbrute
+git clone --quiet https://github.com/ropnop/kerbrute ${HOME}/.local/share/kerbrute
 [[ -d ${HOME}/.local/share/kerbrute ]] && {
-  echo "Installing requirements ...";
+  echo "build binaries ...";
   chmod 751 -R ${HOME}/.local/share/kerbrute;
   cd ${HOME}/.local/share/kerbrute;
-  python -m pip --no-color --quiet --no-cache-dir install -r requirements.txt;
+  make linux
   echo "[*] kerbrute installation finished."
   echo "[*] Run 'kerbrute' to execute it."
 } || {
