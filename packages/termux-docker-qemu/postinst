@@ -10,7 +10,10 @@ install(){
   # Create disk (note it won't actually take 5GB of space, more like 500MB)
   read -p "Image size [default: 30G]? " size
   read -p "RAM size [default in gigas: 12]? " mRAM
-  [[ -z $mRAM ]] && { mRAM="12288"; } || { mRAM=$(expr 1024 \* $mRAM); }
+  
+  [[ -z $mRAM ]] && { mRAM="12288"; } || { mRAM=$(expr 1024 \* $mRAM);}
+  sed "s|mRAM|$mRAM|" -i ${PREFIX}/bin/termux-docker-qemu
+  
   echo "Creating $os image."
   [[ $os.img ]] && rm -rf $os.img
   [[ -z $size ]] && size="30G"
