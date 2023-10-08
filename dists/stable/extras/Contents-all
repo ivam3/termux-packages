@@ -3806,8 +3806,6 @@ data/data/com.termux/files/usr/bin/phomber                                      
 data/data/com.termux/files/usr/bin/phomber-installer                             phomber
 data/data/com.termux/files/usr/bin/phonesploit                                   phonesploit
 data/data/com.termux/files/usr/bin/phonesploit-installer                         phonesploit
-data/data/com.termux/files/usr/share/applications/putty/img/putty.png            putty
-data/data/com.termux/files/usr/share/applications/putty/putty.desktop            putty
 data/data/com.termux/files/usr/bin/pybelt                                        pybelt
 data/data/com.termux/files/usr/bin/pybelt-installer                              pybelt
 data/data/com.termux/files/usr/bin/quack                                         quack

@@ -1,9 +1,3 @@
-cambio de nombre checker.py a webhackshl_checker.py
-
-cambio de nombre List a listofbooks y listoftutorials
-
-chmod 511 .local/etc/i-Haklab/*
-
 rm $PREFIX/etc/apache2/httpd.conf
 ln -s ~/.local/etc/apache2/httpd.conf $PREFIX/etc/apache2/httpd.conf
 

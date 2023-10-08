@@ -207,20 +207,20 @@ SHA256: feef86991f89fffe0dc5c60e439511da84ebefa4b14a280d8daf61480fab5358
 SHA512: b9c69836d23f95a1e35d7dc5bb6795aea6aab750ee697dabbb86342f472078035e03080bc455aa219771c871b3f0c21fd8547f3ec9e9c8907404d54cbe0f9230
 
 Package: burpsuite
-Version: 2023.9.1
+Version: 2023.10.1.2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 37
-Depends: openjdk-17, wget, jython-lts
+Depends: openjdk-17, wget, jython-lts, giflib
 Suggests: termux-x11, xwayland, i-haklab
 Homepage: https://portswigger.net
 Description: An integrated platform/graphical tool for performing security testing of web applications.
-Filename: dists/stable/extras/binary-all/burpsuite_2023.9.1_all.deb
-Size: 36972
-MD5Sum: 7f777327d365c62d72800502485cfc9d
-SHA1: 371aa3c9c09ad9015b0ed444581d6369be981ed5
-SHA256: f9affcf2def871ce2014b0b1bd372b1ccc5b7c23e9f6f6390b135c37816dfefe
-SHA512: d66ca840742de5d96dac0a775c7cfd7e6bf84ccc419bc17be5c88f31457f12f684d022f03246fcf2f4ac829f263cf1a6b60a39aa5f47e24d980da4c849068321
+Filename: dists/stable/extras/binary-all/burpsuite_2023.10.1.2_all.deb
+Size: 36976
+MD5Sum: 89f933b4a87b015fbe2c489dd22a93ac
+SHA1: a3852a66f208ba087321719659c92cfc524e9dfe
+SHA256: 1c619300ac8fc3a856b1043aaff32ac341e1e2b36aa457c72eb3bf346f0c225a
+SHA512: 9a9ddd25aa78e03a23a35303cf7a89ebb070b087defd138f4e77eb728fd72c3949f71728fe5d93cb047a50610969595d67e96ec100654a5e540f3e5341786731
 
 Package: cewl
 Version: 5.5.2
@@ -863,19 +863,19 @@ SHA256: 01d42b81cabe3c81d54d97f8035de6022f67575cd98c1e0d431d17e71cd32f16
 SHA512: 920006a5c8ad092b6572432ac68522b4515e4b9f0d7209be6cfdbf637eb0d57574483d98fb8470404d27dd72e7c96fb181778cccbd3ae469d0426eb01e900d67
 
 Package: ngrok
-Version: 2.3.40
+Version: 3.3.5
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 4
 Depends: wget, proot, openssh
 Homepage: https://ngrok.com
 Description: A cross-platform application that exposes local server ports to the Internet.
-Filename: dists/stable/extras/binary-all/ngrok_2.3.40_all.deb
+Filename: dists/stable/extras/binary-all/ngrok_3.3.5_all.deb
 Size: 2396
-MD5Sum: 9a53826484eebed415baf3578bcf4f2d
-SHA1: dee7725d38d131ae7c29be0be0503257e764161e
-SHA256: 08297fd5cca7034d8f29b96e882425a0c773947b41370816572cc388737edaf5
-SHA512: 975f8321e608690075206e01c6d0d910f49e6a16a829c7c0924e39d6fc085c85c959ddad4bb0015892eeeb4bdf6a8a5c0a1c8bada89281015b9b971a47ae2e19
+MD5Sum: 2c2d6a703f204669b6e99be6e86d0535
+SHA1: 51c92693961da0745eeed0e9554b889f6a87ed9e
+SHA256: 8c01dfcc90426ab9ecf478dc329169d1762140811e50c0a0c5f990d5f28f17a9
+SHA512: ef51e8253047f4f0b7d3416573f600e8c424031b7009e982f72fcea0d21ec8c1d2268cba010495d973c91d01d7ec16fbe822b2f79aed0624350088600fd95dd7
 
 Package: nikto
 Version: 2.1.6
@@ -940,22 +940,6 @@ MD5Sum: 4fe9dfea42b5814db76f5b1cb7135310
 SHA1: 7b1a32e71617ecd59b577cf5574bcde3fed4488c
 SHA256: 7a4daa3966d05f226868576c08b7d65c17584efc259530ed18eb169b5cddba88
 SHA512: 20b296494695dfbf82de86e013c81e099ee6e2bbb2a8a1ebca0c546afc1056cf5343f1a12c691916eab3712045ae3381402916f5d94582a8b6774f8dd30831e7
-
-Package: putty
-Version: 0.77
-Architecture: all
-Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 53
-Depends: x11-repo, clang, cmake, openssh, wget, tar, putty-tools
-Suggests: i-haklab
-Homepage: https://www.ssh.com/academy/ssh/putty/linux
-Description: Graphical terminal program that supports the SSH, telnet, and rlogin protocols and connecting to serial ports.
-Filename: dists/stable/extras/binary-all/putty_0.77_all.deb
-Size: 55388
-MD5Sum: 52e000713d2b2a01d419dbae66cf4e9a
-SHA1: 68e564db3155908fab4a568d6521d4e070c41452
-SHA256: f6bb7d4f06ee24e7c0ffc439a1b4f110220c46c5ff00d4c973261c5a115e24ef
-SHA512: 4ed18f91830ddba2c3e894ed8388120b645dd4884646a460e7c13571adac0f9911ddd11c5fb99021ef806471d6a38f6b44a5b3b245a8693aeb9e48463faf681f
 
 Package: pybelt
 Version: 1.0
