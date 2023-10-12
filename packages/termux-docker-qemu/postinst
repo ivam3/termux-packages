@@ -8,15 +8,20 @@ install(){
   [[ -e $iso ]] && rm -rf $iso
   wget --tries=20 --quiet --progress=dot $ref$iso
   # Create disk (note it won't actually take 5GB of space, more like 500MB)
-  read -p "Image size [default: 30G]? " size
-  read -p "RAM size [default in gigas: 12]? " mRAM
-  
+  while read -n 2 -p "Image size [default in gigas: 30]? " size && [[ ! ${size} =~ ^[1-9] ]]; do
+    echo "E: Invalid answer"
+  done
+
+  while read -n 2 -p "RAM size [default in gigas: 12]? " mRAM && [[ ! ${mRAM} =~ ^[1-9] ]]; do
+    echo "E: Invalid answer"
+  done
+
   [[ -z $mRAM ]] && { mRAM="12288"; } || { mRAM=$(expr 1024 \* $mRAM);}
   sed "s|mRAM|$mRAM|" -i ${PREFIX}/bin/termux-docker-qemu
   
   echo "Creating $os image."
   [[ $os.img ]] && rm -rf $os.img
-  [[ -z $size ]] && size="30G"
+  [[ -z $size ]] && { size="30G"; } || { size=$size'G';}
   qemu-img create -f qcow2 $os.img $size
 
   if [[ $os = alpine ]]; then 
