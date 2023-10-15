@@ -1,6 +1,6 @@
 {
   "name": "termux-docker-qemu",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "arch": "all",
   "homepage": "https://www.docker.com/products/docker-desktop/",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",

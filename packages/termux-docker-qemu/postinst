@@ -8,12 +8,16 @@ install(){
   [[ -e $iso ]] && rm -rf $iso
   wget --tries=20 --quiet --progress=dot $ref$iso
   # Create disk (note it won't actually take 5GB of space, more like 500MB)
-  while read -n 2 -p "Image size [default in gigas: 30]? " size && [[ ! ${size} =~ ^[1-9] ]]; do
-    echo "E: Invalid answer"
+  while read -n 3 -p "Image size [recommended in gigas: 30]? " size && [[ ! ${size} =~ ^[1-9] ]]; do
+    [[ -z ${size} ]] && { break;} || { echo "E: Invalid answer";}
   done
 
-  while read -n 2 -p "RAM size [default in gigas: 12]? " mRAM && [[ ! ${mRAM} =~ ^[1-9] ]]; do
-    echo "E: Invalid answer"
+  while read -n 3 -p "RAM size [recommended in gigas: 12]? " mRAM && [[ ! ${mRAM} =~ ^[1-9] ]]; do
+    if [[ -z ${mRAM} ]]; then 
+      break 
+    else 
+      echo "E: Invalid answer"
+    fi
   done
 
   [[ -z $mRAM ]] && { mRAM="12288"; } || { mRAM=$(expr 1024 \* $mRAM);}
@@ -100,7 +104,7 @@ select os in alpine;do
         m="$arch";break
       done
       #m="x86_64"
-      declare ref=https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/$m/
+      declare ref=https://dl-cdn.alpinelinux.org/alpine/v3.18/releases/$m/
       declare iso=alpine-virt-3.18.4-$m.iso
       break
       ;;
