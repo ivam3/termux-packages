@@ -17,7 +17,7 @@ install(){
   done
 
   [[ -z $mRAM ]] && { mRAM="12288"; } || { mRAM=$(expr 1024 \* $mRAM);}
-  sed "s|mRAM|$mRAM|" -i ${PREFIX}/bin/termux-docker-qemu
+  sed "s|ram|$mRAM|" -i ${PREFIX}/bin/termux-docker-qemu
   
   echo "Creating $os image."
   [[ $os.img ]] && rm -rf $os.img

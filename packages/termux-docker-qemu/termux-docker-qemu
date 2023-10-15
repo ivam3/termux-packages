@@ -6,7 +6,7 @@ G="\e[32m"
 Y="\e[33m"
 B="\e[34m"
 os="$1"
-mRAM="mRAM"
+mRAM="ram"
 
 [[ $# -eq 0 ]] && { 
   echo -en "\e[33mUsage:\e[0m termux-docker-qemu <operative system name> x11[for a grafical enviroment]"

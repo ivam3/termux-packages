@@ -572,6 +572,7 @@ data/data/com.termux/files/home/.config/fish/fish_variables                     
 data/data/com.termux/files/home/.config/fish/functions/LOCALHOST.fish            i-haklab
 data/data/com.termux/files/home/.config/fish/functions/adminfiles.fish           i-haklab
 data/data/com.termux/files/home/.config/fish/functions/apt.fish                  i-haklab
+data/data/com.termux/files/home/.config/fish/functions/cinderella.fish           i-haklab
 data/data/com.termux/files/home/.config/fish/functions/cmd.fish                  i-haklab
 data/data/com.termux/files/home/.config/fish/functions/df.fish                   i-haklab
 data/data/com.termux/files/home/.config/fish/functions/du.fish                   i-haklab
@@ -714,6 +715,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/shodan/usrpasswd.txt        
 data/data/com.termux/files/home/.local/etc/i-Haklab/variables                    i-haklab
 data/data/com.termux/files/home/.local/libexec/QG_aircrack-ng                    i-haklab
 data/data/com.termux/files/home/.local/libexec/QG_nmap                           i-haklab
+data/data/com.termux/files/home/.local/libexec/cinderella                        i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab.login                    i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/403bypass                i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/ESmsg                    i-haklab
