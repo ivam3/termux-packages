@@ -536,6 +536,8 @@ data/data/com.termux/files/usr/bin/dnsenum                                      
 data/data/com.termux/files/usr/bin/DoS-A-Tool                                    dos-a-tool
 data/data/com.termux/files/usr/bin/embed                                         embed
 data/data/com.termux/files/usr/bin/embed-installer                               embed
+data/data/com.termux/files/usr/bin/enum4linux-installer                          enum4linux-ng
+data/data/com.termux/files/usr/bin/enum4linux-installer                          enum4linux
 data/data/com.termux/files/usr/bin/evilginx2                                     evilginx2
 data/data/com.termux/files/usr/bin/evilurl                                       evilurl
 data/data/com.termux/files/usr/bin/exif                                          exif
@@ -545,7 +547,9 @@ data/data/com.termux/files/usr/bin/fbi                                          
 data/data/com.termux/files/usr/bin/fbi-installer                                 fbi
 data/data/com.termux/files/usr/bin/geo-recon                                     geo-recon
 data/data/com.termux/files/usr/bin/geo-recon-installer                           geo-recon
+data/data/com.termux/files/usr/bin/getadusers-installer                          getadusers
 data/data/com.termux/files/usr/bin/getnpusers-installer                          getnpusers
+data/data/com.termux/files/usr/bin/getuserspns-installer                         getuserspns
 data/data/com.termux/files/usr/bin/ghidra                                        ghidra
 data/data/com.termux/files/usr/share/applications/ghidra/ghidra.desktop          ghidra
 data/data/com.termux/files/usr/share/applications/ghidra/img/ghidra.png          ghidra
@@ -577,6 +581,7 @@ data/data/com.termux/files/home/.config/fish/functions/cmd.fish                 
 data/data/com.termux/files/home/.config/fish/functions/df.fish                   i-haklab
 data/data/com.termux/files/home/.config/fish/functions/du.fish                   i-haklab
 data/data/com.termux/files/home/.config/fish/functions/fish_greeting.fish        i-haklab
+data/data/com.termux/files/home/.config/fish/functions/gitbrowsering.fish        i-haklab
 data/data/com.termux/files/home/.config/fish/functions/i-Haklab.fish             i-haklab
 data/data/com.termux/files/home/.config/fish/functions/lock.fish                 i-haklab
 data/data/com.termux/files/home/.config/fish/functions/ls.fish                   i-haklab
@@ -716,6 +721,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/variables                   
 data/data/com.termux/files/home/.local/libexec/QG_aircrack-ng                    i-haklab
 data/data/com.termux/files/home/.local/libexec/QG_nmap                           i-haklab
 data/data/com.termux/files/home/.local/libexec/cinderella                        i-haklab
+data/data/com.termux/files/home/.local/libexec/gitbrowsering.py                  i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab.login                    i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/403bypass                i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/ESmsg                    i-haklab

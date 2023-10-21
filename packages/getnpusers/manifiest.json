@@ -1,10 +1,10 @@
 {
   "name": "getnpusers",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "arch": "all",
   "homepage": "https://github.com/SecureAuthCorp/impacket",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["python, wget, rust"],
+  "depends": ["python, python-pip, wget, rust"],
   "suggests": ["i-haklab"],
   "description": "This script will attempt to list and get TGTs for those users that have the property set.",
   "files" :{

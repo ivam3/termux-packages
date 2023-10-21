@@ -398,6 +398,38 @@ SHA1: 3cff1d33ca6327ee4039a516d99c28f8e7e45357
 SHA256: cfc0cbfd7c525eba2ac22f4348eea6796ff78cab7eb80cef008b912ce7be6050
 SHA512: 23df84ac4d505dbe6cfb0a30a1428174b9a482027f76479608a9caa185751ac9fe0d3ae76655f71a1f391605ccd38068f5918c19079b09ce4ab621f4950f26dc
 
+Package: enum4linux-ng
+Version: 1.3.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: python, python-pip, dnsutils, samba, make, openldap
+Suggests: i-haklab
+Homepage: https://github.com/cddmp/enum4linux-ng
+Description: A next generation version of enum4linux (a Windows/Samba enumeration tool) with additional features like JSON/YAML export
+Filename: dists/stable/extras/binary-all/enum4linux-ng_1.3.1_all.deb
+Size: 1852
+MD5Sum: 7d6b6ff9030476b26c6e2424ff5e1489
+SHA1: c4935b1cc434fd2f54c8bcb59c927c287983d8d5
+SHA256: 194eb8981f9ca10c5448c2a4740808f0ef3813aa72f2b2aac9dfca954907517b
+SHA512: ea64717019e44948a22473399d0d16867f062a486d01d1e133c7e4b9ec23ee605dc39253bb06c17525927c676941212d54eaa9d6df8cbe4d5644a25cd23b570a
+
+Package: enum4linux
+Version: 0.9.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: perl, dnsutils, samba, openldap
+Suggests: i-haklab
+Homepage: https://github.com/CiscoCXSecurity/enum4linux
+Description: Linux alternative to enum.exe for enumerating data from Windows and Samba hosts
+Filename: dists/stable/extras/binary-all/enum4linux_0.9.1_all.deb
+Size: 1784
+MD5Sum: c20e31e6e4fc9f5827ce3293ecf9fc93
+SHA1: 12f0c249cfd26f6114e21ca7b0afe3a6e88f2ede
+SHA256: 4aab1ed40a9c629245053cd27c0caf314fcf70185663fad41b4853f6c5638586
+SHA512: b6f0e7a0c6a3261f573fe43602bfe5d08de00806e082a4a65a88bcf55e463e969d956296de8dc7251ea7814c40e983bd92380e3d8f7eaa86cfc979b997a1b0a5
+
 Package: evilginx2
 Version: 2.4.2
 Architecture: all
@@ -510,21 +542,53 @@ SHA1: ecfd40e394befadbede5916420d1fc703d05bb45
 SHA256: 8b54f7fe311053e68b26e38cf6542d8be53d844fa15e422bfa9bf645dd2a465a
 SHA512: cd290ffece5cfb32614408bd1cbf0e2b47a1e5a1f044534dc24260761fc3cfc4c5f63555ca4096d6f976aa37bf9d71a27dcbfdc12e6381f6ce72450a77fe37fb
 
-Package: getnpusers
-Version: 0.10.0
+Package: getadusers
+Version: 0.11.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: python, wget, rust
+Depends: python, python-pip, wget, rust
+Suggests: i-haklab
+Homepage: https://github.com/SecureAuthCorp/impacket
+Description: This script will gather data about the domain's users and their corresponding email addresses.
+Filename: dists/stable/extras/binary-all/getadusers_0.11.0_all.deb
+Size: 1780
+MD5Sum: c8c51ad12df02b62b8522e1f97a0fcc0
+SHA1: 61ada343a91f9082027ff911a31c789ffda07658
+SHA256: 125c3e9652e9a59b6799e0046ef653f9166fa0b09d5597bb4361940f3ea94955
+SHA512: eceac1f88805f53f491bf384b48169e0909cec970a3cbece2da97a28d1d1ec0529672a4867ea402fc4374bc63b4735eeeae3132bc8d39c8c8581039212d6a85e
+
+Package: getnpusers
+Version: 0.11.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: python, python-pip, wget, rust
 Suggests: i-haklab
 Homepage: https://github.com/SecureAuthCorp/impacket
 Description: This script will attempt to list and get TGTs for those users that have the property set.
-Filename: dists/stable/extras/binary-all/getnpusers_0.10.0_all.deb
-Size: 1756
-MD5Sum: 9780546da56f545e03e5de034f59da76
-SHA1: cf17a85e066e4d144c429ef008bb84efb1a9af06
-SHA256: e25aef6aa32e94e3b71cdd2893c96c01a68124d1a1f6ccc8fd2dbc0c4ddf48a3
-SHA512: c03099230f18f0fcf7172271d10a6db0cc4fadf1abc5882b02b2bb65863bc791d58e04f60fd1fefcb52bd4be631b15afea47e470690b8e4657c9c4592f402157
+Filename: dists/stable/extras/binary-all/getnpusers_0.11.0_all.deb
+Size: 1768
+MD5Sum: eba99381dce7a76df0da48552d5de443
+SHA1: 0a4284d872eaace51fe101ac54cc0089cfae952a
+SHA256: 1a5d285bf6b204ad3070813a74853d4b2c160c8b2379fd3a612ce4a28e874f0a
+SHA512: 89ac8e6aa0b50e869cbaa8905f57225f5e3bb0294eca9606bd4834f87a8001fb46b8d0630d79c8edfcfced745494457373a74a0b1dacbb3e5bee61804c13f632
+
+Package: getuserspns
+Version: 0.11.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: python, python-pip, wget, rust
+Suggests: i-haklab
+Homepage: https://github.com/SecureAuthCorp/impacket
+Description: This script will find Service Principal Names that are associated with normal user account.
+Filename: dists/stable/extras/binary-all/getuserspns_0.11.0_all.deb
+Size: 1792
+MD5Sum: bc371e8f2cc3cbe6038c67a04d42713f
+SHA1: d5997a578214ed28b00472a4cd162861798b08fe
+SHA256: 03a1f9e0b64f1b6d1af62f0b632db4640714bbaee95da166c74c978ce26a4384
+SHA512: 5e592a8a0d5b8fa1c4a39246ae5296f11a8d6a21bd77cbb7f295693f6bbddce62386d2d98b36255741ed405d06d2e08bfd16e70f6d06f81e9cbb628563d9b674
 
 Package: ghidra
 Version: 10.2.3
@@ -703,20 +767,20 @@ SHA256: 087391bf54ad6dd1e09b9732f3156b6f667786c85454234afcfdec3745db7075
 SHA512: cd67869bc09f0df12989761fe7556c4c3d43a7dd3a8ac8440c27d7b07a5c96b6b8da577c2ed0467588350985c4532141c83f79501925589d00a5536754fff053
 
 Package: i-haklab
-Version: 3.8.1
+Version: 3.8.2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 74070
+Installed-Size: 74075
 Depends: termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, fd, file, findutils, fish, fzf, gawk, git, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static, gnupg, mariadb, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nodejs-lts, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.8.1_all.deb
-Size: 33135384
-MD5Sum: 87b58b68aaf89178df2707fb2c9adcaa
-SHA1: ad0d737c92fba97fc93b08aa866302f6984a2ff5
-SHA256: bfc56040c7fa98518f7febe9cbf029740190959ae67e6da094224194690cf7d7
-SHA512: 1bc739afbb84f90b2248ac04100e1a33c87f9e549a98a5f0e3637e0782b16919423d2ad6192e17e500dedc77917550a166f6aa504323484ad70680c3638f5943
+Filename: dists/stable/extras/binary-all/i-haklab_3.8.2_all.deb
+Size: 33135964
+MD5Sum: cf01a707bb69aaa650b5c24b97987ec1
+SHA1: 96bba98e5aaa00af25046f4cf0c49c0e4882ba78
+SHA256: 3c9707be6b718c5d83537f88a6bde5a0ab46cfe0edb3ec5a893c27565f228b7a
+SHA512: de7af4b76668383b81caf4c61d84b644c807d7e02e615c49ab22a615f1c8019efb25fd0438636422a024067463c92149d54ee659ea961b9c5da13448c32119b5
 
 Package: infoga
 Version: 1.0
@@ -1262,7 +1326,7 @@ SHA256: 1acc75d8b15bb6a8fd7773e010b4d97ed6952aafaa45e96d04b4ca684036aa2c
 SHA512: 88fff468b34f47d722ed37d0ce33a998141fc4b5aef75430d84c58123f3ac37dbdc39b84fba8be660a1302efd71d50fd9afa5bf952784a2c536b996a644af69d
 
 Package: termux-docker-qemu
-Version: 0.4.3
+Version: 0.4.4
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
@@ -1270,12 +1334,12 @@ Depends: termux-api, openssh, wget, samba, procps, qemu-utils, qemu-common, qemu
 Suggests: i-haklab
 Homepage: https://www.docker.com/products/docker-desktop/
 Description: Docker container for running x86,x86_64,armv7 and aarch64 Linux virtual machines using QEMU
-Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.4.3_all.deb
-Size: 4384
-MD5Sum: bb3acc69f6c713cb350fd6a74b5a06e5
-SHA1: bf532b394197a77676e3a73b370656e7e8c58488
-SHA256: bf9046a6a438a6e43553f9dfc9e63400d781aba6356f44a571e16c916ccae560
-SHA512: d105b5e82a6acc0c708fd9780295fc650ebb8eb6f1b1894b84104afd08935aebb70c9ee3127fadef8ba95a5041946fb1f4e0c957069335fbf0e288d5ca6e9e28
+Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.4.4_all.deb
+Size: 4480
+MD5Sum: 3bf22c320d2f12a8f26c1305f037f4be
+SHA1: 13b192192041f2bee1376fdd66456a78af5c8918
+SHA256: 2c44469e95950b74a64bb3832f66db1922b55213f8928a1febbbcf4656c55087
+SHA512: 332fe3a3bf4cc0fb8075dd001310adcaf69347eeda62967a9e4bf20bfb8720a09eb2698f5cec3566092296004804b854b44acf7f098ca06d8045fd3662d160f0
 
 Package: trape
 Version: 2.0

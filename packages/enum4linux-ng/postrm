@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/bash
+for m in impacket ldap3 PyYAML; do 
+  python -m pip --no-color uninstall $m
+done

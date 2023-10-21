@@ -3,7 +3,7 @@
 install(){
   # Create main dir
   echo "Downloading $os ISO file (It could take a while) ..."
-  mkdir -p ${HOME}/.local/share/termux-docker-qemu/$os && cd $_
+  mkdir -p ${HOME}/.local/share/termux-docker-qemu/$os && cd $_ && mkdir mnt
   # Download iso
   [[ -e $iso ]] && rm -rf $iso
   wget --tries=20 --quiet --progress=dot $ref$iso

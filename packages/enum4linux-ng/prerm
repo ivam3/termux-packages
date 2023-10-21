@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -e ${PREFIX}/bin/enum4linux-ng ]]; then
+  rm -rf ${PREFIX}/bin/enum4linux-ng
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

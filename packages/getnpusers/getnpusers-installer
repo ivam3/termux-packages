@@ -1,8 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
 echo "Downloading executable ..."
-wget --tries=20 --quiet https://raw.githubusercontent.com/SecureAuthCorp/impacket/master/examples/GetNPUsers.py -O $PREFIX/bin/getnpusers
-chmod +x ${PREFIX}/bin/getnpuser
+wget --tries=20 --quiet https://github.com/fortra/impacket/blob/master/examples/GetNPUsers.py -O $PREFIX/bin/getnpusers
+chmod +x ${PREFIX}/bin/getnpusers
 echo "Installing dependencies(It could take a while) ..."
 for i in urllib3 requests mock idna biopython rust impacket
 do

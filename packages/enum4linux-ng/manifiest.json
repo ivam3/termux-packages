@@ -1,0 +1,13 @@
+{
+  "name": "enum4linux-ng",
+  "version": "1.3.1",
+  "arch": "all",
+  "homepage": "https://github.com/cddmp/enum4linux-ng",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python, python-pip, dnsutils, samba, make, openldap"],
+  "suggests": ["i-haklab"],
+  "description": "A next generation version of enum4linux (a Windows/Samba enumeration tool) with additional features like JSON/YAML export",
+  "files" :{
+    "enum4linux-installer": "bin/enum4linux-installer"
+	}
+}

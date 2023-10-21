@@ -1,0 +1,13 @@
+{
+  "name": "enum4linux",
+  "version": "0.9.1",
+  "arch": "all",
+  "homepage": "https://github.com/CiscoCXSecurity/enum4linux",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["perl, dnsutils, samba, openldap"],
+  "suggests": ["i-haklab"],
+  "description": "Linux alternative to enum.exe for enumerating data from Windows and Samba hosts",
+  "files" :{
+    "enum4linux-installer": "bin/enum4linux-installer"
+	}
+}

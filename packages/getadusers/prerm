@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -e ${PREFIX}/bin/getadusers ]]; then
+  rm -rf ${PREFIX}/bin/getadusers
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
