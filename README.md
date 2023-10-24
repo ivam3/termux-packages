@@ -39,7 +39,9 @@ This project is with the purpose of offering easy and fast access to the install
 | [fbi](https://github.com/xHak9x/fbi) | Facebook account information gathering |
 | [fuzzdb](https://github.com/fuzzdb-project/fuzzdb) | Dictionary of attack patterns and primitives for black-box application fault injection and resource discovery |
 | [geo-recon](https://github.com/radioactivetobi/geo-recon) | An OSINT CLI tool desgined to fast track IP Reputation and Geo-locaton look up for Security Analysts. |
-| [getnpusers](https://github.com/SecureAuthCorp/impacket/blob/master/examples/GetNPUsers.py) | List and get TGT for those users who have ownership |
+| [getadusers](https://github.com/fortra/impacket/blob/master/examples/GetADUsers.py) | Gather data about the domain's users and their corresponding email addresses |
+| [getnpusers](https://github.com/fortra/impacket/blob/master/examples/GetNPUsers.py) | Attempt to list and get TGTs for those users that have the property 'Do not require Kerberos preauthentication' set  |
+| [getuserspns](https://github.com/fortra/impacket/blob/master/examples/GetUserSPNs.py) | Try to find Service Principal Names that are associated with normal user account. |
 | [ghidra](https://github.com/NationalSecurityAgency/ghidra) | A software reverse engineering (SRE) framework. |
 | [ghost](https://github.com/EntySec/ghost) | Android post-exploitation framework that exploits the Android Debug Bridge to remotely access an Android device. |
 | [gobuster](https://github.com/OJ/gobuster/) | Directory/File, DNS and VHost busting tool written in Go |
@@ -57,8 +59,9 @@ This project is with the purpose of offering easy and fast access to the install
 | [kerbrute](https://github.com/TarlogicSecurity/kerbrute) | An script to perform kerberos bruteforcing by using the Impacket library. |
 | [kalilinux](https://www.kali.org/get-kali/#kali-mobile) | The Kali-Linux Open-source project for Android devices |
 | [lockphish](https://github.com/Heroboycloud/lockphish-master) | A tool for phishing attacks on the lock screen, designed to grab Windows credentials, Windows, iPhone and Android PIN. |
-| [metasploit-framework](https://github.com/rapid7/metasploit-framework) | World's leading open-source penetrating framework |
 | [maltego](https://www.maltego.com) | Maltego is a software focused mainly on forensic analysis and developed to make link analysis and data mining more conducive from IP domains, emails, telephones, geographic locations... that is, the starting point of an investigation. |
+| [metasploit-framework](https://github.com/rapid7/metasploit-framework) | World's leading open-source penetrating framework |
+| [mimikatz](https://github.com/fortra/impacket/blob/master/examples/mimikatz.py) | Mini shell to control a remote mimikatz RPC server. |
 | [nexphisher](https://github.com/htr-tech/nexphisher) | Advanced Phishing tool for Termux. |
 | [ngrok](https://ngrok.com) | Globally distributed reverse proxy fronting your web services running in any cloud or private network, or your machine. |
 | [nikto](https://github.com/sullo/nikto) | A web server scanner
