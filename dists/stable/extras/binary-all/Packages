@@ -910,6 +910,22 @@ SHA1: af023b5ef1fe64b7fee1a4ab26ed64672bc43c5c
 SHA256: ca03975fb8bd5ebcf5159d9755ed25091af3ca56314a8b13aa70ebc962075099
 SHA512: a80fce06cd97684698da3564db53c89e04c1bf444afdf607336d28150731ac534751fe03e308c4625ac0c2715857852a5ec959fb8e6c557e4433b8f656566f5c
 
+Package: mimikatz
+Version: 0.11.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: python, wget, rust, python-pip
+Suggests: i-haklab
+Homepage: https://github.com/fortra/impacket
+Description: Mini shell to control a remote mimikatz RPC server.
+Filename: dists/stable/extras/binary-all/mimikatz_0.11.0_all.deb
+Size: 1752
+MD5Sum: 94e0264e9a35435381f0ae2509cadc3a
+SHA1: bd6b82c3f9cc3af88e96ae506210abe277ef8bdb
+SHA256: 4c0c23cbcc8c663bbabeba017cef000e4f416aa31532686775f34032d340b83c
+SHA512: e6e71c73a9d26b6271e5a9b0eb7b215b6012bbe2846258f7b12326cdd54087e12bc1a37bc6c8f7dbbbe35170d61dc72cdd3ece97632cb2d46b8b88dbd7b2a9aa
+
 Package: nexphisher
 Version: 1.0.2
 Architecture: all

@@ -1,13 +1,13 @@
 {
-  "name": "getnpusers",
-  "version": "0.10.0",
+  "name": "mimikatz",
+  "version": "0.11.0",
   "arch": "all",
-  "homepage": "https://github.com/SecureAuthCorp/impacket",
+  "homepage": "https://github.com/fortra/impacket",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["python, wget, rust"],
+  "depends": ["python, wget, rust, python-pip"],
   "suggests": ["i-haklab"],
-  "description": "This script will attempt to list and get TGTs for those users that have the property set.",
+  "description": "Mini shell to control a remote mimikatz RPC server.",
   "files" :{
-    "getnpusers-installer": "bin/getnpusers-installer"
+    "mimikatz-installer": "bin/mimikatz-installer"
 	}
 }

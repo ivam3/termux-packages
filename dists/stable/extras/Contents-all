@@ -3792,6 +3792,7 @@ data/data/com.termux/files/usr/bin/maltego                                      
 data/data/com.termux/files/usr/share/applications/maltego/img/maltego.png        maltego
 data/data/com.termux/files/usr/share/applications/maltego/maltego.desktop        maltego
 data/data/com.termux/files/usr/bin/msfconsole                                    metasploit-framework
+data/data/com.termux/files/usr/bin/mimikatz-installer                            mimikatz
 data/data/com.termux/files/usr/bin/nexphisher                                    nexphisher
 data/data/com.termux/files/home/.ssh/config                                      ngrok
 data/data/com.termux/files/usr/bin/ngrok                                         ngrok

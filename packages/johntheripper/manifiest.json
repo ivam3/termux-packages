@@ -4,7 +4,7 @@
   "arch": "all",
   "homepage": "https://github.com/openwall/john",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["git, make, clang, python, python-pip"],
+  "depends": ["git, make, clang, python, python-pip, opencl-vendor-driver"],
   "suggests": ["i-haklab"],
   "description": "Open Source password security auditing and password recovery tool.",
   "files":{
