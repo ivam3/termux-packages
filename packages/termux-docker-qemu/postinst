@@ -1,9 +1,11 @@
 #!/data/data/com.termux/files/usr/bin/bash
 #
+ip="$(ifconfig 2>/dev/null|grep -oE '([0-9]{1,3}\.){3}'|grep -v 255|grep -v 127|tail -n 1)"
+
 install(){
   # Create main dir
   echo "Downloading $os ISO file (It could take a while) ..."
-  mkdir -p ${HOME}/.local/share/termux-docker-qemu/$os && cd $_ && mkdir mnt
+  mkdir -p ${HOME}/.local/share/termux-docker-qemu/$os && cd $_ && mkdir termux2alpine 2>/dev/null
   # Download iso
   [[ -e $iso ]] && rm -rf $iso
   wget --tries=20 --quiet --progress=dot $ref$iso
@@ -28,7 +30,7 @@ install(){
   [[ -z $size ]] && { size="30G"; } || { size=$size'G';}
   qemu-img create -f qcow2 $os.img $size
 
-  if [[ $os = alpine ]]; then 
+  if [[ $os = alpine ]]; then
     printf "\e[33m"
     echo '''
      ____  _____    _    ____  __  __ _____
@@ -44,33 +46,29 @@ install(){
       $ setup-interfaces
       ╰─➤# On it response at all question pressing 'enter' for default settings
       $ ifup eth0
-      $ echo \"nameserver 8.8.8.8\" >> /etc/resolv.conf
+      $ echo -en \"nameserver 8.8.8.8\" >> /etc/resolv.conf
       $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/ashrc.sh -O /etc/profile.d/ashrc.sh
       $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os
       $ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk
       $ setup-$os -f answerfile.$os
       ╰─➤# It will ask you to set a new password
-      ╰─➤# Respond with a 'no' On question 'Setup a user? (enter a lower-case loginname, or 'no') [no]'
-      ╰─➤# Respond with a 'y' On question 'erase the above disk(s) and continue? [y/N]:'
+      ╰─➤# Respond with 'no' On question 'Setup a user? (enter a lower-case loginname, or 'no') [no]'
+      ╰─➤# Respond with 'y' On question 'erase the above disk(s) and continue? [y/N]:'
       $ poweroff
   
     press \e[33mENTER\e[0m to continue" && read enter
 
     # Boot it up
-    ip="$(ifconfig 2>/dev/null|grep -oE '([0-9]{1,3}\.){3}'|grep -v 255|grep -v 127|tail -n 1)"
     
+#    qemu-system-x86_64 -machine q35 -m $(free --mega|grep "Mem"|awk '{print $2}') -smp \
     qemu-system-x86_64 -machine q35 -m $mRAM -smp \
-      cpus=$(nproc) -cpu qemu64 -vga virtio -full-screen -usb \
-      -drive if=pflash,format=raw,read-only=on,file=$PREFIX/share/qemu/edk2-x86_64-code.fd \
-      -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 \
+      cpus=$(nproc) -cpu qemu64,+avx,+avx2 -vga virtio -full-screen -usb \
+      -drive if=pflash,format=raw,read-only=on,file=${PREFIX}/share/qemu/edk2-x86_64-code.fd \
+      -netdev user,id=n1,net=$ip\0/24,dhcpstart=$ip\9,hostfwd=tcp::2222-:22 \
+      -device virtio-net,netdev=n1 \
+      -virtfs local,path=${HOME}/.local/share/termux-docker-qemu/$os/termux2$os,mount_tag=termux2alpine,security_model=passthrough \
       -cdrom $iso \
       -nographic $os.img      
-#    qemu-system-x86_64 -machine q35 -m $(free --mega|grep "Mem"|awk '{print $2}') -smp \
-#      cpus=$(nproc) -cpu qemu64 -vga virtio -full-screen -usb \
-#      -drive if=pflash,format=raw,read-only=on,file=$PREFIX/share/qemu/edk2-x86_64-code.fd \
-#      -netdev user,id=n1,net=$ip.0/24,dhcpstart=$ip.9,smb=mnt/,smbserver=$ip.9,hostfwd=tcp::2222-:22 \
-#      -device virtio-net,netdev=n1 \
-#      -cdrom $iso \
 
   elif [[ $os = kalilinux ]]
   then
@@ -90,9 +88,9 @@ install(){
 
 update(){
   echo -en """[+] Last updates:
-   + Share files between Termux and Alpine with PATH $HOME/.local/share/termux-docker-qemu/mnt and /mnt
    + Enable graphical enviroment with xfce4+vncserver
-   + Enable option to keep the image previous installed\n"""
+   + Enable option to keep the image previous installed
+   + Share files between Termux and Alpine with PATHs:\n     ~/.local/share/termux-docker-qemu/termux2alpine\n     and /termux2alpine into VM\n"""
 }
 
 echo "[?] Choose an Operative System:"
@@ -103,11 +101,22 @@ select os in alpine;do
       select arch in x86 x86_64 aarch64 armv7 armhf;do
         m="$arch";break
       done
-      #m="x86_64"
-      declare ref=https://dl-cdn.alpinelinux.org/alpine/v3.18/releases/$m/
-      declare iso=alpine-virt-3.18.4-$m.iso
+      
+      echo "[?] Choose a version:"
+      select v in "v3.16" "v3.17" "v3.18";do
+        rv="$v"
+        case $v in
+          v3.16) iv="3.16.7";break ;;
+          v3.17) iv="3.17.5";break ;;
+          v3.18) iv="3.18.4";break ;;
+        esac
+      done
+
+      declare ref=https://dl-cdn.alpinelinux.org/alpine/$v/releases/$m/
+      declare iso=alpine-virt-$iv-$m.iso
       break
       ;;
+
     kalilinux)
       declare ref=http://cdimage.kali.org/kali-images/kali-2022.3/
       declare iso=kali-linux-2022.3-installer-i386.iso
@@ -134,14 +143,17 @@ else
   install && update
 fi
 
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer \
-  -O /data/data/com.termux/files/usr/bin/fixer
-chmod 750 /data/data/com.termux/files/usr/bin/fixer
+wget --tries=5 --quiet \
+  https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/$os\X11.sh \
+  -O ${HOME}/.local/share/termux-docker-qemu/$os/termux2$os/$os\X11.sh
+wget --tries=5 --quiet \
+  https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer \
+  -O ${PREFIX}/bin/fixer && chmod 750 /data/data/com.termux/files/usr/bin/fixer
+
 echo "[*] termux-docker-qemu installation finished."
 echo "[*] Run 'termux-docker-qemu $os' to execute it for only CLi."
 echo "[*] Run 'termux-docker-qemu $os x11' to execute it with graphical enviroment"
-echo "[!] To set a graphical enviroment you should run in $os the command:"
-echo "    wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/alpineX11.sh && ash alpineX11.sh"
+echo "[!] To set a graphical enviroment you should run in $os the command: ash /termux/alpineX11.sh"
 echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."

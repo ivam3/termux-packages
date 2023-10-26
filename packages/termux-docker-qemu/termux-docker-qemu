@@ -7,7 +7,7 @@ Y="\e[33m"
 B="\e[34m"
 os="$1"
 mRAM="ram"
-mnt="${HOME}/.local/share/termux-docker-qemu/alpine/mnt"
+mnt="${HOME}/.local/share/termux-docker-qemu/$os/termux2$os"
 
 [[ $# -eq 0 ]] && { 
   echo -en "\e[33mUsage:\e[0m termux-docker-qemu <operative system name> x11[for a grafical enviroment]"
@@ -16,32 +16,28 @@ mnt="${HOME}/.local/share/termux-docker-qemu/alpine/mnt"
 
 [[ $2 == 'x11' ]] 2>/dev/null || { XorCLi="-nographic";}
 
-[[ -d $mnt ]] || { mkdir -p $mnt;}
-
 [[ -d ${HOME}/.local/share/termux-docker-qemu/$os ]] && {
   cd ${HOME}/.local/share/termux-docker-qemu/$os
+  [[ -d $mnt ]] || { mkdir -p $mnt;}
 } || {
   echo -en $R"E:$W $(basename $0) PATH missing ...$Y Aborting.$W"
   exit 2
 } 
 
 case "$os" in
-  alpine|kalilinux)
+  alpine)
     #$(free --mega|grep "Mem"|awk '{print $2}') -smp \
     ip=$(ifconfig 2>/dev/null|grep -oE '([0-9]{1,3}\.){3}'|grep -v 255|grep -v 127|tail -n 1)
     qemu-system-x86_64 -machine q35 -m $mRAM -smp \
-      cpus=$(nproc) -cpu qemu64 -vga virtio -full-screen -usb \
-      -drive if=pflash,format=raw,read-only=on,file=$PREFIX/share/qemu/edk2-x86_64-code.fd \
-      -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 \
-      -virtfs local,path=$mnt,mount_tag=mnt,security_model=passthrough \
+      cpus=$(nproc) -cpu qemu64,+avx,+avx2 -vga virtio -full-screen -usb \
+      -drive if=pflash,format=raw,read-only=on,file=${PREFIX}/share/qemu/edk2-x86_64-code.fd \
+      -netdev user,id=n1,net=$ip\0/24,dhcpstart=$ip\9,hostfwd=tcp::2222-:22 \
+      -device virtio-net,netdev=n1 \
+      -virtfs local,path=$mnt,mount_tag=termux2$os,security_model=passthrough \
       $XorCLi $os.img
-#        -netdev user,id=n1,net=$ip.0/24,dhcpstart=$ip.9,smb=mnt,smbserver=$ip.9,hostfwd=tcp::2222-:22 \
     ;;
-  kakalilinux)
+  kalilinux)
     echo "W: kalilinux is unavailable, use it into a docker container with Alpine OS."
-#      qemu-system-x86_64 -machine q35 -m 1024 -smp cpus=4 -cpu qemu64 \ 
-#        -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 \ 
-#        -hda ./$os.img -usb $XorCLi
     ;;
   *)
     echo "E: Invalid Operative System.. Aborting."

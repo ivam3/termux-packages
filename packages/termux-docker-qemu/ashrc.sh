@@ -1,9 +1,10 @@
-[[ ! -e /dev/net/tun ]] || { mkdir -p /dev/net/ 2>/dev/null && mknod /dev/net/tun c 10 200;}
+[[ -e /dev/net/tun ]] || { mkdir -p /dev/net/ 2>/dev/null && mknod /dev/net/tun c 10 200;}
 
 [[ -e /etc/resolv.conf ]] || { touch /etc/resolv.conf;}
 
-! $(command -v grep) "mnt" >/dev/null && {
-  echo "mnt   /mnt 9p trans=virtio 0 0" >> /etc/fstab
+! $(command -v grep) "termux2alpine" /etc/fstab >/dev/null && {
+  mount -t 9p -o trans=virtio termux2alpine /termux2alpine
+  echo "termux2alpine  /termux2alpine 9p trans=virtio 0 0" >> /etc/fstab
 }
 
 chk=$(grep -oE "8.8.8.8" /etc/resolv.conf)
