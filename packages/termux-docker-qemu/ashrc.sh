@@ -1,6 +1,7 @@
 [[ -e /dev/net/tun ]] || { mkdir -p /dev/net/ 2>/dev/null && mknod /dev/net/tun c 10 200;}
-
+[[ -d /root/.local/bin ]] || { mkdir -p /root/.local/bin }
 [[ -e /etc/resolv.conf ]] || { touch /etc/resolv.conf;}
+[[ -d /termux2alpine ]] || { mkdir /termux2alpine;}
 
 ! $(command -v grep) "termux2alpine" /etc/fstab >/dev/null && {
   mount -t 9p -o trans=virtio termux2alpine /termux2alpine
@@ -21,4 +22,5 @@ if ! command -v docker >/dev/null; then
   rc-update add docker
 fi
 
+export PATH="/root/.local/bin:$PATH"
 ###   @Ivam3 

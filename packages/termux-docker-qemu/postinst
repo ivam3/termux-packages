@@ -50,6 +50,7 @@ install(){
       $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/ashrc.sh -O /etc/profile.d/ashrc.sh
       $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os
       $ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk
+      $ apk add tzdata
       $ setup-$os -f answerfile.$os
       ╰─➤# It will ask you to set a new password
       ╰─➤# Respond with 'no' On question 'Setup a user? (enter a lower-case loginname, or 'no') [no]'
@@ -153,7 +154,7 @@ wget --tries=5 --quiet \
 echo "[*] termux-docker-qemu installation finished."
 echo "[*] Run 'termux-docker-qemu $os' to execute it for only CLi."
 echo "[*] Run 'termux-docker-qemu $os x11' to execute it with graphical enviroment"
-echo "[!] To set a graphical enviroment you should run in $os the command: ash /termux/alpineX11.sh"
+echo "[!] To set a graphical enviroment you should run in $os the command: ash /termux2alpine/alpineX11.sh"
 echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."
