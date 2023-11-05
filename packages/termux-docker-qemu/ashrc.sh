@@ -1,5 +1,5 @@
 [[ -e /dev/net/tun ]] || { mkdir -p /dev/net/ 2>/dev/null && mknod /dev/net/tun c 10 200;}
-[[ -d /root/.local/bin ]] || { mkdir -p /root/.local/bin }
+[[ -d /root/.local/bin ]] || { mkdir -p /root/.local/bin;}
 [[ -e /etc/resolv.conf ]] || { touch /etc/resolv.conf;}
 [[ -d /termux2alpine ]] || { mkdir /termux2alpine;}
 

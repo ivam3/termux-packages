@@ -1352,10 +1352,10 @@ Homepage: https://www.docker.com/products/docker-desktop/
 Description: Docker container for running x86,x86_64,armv7 and aarch64 Linux virtual machines using QEMU
 Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.4.7_all.deb
 Size: 4556
-MD5Sum: 35ecc445babb532205c4dd87ebc0f41d
-SHA1: 86c99238789f2abb27e2e4f18d73d161e0abfabb
-SHA256: ee678b573b8272aa971e7f03d115dcd397b78c19d56dfa8f6833c818e185d71b
-SHA512: cffd6d02c9ba1163d897d1ab5ac407e850a49e8255c64133724bc21bf42f77549216027e8c3ad7922f6c84ccd9a421c8179f9b3654d9b4f234dfcbbd189e0fc1
+MD5Sum: 7256150f8d08fb97fa4b236ca1a2235b
+SHA1: f43b93243061a25b6466f15372302fabc94ba09c
+SHA256: 83bb21c98ad17eaf3cf92a08286243d95d441c286205a27093d7c6c61336c0f0
+SHA512: eba9e4a2a7a49028ca7d2e5d1509dd006b9d73960a07a7155bb00acc65e23a54655599bdde0aa7d1dd9c45f41d4102ccd49b71cda035f8ac154de1053b7e77e6
 
 Package: trape
 Version: 2.0
