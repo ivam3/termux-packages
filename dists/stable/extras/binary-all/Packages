@@ -207,7 +207,7 @@ SHA256: feef86991f89fffe0dc5c60e439511da84ebefa4b14a280d8daf61480fab5358
 SHA512: b9c69836d23f95a1e35d7dc5bb6795aea6aab750ee697dabbb86342f472078035e03080bc455aa219771c871b3f0c21fd8547f3ec9e9c8907404d54cbe0f9230
 
 Package: burpsuite
-Version: 2023.10.1.2
+Version: 2023.10.3.4
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 37
@@ -215,12 +215,12 @@ Depends: openjdk-17, wget, jython-lts, giflib
 Suggests: termux-x11, xwayland, i-haklab
 Homepage: https://portswigger.net
 Description: An integrated platform/graphical tool for performing security testing of web applications.
-Filename: dists/stable/extras/binary-all/burpsuite_2023.10.1.2_all.deb
-Size: 36976
-MD5Sum: 89f933b4a87b015fbe2c489dd22a93ac
-SHA1: a3852a66f208ba087321719659c92cfc524e9dfe
-SHA256: 1c619300ac8fc3a856b1043aaff32ac341e1e2b36aa457c72eb3bf346f0c225a
-SHA512: 9a9ddd25aa78e03a23a35303cf7a89ebb070b087defd138f4e77eb728fd72c3949f71728fe5d93cb047a50610969595d67e96ec100654a5e540f3e5341786731
+Filename: dists/stable/extras/binary-all/burpsuite_2023.10.3.4_all.deb
+Size: 36968
+MD5Sum: 117ea03d287f8c24b0d34269c69f3095
+SHA1: 84dad0cbcc2d7f7c448dd4e22928b067c1f4ec23
+SHA256: 70d7cf65f7c46e0dbbaed30b22c58382103822d85989bcffd94a6cb9e289f3eb
+SHA512: e899f3d4d9a0b29d7278e87d671d048c389614be2394412db6950e0a1a95d4919b7d7d866ac0bb4fe579ebb69c292593ba352ae2c342225b9000cd452ff05cc8
 
 Package: cewl
 Version: 5.5.2
@@ -1326,7 +1326,7 @@ SHA256: 434041e91d4fb70203dfdcafd6c96a679ac2947d152d16d80f054eaeaef740f7
 SHA512: 1278135e433b817e22ff137e18363e6243c6299e5b22792e3b6f098bb02364b3701ff68cde6290a615190000a45a6d5635efe023a804053ad574863997844e6d
 
 Package: termux-desktop-xfce
-Version: 1.0.4
+Version: 1.0.6
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
@@ -1334,12 +1334,12 @@ Depends: x11-repo, adwaita-icon-theme, atk, binutils-is-llvm, dbus-glib, dconf, 
 Suggests: i-haklab, burpsuite, ghidra, hydra, putty, maltego, zaproxy
 Homepage: https://github.com/ivam3/termux-packages
 Description: A Meta-package and data, themes, icons and wallpapers to configurate a desktop enviroment for Termux with xfce4 as window manager.
-Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0.4_all.deb
-Size: 3652
-MD5Sum: 387bbb6bfdf8bb98563918353632044d
-SHA1: 4b72eea0fefcb95a5a15b1b1c9b0915ab382364c
-SHA256: 1acc75d8b15bb6a8fd7773e010b4d97ed6952aafaa45e96d04b4ca684036aa2c
-SHA512: 88fff468b34f47d722ed37d0ce33a998141fc4b5aef75430d84c58123f3ac37dbdc39b84fba8be660a1302efd71d50fd9afa5bf952784a2c536b996a644af69d
+Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0.6_all.deb
+Size: 3684
+MD5Sum: 1f1cbf8fa7c0c24f406dff509e9f7881
+SHA1: bdce6239766f121ba54662dad88b563f73b737a9
+SHA256: 053748b766eaf3060f204a0eb1d3b770c8e5fc70d2ed41273e0f77fbe30184fc
+SHA512: 8a4fee2d008a1b7759c86ab90425ca47907ed5ff4357f830e863b6e8a816f1581b718822de84d7f67f5d2a2785fc9803c2659bead9fb2b1f92e171940942571f
 
 Package: termux-docker-qemu
 Version: 0.4.7
