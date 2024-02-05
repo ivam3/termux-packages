@@ -4,7 +4,7 @@
   "arch": "all",
   "homepage": "https://github.com/rapid7/metasploit-framework",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["build-essential, ruby, python, libcap, openjdk-17, termux-tools, autoconf, patchelf, binutils, bison, yarn, clang, coreutils, curl, findutils, gumbo-parser, apr, apr-util, postgresql, openssl, readline, libffi, libgmp, libpcap, libsqlite, libgrpc, libtool, libxml2, libxslt, make, ncurses-utils, ncurses, git, wget, unzip, zip, tar, termux-elf-cleaner, pkg-config, resolv-conf, aapt, apksigner, apktool"],
+  "depends": ["build-essential, ruby, python, libcap, openjdk-17, termux-tools, autoconf, patchelf, binutils, bison, yarn, clang, coreutils, curl, findutils, gumbo-parser, apr, apr-util, postgresql, openssl, readline, libffi, libgmp, libpcap, libsqlite, libgrpc, libtool, libxml2, libxslt, make, ncurses-utils, ncurses, git, wget, unzip, xz-utils, zip, zlib, tar, termux-elf-cleaner, pkg-config, resolv-conf, aapt, apksigner, apktool"],
   "suggests": ["embed", "i-haklab"],
   "description": "Advanced open-source platform for developing, testing and using exploit code. (git-release installer)",
   "files" :{
