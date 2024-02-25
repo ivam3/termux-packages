@@ -895,20 +895,20 @@ SHA256: c97878f21c84f2d11e85a98195d02557dcdefd58924806c32aab8187687c66db
 SHA512: 64e9084afc95b94303c4e567d62db1cc510b367c0a0517a8c8505231b40999dae71387b3be7693f3c5f680696209f19e3926435ab1edd522a6bf1c8e37431a94
 
 Package: metasploit-framework
-Version: 6.3.32
+Version: 6.3.58
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
-Depends: build-essential, ruby, python, libcap, openjdk-17, termux-tools, autoconf, patchelf, binutils, bison, yarn, clang, coreutils, curl, findutils, apr, apr-util, postgresql, openssl, readline, libffi, libgmp, libpcap, libsqlite, libgrpc, libtool, libxml2, libxslt, ncurses, make, ncurses-utils, ncurses, git, wget, unzip, zip, tar, termux-elf-cleaner, pkg-config, resolv-conf, aapt, apksigner, apktool
+Depends: build-essential, ruby, python, libcap, openjdk-17, termux-tools, autoconf, patchelf, binutils, bison, yarn, clang, coreutils, curl, findutils, gumbo-parser, apr, apr-util, postgresql, openssl, readline, libffi, libgmp, libpcap, libsqlite, libgrpc, libtool, libxml2, libxslt, make, ncurses-utils, ncurses, git, wget, unzip, xz-utils, zip, zlib, tar, termux-elf-cleaner, pkg-config, resolv-conf, aapt, apksigner, apktool
 Suggests: embed, i-haklab
 Homepage: https://github.com/rapid7/metasploit-framework
 Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
-Filename: dists/stable/extras/binary-all/metasploit-framework_6.3.32_all.deb
-Size: 4248
-MD5Sum: 1ad002012e4b9c27258957d6a282ee57
-SHA1: af023b5ef1fe64b7fee1a4ab26ed64672bc43c5c
-SHA256: ca03975fb8bd5ebcf5159d9755ed25091af3ca56314a8b13aa70ebc962075099
-SHA512: a80fce06cd97684698da3564db53c89e04c1bf444afdf607336d28150731ac534751fe03e308c4625ac0c2715857852a5ec959fb8e6c557e4433b8f656566f5c
+Filename: dists/stable/extras/binary-all/metasploit-framework_6.3.58_all.deb
+Size: 4388
+MD5Sum: e854f0f50eda7decd1595aaaa9300978
+SHA1: 583b3cba0771f46e8738811ee70c9e0576a1d1df
+SHA256: 9dfdf403535da4069ae667d775b7bb878d140e454afc2666826b84f657ff0c0b
+SHA512: e694ad66cefaa7fe339a50c5357a36224d29d742c27a631de080fe50728306a786e2d78a0009d265deb3e74019c13cc43c2c36d4a8a684b630bd1547f3ddc4d6
 
 Package: mimikatz
 Version: 0.11.0

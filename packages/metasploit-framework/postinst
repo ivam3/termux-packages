@@ -12,7 +12,10 @@ echo "Installing and updating ruby gems ..."
 cd $msfDir
 mkdir -p $PREFIX/include/libxml/
 ln -s $PREFIX/include/libxml2/libxml/* $PREFIX/include/libxml/ >/dev/null 2>/dev/null
-nokogiriVer=$(cat Gemfile.lock|grep -i nokogiri|sed 's/nokogiri [\(\)]/(/g'|cut -d ' ' -f 5|grep -oP "(.).[[:digit:]][\w+]?[.].")
+nokogiriVer="1.16.2"
+nokoSED=$(cat metasploit-framework.gemspec|grep -i nokogiri|sed 's/nokogiri [\(\)]/(/g'|head -n 1|awk -F " " '{print $2,$3,$4}')
+sed -i "s|$nokoSED|'nokogiri', '~> $nokogiriVer'|" metasploit-framework.gemspec
+#$(cat Gemfile.lock|grep -i nokogiri|sed 's/nokogiri [\(\)]/(/g'|cut -d ' ' -f 5|grep -oP "(.).[[:digit:]][\w+]?[.].")
 #sed -i "5a gem 'net-smtp', require: false" $msfDir/Gemfile
 [[ -d ${HOME}/.local/share/gem ]] && { rm -rf ${HOME}/.local/share/gem/*;} || { mkdir -p ${HOME}/.local/share/gem;}
 gem install --no-document --verbose rubygems-update > $msfDir/rubygems-update.log
