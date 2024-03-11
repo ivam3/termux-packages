@@ -1,0 +1,15 @@
+Package: aircrack-ng
+Architecture: x86_64
+Installed-Size: 2212
+Maintainer: Marlin Sööse <marlin.soose@laro.se>
+Version: 3:1.7
+Homepage: https://www.aircrack-ng.org/
+Depends: libc++, libnl, libpcap, libsqlite, openssl, pcre, zlib
+Description: WiFi security auditing tools suite
+Filename: dists/stable/extras/binary-x86_64/aircrack-ng_3_1.7_x86_64.deb
+Size: 461648
+MD5Sum: e5d4a8e60c8efa73a995daee59b241e5
+SHA1: 360a226abaa4fa1753d4f7e97e53d5020165def1
+SHA256: c2b3eb12acfa687b47ba8b9f89f186e2e6a1eddbe261cc592187af91ec018019
+SHA512: e386049c705e2285ec24a131bdc35857138756e4b62ca92d168ef7705dec9b314d7081d9a53a3d214871d633df9a81d7611ad7297a4d86938ce890b705aa5d50
+
