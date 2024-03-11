@@ -11,6 +11,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [acccheck](https://github.com/qashqao/acccheck) | Windows SMB Password Dictionary Attack Tool |
 | [adbfastboot](https://developer.android.com/studio/command-line/adb) | Versatile command-line tool that facilitates a variety of device actions |
 | [adminpanel](https://github.com/Techzindia/admin_penal) | Find website's admin panel |
+| [aircrack-ng](https://github.com/aircrack-ng/aircrack-ng) | WiFi security auditing tools suite |
 | [amass](https://github.com/OWASP/Amass) | In-depth Attack Surface Mapping and Asset Discovery |
 | [androbugs](https://github.com/AndroBugs/AndroBugs_Framework) | Android vulnerability scanner |
 | [androidsdk-cli](https://developer.android.com/studio/index.html#command-tools) | Official command line Integrated Development Environment (IDE) for Android app development |
