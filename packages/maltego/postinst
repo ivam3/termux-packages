@@ -1,8 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
-v="v4.3.1"
+v="v4.7.0"
 echo "Downloading Maltego (It could take a while)..."
-wget --tries=20 --quiet https://maltego-downloads.s3.us-east-2.amazonaws.com/linux/Maltego.$v.linux.zip \
+wget --tries=20 --quiet https://downloads.maltego.com/maltego-v4/linux/Maltego.$v.linux.zip \
   -O ${TMPDIR}/maltego.zip
 [[ -e ${TMPDIR}/maltego.zip ]] && {
   echo "Installing requirements ...";
