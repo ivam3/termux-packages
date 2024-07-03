@@ -1,6 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
-v="2.12.0"
+v="2.15.0"
 echo "Downloading repository (It could take a while)..."
 wget --tries=20 --quiet https://http.kali.org/pool/main/z/zaproxy/zaproxy_$v.orig.tar.gz \
   -O ${TMPDIR}/zaproxy_$v.orig.tar.gz
