@@ -879,7 +879,7 @@ SHA256: 6fc29856e57a221f94e81ff8b4e855993542514c91e01dc1ab6941d72411c695
 SHA512: dc20a03a5f541aa730e5bd5f03879eb45ff435933029532452c72bd3e1e2d652a12afb4371e6a37361c88ab9ad20f03b8c6229f73c3a9703ecaf1dd67f7f03a6
 
 Package: maltego
-Version: 4.3.1
+Version: 4.7.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 15
@@ -887,12 +887,12 @@ Depends: openjdk-17, wget, findutils
 Suggests: i-haklab, xwayland
 Homepage: https://https://www.maltego.com
 Description: Maltego is a software focused mainly on forensic analysis and developed to make link analysis and data mining more conducive from IP domains, emails, telephones, geographic locations... that is, the starting point of an investigation.
-Filename: dists/stable/extras/binary-all/maltego_4.3.1_all.deb
-Size: 15980
-MD5Sum: 832132c817828529c04d0b75f68051cf
-SHA1: 7c514101d769432829ecae88e5e77d04853b1701
-SHA256: c97878f21c84f2d11e85a98195d02557dcdefd58924806c32aab8187687c66db
-SHA512: 64e9084afc95b94303c4e567d62db1cc510b367c0a0517a8c8505231b40999dae71387b3be7693f3c5f680696209f19e3926435ab1edd522a6bf1c8e37431a94
+Filename: dists/stable/extras/binary-all/maltego_4.7.0_all.deb
+Size: 15984
+MD5Sum: 643aba74433f9cfa64fd7386da8b85ac
+SHA1: 7513d57ae7b61964a4f07d47da7b94aede6f462b
+SHA256: e12e7dd3f74c6ada8aa874bbc31f2cb7eeae77969be36e4aff7810f6244fb062
+SHA512: f0d52828b1769688cb1673ba8618f7e0bdabae907cd3bed55455d3a8d7cfbd4da09db79e47a4df38004ef6cc501745efc12e401ac1caa955b3a643325ec25507
 
 Package: metasploit-framework
 Version: 6.3.58
@@ -1550,7 +1550,7 @@ SHA256: 1a5c605b022c409ac46b910cafd3c6656687278d926314b8a3fb07f5ae88703a
 SHA512: 92ce715a9eb624c47461e901980fc8969276d04eaef6bf21bb47b89e31fab9cb1c84bda1e9d68121e8e1ea4e038a21cebc6467915cefa50a93c7ee63710d59aa
 
 Package: zaproxy
-Version: 2.12.0
+Version: 2.15.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 57
@@ -1558,10 +1558,10 @@ Depends: wget, openjdk-17
 Suggests: i-haklab
 Homepage: https://www.kali.org/tools/zaproxy/
 Description: The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications.
-Filename: dists/stable/extras/binary-all/zaproxy_2.12.0_all.deb
-Size: 56760
-MD5Sum: d79ab46358d47563cc521aae7e6e1ae6
-SHA1: 4e374ba865e2139234d827b4198afaff379d77bc
-SHA256: 5380bf937263d44b9e735a70187aa2d3b4ad72c9b62d61ebe73a877f698fc99c
-SHA512: a9cb565dd45caa192e344bfbfd168fff8ea063da9ba3caa3a308c1c2461420936fc80af155af3b79e49b763596c95744b662acf025483f85df8ec89ac0144e70
+Filename: dists/stable/extras/binary-all/zaproxy_2.15.0_all.deb
+Size: 56768
+MD5Sum: 1832bf4516b55db781568a97f82cb2f7
+SHA1: 209957ce5abaadc7263971efbd49853458e67027
+SHA256: 9686d70ca3e7191719837246668a2d65d62a8f73a274121404235ea7a22c0132
+SHA512: 6830097c61d10df5461f4febd7f0a3a01ba74801d29a533686ceedef4cd51e5bfc327b1aeb15e35e4006452402f44083957f92f0f0f4010d25bd88e020651eb3
 
