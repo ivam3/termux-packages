@@ -207,20 +207,20 @@ SHA256: feef86991f89fffe0dc5c60e439511da84ebefa4b14a280d8daf61480fab5358
 SHA512: b9c69836d23f95a1e35d7dc5bb6795aea6aab750ee697dabbb86342f472078035e03080bc455aa219771c871b3f0c21fd8547f3ec9e9c8907404d54cbe0f9230
 
 Package: burpsuite
-Version: 2023.12.1.5
+Version: 2024.6.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 37
-Depends: openjdk-17, wget, jython-lts, giflib
+Depends: openjdk-21, wget, jython-lts, giflib
 Suggests: termux-x11, xwayland, i-haklab
 Homepage: https://portswigger.net
 Description: An integrated platform/graphical tool for performing security testing of web applications.
-Filename: dists/stable/extras/binary-all/burpsuite_2023.12.1.5_all.deb
-Size: 36968
-MD5Sum: fe9f8b27549856683bab4665aca55112
-SHA1: 15654b701c9317e228809a7b04134c34448494b6
-SHA256: cb659d9db845ed445df76ed612a7f1fd906a34f1cdc2c5ea8bd3e5a80d6a6212
-SHA512: 6a8345f39015bf1d5b988c1ee2291e21470b70d3d8f2159e00006a61fb4c0fdeffa8d2996f9dd723e22d07da06bf302305e34c8dcbc2ef7b3000e0da5b2de134
+Filename: dists/stable/extras/binary-all/burpsuite_2024.6.1_all.deb
+Size: 36972
+MD5Sum: f1aa2aa943db2ccd63a0eb3794945bde
+SHA1: 0abb4e3ae8273e8cf098dea40e29c5f4fd7341e2
+SHA256: 00a844a8e0ff185913ffb66894a7e223f68eb20476a59eaa02fa0fff7bde48fe
+SHA512: 88c689faf1a6571da26ad16b491ba6e744d4d71bbd3ef482bf6da1863d542140048e8e2198815a18da53f85a940965247936161a99766c4b94694d67890b194c
 
 Package: cewl
 Version: 5.5.2
@@ -972,6 +972,21 @@ MD5Sum: 3d907ba6e857e4bc2ccc8e2b626adea7
 SHA1: 2c08f2cfc37071672cafa88bc2e0aca559b080d0
 SHA256: 6694a5b19a00d82ec8322aa70d7fa1346590979cbf3880a20bd2627e09ff795c
 SHA512: 343283ad3863e2edc5307ee761db4a8a38a001e37ff821cf7a56103bd9ff34e10329d236f321b247f1dfbb27b11004ca989eeaf0cf2b8941484e68c3dffd58ed
+
+Package: openjdk-21-source
+Architecture: all
+Installed-Size: 52252
+Maintainer: @termux
+Version: 21.0.1-1
+Homepage: https://github.com/itsaky/jdk21-android
+Replaces: openjdk-17-source
+Description: Source files for openjdk-21
+Filename: dists/stable/extras/binary-all/openjdk-21-source_21.0.1-1_all.deb
+Size: 48914460
+MD5Sum: ab63515bbbebc8eafe774a1aa2b9c770
+SHA1: c8fcba4e2a83e7b5711c82f2ada8d5a845cfa491
+SHA256: 9e7ebb840556b1a50bc7d1ce797432fa662993e243c1e015d1854ce66dff38fe
+SHA512: 6905cc616884c1807846c06885e5296abdf58a6834e95a503a32f7b9ade95adda2170c9e26580cb8e8d9201fc71d2e69a6a6ba5a28a3f7576819832d0c12e599
 
 Package: osintgram
 Version: 1.0

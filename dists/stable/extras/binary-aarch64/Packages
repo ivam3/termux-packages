@@ -13,3 +13,19 @@ SHA1: dc3fab62a5c6f2aed9de4344ecf11c0f4a28c894
 SHA256: 809dcc9f0405e170bd1ef8e63d4f7411a49167cee2eb316842e0dd13e3073aa6
 SHA512: 5af2efd6054db2a19c11e8508ae7e90699ab33da2708d747199ba4beb3ba5d9043412530caba36d95d29262741d5203f0bc1b7bfe04e96e4c4e77a02062533b8
 
+Package: openjdk-21-x
+Architecture: aarch64
+Installed-Size: 16652
+Maintainer: @termux
+Version: 21.0.1-1
+Homepage: https://github.com/itsaky/jdk21-android
+Depends: fontconfig, freetype, giflib, libandroid-shmem, libpng, libx11, libxext, libxi, libxrandr, libxrender, libxt, libxtst, openjdk-21 (= 21.0.1-1)
+Replaces: openjdk-17-x
+Description: Portion of openjdk-21 requiring X11 functionality
+Filename: dists/stable/extras/binary-aarch64/openjdk-21-x_21.0.1-1_aarch64.deb
+Size: 13279540
+MD5Sum: cabac2d5efdd30de62b084b901ef2063
+SHA1: 6c0c4ed8fd3bfb5ee5d20cbec1665e5bf948e7ee
+SHA256: f1b1ed05bfd5e7b345e6c58042a08c26559a2e2e63e4e4570fd8522c85982c24
+SHA512: d0f063c946f6677360b8cb261d29206412f55c150c7cf1e1f1da96fac4795f04e498429517c8746dfd4b535cda8112809c7fe31d8ba41c34d1dd53e032f8ab29
+

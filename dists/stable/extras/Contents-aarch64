@@ -103,3 +103,10 @@ data/data/com.termux/files/usr/bin/kstats                                       
 data/data/com.termux/files/usr/bin/airdecloak-ng                                 aircrack-ng
 data/data/com.termux/files/usr/bin/buddy-ng                                      aircrack-ng
 data/data/com.termux/files/usr/bin/besside-ng-crawler                            aircrack-ng
+data/data/com.termux/files/usr/opt/openjdk-21.0.1/include/jawt.h                 openjdk-21-x
+data/data/com.termux/files/usr/opt/openjdk-21.0.1/include/linux/jawt_md.h        openjdk-21-x
+data/data/com.termux/files/usr/opt/openjdk-21.0.1/jmods/java.desktop.jmod        openjdk-21-x
+data/data/com.termux/files/usr/opt/openjdk-21.0.1/lib/libawt_xawt.so             openjdk-21-x
+data/data/com.termux/files/usr/opt/openjdk-21.0.1/lib/libfontmanager.so          openjdk-21-x
+data/data/com.termux/files/usr/opt/openjdk-21.0.1/lib/libjawt.so                 openjdk-21-x
+data/data/com.termux/files/usr/opt/openjdk-21.0.1/lib/libsplashscreen.so         openjdk-21-x
