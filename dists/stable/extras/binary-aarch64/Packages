@@ -40,7 +40,7 @@ Recommends: ca-certificates-java, openjdk-21-x, resolv-conf
 Replaces: openjdk-17
 Suggests: cups
 Description: Java development kit and runtime
-Filename: dists/stable/extras/binary-aarch64/openjdk-21_21.0.1-1_aarch64.deb
+Filename: https://github.com/ivam3/termux-packages/releases/download/openJDK/openjdk-21_21.0.1-1_aarch64.deb
 Size: 105895060
 MD5Sum: fa90024202cc0db07aea2ab926376cff
 SHA1: 5b4bfa811c83e6a4a39617f9ea4ea882577d050c
