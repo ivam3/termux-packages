@@ -32,9 +32,9 @@ SHA512: d0f063c946f6677360b8cb261d29206412f55c150c7cf1e1f1da96fac4795f04e4984295
 Package: openjdk-21
 Architecture: aarch64
 Installed-Size: 252660
-Maintainer: @termux
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Version: 21.0.1-1
-Homepage: https://github.com/itsaky/jdk21-android
+Homepage: https://jdk.java.net/
 Depends: libiconv, libjpeg-turbo, zlib, libandroid-spawn
 Recommends: ca-certificates-java, openjdk-21-x, resolv-conf
 Replaces: openjdk-17
