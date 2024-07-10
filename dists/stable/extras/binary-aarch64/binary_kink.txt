@@ -1,0 +1,1 @@
+openjdk-21:https://github.com/ivam3/termux-packages/releases/download/openJDK/openjdk-21_21.0.1-1_aarch64.deb
