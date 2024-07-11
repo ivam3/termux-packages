@@ -1,0 +1,19 @@
+#!/bin/bash
+while $# = 0;do
+  echo "USAGE: $0 <packages name> <packages new name>"
+done
+
+dir=${TMPDIR}/rebuil-debs
+mkdir -p $dir
+
+dpkg-deb -x $1 $dir
+dpkg-deb -e $1 $dir/DEBIAN
+
+[[ -e $dir/DEBIAN/control ]] && {
+  nvim $dir/DEBIAN/control
+  dpkg-deb -b $dir/ $2
+  [[ -e $2 ]] && { echo "DONE!!" } || { echo "E: Unable to build package";exit; }
+} || {
+  echo "E: not such file control"
+}
+
