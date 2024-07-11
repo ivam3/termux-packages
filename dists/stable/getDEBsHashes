@@ -8,8 +8,8 @@
 #Description: Termux packages
 #Date: $(date -R)
 Pkgs=$(find extras -type f -name "Packages")
-for i in $Pkgs;do
-  for t in MD5Sum SHA1 SHA256 SHA512;do
+for t in MD5Sum SHA1 SHA256 SHA512;do
+  for i in $Pkgs;do
     echo """$t:
      $(md5sum $i | awk '{ print $1}') $(stat --format=%s $i) $(md5sum $i | awk '{ print $2 }')
      $(md5sum $i.xz | awk '{ print $1 }') $(stat --format=%s $i.xz) $(md5sum $i | awk '{ print $2 }')"""

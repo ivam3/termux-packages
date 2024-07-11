@@ -1,0 +1,19 @@
+#!/bin/bash
+#This file have to be in the same path that file Release
+
+your_key_id=$1
+
+#Generate key
+gpg --full-generate-key
+#Export key 
+gpg --armor --export $your_key_id > public_key.gpg
+#Confirm if it exist
+gpg --list-keys
+#Sign Release file
+gpg --default-key $your_key_id -abs -o Release.gpg Release
+gpg --default-key $your_key_id --clearsign -o InRelease Release
+
+#Dont forget download the key in users device
+#--- wget -O - https://your-repo-url/public.key | apt-key add -
+#--- apt update
+
