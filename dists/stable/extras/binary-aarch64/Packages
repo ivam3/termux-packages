@@ -8,10 +8,10 @@ Depends: libc++, libnl, libpcap, libsqlite, openssl, pcre, zlib
 Description: WiFi security auditing tools suite
 Filename: dists/stable/extras/binary-aarch64/aircrack-ng_3_1.7_aarch64.deb
 Size: 405916
-MD5Sum: fa90024202cc0db07aea2ab926376cff
-SHA1: 5b4bfa811c83e6a4a39617f9ea4ea882577d050c
-SHA256: 4bf9109f4ba0ec2168c6d9a708180c3f89f9abe6a9901123636ef241e13b93b6
-SHA512: beb1fdd11c562ba69c948846e89e18923e4a70ede4e9fb74928b126859d9f984d72e5fdbd7e99212d925512fb12f786ad9443f886ddb4c5982ffba22295dceaa
+MD5Sum: 594cdad2bcf69061d3bb673632bc28ae
+SHA1: dc3fab62a5c6f2aed9de4344ecf11c0f4a28c894
+SHA256: 809dcc9f0405e170bd1ef8e63d4f7411a49167cee2eb316842e0dd13e3073aa6
+SHA512: 5af2efd6054db2a19c11e8508ae7e90699ab33da2708d747199ba4beb3ba5d9043412530caba36d95d29262741d5203f0bc1b7bfe04e96e4c4e77a02062533b8
 
 Package: openjdk-21-x
 Architecture: aarch64
@@ -28,22 +28,4 @@ MD5Sum: cabac2d5efdd30de62b084b901ef2063
 SHA1: 6c0c4ed8fd3bfb5ee5d20cbec1665e5bf948e7ee
 SHA256: f1b1ed05bfd5e7b345e6c58042a08c26559a2e2e63e4e4570fd8522c85982c24
 SHA512: d0f063c946f6677360b8cb261d29206412f55c150c7cf1e1f1da96fac4795f04e498429517c8746dfd4b535cda8112809c7fe31d8ba41c34d1dd53e032f8ab29
-
-Package: openjdk-21
-Architecture: aarch64
-Installed-Size: 255388
-Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Version: 21.0.1-1
-Homepage: https://jdk.java.net/
-Depends: libiconv, libjpeg-turbo, zlib, libandroid-spawn
-Recommends: ca-certificates-java, openjdk-21-x, resolv-conf
-Replaces: openjdk-17
-Suggests: cups
-Description: Java development kit and runtime
-Filename: https://github.com/ivam3/termux-packages/releases/download/openJDK/openjdk-21_21.0.1-1_aarch64.deb
-Size: 105895060
-MD5Sum: fa90024202cc0db07aea2ab926376cff
-SHA1: 5b4bfa811c83e6a4a39617f9ea4ea882577d050c
-SHA256: 4bf9109f4ba0ec2168c6d9a708180c3f89f9abe6a9901123636ef241e13b93b6
-SHA512: beb1fdd11c562ba69c948846e89e18923e4a70ede4e9fb74928b126859d9f984d72e5fdbd7e99212d925512fb12f786ad9443f886ddb4c5982ffba22295dceaa
 
