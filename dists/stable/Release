@@ -8,8 +8,8 @@ Components: extras
 MD5Sum:
  674ece4ed28c70e308ddf6649484458d 71119 extras/binary-all/Packages
  e57b10d641307a9f2d2c2bcd02b35db8 24612 extras/binary-all/Packages.xz
- 5c407763b2791019d0e9eda33952ae65 1452 extras/binary-aarch64/Packages
- 04a2645ee790598f7f9b47bad2d234d4 924 extras/binary-aarch64/Packages.xz
+ 355ea0234183c77d0e74be10df797ed0 2157 extras/binary-aarch64/Packages
+ c180404d15cfdfd7dc7c0e2dba2924a1 1228 extras/binary-aarch64/Packages.xz
  16766aedb3f0aee86f2e55c25a33fccc 655 extras/binary-arm/Packages
  03e36726a22650dfcb15d8f317653ba1 556 extras/binary-arm/Packages.xz
  421ed10b17daf1a249a942b5f8581a24 658 extras/binary-i686/Packages
