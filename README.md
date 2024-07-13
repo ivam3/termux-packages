@@ -105,7 +105,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [xerosploit](https://github.com/LionSec/xerosploit) | A penetration testing toolkit whose goal is to perform man in the middle attacks for testing purposes. |
 ##### Suggest a tool and/or framework to be add in our [Telegram Support Group](https://t.me/Ivam3by_Cinderella)
     
-## How to get ...
+## How to get it ...
 
 To add the list of available tools and/or frameworks to the package manager `apt` in [Termux](https://github.com/termux/termux-app) follow those 5 simple steps:
 
@@ -124,9 +124,24 @@ mkdir -p $PREFIX/etc/apt/sources.list.d
 wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/ivam3-termux-packages.list -O $PREFIX/etc/apt/sources.list.d/ivam3-termux-packages.list
 ```
 
+- Download signed key 
+```
+wget -O - https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/dists/stable/public_key.gpg | apt-key add -
+```
+
 - Update Termux:
 ```bash
-apt update && apt upgrade
+apt update
+```
+
+Or just copy & paste this one command line:
+```
+yes|apt install wget && \
+mkdir -p $PREFIX/etc/apt/sources.list.d && \
+wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/ivam3-termux-packages.list -O \
+$PREFIX/etc/apt/sources.list.d/ivam3-termux-packages.list && \
+wget -O - https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/dists/stable/public_key.gpg | apt-key add - && \
+apt update
 ```
 
 ### License

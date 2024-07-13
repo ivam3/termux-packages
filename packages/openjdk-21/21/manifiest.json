@@ -1,0 +1,13 @@
+{
+  "name": "openjdk-21-preinst",
+  "version": "1.0",
+  "arch": "aarch64",
+  "homepage": "https://https://jdk.java.net",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["wget"],
+  "suggests": ["i-haklab"],
+  "description": "Preinstaller for Java development kit and runtime",
+  "files" :{
+    "openjdk-21-preinst": "bin/openjdk-21-preinst"
+  }
+}

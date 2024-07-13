@@ -1,15 +1,15 @@
 Package: aircrack-ng
 Architecture: i686
 Installed-Size: 2104
-Maintainer: Marlin Sööse <marlin.soose@laro.se>
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Version: 3:1.7
 Homepage: https://www.aircrack-ng.org/
 Depends: libc++, libnl, libpcap, libsqlite, openssl, pcre, zlib
 Description: WiFi security auditing tools suite
 Filename: dists/stable/extras/binary-i686/aircrack-ng_3_1.7_i686.deb
-Size: 438492
-MD5Sum: 545c0aab397fa9293ecabc81ae14ea87
-SHA1: 9f59e18b30b7da08a8544fc0f06686057498c01c
-SHA256: ce88e92d207fdd171aa6790e074e2196feee63a4ce606537ddde4cdfc8fc21d5
-SHA512: 310ba1c4a093bb4ac51d67d5a5f60483d80924d7cc531701055449dca8fef51dee481be226602bbaf6b5e076ade054a0378b5551c32771ca3112af84b331911f
+Size: 438964
+MD5Sum: e1adf1ce38c6d5a575469f733eba17ef
+SHA1: 5d612879639b6cb0cdc9b078867f60ce3a4cefb9
+SHA256: 351ea1d10ad28813ab15a2d941dbbaee3642f15b62706e365c431f1d64d667b8
+SHA512: 9f0cf50c0c73746b574d0a3066c3c589c9fb7a8bdd9a18d8b58705078e592293ebaf32556e00765691683502c1a161b61dd1d90c1a4773c509399496b5f7c7e3
 

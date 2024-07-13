@@ -976,17 +976,17 @@ SHA512: 343283ad3863e2edc5307ee761db4a8a38a001e37ff821cf7a56103bd9ff34e10329d236
 Package: openjdk-21-source
 Architecture: all
 Installed-Size: 52252
-Maintainer: @termux
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Version: 21.0.1-1
-Homepage: https://github.com/itsaky/jdk21-android
+Homepage: https://jdk.java.net
 Replaces: openjdk-17-source
 Description: Source files for openjdk-21
 Filename: dists/stable/extras/binary-all/openjdk-21-source_21.0.1-1_all.deb
-Size: 48914460
-MD5Sum: ab63515bbbebc8eafe774a1aa2b9c770
-SHA1: c8fcba4e2a83e7b5711c82f2ada8d5a845cfa491
-SHA256: 9e7ebb840556b1a50bc7d1ce797432fa662993e243c1e015d1854ce66dff38fe
-SHA512: 6905cc616884c1807846c06885e5296abdf58a6834e95a503a32f7b9ade95adda2170c9e26580cb8e8d9201fc71d2e69a6a6ba5a28a3f7576819832d0c12e599
+Size: 48986660
+MD5Sum: 422a8ad3f767c3de69e78449c7499bcc
+SHA1: 0f48d55813aa41e35f6a3319c4e342e5b844c621
+SHA256: 9e811c7effe7aa54e008a0acd93c4dd8a635a5f84f6a48730808e027d4a36771
+SHA512: 297b76bd06a4828778a2cca4686fd4867813207dcab79155569ef89d5e13f5ffd1fdb0ee7240174a5ec50a0206b4fc398267af436153f38adde40717a07dc26d
 
 Package: osintgram
 Version: 1.0

@@ -1,0 +1,8 @@
+Package: openjdk-21-source
+Architecture: all
+Installed-Size: 52252
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Version: 21.0.1-1
+Homepage: https://jdk.java.net
+Replaces: openjdk-17-source
+Description: Source files for openjdk-21

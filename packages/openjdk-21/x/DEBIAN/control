@@ -1,0 +1,9 @@
+Package: openjdk-21-x
+Architecture: aarch64
+Installed-Size: 16652
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Version: 21.0.1-1
+Homepage: https://jdk.java.net
+Depends: fontconfig, freetype, giflib, libandroid-shmem, libpng, libx11, libxext, libxi, libxrandr, libxrender, libxt, libxtst, openjdk-21 (= 21.0.1-1)
+Replaces: openjdk-17-x
+Description: Portion of openjdk-21 requiring X11 functionality

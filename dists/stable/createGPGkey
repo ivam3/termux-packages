@@ -14,6 +14,6 @@ gpg --default-key $your_key_id -abs -o Release.gpg Release
 gpg --default-key $your_key_id --clearsign -o InRelease Release
 
 #Dont forget download the key in users device
-#--- wget -O - https://your-repo-url/public.key | apt-key add -
+#--- wget -O - https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/dists/stable/public_key.gpg | apt-key add -
 #--- apt update
 
