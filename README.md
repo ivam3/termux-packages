@@ -126,7 +126,8 @@ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/ivam3-term
 
 - Download signed key 
 ```
-wget -O - https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/dists/stable/public_key.gpg | apt-key add -
+curl -fsSL "https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/dists/stable/public_key.gpg \
+-o "$PREFIX/etc/apt/trusted.gpg.d/ivam3.gpg"
 ```
 
 - Update Termux:
@@ -140,8 +141,8 @@ yes|apt install wget && \
 mkdir -p $PREFIX/etc/apt/sources.list.d && \
 wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/ivam3-termux-packages.list -O \
 $PREFIX/etc/apt/sources.list.d/ivam3-termux-packages.list && \
-wget -O - https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/dists/stable/public_key.gpg | apt-key add - && \
-apt update
+curl -fsSL "https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/dists/stable/public_key.gpg \
+-o "$PREFIX/etc/apt/trusted.gpg.d/ivam3.gpg"
 ```
 
 ### License
