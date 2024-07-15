@@ -104,12 +104,14 @@ select os in alpine;do
       done
       
       echo "[?] Choose a version:"
-      select v in "v3.16" "v3.17" "v3.18";do
+      select v in "v3.16" "v3.17" "v3.18" "v3.19" "v3.20";do
         rv="$v"
         case $v in
           v3.16) iv="3.16.7";break ;;
           v3.17) iv="3.17.5";break ;;
           v3.18) iv="3.18.4";break ;;
+          v3.19) iv="3.19.2";break ;;
+          v3.20) iv="3.20.1";break ;;
         esac
       done
 
