@@ -724,6 +724,7 @@ data/data/com.termux/files/home/.local/libexec/cinderella                       
 data/data/com.termux/files/home/.local/libexec/gitbrowsering.py                  i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab.login                    i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/403bypass                i-haklab
+data/data/com.termux/files/home/.local/libexec/i-Haklab/4share                   i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/ESmsg                    i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/Xwayland                 i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/about                    i-haklab
@@ -746,7 +747,6 @@ data/data/com.termux/files/home/.local/libexec/i-Haklab/servers4test            
 data/data/com.termux/files/home/.local/libexec/i-Haklab/setapikey                i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/setbanner                i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/setuser                  i-haklab
-data/data/com.termux/files/home/.local/libexec/i-Haklab/share                    i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/show                     i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/speedtest                i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/tunnel                   i-haklab
