@@ -3,6 +3,9 @@
 [[ -e /etc/resolv.conf ]] || { touch /etc/resolv.conf;}
 [[ -d /termux2alpine ]] || { mkdir /termux2alpine;}
 
+# RESIZE SCREEN run in Termux session 'tty size' to get the real value of your screen 
+stty rows 18 columns 140 # CHANGE IT IF YOUR SCREEN SIZE IS DIFERENT 
+
 ! $(command -v grep) "termux2alpine" /etc/fstab >/dev/null && {
   mount -t 9p -o trans=virtio termux2alpine /termux2alpine
   echo "termux2alpine  /termux2alpine 9p trans=virtio 0 0" >> /etc/fstab
