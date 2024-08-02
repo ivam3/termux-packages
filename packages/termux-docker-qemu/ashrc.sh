@@ -25,5 +25,16 @@ if ! command -v docker >/dev/null; then
   rc-update add docker
 fi
 
+if ! command -v tmux >/dev/null; then
+  apk update
+  apk upgrade
+  apk add tmux perl
+  cd;git clone https://github.com/gpakosz/.tmux.git 
+  ln -s -f .tmux/.tmux.conf
+  cp .tmux/.tmux.conf.local .
+fi
+
+command -v tmux attach-session 2>/dev/null || tmux new -s i-Haklab -n main
+
 export PATH="/root/.local/bin:$PATH"
 ###   @Ivam3 
