@@ -8,6 +8,7 @@ wget --tries=20 --quiet https://downloads.maltego.com/maltego-v4/linux/Maltego.$
   echo "Installing requirements ...";
   unzip -q ${TMPDIR}/maltego.zip -d ${HOME}/.local/share
   rm ${TMPDIR}/maltego.zip
+  [[ -d ${HOME}/.local/share/maltego ]] && { rm -rf ${HOME}/.local/share/maltego;}
   maltegoDir=$(find ${HOME}/.local/share/ -maxdepth 1 -iname "maltego*" -type d)
   mv $maltegoDir ${HOME}/.local/share/maltego
   chmod 751 -R ${HOME}/.local/share/maltego
