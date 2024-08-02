@@ -5,7 +5,9 @@ ip="$(ifconfig 2>/dev/null|grep -oE '([0-9]{1,3}\.){3}'|grep -v 255|grep -v 127|
 install(){
   # Create main dir
   echo "Downloading $os ISO file (It could take a while) ..."
-  mkdir -p ${HOME}/.local/share/termux-docker-qemu/$os && cd $_ && mkdir termux2alpine 2>/dev/null
+  [[ -d ${HOME}/.local/share/termux-docker-qemu/$os ]] || {
+    mkdir -p ${HOME}/.local/share/termux-docker-qemu/$os && cd $_ && mkdir termux2alpine 2>/dev/null
+  }
   # Download iso
   [[ -e $iso ]] && rm -rf $iso
   wget --tries=20 --quiet --progress=dot $ref$iso
