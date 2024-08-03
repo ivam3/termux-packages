@@ -36,9 +36,9 @@ if ! command -v tmux >/dev/null; then
   cp .tmux/.tmux.conf.local .
 fi
 
-s=$(tmux list-session|grep "Alpine") 2>/dev/null
+s=$(tmux list-session|grep "QEMU") 2>/dev/null
 if [ -z $s ]; then 
-  tmux new -s i-Haklab -n main 2>/dev/null
+  tmux new -s QEMU -n main 2>/dev/null
 else
   tmux attach-session
 fi
