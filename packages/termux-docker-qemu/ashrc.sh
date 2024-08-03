@@ -3,8 +3,7 @@
 [[ -e /etc/resolv.conf ]] || { touch /etc/resolv.conf;}
 [[ -d /termux2alpine ]] || { mkdir /termux2alpine;}
 
-# RESIZE SCREEN run in Termux session 'tty size' to get the real value of your screen 
-stty rows 18 columns 140 # CHANGE IT IF YOUR SCREEN SIZE IS DIFERENT 
+stty rows 18 columns 140
 
 ! $(command -v grep) "termux2alpine" /etc/fstab >/dev/null && {
   mount -t 9p -o trans=virtio termux2alpine /termux2alpine
@@ -25,16 +24,22 @@ if ! command -v docker >/dev/null; then
   rc-update add docker
 fi
 
+export PATH="/root/.local/bin:$PATH"
+
 if ! command -v tmux >/dev/null; then
+  echo "Installing tmux ..."
   apk update
   apk upgrade
-  apk add tmux perl
-  cd;git clone https://github.com/gpakosz/.tmux.git 
+  apk add tmux git perl
+  cd;git clone https://github.com/gpakosz/.tmux.git
   ln -s -f .tmux/.tmux.conf
   cp .tmux/.tmux.conf.local .
 fi
 
-command -v tmux attach-session 2>/dev/null || tmux new -s i-Haklab -n main
-
-export PATH="/root/.local/bin:$PATH"
+s=$(tmux list-session|grep "Alpine") 2>/dev/null
+if [ -z $s ]; then 
+  tmux new -s i-Haklab -n main 2>/dev/null
+else
+  tmux attach-session
+fi
 ###   @Ivam3 
