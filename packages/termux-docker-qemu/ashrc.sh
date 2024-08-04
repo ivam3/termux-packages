@@ -3,7 +3,9 @@
 [[ -e /etc/resolv.conf ]] || { touch /etc/resolv.conf;}
 [[ -d /termux2alpine ]] || { mkdir /termux2alpine;}
 
-stty rows 18 columns 140
+r=$(stty size|awk -F " " '{print $1}')
+c=$(stty size|awk -F " " '{print $2}')
+stty rows $r columns $c
 
 ! $(command -v grep) "termux2alpine" /etc/fstab >/dev/null && {
   mount -t 9p -o trans=virtio termux2alpine /termux2alpine
