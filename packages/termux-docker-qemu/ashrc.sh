@@ -1,23 +1,35 @@
+### FIX NETWORK CONECDTI0N 
 [[ -e /dev/net/tun ]] || { mkdir -p /dev/net/ 2>/dev/null && mknod /dev/net/tun c 10 200;}
 [[ -d /root/.local/bin ]] || { mkdir -p /root/.local/bin;}
 [[ -e /etc/resolv.conf ]] || { touch /etc/resolv.conf;}
 [[ -d /termux2alpine ]] || { mkdir /termux2alpine;}
 
+## SET SCREEN SIZE 
 r=$(stty size|awk -F " " '{print $1}')
 c=$(stty size|awk -F " " '{print $2}')
 stty rows $r columns $c
 
+## SET SHARED DIRECTORY BETWEEN BOTH OS 
 ! $(command -v grep) "termux2alpine" /etc/fstab >/dev/null && {
   mount -t 9p -o trans=virtio termux2alpine /termux2alpine
   echo "termux2alpine  /termux2alpine 9p trans=virtio 0 0" >> /etc/fstab
 }
 
+## SET DNS 
 chk=$(grep -oE "8.8.8.8" /etc/resolv.conf)
-
 if [[ -z $chk ]]; then
   echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 fi
 
+## EXPORT B8NARIES PATH 
+export PATH="/root/.local/bin:$PATH"
+
+## CONF PIP TO FORCE MODULE INSTALLATION IN ALPINE OS ENVIROMENT 
+if command -v python3 >/dev/null; then 
+  python3 -m pip config set global.break-system-packages true
+fi
+
+## INSTALL AND RUN DOCKER SERVICE 
 if ! command -v docker >/dev/null; then
   apk update
   apk upgrade
@@ -26,8 +38,7 @@ if ! command -v docker >/dev/null; then
   rc-update add docker
 fi
 
-export PATH="/root/.local/bin:$PATH"
-
+## INSTALL AND RUN PLEX TERMINAL TMUX 
 if ! command -v tmux >/dev/null; then
   echo "Installing tmux ..."
   apk update
@@ -38,10 +49,12 @@ if ! command -v tmux >/dev/null; then
   cp .tmux/.tmux.conf.local .
 fi
 
-s=$(tmux list-session|grep "QEMU") 2>/dev/null
+s=$(tmux list-session|grep "Alpine") 2>/dev/null
 if [ -z $s ]; then 
-  tmux new -s QEMU -n main 2>/dev/null
+  tmux new -s i-Haklab -n main 2>/dev/null
 else
   tmux attach-session
 fi
+
+
 ###   @Ivam3 
