@@ -479,7 +479,7 @@ SHA256: b3091bf9b1252b61c23568a49d66ee7722fa7989b7a238522a17a9601ac362b8
 SHA512: 400133f8797ae79dda0e788ad0eded1d0fe9a4c04787a859b5cda9057c38f723edd05c47431baa3da11866234ae1d84f649dd967ec02c7f8dcb11d20f76a915c
 
 Package: exploitdb
-Version: 2023.05.12
+Version: 2024.08.05
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
@@ -487,12 +487,12 @@ Depends: coreutils, libxml2, libxml2-utils, git, wget
 Suggests: i-haklab
 Homepage: https://gitlab.com/exploit-database/exploitdb
 Description: The official Exploit Database repository.
-Filename: dists/stable/extras/binary-all/exploitdb_2023.05.12_all.deb
+Filename: dists/stable/extras/binary-all/exploitdb_2024.08.05_all.deb
 Size: 1884
-MD5Sum: 726e1a47fbfd900bb2cbad7908d64cfe
-SHA1: 7a59ea24f309233b38eb7074aca3e570dcc8628a
-SHA256: cd7224d1d99c531e7177e65c0547ff7a337851ea3390253ff8aa0674e265a9f4
-SHA512: 1a05aff5ecde0e3520879e7fd9510dc8e769f61beb13e45faed6de44c69470f2586d08dc75ada05e2a641bbfb64cde0d36c5c63dc51b5c658e16469c20c8582f
+MD5Sum: f9db604d8e56f030385f389aad5b4d47
+SHA1: a77292ad343eb383591a0a854236871179af8620
+SHA256: fb9fe9bd83ea8edff53b0860ef01ecba6216b3fa91541acad25df7ba5a9873c2
+SHA512: 9b3e32b268f15327def849f4e72687441334fc47a4915a051ac6263701fe4ef686abf81fb1e932969c9f500d4a28daaa4d5919da136c81347936e11071b840b1
 
 Package: fake-sms
 Version: 2.0
