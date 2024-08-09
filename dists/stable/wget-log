@@ -1,11 +1,0 @@
---2024-07-11 05:37:20--  https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/dists/stable/public_key.gpg
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8003::154, 2606:50c0:8000::154, 2606:50c0:8002::154, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8003::154|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 1765 (1.7K) [text/plain]
-Saving to: ‘public_key.gpg.1’
-
-public_key.gpg.1                     0%[                                                                 ]       0  --.-KB/s               public_key.gpg.1                   100%[================================================================>]   1.72K  --.-KB/s    in 0s      
-
-2024-07-11 05:37:20 (4.03 MB/s) - ‘public_key.gpg.1’ saved [1765/1765]
-
