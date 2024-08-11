@@ -879,20 +879,20 @@ SHA256: 6fc29856e57a221f94e81ff8b4e855993542514c91e01dc1ab6941d72411c695
 SHA512: dc20a03a5f541aa730e5bd5f03879eb45ff435933029532452c72bd3e1e2d652a12afb4371e6a37361c88ab9ad20f03b8c6229f73c3a9703ecaf1dd67f7f03a6
 
 Package: maltego
-Version: 4.7.0
+Version: 4.7.0-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 15
-Depends: openjdk-17, wget, findutils
+Depends: openjdk-21, wget, findutils
 Suggests: i-haklab, xwayland
 Homepage: https://https://www.maltego.com
 Description: Maltego is a software focused mainly on forensic analysis and developed to make link analysis and data mining more conducive from IP domains, emails, telephones, geographic locations... that is, the starting point of an investigation.
-Filename: dists/stable/extras/binary-all/maltego_4.7.0_all.deb
-Size: 15984
-MD5Sum: 643aba74433f9cfa64fd7386da8b85ac
-SHA1: 7513d57ae7b61964a4f07d47da7b94aede6f462b
-SHA256: e12e7dd3f74c6ada8aa874bbc31f2cb7eeae77969be36e4aff7810f6244fb062
-SHA512: f0d52828b1769688cb1673ba8618f7e0bdabae907cd3bed55455d3a8d7cfbd4da09db79e47a4df38004ef6cc501745efc12e401ac1caa955b3a643325ec25507
+Filename: dists/stable/extras/binary-all/maltego_4.7.0-1_all.deb
+Size: 16004
+MD5Sum: 1f7068ac0391ef311ef5b2d23236a8ec
+SHA1: dcbac9c8b49d64bbb7386243998d474ef84dca9f
+SHA256: 70e6288789ba6deafecef89e24b446b455c927044d0feeebb29eddd105b88c6d
+SHA512: 7a9a5dc2ff092066d700f1488789dd4b4ea00ad69559e570191dfdbf160937f1b21477abb530acc918ec42a3b54fb05d74bf7280e01410fdba1349251c8b8608
 
 Package: metasploit-framework
 Version: 6.3.58

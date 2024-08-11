@@ -7,6 +7,7 @@ Y="\e[33m"
 B="\e[34m"
 if [[ -d ${HOME}/.local/share/maltego/bin ]]
 then
+  export JAVA_HOME=${PREFIX}/opt/openjdk-21
   cd ${HOME}/.local/share/$(basename $0)/bin >/dev/null
   [[ $(file $TMPDIR/*|grep -o "socket") >/dev/null ]] || {
     printf >&2 "$R(➤_)\$W Termux:Wayland server isn't up...$R aborting.$W"
