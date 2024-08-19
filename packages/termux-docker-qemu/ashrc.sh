@@ -15,6 +15,14 @@ stty rows $r columns $c
   echo "termux2alpine  /termux2alpine 9p trans=virtio 0 0" >> /etc/fstab
 }
 
+## SET APK MIRRORS
+! $(command -v grep) "@testining" /etc/apk/repositories >/dev/null && {
+  echo """http://dl-cdn.alpinelinux.org/alpine/latest-stable/main
+http://dl-cdn.alpinelinux.org/alpine/latest-stable/community
+@testing https://dl-cdn.alpinelinux.org/alpine/edge/testing
+""" > /etc/apk/repositories
+}
+
 ## SET DNS 
 chk=$(grep -oE "8.8.8.8" /etc/resolv.conf)
 if [[ -z $chk ]]; then
