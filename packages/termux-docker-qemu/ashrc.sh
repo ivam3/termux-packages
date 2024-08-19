@@ -5,9 +5,7 @@
 [[ -d /termux2alpine ]] || { mkdir /termux2alpine;}
 
 ## SET SCREEN SIZE 
-r=$(stty size|awk -F " " '{print $1}')
-c=$(stty size|awk -F " " '{print $2}')
-stty rows $r columns $c
+stty rows 17 columns 131
 
 ## SET SHARED DIRECTORY BETWEEN BOTH OS 
 ! $(command -v grep) "termux2alpine" /etc/fstab >/dev/null && {
