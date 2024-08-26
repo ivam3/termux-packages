@@ -137,7 +137,7 @@ apt update
 
 Or just copy & paste this one command line:
 ```
-yes|apt install wget && \
+yes|apt install wget gnupg && \
 mkdir -p $PREFIX/etc/apt/sources.list.d && \
 wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/ivam3-termux-packages.list -O \
 $PREFIX/etc/apt/sources.list.d/ivam3-termux-packages.list && \
