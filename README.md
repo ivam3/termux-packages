@@ -109,9 +109,9 @@ This project is with the purpose of offering easy and fast access to the install
 
 To add the list of available tools and/or frameworks to the package manager `apt` in [Termux](https://github.com/termux/termux-app) follow those 5 simple steps:
 
-- Install `wget` package:
+- Install `wget` and `gnupg` package:
 ```bash
-apt install wget
+apt install wget gnupg
 ```
 
 - Create a directory:
