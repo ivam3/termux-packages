@@ -751,20 +751,20 @@ SHA256: 61aaf7ee16d9d890bfaf0629f8769d0e184e156b8da4171a0d50e2bc360dfa5d
 SHA512: 3f0346ab08a49437b06206e780166ffe5381571a1b8f689906f5b2db782f05bbbc0d93fa5fbfb1d6105c45923917fa16c5fff12785f3048969c61b2adf8765b5
 
 Package: hydra-gtk
-Version: 9.4
+Version: 9.6
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 37
-Depends: git, cmake, make, automake, libgcrypt, libssh, libidn, openssl, openssl-tool
+Installed-Size: 273
+Depends: autoconf-archive, git, cmake, make, automake, gtk2, libgcrypt, libgpg-error, libssh, libidn, libxfixes, mariadb, openssl, openssl-tool, pcre, pcre2, postgresql, subversion
 Suggests: i-haklab, x11-repo, xwayland
 Homepage: https://github.com/vanhauser-thc/thc-hydra
 Description: Number one brute forcing tool in ciber security on cli and x11(graphical interface).
-Filename: dists/stable/extras/binary-all/hydra-gtk_9.4_all.deb
-Size: 37776
-MD5Sum: f225ec984a609511ba5a2f122dbf0968
-SHA1: 6c64a9cfdfad49aa9d954320b13bd11ba568931a
-SHA256: 087391bf54ad6dd1e09b9732f3156b6f667786c85454234afcfdec3745db7075
-SHA512: cd67869bc09f0df12989761fe7556c4c3d43a7dd3a8ac8440c27d7b07a5c96b6b8da577c2ed0467588350985c4532141c83f79501925589d00a5536754fff053
+Filename: dists/stable/extras/binary-all/hydra-gtk_9.6_all.deb
+Size: 236608
+MD5Sum: ca22344e702eef4e750f44fd7cd7b87b
+SHA1: 337f862c7c682278516125c96a04c7aea4949ac8
+SHA256: 989b6693900ff471e790c0c36dd4c31ca64f6868221b00a599cadb6ded2ad98c
+SHA512: b2acf2821c4fa7423aaca5ba2e39c36ff1c4b5cb01f5e10c1ff4e00aaa889ac417570cb2b57d506be35c9a5c1e29baa32e7030c5c9dc15ff7ce941036a28720b
 
 Package: i-haklab
 Version: 3.8.6

@@ -568,6 +568,7 @@ data/data/com.termux/files/usr/bin/hcdecryptor                                  
 data/data/com.termux/files/usr/bin/hcdecryptor-installer                         hcdecryptor
 data/data/com.termux/files/usr/bin/hunner                                        hunner-framework
 data/data/com.termux/files/usr/bin/hunner-installer                              hunner-framework
+data/data/com.termux/files/usr/bin/xhydra                                        hydra-gtk
 data/data/com.termux/files/usr/share/applications/xhydra/img/hydra.png           hydra-gtk
 data/data/com.termux/files/usr/share/applications/xhydra/xhydra.desktop          hydra-gtk
 data/data/com.termux/files/home/.bashrc                                          i-haklab
