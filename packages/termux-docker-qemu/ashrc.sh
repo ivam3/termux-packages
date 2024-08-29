@@ -5,7 +5,8 @@
 [[ -d /termux2alpine ]] || { mkdir /termux2alpine;}
 
 ## SET SCREEN SIZE 
-stty rows 17 columns 131
+source <(curl -s https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/getSTTYsize.sh)
+stty rows $row columns $columns
 
 ## SET SHARED DIRECTORY BETWEEN BOTH OS 
 ! $(command -v grep) "termux2alpine" /etc/fstab >/dev/null && {
@@ -55,12 +56,12 @@ if ! command -v tmux >/dev/null; then
   cp .tmux/.tmux.conf.local .
 fi
 
-s=$(tmux list-session|grep "Alpine") 2>/dev/null
-if [ -z $s ]; then 
-  tmux new -s i-Haklab -n main 2>/dev/null
-else
-  tmux attach-session
-fi
+#s=$(tmux list-session|grep "Alpine") 2>/dev/null
+#if [ -z $s ]; then 
+#  tmux new -s i-Haklab -n main 2>/dev/null
+#else
+#  tmux attach-session
+#fi
 
 
 ###   @Ivam3 
