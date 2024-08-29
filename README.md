@@ -109,9 +109,9 @@ This project is with the purpose of offering easy and fast access to the install
 
 To add the list of available tools and/or frameworks to the package manager `apt` in [Termux](https://github.com/termux/termux-app) follow those 5 simple steps:
 
-- Install `wget` package:
+- Install `wget` and `gnupg` package:
 ```bash
-apt install wget
+apt install wget gnupg
 ```
 
 - Create a directory:
@@ -137,12 +137,13 @@ apt update
 
 Or just copy & paste this one command line:
 ```
-yes|apt install wget && \
+yes|apt install wget gnupg && \
 mkdir -p $PREFIX/etc/apt/sources.list.d && \
 wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/ivam3-termux-packages.list -O \
 $PREFIX/etc/apt/sources.list.d/ivam3-termux-packages.list && \
 curl -fsSL "https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/dists/stable/public_key.gpg" \
-|gpg --dearmor|tee "$PREFIX/etc/apt/trusted.gpg.d/ivam3.gpg" >/dev/null
+|gpg --dearmor|tee "$PREFIX/etc/apt/trusted.gpg.d/ivam3.gpg" >/dev/null && \
+apt update
 ```
 
 ### License
