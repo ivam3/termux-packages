@@ -58,6 +58,10 @@ install(){
       ╰─➤# Respond with 'no' On question 'Setup a user? (enter a lower-case loginname, or 'no') [no]'
       ╰─➤# Respond with 'y' On question 'erase the above disk(s) and continue? [y/N]:'
       $ poweroff
+
+    [!] Or if you prefer just copy and paste the next one-command-line:
+
+      setup-interfaces && ifup eth0 && echo -en \"nameserver 8.8.8.8\" >> /etc/resolv.conf && wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/ashrc.sh -O /etc/profile.d/ashrc.sh && wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os && sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk && apk add tzdata && setup-$os -f answerfile.$os && poweroff
   
     press \e[33mENTER\e[0m to continue" && read enter
 
