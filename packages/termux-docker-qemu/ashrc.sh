@@ -5,8 +5,18 @@
 [[ -d /termux2alpine ]] || { mkdir /termux2alpine;}
 
 ## SET SCREEN SIZE 
-source <(curl -s https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/getSTTYsize.sh)
-stty rows $row columns $columns
+set rows
+set columns
+if [ -z $rows ] || [ -z $columns ]; then
+  echo "[+] Set screen size (recommend | 31rows & 131columns)"
+  for i in rows columns; do
+    while read -p "Number of $i: " d && [ -z $d ]; do
+      continue
+    done
+    sed -i "s|set $i|$i=$d|" /etc/profile.d/ashrc.sh
+  done
+fi
+stty rows $row columns $columns 2>/dev/null
 
 ## SET SHARED DIRECTORY BETWEEN BOTH OS 
 ! $(command -v grep) "termux2alpine" /etc/fstab >/dev/null && {
