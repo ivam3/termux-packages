@@ -742,6 +742,7 @@ data/data/com.termux/files/home/.local/libexec/i-Haklab/ngroklink               
 data/data/com.termux/files/home/.local/libexec/i-Haklab/ngrokssh                 i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/passwd                   i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/payvid                   i-haklab
+data/data/com.termux/files/home/.local/libexec/i-Haklab/pd                       i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/phonescan                i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/ransomux                 i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/servers4test             i-haklab
