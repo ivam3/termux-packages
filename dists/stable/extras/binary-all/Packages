@@ -776,11 +776,11 @@ Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
 Filename: dists/stable/extras/binary-all/i-haklab_3.9.0_all.deb
-Size: 33138652
-MD5Sum: 168a0b4e7308508fe61e01adc0afd444
-SHA1: 03db9666b6f34b8d4429679b7217cf9d5f4bea5b
-SHA256: 13db184ad96d583f55db3e88370aae00549e803e72723a4e92eb778aee2c7ca9
-SHA512: dc8d97b87a16016247fd46deda823a88fa74d3cdbbae1406250fed1099686baa11c566e65ad0a65102170e18a31b6f7637fea915318d00ed0fb613fb8e1c4919
+Size: 33137076
+MD5Sum: b6e81be60f039b3a4198e350bc1af9e5
+SHA1: 10511483c296fdd06f19f0622b94c272423716b4
+SHA256: 77242f6750b82f6b510d7304b3ad6124e4ec35a8f899636617755e2bb3e23172
+SHA512: 3c0b988de82a4ec72367e5713892cb27a5c090bb661606366b6c21fa813f500ad0ecf926b669c8f0b6bc2af7da5f822f0ca8207236ea1b2ab82f6cf3602ee62d
 
 Package: infoga
 Version: 1.0
@@ -927,20 +927,20 @@ SHA256: 4c0c23cbcc8c663bbabeba017cef000e4f416aa31532686775f34032d340b83c
 SHA512: e6e71c73a9d26b6271e5a9b0eb7b215b6012bbe2846258f7b12326cdd54087e12bc1a37bc6c8f7dbbbe35170d61dc72cdd3ece97632cb2d46b8b88dbd7b2a9aa
 
 Package: nexphisher
-Version: 1.0.2
+Version: 1.0.5
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 1
-Depends: wget, curl, openssh, php, unzip, ngrok
+Installed-Size: 25
+Depends: wget, curl, openssh, php, unzip, cloudflared, ngrok
 Suggests: ngrok
 Homepage: https://github.com/htr-tech/nexphisher
 Description: Advanced Phishing tool
-Filename: dists/stable/extras/binary-all/nexphisher_1.0.2_all.deb
-Size: 2648
-MD5Sum: a730474b7b889092a54c86c8886dc98a
-SHA1: 806282e2c663f4a3210ecd567920083afb58123d
-SHA256: 01d42b81cabe3c81d54d97f8035de6022f67575cd98c1e0d431d17e71cd32f16
-SHA512: 920006a5c8ad092b6572432ac68522b4515e4b9f0d7209be6cfdbf637eb0d57574483d98fb8470404d27dd72e7c96fb181778cccbd3ae469d0426eb01e900d67
+Filename: dists/stable/extras/binary-all/nexphisher_1.0.5_all.deb
+Size: 6472
+MD5Sum: c2cdc5ebfdc0e8d3aacf3a3117765e1c
+SHA1: 6a429ba323fdcdd2aa3385bd9aa49f92e0d8094a
+SHA256: 223c6b309d07f16a1da687944d6a15d34ba19e952cbc8102907e8e01a5acd27a
+SHA512: e48a3c53b0ee00a658ce903f8fc31070bd89133b0db3293288dad4bf103698309bf4cd2d8355643cbeef66d30e13c1c081c1339028e93a1a96483383a5c007c6
 
 Package: ngrok
 Version: 3.3.5

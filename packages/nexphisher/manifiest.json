@@ -1,13 +1,14 @@
 {
   "name": "nexphisher",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "arch": "all",
   "homepage": "https://github.com/htr-tech/nexphisher",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["wget, curl, openssh, php, unzip, ngrok"],
+  "depends": ["wget, curl, openssh, php, unzip, cloudflared, ngrok"],
   "suggests": ["ngrok"],
   "description": "Advanced Phishing tool",
   "files" :{
-    "nexphisher": "bin/nexphisher"
+    "nexphisher": "bin/nexphisher",
+    "home/.local/share/nexphisher/nexphisher": "home/.local/share/nexphisher/nexphisher"
 	}
 }
