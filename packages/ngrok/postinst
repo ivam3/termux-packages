@@ -1,5 +1,42 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/ngrok-installer
+IFS=$'\n\t'
+
+arch1=$(uname -a|grep -o 'arm'|head -n1)
+arch2=$(uname -a|grep -o 'Android'|head -n1)
+
+[[ $arch1 = 'arm' ]] || [[ $arch2 = 'Android' ]] && arch=arm || arch=386
+
+wget --tries=20 --quiet https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-$arch.tgz \
+  -O ${TMPDIR}/ngrok-v3-stable-linux-$arch.tgz
+
+if [[ -e ${TMPDIR}/ngrok-v3-stable-linux-$arch.tgz ]];then
+	tar -xvzf ${TMPDIR}/ngrok-v3-stable-linux-$arch.tgz -C ${HOME}/.local/share
+	rm -rf ${TMPDIR}/ngrok-v3-stable-linux-$arch.tgz
+	chmod +x ${HOME}/.local/share/ngrok
+
+  PS3="Type: "
+	
+  echo -en $Y"W:$W Ngrok needs an authtoken from ngrok.com\n"
+	select way in Set_authtoken Skip_this_step;do
+		case $way in
+			Set_authtoken)
+				while read -p "authtoken: " token && [ -z $token ]
+				do
+					continue
+				done
+				exec ${HOME}/.local/share/ngrok authtoken $token
+				break
+				;;
+			*)
+				echo -en $Y"!:$W You can set it with: ngrok authtoken <your-token>\n"
+				break
+				;;
+		esac
+	done
+else
+	echo -en $R"E:$W Ngrok tar file not found.\n"
+fi
+
 rm -rf ${PREFIX}/bin/ngrok-installer
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 751 /data/data/com.termux/files/usr/bin/fixer

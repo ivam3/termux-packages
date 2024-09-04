@@ -1,3 +1,3 @@
 host tunnel.us.ngrok.com
-	HostkeyAlgorithms +ssh-rsa
+  HostkeyAlgorithms +ssh-rsa
 	PubkeyAcceptedAlgorithms +ssh-rsa

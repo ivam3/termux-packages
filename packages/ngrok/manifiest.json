@@ -1,13 +1,12 @@
 {
   "name": "ngrok",
-  "version": "3.3.5",
+  "version": "3.15.1",
   "arch": "all",
   "homepage": "https://ngrok.com",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
   "depends": ["wget, proot, openssh"],
   "description": "A cross-platform application that exposes local server ports to the Internet.",
   "files" :{
-    "ngrok-installer": "bin/ngrok-installer",
     "ngrok": "bin/ngrok",
 		"config": "/data/data/com.termux/files/home/.ssh/config"
 	}

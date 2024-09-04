@@ -3799,7 +3799,6 @@ data/data/com.termux/files/usr/bin/nexphisher                                   
 data/data/com.termux/files/usr/home/.local/share/nexphisher/nexphisher           nexphisher
 data/data/com.termux/files/home/.ssh/config                                      ngrok
 data/data/com.termux/files/usr/bin/ngrok                                         ngrok
-data/data/com.termux/files/usr/bin/ngrok-installer                               ngrok
 data/data/com.termux/files/usr/bin/nikto                                         nikto
 data/data/com.termux/files/usr/bin/nikto-installer                               nikto
 data/data/com.termux/files/usr/opt/openjdk-21.0.1/lib/src.zip                    openjdk-21-source
