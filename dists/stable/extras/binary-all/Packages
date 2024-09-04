@@ -1308,6 +1308,22 @@ SHA1: bced1b873eb015995e7d38c0c3283cf2629e134d
 SHA256: fbd1cf58dba45e4021db47e73ec1303639dc24a8cae7ebfb345e75978f0ebcbb
 SHA512: 1213b630564ed66458a8ac612991f4aed5ec3ab059b6c225fefb46118cee8e9b4e7a3ac3b20f9788c9ab63df8719c3d1139c97c0dcde320274e31b21321bbc7b
 
+Package: storm-breaker
+Version: 3.0.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: php, git, ngrok
+Suggests: i-haklab
+Homepage: https://https://github.com/ultrasecurity/Storm-Breaker
+Description: Social engineering tool [Access Webcam & Microphone & Location Finder]
+Filename: dists/stable/extras/binary-all/storm-breaker_3.0.0_all.deb
+Size: 1964
+MD5Sum: baf8bd31d921827ee13001004271e3ff
+SHA1: 01773771ae17eccc93cc4f06dd1b8106f84003c8
+SHA256: 0db7d2c2a37e3a8722feab616f321c3b7f92918338711b56604c27b9525c9fd5
+SHA512: 5769b65d8f065c1b502b63ce325ef61a2d08a9b306a5b74d76906ef406e0161e250d1303948b19c377f6b688d4c17eaaf9442806e7d82612be492731e755886b
+
 Package: sublist3r
 Version: 1.0
 Architecture: all

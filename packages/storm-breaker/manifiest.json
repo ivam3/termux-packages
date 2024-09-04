@@ -1,0 +1,13 @@
+{
+  "name": "storm-breaker",
+  "version": "3.0.0",
+  "arch": "all",
+  "homepage": "https://https://github.com/ultrasecurity/Storm-Breaker",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["php, git, ngrok"],
+  "suggests": ["i-haklab"],
+  "description": "Social engineering tool [Access Webcam & Microphone & Location Finder]",
+  "files" :{
+    "storm-breaker": "bin/storm-breaker"
+  }
+}

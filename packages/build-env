@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 
 [[ $# -eq 0 ]] && { echo -en >&2 "\e[31mmissing argument, type $(basename $0) -h for help\e[0m"; exit 1;}
 
@@ -7,16 +7,16 @@ usage(){
 usage $(basename $0) <options>
 
 OPTIONS\t|DESCRIPTIONS
-n\tpackage name
-v\tpackage version
-a\tarchitecture
-p\tsupport page
-h\tshow this menu
+-n\tpackage name
+-v\tpackage version
+-a\tarchitecture
+-p\tsupport page
+-h\tshow this menu
 """
 	exit 0
 }
 
-while getopts n:v:a:d:p:s:i:h opts; do
+while getopts "n:v:a:p:h" opts; do
 	case $opts in 
 		n) pkgName=$OPTARG 
 			if [[ -d $pkgName ]]

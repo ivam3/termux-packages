@@ -3834,6 +3834,7 @@ data/data/com.termux/files/usr/bin/slowhttptest-installer                       
 data/data/com.termux/files/usr/bin/sqliv                                         sqliv
 data/data/com.termux/files/usr/bin/sqliv-installer                               sqliv
 data/data/com.termux/files/usr/bin/stegsnow-installer                            stegsnow
+data/data/com.termux/files/usr/bin/storm-breaker                                 storm-breaker
 data/data/com.termux/files/usr/bin/sublist3r                                     sublist3r
 data/data/com.termux/files/usr/bin/tangalanga                                    tangalanga
 data/data/com.termux/files/usr/bin/tangalanga-installer                          tangalanga
