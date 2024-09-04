@@ -75,8 +75,6 @@ This project is with the purpose of offering easy and fast access to the install
 | [quack](https://github.com/Monkey-hk4/quack) | Toolkit with SMS attack tool, HTTP attack tool and many other attack tools. |
 | [ransomux](https://github.com/ivam3/termux-packages) | "Simulate a ransomware effects searching to lock and encrypt files into internal|external android memory brigning a reversel shell. |
 | [recon-ng](https://github.com/lanmaster53/recon-ng) | Open Source Intelligence gathering tool aimed at reducing the time spent harvesting information from open sources. |
-| [recondog](https://github.com/s0md3v/ReconDog) | Reconnaissance Swiss Army Knife |
-| [red hawk](https://github.com/Tuhinshubhra/RED_HAWK) | All in one tool for Information Gathering, Vulnerability Scanning and Crawling. |
 | [routersploit](https://github.com/threat9/routersploit) | Open-source exploitation framework dedicated to embedded devices. |
 | [saycheese](https://github.com/hangetzzu/saycheese) | Grab target's webcam shots by link. |
 | [sayhello](https://github.com/d093w1z/sayhello) | Capturing audio (.wav) from target using a link. |
@@ -88,6 +86,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [slowhttptest](https://github.com/shekyan/slowhttptest) | A highly configurable tool that simulates some Application Layer Denial of Service attacks by prolonging HTTP connections in different ways. |
 | [sqliv](https://github.com/the-robot/sqliv) | Massive SQL injection vulnerability scanner. |
 | [stegsnow](https://www.kali.org/tools/stegsnow/) | Hide messages in ASCII text by appending whitespaces to the end of lines |
+| [storm-breaker](https://https://github.com/ultrasecurity/Storm-Breaker) | Social engineering tool [Access Webcam & Microphone & Location Finder] With {Py,JS,PHP} |
 | [sublist3r](https://github.com/aboul3la/Sublist3r) | Fast subdomains enumeration tool for penetration testers. |
 | [tangalanga](github.com/elcuervo/tangalanga) | The Zoom conference scanner hacking tool. |
 | [termux-desktop-xfce](https://github.com/Yisus7u7/termux-desktop-xfce) | Set up a beautiful xfce desktop in termux. |
