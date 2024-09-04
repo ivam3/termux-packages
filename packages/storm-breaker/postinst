@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
 echo "Cloning repository ..."
-git clone --quiet https://https://github.com/ultrasecurity/Storm-Breaker ${HOME}/.local/share/storm-breaker
+git clone --quiet https://github.com/ultrasecurity/Storm-Breaker ${HOME}/.local/share/storm-breaker
 [[ -d ${HOME}/.local/share/storm-breaker ]] && {
   echo "Installing requirements ...";
   chmod 751 -R ${HOME}/.local/share/storm-breaker;

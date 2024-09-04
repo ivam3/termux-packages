@@ -1315,14 +1315,14 @@ Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
 Depends: php, git, ngrok
 Suggests: i-haklab
-Homepage: https://https://github.com/ultrasecurity/Storm-Breaker
+Homepage: https://github.com/ultrasecurity/Storm-Breaker
 Description: Social engineering tool [Access Webcam & Microphone & Location Finder]
 Filename: dists/stable/extras/binary-all/storm-breaker_3.0.0_all.deb
-Size: 1964
-MD5Sum: baf8bd31d921827ee13001004271e3ff
-SHA1: 01773771ae17eccc93cc4f06dd1b8106f84003c8
-SHA256: 0db7d2c2a37e3a8722feab616f321c3b7f92918338711b56604c27b9525c9fd5
-SHA512: 5769b65d8f065c1b502b63ce325ef61a2d08a9b306a5b74d76906ef406e0161e250d1303948b19c377f6b688d4c17eaaf9442806e7d82612be492731e755886b
+Size: 1960
+MD5Sum: cf9cc71bf6476f7d12f71623e53990fe
+SHA1: b8995b957609a8f2a30add2ab22ab9fad2496e64
+SHA256: c6a13b9b46385fc7b52e4f6fdcf3cb8ecc6895f19a785aef80efc6478193daa0
+SHA512: 3962743ed1846ca38bfceb7fb9f19e49b4c03028d4e3a4e29eab9cf2da4f6e9eb81183eee0359df074250b0ca7d0abf136eb6b6564f52c52e2422428969278cd
 
 Package: sublist3r
 Version: 1.0
