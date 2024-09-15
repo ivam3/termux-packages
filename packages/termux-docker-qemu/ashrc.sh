@@ -5,8 +5,8 @@
 [[ -d /termux2alpine ]] || { mkdir /termux2alpine;}
 
 ## SET SCREEN SIZE 
-set rows
-set columns
+rows=31
+columns=131
 if [ -z $rows ] || [ -z $columns ]; then
   echo "[+] Set screen size (recommend | 31rows & 131columns)"
   for i in rows columns; do
@@ -42,7 +42,7 @@ fi
 export PATH="/root/.local/bin:$PATH"
 
 ## CONF PIP TO FORCE MODULE INSTALLATION IN ALPINE OS ENVIROMENT 
-if command -v python3 >/dev/null; then 
+if ! grep "true" /root/.config/pip/pip.conf &>/dev/null; then 
   python3 -m pip config set global.break-system-packages true
 fi
 
