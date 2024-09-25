@@ -12,8 +12,8 @@ echo "Installing and updating ruby gems ..."
 cd $msfDir
 mkdir -p $PREFIX/include/libxml/
 ln -s $PREFIX/include/libxml2/libxml/* $PREFIX/include/libxml/ >/dev/null 2>/dev/null
-nokogiriVer="1.16.2"
 nokoSED=$(cat metasploit-framework.gemspec|grep -i nokogiri|sed 's/nokogiri [\(\)]/(/g'|head -n 1|awk -F " " '{print $2,$3,$4}')
+nokogiriVer="1.16.2"
 sed -i "s|$nokoSED|'nokogiri', '~> $nokogiriVer'|" metasploit-framework.gemspec
 #$(cat Gemfile.lock|grep -i nokogiri|sed 's/nokogiri [\(\)]/(/g'|cut -d ' ' -f 5|grep -oP "(.).[[:digit:]][\w+]?[.].")
 #sed -i "5a gem 'net-smtp', require: false" $msfDir/Gemfile
@@ -30,23 +30,21 @@ bundle config build.nokogiri --platform=ruby -- --use-system-libraries \
   --with-xslt-include=$(pkg-config libxslt --cflags-only-I) \
   --with-xslt-lib=$(pkg-config libxslt --libs)
 
-gem install nokogiri -v "$nokogiriVer" --platform=ruby -- --use-system-libraries \
-  --with-xml2-include=$(pkg-config libxml-2.0 --cflags-only-I) \
-  --with-xml2-lib=$(pkg-config libxml-2.0 --libs) \
-  --with-xslt-include=$(pkg-config libxslt --cflags-only-I) \
-  --with-xslt-lib=$(pkg-config libxslt --libs)
+for i in nokogiri reline ansi; do 
+  find $PREFIX/lib/ruby -iname "$i-[0-9]\.[0-9]\.[0-9].gemspec" -type f|xargs rm 2>/dev/null
+  case $i in
+    reline) version="0.5.10" ;;
+    ansi) version="1.5.0" ;;
+    nokogiri) version="$nokogiriVer" ;;
+  esac
 
-gem install reline -v '0.5.10' --platform=ruby -- --use-system-libraries
-  --with-xml2-include=$(pkg-config libxml-2.0 --cflags-only-I) \
-  --with-xml2-lib=$(pkg-config libxml-2.0 --libs) \
-  --with-xslt-include=$(pkg-config libxslt --cflags-only-I) \
-  --with-xslt-lib=$(pkg-config libxslt --libs)
-
-gem install ansi -v '1.5.0' --platform=ruby -- --use-system-libraries
-  --with-xml2-include=$(pkg-config libxml-2.0 --cflags-only-I) \
-  --with-xml2-lib=$(pkg-config libxml-2.0 --libs) \
-  --with-xslt-include=$(pkg-config libxslt --cflags-only-I) \
-  --with-xslt-lib=$(pkg-config libxslt --libs)
+  gem uninstall $i -v "<$version"
+  gem install $i -v "$version" --platform=ruby -- --use-system-libraries
+    --with-xml2-include=$(pkg-config libxml-2.0 --cflags-only-I) \
+    --with-xml2-lib=$(pkg-config libxml-2.0 --libs) \
+    --with-xslt-include=$(pkg-config libxslt --cflags-only-I) \
+    --with-xslt-lib=$(pkg-config libxslt --libs)
+done
 
 bundle update --bundler 2>/dev/null
 [[ -e $msfDir/Gemfile.lock ]] && { rm -rf $msfDir/Gemfile.lock;}
