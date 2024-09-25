@@ -36,11 +36,38 @@ gem install nokogiri -v "$nokogiriVer" --platform=ruby -- --use-system-libraries
   --with-xslt-include=$(pkg-config libxslt --cflags-only-I) \
   --with-xslt-lib=$(pkg-config libxslt --libs)
 
+gem install reline -v '0.5.10' --platform=ruby -- --use-system-libraries
+  --with-xml2-include=$(pkg-config libxml-2.0 --cflags-only-I) \
+  --with-xml2-lib=$(pkg-config libxml-2.0 --libs) \
+  --with-xslt-include=$(pkg-config libxslt --cflags-only-I) \
+  --with-xslt-lib=$(pkg-config libxslt --libs)
+
+gem install ansi -v '1.5.0' --platform=ruby -- --use-system-libraries
+  --with-xml2-include=$(pkg-config libxml-2.0 --cflags-only-I) \
+  --with-xml2-lib=$(pkg-config libxml-2.0 --libs) \
+  --with-xslt-include=$(pkg-config libxslt --cflags-only-I) \
+  --with-xslt-lib=$(pkg-config libxslt --libs)
+
 bundle update --bundler 2>/dev/null
 [[ -e $msfDir/Gemfile.lock ]] && { rm -rf $msfDir/Gemfile.lock;}
 bundle install -j$(nproc --all) --verbose
 
 echo "Running RuGiR (Ruby Gem Issues Resolved) ...";
+### FIXING THE MSFCONSOLE INITIAL WARNING 
+format_gem() {
+  local gem_output="$1"
+  echo "$gem_output"|sed 's|(default: |(|'|sed -E "s/^([a-zA-Z0-9_-]+) \(([0-9]+\.[0-9]+\.[0-9]+).*/\\tgem '\1',  '\2'/" 2>/dev/null
+}
+
+for gem in logger ansi ostruct; do
+  gem_output=$(gem list ^$gem$)
+
+  [[ -z "$gem_output" ]] || {
+    formatted_gem=$(format_gem "$gem_output")
+    sed -i '31i\'"$formatted_gem" $msfDir/Gemfile
+  }
+done
+########
 rubyLIBv=$(ls ${PREFIX}/lib/ruby|sort -r|grep -m 1 '[0-9].[0-9].[0-9]')
 rubyLIB="${PREFIX}/lib/ruby/gems/$rubyLIBv"
 gemPost_adap=$(find $rubyLIB -iname "postgresql_adapter.rb")
@@ -91,10 +118,6 @@ wget --tries=20 --quiet $JAVADB/.embed/apk.rb -O $msfDir/lib/msf/core/payload/ap
 for i in msfd msfdb msfrpc msfrpcd msfvenom;do
 	ln -sfr ${PREFIX}/bin/msfconsole ${PREFIX}/bin/$i
 done
-
-#for gem in nokogiri bcrypt msgpack network_interface bson redcarpet sqlite3;do
-#  find ${PREFIX}/lib/ruby/gems/$rubyLIBv -type d -iname "$gem-[0-9].[0-9].[0-9]"|xargs rm -rf
-#done
 
 echo "Setting metasploit database"
 mkdir -p $msfDir/config

@@ -160,9 +160,12 @@ wget --tries=5 --quiet \
   -O ${PREFIX}/bin/fixer && chmod 750 /data/data/com.termux/files/usr/bin/fixer
 
 echo "[*] termux-docker-qemu installation finished."
+echo "[!] **UPDATES**"
+echo " ╰➤ Port mapping between Termux & VM: 8000"
+echo " ╰➤ PATH volumen between Termux & VM: ~/.local/share/termux-docker-qemu/alpine/termux2alpine/ ─➤ /termux2alpine"
 echo "[*] Run 'termux-docker-qemu $os' to execute it for only CLi."
 echo "[*] Run 'termux-docker-qemu $os x11' to execute it with graphical enviroment"
-echo "[!] To set a graphical enviroment you should run in $os the command: ash /termux2alpine/alpineX11.sh"
+echo " ╰➤ To set a graphical enviroment you should run in $os the command: ash /termux2alpine/alpineX11.sh"
 echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."

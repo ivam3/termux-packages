@@ -27,11 +27,12 @@ mnt="${HOME}/.local/share/termux-docker-qemu/$os/termux2$os"
 case "$os" in
   alpine)
     #$(free --mega|grep "Mem"|awk '{print $2}') -smp \
-    ip=$(ifconfig 2>/dev/null|grep -oE '([0-9]{1,3}\.){3}'|grep -v 255|grep -v 127|tail -n 1)
+    ipnet=$(ifconfig 2>/dev/null|grep -oE '([0-9]{1,3}\.){3}'|grep -v 255|grep -v 127|tail -n 1)
+    iplan=$(ifconfig 2>/dev/null|grep -oE '([0-9]{1,3}\.){3}([0-9]{1,3})'|grep -v 255|grep -v 127|tail -n 1)
     qemu-system-x86_64 -machine q35 -m $mRAM -smp \
       cpus=$(nproc) -cpu qemu64,+avx,+avx2 -vga virtio -full-screen -usb \
       -drive if=pflash,format=raw,read-only=on,file=${PREFIX}/share/qemu/edk2-x86_64-code.fd \
-      -netdev user,id=n1,net=$ip\0/24,dhcpstart=$ip\9,hostfwd=tcp::2222-:22 \
+      -netdev user,id=n1,net=$ipnet\0/24,dhcpstart=$iplan,hostfwd=tcp::2222-:22,hostfwd=tcp::8000-:8000 \
       -device virtio-net,netdev=n1 \
       -virtfs local,path=$mnt,mount_tag=termux2$os,security_model=passthrough \
       $XorCLi $os.img
