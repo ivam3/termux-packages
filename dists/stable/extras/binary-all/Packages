@@ -128,20 +128,20 @@ SHA256: 022cad8aba44c5068a2931eac4b0e4a7e9c075856b0beee3cf32e1dfd31ec793
 SHA512: 7840fe9672ad1210bb5cbc252caf3dbbc60b0ab3fd7dce83430d429fe5f90d4839c1eb10baa7a9fe4f66463533edf84de3108aa5ba9c55b62ffa330323018e26
 
 Package: beef
-Version: 0.5.4.0-soa
+Version: 0.5.4.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: git, ruby, nodejs-lts, imagemagick
+Depends: git, ruby, nodejs-lts, imagemagick, geoip2-database
 Suggests: i-haklab, metasploit-framework
 Homepage: https://github.com/beefproject/beef
 Description: Penetration testing tool that focuses on the web browser.
-Filename: dists/stable/extras/binary-all/beef_0.5.4.0-soa_all.deb
-Size: 2728
-MD5Sum: 5362d4f7fdb3b57278735ac125bc1724
-SHA1: 1f2d05043eaad1a2c74a58f4f760562140ba739a
-SHA256: d745017cc2da554ce33e22fd28dee27123924dba925b047591c117fa1a326d84
-SHA512: d7d2a04150a628a27e3e348bc8cf71cf7de1c149e4935247183c3249512760696edf1fd1a428a291cfb0c98b55747503bed5c991291606727998e6153398778d
+Filename: dists/stable/extras/binary-all/beef_0.5.4.0_all.deb
+Size: 2772
+MD5Sum: 92a9163526aeef4fb8d0d696b0c150ec
+SHA1: 030240753ffd5a0c824bbe3c962224823c071883
+SHA256: a3f0c31705ac07e6cedbc8995b31a13cfa45d63071394d8c337ae5c8bd1103a9
+SHA512: 1f4a7a1f2019f11acf104b46c1849f0a345ce86887ba64478bc5a048be59ca99181a18d5590e2ee78c63b4df9e0e9b6d182b5408135d0af97037d540359d9362
 
 Package: binwalk
 Version: 2.3.3

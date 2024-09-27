@@ -1,10 +1,10 @@
 {
   "name": "beef",
-  "version": "0.5.4.0-soa",
+  "version": "0.5.4.0",
   "arch": "all",
   "homepage": "https://github.com/beefproject/beef",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["git, ruby, nodejs-lts, imagemagick"],
+  "depends": ["git, ruby, nodejs-lts, imagemagick, geoip2-database"],
   "suggests": ["i-haklab, metasploit-framework"],
   "description": "Penetration testing tool that focuses on the web browser.",
   "files" :{

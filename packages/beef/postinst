@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
 echo "Cloning repository ..."
-git clone --quiet https://github.com/beefproject/beef ${HOME}/.local/share/beef
+git clone --quiet --depth 1 https://github.com/beefproject/beef ${HOME}/.local/share/beef
 [[ -d ${HOME}/.local/share/beef ]] && {
   echo "Configuring beef ..."
   chmod 751 -R ${HOME}/.local/share/beef
@@ -23,14 +23,15 @@ git clone --quiet https://github.com/beefproject/beef ${HOME}/.local/share/beef
   bundle -j$(nproc --all) --verbose
   curl -fsSL \
     https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/libexec/fixbigdecimal|bash
-  echo "Installing GeoIP ..."
-  wget --tries=20 --quiet \
-    https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/beef/GeoIP.zip \
-    -O ${TMPDIR}/GeoIP.zip;
-  [[ -d ${PREFIX}/opt/ ]] || { mkdir -p ${PREFIX}/opt;}
-  unzip -q ${TMPDIR}/GeoIP.zip -d ${PREFIX}/opt
+#  echo "Installing GeoIP ..."
+#  wget --tries=20 --quiet \
+#    https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/beef/GeoIP.zip \
+#    -O ${TMPDIR}/GeoIP.zip;
+#  [[ -d ${PREFIX}/opt/ ]] || { mkdir -p ${PREFIX}/opt;}
+#  unzip -q ${TMPDIR}/GeoIP.zip -d ${PREFIX}/opt
   echo "[*] beef installation finished."
   echo "[*] Run 'beef' to execute it."
+  echo "[*] Default credentials: user=beef password=Ivam3byCinderella."
 } || {
   echo -en "\e[31mE:\e[0m beef directory missing ... \e[33mAborting.\e[0m\n";
   exit 1;
