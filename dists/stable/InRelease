@@ -3,10 +3,10 @@ Hash: SHA512
 
 Codename: termux
 Version: 1
-Architectures: i686 arm all aarch64 x86_64
+Architectures: arm i686 all aarch64 x86_64
 Description: stable repository
 Suite: stable
-Date: Sun, 20 Oct 2024 05:52:20 UTC
+Date: Sun, 20 Oct 2024 06:22:08 UTC
 Components: extras
 MD5Sum:
  210141a2d8bb84188d5b25d6109db946 71930 extras/binary-all/Packages
@@ -94,8 +94,8 @@ SHA512:
  a4d9915ab4f62bc47ad6697b9bf638db46a0c7008c91d73fc27014313a7709131b3ddc51ca777104f54c099a7361ea0e0f89e2ab90d20e7a08ec80d19301f36c 1048 extras/Contents-x86_64.xz
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYKAB0WIQRhZNMv/PA1ihlQYNihZ33nkasYMgUCZxSeGwAKCRChZ33nkasY
-MrMQAQC7YRgngbY9lF86kQ4RDpi/IuB5C0REBjI6FimjQ6uKUAD+KiLpjdqX1sB2
-vHJwBkI1EWxIUhoBn5T4KUJf6uF+EwI=
-=v4Px
+iHUEARYKAB0WIQRhZNMv/PA1ihlQYNihZ33nkasYMgUCZxSh6AAKCRChZ33nkasY
+Ms0RAQC2nkdvP4wMtxXaz6j9xSbKDFD/vYiCpFlNDS58lnV1vwEA2jBjeCv5/q9U
++J/GZpUkDtzXeFN+K5g4vjfymhsLqQI=
+=2h+6
 -----END PGP SIGNATURE-----

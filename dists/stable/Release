@@ -1,9 +1,9 @@
 Codename: termux
 Version: 1
-Architectures: i686 arm all aarch64 x86_64
+Architectures: arm i686 all aarch64 x86_64
 Description: stable repository
 Suite: stable
-Date: Sun, 20 Oct 2024 05:52:20 UTC
+Date: Sun, 20 Oct 2024 06:22:08 UTC
 Components: extras
 MD5Sum:
  210141a2d8bb84188d5b25d6109db946 71930 extras/binary-all/Packages
