@@ -105,7 +105,7 @@ select os in alpine;do
   case $os in
     alpine)
       echo "[?] Choose an architecture [recommended x86_64]:" 
-      select arch in x86 x86_64 aarch64 armv7 armhf;do
+      select arch in x86 x86_64 aarch64 armv7;do
         m="$arch";break
       done
       
