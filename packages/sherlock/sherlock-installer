@@ -1,0 +1,6 @@
+
+#!/data/data/com.termux/files/usr/bin/bash
+
+export CFLAGS="-Wno-deprecated-declarations -Wno-unreachable-code"
+export MATHLIB="m"
+python3 -m pip --no-color --quiet --no-cache-dir install Cython sherlock-project 2>/dev/null
