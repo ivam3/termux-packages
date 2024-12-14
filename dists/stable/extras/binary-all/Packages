@@ -895,7 +895,7 @@ SHA256: 70e6288789ba6deafecef89e24b446b455c927044d0feeebb29eddd105b88c6d
 SHA512: 7a9a5dc2ff092066d700f1488789dd4b4ea00ad69559e570191dfdbf160937f1b21477abb530acc918ec42a3b54fb05d74bf7280e01410fdba1349251c8b8608
 
 Package: metasploit-framework
-Version: 6.4.28
+Version: 6.4.41
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
@@ -903,12 +903,12 @@ Depends: build-essential, ruby, python, libcap, openjdk-17, termux-tools, autoco
 Suggests: embed, i-haklab
 Homepage: https://github.com/rapid7/metasploit-framework
 Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
-Filename: dists/stable/extras/binary-all/metasploit-framework_6.4.28_all.deb
+Filename: dists/stable/extras/binary-all/metasploit-framework_6.4.41_all.deb
 Size: 4652
-MD5Sum: 3faa8a66a38388d9e5f59a36e991b824
-SHA1: a7fbaed06951790a007f8698601f834e42c3b724
-SHA256: b4badcdf03562c37c31e087fdc9625af6011455b7a76426deff759f523f7db17
-SHA512: 88fdb80d52d4f153c46a4edfbe1b456ab10be9150b23e96191628343aa1da1643e3a048ee1f8f216ef0e1f53df1244b613f573273baf70611ff8435b811da70b
+MD5Sum: 0dfcdbbb2391924bdaba6d5e2cda9abc
+SHA1: 1164cbd4d26d61099c1d0d0ac81745f7d5f293e3
+SHA256: f0645d013b81397b26bc3150f545785979d0380e8b602963f1d090d893d3e90e
+SHA512: 68eed461271a94c157ae2f79d444e4c073250c45594f509cb92dfa9a339ea4c1a90397989b35b6565d152157087ecfd34dd7a78a25a0f41da5f8b1676a5dbcf7
 
 Package: mimikatz
 Version: 0.11.0
