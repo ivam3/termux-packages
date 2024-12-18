@@ -1,0 +1,26 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+echo "Cloning repository ..."
+git clone --quiet https://github.com/hashcat/hashcat.git ${HOME}/.local/share/hashcat && cd $_
+[[ -d ${HOME}/.local/share/hashcat ]] && {
+    echo "Installing requirements ..."
+    chmod 751 -R ${HOME}/.local/share/hashcat
+    line=$(grep -n "\$(LDFLAGS)" src/Makefile|awk -F ":" '{print $1}')
+    let ln=$line-1 
+    sed -i "${ln}a LDFLAGS += -liconv" src/Makefile 
+    line=$(grep -n "affinity.h"|awk -F ":" '{print $1}')
+    let ln=$line+1
+    sed -i "${ln}a\\
+#ifdef __ANDROID__\\
+    // Placeholder: No-op for Android/Termux where pthread_setaffinity_np is unavailable\\
+    int pthread_setaffinity_np(pthread_t thread, size_t cpusetsize, const cpu_set_t *cpuset) {\\
+        return 0; // Return success without setting CPU affinity\\
+    }\\
+#endif" src/affinity.c
+    make && make install
+    echo "[*] hashcat installation finished."
+    echo "[*] Run 'hashcat' to execute it."
+} || {
+  echo -en "\e[31mE:\e[0m hashcat directory missing ... \e[33mAborting.\e[0m\n";
+}
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
