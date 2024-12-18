@@ -48,6 +48,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [gobuster](https://github.com/OJ/gobuster/) | Directory/File, DNS and VHost busting tool written in Go |
 | [gophish](https://github.com/gophish/gophish) | Open-Source advance phishing toolkit |
 | [hakku](https://github.com/4shadoww/hakkuframework) | Open-source penetration testing platform used to perform web and network-related penetration testing. |
+| [hashcat](https://github.com/hashcat/hashcat.git) | World's fastest and most advanced password recovery utility |
 | [hasher](https://github.com/CiKu370/hasher) | Hash cracker with auto detect hash |
 | [hashid](https://gitlab.com/kalilinux/packages/hash-identifier/) | Software to identify the different types of hashes used to encrypt data and especially passwords. |
 | [hatcloud](https://github.com/HatBashBR/HatCloud) | Make bypass in CloudFlare for discover real IP. |
@@ -84,6 +85,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [shellsploit](https://github.com/vasco2016/shellsploit-framework) |It let's you generate customized shellcodes, backdoors, injectors for various operating system. And let's you obfuscation every byte via encoders. |
 | [sherlock](https://github.com/sherlock-project/sherlock) | Hunt down social media accounts by username across social networks. |
 | [slowhttptest](https://github.com/shekyan/slowhttptest) | A highly configurable tool that simulates some Application Layer Denial of Service attacks by prolonging HTTP connections in different ways. |
+| [spix](https://github.com/VictorH028/spix) | A command line (CLI) tool written in C++ that displays an animated spinner while a background process is running. |
 | [sqliv](https://github.com/the-robot/sqliv) | Massive SQL injection vulnerability scanner. |
 | [stegsnow](https://www.kali.org/tools/stegsnow/) | Hide messages in ASCII text by appending whitespaces to the end of lines |
 | [storm-breaker](https://https://github.com/ultrasecurity/Storm-Breaker) | Social engineering tool [Access Webcam & Microphone & Location Finder] With {Py,JS,PHP} |
