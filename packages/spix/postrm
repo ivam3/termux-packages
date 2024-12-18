@@ -1,0 +1,3 @@
+#!/data/data/com.termux/files/usr/bin/bash
+rm ${PREFIX}/share/man/man1/spix.1 ${PREFIX}/bin/spix
+echo "Done. Package 'spix' removed."

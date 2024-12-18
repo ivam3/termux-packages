@@ -670,6 +670,22 @@ SHA1: b2f514fa772ccb9df231c09a4f11879cd2f7cd40
 SHA256: 3838c0f455933833ebea72f6a73a31c0c5bccfcd1cf60fcb1cdf37b44c4ed7b5
 SHA512: 8be73ced2c29d58edc8a0b7c5bb5bf83223eaed4abdf58d5689ea7a92dcdf229be7fcf5be33bc1093e2abad8d368cdaec9fb809dd24be92aaa564415e6b62b40
 
+Package: hashcat
+Version: 6.2.6
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: git, glibc, libc++, clang, libiconv, make, ocl-icd, opencl-vendor-driver
+Suggests: i-haklab
+Homepage: https://github.com/hashcat/hashcat.git
+Description: World's fastest and most advanced password recovery utility
+Filename: dists/stable/extras/binary-all/hashcat_6.2.6_all.deb
+Size: 2156
+MD5Sum: 88fefa4b879b69ff8b47cdf2be6efb1f
+SHA1: fdc0ba1010e3b220d3d46016c6b6fb3baae3c628
+SHA256: ca9733207d4c3f48ca0b01cf43927f120ade5e12c68241ee57900b271b7645ac
+SHA512: 05ece9c70770e8ebe66c25b88585c5f3b5d23a74b2d0d38f3c1f67e0496c70f340e62d33ddf0288c05df069222590c9a5364422d3a94425c03f03433032caeea
+
 Package: hasher
 Version: 3.0.1
 Architecture: all
@@ -1275,6 +1291,22 @@ MD5Sum: 263e56abd4085c5583539f7d057610d5
 SHA1: b4266ef281052b9151d9ee4aff4546276a53507c
 SHA256: c6bc7884088937d7ccce70d02bc854fa43aeee3bd0504b0c783afbf31088d807
 SHA512: 78e8f316b047c62d7d2327c1ef3b0d07f0f1da66780c1ba56f64101195b6e0ee3b67e3955fa480eeeb62e8f061cdd166f16d71785fe61ff2482d5810747d0ff4
+
+Package: spix
+Version: 1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: git, glibc, libc++, clang, libiconv, make
+Suggests: i-haklab
+Homepage: https://github.com/VictorH028/spix
+Description: A command line (CLI) tool written in C++ that displays an animated spinner while a background process is running
+Filename: dists/stable/extras/binary-all/spix_1.0_all.deb
+Size: 2060
+MD5Sum: 9d7d7d9199ace98e166a930a4c90116d
+SHA1: e2305cd6c02cd9fcfcb97629b2ab6a9ad9bc9e9c
+SHA256: b549c7da696e5617f3a06ba1d21fe128459c47923580e1748c1479f70e8ad0c7
+SHA512: 247fc39e89ea0098f7948bd3aea107357370d7add3a359f56413a1d7b719a48cbfc4667b686a63effe5a9ef72ddf581728ac290821864fd4226c7e2d54c6f937
 
 Package: sqliv
 Version: 2.0

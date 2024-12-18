@@ -559,6 +559,7 @@ data/data/com.termux/files/usr/bin/gophish                                      
 data/data/com.termux/files/usr/bin/gophish-installer                             gophish
 data/data/com.termux/files/usr/bin/hakku                                         hakku-framework
 data/data/com.termux/files/usr/bin/hakku-installer                               hakku-framework
+data/data/com.termux/files/usr/bin/hashcat-installer                             hashcat
 data/data/com.termux/files/usr/bin/hasher                                        hasher
 data/data/com.termux/files/usr/bin/hasher-installer                              hasher
 data/data/com.termux/files/usr/bin/hashid-installer                              hashid
@@ -3773,6 +3774,7 @@ data/data/com.termux/files/usr/bin/shellsploit                                  
 data/data/com.termux/files/usr/bin/shellsploit-installer                         shellsploit-framework
 data/data/com.termux/files/usr/bin/sherlock-installer                            sherlock
 data/data/com.termux/files/usr/bin/slowhttptest-installer                        slowhttptest
+data/data/com.termux/files/usr/bin/spix-installer                                spix
 data/data/com.termux/files/usr/bin/sqliv                                         sqliv
 data/data/com.termux/files/usr/bin/sqliv-installer                               sqliv
 data/data/com.termux/files/usr/bin/stegsnow-installer                            stegsnow

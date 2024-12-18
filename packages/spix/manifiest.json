@@ -1,0 +1,13 @@
+{
+  "name": "spix",
+  "version": "1.0",
+  "arch": "all",
+  "homepage": "https://github.com/VictorH028/spix",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, glibc, libc++, clang, libiconv, make"],
+  "suggests": ["i-haklab"],
+  "description": "A command line (CLI) tool written in C++ that displays an animated spinner while a background process is running",
+  "files" :{
+    "spix-installer": "bin/spix-installer"
+  }
+}
