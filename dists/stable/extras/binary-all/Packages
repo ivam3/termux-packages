@@ -1297,16 +1297,16 @@ Version: 1.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: git, glibc, libc++, clang, libiconv, make
+Depends: git, libc++, clang, libiconv, make
 Suggests: i-haklab
 Homepage: https://github.com/VictorH028/spix
 Description: A command line (CLI) tool written in C++ that displays an animated spinner while a background process is running
 Filename: dists/stable/extras/binary-all/spix_1.0_all.deb
-Size: 2060
-MD5Sum: 9d7d7d9199ace98e166a930a4c90116d
-SHA1: e2305cd6c02cd9fcfcb97629b2ab6a9ad9bc9e9c
-SHA256: b549c7da696e5617f3a06ba1d21fe128459c47923580e1748c1479f70e8ad0c7
-SHA512: 247fc39e89ea0098f7948bd3aea107357370d7add3a359f56413a1d7b719a48cbfc4667b686a63effe5a9ef72ddf581728ac290821864fd4226c7e2d54c6f937
+Size: 2044
+MD5Sum: a44edf3dc3fe8039950ddebac6c135e9
+SHA1: 1caf31fc45657f181defe569c4863c78f9988eb9
+SHA256: cbd889b9d5ef0a3364a651e8a463da3175c662d9e6eaceda4835749da8abd06c
+SHA512: c0fb3218749363fa4e7d8792175d44d174d6675b05bc1fb549ff48d0254e33a91ef02a4cb222a6938fb2ef82aa0eadcac2c0f8532206f7ad3bf08298c5700ce1
 
 Package: sqliv
 Version: 2.0

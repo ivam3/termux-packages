@@ -10,7 +10,7 @@ then
   cd ${HOME}/.local/share/$(basename $0) >/dev/null
   $(command -v python2) hash.py ${@:1}
 else
-  echo -en $R"E:$W $(basename $0) PATH missing ...$Y Aborting.$W"
+  echo -en "${R}E:$W $(basename $0) PATH missing ...$Y Aborting.$W"
   exit 1
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
