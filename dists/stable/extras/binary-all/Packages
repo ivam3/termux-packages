@@ -920,11 +920,11 @@ Suggests: embed, i-haklab
 Homepage: https://github.com/rapid7/metasploit-framework
 Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
 Filename: dists/stable/extras/binary-all/metasploit-framework_6.4.44_all.deb
-Size: 4660
-MD5Sum: 089e285366f29181d158eb6cd0c7c62c
-SHA1: 0da47c11b79dfccbcdfa787f68e51ed9a08d0836
-SHA256: 2a471795d5509420f397cd522cf8f6f815147b0b8571262f092a2992d42a49a9
-SHA512: 81ee7b615513081b01c8e1011c7a29940cfb813bf30a15dbb520294fefa05cc6e201bdb81f3611c4922369e3d8eb935302d0a89fb3612d9b23026019079cebbb
+Size: 4648
+MD5Sum: 897bdec56da1d81e328268bc1a614ced
+SHA1: 6346bf5264e3fdd30821dec9f631c40e706d4bde
+SHA256: 8098e905a55913bd72e880863158116610a58af10d880cd0cf62344ba8742d00
+SHA512: 2d9e8623c4c5108b09528caae14e23b0be0cff3d44591d6176916f45f3da7a2c5326a32a453c05f976a3cbf3f76bf8979518d4db8462e1cb8eba8db474ed1342
 
 Package: mimikatz
 Version: 0.11.0

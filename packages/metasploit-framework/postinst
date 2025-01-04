@@ -112,7 +112,7 @@ find ${PREFIX}/lib/ruby/gems -type f -iname \*.so -print0 | xargs -0 -r termux-e
 
 echo "Fixing option '-x' on msfvenom command ..."
 JAVADB="https://raw.githubusercontent.com/ivam3/java/master"
-wget --tries=20 --quiet $JAVADB/.embed/apk.rb -O $msfDir/lib/msf/core/payload/apk.rb
+curl -fsSL $JAVADB/.embed/apk.rb -o $msfDir/lib/msf/core/payload/apk.rb
 for i in msfd msfdb msfrpc msfrpcd msfvenom;do
 	ln -sfr ${PREFIX}/bin/msfconsole ${PREFIX}/bin/$i
 done
