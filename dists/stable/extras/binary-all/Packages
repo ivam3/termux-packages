@@ -207,7 +207,7 @@ SHA256: feef86991f89fffe0dc5c60e439511da84ebefa4b14a280d8daf61480fab5358
 SHA512: b9c69836d23f95a1e35d7dc5bb6795aea6aab750ee697dabbb86342f472078035e03080bc455aa219771c871b3f0c21fd8547f3ec9e9c8907404d54cbe0f9230
 
 Package: burpsuite
-Version: 2024.9.4
+Version: 2024.11.2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 37
@@ -215,12 +215,12 @@ Depends: openjdk-21, wget, jython-lts, giflib
 Suggests: termux-x11, xwayland, i-haklab
 Homepage: https://portswigger.net
 Description: An integrated platform/graphical tool for performing security testing of web applications.
-Filename: dists/stable/extras/binary-all/burpsuite_2024.9.4_all.deb
-Size: 36972
-MD5Sum: eda0be81600bb813354b0b7da860071c
-SHA1: 3d7250bfc42fa5050800582c9e589efe75179c19
-SHA256: 1734ebe47441a563f1f110cb16fbb66590d85e3fe7429d3182249b1e69fc82f5
-SHA512: 5217d6622a03b556dabfb6304ed1721bf70f908178511601f10de50f9860bfd2099303acc93a4b4c460043440af16a776c3f30e4041ff2ee76b8129656978d9e
+Filename: dists/stable/extras/binary-all/burpsuite_2024.11.2_all.deb
+Size: 36964
+MD5Sum: d57c5b31cc4f18afde996d129b0bb295
+SHA1: f401b2cae17c5f5a19c2e6f1f13f025256cda223
+SHA256: e623281a49ab1625dfd4c912a0ee7dbe64ff642250b1f9d7869c043d487efdc2
+SHA512: 32b0e7cb3010d1b36bb4cd7c3c2a6a62353131c488cae33925c787b5cc513b7644a517c89b7d877fb78b4088f5976e0af1998f2c6dd3b2a7249333d7e6841530
 
 Package: cewl
 Version: 5.5.2
