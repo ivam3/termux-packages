@@ -151,8 +151,8 @@ if ! cat $INITFILE | grep -oE "postgresql" --silent;then
 sed -i "4a alias postgresql=\"pg_ctl -D ${PREFIX}/var/lib/postgresql\"" $INITFILE
 fi
 
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer \
-  -O /data/data/com.termux/files/usr/bin/fixer
+chmod +x ${PREFIX}/bin/msfconsole
+curl -fsSL https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -o /data/data/com.termux/files/usr/bin/fixer
 chmod 751 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] Metasploit Framework installation finished."
 echo "[*] Run 'msfconsole' or 'msfvenom' to execute it."
