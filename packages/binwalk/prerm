@@ -1,8 +1,4 @@
 #!/data/data/com.termux/files/usr/bin/bash
-if [[ -d ${HOME}/.local/share/binwalk ]]
-then
-	cd ${HOME}/.local/share/binwalk
-	python setup.py uninstall
-	rm -rf ${HOME}/.local/share/binwalk
-fi
+[[ -d ${HOME}/.local/share/binwalk ]] && rm -rf ${HOME}/.local/share/binwalk 
+[[ -d ${PREFIX}/bin/binwalk ]] && rm ${PREFIX}/bin/binwalk
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

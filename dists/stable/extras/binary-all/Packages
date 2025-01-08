@@ -153,11 +153,11 @@ Suggests: i-haklab
 Homepage: https://github.com/ReFirmLabs/binwalk
 Description: Tool for analyzing, reverse engineering, and extracting firmware images.
 Filename: dists/stable/extras/binary-all/binwalk_3.1.1_all.deb
-Size: 1792
-MD5Sum: 634d545bb1165ae8b0cbdba9f6ae7a5c
-SHA1: 32a90e1e564d575f8c90a8788a1df4bff9bf2b88
-SHA256: 53d1b97faaf25850d56831cb3a76364d691a082ba055eeed30d50970165e4d6c
-SHA512: aaeab25f268f8c6dab40288bdffa361d93b2b81076c3aa6ec563038f65f0ebc14a67f883987c6b0703dc1f0fe34740bd9fcf2fecc1cc28d2565c99ac931a1ca5
+Size: 1788
+MD5Sum: da7e3296aa66e19a9217b60a9bc74102
+SHA1: aca373f273883d87191e77096d7e267d3e7e170d
+SHA256: cf4f3802ce6ce30bcbef815a157fc4fc3bdd271e9e992e7c93bf28ff00e6fd0b
+SHA512: 6853eb76afac745267a1d793cd55769eb4d6dd6bb3a4dbfdbe1c8d1cfb3a6b6d5fc5d4e5fc03b26caf1999a32fe6d18a22dce8cff7de1770ae2b5f5bc6bc65da
 
 Package: bitb-framework
 Version: 1.0
