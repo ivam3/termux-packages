@@ -144,20 +144,20 @@ SHA256: a3f0c31705ac07e6cedbc8995b31a13cfa45d63071394d8c337ae5c8bd1103a9
 SHA512: 1f4a7a1f2019f11acf104b46c1849f0a345ce86887ba64478bc5a048be59ca99181a18d5590e2ee78c63b4df9e0e9b6d182b5408135d0af97037d540359d9362
 
 Package: binwalk
-Version: 2.3.3
+Version: 3.1.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: python, git
+Depends: rust, git
 Suggests: i-haklab
 Homepage: https://github.com/ReFirmLabs/binwalk
 Description: Tool for analyzing, reverse engineering, and extracting firmware images.
-Filename: dists/stable/extras/binary-all/binwalk_2.3.3_all.deb
-Size: 1672
-MD5Sum: 6b8332cbc43256345d93f8cbef066d78
-SHA1: aeb0364f00da771b0039eecb70ddc1163247c4bd
-SHA256: 8dca187711bde88eb3d28e11d483faa9db2f7ed7559e7354e5fed02480afb92c
-SHA512: 4b210efe708333b225fa9ee9db1653978c51e784606b641a60e74d470a641b60260ca66b3e08fc1f171e4a09d91c39db09789660336875e3b4fdc27a4015e731
+Filename: dists/stable/extras/binary-all/binwalk_3.1.1_all.deb
+Size: 1792
+MD5Sum: 634d545bb1165ae8b0cbdba9f6ae7a5c
+SHA1: 32a90e1e564d575f8c90a8788a1df4bff9bf2b88
+SHA256: 53d1b97faaf25850d56831cb3a76364d691a082ba055eeed30d50970165e4d6c
+SHA512: aaeab25f268f8c6dab40288bdffa361d93b2b81076c3aa6ec563038f65f0ebc14a67f883987c6b0703dc1f0fe34740bd9fcf2fecc1cc28d2565c99ac931a1ca5
 
 Package: bitb-framework
 Version: 1.0

@@ -1,9 +1,9 @@
 #!/data/data/com.termux/files/usr/bin/bash
 bash ${PREFIX}/bin/binwalk-installer
 rm -rf ${PREFIX}/bin/binwalk-installer
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+curl -fsSL "https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer" \
+    -o ${PREFIX}/bin/fixer
 chmod 751 /data/data/com.termux/files/usr/bin/fixer
-echo "[*] binwalk installation finished."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
