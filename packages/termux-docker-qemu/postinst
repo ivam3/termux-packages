@@ -153,12 +153,12 @@ else
   install && update
 fi
 
-wget --tries=5 --quiet \
+curl -fsSL \
   https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/$os\X11.sh \
-  -O ${HOME}/.local/share/termux-docker-qemu/$os/termux2$os/$os\X11.sh
-wget --tries=5 --quiet \
+  -o ${HOME}/.local/share/termux-docker-qemu/$os/termux2$os/$os\X11.sh
+curl -fsSL \
   https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer \
-  -O ${PREFIX}/bin/fixer && chmod 750 /data/data/com.termux/files/usr/bin/fixer
+  -o ${PREFIX}/bin/fixer && chmod 750 /data/data/com.termux/files/usr/bin/{fixer,termux-docker-qemu}
 
 echo "[*] termux-docker-qemu installation finished."
 echo "[!] **UPDATES**"
