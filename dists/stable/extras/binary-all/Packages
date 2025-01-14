@@ -1020,6 +1020,22 @@ SHA1: 1c0643eccdc62cc8e3763ee175deddba3f9785a4
 SHA256: 76b9dbcb7271e833aa1d15d9009aa10a90a15731fd739a9ee65d61854c65f862
 SHA512: c562b3d39260349eec4bf9d49f86ec044d470404f85ad352c40f8cf89a4ad910aec143f4f033a82725382ac3e694ce3a9e76c4c2dd2f0d66f4fe3f0869935162
 
+Package: ovh-ttyrec
+Version: 1.1.7.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: git, glibc-repo, bionic-host, make, clang, libcompiler-rt, zstd
+Suggests: i-haklab
+Homepage: https://github.com/ovh/ovh-ttyrec
+Description: Terminal recorder and player (an alternative to ttyrec)
+Filename: dists/stable/extras/binary-all/ovh-ttyrec_1.1.7.1_all.deb
+Size: 1920
+MD5Sum: 7bc37a3f9c51c8f1fb55bb9e167efd26
+SHA1: dfa493ef61469fee0d45150e29b346b14d660b44
+SHA256: 1edd8996170d956eee84daeb5cb2e44b7d8b7e65e20e84b35322cd00c1d50470
+SHA512: a5c50c4026ede8f3ff1a23990104d6f2efe1a01c81abaa912dcbff42e2723bd48f2366a67b229f5fc37572b2c22c1eaf0b99ceae2e58c08917ee14393c7461ac
+
 Package: phomber
 Version: 2.0
 Architecture: all

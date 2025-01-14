@@ -1,0 +1,11 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/ovh-ttyrec ]]; then
+  rm -rf ${HOME}/.local/share/ovh-ttyrec
+fi
+
+for i in ttyrec ttyplay ttytime; do
+  if [[ -e ${PREFIX}/bin/${i} ]]; then
+    rm -f ${PREFIX}/bin/${i}
+  fi
+done
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
