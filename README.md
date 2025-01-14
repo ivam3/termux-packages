@@ -66,9 +66,10 @@ This project is with the purpose of offering easy and fast access to the install
 | [mimikatz](https://github.com/fortra/impacket/blob/master/examples/mimikatz.py) | Mini shell to control a remote mimikatz RPC server. |
 | [nexphisher](https://github.com/htr-tech/nexphisher) | Advanced Phishing tool for Termux. |
 | [ngrok](https://ngrok.com) | Globally distributed reverse proxy fronting your web services running in any cloud or private network, or your machine. |
-| [nikto](https://github.com/sullo/nikto) | A web server scanner
-| [openjdk-21](https://jdk.java.net/) | Java development kit and runtime
+| [nikto](https://github.com/sullo/nikto) | A web server scanner. |
+| [openjdk-21](https://jdk.java.net/) | Java development kit and runtime. |
 | [osintgram](https://github.com/datalux/Osintgram) | A OSINT tool on Instagram. It offers an interactive shell to perform analysis on Instagram account of any users by its nickname. |
+| [ovh-ttyrec](https://github.com/ovh/ovh-ttyrec) | Terminal recorder and player (an alternative of ttyrec). |
 | [phomber](https://github.com/s41r4j/phomber) | Infomation grathering tool that reverse search phone numbers and get their details. |
 | [phonesploit](https://github.com/aerosol-can/PhoneSploit) | A tool for remote ADB exploitation for all Machines. |
 | [PuTTY](https://www.ssh.com/academy/ssh/putty/linux) | Graphical terminal program that supports the SSH, telnet, and rlogin protocols and connecting to serial ports. |
