@@ -1373,20 +1373,20 @@ SHA256: 434041e91d4fb70203dfdcafd6c96a679ac2947d152d16d80f054eaeaef740f7
 SHA512: 1278135e433b817e22ff137e18363e6243c6299e5b22792e3b6f098bb02364b3701ff68cde6290a615190000a45a6d5635efe023a804053ad574863997844e6d
 
 Package: termux-desktop-xfce
-Version: 1.0.8
+Version: 1.0.9
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 1
+Installed-Size: 2
 Depends: x11-repo, xfce4, adwaita-icon-theme, atk, binutils-is-llvm, dbus-glib, dconf, desktop-file-utils, dosbox, exo, feh, file-roller, firefox, findutils, fluent-gtk-theme, fluent-icon-theme, galculator, garcon, gcr, geany, geany-plugins, gnome-themes-extra, gsettings-desktop-schemas, gtk-update-icon-cache, gtk2-engines-murrine, gtk2, gtk3, gtksourceview4, gvfs, hicolor-icon-theme, htop, iso-codes, leafpad, libcanberra, libepoxy, libfontenc, libhandy, libmatekbd, libnotify, libpciaccess, libvte, libwayland-protocols, libwayland, libwnck, libx11, libxcomposite, libxdamage, libxfce4ui, libxfce4util, libxfont2, libxinerama, libxkbfile, libxklavier, libxmu, libxslt, loqui, lxappearance, lxde-icon-theme, mousepad, mpv-x, mtpaint, neofetch, openjdk-21, papirus-icon-theme, parole, python, python-pip, python-tkinter, recordmydesktop, ristretto, sdl-net, sdl2, sdl, shared-mime-info, startup-notification, tar, termux-api, thunar-archive-plugin, thunar, tumbler, unzip, vim-gtk, webkit2gtk-4.1, wget, xarchiver, xapt-management, xcb-util, xfconf,xfdesktop, xfwm4, xkeyboard-config, xorg-iceauth, xorg-xauth, xorg-xhost, xorg-xkbcomp, xorg-xrdb, xwayland, zenity
 Suggests: i-haklab, burpsuite, ghidra, hydra, putty, maltego, zaproxy
 Homepage: https://github.com/ivam3/termux-packages
 Description: A Meta-package and data, themes, icons and wallpapers to configurate a desktop enviroment for Termux with xfce4 as window manager.
-Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0.8_all.deb
-Size: 3484
-MD5Sum: 6c0a1c3d96f0956bd71d18f1b353692b
-SHA1: 0386a7bbe703427cefe6a5f6532b457705750715
-SHA256: 8e9f89016321369a1652e759f8649559c25ee467169a7492719544ee69226a0d
-SHA512: 4ca5df762eb1e671c78c2fb975d7ec6f21112bbeea17036d47d3a5157f2dc80a81f2f79fe96636c83ef193f9e2b3f55861c78345aa5bdaeec871fb82f7a32b28
+Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0.9_all.deb
+Size: 3524
+MD5Sum: b98ee6eb84c7e8c86bc2c0065e17e7e0
+SHA1: 56a7bb873b7243e358bdd2d1188ddf8b7a124fd0
+SHA256: 83c850a1075a2002ec76a5556070ed099860dc80e8771d85caa0c59909079bd7
+SHA512: 91240a7649efcf6c24836d4017e0f23bfa6ccb4f71ed92cfd9e6d14fe421228cb93a8cd4478824e41778de4c55accfae1227c22453e8eb5d058cdef254ba9ba3
 
 Package: termux-docker-qemu
 Version: 0.6.3
