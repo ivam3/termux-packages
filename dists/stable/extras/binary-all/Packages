@@ -1373,20 +1373,20 @@ SHA256: 434041e91d4fb70203dfdcafd6c96a679ac2947d152d16d80f054eaeaef740f7
 SHA512: 1278135e433b817e22ff137e18363e6243c6299e5b22792e3b6f098bb02364b3701ff68cde6290a615190000a45a6d5635efe023a804053ad574863997844e6d
 
 Package: termux-desktop-xfce
-Version: 1.0.6
+Version: 1.0.7
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: x11-repo, adwaita-icon-theme, atk, binutils-is-llvm, dbus-glib, dconf, desktop-file-utils, dosbox, exo-static, exo, feh, file-roller, firefox, findutils, fluent-gtk-theme, fluent-icon-theme, galculator, garcon-static, garcon, gcr, geany, geany-plugins, gnome-themes-extra, gsettings-desktop-schemas, gtk-update-icon-cache, gtk2-engines-murrine-static, gtk2-engines-murrine, gtk2-static, gtk2, gtk3, gtksourceview4, gvfs, hicolor-icon-theme, htop, iso-codes, leafpad, libcanberra-static, libcanberra, libepoxy, libfontenc, libhandy, libmatekbd-static, libmatekbd, libnotify, libpciaccess, libvte, libwayland-protocols, libwayland, libwnck, libx11-static, libx11, libxcomposite,libxdamage, libxfce4ui-static, libxfce4ui, libxfce4util, libxfont2, libxinerama, libxkbfile, libxklavier, libxmu, loqui, lxappearance, lxde-icon-theme, mousepad, mpv-x, mtpaint, neofetch, openjdk-17, papirus-icon-theme, parole, python, python-pip, python-tkinter, recordmydesktop, ristretto, sdl-net, sdl2, sdl, shared-mime-info, startup-notification, tar, termux-api, the-powder-toy, thunar-archive-plugin-static, thunar-archive-plugin, thunar-static, thunar, tumbler, unzip, vim-gtk, webkit2gtk-4.1, wget, xarchiver, xapt-management, xcb-util, xfce4-appfinder, xfce4-calculator-plugin-static, xfce4-calculator-plugin, xfce4-clipman-plugin-static, xfce4-clipman-plugin, xfce4-datetime-plugin-static, xfce4-datetime-plugin, xfce4-eyes-plugin-static, xfce4-eyes-plugin, xfce4-mailwatch-plugin-static, xfce4-mailwatch-plugin, xfce4-netload-plugin-static, xfce4-netload-plugin, xfce4-notifyd-static, xfce4-notifyd, xfce4-panel-profiles, xfce4-panel-static, xfce4-panel, xfce4-places-plugin-static, xfce4-places-plugin, xfce4-screensaver, xfce4-screenshooter-static, xfce4-screenshooter, xfce4-session, xfce4-settings, xfce4-taskmanager, xfce4-terminal, xfce4-timer-plugin-static, xfce4-timer-plugin, xfce4-wavelan-plugin-static, xfce4-wavelan-plugin, xfce4-whiskermenu-plugin, xfce4, xfconf,xfdesktop, xfwm4, xkeyboard-config, xorg-iceauth, xorg-xauth, xorg-xhost, xorg-xkbcomp, xorg-xrdb, xwayland, zenity
+Depends: x11-repo, xfce4, adwaita-icon-theme, atk, binutils-is-llvm, dbus-glib, dconf, desktop-file-utils, dosbox, exo-static, exo, feh, file-roller, firefox, findutils, fluent-gtk-theme, fluent-icon-theme, galculator, garcon-static, garcon, gcr, geany, geany-plugins, gnome-themes-extra, gsettings-desktop-schemas, gtk-update-icon-cache, gtk2-engines-murrine-static, gtk2-engines-murrine, gtk2-static, gtk2, gtk3, gtksourceview4, gvfs, hicolor-icon-theme, htop, iso-codes, leafpad, libcanberra-static, libcanberra, libepoxy, libfontenc, libhandy, libmatekbd-static, libmatekbd, libnotify, libpciaccess, libvte, libwayland-protocols, libwayland, libwnck, libx11-static, libx11, libxcomposite,libxdamage, libxfce4ui-static, libxfce4ui, libxfce4util, libxfont2, libxinerama, libxkbfile, libxklavier, libxmu, libxslt, libxslt-static, loqui, lxappearance, lxde-icon-theme, mousepad, mpv-x, mtpaint, neofetch, openjdk-21, papirus-icon-theme, parole, python, python-pip, python-tkinter, recordmydesktop, ristretto, sdl-net, sdl2, sdl, shared-mime-info, startup-notification, tar, termux-api, thunar-archive-plugin-static, thunar-archive-plugin, thunar-static, thunar, tumbler, unzip, vim-gtk, webkit2gtk-4.1, wget, xarchiver, xapt-management, xcb-util, xfconf,xfdesktop, xfwm4, xkeyboard-config, xorg-iceauth, xorg-xauth, xorg-xhost, xorg-xkbcomp, xorg-xrdb, xwayland, zenity
 Suggests: i-haklab, burpsuite, ghidra, hydra, putty, maltego, zaproxy
 Homepage: https://github.com/ivam3/termux-packages
 Description: A Meta-package and data, themes, icons and wallpapers to configurate a desktop enviroment for Termux with xfce4 as window manager.
-Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0.6_all.deb
-Size: 3684
-MD5Sum: 1f1cbf8fa7c0c24f406dff509e9f7881
-SHA1: bdce6239766f121ba54662dad88b563f73b737a9
-SHA256: 053748b766eaf3060f204a0eb1d3b770c8e5fc70d2ed41273e0f77fbe30184fc
-SHA512: 8a4fee2d008a1b7759c86ab90425ca47907ed5ff4357f830e863b6e8a816f1581b718822de84d7f67f5d2a2785fc9803c2659bead9fb2b1f92e171940942571f
+Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0.7_all.deb
+Size: 3528
+MD5Sum: d44e8873892de0f107f719247680b3b8
+SHA1: d415d0a223357b209bcb9dead20ceadb92afbb20
+SHA256: 897d61e1a7cabb8a5693ffadb3ee851376c16e85c77cd2e5eea95a6b34ac711e
+SHA512: 54531849d0c07585c53ee2bfe2695be24e7e8fae5152eb9e86af9f1a02bc99e284e1632e59df79066e8d0201755759c86c64b3678ab9bcea9c41df7b7b2d890d
 
 Package: termux-docker-qemu
 Version: 0.6.3
