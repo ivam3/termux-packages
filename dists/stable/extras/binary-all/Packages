@@ -105,11 +105,11 @@ Suggests: i-haklab
 Homepage: https://bitbucket.org/iBotPeaches/apktool/src/master/
 Description: A tool for reverse engineering Android apk files
 Filename: dists/stable/extras/binary-all/apktool_2.8.1_all.deb
-Size: 1828
-MD5Sum: d5676fb13c7cb8b8799afc17fe040747
-SHA1: 27242f3c7d18eead5737e035f80249e06afda256
-SHA256: fbcb71b11bd8f301538654811a3004ed07b5e379c28d3bb878d8d5f62bb5ecbe
-SHA512: ce97833c864d8baedf01f2466b85cb61101fe7ad251f57e46a52591c0a9876b0be72bdc9fc81268ae9909cf63b68b0237be7a41646c9771ac2b1410b54d0fda9
+Size: 1832
+MD5Sum: e5abe511fbc12184df26a6987a2a175c
+SHA1: c587741c541c8a8ab70b1b5d7df935fe3d17cf2e
+SHA256: 4bb833b4a1f9366f757e425c871b14db73cf1f0325b791cc23be8976df7f5677
+SHA512: bbbc37afe80ae1628bd25999c695fde215cc96120be66c6c1f521b2ed9353e71abb1e380a6e0a7067de2c1c9e4dee14e7a69e923f538424ad729642427ef1753
 
 Package: appshark
 Version: 0.1.2

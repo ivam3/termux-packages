@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
-version="2.8.1"
+version="2.11.0"
 echo "Downloading jar file ..."
 wget --tries=20 --progress=dot https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_$version.jar \
   -O ${PREFIX}/var/spool/apktool.jar
