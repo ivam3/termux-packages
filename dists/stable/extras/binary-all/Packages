@@ -1405,7 +1405,7 @@ SHA256: 83c850a1075a2002ec76a5556070ed099860dc80e8771d85caa0c59909079bd7
 SHA512: 91240a7649efcf6c24836d4017e0f23bfa6ccb4f71ed92cfd9e6d14fe421228cb93a8cd4478824e41778de4c55accfae1227c22453e8eb5d058cdef254ba9ba3
 
 Package: termux-docker-qemu
-Version: 0.6.3
+Version: 0.6.4
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
@@ -1413,12 +1413,12 @@ Depends: termux-api, openssh, wget, samba, procps, qemu-utils, qemu-common, qemu
 Suggests: i-haklab
 Homepage: https://www.docker.com/products/docker-desktop/
 Description: Docker container for running x86,x86_64,armv7 and aarch64 Linux virtual machines using QEMU
-Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.6.3_all.deb
-Size: 4752
-MD5Sum: 9fff0f1ff6d10218db97a7e4b33e59ae
-SHA1: 6c0e4cbefd850778ea2fd949e1543ab397b5d4d1
-SHA256: 003fea7d6241b06d456bfefed06ee1c4ac0cd809aabb0485eac56f7e66e6ba3c
-SHA512: ae4cb6e11a247f5f2494f4f20d0c60a1bb1e6eeb6533989575ca1072cdbc9fbf86b4562adc79ab04f17b36ba4d1a5c0b7e175792475fe6908bff367f71a6ec8f
+Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.6.4_all.deb
+Size: 4760
+MD5Sum: 34887d740f82093139e73014e836a8fa
+SHA1: 413ee4c09ddab50145e90a65242684524cd393a5
+SHA256: 847bb6bf3a8f16b54986bd1de47dacc9cad18bc495a118aa5ff261746a17e1cc
+SHA512: d60f71729337224379a2a7b5ee1596cbed09cee0fc907b7168a4afafdaa6f5e529bcd970bfdf186a70a24ab68b48aa6a51957840a01da611a6d85eac71904f45
 
 Package: trape
 Version: 2.0

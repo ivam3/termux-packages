@@ -8,53 +8,43 @@ done
 
 echo "Setting the Termux properties."
 mkdir -p ${HOME}/.termux
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.termux/termux.properties \
-  -O ${HOME}/.termux/termux.properties
+curl -fsSL "https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.termux/termux.properties" \
+  -o ${HOME}/.termux/termux.properties
 
 echo "Setting x11 fonts ..."
 mkdir -p ${PREFIX}/share/fonts/
-wget --tries=20 --quiet https://github.com/ryanoasis/nerd-fonts/releases/download/$fontsV/ProFont.zip \
-  -O ${PREFIX}/share/fonts/ProFont.zip
+curl -fsSL "https://github.com/ryanoasis/nerd-fonts/releases/download/$fontsV/ProFont.zip" \
+  -o ${PREFIX}/share/fonts/ProFont.zip
 [[ -e ${PREFIX}/share/fonts/ProFont.zip ]] && {
   unzip ${PREFIX}/share/fonts/ProFont.zip -d ${PREFIX}/share/fonts/
 } || { echo "W: Fonts are unreachable.";}
 
 echo "Downloading Termux Wayland apk (It could take a while) ..."
-wget --tries=20 --quiet https://github.com/ivam3/termux-packages/raw/gh-pages/packages/termux-desktop-xfce/termux-x11.zip \
-  -O ${TMPDIR}/termux-x11.zip
+curl -fsSL "https://github.com/ivam3/termux-packages/raw/gh-pages/packages/termux-desktop-xfce/termux-x11.zip" \
+  -o ${TMPDIR}/termux-x11.zip
 [[ -e ${TMPDIR}/termux-x11.zip ]] && {
   mkdir -p ${TMPDIR}/desktmp && cd $_
   unzip -q ${TMPDIR}/termux-x11.zip -d ${TMPDIR}/desktmp/
   app=$(find ${TMPDIR}/desktmp/ -iname "*.apk")
-#  deb=$(find ${TMPDIR}/desktmp/ -iname "*.deb")
-#  [[ ! -z $deb ]] && {
-#    echo "Uncompressing & installing debs files."
-#    ar -x $deb
-#    tar=$(find ${TMPDIR}/desktmp/ -iname "data.tar.xz")
-#    tar -xvf $tar
-#    find data -type d -exec mkdir -p /"{}" \;
-#    declare -a f=$(find data -mindepth 5 -type f)
-#    for file in ${f[*]}; do
-#        cp "$file" "/$file"
-#    done
-#  }
   [[ ! -z $app ]] && {
     echo "Installing Termux Wayland apk (please accept the installation) ..."
     termux-open ${TMPDIR}/desktmp/$app
     sleep 10
   }
   echo "Installing submodules ..."
-  git clone --recurse-submodules https://github.com/termux/termux-x11 ${TMPDIR}/desktmp/termux-x11
+  git clone https://github.com/termux/termux-x11 ${PREFIX}/share/termux-x11 && cd $_
+  git submodule update --init --recursive
 } || { echo "E: Termux Wayland app missing ... Please install it manually.";}
-rm -rf ${TMPDIR}/desktmp
 
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+rm -rf ${TMPDIR}/desktmp
+curl -fsSL "https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer" \
+    -o /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] termux-desktop-xfce installation finished."
 echo "[!] don't forget join to your device settings
     and bring to Termux Wayland app the permissions
     'run commands in Termux-app' & 'super potitions' too."
-echo "[*] Run 'termux-desktop-xfce' to execute it."
+echo "[*] Run 'desktop' to execute it."
 echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."
 echo "[*] @Ivam3: thank you for use my package."
