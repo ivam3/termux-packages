@@ -943,7 +943,7 @@ SHA256: 4c0c23cbcc8c663bbabeba017cef000e4f416aa31532686775f34032d340b83c
 SHA512: e6e71c73a9d26b6271e5a9b0eb7b215b6012bbe2846258f7b12326cdd54087e12bc1a37bc6c8f7dbbbe35170d61dc72cdd3ece97632cb2d46b8b88dbd7b2a9aa
 
 Package: nexphisher
-Version: 1.0.5
+Version: 1.0.6
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 25
@@ -951,12 +951,12 @@ Depends: wget, curl, openssh, php, unzip, cloudflared, ngrok
 Suggests: ngrok
 Homepage: https://github.com/htr-tech/nexphisher
 Description: Advanced Phishing tool
-Filename: dists/stable/extras/binary-all/nexphisher_1.0.5_all.deb
-Size: 6468
-MD5Sum: d720f184834ff877316c3567b7b61395
-SHA1: 949275582b9c65b003b7bd2c6ab98f9959bb0e83
-SHA256: 9f5a65936682ebf36579d317f20c751ac8a6fb4fca2eec2c3a7e001aa7bd5021
-SHA512: 0e7e04f5629ae7103f3d3c10a2bb6cab6174c0cf26a6eca9aa16d0f8490d240eadc6832bb095b8ce49bd426bea045db8b8cc422136d1c85c1020c8d99bad040f
+Filename: dists/stable/extras/binary-all/nexphisher_1.0.6_all.deb
+Size: 6396
+MD5Sum: 93265cb56d7a0002b7fcbc32e0aa4ccf
+SHA1: ce1094dcdb24f30e8c795362ade86f22c5199fa2
+SHA256: f3ca3df8b25b36b98749c2b7fd827cd0bd70444a567519006da42b12b3283798
+SHA512: 8ee0e5d6d1602490c7fea63297a262ed59c9977b942ea4484083045f60ca9116ee4e0829aab099df36d71515a0d82323db89087ea4a766435057721f4a9b4171
 
 Package: ngrok
 Version: 3.15.1

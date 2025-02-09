@@ -1,6 +1,6 @@
 {
   "name": "nexphisher",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "arch": "all",
   "homepage": "https://github.com/htr-tech/nexphisher",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
@@ -9,6 +9,6 @@
   "description": "Advanced Phishing tool",
   "files" :{
     "nexphisher": "bin/nexphisher",
-    "home/.local/share/nexphisher/nexphisher": "home/.local/share/nexphisher/nexphisher"
+    "nexphisher.sh": "bin/nexphisher.sh"
 	}
 }

@@ -3740,7 +3740,7 @@ data/data/com.termux/files/usr/share/applications/maltego/maltego.desktop       
 data/data/com.termux/files/usr/bin/msfconsole                                    metasploit-framework
 data/data/com.termux/files/usr/bin/mimikatz-installer                            mimikatz
 data/data/com.termux/files/usr/bin/nexphisher                                    nexphisher
-data/data/com.termux/files/usr/home/.local/share/nexphisher/nexphisher           nexphisher
+data/data/com.termux/files/usr/bin/nexphisher.sh                                 nexphisher
 data/data/com.termux/files/home/.ssh/config                                      ngrok
 data/data/com.termux/files/usr/bin/ngrok                                         ngrok
 data/data/com.termux/files/usr/bin/nikto                                         nikto
