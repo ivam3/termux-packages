@@ -3726,6 +3726,7 @@ data/data/com.termux/files/home/.termux/font.ttf                                
 data/data/com.termux/files/home/.termux/termux.properties                        i-haklab
 data/data/com.termux/files/usr/bin/fixer                                         i-haklab
 data/data/com.termux/files/usr/bin/termux-url-opener                             i-haklab
+data/data/com.termux/files/usr/share/man/man1/i-Haklab.1                         i-haklab
 data/data/com.termux/files/usr/bin/infoga                                        infoga
 data/data/com.termux/files/usr/bin/infoga-installer                              infoga
 data/data/com.termux/files/usr/bin/ipgeolocation                                 ipgeolocation

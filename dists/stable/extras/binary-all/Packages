@@ -783,20 +783,20 @@ SHA256: 989b6693900ff471e790c0c36dd4c31ca64f6868221b00a599cadb6ded2ad98c
 SHA512: b2acf2821c4fa7423aaca5ba2e39c36ff1c4b5cb01f5e10c1ff4e00aaa889ac417570cb2b57d506be35c9a5c1e29baa32e7030c5c9dc15ff7ce941036a28720b
 
 Package: i-haklab
-Version: 3.9.1
+Version: 3.9.2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 61831
+Installed-Size: 61837
 Depends: termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, fd, file, findutils, fish, fzf, gawk, git, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-static, libxml2-utils, gnupg, mariadb, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.9.1_all.deb
-Size: 21125620
-MD5Sum: 1d17ff7b5b9d86d4bdbfa474148e050c
-SHA1: 16a6774d527615e0dbc255ef734fac7ab91e664c
-SHA256: 334df07cfc99fd0e6ba78c163be41bec2be3098220a19c2087e9ad12e7035e31
-SHA512: 9dc5f66a73ac992e62a87c35fdddc0a797f74a7f27e5500017e39938273668cd892ac66ef97cd0e120568f5353f52e8ce16caa4764ae55826ce5d961b6cdbc6d
+Filename: dists/stable/extras/binary-all/i-haklab_3.9.2_all.deb
+Size: 21127840
+MD5Sum: ade86666e9f8a6ebb80422db0baecc2c
+SHA1: dc9411544b65c31c997dbc081a4ce8329947b000
+SHA256: 5ae654be899121b6c27dbe3d49ec5f88e68a4b87b70b6b9757f09fed26cce07f
+SHA512: c9848fa46d30970ad7b2f22cb707064f728085f4924918cf00c545f3c4301addd4244f48169ae207ceba0d661b2488fd5bd8fe0d7f148ef44a1b4af6f56d32d2
 
 Package: infoga
 Version: 1.0
@@ -911,20 +911,20 @@ SHA256: 70e6288789ba6deafecef89e24b446b455c927044d0feeebb29eddd105b88c6d
 SHA512: 7a9a5dc2ff092066d700f1488789dd4b4ea00ad69559e570191dfdbf160937f1b21477abb530acc918ec42a3b54fb05d74bf7280e01410fdba1349251c8b8608
 
 Package: metasploit-framework
-Version: 6.4.66
+Version: 6.4.70
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
-Depends: build-essential, ruby, python, libcap, openjdk-17, termux-tools, autoconf, patchelf, binutils, bison, yarn, clang, coreutils, curl, findutils, gumbo-parser, apr, apr-util, postgresql, openssl, readline, libffi, libgmp, libpcap, libsqlite, libgrpc, libtool, libxml2, libxslt, make, ncurses-utils, ncurses, git, wget, unzip, xz-utils, zip, zlib, tar, termux-elf-cleaner, pkg-config, resolv-conf, aapt, apksigner, apktool
+Depends: build-essential, ruby, python, libcap, openjdk-21, termux-tools, autoconf, patchelf, binutils, bison, yarn, clang, coreutils, curl, findutils, gumbo-parser, apr, apr-util, postgresql, openssl, readline, libffi, libgmp, libpcap, libsqlite, libgrpc, libtool, libxml2, libxslt, make, ncurses-utils, ncurses, git, wget, unzip, xz-utils, zip, zlib, tar, termux-elf-cleaner, pkg-config, resolv-conf, aapt, apksigner, apktool
 Suggests: embed, i-haklab
 Homepage: https://github.com/rapid7/metasploit-framework
 Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
-Filename: dists/stable/extras/binary-all/metasploit-framework_6.4.66_all.deb
+Filename: dists/stable/extras/binary-all/metasploit-framework_6.4.70_all.deb
 Size: 4688
-MD5Sum: a60ad24e5db3556dfba283524f6d1efe
-SHA1: 2a4f4c62a39c36af7cd601f8a289ddc7963a49a9
-SHA256: 08f4a32ddb11f97a1dac984793cb498bd298d129dfb243dccb9972a13e1d5a4f
-SHA512: 9621c9c19354f066b69a322243181e9a8d3a6ab04150cb31d751b25845bdcdcf584b5cd6024b052cbc4a234a1671d471a14b6eb400b49664b2b90e3e01dc0321
+MD5Sum: c1db0acc7e4856038edfd3766cba2d05
+SHA1: fb203ee5d61fc4a6d2056b5ec9aaf7e987cf0395
+SHA256: c9a8c4e1f19df6cd0b5fe60b388958793d47420de0ba551cfd521c5966c3754a
+SHA512: 1d73cddc19ff17d7b96b3bc3dea1bffd7fe6dbeeb2fb9a0dfbd07a1e077c11693844e39e9d72566256098cb391b32e8552c3421fbb4789358096e54c0ff6bccd
 
 Package: mimikatz
 Version: 0.11.0
@@ -1389,20 +1389,20 @@ SHA256: 434041e91d4fb70203dfdcafd6c96a679ac2947d152d16d80f054eaeaef740f7
 SHA512: 1278135e433b817e22ff137e18363e6243c6299e5b22792e3b6f098bb02364b3701ff68cde6290a615190000a45a6d5635efe023a804053ad574863997844e6d
 
 Package: termux-desktop-xfce
-Version: 1.0.9
+Version: 1.0.10
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
-Depends: x11-repo, xfce4, adwaita-icon-theme, atk, binutils-is-llvm, dbus-glib, dconf, desktop-file-utils, dosbox, exo, feh, file-roller, firefox, findutils, fluent-gtk-theme, fluent-icon-theme, galculator, garcon, gcr, geany, geany-plugins, gnome-themes-extra, gsettings-desktop-schemas, gtk-update-icon-cache, gtk2-engines-murrine, gtk2, gtk3, gtksourceview4, gvfs, hicolor-icon-theme, htop, iso-codes, leafpad, libcanberra, libepoxy, libfontenc, libhandy, libmatekbd, libnotify, libpciaccess, libvte, libwayland-protocols, libwayland, libwnck, libx11, libxcomposite, libxdamage, libxfce4ui, libxfce4util, libxfont2, libxinerama, libxkbfile, libxklavier, libxmu, libxslt, loqui, lxappearance, lxde-icon-theme, mousepad, mpv-x, mtpaint, neofetch, openjdk-21, papirus-icon-theme, parole, python, python-pip, python-tkinter, recordmydesktop, ristretto, sdl-net, sdl2, sdl, shared-mime-info, startup-notification, tar, termux-api, thunar-archive-plugin, thunar, tumbler, unzip, vim-gtk, webkit2gtk-4.1, wget, xarchiver, xapt-management, xcb-util, xfconf,xfdesktop, xfwm4, xkeyboard-config, xorg-iceauth, xorg-xauth, xorg-xhost, xorg-xkbcomp, xorg-xrdb, xwayland, zenity
+Depends: xfce4, adwaita-icon-theme, atk, binutils-is-llvm, dbus-glib, dconf, desktop-file-utils, dosbox, exo, feh, file-roller, firefox, findutils, fluent-gtk-theme, fluent-icon-theme, galculator, garcon, gcr, geany, geany-plugins, gnome-themes-extra, gsettings-desktop-schemas, gtk-update-icon-cache, gtk2-engines-murrine, gtk2, gtk3, gtksourceview4, gvfs, hicolor-icon-theme, htop, iso-codes, leafpad, libcanberra, libepoxy, libfontenc, libhandy, libmatekbd, libnotify, libpciaccess, libvte, libwayland-protocols, libwayland, libwnck, libx11, libxcomposite, libxdamage, libxfce4ui, libxfce4util, libxfont2, libxinerama, libxkbfile, libxklavier, libxmu, libxslt, loqui, lxappearance, lxde-icon-theme, mousepad, mpv-x, mtpaint, neofetch, openjdk-21, papirus-icon-theme, parole, python, python-pip, python-tkinter, recordmydesktop, ristretto, sdl-net, sdl2, sdl, shared-mime-info, startup-notification, tar, termux-api, thunar-archive-plugin, thunar, tumbler, unzip, vim-gtk, webkit2gtk-4.1, wget, xarchiver, xapt-management, xcb-util, xfconf,xfdesktop, xfwm4, xkeyboard-config, xorg-iceauth, xorg-xauth, xorg-xhost, xorg-xkbcomp, xorg-xrdb, xwayland, zenity
 Suggests: i-haklab, burpsuite, ghidra, hydra, putty, maltego, zaproxy
 Homepage: https://github.com/ivam3/termux-packages
 Description: A Meta-package and data, themes, icons and wallpapers to configurate a desktop enviroment for Termux with xfce4 as window manager.
-Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0.9_all.deb
-Size: 3524
-MD5Sum: b98ee6eb84c7e8c86bc2c0065e17e7e0
-SHA1: 56a7bb873b7243e358bdd2d1188ddf8b7a124fd0
-SHA256: 83c850a1075a2002ec76a5556070ed099860dc80e8771d85caa0c59909079bd7
-SHA512: 91240a7649efcf6c24836d4017e0f23bfa6ccb4f71ed92cfd9e6d14fe421228cb93a8cd4478824e41778de4c55accfae1227c22453e8eb5d058cdef254ba9ba3
+Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0.10_all.deb
+Size: 3488
+MD5Sum: 8b2bfaef976c71e2c1b9eec70c012fdc
+SHA1: 75556b5c11524f05fca6a99ccfdfd782ac351a6e
+SHA256: c543ad8fc1f7064d5dd8de8712b27f7caa905a39779014e6d40a3e2d9bf0e37a
+SHA512: 0bbc89974f48d97a923d2cf952a2e6cde9b71123935c61b105813e916f0be8e708fcbc1f4ea648e9903fdc1b0a88bdffe882fb12fe0c6a4827599b11de1f518b
 
 Package: termux-docker-qemu
 Version: 0.6.4
