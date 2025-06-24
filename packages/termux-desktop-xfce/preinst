@@ -7,5 +7,9 @@ else
   echo "Preparing enviroment ..."
   yes|termux-setup-storage
   [[ -d ${HOME}/Desktop ]] || { mkdir -p ${HOME}/Desktop;}
+
+  ! apt search x11-repo 2>/dev/null | grep -o "installed" >/dev/null && {
+    echo "! x11-repo repository is required, please install it running ... 'apt install x11-repo'"
+  }
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
