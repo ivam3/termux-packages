@@ -4,6 +4,7 @@ trap ctrl_c 2
 
 export DISPLAY=:0
 export XDG_RUNTIME_DIR=${TMPDIR}
+export XKB_CONFIG_ROOT=${PREFIX}/share/xkeyboard-config-2/
 
 ! command -v termux-x11 >/dev/null && { yes|apt install termux-x11-nightly
 } || ! command -v Xwayland >/dev/null && { yes|apt install xwayland
