@@ -39,7 +39,7 @@ for i in nokogiri reline ansi; do
   esac
 
   gem uninstall $i -v "<$version"
-  gem install $i -v "$version" --platform=ruby -- --use-system-libraries
+  gem install $i -v "$version" --platform=ruby -- --use-system-libraries \
     --with-xml2-include=$(pkg-config libxml-2.0 --cflags-only-I) \
     --with-xml2-lib=$(pkg-config libxml-2.0 --libs) \
     --with-xslt-include=$(pkg-config libxslt --cflags-only-I) \
