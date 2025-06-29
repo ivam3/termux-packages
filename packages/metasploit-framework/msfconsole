@@ -4,8 +4,6 @@ RUBYv=$(ls ${PREFIX}/lib/ruby |grep -m 1 '[0-9].[0-9].[0-9]')
 LINUXANDROID=$(find ${PREFIX}/lib/ruby/gems/$RUBYv -iname "bigdecimal.so"|tail -n1) #awk -F "/" '{print $12}'|head -n1)
 export LD_PRELOAD="$LD_PRELOAD:$LINUXANDROID" #${PREFIX}/lib/ruby/gems/$RUBYv/$LINUXANDROID/bigdecimal.so"
 
-printf "$RUBYv\n$LINUXANDROID\n$LD_PRELOAD"
-
 case "$(basename $0)" in
   msfconsole)
     mkdir -p ${PREFIX}/var/lib/postgresql
