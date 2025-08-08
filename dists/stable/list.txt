@@ -1,0 +1,11 @@
+firefox
+gstreamer
+gtk-update-icon-cache
+gtk3
+libevent
+libsmartcols
+libsqlite
+libuuid
+mariadb
+sqlite
+util-linux
