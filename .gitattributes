@@ -1,4 +1,9 @@
 dists/stable/extras/binary-aarch64/openjdk-21_21.1.1-1_aarch64.deb filter=lfs diff=lfs merge=lfs -text
 openjdk-21_21.1.1-1_aarch64.deb filter=lfs diff=lfs merge=lfs -text
+.git/objects/pack/pack-227128210230647d7e2e1d6cc153d7e3e34e60e0.pack filter=lfs diff=lfs merge=lfs -text
+.git/objects/da/f1b60a3075b25e3b6e2cab83dd5a4e19579bef filter=lfs diff=lfs merge=lfs -text
+.git/objects/14/a7fb8fde7dda7135b9378540dcc70c3d6b374e filter=lfs diff=lfs merge=lfs -text
+.git/lfs/objects/90/39/90390046b316ec538d427d385f44358d3e49a7b748996745b892131956596dea filter=lfs diff=lfs merge=lfs -text
+.git/lfs/objects/22/d8/22d85e516521bf519bbfe6e038502be74e0d9437a194ebc13fe690a1f2eb4e3f filter=lfs diff=lfs merge=lfs -text
 *.deb filter=lfs diff=lfs merge=lfs -text
 *.zip filter=lfs diff=lfs merge=lfs -text
