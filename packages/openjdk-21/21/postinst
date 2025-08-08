@@ -1,9 +1,0 @@
-#!/data/data/com.termux/files/usr/bin/bash
-IFS=$'\n\t'
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
-chmod 750 /data/data/com.termux/files/usr/bin/fixer
-echo "[*] Run 'fixer' to fix any posible issue."
-echo -en "[W] WARNING!!\n ╰───────➤ Run 'openjdk-21-preinst' to install java binaries files.\n"
-echo "[!] For help going to https://t.me/Ivam3_Bot."
-echo "[*] @Ivam3: thank you for use my package."
-####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
