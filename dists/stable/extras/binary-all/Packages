@@ -824,11 +824,11 @@ Suggests: i-haklab
 Homepage: https://github.com/maldevel/IPGeoLocation
 Description: A tool to retrieve IP Geolocation information.
 Filename: dists/stable/extras/binary-all/ipgeolocation_2.0.4_all.deb
-Size: 1936
-MD5Sum: 1647811c26778e82ae5ce4832c97da52
-SHA1: fa67ef102aa0d3c849a507fa586a3df4dd44b1e5
-SHA256: d318e20eb734098606202cb08a0e9629acbbfa228c467db6fbf90343b07eac26
-SHA512: d2d4bb856302e19d7646112d7d2d3020e9749f8a832c5ba4753151c315aa58b936cd5b1d55d8bf5e9ff9dd0d62dd7d94a021d28cd92756218f89496b6b9dd968
+Size: 1940
+MD5Sum: ad9a786ffc0508b7c085353ccc42fc9c
+SHA1: faa1869c0850df44c64a6b3306c926dea2962919
+SHA256: dc2b8d60cc22f1178500ee9adcbe54229e126017e1c48b50771ea04b96e34027
+SHA512: 0e78c0c3d38cf3e8684f92ad72aa0a0444e2ce3f2ef6319374a26512370219a71a92fbe224549477f86f9e9f075074d3465d66057ebf7b44cefa571e421eb684
 
 Package: johntheripper
 Version: 1.9.0
@@ -993,16 +993,16 @@ Package: openjdk-21-source
 Architecture: all
 Installed-Size: 52252
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Version: 21.0.1-1
+Version: 21.1.1-1
 Homepage: https://jdk.java.net
-Replaces: openjdk-17-source
+Replaces: openjdk-21-source
 Description: Source files for openjdk-21
-Filename: dists/stable/extras/binary-all/openjdk-21-source_21.0.1-1_all.deb
-Size: 48986660
-MD5Sum: 422a8ad3f767c3de69e78449c7499bcc
-SHA1: 0f48d55813aa41e35f6a3319c4e342e5b844c621
-SHA256: 9e811c7effe7aa54e008a0acd93c4dd8a635a5f84f6a48730808e027d4a36771
-SHA512: 297b76bd06a4828778a2cca4686fd4867813207dcab79155569ef89d5e13f5ffd1fdb0ee7240174a5ec50a0206b4fc398267af436153f38adde40717a07dc26d
+Filename: dists/stable/extras/binary-all/openjdk-21-source_21.1.1-1_all.deb
+Size: 48986656
+MD5Sum: 32f615e9e6d1c332a318d85c35453f14
+SHA1: da1c79c4f3642cbc496be6d1ddd93e2516b10ac8
+SHA256: aa83a7dc23eedd958d4ea2946e4f4a62cb70bbe115187a9c5b632928fd8b8759
+SHA512: 65337f1e4c6274d1afc475498914a0240e2cd733ad1dd92cc3294c0925cdafe9a3afae3bfd931625729221c212d295cc845a59fdc2cbcdf2ce7ac4c6d0b55781
 
 Package: osintgram
 Version: 1.0
