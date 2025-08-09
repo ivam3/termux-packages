@@ -216,11 +216,11 @@ Suggests: termux-x11, xwayland, i-haklab
 Homepage: https://portswigger.net
 Description: An integrated platform/graphical tool for performing security testing of web applications.
 Filename: dists/stable/extras/binary-all/burpsuite_2025.7.2_all.deb
-Size: 36964
-MD5Sum: 2ed2f48555359c6e7fbcd36e417e6c4d
-SHA1: 752444a58ce1a758048005df839122c6c43353b5
-SHA256: f07cbf5d3b9edcc518e251f8a3d9f5636b88ab491b000cf42723641c57145261
-SHA512: 6aee0f400daa499d4d5b5877552bbfe3b256e0ae6200c989e475e6b17f92eda111560d1893c24a2a1c0d63b2d3b48831f269dcd4f1f1f73abf77407534965260
+Size: 36968
+MD5Sum: 28cc273580374c4b934830b9d59f14a7
+SHA1: f81f2c38de0c49d9b019592075c7d5a688580108
+SHA256: ad7a702fcd89f4a785c66b6d78980ce2e534836f6560ba7b512ca098aa1fa8db
+SHA512: 36104babefc1eb3861d41d813f62c5b012b00cd593d651b27affbec19f5155260d19668e7b7da703fecd18db54284a27ee993ca39388d3a1cae2e14a309e643b
 
 Package: cewl
 Version: 5.5.2
