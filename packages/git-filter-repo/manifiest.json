@@ -1,0 +1,13 @@
+{
+  "name": "git-filter-repo",
+  "version": "2.47.0",
+  "arch": "all",
+  "homepage": "https://github.com/newren/git-filter-repo",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git", "python3", "python3-pip"],
+  "suggests": ["i-haklab"],
+  "description": "Quickly rewrite git repository history (filter-branch replacement)",
+  "files" :{
+    "git-filter-repo": "bin/git-filter-repo"
+  }
+}
