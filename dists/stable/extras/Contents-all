@@ -554,6 +554,7 @@ data/data/com.termux/files/usr/bin/ghidra                                       
 data/data/com.termux/files/usr/share/applications/ghidra/ghidra.desktop          ghidra
 data/data/com.termux/files/usr/share/applications/ghidra/img/ghidra.png          ghidra
 data/data/com.termux/files/usr/bin/ghost-installer                               ghost
+data/data/com.termux/files/usr/bin/git-filter-repo                               git-filter-repo
 data/data/com.termux/files/usr/bin/gobuster                                      gobuster
 data/data/com.termux/files/usr/bin/gophish                                       gophish
 data/data/com.termux/files/usr/bin/gophish-installer                             gophish

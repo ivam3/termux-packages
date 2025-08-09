@@ -207,7 +207,7 @@ SHA256: feef86991f89fffe0dc5c60e439511da84ebefa4b14a280d8daf61480fab5358
 SHA512: b9c69836d23f95a1e35d7dc5bb6795aea6aab750ee697dabbb86342f472078035e03080bc455aa219771c871b3f0c21fd8547f3ec9e9c8907404d54cbe0f9230
 
 Package: burpsuite
-Version: 2025.6.5
+Version: 2025.7.2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 37
@@ -215,12 +215,12 @@ Depends: openjdk-21, wget, jython-lts, giflib
 Suggests: termux-x11, xwayland, i-haklab
 Homepage: https://portswigger.net
 Description: An integrated platform/graphical tool for performing security testing of web applications.
-Filename: dists/stable/extras/binary-all/burpsuite_2025.6.5_all.deb
+Filename: dists/stable/extras/binary-all/burpsuite_2025.7.2_all.deb
 Size: 36964
-MD5Sum: d15d2f47c678787147aace938a74a1ee
-SHA1: 7b02c44f7a0946d78b046ebef529f262d649980d
-SHA256: 5e54f7520b798f00458a520c642d576258f94ad88b5b56d95549b0b834d4239f
-SHA512: 4aceb6e99113c67f8f3cfc48d36a1de2f4b7c53abae6527b66eb2dd7c5491c71f31d599b37df5977f5e697d6a49679e67ea8285a3178433c0b252ee6115ddde3
+MD5Sum: 2ed2f48555359c6e7fbcd36e417e6c4d
+SHA1: 752444a58ce1a758048005df839122c6c43353b5
+SHA256: f07cbf5d3b9edcc518e251f8a3d9f5636b88ab491b000cf42723641c57145261
+SHA512: 6aee0f400daa499d4d5b5877552bbfe3b256e0ae6200c989e475e6b17f92eda111560d1893c24a2a1c0d63b2d3b48831f269dcd4f1f1f73abf77407534965260
 
 Package: cewl
 Version: 5.5.2
@@ -621,6 +621,22 @@ MD5Sum: 83d67a81c927e7fe51557665be3b41c5
 SHA1: eee8f473175878b91da3a1bca9836d25d1becef2
 SHA256: 6a34603273adc037284f5dcf10ec1317faad5d1591c537b214a48254558142ac
 SHA512: ae65e2734c6b2d0185d438a02ffeb2363c2726ef637229b645955bfd1a1090647c39c0521eebff5f45d0c5c298024b96e29e1480c1fe5944dac4c868ce18abfb
+
+Package: git-filter-repo
+Version: 2.47.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: git, python3, python3-pip
+Suggests: i-haklab
+Homepage: https://github.com/newren/git-filter-repo
+Description: Quickly rewrite git repository history (filter-branch replacement)
+Filename: dists/stable/extras/binary-all/git-filter-repo_2.47.0_all.deb
+Size: 1852
+MD5Sum: f1780358f5ba5444895e1523ddf988a9
+SHA1: 2b0c4392224595cd9599890d71885c5762c75c7f
+SHA256: 3fdd4e770e4ef9b44ccc904ed410d7b6787ea5b39e89299f0a8621f9f5ea3702
+SHA512: 2f70a1ef81ea633f2c9876246fb6619bb2e0b73d0b4b129cb212114b16a6be207deee86b929c55e8f757db5568cc9d294f955ae54f64ac2e2e8e9b2f19f5c19d
 
 Package: gobuster
 Version: 3.4.0
