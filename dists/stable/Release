@@ -1,3 +1,11 @@
+Origin: Ivam3 Repository
+Label: Ivam3
+Suite: stable
+Version: 1
+Codename: termux
+Architectures: aarch64 all arm i686 x86_64
+Components: extras lfs
+Description: Custom repository for Termux packages
 Date: Tue, 12 Aug 2025 10:22:58 +0000
 MD5Sum:
  7f6eec18ff7901a0b400cfbf88365fff               38 Release

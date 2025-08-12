@@ -1,6 +1,14 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
+Origin: Ivam3 Repository
+Label: Ivam3
+Suite: stable
+Version: 1
+Codename: termux
+Architectures: aarch64 all arm i686 x86_64
+Components: extras lfs
+Description: Custom repository for Termux packages
 Date: Tue, 12 Aug 2025 10:22:58 +0000
 MD5Sum:
  7f6eec18ff7901a0b400cfbf88365fff               38 Release
@@ -108,15 +116,15 @@ SHA512:
  58e4998e7f9ffc61dc1ff2f4299870b3dd0ba8ee53b650eee7c17ce294065159010a505e1eb245b2caf8bb4adc15080a52b1273aff54261505fdfa0804dbb413              604 lfs/binary-aarch64/Packages.xz
 -----BEGIN PGP SIGNATURE-----
 
-iQHHBAEBCAAxFiEEoz/WtaeHFmQNOIJqmbWYb5UmsqoFAmibFlQTHGl2YW0zLmJo
-QGdtYWlsLmNvbQAKCRCZtZhvlSayql4cC/9Ybwa4mFMYeht/GQ9hpPDzOFbyiNBh
-0eqJv/TkcQjQBkl+B0vwXNRvLe6qM14lsSdBM7bVIND65b6oxtUodkGSUBYGgIkP
-JphSQDlyZbNg/bXRrWST0GxF+4mlOjXhb4HaccbENdTPGcpPs1M6y7usEM9CA0WR
-5blIseTBZDJG0TfLUlYt8v9hOw7I78osSgbqDNXqMvca/Uip4kgqIaCQpIb43GNS
-cwHIlXU89zr9utZ7EH1mxBsGR12nsNs+SkXkJGamGXqfH1tS5ANibsy7akyl+0HX
-S1b2JHtd0eSLT41heVUuwZqyuUb4QrvZYX9fwCh0XVwqY0DIuf0CTz9Nj2m3L6Ki
-ueL7IYtmxA03HlqNhbv3Ibk+oLp7qkiGWnqtuU0DOUJTT1/tLaULKN5bSeVBHQt8
-0XISfwCASbWoLsLzvTkOC/JQFpSRY8u2gGtBhZ+YXbXmg4k1Bw2t1WbWLbwVkLG0
-1crClorNm4DGaUNlHwp0g7s9MnL4POsZdQM=
-=46ox
+iQHHBAEBCAAxFiEEoz/WtaeHFmQNOIJqmbWYb5UmsqoFAmibGmsTHGl2YW0zLmJo
+QGdtYWlsLmNvbQAKCRCZtZhvlSayqlPsC/9BYzs9V3kI5eiz/lQTQuqfDCLVoZYY
+0X3C+Hn1ZGnmMTyQpb8LjaRJCrM3BIaHRJS9Gx0GJvekDQ3b4Kv848G2PKnFi6ZP
+btz1yVp+w2ti9yQDVI8C1EJSTgdhJfpuFDONwgZEj/fF2tyIn9xKPvS9oSdDaEos
+WgDrtN8/tdktfpVGgH353P13WnabBhaqwxZTldaafLAqzrXVzL9tq0fzk3fAjuOu
+uKDfyGlmSuHxybHTUHFaWpysZ52vZM4VvKafouqYyG79vEuRXZPgUwR08U4vaAwO
+aYUTdmi23byalMcycq0aZViWSRf5zD8F7yYWr/dDzHxyMi9VqUyUvLM6bHacVTqT
+OkqsOAX88YJi262ramXDSGvawqAKZw8QBe87MXSBEzZg+twoi8I1wiBUsSbNqT8D
+KvJKBrscc6E4eWnLX7QqJHECoIklcN41sdFf73H3e6AE6P8X5o7xvunBwJggeQbU
+K2M0zLOVUr6+Htf/ERUf9sZ+fGitaDOXBpI=
+=mFAw
 -----END PGP SIGNATURE-----
