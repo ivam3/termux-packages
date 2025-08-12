@@ -15,6 +15,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [amass](https://github.com/OWASP/Amass) | In-depth Attack Surface Mapping and Asset Discovery |
 | [androbugs](https://github.com/AndroBugs/AndroBugs_Framework) | Android vulnerability scanner |
 | [androidsdk-cli](https://developer.android.com/studio/index.html#command-tools) | Official command line Integrated Development Environment (IDE) for Android app development |
+| [apktool](https://bitbucket.org/iBotPeaches/apktool/downloads) | command-line tool used for reverse engineering Android application package (APK) |
 | [appshark](https://github.com/bytedance/appshark) | An static taint analysis platform to scan vulnerabilities in an Android app |
 | [beef](https://www.beefproject.com) | powerful and intuitive security tool focuses on leveraging browser vulnerabilities to assess the security posture of a target |
 | [binwalk](https://github.com/ReFirmLabs/binwalk) | Tool for analyzing, reverse engineering, and extracting firmware images | 
@@ -27,11 +28,14 @@ This project is with the purpose of offering easy and fast access to the install
 | [code-server](https://github.com/Leask/code-server-nodejs) | VS Code with Nodejs development environment running on a remote server |
 | [converter](https://github.com/miluxmil/milux/blob/master/converter) | Easy multimedia file converter |
 | [credmap](https://github.com/lightos/credmap) | Test the user credentials provided on several popular websites to see if the password has been reused on any of them |
+| [cryptovenom](https://github.com/lightos/credmap) | Test the user credentials provided on several popular websites to see if the password has been reused on any of them |
 | [d-tect](https://github.com/shawarkhanethicalhacker/D-TECT-1) | Pentest the Modern Web |
 | [dos-a-tool](https://github.com/ivam3/DoS-A-Tool) | Performs denial of service attacks under the SYN Flood method |
 | [dex2jar](https://github.com/pxb1988/dex2jar) | Toolkit to work with android .dex and java .class files |
 | [dnsenum](https://github.com/fwaeytens/dnsenum) | Enumerate DNS information |
 | [embed](https://github.com/ivam3/embed) | Embed metasploit payload into a legtim APK |
+| [enum4linux](https://github.com/CiscoCXSecurity/enum4linux) | Linux alternative to enum.exe for enumerating data from Windows and Samba hosts |
+| [enum4linux-ng](https://github.com/cddmp/enum4linux-ng) | A next generation version of enum4linux (a Windows/Samba enumeration tool) with additional features like JSON/YAML export |
 | [evilginx2](https://github.com/kgretzky/evilginx2) | Standalone man-in-the-middle attack framework used for phishing login credentials along with session cookies, allowing for the bypass of 2-factor authentication. |
 | [evilurl](https://github.com/UndeadSec/EvilURL) | Generate unicode domains for IDN Homograph Attack and detect them. |
 | [exif](https://github.com/ivam3/ExiF) | Extract information (meta data) from files. |
@@ -45,21 +49,22 @@ This project is with the purpose of offering easy and fast access to the install
 | [getuserspns](https://github.com/fortra/impacket/blob/master/examples/GetUserSPNs.py) | Try to find Service Principal Names that are associated with normal user account. |
 | [ghidra](https://github.com/NationalSecurityAgency/ghidra) | A software reverse engineering (SRE) framework. |
 | [ghost](https://github.com/EntySec/ghost) | Android post-exploitation framework that exploits the Android Debug Bridge to remotely access an Android device. |
+| [git-filter-repo](https://github.com/newren/git-filter-repo) | Quickly rewrite git repository history (filter-branch replacement). |
 | [gobuster](https://github.com/OJ/gobuster/) | Directory/File, DNS and VHost busting tool written in Go |
 | [gophish](https://github.com/gophish/gophish) | Open-Source advance phishing toolkit |
-| [hakku](https://github.com/4shadoww/hakkuframework) | Open-source penetration testing platform used to perform web and network-related penetration testing. |
+| [hcdecryptor](https://gitlab.com/PANCHO7532/HCDecryptor) | Decryptor for HTTP Custom, HTTP Injector, APK Custom, eProxy, NapsternetV and SocksHTTP-based configuration files |
+| [hakku-framework](https://github.com/4shadoww/hakkuframework) | Open-source penetration testing platform used to perform web and network-related penetration testing. |
 | [hashcat](https://github.com/hashcat/hashcat.git) | World's fastest and most advanced password recovery utility |
 | [hasher](https://github.com/CiKu370/hasher) | Hash cracker with auto detect hash |
 | [hashid](https://gitlab.com/kalilinux/packages/hash-identifier/) | Software to identify the different types of hashes used to encrypt data and especially passwords. |
 | [hatcloud](https://github.com/HatBashBR/HatCloud) | Make bypass in CloudFlare for discover real IP. |
-| [hunner](https://github.com/b3-v3r/Hunner) | Hacking framework to DOS sites, ftp|ssh bruteforce, scan sql and xxs vulnerabilities. |
+| [hunner-framework](https://github.com/b3-v3r/Hunner) | Hacking framework to DOS sites, ftp|ssh bruteforce, scan sql and xxs vulnerabilities. |
 | [hydra-gtk](https://github.com/vanhauser-thc/thc-hydra) | Number one brute forcing tool in ciber security. |
 | [infoga](https://github.com/m4ll0k/infoga) | Gathering email accounts informations from different public source and check if emails was leaked using haveibeenpwned.com API. |
-| [ipgeolocations](https://github.com/maldevel/IPGeoLocation) | A tool to retrieve IP Geolocation information. |
+| [ipgeolocation](https://github.com/maldevel/IPGeoLocation) | A tool to retrieve IP Geolocation information. |
 | [johntheripper](https://github.com/openwall/john) | Advanced offline password cracker, which supports hundreds of hash and cipher types, and runs on many operating systems, CPUs, GPUs, and even some FPGAs. |
 | [jython](https://www.jython.org/) | The Jython project provides implementations of Python in Java, providing to Python the benefits of running on the JVM and access to classes written in java |
 | [kerbrute](https://github.com/TarlogicSecurity/kerbrute) | An script to perform kerberos bruteforcing by using the Impacket library. |
-| [kalilinux](https://www.kali.org/get-kali/#kali-mobile) | The Kali-Linux Open-source project for Android devices |
 | [lockphish](https://github.com/Heroboycloud/lockphish-master) | A tool for phishing attacks on the lock screen, designed to grab Windows credentials, Windows, iPhone and Android PIN. |
 | [maltego](https://www.maltego.com) | Maltego is a software focused mainly on forensic analysis and developed to make link analysis and data mining more conducive from IP domains, emails, telephones, geographic locations... that is, the starting point of an investigation. |
 | [metasploit-framework](https://github.com/rapid7/metasploit-framework) | World's leading open-source penetrating framework |
@@ -76,7 +81,9 @@ This project is with the purpose of offering easy and fast access to the install
 | [pybelt](https://github.com/Ekultek/Pybelt) | An open source hackers tool belt complete. |
 | [quack](https://github.com/Monkey-hk4/quack) | Toolkit with SMS attack tool, HTTP attack tool and many other attack tools. |
 | [ransomux](https://github.com/ivam3/termux-packages) | "Simulate a ransomware effects searching to lock and encrypt files into internal|external android memory brigning a reversel shell. |
+| [recondog](https://github.com/s0md3v/ReconDog) | Reconnaissance Swiss Army Knife |
 | [recon-ng](https://github.com/lanmaster53/recon-ng) | Open Source Intelligence gathering tool aimed at reducing the time spent harvesting information from open sources. |
+| [redhawk](https://github.com/Tuhinshubhra/RED_HAWK) | All in one tool for Information Gathering, Vulnerability Scanning and Crawling |
 | [routersploit](https://github.com/threat9/routersploit) | Open-source exploitation framework dedicated to embedded devices. |
 | [saycheese](https://github.com/hangetzzu/saycheese) | Grab target's webcam shots by link. |
 | [sayhello](https://github.com/d093w1z/sayhello) | Capturing audio (.wav) from target using a link. |
@@ -93,7 +100,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [sublist3r](https://github.com/aboul3la/Sublist3r) | Fast subdomains enumeration tool for penetration testers. |
 | [tangalanga](github.com/elcuervo/tangalanga) | The Zoom conference scanner hacking tool. |
 | [termux-desktop-xfce](https://github.com/Yisus7u7/termux-desktop-xfce) | Set up a beautiful xfce desktop in termux. |
-| [termux-doker-qemu](https://telegra.ph/Docker-en-Android-10-26) | Provide an additional layer of application virtualization with Linux kernel resource isolation features. |
+| [termux-docker-qemu](https://telegra.ph/Docker-en-Android-10-26) | Provide an additional layer of application virtualization with Linux kernel resource isolation features. |
 | [trape](https://github.com/jofpin/trape) | OSINT analysis and research tool. |
 | [unshc](https://github.com/yanncam/UnSHc) | The Shell Script UnCompiler (UNSHC) decode and decrypt SHC file on X86/x64 architecture. |
 | [userrecon](https://github.com/issamelferkh/userrecon) | Find usernames across over 75 social networks. |
@@ -101,15 +108,17 @@ This project is with the purpose of offering easy and fast access to the install
 | [wbruter](https://github.com/wuseman/WBRUTER) | Disable device pin code aslong as usb debugging and brute force methods like dictionary attacks for gmail, ftp, rar, zip and some other file extensions. |
 | [webscan](https://github.com/Fenrir-00/investigar-web) | A lightweight webscanner tool. |
 | [websploit](https://github.com/The404Hacking/websploit) | MITM framework. |
+| [wfuzz](https://pypi.org/project/wfuzz/) con [fuzzDB](https://github.com/fuzzdb-project/fuzzdb) | Brute force attack tool with dictionary of attack patterns and primitives for black-box application fault injection and resource discovery |
 | [whatweb](https://github.com/urbanadventurer/WhatWeb) | Recognises web technologies including content management systems (CMS), blogging platforms, statistic/analytics packages, JavaScript libraries, web servers, and embedded devices. |
 | [wpscan](https://github.com/wpscanteam/wpscan) | WordPress security scanner. |
 | [xapt-management](https://github.com/ivam3/xapt-management) | X-Desktop graphical interface for advance package tool(APT) written in python. |
 | [xerosploit](https://github.com/LionSec/xerosploit) | A penetration testing toolkit whose goal is to perform man in the middle attacks for testing purposes. |
+| [zaproxy](https://www.kali.org/tools/zaproxy/) | The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications |
 ##### Suggest a tool and/or framework to be add in our [Telegram Support Group](https://t.me/Ivam3by_Cinderella)
     
-## How to get it ...
+## INSTALLATION ...
 
-To add the list of available tools and/or frameworks to the package manager `apt` in [Termux](https://github.com/termux/termux-app) follow those 5 simple steps:
+To add the list of available tools and/or frameworks to the package manager `apt/pkg` in [Termux](https://github.com/termux/termux-app) copy and paste the following commands in your Termux terminal: 
 
 - Install `wget` and `gnupg` package:
 ```bash
@@ -136,9 +145,8 @@ curl -fsSL "https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/dis
 ```bash
 apt update
 ```
-
-Or just copy & paste this one command line:
-```
+Or if you prefer, you can do it with one command line to add the repository copy and paste the following command in your Termux terminal:
+```bash
 yes|apt install wget gnupg && \
 mkdir -p $PREFIX/etc/apt/sources.list.d && \
 wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/ivam3-termux-packages.list -O \
@@ -152,4 +160,4 @@ apt update
 
 GNU
 
-##### Follow me on [Socials Network](https://wlo.link/@Ivam3)
+##### Follow me on [Socials Network](https://link.space/@ivam3)
