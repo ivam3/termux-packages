@@ -52,15 +52,16 @@ This project is with the purpose of offering easy and fast access to the install
 | [git-filter-repo](https://github.com/newren/git-filter-repo) | Quickly rewrite git repository history (filter-branch replacement). |
 | [gobuster](https://github.com/OJ/gobuster/) | Directory/File, DNS and VHost busting tool written in Go |
 | [gophish](https://github.com/gophish/gophish) | Open-Source advance phishing toolkit |
-| [hakku](https://github.com/4shadoww/hakkuframework) | Open-source penetration testing platform used to perform web and network-related penetration testing. |
+| [hcdecryptor](https://gitlab.com/PANCHO7532/HCDecryptor) | Decryptor for HTTP Custom, HTTP Injector, APK Custom, eProxy, NapsternetV and SocksHTTP-based configuration files |
+| [hakku-framework](https://github.com/4shadoww/hakkuframework) | Open-source penetration testing platform used to perform web and network-related penetration testing. |
 | [hashcat](https://github.com/hashcat/hashcat.git) | World's fastest and most advanced password recovery utility |
 | [hasher](https://github.com/CiKu370/hasher) | Hash cracker with auto detect hash |
 | [hashid](https://gitlab.com/kalilinux/packages/hash-identifier/) | Software to identify the different types of hashes used to encrypt data and especially passwords. |
 | [hatcloud](https://github.com/HatBashBR/HatCloud) | Make bypass in CloudFlare for discover real IP. |
-| [hunner](https://github.com/b3-v3r/Hunner) | Hacking framework to DOS sites, ftp|ssh bruteforce, scan sql and xxs vulnerabilities. |
+| [hunner-framework](https://github.com/b3-v3r/Hunner) | Hacking framework to DOS sites, ftp|ssh bruteforce, scan sql and xxs vulnerabilities. |
 | [hydra-gtk](https://github.com/vanhauser-thc/thc-hydra) | Number one brute forcing tool in ciber security. |
 | [infoga](https://github.com/m4ll0k/infoga) | Gathering email accounts informations from different public source and check if emails was leaked using haveibeenpwned.com API. |
-| [ipgeolocations](https://github.com/maldevel/IPGeoLocation) | A tool to retrieve IP Geolocation information. |
+| [ipgeolocation](https://github.com/maldevel/IPGeoLocation) | A tool to retrieve IP Geolocation information. |
 | [johntheripper](https://github.com/openwall/john) | Advanced offline password cracker, which supports hundreds of hash and cipher types, and runs on many operating systems, CPUs, GPUs, and even some FPGAs. |
 | [jython](https://www.jython.org/) | The Jython project provides implementations of Python in Java, providing to Python the benefits of running on the JVM and access to classes written in java |
 | [kerbrute](https://github.com/TarlogicSecurity/kerbrute) | An script to perform kerberos bruteforcing by using the Impacket library. |

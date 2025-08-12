@@ -1,3 +1,0 @@
-#!/data/data/com.termux/files/usr/bin/bash
-
-bash <(curl -fsSL "https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Uninstall/Kali/UNI-kali.sh")

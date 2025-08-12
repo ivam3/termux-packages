@@ -4,7 +4,7 @@
   "arch": "all",
   "homepage": "https://github.com/s0md3v/ReconDog",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["python, git"],
+  "depends": ["python, python-pip, git"],
   "suggests": ["i-haklab"],
   "description": "Reconnaissance Swiss Army Knife",
   "files" :{
