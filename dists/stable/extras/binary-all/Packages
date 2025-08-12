@@ -84,48 +84,48 @@ Version: 3.6.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: termux-api, wget, aapt, apksigner, adbfastboot, gradle, openjdk-17
+Depends: termux-api, wget, aapt, apksigner, adbfastboot, gradle, openjdk-21
 Suggests: i-haklab
 Homepage: https://https://developer.android.com/studio/command-line
 Description: Official command line Integrated Development Environment (IDE) for Android app development
 Filename: dists/stable/extras/binary-all/androidsdk-cli_3.6.0_all.deb
-Size: 2568
-MD5Sum: f64cf3589d5602861ccb726ac46cf4ed
-SHA1: c791dc4852aeb007a6ced26ab6337727c1c69e2c
-SHA256: 536305743035e5e7e2bacc3e42e76e820a88511dc6a108cc83a71e3d6a68d192
-SHA512: 29a5056695d10defabda83494c97097d3fcce8a16c2d9d4d164138869f4405837fb9e76880bf8c19531aab4a6c25d9887c1ffa9e5a41a559b26dd50021a637ea
+Size: 2556
+MD5Sum: f760172478984b43f7162f7dd1b95c98
+SHA1: d69a6412d085ff40c3498f520206dba6a09ef699
+SHA256: 7adf48f6532f740e93c13e34e2e73982db7950a45830a09a5bd22021334596df
+SHA512: 630372b4ecf428fa3b1ee0e216fe2c7bcb6198e6f39a0d5655f42c4b72e9ddb6c2015db34a42db8113323626a55a13ef0c0b1909bda7af4dd9c3d1713f169e0a
 
 Package: apktool
-Version: 2.11.0
+Version: 2.12.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: openjdk-17, aapt, wget
+Depends: openjdk-21, aapt, wget
 Suggests: i-haklab
 Homepage: https://bitbucket.org/iBotPeaches/apktool/src/master/
 Description: A tool for reverse engineering Android apk files
-Filename: dists/stable/extras/binary-all/apktool_2.11.0_all.deb
-Size: 1832
-MD5Sum: 2a4a510a3b9ad4462ee6f3bbe75bd46a
-SHA1: 1b4fc8bd40ca24b20d889a8a5d94dc67c93d601e
-SHA256: aefaf43ede95666d2340555276977edb2a3eea6baf9dabf785adb1a65e968057
-SHA512: 896168d3e23c2da1bedbd6c8222425e4fff9de5eba5ccc6b91529c5994e5e052ec0be04cfcc9fa253d39cba7f196c9d76cacbe69090864f319380ea84b76b785
+Filename: dists/stable/extras/binary-all/apktool_2.12.0_all.deb
+Size: 1824
+MD5Sum: 9b22102f99835c661a4cd4230826f1a5
+SHA1: 398fcf685432abdfae187bf873b667a81f965493
+SHA256: fa1cc48779dd602acb41b00a99363ce2f5f91aafa123c8d54b33162dbddbb83b
+SHA512: 5c330f8b134c586c57acedb66eda0f5a8d92b5da1d90de121d01bf9c55c0e2e13d599ed7c622e54a718f6d03a91c3fad35a66a69c44ab2024c4642c0327ddb46
 
 Package: appshark
 Version: 0.1.2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
-Depends: openjdk-17, git
+Depends: openjdk-21, git
 Suggests: i-haklab
 Homepage: https://github.com/bytedance/appshark
 Description: An static taint analysis platform to scan vulnerabilities in an Android app.
 Filename: dists/stable/extras/binary-all/appshark_0.1.2_all.deb
-Size: 2232
-MD5Sum: 29856fa1468c29f2b136d092c155dff1
-SHA1: 5f993dbc2ddd16e13c3e9e66d0c5fec2f0714951
-SHA256: 022cad8aba44c5068a2931eac4b0e4a7e9c075856b0beee3cf32e1dfd31ec793
-SHA512: 7840fe9672ad1210bb5cbc252caf3dbbc60b0ab3fd7dce83430d429fe5f90d4839c1eb10baa7a9fe4f66463533edf84de3108aa5ba9c55b62ffa330323018e26
+Size: 2224
+MD5Sum: 9aec87626348df88fcc27d60733ed857
+SHA1: ec7b67b72699c3c6103b2c5002f5021e67961c9c
+SHA256: def3653c894d40bc0dbdd245e9b842b3dfe1916bc3516d8165df11f24162bb13
+SHA512: f7f031c9f58e4d4dfd4d33e6ff93d0210619f7901bd3acf052988972113e98455da90a5d90bbbba86a3d19adf31f78ddeceaa2255acd51b06c72003ffa2d9ec3
 
 Package: beef
 Version: 0.5.4.0
@@ -306,17 +306,17 @@ Package: cryptovenom
 Version: 1.0.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 163082
-Depends: python2
+Installed-Size: 1
+Depends: python, python-pip, libgmp, libmpfr, libmpc, build-essential, libssl
 Suggests: i-haklab
 Homepage: https://https://github.com/lockedbyte/cryptovenom
-Description: OpenSource tool which contains a lot of cryptosystems and cryptoanalysis methods all in one.
+Description: The Cryptography Swiss Army Knife which contains a lot of cryptosystems and cryptoanalysis methods all in one.
 Filename: dists/stable/extras/binary-all/cryptovenom_1.0.1_all.deb
-Size: 28404216
-MD5Sum: 1522069426e4ff729129f38ac7303551
-SHA1: 880c7b730607477f9151b221464d710685f241c3
-SHA256: a2ede3ecaa6984eeb0bd2b88317b315c1a59fd889666fd3ff6c1b8216bfb36b4
-SHA512: 59e7204e30c074ea8f08b1e0961e7fd7feb357c446d689c3720ebb7c5eb851045c36d469c5aaf5d0c1d834dbf34976e8f63bb43260f22e32a07da86971e87a63
+Size: 1948
+MD5Sum: 1ad2112fffe307f5a00ddc8e67c63c38
+SHA1: f50fa05dbb4c09fcc3b8e7224d7fad1583606978
+SHA256: 40555edb404553415db9fd7ae3507f3824ac331017da6ec6d435cd5a8e410a4c
+SHA512: 27fd2646a195ac206ef9ea09e34a2095ad4eb377d522ee85f0f6262a53131e0ad1aab4f48c29877c631c539c9c3a2dd1d0146955e6f4085bacbcbe93d950cb16
 
 Package: d-tect
 Version: 1.0
@@ -339,16 +339,16 @@ Version: 2.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
-Depends: wget, unzip, openjdk-17
+Depends: wget, unzip, openjdk-21
 Suggests: fixer
 Homepage: https://github.com/pxb1988/dex2jar
 Description: Tools to work with android .dex and java .class files
 Filename: dists/stable/extras/binary-all/dex2jar_2.1_all.deb
 Size: 2248
-MD5Sum: 006a669ac4e05cbc477e0093360aedbb
-SHA1: 6a82565a09e494b4a70a3adf05ce5788a0a5297c
-SHA256: b4f50eb599832d44f444db545af3245a1b66e2e919915da7d3e4582f43d4ba3f
-SHA512: 08bed0b3408e971f98978dfc153fcad48c6cb21a3142dbeb738362217d914d60a86914ffffcd8de590a6bd3a65f43d587d76e8a3638da138f184bc2f4db8cc66
+MD5Sum: 6c0ce80b03f311537680db589d52a994
+SHA1: ea72bf80ec692ced231d49d6740b98dbfaaa9ed0
+SHA256: 42c9f079388d3643b59cf1a469864d07b9dc6efe18321ad9f17541d1c4b94e3a
+SHA512: 7d9ce0a7edcca1395dcad3f45c27f70d26e01d77fc66bdd385cfa8aa345dceaee924350dae70148be3d8956ae9db2fc6625dc8ba0773925a927db48ce1322fdd
 
 Package: dnsenum
 Version: 1.2.4
@@ -383,23 +383,23 @@ SHA256: f9be02431a835f37f6e3dd8da836d9104f9c8a5b05705db0b980f8890114baa8
 SHA512: 15309423e29349552517ef1abdb670bc08355ba74cf4e8585150288b207d588e4f5620ff0f185c6a52959a5c29304f13cfff52bfb56fc8c524093e674f66c67b
 
 Package: embed
-Version: 2.0
+Version: 3.0.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
-Depends: ruby, git, wget, curl, axel, apktool, tar, aapt, apksigner, openjdk-17
+Installed-Size: 1
+Depends: ruby, git, wget, curl, axel, tar, aapt, apksigner, openjdk-21, apktool
 Suggests: metasploit-framework
 Homepage: https://github.com/Ivam3/embed
 Description: Open source tool to Embed metasploit payload into legitim APK file. (git-release installer)
-Filename: dists/stable/extras/binary-all/embed_2.0_all.deb
-Size: 1960
-MD5Sum: 5615b74efb6c46f56e8275b123f5b987
-SHA1: 3cff1d33ca6327ee4039a516d99c28f8e7e45357
-SHA256: cfc0cbfd7c525eba2ac22f4348eea6796ff78cab7eb80cef008b912ce7be6050
-SHA512: 23df84ac4d505dbe6cfb0a30a1428174b9a482027f76479608a9caa185751ac9fe0d3ae76655f71a1f391605ccd38068f5918c19079b09ce4ab621f4950f26dc
+Filename: dists/stable/extras/binary-all/embed_3.0.0_all.deb
+Size: 1900
+MD5Sum: 9f4a1c27b893ae3162a873e05f994e66
+SHA1: 87ec6d2a906f52ce858779c41c85fa4047f40d8d
+SHA256: 30b7e9e7345c55f1ee2527301bab8b7efaf2ca219c504549ba563951e6c8f24e
+SHA512: 1899fd41f360e4762cffd5b661e6fda47fb440d32dfc278d3b66c45003dfbd2325ed8412b538c4d5f355ab36371e49397cc37f31cd5d1af2b068a627312b774d
 
 Package: enum4linux-ng
-Version: 1.3.1
+Version: 1.3.5
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
@@ -407,12 +407,12 @@ Depends: python, python-pip, dnsutils, samba, make, openldap
 Suggests: i-haklab
 Homepage: https://github.com/cddmp/enum4linux-ng
 Description: A next generation version of enum4linux (a Windows/Samba enumeration tool) with additional features like JSON/YAML export
-Filename: dists/stable/extras/binary-all/enum4linux-ng_1.3.1_all.deb
-Size: 1852
-MD5Sum: 7d6b6ff9030476b26c6e2424ff5e1489
-SHA1: c4935b1cc434fd2f54c8bcb59c927c287983d8d5
-SHA256: 194eb8981f9ca10c5448c2a4740808f0ef3813aa72f2b2aac9dfca954907517b
-SHA512: ea64717019e44948a22473399d0d16867f062a486d01d1e133c7e4b9ec23ee605dc39253bb06c17525927c676941212d54eaa9d6df8cbe4d5644a25cd23b570a
+Filename: dists/stable/extras/binary-all/enum4linux-ng_1.3.5_all.deb
+Size: 1848
+MD5Sum: 471c6398b66c10d96bf5350e230fe387
+SHA1: 9073a1acd7a32dd59822bf75ea3913980cdd56d2
+SHA256: bae3ff3a917638e44dc271467c7b8c675bf59015efa41d3dadc385c599cc0c38
+SHA512: 41be89d92f82931f9b1f6b81ac1ceaa350599d7c5990e56f9e741382ded4967f4b2eb8bdbdf813d2768e048a4ab7d7ad57ac548632af4d040ddd71a511747035
 
 Package: enum4linux
 Version: 0.9.1
@@ -591,20 +591,20 @@ SHA256: 03a1f9e0b64f1b6d1af62f0b632db4640714bbaee95da166c74c978ce26a4384
 SHA512: 5e592a8a0d5b8fa1c4a39246ae5296f11a8d6a21bd77cbb7f295693f6bbddce62386d2d98b36255741ed405d06d2e08bfd16e70f6d06f81e9cbb628563d9b674
 
 Package: ghidra
-Version: 10.2.3
+Version: 11.4.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 51
-Depends: tur-repo, openjdk-17, clang, llvm, lldb, gradle, ndk-multilib, gcc-12, swig
+Depends: tur-repo, openjdk-21, clang, llvm, lldb, gradle, ndk-multilib, gcc-12, swig
 Suggests: i-haklab, termux-desktop-xfce
 Homepage: https://github.com/NationalSecurityAgency/ghidra
 Description: Ghidra is a software reverse engineering (SRE) framework
-Filename: dists/stable/extras/binary-all/ghidra_10.2.3_all.deb
-Size: 52108
-MD5Sum: 1290aab3068f110a5203b3648800aaff
-SHA1: 02f7dd87ab214c69bb17bc20200ffc2dfe7d9057
-SHA256: 315ba7fd5ff4daa2afd41845cb534b6134c0ba9d3350a974c2d3abb8e9e1fdae
-SHA512: 5ef7a697e496bcd0fbb909a9fca90b81f121b68e580579e8e33b918f35ba72b99d30e1addddd8c66524e634b0ea1f01952baeb730b4f0aa4293792be08c360a6
+Filename: dists/stable/extras/binary-all/ghidra_11.4.1_all.deb
+Size: 52088
+MD5Sum: 2c22c2460f61b52eaf9783894bcc8948
+SHA1: 7e93608c372b9257a9cdfcb30d3c0291419e5ef8
+SHA256: 00e522a3cd3a33a02aa4aaedb76368b47bf0465f6f14c3a0543d46e07d3e94f5
+SHA512: ebb02f3abf8fd6527a340c17d37692db06959896933a16807fd3cc2a5030189fa3f7ec50ef798ad749612ae8c6d3c38fa16130177d894d7f8458701be53fc145
 
 Package: ghost
 Version: 8.0.0
@@ -863,20 +863,20 @@ SHA256: 313de076815323954633a1a8c8ac44a89d0138fa9c34137c13f49c501c9733c5
 SHA512: 343fe9f8759c447351bb4c9a6f55f2321a38b9af68931efe1bafaf5ffb42f8e2cf2a4a5a22dd0b5bd990eb469a345564b0f95ecfe2ba4eb715446f348c88f522
 
 Package: jython-lts
-Version: 2.7.3
+Version: 2.7.4
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: openjdk-17, wget
+Depends: openjdk-21, wget, giflib
 Suggests: i-haklab, burpsuite
-Homepage: https://https://www.jython.org/
+Homepage: https://www.jython.org/
 Description: The Jython project provides implementations of Python in Java, providing to Python the benefits of running on the JVM and access to classes written in java
-Filename: dists/stable/extras/binary-all/jython-lts_2.7.3_all.deb
+Filename: dists/stable/extras/binary-all/jython-lts_2.7.4_all.deb
 Size: 2092
-MD5Sum: 8918611a5bc2e5a919dacc0bb818c3e8
-SHA1: e07252e3947acc75031b745a01ba365ebc12970b
-SHA256: d42dba1e4c761df4f928200e047665396804aa6aed2669fb2bf6202eb1591ba6
-SHA512: ce09caed45b939c83edf635ec8c57f69c3c3eefc715a3a370686a1e988af9d01ff63baef65fb8046c8941967328a39e5eab0db77e84fe3bb239b14126d442575
+MD5Sum: c8f0557f9b469cc6e51e11467eb2e551
+SHA1: 014197d6438da01986085e11004f608416b8e74b
+SHA256: de1095730b0dac58cd4881a604e61ccd75ba14e707dc67cdbc025c9c5df5f6f2
+SHA512: b6010ea0664954858da7255f84b36ceee192217f1efa2b8ddd2bbc8c361e668661f842b27cdece859e1fe3c2a3fd0f3ec9eac957569b1e8325f040c459fe4c32
 
 Package: kerbrute
 Version: 10.03.2023
@@ -1153,32 +1153,32 @@ Version: 2.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
-Depends: python, git
+Depends: python, python-pip, git
 Suggests: i-haklab
 Homepage: https://github.com/s0md3v/ReconDog
 Description: Reconnaissance Swiss Army Knife
 Filename: dists/stable/extras/binary-all/recondog_2.0_all.deb
-Size: 1952
-MD5Sum: c011fdeae38de1a45515521f7fba1bd0
-SHA1: 841888fb9a9ad13d1ce908f6669862b5a9adec4e
-SHA256: a879d01839e79d5c708013f13d693469fc159753abe354275fae0186f52da92d
-SHA512: 251438955f7100508d4d137af88bbcba01833b8ef47f82c7d5049b9641bfd161bbdccf4fbcbd19436a9fda6d7f6e807f57f02f91c66e6b8420b91c0a9471f5b3
+Size: 1960
+MD5Sum: 072b6cede3d77c2fcf8d06eb9c6eb183
+SHA1: 912b373fc1c535e0d352e720d34e5cfcc966fb8c
+SHA256: c5e53ab118ba0e57711b81254b9e9e1c78feea3f7d208fd92ccd15ab142d7708
+SHA512: 4892eb5462c8cf29f56f85f04f89f1d766c4572e97750037904f160143a12a45b2e8ec73396c90cb411e767c54732e37a27208e5599365885b1c8ba81886511d
 
 Package: redhawk
-Version: 2.0
+Version: 2.0.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
+Installed-Size: 1
 Depends: git, php
 Suggests: i-haklab
 Homepage: https://github.com/Tuhinshubhra/RED_HAWK
 Description: All in one tool for Information Gathering, Vulnerability Scanning and Crawling.
-Filename: dists/stable/extras/binary-all/redhawk_2.0_all.deb
-Size: 1948
-MD5Sum: f4f495af5a1c15f58d5eb17ec7c2d498
-SHA1: 9824e2022c37b74b18eede6c278abccd57b8a2fc
-SHA256: 7b5738062dc94499f6d4b03ed9927b95a1c45b175748565b8918dba0a59542f7
-SHA512: f68c8c180c2e9f53917a1435f95d8e56d9ce199cb052355d65763f1cc721622d4e087342529631353b744282a337bd51d7a02224b8cc91e145537d154042435d
+Filename: dists/stable/extras/binary-all/redhawk_2.0.0_all.deb
+Size: 1832
+MD5Sum: a4de600049bb3886369623488e8a44f3
+SHA1: bbff57291763b090e37728ea7ca1056d40a01bfb
+SHA256: 0c57aa8c1bb34edd542163dab24786e17d96a7d570ce9eeaf1c89b9a5398bee4
+SHA512: b481802fdbebc7f083c733417665ecce450011d17764a59c826c27776f4f260d46596e3be8eca68f5c0709d19de6f3848bfde595beedf5855f295ceeb181b8c1
 
 Package: routersploit
 Version: 3.4.1
@@ -1553,16 +1553,16 @@ Version: 3.1.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: python, git
+Depends: python, python-pip, git
 Suggests: i-haklab
 Homepage: https://github.com/fuzzdb-project/fuzzdb
 Description: Brute force attack tool with dictionary of attack patterns and primitives for black-box application fault injection and resource discovery.
 Filename: dists/stable/extras/binary-all/wfuzz_3.1.0_all.deb
-Size: 1752
-MD5Sum: 799f2ebac1610c7cae9295369121f312
-SHA1: 26a1dc335a1595bb84a1831dcecfa85082483234
-SHA256: 6a79dea1bd24c87449401d43a5d9769f578e33dcff878ecd23b2befe8455f9ed
-SHA512: 27da908aadd748af3fefc2a5b1b9d9376e1237016e238b2073ad18be2b94f6fa01f309ad755d57bd7bfebf8118231b5fece5f7492b6bd7117a8c4e5d48b01078
+Size: 1700
+MD5Sum: c6dad5c7bfd7ffa83d04882630cde17f
+SHA1: b070041f07b143f3dfa0727f49051882022cd24f
+SHA256: c4410f3a26473cbd553e71f202e23740ddb63b5456715d256294a692a388f38d
+SHA512: 3a7e427c07e78d5125cf2914bddf81d1174ae8bd0299923bfde7e5f88c3a74fd2503d1a9af5a121bddc24d6a29e77cbd3c8273c2534a6433a8d9c40b2b1ee716
 
 Package: whatweb
 Version: 0.5.5
@@ -1629,18 +1629,18 @@ SHA256: 1a5c605b022c409ac46b910cafd3c6656687278d926314b8a3fb07f5ae88703a
 SHA512: 92ce715a9eb624c47461e901980fc8969276d04eaef6bf21bb47b89e31fab9cb1c84bda1e9d68121e8e1ea4e038a21cebc6467915cefa50a93c7ee63710d59aa
 
 Package: zaproxy
-Version: 2.15.0
+Version: 2.16.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 57
-Depends: wget, openjdk-17
+Depends: wget, openjdk-21
 Suggests: i-haklab
 Homepage: https://www.kali.org/tools/zaproxy/
 Description: The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications.
-Filename: dists/stable/extras/binary-all/zaproxy_2.15.0_all.deb
-Size: 56768
-MD5Sum: 1832bf4516b55db781568a97f82cb2f7
-SHA1: 209957ce5abaadc7263971efbd49853458e67027
-SHA256: 9686d70ca3e7191719837246668a2d65d62a8f73a274121404235ea7a22c0132
-SHA512: 6830097c61d10df5461f4febd7f0a3a01ba74801d29a533686ceedef4cd51e5bfc327b1aeb15e35e4006452402f44083957f92f0f0f4010d25bd88e020651eb3
+Filename: dists/stable/extras/binary-all/zaproxy_2.16.1_all.deb
+Size: 56752
+MD5Sum: 13861829422c9abff58bc117ec92fcd1
+SHA1: f92cf4dd72886d8ad2b1e24491441777fc47d53b
+SHA256: 83afbae79eb4f63a416c29d87be287be0be216afeb97902a33a044bcd7c33cdf
+SHA512: 34be6f68698dd4c957dbc7eac1fe9c8d90b27149759de4ede69bd5c27c45518ef75e00ef3f8ad25f71f6e7bc469c693aca8e579c25458826ef238d7f856a0c79
 

@@ -29,3 +29,21 @@ SHA1: 1f6a24ed4876817b23b9b636ba474689f1895ff5
 SHA256: 6d2fce4ccbfeb094ade678a763d4bb1fc4f645981c8fbf5ce9ed897ed9cb89d6
 SHA512: 90db158a303c706a5c809bd25b61612fd3f0e03da85cdb27709461396983346f0bf9e44ac14b748902178a3f86d1aa6218ae9ca61660a3dbbe289aa63bb1498f
 
+Package: openjdk-21
+Architecture: aarch64
+Installed-Size: 255420
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Version: 21.1.1-1
+Homepage: https://jdk.java.net
+Depends: libiconv, libjpeg-turbo, zlib, libandroid-spawn
+Recommends: ca-certificates-java, openjdk-21-x, resolv-conf
+Replaces: openjdk-21
+Suggests: cups, i-haklab
+Description: Java development kit and runtime
+Filename: https://github.com/ivam3/termux-packages/releases/download/OpenJDK-21_v21.1.1-1/openjdk-21_21.1.1-1_aarch64.deb
+Size: 106219284
+MD5Sum: a98840759b57e2009f854ecad5d04cc2
+SHA1: dd23e4ea5bc10a73110b0dc5857fde217abfcc6a
+SHA256: 22d85e516521bf519bbfe6e038502be74e0d9437a194ebc13fe690a1f2eb4e3f
+SHA512: 65131b3ebd2fb84ac323956e347e7cba5155527da67c23676f6563654eb4b2ef83d6f71ec2d0bbfdf5fb4825ada626eeb582e3b8bb5fe6f015eaab82830390c8
+
