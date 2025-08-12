@@ -65,7 +65,6 @@ This project is with the purpose of offering easy and fast access to the install
 | [johntheripper](https://github.com/openwall/john) | Advanced offline password cracker, which supports hundreds of hash and cipher types, and runs on many operating systems, CPUs, GPUs, and even some FPGAs. |
 | [jython](https://www.jython.org/) | The Jython project provides implementations of Python in Java, providing to Python the benefits of running on the JVM and access to classes written in java |
 | [kerbrute](https://github.com/TarlogicSecurity/kerbrute) | An script to perform kerberos bruteforcing by using the Impacket library. |
-| [kalilinux](https://www.kali.org/get-kali/#kali-mobile) | The Kali-Linux Open-source project for Android devices |
 | [lockphish](https://github.com/Heroboycloud/lockphish-master) | A tool for phishing attacks on the lock screen, designed to grab Windows credentials, Windows, iPhone and Android PIN. |
 | [maltego](https://www.maltego.com) | Maltego is a software focused mainly on forensic analysis and developed to make link analysis and data mining more conducive from IP domains, emails, telephones, geographic locations... that is, the starting point of an investigation. |
 | [metasploit-framework](https://github.com/rapid7/metasploit-framework) | World's leading open-source penetrating framework |
@@ -82,6 +81,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [pybelt](https://github.com/Ekultek/Pybelt) | An open source hackers tool belt complete. |
 | [quack](https://github.com/Monkey-hk4/quack) | Toolkit with SMS attack tool, HTTP attack tool and many other attack tools. |
 | [ransomux](https://github.com/ivam3/termux-packages) | "Simulate a ransomware effects searching to lock and encrypt files into internal|external android memory brigning a reversel shell. |
+| [recondog](https://github.com/s0md3v/ReconDog) | Reconnaissance Swiss Army Knife |
 | [recon-ng](https://github.com/lanmaster53/recon-ng) | Open Source Intelligence gathering tool aimed at reducing the time spent harvesting information from open sources. |
 | [routersploit](https://github.com/threat9/routersploit) | Open-source exploitation framework dedicated to embedded devices. |
 | [saycheese](https://github.com/hangetzzu/saycheese) | Grab target's webcam shots by link. |
