@@ -83,6 +83,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [ransomux](https://github.com/ivam3/termux-packages) | "Simulate a ransomware effects searching to lock and encrypt files into internal|external android memory brigning a reversel shell. |
 | [recondog](https://github.com/s0md3v/ReconDog) | Reconnaissance Swiss Army Knife |
 | [recon-ng](https://github.com/lanmaster53/recon-ng) | Open Source Intelligence gathering tool aimed at reducing the time spent harvesting information from open sources. |
+| [redhawk](https://github.com/Tuhinshubhra/RED_HAWK) | All in one tool for Information Gathering, Vulnerability Scanning and Crawling |
 | [routersploit](https://github.com/threat9/routersploit) | Open-source exploitation framework dedicated to embedded devices. |
 | [saycheese](https://github.com/hangetzzu/saycheese) | Grab target's webcam shots by link. |
 | [sayhello](https://github.com/d093w1z/sayhello) | Capturing audio (.wav) from target using a link. |
