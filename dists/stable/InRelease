@@ -3,10 +3,10 @@ Hash: SHA256
 
 Codename: termux
 Version: 1
-Architectures: x86_64 arm i686 aarch64 all
+Architectures: x86_64 i686 all arm aarch64
 Description: stable repository
 Suite: stable
-Date: Tue, 12 Aug 2025 10:45:40 UTC
+Date: Tue, 12 Aug 2025 11:08:11 UTC
 Components: extras lfs
 MD5Sum:
  1bfb4eb89cc106d868a1293e4a7ffac2 73206 extras/binary-all/Packages
@@ -110,15 +110,15 @@ SHA512:
  184019f356763eb2bb71ecbc3e7bbe9cf1be364adf8484acd4a1f9ad5a0c2b477cb1e5b293f8785d86489ec352134b296e79ab78418a38b453ec6686c0cadabb 3268 lfs/Contents-aarch64.xz
 -----BEGIN PGP SIGNATURE-----
 
-iQHHBAEBCAAxFiEEoz/WtaeHFmQNOIJqmbWYb5UmsqoFAmibG7ITHGl2YW0zLmJo
-QGdtYWlsLmNvbQAKCRCZtZhvlSayqhdZC/wP7cjDkTebBBC31zVzuWEIBBbDdXzD
-bc1SY9K4VD4NTQMVBnKwrq1wqXN/irHjLAyzrhaPWPJI4+NMW0IeIO0KBhRphbgj
-LAlscB8ciFLooHTTn6bypvsUv99PU3H6Sq89WORYNrNnaqI99/GlqARy4n1jj8lE
-upxdESPSSVNFPulqFeDDwO4R99vYMxt57SoEmRzRdnwoXm73lmju/CmfOJK2hFFv
-7ZTIv2njpZZt5NdvOc+1f2arK3v/Qnt6f3taDg6xxBt7VQciW5WZAzsIBpJTpFrQ
-kfgs7damwfuVARez8y70vepLIZmQ3epY7jLP03dCTGUi7O5l4e7SFxJ8Sbqac+wM
-/i4ZQr6Pz4/Wi9s3BfosQAxzUcCrKO/e3kx6JJGXOzYo7A0E3yrlEHM3VEt2EZGT
-ASVUS89H6JIbU+lYIXczMwx5VRf7cfHbiOmV4z96kcIm3MRdmP6M5HzhKAtp5m31
-OjFUSWLN3ogPR+mUa0ZSVh8Yq/5YisL3hvU=
-=v70F
+iQHHBAEBCAAxFiEEoz/WtaeHFmQNOIJqmbWYb5UmsqoFAmibIL4THGl2YW0zLmJo
+QGdtYWlsLmNvbQAKCRCZtZhvlSayqmHIC/9XjHv/TZkPKjqaJ7G2LpdB2cbTxwMZ
+x6sR6VNK/tpXzHv/7pFNJkEAJ22PI4F6fm1cmwR9mibr859/1W5fUFoj+p6hilzo
+SaX/1ZbWHCElFu8TLu6wPIp5ESzb657nRVMZCGyXvi29oLfkeRpT+Ac9ygI1suRI
+uxakTgW2clg354BoWj2QgZi/IySHXovPuu0VA2dYphuFrutnpo5kZJc71ecXFoht
+eRmrJ5gV3XKwly2rp/UarveOWnC4zykROVUK0lD2G5ATnAG4kJnFMMmIue9ozX0W
++La5RuBtnN92AoUnyJ2J025DDA9hcw/zbRwHSAwOUKHfm3op5HZYz/7z6WP2mxLG
+l8Nidc2IEitOXQ2BoMC/cnjWscNVzlJ44ZGXaonirDXYKU8Zsz7SA6IqzK1NcSyd
+wQVQiAsIyZEghg2Q47c4GiuVTRD5MfiKPg2HhY7Cg44b0lYC+PNmKQDcGw8lrl8V
+4eZFp+wXY3kshrnU2sAR7O+riNv3mO97coQ=
+=LUs5
 -----END PGP SIGNATURE-----
