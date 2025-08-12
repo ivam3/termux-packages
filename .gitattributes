@@ -1,3 +1,1 @@
 openjdk-21_21.1.1-1_aarch64.deb filter=lfs diff=lfs merge=lfs -text
-*.zip filter=lfs diff=lfs merge=lfs -text
-*.deb !text !filter !merge !diff
