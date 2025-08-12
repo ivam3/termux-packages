@@ -108,15 +108,17 @@ This project is with the purpose of offering easy and fast access to the install
 | [wbruter](https://github.com/wuseman/WBRUTER) | Disable device pin code aslong as usb debugging and brute force methods like dictionary attacks for gmail, ftp, rar, zip and some other file extensions. |
 | [webscan](https://github.com/Fenrir-00/investigar-web) | A lightweight webscanner tool. |
 | [websploit](https://github.com/The404Hacking/websploit) | MITM framework. |
+| [wfuzz](https://pypi.org/project/wfuzz/) con [fuzzDB](https://github.com/fuzzdb-project/fuzzdb) | Brute force attack tool with dictionary of attack patterns and primitives for black-box application fault injection and resource discovery |
 | [whatweb](https://github.com/urbanadventurer/WhatWeb) | Recognises web technologies including content management systems (CMS), blogging platforms, statistic/analytics packages, JavaScript libraries, web servers, and embedded devices. |
 | [wpscan](https://github.com/wpscanteam/wpscan) | WordPress security scanner. |
 | [xapt-management](https://github.com/ivam3/xapt-management) | X-Desktop graphical interface for advance package tool(APT) written in python. |
 | [xerosploit](https://github.com/LionSec/xerosploit) | A penetration testing toolkit whose goal is to perform man in the middle attacks for testing purposes. |
+| [zaproxy](https://www.kali.org/tools/zaproxy/) | The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications |
 ##### Suggest a tool and/or framework to be add in our [Telegram Support Group](https://t.me/Ivam3by_Cinderella)
     
-## How to get it ...
+## INSTALLATION ...
 
-To add the list of available tools and/or frameworks to the package manager `apt` in [Termux](https://github.com/termux/termux-app) follow those 5 simple steps:
+To add the list of available tools and/or frameworks to the package manager `apt/pkg` in [Termux](https://github.com/termux/termux-app) copy and paste the following commands in your Termux terminal: 
 
 - Install `wget` and `gnupg` package:
 ```bash
@@ -143,9 +145,8 @@ curl -fsSL "https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/dis
 ```bash
 apt update
 ```
-
-Or just copy & paste this one command line:
-```
+Or if you prefer, you can do it with one command line to add the repository copy and paste the following command in your Termux terminal:
+```bash
 yes|apt install wget gnupg && \
 mkdir -p $PREFIX/etc/apt/sources.list.d && \
 wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/ivam3-termux-packages.list -O \
@@ -159,4 +160,4 @@ apt update
 
 GNU
 
-##### Follow me on [Socials Network](https://wlo.link/@Ivam3)
+##### Follow me on [Socials Network](https://link.space/@ivam3)
