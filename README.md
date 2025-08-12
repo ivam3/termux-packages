@@ -15,6 +15,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [amass](https://github.com/OWASP/Amass) | In-depth Attack Surface Mapping and Asset Discovery |
 | [androbugs](https://github.com/AndroBugs/AndroBugs_Framework) | Android vulnerability scanner |
 | [androidsdk-cli](https://developer.android.com/studio/index.html#command-tools) | Official command line Integrated Development Environment (IDE) for Android app development |
+| [apktool](https://bitbucket.org/iBotPeaches/apktool/downloads) | command-line tool used for reverse engineering Android application package (APK) |
 | [appshark](https://github.com/bytedance/appshark) | An static taint analysis platform to scan vulnerabilities in an Android app |
 | [beef](https://www.beefproject.com) | powerful and intuitive security tool focuses on leveraging browser vulnerabilities to assess the security posture of a target |
 | [binwalk](https://github.com/ReFirmLabs/binwalk) | Tool for analyzing, reverse engineering, and extracting firmware images | 
@@ -45,6 +46,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [getuserspns](https://github.com/fortra/impacket/blob/master/examples/GetUserSPNs.py) | Try to find Service Principal Names that are associated with normal user account. |
 | [ghidra](https://github.com/NationalSecurityAgency/ghidra) | A software reverse engineering (SRE) framework. |
 | [ghost](https://github.com/EntySec/ghost) | Android post-exploitation framework that exploits the Android Debug Bridge to remotely access an Android device. |
+| [git-filter-repo](https://github.com/newren/git-filter-repo) | Quickly rewrite git repository history (filter-branch replacement). |
 | [gobuster](https://github.com/OJ/gobuster/) | Directory/File, DNS and VHost busting tool written in Go |
 | [gophish](https://github.com/gophish/gophish) | Open-Source advance phishing toolkit |
 | [hakku](https://github.com/4shadoww/hakkuframework) | Open-source penetration testing platform used to perform web and network-related penetration testing. |
@@ -93,7 +95,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [sublist3r](https://github.com/aboul3la/Sublist3r) | Fast subdomains enumeration tool for penetration testers. |
 | [tangalanga](github.com/elcuervo/tangalanga) | The Zoom conference scanner hacking tool. |
 | [termux-desktop-xfce](https://github.com/Yisus7u7/termux-desktop-xfce) | Set up a beautiful xfce desktop in termux. |
-| [termux-doker-qemu](https://telegra.ph/Docker-en-Android-10-26) | Provide an additional layer of application virtualization with Linux kernel resource isolation features. |
+| [termux-docker-qemu](https://telegra.ph/Docker-en-Android-10-26) | Provide an additional layer of application virtualization with Linux kernel resource isolation features. |
 | [trape](https://github.com/jofpin/trape) | OSINT analysis and research tool. |
 | [unshc](https://github.com/yanncam/UnSHc) | The Shell Script UnCompiler (UNSHC) decode and decrypt SHC file on X86/x64 architecture. |
 | [userrecon](https://github.com/issamelferkh/userrecon) | Find usernames across over 75 social networks. |

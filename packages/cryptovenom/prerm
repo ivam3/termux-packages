@@ -1,6 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 [[ -e ${HOME}/.local/share/cryptovenom/requirements.txt ]] && {
   cd ${HOME}/.local/share/cryptovenom;
-  python2 -m pip --no-color --quiet --no-cache-dir uninstall -r requirements.txt;
+  python -m pip --no-color --quiet --no-cache-dir uninstall -r requirements.txt;
 }
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
