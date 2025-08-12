@@ -1508,6 +1508,7 @@ data/data/com.termux/files/home/.ssh/config                                     
 data/data/com.termux/files/usr/bin/ngrok                                         ngrok
 data/data/com.termux/files/usr/bin/nikto                                         nikto
 data/data/com.termux/files/usr/bin/nikto-installer                               nikto
+data/data/com.termux/files/usr/opt/openjdk-21.0.1/lib/src.zip                    openjdk-21-source
 data/data/com.termux/files/usr/bin/osintgram                                     osintgram
 data/data/com.termux/files/usr/bin/osintgram-installer                           osintgram
 data/data/com.termux/files/usr/bin/ovh-ttyrec-installer                          ovh-ttyrec

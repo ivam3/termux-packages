@@ -1005,6 +1005,21 @@ SHA1: 2c08f2cfc37071672cafa88bc2e0aca559b080d0
 SHA256: 6694a5b19a00d82ec8322aa70d7fa1346590979cbf3880a20bd2627e09ff795c
 SHA512: 343283ad3863e2edc5307ee761db4a8a38a001e37ff821cf7a56103bd9ff34e10329d236f321b247f1dfbb27b11004ca989eeaf0cf2b8941484e68c3dffd58ed
 
+Package: openjdk-21-source
+Architecture: all
+Installed-Size: 52252
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Version: 21.1.1-1
+Homepage: https://jdk.java.net
+Replaces: openjdk-21-source
+Description: Source files for openjdk-21
+Filename: dists/stable/extras/binary-all/openjdk-21-source_21.1.1-1_all.deb
+Size: 48986656
+MD5Sum: 32f615e9e6d1c332a318d85c35453f14
+SHA1: da1c79c4f3642cbc496be6d1ddd93e2516b10ac8
+SHA256: aa83a7dc23eedd958d4ea2946e4f4a62cb70bbe115187a9c5b632928fd8b8759
+SHA512: 65337f1e4c6274d1afc475498914a0240e2cd733ad1dd92cc3294c0925cdafe9a3afae3bfd931625729221c212d295cc845a59fdc2cbcdf2ce7ac4c6d0b55781
+
 Package: osintgram
 Version: 1.0
 Architecture: all
