@@ -4,7 +4,7 @@
   "arch": "all",
   "homepage": "https://github.com/bytedance/appshark",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["openjdk-17, git"],
+  "depends": ["openjdk-21, git"],
   "suggests": ["i-haklab"],
   "description": "An static taint analysis platform to scan vulnerabilities in an Android app.",
   "files" :{

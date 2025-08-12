@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
-v="10.2.3"
-d="20230208"
+v="11.4.1"
+d="20250731"
 echo "Downloading ghidra ..."
 wget --tries=20 --quiet \
   https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_${v}_build/ghidra_${v}_PUBLIC_${d}.zip \

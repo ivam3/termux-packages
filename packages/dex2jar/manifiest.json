@@ -4,7 +4,7 @@
   "arch": "all",
   "homepage": "https://github.com/pxb1988/dex2jar",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["wget, unzip, openjdk-17"],
+  "depends": ["wget, unzip, openjdk-21"],
   "suggests": ["fixer"],
   "description": "Tools to work with android .dex and java .class files",
   "files" :{

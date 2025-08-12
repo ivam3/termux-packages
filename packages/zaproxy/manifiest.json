@@ -4,7 +4,7 @@
   "arch": "all",
   "homepage": "https://www.kali.org/tools/zaproxy/",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["wget, openjdk-17"],
+  "depends": ["wget, openjdk-21"],
   "suggests": ["i-haklab"],
   "description": "The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications.",
   "files" :{

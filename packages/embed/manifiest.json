@@ -1,10 +1,10 @@
 {
 	"name": "embed",
-	"version": "2.0",
+	"version": "3.0.0",
 	"arch": "all",
 	"homepage": "https://github.com/Ivam3/embed",
 	"maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-	"depends": ["ruby, git, wget, curl, axel, tar, aapt, apksigner, openjdk-17, apktool"],
+	"depends": ["ruby, git, wget, curl, axel, tar, aapt, apksigner, openjdk-21, apktool"],
 	"suggests": ["metasploit-framework"],
 	"description": "Open source tool to Embed metasploit payload into legitim APK file. (git-release installer)",
   "files" :{

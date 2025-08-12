@@ -4,7 +4,7 @@
 	"arch": "all",
 	"homepage": "https://t.me/Ivam3_Bot",
 	"maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-	"depends": ["openjdk-17"],
+	"depends": ["openjdk-21"],
 	"suggests": ["bugjaeger-app"],
 	"description": "Open source of minimal Android Debug Bridge(ADB) and FastBoot suite",
   "files" :{
