@@ -28,11 +28,14 @@ This project is with the purpose of offering easy and fast access to the install
 | [code-server](https://github.com/Leask/code-server-nodejs) | VS Code with Nodejs development environment running on a remote server |
 | [converter](https://github.com/miluxmil/milux/blob/master/converter) | Easy multimedia file converter |
 | [credmap](https://github.com/lightos/credmap) | Test the user credentials provided on several popular websites to see if the password has been reused on any of them |
+| [cryptovenom](https://github.com/lightos/credmap) | Test the user credentials provided on several popular websites to see if the password has been reused on any of them |
 | [d-tect](https://github.com/shawarkhanethicalhacker/D-TECT-1) | Pentest the Modern Web |
 | [dos-a-tool](https://github.com/ivam3/DoS-A-Tool) | Performs denial of service attacks under the SYN Flood method |
 | [dex2jar](https://github.com/pxb1988/dex2jar) | Toolkit to work with android .dex and java .class files |
 | [dnsenum](https://github.com/fwaeytens/dnsenum) | Enumerate DNS information |
 | [embed](https://github.com/ivam3/embed) | Embed metasploit payload into a legtim APK |
+| [enum4linux](https://github.com/CiscoCXSecurity/enum4linux) | Linux alternative to enum.exe for enumerating data from Windows and Samba hosts |
+| [enum4linux-ng](https://github.com/cddmp/enum4linux-ng) | A next generation version of enum4linux (a Windows/Samba enumeration tool) with additional features like JSON/YAML export |
 | [evilginx2](https://github.com/kgretzky/evilginx2) | Standalone man-in-the-middle attack framework used for phishing login credentials along with session cookies, allowing for the bypass of 2-factor authentication. |
 | [evilurl](https://github.com/UndeadSec/EvilURL) | Generate unicode domains for IDN Homograph Attack and detect them. |
 | [exif](https://github.com/ivam3/ExiF) | Extract information (meta data) from files. |
