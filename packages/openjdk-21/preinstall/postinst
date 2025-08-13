@@ -12,6 +12,7 @@ wget --quiet $releasesLink/openJDK/openjdk-21_$javav_aarch64.deb \
 }
 
 dpkg -i ${TMPDIR}/openjdk-21_$javav_aarch64.deb
+rm -f ${TMPDIR}/openjdk-21_$javav_aarch64.deb
 
 wget --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer \
     -O /data/data/com.termux/files/usr/bin/fixer
