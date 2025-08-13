@@ -1,4 +1,4 @@
 #!/data/data/com.termux/files/usr/bin/bash
-echo "[*] Metasploit Framework removed."
-echo "[*] @Ivam3: thank you for used my package."
+echo "[✔] Metasploit Framework removed."
+echo "[💡] @Ivam3: thank you for used my package."
 exit 0

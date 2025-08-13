@@ -152,11 +152,24 @@ sed -i "4a alias postgresql=\"pg_ctl -D ${PREFIX}/var/lib/postgresql\"" $INITFIL
 fi
 
 chmod +x ${PREFIX}/bin/msfconsole
-curl -fsSL https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -o /data/data/com.termux/files/usr/bin/fixer
-chmod 751 /data/data/com.termux/files/usr/bin/fixer
-echo "[*] Metasploit Framework installation finished."
-echo "[*] Run 'msfconsole' or 'msfvenom' to execute it."
-echo "[*] Run 'fixer' to fix any posible issue."
-echo "[!] For help going to https://t.me/Ivam3_Bot."
-echo "[*] @Ivam3: thank you for use my package."
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+echo "[*] Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if wget --quiet "$fixerURL" -O /data/data/com.termux/files/usr/bin/fixer; then
+    chmod 750 /data/data/com.termux/files/usr/bin/fixer
+else
+    echo "[!] Error downloading fixer."
+fi
+
+# ==============================
+# FINALS MESSAGES
+# ==============================
+echo "[✔] Metasploit Framework installation finished."
+echo "[➡] Run 'msfconsole' or 'msfvenom' to execute it."
+echo "[➡] Run 'fixer' to fix any posible issue."
+echo "[📢] Help: going to https://t.me/Ivam3_Bot."
+echo "[💡] @Ivam3: thank you for use my package."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -14,3 +14,35 @@ if [[ -d ${PREFIX}/lib/ruby ]]; then
     rm -rf ${PREFIX}/lib/ruby
   }
 fi
+
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+IFS=$'\n\t'
+
+log() {
+    echo "[prerm] $1"
+}
+
+delete_dir() {
+    local dir="$1"
+    if [[ -d "$dir" ]]; then
+        rm -rf "$dir"
+        log "Eliminado: $dir"
+    else
+        log "No existe: $dir"
+    fi
+}
+
+log "Iniciando script prerm para limpieza de Metasploit y dependencias..."
+
+# Borrar Metasploit Framework sin preguntar
+delete_dir "${PREFIX}/opt/metasploit-framework"
+
+# Borrar PostgreSQL data
+# delete_dir "${PREFIX}/var/lib/postgresql"
+
+# Borrar Ruby Gems
+# delete_dir "${PREFIX}/lib/ruby"
+
+log "Limpieza finalizada."
+exit 0
