@@ -17,33 +17,31 @@ Package: openjdk-21-x
 Architecture: aarch64
 Installed-Size: 16652
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Version: 21.1.1-1
+Version: 21.0.1-1
 Homepage: https://jdk.java.net
-Depends: fontconfig, freetype, giflib, libandroid-shmem, libpng, libx11, libxext, libxi, libxrandr, libxrender, libxt, libxtst, openjdk-21 (= 21.1.1-1)
+Depends: fontconfig, freetype, giflib, libandroid-shmem, libpng, libx11, libxext, libxi, libxrandr, libxrender, libxt, libxtst, openjdk-21 (= 21.0.1-1)
 Replaces: openjdk-17-x
 Description: Portion of openjdk-21 requiring X11 functionality
-Filename: dists/stable/extras/binary-aarch64/openjdk-21-x_21.1.1-1_all.deb
-Size: 13280168
-MD5Sum: 88dadb56e2021aa3e8ba8957daf9a281
-SHA1: 1f6a24ed4876817b23b9b636ba474689f1895ff5
-SHA256: 6d2fce4ccbfeb094ade678a763d4bb1fc4f645981c8fbf5ce9ed897ed9cb89d6
-SHA512: 90db158a303c706a5c809bd25b61612fd3f0e03da85cdb27709461396983346f0bf9e44ac14b748902178a3f86d1aa6218ae9ca61660a3dbbe289aa63bb1498f
+Filename: dists/stable/extras/binary-aarch64/openjdk-21-x_21.0.1-1_aarch64.deb
+Size: 13278880
+MD5Sum: e11b4c192976b1e7336bab33ee76db88
+SHA1: f18255d3d50d9dba6fb119f79fcf71617959a160
+SHA256: 44e81dda1d11a593b02100ea4593274b67b452c401d6e3cd301d7a806e52566b
+SHA512: fe948c2181be06e0d89482aa53aa22ae9eb7a91b02e5a96b8f4242501059cb1d237929cd9af19c129f386e3d701ef0ef34ea2eff4b4ded1a63f82d3cd633bf2a
 
 Package: openjdk-21
+Version: 21.0.1-1
 Architecture: aarch64
-Installed-Size: 255420
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Version: 21.1.1-1
-Homepage: https://jdk.java.net
-Depends: libiconv, libjpeg-turbo, zlib, libandroid-spawn
-Recommends: ca-certificates-java, openjdk-21-x, resolv-conf
-Replaces: openjdk-21
-Suggests: cups, i-haklab
+Installed-Size: 1
+Depends: wget
+Suggests: i-haklab
+Homepage: https://https://jdk.java.net
 Description: Java development kit and runtime
-Filename: https://github.com/ivam3/termux-packages/releases/download/OpenJDK-21_v21.1.1-1/openjdk-21_21.1.1-1_aarch64.deb
-Size: 106219284
-MD5Sum: a98840759b57e2009f854ecad5d04cc2
-SHA1: dd23e4ea5bc10a73110b0dc5857fde217abfcc6a
-SHA256: 22d85e516521bf519bbfe6e038502be74e0d9437a194ebc13fe690a1f2eb4e3f
-SHA512: 65131b3ebd2fb84ac323956e347e7cba5155527da67c23676f6563654eb4b2ef83d6f71ec2d0bbfdf5fb4825ada626eeb582e3b8bb5fe6f015eaab82830390c8
+Filename: dists/stable/extras/binary-aarch64/openjdk-21_21.0.1-1_aarch64.deb
+Size: 1752
+MD5Sum: c4e4cf1944df6b51ce214c8bafa2b764
+SHA1: 54e69360c373d10adb89b198ea3fe56dc680fca3
+SHA256: 0fb8c5b121462d015951bed5de04abb54f0e578018fbd3f729515ae77f7e329d
+SHA512: 6888cd2c980bf311c69924fe8cc42a2754799373858d25bde8a0e2384e3835e0ec5c12210545e2bb3717d16fbf07054a45679700fafd4d53f7076c487405772d
 
