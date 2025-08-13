@@ -1,26 +1,55 @@
 #!/data/data/com.termux/files/usr/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
+
+# ==============================
+# SCRIPT SETTINGS
+# ==============================
 javav="21.0.1-1"
-releasesLink="https://github.com/ivam3/termux-packages/releases/download"
+debName="openjdk-21_${javav}_aarch64.deb"
+releaseTag="openJDK"  # Nombre del release en GitHub
+releaseURL="https://github.com/ivam3/termux-packages/releases/download/${releaseTag}/${debName}"
 
-wget --quiet $releasesLink/openJDK/openjdk-21_$javav_aarch64.deb \
-    -O ${TMPDIR}/openjdk-21_$javav_aarch64.deb
+# Temporary file path
+pkgFile="${TMPDIR}/${debName}"
 
-[[ -e ${TMPDIR}/openjdk-21_$javav_aarch64.deb  ]] || { 
-    echo "[!] Error downloading the package."; 
-    exit 1; 
-}
+# ==============================
+# DOWNLOAD PACKAGE .DEB FROM RELEASES
+# ==============================
+echo "[*] downloading OpenJDK from GitHub Releases..."
+if ! wget --quiet "$releaseURL" -O "$pkgFile"; then
+    echo "[!] Error downloading OpenJDK package"
+    exit 1
+fi
 
-dpkg -i ${TMPDIR}/openjdk-21_$javav_aarch64.deb
-rm -f ${TMPDIR}/openjdk-21_$javav_aarch64.deb
+# ==============================
+# DEFERRED INSTALATION 
+# ==============================
+echo "[*] Programing instalation of OpenJDK..."
+(
+    sleep 2
+    echo "[*] Instaling OpenJDK binaries & libraries..."
+    apt-get install -y "$pkgFile"
+    rm -f "$pkgFile"
+    echo "[✔] OpenJDK installation successfully."
+) &
 
-wget --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer \
-    -O /data/data/com.termux/files/usr/bin/fixer
-chmod 750 /data/data/com.termux/files/usr/bin/fixer
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+echo "[*] Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if wget --quiet "$fixerURL" -O /data/data/com.termux/files/usr/bin/fixer; then
+    chmod 750 /data/data/com.termux/files/usr/bin/fixer
+else
+    echo "[!] Error downloading fixer."
+fi
 
-echo "[*] Java installed successfully."
-echo "[*] Run 'java' to execute it."
-echo "[*] Run 'fixer' to fix any posible issue."
-echo "[!] For help going to https://t.me/Ivam3_Bot."
-echo "[*] @Ivam3: thank you for use my package."
+# ==============================
+# FINALS MESSAGES
+# ==============================
+echo "[➡] Run 'java' to execute it."
+echo "[➡] Run 'fixer' to fix any posible issue."
+echo "[📢] Help: going to https://t.me/Ivam3_Bot."
+echo "[💡] @Ivam3: thank you for use my package."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
