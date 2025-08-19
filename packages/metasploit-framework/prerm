@@ -3,16 +3,16 @@ if [[ -d ${PREFIX}/opt/metasploit-framework ]]; then
 	rm -rf ${PREFIX}/opt/metasploit-framework
 fi
 
-if [[ -d ${PREFIX}/var/lib/postgresql ]]; then
-  read -p "Postgresql data will be deleted... do you want to continue? [y/n] " answ
-  [[ "$answ" == "Y" ]] || [[ "$answ" == "Yes" ]] || [[ "$answ" == "yes" ]] || [[ "$answ" == "y" ]] && {
-    rm -rf ${PREFIX}/var/lib/postgresql
-  }
-fi
-
-if [[ -d ${PREFIX}/lib/ruby ]]; then
-  read -p "All Ruby Gems data will be deleted... do you want to continue? [y/n] " answ
-  [[ "$answ" == "Y" ]] || [[ "$answ" == "Yes" ]] || [[ "$answ" == "yes" ]] || [[ "$answ" == "y" ]] && {
-    rm -rf ${PREFIX}/lib/ruby
-  }
-fi
+# if [[ -d ${PREFIX}/var/lib/postgresql ]]; then
+#   read -p "Postgresql data will be deleted... do you want to continue? [y/n] " answ
+#   [[ "$answ" == "Y" ]] || [[ "$answ" == "Yes" ]] || [[ "$answ" == "yes" ]] || [[ "$answ" == "y" ]] && {
+#     rm -rf ${PREFIX}/var/lib/postgresql
+#   }
+# fi
+#
+# if [[ -d ${PREFIX}/lib/ruby ]]; then
+#   read -p "All Ruby Gems data will be deleted... do you want to continue? [y/n] " answ
+#   [[ "$answ" == "Y" ]] || [[ "$answ" == "Yes" ]] || [[ "$answ" == "yes" ]] || [[ "$answ" == "y" ]] && {
+#     rm -rf ${PREFIX}/lib/ruby
+#   }
+# fi
