@@ -20,8 +20,8 @@ bundle install -j$(nproc --all) --verbose
 
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 751 /data/data/com.termux/files/usr/bin/fixer
-echo "[*] Embed installation finished."
+echo "[✔] Embed installation finished."
 echo "[*] Run 'embed' to execute it."
 echo "[*] Run 'fixer' to fix any posible issue."
-echo "[!] For help going to https://t.me/Ivam3_Bot."
-echo "[*] @Ivam3: thank you for use my package."
+echo "[📢] For help going to https://t.me/Ivam3_Bot."
+echo "[💡] @Ivam3: thank you for use my package."

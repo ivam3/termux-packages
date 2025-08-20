@@ -383,7 +383,7 @@ SHA256: f9be02431a835f37f6e3dd8da836d9104f9c8a5b05705db0b980f8890114baa8
 SHA512: 15309423e29349552517ef1abdb670bc08355ba74cf4e8585150288b207d588e4f5620ff0f185c6a52959a5c29304f13cfff52bfb56fc8c524093e674f66c67b
 
 Package: embed
-Version: 3.0.0
+Version: 3.0.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
@@ -391,12 +391,12 @@ Depends: ruby, git, wget, curl, axel, tar, aapt, apksigner, openjdk-21, apktool
 Suggests: metasploit-framework
 Homepage: https://github.com/Ivam3/embed
 Description: Open source tool to Embed metasploit payload into legitim APK file. (git-release installer)
-Filename: dists/stable/extras/binary-all/embed_3.0.0_all.deb
-Size: 1900
-MD5Sum: 9f4a1c27b893ae3162a873e05f994e66
-SHA1: 87ec6d2a906f52ce858779c41c85fa4047f40d8d
-SHA256: 30b7e9e7345c55f1ee2527301bab8b7efaf2ca219c504549ba563951e6c8f24e
-SHA512: 1899fd41f360e4762cffd5b661e6fda47fb440d32dfc278d3b66c45003dfbd2325ed8412b538c4d5f355ab36371e49397cc37f31cd5d1af2b068a627312b774d
+Filename: dists/stable/extras/binary-all/embed_3.0.1_all.deb
+Size: 1924
+MD5Sum: f47407daef078b40bbe5ce97d34763ca
+SHA1: 2463c5aff15f1514a5d9e3362da49ff18eebcadf
+SHA256: 3a302205bf18872be0b823c1eb4b80500e40cb37f1563e7468b7e58522cb7487
+SHA512: de2cab9c250407861de2d9335fcf0943d14f1c2988690fc57090461b46f89148befd641898ce6d7904acd8f6b809f1560f5f70bda9c0da52fa0ac6e5fd10ff08
 
 Package: enum4linux-ng
 Version: 1.3.5
