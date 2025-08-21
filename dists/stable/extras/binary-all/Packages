@@ -127,6 +127,22 @@ SHA1: ec7b67b72699c3c6103b2c5002f5021e67961c9c
 SHA256: def3653c894d40bc0dbdd245e9b842b3dfe1916bc3516d8165df11f24162bb13
 SHA512: f7f031c9f58e4d4dfd4d33e6ff93d0210619f7901bd3acf052988972113e98455da90a5d90bbbba86a3d19adf31f78ddeceaa2255acd51b06c72003ffa2d9ec3
 
+Package: axmlprinter2
+Version: 2.10.08
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: wget, openjdk-21
+Suggests: i-haklab
+Homepage: https://code.google.com/archive/p/android4me
+Description: Prints XML document from binary XML file (with correct namespace handing & attribute formatting).
+Filename: dists/stable/extras/binary-all/axmlprinter2_2.10.08_all.deb
+Size: 2056
+MD5Sum: 89db61bfdf2365e6b96c7182226f1a72
+SHA1: 9d5e1fc934b254b43e3162368140a789cbfa4b90
+SHA256: d1aa69acf878bc8f9f39921ff4716f791b16c0cd543d3a1d7fd63af1049a37a5
+SHA512: bcf9ac22abfc7cd92aeefe0d61d7604c5dde740570af02a819fc3869634e9c1ac2194fa88a8a567254fb1acda967085e7944cc6f2ba9d8df9013678eec81d4d8
+
 Package: beef
 Version: 0.5.4.0
 Architecture: all

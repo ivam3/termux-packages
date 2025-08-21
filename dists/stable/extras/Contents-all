@@ -10,6 +10,7 @@ data/data/com.termux/files/usr/bin/androbugs-installer                          
 data/data/com.termux/files/usr/bin/androidsdk-cli                                androidsdk-cli
 data/data/com.termux/files/usr/bin/apktool                                       apktool
 data/data/com.termux/files/usr/bin/appshark                                      appshark
+data/data/com.termux/files/usr/bin/axmlprinter2                                  axmlprinter2
 data/data/com.termux/files/usr/bin/beef                                          beef
 data/data/com.termux/files/usr/bin/binwalk-installer                             binwalk
 data/data/com.termux/files/usr/bin/bitb                                          bitb-framework

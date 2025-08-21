@@ -1,0 +1,13 @@
+{
+  "name": "axmlprinter2",
+  "version": "2.10.08",
+  "arch": "all",
+  "homepage": "https://code.google.com/archive/p/android4me",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["wget, openjdk-21"],
+  "suggests": ["i-haklab"],
+  "description": "Prints XML document from binary XML file (with correct namespace handing & attribute formatting).",
+  "files" :{
+    "axmlprinter2": "bin/axmlprinter2"
+  }
+}
