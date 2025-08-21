@@ -1644,6 +1644,22 @@ SHA1: a4ace9ee9fe93a2359507ab20414218845801bd9
 SHA256: 1a5c605b022c409ac46b910cafd3c6656687278d926314b8a3fb07f5ae88703a
 SHA512: 92ce715a9eb624c47461e901980fc8969276d04eaef6bf21bb47b89e31fab9cb1c84bda1e9d68121e8e1ea4e038a21cebc6467915cefa50a93c7ee63710d59aa
 
+Package: xml2axml
+Version: 2.0.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: wget, openjdk-21
+Suggests: i-haklab
+Homepage: https://github.com/codyi96/xml2axml
+Description: Encoding xml to axml OR decoding axml to xml
+Filename: dists/stable/extras/binary-all/xml2axml_2.0.1_all.deb
+Size: 1968
+MD5Sum: 453e61b749a9c2b1548a09b0be982caa
+SHA1: 27e98c35a46e5d84b36419dcbdc781f6e7081692
+SHA256: 384a0027c0623ccbe697ad89024da1719418fe94a323127983faa3921c0ca2f4
+SHA512: 62b2038127c6c3c2b4b286a364e3179b8d1c3c3c86ef52d32a0432cd6107ea39260c7dffdfe7a38f8c4d930460f0769d72d0153d82c663601bcd5fc46b6cfd0b
+
 Package: zaproxy
 Version: 2.16.1
 Architecture: all

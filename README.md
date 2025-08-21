@@ -17,6 +17,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [androidsdk-cli](https://developer.android.com/studio/index.html#command-tools) | Official command line Integrated Development Environment (IDE) for Android app development |
 | [apktool](https://bitbucket.org/iBotPeaches/apktool/downloads) | command-line tool used for reverse engineering Android application package (APK) |
 | [appshark](https://github.com/bytedance/appshark) | An static taint analysis platform to scan vulnerabilities in an Android app |
+| [axmlprinter2](https://code.google.com/archive/p/android4me) | Prints XML document from binary XML file (with correct namespace handing & attribute formatting) |
 | [beef](https://www.beefproject.com) | powerful and intuitive security tool focuses on leveraging browser vulnerabilities to assess the security posture of a target |
 | [binwalk](https://github.com/ReFirmLabs/binwalk) | Tool for analyzing, reverse engineering, and extracting firmware images | 
 | [bitb](https://github.com/surya-dev-singh/BITB-framwork) | Phishing technique that simulates a browser window within the browser to spoof a legitimate domain. |
@@ -113,6 +114,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [wpscan](https://github.com/wpscanteam/wpscan) | WordPress security scanner. |
 | [xapt-management](https://github.com/ivam3/xapt-management) | X-Desktop graphical interface for advance package tool(APT) written in python. |
 | [xerosploit](https://github.com/LionSec/xerosploit) | A penetration testing toolkit whose goal is to perform man in the middle attacks for testing purposes. |
+| [xml2axml](https://github.com/codyi96/xml2axml) | Encoding xml to axml OR decoding axml to xml |
 | [zaproxy](https://www.kali.org/tools/zaproxy/) | The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications |
 ##### Suggest a tool and/or framework to be add in our [Telegram Support Group](https://t.me/Ivam3by_Cinderella)
     

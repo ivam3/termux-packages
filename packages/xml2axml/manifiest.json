@@ -1,0 +1,13 @@
+{
+  "name": "xml2axml",
+  "version": "2.0.1",
+  "arch": "all",
+  "homepage": "https://github.com/codyi96/xml2axml",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["wget, openjdk-21"],
+  "suggests": ["i-haklab"],
+  "description": "Encoding xml to axml OR decoding axml to xml",
+  "files" :{
+    "xml2axml": "bin/xml2axml"
+  }
+}

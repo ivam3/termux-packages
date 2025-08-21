@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -e ${HOME}/.local/share/xml2axml.jar ]]; then
+  rm -rf ${HOME}/.local/share/xml2axml.jar
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

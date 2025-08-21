@@ -11,7 +11,7 @@ then
 	exec $(command -v java) \
         --add-opens=java.desktop/javax.swing=ALL-UNNAMED \
         --add-opens=java.base/java.lang=ALL-UNNAMED \
-        -jar ${HOME}/.local/share/AXMLPrinter2.Jar
+        -jar ${HOME}/.local/share/AXMLPrinter2.jar
 else
 	echo -en "$R(➤_)$W Jar file is not installed...$R aborting.$W"
 	exit 1

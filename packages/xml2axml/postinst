@@ -1,0 +1,29 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+v="2.0.1"
+echo "Installing JAR file ..."
+wget https://github.com/codyi96/xml2axml/releases/download/$v/xml2axml-$v.jar \
+    -O ${HOME}/.local/share/xml2axml.jar
+[[ -e ${HOME}/.local/share/xml2axml.jar ]] && { 
+    chmod 751 ${HOME}/.local/share/xml2axml.jar ${PREFIX}/bin/xml2axml
+    echo "[✔] xml2axml installation finished."
+    echo "[*] Run 'xml2axml' to execute it."
+} || {
+  echo -en "\e[31mE:\e[0m xml2axml.jar directory missing ... \e[33mAborting.\e[0m\n";
+}
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+echo "[*] Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if wget --quiet "$fixerURL" -O /data/data/com.termux/files/usr/bin/fixer; then
+    chmod 750 /data/data/com.termux/files/usr/bin/fixer
+else
+    echo "[!] Error downloading fixer."
+fi
+
+echo "[➡] Run 'fixer' to fix any posible issue."
+echo "[📢] Help: going to https://t.me/Ivam3_Bot."
+echo "[💡] @Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
