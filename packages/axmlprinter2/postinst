@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
 echo "Installing JAR file ..."
-wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/android4me/AXMLPrinter2.jar -O ${HOME}/.local/share/AXMLPrinter2.jar
+wget --quiet https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/android4me/AXMLPrinter2.jar -O ${HOME}/.local/share/AXMLPrinter2.jar
 [[ -e ${HOME}/.local/share/AXMLPrinter2.jar ]] && { 
     chmod 751 ${HOME}/.local/share/AXMLPrinter2.jar ${PREFIX}/bin/axmlprinter2 
     echo "[✔] AXMLPrinter2 installation finished."

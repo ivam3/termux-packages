@@ -7,11 +7,7 @@ Y="\e[33m"
 B="\e[34m"
 if [[ -e ${HOME}/.local/share/AXMLPrinter2.jar ]]
 then
-	umask 000
-	exec $(command -v java) \
-        --add-opens=java.desktop/javax.swing=ALL-UNNAMED \
-        --add-opens=java.base/java.lang=ALL-UNNAMED \
-        -jar ${HOME}/.local/share/AXMLPrinter2.jar
+	exec $(command -v java) -jar ${HOME}/.local/share/AXMLPrinter2.jar "$@"
 else
 	echo -en "$R(➤_)$W Jar file is not installed...$R aborting.$W"
 	exit 1

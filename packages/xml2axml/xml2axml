@@ -5,13 +5,16 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 B="\e[34m"
+
+[[ $# -eq 0 ]] && {
+    echo -en "$R(➤_)$W Usage: xml2axml <e[encode]/d[decode]> input.xml output.xml\n"
+    exit 1
+}
+
 if [[ -e ${HOME}/.local/share/xml2axml.jar ]]
 then
 	umask 000
-	exec $(command -v java) \
-        --add-opens=java.desktop/javax.swing=ALL-UNNAMED \
-        --add-opens=java.base/java.lang=ALL-UNNAMED \
-        -jar ${HOME}/.local/share/xml2axml.jar
+	exec $(command -v java) -jar ${HOME}/.local/share/xml2axml.jar "$@"
 else
 	echo -en "$R(➤_)$W Jar file is not installed...$R aborting.$W"
 	exit 1

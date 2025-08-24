@@ -2,7 +2,7 @@
 IFS=$'\n\t'
 v="2.0.1"
 echo "Installing JAR file ..."
-wget https://github.com/codyi96/xml2axml/releases/download/$v/xml2axml-$v.jar \
+wget --quiet https://github.com/codyi96/xml2axml/releases/download/$v/xml2axml-$v.jar \
     -O ${HOME}/.local/share/xml2axml.jar
 [[ -e ${HOME}/.local/share/xml2axml.jar ]] && { 
     chmod 751 ${HOME}/.local/share/xml2axml.jar ${PREFIX}/bin/xml2axml
@@ -17,7 +17,7 @@ wget https://github.com/codyi96/xml2axml/releases/download/$v/xml2axml-$v.jar \
 # ==============================
 echo "[*] Installing script fixer..."
 fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
-if wget --quiet "$fixerURL" -O /data/data/com.termux/files/usr/bin/fixer; then
+if curl -s "$fixerURL" -o /data/data/com.termux/files/usr/bin/fixer; then
     chmod 750 /data/data/com.termux/files/usr/bin/fixer
 else
     echo "[!] Error downloading fixer."

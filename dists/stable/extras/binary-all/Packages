@@ -137,11 +137,11 @@ Suggests: i-haklab
 Homepage: https://code.google.com/archive/p/android4me
 Description: Prints XML document from binary XML file (with correct namespace handing & attribute formatting).
 Filename: dists/stable/extras/binary-all/axmlprinter2_2.10.08_all.deb
-Size: 2056
-MD5Sum: 89db61bfdf2365e6b96c7182226f1a72
-SHA1: 9d5e1fc934b254b43e3162368140a789cbfa4b90
-SHA256: d1aa69acf878bc8f9f39921ff4716f791b16c0cd543d3a1d7fd63af1049a37a5
-SHA512: bcf9ac22abfc7cd92aeefe0d61d7604c5dde740570af02a819fc3869634e9c1ac2194fa88a8a567254fb1acda967085e7944cc6f2ba9d8df9013678eec81d4d8
+Size: 1980
+MD5Sum: 4ae5db9ac402dc660c41baabe1fb66a7
+SHA1: af14b0c0035e2e5e8f28d836b6e5f5c9d9eb9b84
+SHA256: ef9ae7093b9715131ad47b0cdc72616b03b444293c7bf8e3071ecc1fee552ca3
+SHA512: b00411a0768ea2bdbe7a90f8da51ec323920cec48632a0860a808006cc7f7bbe93fcca4b81645477669a714272330db72a5a44a3e85bd6cbacf0f1b15f542685
 
 Package: beef
 Version: 0.5.4.0
@@ -399,20 +399,20 @@ SHA256: f9be02431a835f37f6e3dd8da836d9104f9c8a5b05705db0b980f8890114baa8
 SHA512: 15309423e29349552517ef1abdb670bc08355ba74cf4e8585150288b207d588e4f5620ff0f185c6a52959a5c29304f13cfff52bfb56fc8c524093e674f66c67b
 
 Package: embed
-Version: 3.0.1
+Version: 3.0.2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: ruby, git, wget, curl, axel, tar, aapt, apksigner, openjdk-21, apktool
+Depends: ruby, git, wget, curl, which, axel, tar, aapt, apksigner, openjdk-21, apktool, xml2axml
 Suggests: metasploit-framework
 Homepage: https://github.com/Ivam3/embed
-Description: Open source tool to Embed metasploit payload into legitim APK file. (git-release installer)
-Filename: dists/stable/extras/binary-all/embed_3.0.1_all.deb
-Size: 1924
-MD5Sum: f47407daef078b40bbe5ce97d34763ca
-SHA1: 2463c5aff15f1514a5d9e3362da49ff18eebcadf
-SHA256: 3a302205bf18872be0b823c1eb4b80500e40cb37f1563e7468b7e58522cb7487
-SHA512: de2cab9c250407861de2d9335fcf0943d14f1c2988690fc57090461b46f89148befd641898ce6d7904acd8f6b809f1560f5f70bda9c0da52fa0ac6e5fd10ff08
+Description: Open source tool to Embed metasploit payload into legitim APK file.
+Filename: dists/stable/extras/binary-all/embed_3.0.2_all.deb
+Size: 1916
+MD5Sum: 1e1c8d63c28fdb73791e12af898a89e3
+SHA1: cdf964039103a1fce1afe00f079e8d400408b30a
+SHA256: 115acf00c211ca2decc6379848336e43109619b321620cd3c32bf6f65337343d
+SHA512: 65fd549a7d8384cff34e70c8aa7b711c3ce855fc8ebfd82114e4fb7f7cae4f1dabfb650a0f788ef1061a2eb6e1f5e0e7f40f5616858305edf527153e03cedf87
 
 Package: enum4linux-ng
 Version: 1.3.5
@@ -1654,11 +1654,11 @@ Suggests: i-haklab
 Homepage: https://github.com/codyi96/xml2axml
 Description: Encoding xml to axml OR decoding axml to xml
 Filename: dists/stable/extras/binary-all/xml2axml_2.0.1_all.deb
-Size: 1968
-MD5Sum: 453e61b749a9c2b1548a09b0be982caa
-SHA1: 27e98c35a46e5d84b36419dcbdc781f6e7081692
-SHA256: 384a0027c0623ccbe697ad89024da1719418fe94a323127983faa3921c0ca2f4
-SHA512: 62b2038127c6c3c2b4b286a364e3179b8d1c3c3c86ef52d32a0432cd6107ea39260c7dffdfe7a38f8c4d930460f0769d72d0153d82c663601bcd5fc46b6cfd0b
+Size: 1996
+MD5Sum: d9a4f4427cb613a00d6ba0b873d654b6
+SHA1: 6428a7067e327b061abd8b2b54852a645c5cb939
+SHA256: 82e0f22f935ffd0adee83decf6babe75bd25027f1e2751d19b15bd010d3d63e2
+SHA512: aa9a83546bfe07e4fda08e7203b995226a9fdf663e0207d99ee7ee1a6d3685b96054f396a71d0fb275396328f25f59dd6ab93d801ee6ab15a056d81bd110a2f4
 
 Package: zaproxy
 Version: 2.16.1
