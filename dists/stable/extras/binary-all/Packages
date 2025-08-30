@@ -132,16 +132,16 @@ Version: 1.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: git, python, python-pip
+Depends: git, python, python-pip, python-cryptography
 Suggests: i-haklab
 Homepage: https://github.com/jasonxtn/Argus
 Description: All-in-one python-powered toolkit designed to streamline the process of information gathering and reconnaissance
 Filename: dists/stable/extras/binary-all/argus_1.1_all.deb
-Size: 2000
-MD5Sum: 4dfd193c6e3e8e85d033058a7b06a9a4
-SHA1: 3969692c742169743814f5002fb78ddc0bb39113
-SHA256: a0d38857159ae51d2b93251077b202752fa2b3da0af4d229ecb74fddb4d0c96b
-SHA512: 9d82b14292c415128eae763fde05e07bd2f8f9778034ec6bcf7aed80fece007363f05d214a64880a12992c147ad5f676fcaef45278f92a379798bbc722b65341
+Size: 2008
+MD5Sum: 22307eba333ec1f6fb4059f244da163a
+SHA1: 6d7810591b86e0dcaba4fbec4a38b648283aee44
+SHA256: 8cf0f25e7ecba212c71327b1e5dca0d94417a3c651538d22513237e116c1ee22
+SHA512: d2a99ac680a088e0d63cb7dfe3f38698ba7683689a79914ad67f9dffd2cefd938298e6d2dfd1a8dc3093cf1a88aef5798e1fc78aa0415aefe00819da242cfc62
 
 Package: axmlprinter2
 Version: 2.10.08

@@ -4,7 +4,7 @@
   "arch": "all",
   "homepage": "https://github.com/jasonxtn/Argus",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["git, python, python-pip"],
+  "depends": ["git, python, python-pip, python-cryptography"],
   "suggests": ["i-haklab"],
   "description": "All-in-one python-powered toolkit designed to streamline the process of information gathering and reconnaissance",
   "files" :{
