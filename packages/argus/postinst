@@ -1,0 +1,32 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+echo "Cloning repository ..."
+git clone --quiet https://github.com/jasonxtn/Argus ${HOME}/.local/share/argus
+[[ -d ${HOME}/.local/share/argus ]] && {
+  echo "Installing requirements ...";
+  chmod 751 -R ${HOME}/.local/share/argus;
+  python -m pip --no-color --quiet --no-cache-dir install -r ${HOME}/.local/share/argus/requirements.txt; 
+} || {
+  echo -en "\e[31mE:\e[0m argus directory missing ... \e[33mAborting.\e[0m\n";
+}
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+echo "[*] Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -s "$fixerURL" -o /data/data/com.termux/files/usr/bin/fixer; then
+    chmod 750 /data/data/com.termux/files/usr/bin/fixer
+else
+    echo "[!] Error downloading fixer."
+fi
+
+# ==============================
+# FINALS MESSAGES
+# ==============================
+echo "[✔] Argus installation finished."
+echo "[➡] Run 'argus' to execute it."
+echo "[➡] Run 'fixer' to fix any posible issue."
+echo "[📢] Help: going to https://t.me/Ivam3_Bot."
+echo "[💡] @Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

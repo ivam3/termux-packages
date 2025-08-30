@@ -127,6 +127,22 @@ SHA1: ec7b67b72699c3c6103b2c5002f5021e67961c9c
 SHA256: def3653c894d40bc0dbdd245e9b842b3dfe1916bc3516d8165df11f24162bb13
 SHA512: f7f031c9f58e4d4dfd4d33e6ff93d0210619f7901bd3acf052988972113e98455da90a5d90bbbba86a3d19adf31f78ddeceaa2255acd51b06c72003ffa2d9ec3
 
+Package: argus
+Version: 1.1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: git, python, python-pip
+Suggests: i-haklab
+Homepage: https://github.com/jasonxtn/Argus
+Description: All-in-one python-powered toolkit designed to streamline the process of information gathering and reconnaissance
+Filename: dists/stable/extras/binary-all/argus_1.1_all.deb
+Size: 2000
+MD5Sum: 4dfd193c6e3e8e85d033058a7b06a9a4
+SHA1: 3969692c742169743814f5002fb78ddc0bb39113
+SHA256: a0d38857159ae51d2b93251077b202752fa2b3da0af4d229ecb74fddb4d0c96b
+SHA512: 9d82b14292c415128eae763fde05e07bd2f8f9778034ec6bcf7aed80fece007363f05d214a64880a12992c147ad5f676fcaef45278f92a379798bbc722b65341
+
 Package: axmlprinter2
 Version: 2.10.08
 Architecture: all

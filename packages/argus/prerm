@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+python -m pip --no-color --quiet uninstall -r ${HOME}/.local/share/argus/requirements.txt; 
+if [[ -d ${HOME}/.local/share/argus ]]; then
+  rm -rf ${HOME}/.local/share/argus
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
