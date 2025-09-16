@@ -89,6 +89,7 @@ data/data/com.termux/files/home/.config/fish/functions/i-Haklab.fish            
 data/data/com.termux/files/home/.config/fish/functions/lock.fish                 i-haklab
 data/data/com.termux/files/home/.config/fish/functions/ls.fish                   i-haklab
 data/data/com.termux/files/home/.config/fish/functions/mypip.fish                i-haklab
+data/data/com.termux/files/home/.config/fish/functions/npm.fish                  i-haklab
 data/data/com.termux/files/home/.config/fish/functions/openvpn.fish              i-haklab
 data/data/com.termux/files/home/.config/fish/functions/osrframework.fish         i-haklab
 data/data/com.termux/files/home/.config/fish/functions/phantom.fish              i-haklab
@@ -251,6 +252,7 @@ data/data/com.termux/files/home/.local/libexec/i-Haklab/ransomux                
 data/data/com.termux/files/home/.local/libexec/i-Haklab/servers4test             i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/setapikey                i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/setbanner                i-haklab
+data/data/com.termux/files/home/.local/libexec/i-Haklab/sethandler               i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/setuser                  i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/show                     i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/speedtest                i-haklab
