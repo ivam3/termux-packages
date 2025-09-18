@@ -92,7 +92,7 @@ data/data/com.termux/files/home/.config/fish/functions/mypip.fish               
 data/data/com.termux/files/home/.config/fish/functions/npm.fish                  i-haklab
 data/data/com.termux/files/home/.config/fish/functions/openvpn.fish              i-haklab
 data/data/com.termux/files/home/.config/fish/functions/osrframework.fish         i-haklab
-data/data/com.termux/files/home/.config/fish/functions/phantom.fish              i-haklab
+data/data/com.termux/files/home/.config/fish/functions/phantom-ps.fish           i-haklab
 data/data/com.termux/files/home/.config/fish/functions/pm.fish                   i-haklab
 data/data/com.termux/files/home/.config/fish/functions/postgresql.fish           i-haklab
 data/data/com.termux/files/home/.config/fish/functions/proxy.fish                i-haklab
