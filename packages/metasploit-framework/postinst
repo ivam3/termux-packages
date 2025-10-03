@@ -110,6 +110,13 @@ find ${PREFIX}/lib/ruby/gems -type f -iname \*.so -print0 | xargs -0 -r termux-e
 #PRYCODEFILE=$(find $PREFIX/lib/ruby/ -iname "code.rb"|grep "pry")
 #sed -i '342 {s/^/#/}' $PRYCODEFILE
 
+# Confirm Compatibility of Action View version
+ActionView_version=$(grep actionview $msfDir/Gemfile.lock|awk -F" " 'NR==1 { print $3 }'|tr -d ")")
+line=$(grep -n "^raise unless ActionView" $msfDir/config/application.rb|awk -F ":" '{print $1}')
+sed -i "$line {s/^/#/}" $msfDir/config/application.rb
+sed -i "$line a\ raise unless ActionView::VERSION::STRING >= '$ActionView_version'" \
+    $msfDir/config/application.rb
+
 echo "Fixing option '-x' on msfvenom command ..."
 JAVADB="https://raw.githubusercontent.com/ivam3/java/master"
 curl -fsSL $JAVADB/.embed/apk.rb -o $msfDir/lib/msf/core/payload/apk.rb
