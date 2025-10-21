@@ -124,7 +124,7 @@ To add the list of available tools and/or frameworks to the package manager `apt
 
 - Install `wget` and `gnupg` package:
 ```bash
-apt install wget gnupg
+apt install gnupg
 ```
 
 - Create a directory:
@@ -134,7 +134,7 @@ mkdir -p $PREFIX/etc/apt/sources.list.d
 
 - Download sources file:
 ```bash
-wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/ivam3-termux-packages.list -O $PREFIX/etc/apt/sources.list.d/ivam3-termux-packages.list
+curl -s https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/ivam3-termux-packages.list -o $PREFIX/etc/apt/sources.list.d/ivam3-termux-packages.list
 ```
 
 - Download signed key 
@@ -149,13 +149,7 @@ apt update
 ```
 Or if you prefer, you can do it with one command line to add the repository copy and paste the following command in your Termux terminal:
 ```bash
-yes|apt install wget gnupg && \
-mkdir -p $PREFIX/etc/apt/sources.list.d && \
-wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/ivam3-termux-packages.list -O \
-$PREFIX/etc/apt/sources.list.d/ivam3-termux-packages.list && \
-curl -fsSL "https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/dists/stable/public_key.gpg" \
-|gpg --dearmor|tee "$PREFIX/etc/apt/trusted.gpg.d/ivam3.gpg" >/dev/null && \
-apt update
+yes|apt install gnupg && mkdir -p $PREFIX/etc/apt/sources.list.d && curl -s https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/ivam3-termux-packages.list -o $PREFIX/etc/apt/sources.list.d/ivam3-termux-packages.list && curl -fsSL "https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/dists/stable/public_key.gpg" | gpg --dearmor|tee "$PREFIX/etc/apt/trusted.gpg.d/ivam3.gpg" >/dev/null && apt update
 ```
 
 ### License
