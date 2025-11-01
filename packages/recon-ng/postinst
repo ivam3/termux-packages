@@ -8,7 +8,7 @@ git clone --quiet https://github.com/lanmaster53/recon-ng ${HOME}/.local/share/r
     echo "Installing requirements ...";
     chmod 751 -R ${HOME}/.local/share/recon-ng;
     cd ${HOME}/.local/share/recon-ng;
-	echo -n "shodan\njsonrpclib\nslowaes\nolefile\nPyPDF2\nunicodecsv" >> REQUIREMENTS;
+	printf "shodan\njsonrpclib\nslowaes\nolefile\nPyPDF2\nunicodecsv" >> REQUIREMENTS;
 	python -m pip --no-color --quiet --no-cache-dir install -r REQUIREMENTS;
     echo "[✔] recon-ng installation finished."
     echo "[➡] Run 'recon-ng' to execute it."
