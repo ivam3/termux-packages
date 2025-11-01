@@ -1190,11 +1190,11 @@ Suggests: i-haklab
 Homepage: https://github.com/lanmaster53/recon-ng
 Description: Open Source Intelligence gathering tool aimed at reducing the time spent harvesting information from open sources.
 Filename: dists/stable/extras/binary-all/recon-ng_5.1.2_all.deb
-Size: 2408
-MD5Sum: 5b6db8ff1061776a4896b8832b9b6729
-SHA1: 5e03360196f909a9e65f27d50f07288519e23b15
-SHA256: 5b94c6cd7b36c93ad139d5e684a29548c27299dda7356fe5461e7c638373280b
-SHA512: 4632565f45c3cc9f1817f4af9dbca77cbc53b1237fbe05b7666ea3fa52dc2651f21dc38bb981ad72b3a656eb33bae228148d7b637b2b34ae54dfa634c2d8d323
+Size: 2416
+MD5Sum: f82a0b25f5df3791301f61acd836a797
+SHA1: 647099580b61be67ec0a681d4e4f0cb955e9ba4d
+SHA256: b5b686a77147f7b15754f2a3242ecd710f0c32b97257aa982f8c63adccd04ccf
+SHA512: 9472ccae8fd4b435646f7a35ffb0c7e9a89b0af72b2b74349717a9749a1de6031b3f30e37ad57e0bd27355ba2b9f1fc9fca1f4c0c7738c9529b6cd5bb429b484
 
 Package: recondog
 Version: 2.0
