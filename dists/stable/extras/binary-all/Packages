@@ -558,6 +558,22 @@ SHA1: 68c53731c5e4e897ce00b498c16cbd0e4b2b09ab
 SHA256: cb6699819c08c01e5a7624e462e1f61de55ea7b34c100c0143c1ddf184221a2a
 SHA512: 99782d9f5316af718fb27ef82c503d9a4a893a29d060a82ef30b1c7af1589d2537af1ac1635ab7cb1fb1a94977581976c2f07e07a1bd8a381ab6709234194e9c
 
+Package: finalrecon
+Version: 1.0.2
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: git, python, python-pip
+Suggests: i-haklab
+Homepage: https://github.com/thewhiteh4t/FinalRecon.git
+Description: FinalRecon is an all in one automatic web reconnaissance tool written in python
+Filename: dists/stable/extras/binary-all/finalrecon_1.0.2_all.deb
+Size: 2012
+MD5Sum: 88a115a994cfaf427fd9f84616218559
+SHA1: 3705be9708118b07a2c21fc8c6b1fc7eea5c23e3
+SHA256: 076d679cd3562004334d76e147f5a16c2cbea55a0a7452683b215acb91b3e801
+SHA512: 009a37d320ba661b3c305cd8dc73979c04a54777643fd5c728cbb75921f1379ea50b8847ff4cca7748851de664ba60af401a7a67627404d24eecbee10d9fa4ca
+
 Package: geo-recon
 Version: 1.0
 Architecture: all
@@ -1169,16 +1185,16 @@ Version: 5.1.2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
-Depends: git, python, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static
+Depends: git, python, libxml2, libxml2-utils, libxslt, python-lxml
 Suggests: i-haklab
 Homepage: https://github.com/lanmaster53/recon-ng
 Description: Open Source Intelligence gathering tool aimed at reducing the time spent harvesting information from open sources.
 Filename: dists/stable/extras/binary-all/recon-ng_5.1.2_all.deb
-Size: 2104
-MD5Sum: 530c089758b8d02d67ac40ebf2c00857
-SHA1: 0db2d37e1828d4dfc3f896a33d00895bb272e85a
-SHA256: d80fd761b082f6566d552467d814bf86b4e29dc88ddd1f8bce349835101e095c
-SHA512: c8f4e69ca994f31248242c22e3110f6a6ee7e64f05462d3c0701871ec00941d84b18a6fbd2b9a0d1958d307f56ec816067f887e01d3857544b80eae655ed4616
+Size: 2408
+MD5Sum: 5b6db8ff1061776a4896b8832b9b6729
+SHA1: 5e03360196f909a9e65f27d50f07288519e23b15
+SHA256: 5b94c6cd7b36c93ad139d5e684a29548c27299dda7356fe5461e7c638373280b
+SHA512: 4632565f45c3cc9f1817f4af9dbca77cbc53b1237fbe05b7666ea3fa52dc2651f21dc38bb981ad72b3a656eb33bae228148d7b637b2b34ae54dfa634c2d8d323
 
 Package: recondog
 Version: 2.0

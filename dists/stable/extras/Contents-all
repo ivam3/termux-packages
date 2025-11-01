@@ -46,6 +46,7 @@ data/data/com.termux/files/usr/bin/searchsploit                                 
 data/data/com.termux/files/usr/bin/fake-sms                                      fake-sms
 data/data/com.termux/files/usr/bin/fbi                                           fbi
 data/data/com.termux/files/usr/bin/fbi-installer                                 fbi
+data/data/com.termux/files/usr/bin/finalrecon                                    finalrecon
 data/data/com.termux/files/usr/bin/geo-recon                                     geo-recon
 data/data/com.termux/files/usr/bin/geo-recon-installer                           geo-recon
 data/data/com.termux/files/usr/bin/getadusers-installer                          getadusers

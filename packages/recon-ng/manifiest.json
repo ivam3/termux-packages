@@ -4,7 +4,7 @@
   "arch": "all",
   "homepage": "https://github.com/lanmaster53/recon-ng",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["git, python, libxml2, libxml2-static, libxml2-utils, libxslt, libxslt-static"],
+  "depends": ["git, python, libxml2, libxml2-utils, libxslt, python-lxml"],
   "suggests": ["i-haklab"],
   "description": "Open Source Intelligence gathering tool aimed at reducing the time spent harvesting information from open sources.",
   "files" :{

@@ -5,6 +5,7 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 B="\e[34m"
+
 if [[ -d ${HOME}/.local/share/recon-ng ]]
 then
   cd ${HOME}/.local/share/$(basename $0) >/dev/null
