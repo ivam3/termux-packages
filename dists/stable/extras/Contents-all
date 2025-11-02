@@ -1025,7 +1025,6 @@ data/data/com.termux/files/usr/bin/pybelt-installer                             
 data/data/com.termux/files/usr/bin/quack                                         quack
 data/data/com.termux/files/usr/bin/ransomux                                      ransomux
 data/data/com.termux/files/usr/bin/recon-ng                                      recon-ng
-data/data/com.termux/files/usr/bin/recon-ng-installer                            recon-ng
 data/data/com.termux/files/usr/bin/recondog                                      recondog
 data/data/com.termux/files/usr/bin/recondog-installer                            recondog
 data/data/com.termux/files/usr/bin/redhawk                                       redhawk

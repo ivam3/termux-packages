@@ -1184,17 +1184,17 @@ Package: recon-ng
 Version: 5.1.2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
-Depends: git, python, libxml2, libxml2-utils, libxslt, python-lxml
+Installed-Size: 1
+Depends: git, rust, python, libxml2, libxml2-utils, libxslt, python-lxml
 Suggests: i-haklab
 Homepage: https://github.com/lanmaster53/recon-ng
 Description: Open Source Intelligence gathering tool aimed at reducing the time spent harvesting information from open sources.
 Filename: dists/stable/extras/binary-all/recon-ng_5.1.2_all.deb
-Size: 2416
-MD5Sum: f82a0b25f5df3791301f61acd836a797
-SHA1: 647099580b61be67ec0a681d4e4f0cb955e9ba4d
-SHA256: b5b686a77147f7b15754f2a3242ecd710f0c32b97257aa982f8c63adccd04ccf
-SHA512: 9472ccae8fd4b435646f7a35ffb0c7e9a89b0af72b2b74349717a9749a1de6031b3f30e37ad57e0bd27355ba2b9f1fc9fca1f4c0c7738c9529b6cd5bb429b484
+Size: 2160
+MD5Sum: 4a71eaee6c8fd7ef0484108a1333a8e4
+SHA1: 88dcc7745cc06948073cfe88b4cc00ac24b446ea
+SHA256: a14d983ce97bdb2ab471f4c8f3971349f04977bcec0cf96f770b98bb60e19d55
+SHA512: aac388a611d81dd6f3bc5094d640f41f726f39c666049dec01a68cbdb8f5a2896718b6ac87477a7a07d4a735eff1404345d51a7db241fd201a6ec67ffe3a42d2
 
 Package: recondog
 Version: 2.0
