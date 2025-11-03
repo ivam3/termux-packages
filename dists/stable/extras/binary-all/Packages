@@ -559,20 +559,20 @@ SHA256: cb6699819c08c01e5a7624e462e1f61de55ea7b34c100c0143c1ddf184221a2a
 SHA512: 99782d9f5316af718fb27ef82c503d9a4a893a29d060a82ef30b1c7af1589d2537af1ac1635ab7cb1fb1a94977581976c2f07e07a1bd8a381ab6709234194e9c
 
 Package: finalrecon
-Version: 1.0.2
+Version: 1.1.7
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: git, python, python-pip
+Depends: git, python, python-pip, python-cryptography
 Suggests: i-haklab
 Homepage: https://github.com/thewhiteh4t/FinalRecon.git
 Description: FinalRecon is an all in one automatic web reconnaissance tool written in python
-Filename: dists/stable/extras/binary-all/finalrecon_1.0.2_all.deb
-Size: 2012
-MD5Sum: 88a115a994cfaf427fd9f84616218559
-SHA1: 3705be9708118b07a2c21fc8c6b1fc7eea5c23e3
-SHA256: 076d679cd3562004334d76e147f5a16c2cbea55a0a7452683b215acb91b3e801
-SHA512: 009a37d320ba661b3c305cd8dc73979c04a54777643fd5c728cbb75921f1379ea50b8847ff4cca7748851de664ba60af401a7a67627404d24eecbee10d9fa4ca
+Filename: dists/stable/extras/binary-all/finalrecon_1.1.7_all.deb
+Size: 2028
+MD5Sum: 0b4b8ac3077af5e039b17c87a0a3011f
+SHA1: 98435199a50d7e58d7f6855a07c9570e97011d18
+SHA256: b6ebcedc904510f74ab414c224250a0087850da47cd44bfecb061774727865f4
+SHA512: 9de631e1954c793585a3ae011d2f8d79f7ac5e4ac6975b7b378835aca9215c35acbfb6a7cff048ff479c03173f5165373facea6c6acf56f0040e2fc8118247fb
 
 Package: geo-recon
 Version: 1.0
@@ -669,6 +669,22 @@ MD5Sum: 83d67a81c927e7fe51557665be3b41c5
 SHA1: eee8f473175878b91da3a1bca9836d25d1becef2
 SHA256: 6a34603273adc037284f5dcf10ec1317faad5d1591c537b214a48254558142ac
 SHA512: ae65e2734c6b2d0185d438a02ffeb2363c2726ef637229b645955bfd1a1090647c39c0521eebff5f45d0c5c298024b96e29e1480c1fe5944dac4c868ce18abfb
+
+Package: ghunt
+Version: 2.2.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: python, python-pip
+Suggests: i-haklab
+Homepage: https://github.com/mxrch/GHunt
+Description: Offensive Google framework.
+Filename: dists/stable/extras/binary-all/ghunt_2.2.0_all.deb
+Size: 1860
+MD5Sum: 8fa46f9b1abfc6efede9ba1a159692c4
+SHA1: 2b5bc1f365794c44b3d36793385490707c001144
+SHA256: 1efc062f69c1a6dc3d00171e14f5609894e81fbce7cbe4b9313d4a2be7b65f39
+SHA512: b128c468fe1ebd22763b502b5521f25b0d780812a8e7453f6936d6de30cbddac1ae66105e259a94ebc4e1f0cc2ab586ac619c1dec3621c93fd49139261cc3e7a
 
 Package: git-filter-repo
 Version: 2.47.0
@@ -1341,7 +1357,7 @@ SHA256: a877ff2fb1e6b3956481ea53e7d7b11fe6509d8d3b6ab49bb46d0c967e92d860
 SHA512: 67137f3e9776c433fdf9c56cd427edbe7851090b99a3985fa74292e1210c6d6caa23e811e926de2f3431438f81502636560874dabbe9200512aaf1141382341c
 
 Package: sherlock
-Version: 0.15.0
+Version: 0.16.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
@@ -1349,12 +1365,12 @@ Depends: python, python-pip, python-numpy, python-pandas
 Suggests: i-haklab
 Homepage: https://github.com/sherlock-project/sherlock
 Description: Hunt down social media accounts by username across social networks.
-Filename: dists/stable/extras/binary-all/sherlock_0.15.0_all.deb
-Size: 1688
-MD5Sum: 50fbd3aaaf5949ba4a208873b2fdaa1a
-SHA1: e6b8da17048db5cd027841c82e3a67a9e97b3a8d
-SHA256: 9d72e7f754e6c51aecda6e1fb2772809cfccb58c5d2caf2a891a6647a5f67916
-SHA512: 70d3f3893c584ed26fec9ac85318e871c6389a5c7dcea19a26da4d7d0181eac8ac25130efd7e247d37a947b392aa4ccc36ad33a72bb14a30cbd22c85e57eb2ab
+Filename: dists/stable/extras/binary-all/sherlock_0.16.0_all.deb
+Size: 1912
+MD5Sum: cccdbda33740605ce1b409259ec14aa3
+SHA1: 04ef08204819d7dfe4a0e9621f019ef3145eeb87
+SHA256: e2b454b6711f21bb9b201537ae0df7c3eef11dfb594368dd554b7d5028dba231
+SHA512: 64d3b5cedeb215e8418ecd9273644b0e487cfd66c817ca7e74f818e667649d61ea6b720c905e3ab3f4dff5927390169ed5e1dcc066d02f5e3cc349d9cceb5841
 
 Package: slowhttptest
 Version: 1.8.3
@@ -1516,22 +1532,6 @@ SHA1: 87970c20c7284f59c178a36f19860abaeed4448e
 SHA256: 47dfb9d2c540a589ff7502925b739989372641d9f3c2d1ae6b83a5c687b5d768
 SHA512: 52d5eb389724b1f6023c95dc4a7231d6c044d5ecba27d5df5b9fd205edc723e69910e108de7e534dc4d0f7dd8fd4b0deb14321353202b6173d0bce3edc1c7190
 
-Package: userrecon
-Version: 1.0
-Architecture: all
-Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
-Depends: git
-Suggests: i-haklab
-Homepage: https://github.com/issamelferkh/userrecon
-Description: Find usernames across over 75 social networks.
-Filename: dists/stable/extras/binary-all/userrecon_1.0_all.deb
-Size: 1860
-MD5Sum: aa1046f5e792903ac1b3c9e838a58549
-SHA1: a815839e7e1217e5225fddb5d2b2e8fb11388386
-SHA256: ba21f28636da49b2ebbc6b13a68905b288bdf95715bcc6848b60998ba43367ed
-SHA512: e5a36e850c92495d9fbbcdb04203a33c40f2ae2a8c56fd4450a0db7ae1a179d3f4f0f928b93a754fe983b653c4fc0670654c1ee1d20a80dca49516bbbf4161d2
-
 Package: vulnx
 Version: 2.0
 Architecture: all
@@ -1613,20 +1613,20 @@ SHA256: c4410f3a26473cbd553e71f202e23740ddb63b5456715d256294a692a388f38d
 SHA512: 3a7e427c07e78d5125cf2914bddf81d1174ae8bd0299923bfde7e5f88c3a74fd2503d1a9af5a121bddc24d6a29e77cbd3c8273c2534a6433a8d9c40b2b1ee716
 
 Package: whatweb
-Version: 0.5.5
+Version: 0.6.3
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
+Installed-Size: 1
 Depends: git, ruby
 Suggests: i-haklab
 Homepage: https://github.com/urbanadventurer/WhatWeb
 Description: Next generation web scanner.
-Filename: dists/stable/extras/binary-all/whatweb_0.5.5_all.deb
-Size: 1968
-MD5Sum: 1e2fa08f0c54ec51ad1279034b8313a4
-SHA1: 4471b9f6d4c3fdf5bac1a698d6454dd3ca974424
-SHA256: 12c89b16b1aae820f66ac83ae88014f2be1d3c25ac9f0be852a49bbf76eb9dc6
-SHA512: cd65f3b795ce5fff796090d5da7d9d233db894256fbe68e59a4d142597758d2530f620a1a8048317c220d0eeaacfd62018436ee8b21e5b29d4053bcbeaa43092
+Filename: dists/stable/extras/binary-all/whatweb_0.6.3_all.deb
+Size: 1964
+MD5Sum: 8d538a5861ae5eead2143a4cf9890446
+SHA1: d4230954def4890317afa409034d1be84f18bec9
+SHA256: 00e6f5f52455628cf39904b0b88e89b2fb314ec25c00e571b7b1dd7d7668e80c
+SHA512: 15d7c71d08ec59843c185bd817b4f9f91ce22c72b9cf501b9780c6fbc8f3f351a119cd1faa94340635ea233920b54bac2e70bedc37df07130540477118ee7ec2
 
 Package: wpscan
 Version: 1.0-1

@@ -56,6 +56,7 @@ data/data/com.termux/files/usr/bin/ghidra                                       
 data/data/com.termux/files/usr/share/applications/ghidra/ghidra.desktop          ghidra
 data/data/com.termux/files/usr/share/applications/ghidra/img/ghidra.png          ghidra
 data/data/com.termux/files/usr/bin/ghost-installer                               ghost
+data/data/com.termux/files/usr/bin/ghunt-installer                               ghunt
 data/data/com.termux/files/usr/bin/git-filter-repo                               git-filter-repo
 data/data/com.termux/files/usr/bin/gobuster                                      gobuster
 data/data/com.termux/files/usr/bin/gophish                                       gophish
@@ -1051,8 +1052,6 @@ data/data/com.termux/files/usr/bin/desktop                                      
 data/data/com.termux/files/usr/bin/termux-docker-qemu                            termux-docker-qemu
 data/data/com.termux/files/usr/bin/trape                                         trape
 data/data/com.termux/files/usr/bin/unshc-installer                               unshc
-data/data/com.termux/files/usr/bin/userrecon                                     userrecon
-data/data/com.termux/files/usr/bin/userrecon-installer                           userrecon
 data/data/com.termux/files/usr/bin/vulnx                                         vulnx
 data/data/com.termux/files/usr/bin/wbruter                                       wbruter
 data/data/com.termux/files/usr/bin/wbruter-installer                             wbruter
@@ -1061,7 +1060,6 @@ data/data/com.termux/files/usr/bin/webscan-installer                            
 data/data/com.termux/files/usr/bin/websploit-installer                           websploit
 data/data/com.termux/files/usr/bin/wfuzz-installer                               wfuzz
 data/data/com.termux/files/usr/bin/whatweb                                       whatweb
-data/data/com.termux/files/usr/bin/whatweb-installer                             whatweb
 data/data/com.termux/files/usr/bin/wpscan-installer                              wpscan
 data/data/com.termux/files/usr/bin/xapt                                          xapt-management
 data/data/com.termux/files/usr/bin/xapt-installer                                xapt-management
