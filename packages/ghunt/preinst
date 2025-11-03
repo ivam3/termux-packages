@@ -5,9 +5,9 @@ then
   exit 1
 else
   echo "Preparing enviroment ..."
-  if [[ -d ${HOME}/.local/share/sherlock ]]
+  if [[ -d ${HOME}/.local/share/ghunt ]]
   then
-    rm -rf ${HOME}/.local/share/sherlock
+    rm -rf ${HOME}/.local/share/ghunt
   else
     mkdir -p ${HOME}/.local/share 2>/dev/null
   fi
