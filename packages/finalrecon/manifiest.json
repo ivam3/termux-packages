@@ -1,10 +1,10 @@
 {
   "name": "finalrecon",
-  "version": "1.0.2",
+  "version": "1.1.7",
   "arch": "all",
   "homepage": "https://github.com/thewhiteh4t/FinalRecon.git",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["git, python, python-pip"],
+  "depends": ["git, python, python-pip, python-cryptography"],
   "suggests": ["i-haklab"],
   "description": "FinalRecon is an all in one automatic web reconnaissance tool written in python",
   "files" :{
