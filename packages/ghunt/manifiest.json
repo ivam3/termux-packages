@@ -1,0 +1,13 @@
+{
+  "name": "ghunt",
+  "version": "2.2.0",
+  "arch": "all",
+  "homepage": "https://github.com/mxrch/GHunt",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python, python-pip"],
+  "suggests": ["i-haklab"],
+  "description": "Offensive Google framework.",
+  "files" :{
+    "ghunt-installer": "bin/ghunt-installer"
+  }
+}

@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+
+echo "Installing requirements ...";
+python -m pip --no-color --quiet --no-cache-dir install requests pipx;
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
