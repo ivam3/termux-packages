@@ -144,6 +144,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/fuzzdb         
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/gdb             i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/geoip           i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ghost           i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ghunt           i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/gobuster        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/gophish         i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/h8mail          i-haklab
@@ -202,7 +203,6 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/theharvester   
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/translate       i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/trape           i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/twifo-cli       i-haklab
-data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/userrecon       i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/virustotal      i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/vulns           i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/webhackshl      i-haklab
