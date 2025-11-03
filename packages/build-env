@@ -130,7 +130,7 @@ git clone --quiet https://$page \${HOME}/.local/share/$pkgName
 # ==============================
 echo "[*] Installing script fixer..."
 fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
-if wget --quiet "\$fixerURL" -O /data/data/com.termux/files/usr/bin/fixer; then
+if curl -fsSL "\$fixerURL" -o /data/data/com.termux/files/usr/bin/fixer; then
     chmod 750 /data/data/com.termux/files/usr/bin/fixer
     echo "[➡] Run 'fixer' to fix any posible issue."
 else
