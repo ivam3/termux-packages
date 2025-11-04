@@ -1017,6 +1017,7 @@ data/data/com.termux/files/usr/opt/openjdk-21.0.1/lib/src.zip                   
 data/data/com.termux/files/usr/bin/osintgram                                     osintgram
 data/data/com.termux/files/usr/bin/osintgram-installer                           osintgram
 data/data/com.termux/files/usr/bin/ovh-ttyrec-installer                          ovh-ttyrec
+data/data/com.termux/files/usr/bin/penelope-installer                            penelope
 data/data/com.termux/files/usr/bin/phomber                                       phomber
 data/data/com.termux/files/usr/bin/phomber-installer                             phomber
 data/data/com.termux/files/usr/bin/phonesploit                                   phonesploit

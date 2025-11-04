@@ -1116,6 +1116,22 @@ SHA1: dfa493ef61469fee0d45150e29b346b14d660b44
 SHA256: 1edd8996170d956eee84daeb5cb2e44b7d8b7e65e20e84b35322cd00c1d50470
 SHA512: a5c50c4026ede8f3ff1a23990104d6f2efe1a01c81abaa912dcbff42e2723bd48f2366a67b229f5fc37572b2c22c1eaf0b99ceae2e58c08917ee14393c7461ac
 
+Package: penelope
+Version: 0.14.8
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: python, python-pip
+Suggests: i-haklab
+Homepage: https://github.com/brightio/penelope
+Description: A powerful shell handler built as a modern netcat replacement for RCE exploitation, aiming to simplify, accelerate, and optimize post-exploitation workflows.
+Filename: dists/stable/extras/binary-all/penelope_0.14.8_all.deb
+Size: 2668
+MD5Sum: 69fd03efeccc8954d68980d8cb6fa600
+SHA1: af18f805bb4423769156df62db53b2fcd919b4d4
+SHA256: 338a5c57fb0060f04bc06afd0935c38d86b55d9b6a0d9827c8eeba4b01015192
+SHA512: b3b9353b313a0fa67d9628f66e37afe31cf4e3925a21e27e6b56a9b10ed9678a623572ffac22173f29b7e5b5b0fb0dfc82fd77b5ef867749fc0eee8a222beeff
+
 Package: phomber
 Version: 2.0
 Architecture: all

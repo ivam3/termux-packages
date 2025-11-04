@@ -1,0 +1,13 @@
+{
+  "name": "penelope",
+  "version": "0.14.8",
+  "arch": "all",
+  "homepage": "https://github.com/brightio/penelope",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python, python-pip"],
+  "suggests": ["i-haklab"],
+  "description": "A powerful shell handler built as a modern netcat replacement for RCE exploitation, aiming to simplify, accelerate, and optimize post-exploitation workflows.",
+  "files" :{
+    "penelope-installer": "bin/penelope-installer"
+  }
+}
