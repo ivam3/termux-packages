@@ -43,6 +43,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [exploitdb](https://github.com/offensive-security/exploitdb) | The official [Exploit Database](https://www.exploit-db.com) repository |
 | [fake-sms](https://github.com/machine1337/fake-sms) | Send messages (sms) anonymously. |
 | [fbi](https://github.com/xHak9x/fbi) | Facebook account information gathering |
+| [finalrecon](https://github.com/thewhiteh4t/FinalRecon) | All In One Web Recon. |
 | [fuzzdb](https://github.com/fuzzdb-project/fuzzdb) | Dictionary of attack patterns and primitives for black-box application fault injection and resource discovery |
 | [geo-recon](https://github.com/radioactivetobi/geo-recon) | An OSINT CLI tool desgined to fast track IP Reputation and Geo-locaton look up for Security Analysts. |
 | [getadusers](https://github.com/fortra/impacket/blob/master/examples/GetADUsers.py) | Gather data about the domain's users and their corresponding email addresses |
@@ -50,6 +51,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [getuserspns](https://github.com/fortra/impacket/blob/master/examples/GetUserSPNs.py) | Try to find Service Principal Names that are associated with normal user account. |
 | [ghidra](https://github.com/NationalSecurityAgency/ghidra) | A software reverse engineering (SRE) framework. |
 | [ghost](https://github.com/EntySec/ghost) | Android post-exploitation framework that exploits the Android Debug Bridge to remotely access an Android device. |
+| [ghunt](https://github.com/mxrch/GHunt) | An OSINT offensive Google framework. |
 | [git-filter-repo](https://github.com/newren/git-filter-repo) | Quickly rewrite git repository history (filter-branch replacement). |
 | [gobuster](https://github.com/OJ/gobuster/) | Directory/File, DNS and VHost busting tool written in Go |
 | [gophish](https://github.com/gophish/gophish) | Open-Source advance phishing toolkit |
@@ -76,6 +78,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [openjdk-21](https://jdk.java.net/) | Java development kit and runtime. |
 | [osintgram](https://github.com/datalux/Osintgram) | A OSINT tool on Instagram. It offers an interactive shell to perform analysis on Instagram account of any users by its nickname. |
 | [ovh-ttyrec](https://github.com/ovh/ovh-ttyrec) | Terminal recorder and player (an alternative of ttyrec). |
+| [penelope](https://github.com/brightio/penelope) | A powerful shell handler built as a modern netcat replacement for RCE exploitation, aiming to simplify, accelerate, and optimize post-exploitation workflows. |
 | [phomber](https://github.com/s41r4j/phomber) | Infomation grathering tool that reverse search phone numbers and get their details. |
 | [phonesploit](https://github.com/aerosol-can/PhoneSploit) | A tool for remote ADB exploitation for all Machines. |
 | [PuTTY](https://www.ssh.com/academy/ssh/putty/linux) | Graphical terminal program that supports the SSH, telnet, and rlogin protocols and connecting to serial ports. |
@@ -104,7 +107,6 @@ This project is with the purpose of offering easy and fast access to the install
 | [termux-docker-qemu](https://telegra.ph/Docker-en-Android-10-26) | Provide an additional layer of application virtualization with Linux kernel resource isolation features. |
 | [trape](https://github.com/jofpin/trape) | OSINT analysis and research tool. |
 | [unshc](https://github.com/yanncam/UnSHc) | The Shell Script UnCompiler (UNSHC) decode and decrypt SHC file on X86/x64 architecture. |
-| [userrecon](https://github.com/issamelferkh/userrecon) | Find usernames across over 75 social networks. |
 | [vulnx](https://github.com/anouarbensaad/vulnx) | An intelligent bot auto shell injector that detects vulnerabilities in multiple types of cms. |
 | [wbruter](https://github.com/wuseman/WBRUTER) | Disable device pin code aslong as usb debugging and brute force methods like dictionary attacks for gmail, ftp, rar, zip and some other file extensions. |
 | [webscan](https://github.com/Fenrir-00/investigar-web) | A lightweight webscanner tool. |
