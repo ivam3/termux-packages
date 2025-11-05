@@ -4,7 +4,7 @@ IFS=$'\n\t'
 chmod +x ${PREFIX}/bin/ghunt-installer
 bash ${PREFIX}/bin/ghunt-installer
 python -m pipx ensurepath
-python -m pipx --no-cache-dir install ghunt;
+python -m pipx install --force ghunt;
 
 [[ $(command -v ghunt >/dev/null; echo $?) -eq 0 ]] && {
     echo "[✔] ghunt installation finished."

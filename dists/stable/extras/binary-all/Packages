@@ -681,10 +681,10 @@ Homepage: https://github.com/mxrch/GHunt
 Description: Offensive Google framework.
 Filename: dists/stable/extras/binary-all/ghunt_2.2.0_all.deb
 Size: 1860
-MD5Sum: 8fa46f9b1abfc6efede9ba1a159692c4
-SHA1: 2b5bc1f365794c44b3d36793385490707c001144
-SHA256: 1efc062f69c1a6dc3d00171e14f5609894e81fbce7cbe4b9313d4a2be7b65f39
-SHA512: b128c468fe1ebd22763b502b5521f25b0d780812a8e7453f6936d6de30cbddac1ae66105e259a94ebc4e1f0cc2ab586ac619c1dec3621c93fd49139261cc3e7a
+MD5Sum: 0ece44ff4b1e6a8a1b8f74bf48455483
+SHA1: ff111025c08c10a3dde207565ce6358f0a2385c7
+SHA256: 7ce99ad8951c8e1474f2f41ffd070e584c0fa126c3472a6f5eac5774940228ad
+SHA512: 69a64b7b217800fca28d089dca501408f3e732fcc7bf6ac179dcc6f2cebc63fa57b96aa2958717cdf7599003f0617fe8ab20eb78ded54db90b1c903e5fb99bca
 
 Package: git-filter-repo
 Version: 2.47.0
@@ -1126,11 +1126,11 @@ Suggests: i-haklab
 Homepage: https://github.com/brightio/penelope
 Description: A powerful shell handler built as a modern netcat replacement for RCE exploitation, aiming to simplify, accelerate, and optimize post-exploitation workflows.
 Filename: dists/stable/extras/binary-all/penelope_0.14.8_all.deb
-Size: 2668
-MD5Sum: 69fd03efeccc8954d68980d8cb6fa600
-SHA1: af18f805bb4423769156df62db53b2fcd919b4d4
-SHA256: 338a5c57fb0060f04bc06afd0935c38d86b55d9b6a0d9827c8eeba4b01015192
-SHA512: b3b9353b313a0fa67d9628f66e37afe31cf4e3925a21e27e6b56a9b10ed9678a623572ffac22173f29b7e5b5b0fb0dfc82fd77b5ef867749fc0eee8a222beeff
+Size: 2652
+MD5Sum: 04eae909a21ef4173cd98b92497dfe67
+SHA1: 3fcf3f008016825a75573669ef9bd48d1fea9eda
+SHA256: ebce9629158630e72200b1015ad4c82529b61683b3dda8be14377c1182379a39
+SHA512: ae7e9a611a24edb3a775b7e566e7f0a9aa157bc60d6458de456706c3713468d05e5422e2150067a2239fe1d895e69696f2a7f2d26687548c57c3e5bf1f53c5c2
 
 Package: phomber
 Version: 2.0
@@ -1382,11 +1382,11 @@ Suggests: i-haklab
 Homepage: https://github.com/sherlock-project/sherlock
 Description: Hunt down social media accounts by username across social networks.
 Filename: dists/stable/extras/binary-all/sherlock_0.16.0_all.deb
-Size: 1912
-MD5Sum: cccdbda33740605ce1b409259ec14aa3
-SHA1: 04ef08204819d7dfe4a0e9621f019ef3145eeb87
-SHA256: e2b454b6711f21bb9b201537ae0df7c3eef11dfb594368dd554b7d5028dba231
-SHA512: 64d3b5cedeb215e8418ecd9273644b0e487cfd66c817ca7e74f818e667649d61ea6b720c905e3ab3f4dff5927390169ed5e1dcc066d02f5e3cc349d9cceb5841
+Size: 1904
+MD5Sum: d1fa85fc32bcd80334173828bff3788a
+SHA1: b7115f74f4f81d4b15fa1f1f9fd15763e34b2602
+SHA256: 1c91c584acd845add321401582ee4420137cfa719fbcf6fe3e4ebeeacb6aa44d
+SHA512: 195fa80b4e21dda9372a9ad626ee7e68f712f8ad73697bf39646bba31bdaa541c908f1e487395bcd654c69e3c28ef7ec65132620cc655f756a6899f65c724efe
 
 Package: slowhttptest
 Version: 1.8.3

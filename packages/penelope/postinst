@@ -5,7 +5,7 @@ tmpfile=$(mktemp)
 chmod +x ${PREFIX}/bin/penelope-installer
 bash ${PREFIX}/bin/penelope-installer
 python -m pipx ensurepath
-python -m pipx --no-cache-dir install --force git+https://github.com/brightio/penelope;
+python -m pipx install --force git+https://github.com/brightio/penelope;
 
 [[ -e "${HOME}/.local/share/pipx/venvs/penelope/bin/penelope.py" ]] && {
     FILE="${HOME}/.local/share/pipx/venvs/penelope/bin/penelope.py"

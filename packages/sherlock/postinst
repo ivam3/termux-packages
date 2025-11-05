@@ -4,7 +4,7 @@ IFS=$'\n\t'
 chmod +x ${PREFIX}/bin/sherlock-installer
 bash ${PREFIX}/bin/sherlock-installer
 python -m pipx ensurepath
-python -m pipx --no-cache-dir install sherlock-project;
+python -m pipx install --force sherlock-project;
 
 [[ $(command -v sherlock >/dev/null; echo $?) -eq 0 ]] && {
     echo "[✔] sherlock installation finished."
