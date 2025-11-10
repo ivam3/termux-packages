@@ -1,6 +1,12 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
-# ADDING PENELLOPE TO THE PATH IF NOT EXISTS
+
+chmod +x ${PREFIX}/bin/penelope-installer
+bash ${PREFIX}/bin/penelope-installer
+python -m pipx ensurepath
+python -m pipx install --force git+https://github.com/brightio/penelope;
+
+# ADDING TOOL TO THE PATH IF NOT EXISTS
 case ${SHELL} in 
     */bash)
         shFile="${HOME}/.bashrc"

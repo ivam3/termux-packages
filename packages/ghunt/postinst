@@ -6,6 +6,31 @@ bash ${PREFIX}/bin/ghunt-installer
 python -m pipx ensurepath
 python -m pipx install --force ghunt;
 
+# ADDING TOOL TO THE PATH IF NOT EXISTS
+case ${SHELL} in 
+    */bash)
+        shFile="${HOME}/.bashrc"
+        [[ ! $(grep -q "${HOME}/.local/bin" $shFile) ]] && {
+            sed -i "10a export PATH=\"${HOME}/.local/bin:$PATH\"" $shFile
+        }
+        ;;
+    */fish)
+        shFile="${PREFIX}/etc/fish/config.fish"
+        [[ ! $(grep -q "${HOME}/.local/bin" $shFile) ]] && {
+            sed -i "10a set PATH ${HOME}/.local/bin:$PATH" $shFile
+        }
+        ;;
+    */zsh)
+        shFile="${HOME}/.zshrc"
+        [[ ! $(grep -q "${HOME}/.local/bin" $shFile) ]] && {
+            sed -i "10a export PATH=\"${HOME}/.local/bin:$PATH\"" $shFile
+        }
+        ;; 
+    *) 
+        echo -en "\e[33mW:\e[0m Defaulting to bash configuration.\nYou will need add manually ${HOME}/.local/bin to the PATH environment variable.\n"
+        ;; 
+    esac
+
 [[ $(command -v ghunt >/dev/null; echo $?) -eq 0 ]] && {
     echo "[✔] ghunt installation finished."
     echo "[➡] Run 'ghunt' to execute it."

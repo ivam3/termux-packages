@@ -680,11 +680,11 @@ Suggests: i-haklab
 Homepage: https://github.com/mxrch/GHunt
 Description: Offensive Google framework.
 Filename: dists/stable/extras/binary-all/ghunt_2.2.0_all.deb
-Size: 1860
-MD5Sum: 0ece44ff4b1e6a8a1b8f74bf48455483
-SHA1: ff111025c08c10a3dde207565ce6358f0a2385c7
-SHA256: 7ce99ad8951c8e1474f2f41ffd070e584c0fa126c3472a6f5eac5774940228ad
-SHA512: 69a64b7b217800fca28d089dca501408f3e732fcc7bf6ac179dcc6f2cebc63fa57b96aa2958717cdf7599003f0617fe8ab20eb78ded54db90b1c903e5fb99bca
+Size: 2108
+MD5Sum: 38c12cd35fcddeecf6c4ccfd99771d3e
+SHA1: 3a8e13c6fe0c0b2a66853f2cd390e0c0fd1c5c43
+SHA256: 427bb4e9f3bd0c6cfce27b30728d1237bf5e1d9f382b85b8263ca556af931e0d
+SHA512: 4d1311d1358fc32e48b0cf1c73ab63bdc5f0f044ebebd5b0ae9fc1f9c676bed2dcf016802a45cb142d9bca5faf9423eaf35ad99079f5b645c0a9dc24401875e5
 
 Package: git-filter-repo
 Version: 2.47.0
@@ -1126,11 +1126,11 @@ Suggests: i-haklab
 Homepage: https://github.com/brightio/penelope
 Description: A powerful shell handler built as a modern netcat replacement for RCE exploitation, aiming to simplify, accelerate, and optimize post-exploitation workflows.
 Filename: dists/stable/extras/binary-all/penelope_0.14.8_all.deb
-Size: 2152
-MD5Sum: a26aca45676a6fb8f1612d87ee6336af
-SHA1: 0996a47cc66c5c1846f23f26aaf01e41e40957ce
-SHA256: f180f4137f1e5d5f6632627184dd5f81d7157adbdace02cafe1301d32d71fbb1
-SHA512: cb237be12114d9ff16f1e29228de626b6997c3b83f185a9673cf956a42767e8c41d7fde056ed2cd1470a506b9b4c3055b9898c38d660850ec22feaa25315a800
+Size: 2188
+MD5Sum: e8ab0884ce965907076e9e0a052ea96c
+SHA1: 837f9a0e6522ec45e78c9b2b0146672829a6f60b
+SHA256: 4db477d30fe4fabc77c8b6e0af18de3af5274fdf2dec95ccd1b683d539dca446
+SHA512: d0a5fb52e0537051b2ded9abc7e40c139454c340f691bf0487043f023b6f0257415d4dc240a26f14bb1bfab02735f6b2c4bc9245b1ba44021260dd38ba62ed39
 
 Package: phomber
 Version: 2.0
@@ -1382,11 +1382,11 @@ Suggests: i-haklab
 Homepage: https://github.com/sherlock-project/sherlock
 Description: Hunt down social media accounts by username across social networks.
 Filename: dists/stable/extras/binary-all/sherlock_0.16.0_all.deb
-Size: 1904
-MD5Sum: d1fa85fc32bcd80334173828bff3788a
-SHA1: b7115f74f4f81d4b15fa1f1f9fd15763e34b2602
-SHA256: 1c91c584acd845add321401582ee4420137cfa719fbcf6fe3e4ebeeacb6aa44d
-SHA512: 195fa80b4e21dda9372a9ad626ee7e68f712f8ad73697bf39646bba31bdaa541c908f1e487395bcd654c69e3c28ef7ec65132620cc655f756a6899f65c724efe
+Size: 2148
+MD5Sum: 26329a5e6476bec191f025dd1838c373
+SHA1: d7e122fbda29b7d882935b07bc31d50834407a1d
+SHA256: 01d8676234732fd1d8fe9d3d8c0645011d091ff284ac9a7813bb9648aed8c065
+SHA512: 1969805e6f4546abc401c42bbf0dffe18476144f07e530cd719b22af33b6d788f4dd3adc44b364cd047ce729b4baf54c500e138051b29586b09b5bcaf495cf88
 
 Package: slowhttptest
 Version: 1.8.3
