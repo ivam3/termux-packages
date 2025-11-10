@@ -1,64 +1,29 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
-tmpfile=$(mktemp)
-
-chmod +x ${PREFIX}/bin/penelope-installer
-bash ${PREFIX}/bin/penelope-installer
-python -m pipx ensurepath
-python -m pipx install --force git+https://github.com/brightio/penelope;
-
-[[ -e "${HOME}/.local/share/pipx/venvs/penelope/bin/penelope.py" ]] && {
-    FILE="${HOME}/.local/share/pipx/venvs/penelope/bin/penelope.py"
-} || {
-    echo -en "\e[31mE:\e[0m main file missing ... \e[33mAborting.\e[0m\n";
-    exit 1
-}
-
-# REEMPLACING ipa() FUNCTION FOR TERMUX COMPATIBILITY
-# DELETE THE ORIGINAL FUNCTION 
-sed -i '/@staticmethod/{N;/def ipa/,/return interfaces/d;}' "$FILE"
-
-# ADDING A NEW ONE WITH FIXES
-sed -i '/class Interfaces/a\
-    @staticmethod\
-    def ipa(busybox=False):\
-        interfaces = []\
-        current_interface = None\
-        params = ["ip", "addr"]\
-        if busybox:\
-            params.insert(0, "busybox")\
-        try:\
-            output = subprocess.check_output(params, stderr=subprocess.DEVNULL).decode()\
-        except subprocess.CalledProcessError:\
-            # Fallback para Termux sin root\
-            try:\
-                with open("/proc/net/dev") as f:\
-                    for line in f:\
-                        if ":" in line:\
-                            iface = line.split(":")[0].strip()\
-                            if iface != "lo":\
-                                try:\
-                                    ip = subprocess.check_output(["getprop", f"net.{iface}.ipaddress"], stderr=subprocess.DEVNULL).decode().strip()\
-                                except Exception:\
-                                    ip = "127.0.0.1"\
-                                interfaces.append((iface, ip))\
-            except Exception:\
-                pass\
-            return interfaces\
-        for line in output.splitlines():\
-            interface = re.search(r"^\\d+: (.+?):", line)\
-            if interface:\
-                current_interface = interface[1]\
-                continue\
-            if current_interface:\
-                ip = re.search(r"inet (\\d+\\.\\d+\\.\\d+\\.\\d+)", line)\
-                if ip:\
-                    interfaces.append((current_interface, ip[1]))\
-                    current_interface = None\
-        return interfaces' "$FILE"
-
-# FORMATTING THE MODIFIED FILE WITH UNIFORM SPACING
-expand -t 4 $FILE > $tmpfile && mv $tmpfile $FILE
+# ADDING PENELLOPE TO THE PATH IF NOT EXISTS
+case ${SHELL} in 
+    */bash)
+        shFile="${HOME}/.bashrc"
+        [[ ! $(grep -q "${HOME}/.local/bin" $shFile) ]] && {
+            sed -i "10a export PATH=\"${HOME}/.local/bin:$PATH\"" $shFile
+        }
+        ;;
+    */fish)
+        shFile="${PREFIX}/etc/fish/config.fish"
+        [[ ! $(grep -q "${HOME}/.local/bin" $shFile) ]] && {
+            sed -i "10a set PATH ${HOME}/.local/bin:$PATH" $shFile
+        }
+        ;;
+    */zsh)
+        shFile="${HOME}/.zshrc"
+        [[ ! $(grep -q "${HOME}/.local/bin" $shFile) ]] && {
+            sed -i "10a export PATH=\"${HOME}/.local/bin:$PATH\"" $shFile
+        }
+        ;; 
+    *) 
+        echo -en "\e[33mW:\e[0m Defaulting to bash configuration.\nYou will need add manually ${HOME}/.local/bin to the PATH environment variable.\n"
+        ;; 
+    esac
 
 [[ $(command -v penelope >/dev/null; echo $?) -eq 0 ]] && {
     echo "[✔] penelope installation finished."

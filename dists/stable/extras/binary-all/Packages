@@ -1126,11 +1126,11 @@ Suggests: i-haklab
 Homepage: https://github.com/brightio/penelope
 Description: A powerful shell handler built as a modern netcat replacement for RCE exploitation, aiming to simplify, accelerate, and optimize post-exploitation workflows.
 Filename: dists/stable/extras/binary-all/penelope_0.14.8_all.deb
-Size: 2652
-MD5Sum: 04eae909a21ef4173cd98b92497dfe67
-SHA1: 3fcf3f008016825a75573669ef9bd48d1fea9eda
-SHA256: ebce9629158630e72200b1015ad4c82529b61683b3dda8be14377c1182379a39
-SHA512: ae7e9a611a24edb3a775b7e566e7f0a9aa157bc60d6458de456706c3713468d05e5422e2150067a2239fe1d895e69696f2a7f2d26687548c57c3e5bf1f53c5c2
+Size: 2152
+MD5Sum: a26aca45676a6fb8f1612d87ee6336af
+SHA1: 0996a47cc66c5c1846f23f26aaf01e41e40957ce
+SHA256: f180f4137f1e5d5f6632627184dd5f81d7157adbdace02cafe1301d32d71fbb1
+SHA512: cb237be12114d9ff16f1e29228de626b6997c3b83f185a9673cf956a42767e8c41d7fde056ed2cd1470a506b9b4c3055b9898c38d660850ec22feaa25315a800
 
 Package: phomber
 Version: 2.0
