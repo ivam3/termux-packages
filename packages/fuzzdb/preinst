@@ -5,11 +5,11 @@ then
   exit 1
 else
   echo "Preparing enviroment ..."
-  if [[ -d ${HOME}/.local/share/wfuzz ]]
+  if [[ -d ${HOME}/.local/share/wordlist/fuzzdb ]]
   then
-    rm -rf ${HOME}/.local/share/wfuzz
+    rm -rf ${HOME}/.local/share/wordlist/fuzzdb
   else
-    mkdir -p ${HOME}/.local/share 2>/dev/null
+    mkdir -p ${HOME}/.local/share/wordlist 2>/dev/null
   fi
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

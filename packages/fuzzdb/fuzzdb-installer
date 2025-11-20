@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+echo "Cloning repository ..."
+git clone --quiet --depth 1 https://github.com/fuzzdb-project/fuzzdb \
+    ${HOME}/.local/share/wordlist/fuzzdb
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -574,6 +574,22 @@ SHA1: 98435199a50d7e58d7f6855a07c9570e97011d18
 SHA256: b6ebcedc904510f74ab414c224250a0087850da47cd44bfecb061774727865f4
 SHA512: 9de631e1954c793585a3ae011d2f8d79f7ac5e4ac6975b7b378835aca9215c35acbfb6a7cff048ff479c03173f5165373facea6c6acf56f0040e2fc8118247fb
 
+Package: fuzzdb
+Version: 20.11.25
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: git
+Suggests: i-haklab, wfuzz
+Homepage: https://github.com/fuzzdb-project/fuzzdb
+Description: Dictionary of attack patterns and primitives for black-box application fault injection and resource discovery.
+Filename: dists/stable/extras/binary-all/fuzzdb_20.11.25_all.deb
+Size: 1892
+MD5Sum: 18522f3ee11c56966098fe6673c88a64
+SHA1: c597c758ee1d76c7006e08e528c70242bde702d8
+SHA256: 3f0351dc1b705b592f6b5f608763fd17019b30cdf129fad05b0a8bc5e3439365
+SHA512: c620bc70db0767e09bb06666ca3010f5441afa98e635255e6dbf9de20abab48868cc7137c368a3585e16d27c96d8fb5729d99d34fb50ccf926ac2d4712460e05
+
 Package: geo-recon
 Version: 1.0
 Architecture: all
@@ -1611,22 +1627,6 @@ MD5Sum: f470f73cf2ab99a7dd9482a6f077a11e
 SHA1: bdf4c5d4bc38cb017e5b08295f5c9dcb17663250
 SHA256: ab53d68c2c06800b3bc0d81d00677e83360b04b3b62cce9750ea455cdcff46d0
 SHA512: 8c20c3b26baabce6e0639fa307bbbd6d6a5c080d2ecc90c9ce0d0ef7f7235870a085078fd29bfb374ebf34c33f62e1cb40503fa2394aae3ed7d8e2950c034906
-
-Package: wfuzz
-Version: 3.1.0
-Architecture: all
-Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 1
-Depends: python, python-pip, git
-Suggests: i-haklab
-Homepage: https://github.com/fuzzdb-project/fuzzdb
-Description: Brute force attack tool with dictionary of attack patterns and primitives for black-box application fault injection and resource discovery.
-Filename: dists/stable/extras/binary-all/wfuzz_3.1.0_all.deb
-Size: 1700
-MD5Sum: c6dad5c7bfd7ffa83d04882630cde17f
-SHA1: b070041f07b143f3dfa0727f49051882022cd24f
-SHA256: c4410f3a26473cbd553e71f202e23740ddb63b5456715d256294a692a388f38d
-SHA512: 3a7e427c07e78d5125cf2914bddf81d1174ae8bd0299923bfde7e5f88c3a74fd2503d1a9af5a121bddc24d6a29e77cbd3c8273c2534a6433a8d9c40b2b1ee716
 
 Package: whatweb
 Version: 0.6.3

@@ -47,6 +47,7 @@ data/data/com.termux/files/usr/bin/fake-sms                                     
 data/data/com.termux/files/usr/bin/fbi                                           fbi
 data/data/com.termux/files/usr/bin/fbi-installer                                 fbi
 data/data/com.termux/files/usr/bin/finalrecon                                    finalrecon
+data/data/com.termux/files/usr/bin/fuzzdb-installer                              fuzzdb
 data/data/com.termux/files/usr/bin/geo-recon                                     geo-recon
 data/data/com.termux/files/usr/bin/geo-recon-installer                           geo-recon
 data/data/com.termux/files/usr/bin/getadusers-installer                          getadusers
@@ -1059,7 +1060,6 @@ data/data/com.termux/files/usr/bin/wbruter-installer                            
 data/data/com.termux/files/usr/bin/webscan                                       webscan
 data/data/com.termux/files/usr/bin/webscan-installer                             webscan
 data/data/com.termux/files/usr/bin/websploit-installer                           websploit
-data/data/com.termux/files/usr/bin/wfuzz-installer                               wfuzz
 data/data/com.termux/files/usr/bin/whatweb                                       whatweb
 data/data/com.termux/files/usr/bin/wpscan-installer                              wpscan
 data/data/com.termux/files/usr/bin/xapt                                          xapt-management
