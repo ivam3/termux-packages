@@ -1,14 +1,43 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
-bash ${PREFIX}/bin/hashcat-installer
-[[ -e $PREFIX/bin/hashcat ]] && {
-  echo -en "\e[31mE:\e[0m hashcat binary file missing ... \e[33mAborting.\e[0m\n";
-}
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
 
-wget --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer \
-    -O /data/data/com.termux/files/usr/bin/fixer
-chmod 750 /data/data/com.termux/files/usr/bin/fixer
-echo "[*] Run 'fixer' to fix any posible issue."
-echo "[!] For help going to https://t.me/Ivam3_Bot."
-echo "[*] @Ivam3: thank you for use my package."
+echo "Cloning repository..."
+git clone --quiet https://github.com/hashcat/hashcat.git ${HOME}/.local/share/hashcat && cd $_
+
+if [[ ! -d "${HOME}/.local/share/hashcat" ]]; then 
+    echo -en "\e[31mE:\e[0m hashcat directory missing ... \e[33mAborting.\e[0m\n";
+    exit 1
+fi
+
+bash ${PREFIX}/bin/hashcat-installer
+# Final check for kill child process script 
+for p in make cargo rustc; do 
+    echo "[*] Killing leftover process: $p"
+    pkill -9 $p 2>/dev/null
+done
+# Final check for the executable
+if [[ -f "${HOME}/.local/share/hashcat/hashcat" ]]; then
+    chmod +x "${HOME}/.local/share/hashcat/hashcat"
+    cp ${HOME}/.local/share/hashcat/hashcat ${PREFIX}/bin/
+    echo "[✔] hashcat installation finished."
+    echo "[➡] Run 'hashcat' to execute it."
+else
+    echo "[!] Compilation failed. Aborting."
+fi 
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+echo "[*] Installing script fixer..."
+if curl -fsSL "$fixerURL" -o ${PREFIX}/bin/fixer; then
+    chmod 750 ${PREFIX}/bin/fixer
+    echo "[✔] Run 'fixer' to fix any posible issue."
+else
+    echo "[!] Error downloading fixer."
+fi
+# ==============================
+# FINALS MESSAGES
+# ==============================
+echo "[📢] Help: going to https://t.me/Ivam3_Bot."
+echo "[💡] @Ivam3: thank you for use my package."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -1,26 +1,77 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
-echo "Cloning repository ..."
-git clone --quiet https://github.com/hashcat/hashcat.git ${HOME}/.local/share/hashcat && cd $_
-[[ -d ${HOME}/.local/share/hashcat ]] && {
-    echo "Installing requirements ..."
-    chmod 751 -R ${HOME}/.local/share/hashcat
-    line=$(grep -n "\$(LDFLAGS)" src/Makefile|awk -F ":" '{print $1}')
-    let ln=$line-1 
-    sed -i "${ln}a LDFLAGS += -liconv" src/Makefile 
-    line=$(grep -n "affinity.h"|awk -F ":" '{print $1}')
-    let ln=$line+1
-    sed -i "${ln}a\\
-#ifdef __ANDROID__\\
-    // Placeholder: No-op for Android/Termux where pthread_setaffinity_np is unavailable\\
-    int pthread_setaffinity_np(pthread_t thread, size_t cpusetsize, const cpu_set_t *cpuset) {\\
-        return 0; // Return success without setting CPU affinity\\
-    }\\
-#endif" src/affinity.c
-    make && make install
-    echo "[*] hashcat installation finished."
-    echo "[*] Run 'hashcat' to execute it."
-} || {
-  echo -en "\e[31mE:\e[0m hashcat directory missing ... \e[33mAborting.\e[0m\n";
-}
-####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
+
+echo "Applying patches..."
+chmod 751 -R ${HOME}/.local/share/hashcat
+
+# --- Create Patch 1: AArch64 detection ---
+cat > 0001-fix-aarch64-detection.patch <<'EOF'
+---	a/src/Makefile
++++	b/src/Makefile
+@@ -158,7 +158,7 @@
+ IS_APPLE_SILICON        := $(shell [ "$$(sysctl -in hw.optional.arm64 2>/dev/null)" = "1" ] && echo 1 || echo 0)
+ endif
+ 
+-IS_AARCH64              := $(shell [ "$$(arch 2>/dev/null)" = "aarch64" ] && echo 1 || echo 0)
++IS_AARCH64              := $(shell [ "$$(uname -m 2>/dev/null)" = "aarch64" ] && echo 1 || echo 0)
+ IS_ARM                  := $(or $(filter 1,$(IS_APPLE_SILICON)),$(filter 1,$(IS_AARCH64)))
+ IS_PPC                  := $(shell uname -m | grep -q -E '^(ppc|powerpc)' && echo 1 || echo 0)
+ 
+EOF
+
+# --- Create Patch 2: Add LDFLAGS for iconv ---
+cat > 0002-add-ldflags-for-iconv.patch <<'EOF'
+---	a/src/Makefile
++++	b/src/Makefile
+@@ -261,7 +261,8 @@
+ endif
+ 
+ CFLAGS                  := $(CFLAGS)
+-LFLAGS                  := $(LDFLAGS)
++LDFLAGS += -liconv
++LFLAGS                  := $(LDFLAGS)
+ 
+ ifeq ($(DEBUG),1)
+ CFLAGS                  += -fstack-usage
+EOF
+
+# --- Create Patch 3: Add SSE2NEON flags for ARM ---
+cat > 0003-add-sse2neon-flags-for-arm.patch <<'EOF'
+---	a/src/Makefile
++++	b/src/Makefile
+@@ -343,6 +343,12 @@
+ CFLAGS                  += -pipe -Iinclude/ -IOpenCL/
+ 
+ # LZMA
++ifeq ($(IS_ARM),1)
++CFLAGS                  += -DSSE2NEON_SUPPRESS_WARNINGS
++CFLAGS                  += -I$(DEPS_SSE2NEON)
++endif
++
+ CFLAGS                  += -I$(DEPS_LZMA_PATH)
+ ifeq ($(USE_SYSTEM_LZMA),1)
+ LFLAGS                  += -llzmasdk
+EOF
+
+# Apply the patches sequentially
+echo "Applying patch 1: AArch64 detection fix..."
+patch -p1 -l < 0001-fix-aarch64-detection.patch
+
+echo "Applying patch 2: LDFLAGS for iconv..."
+patch -p1 -l < 0002-add-ldflags-for-iconv.patch
+
+echo "Applying patch 3: SSE2NEON flags for ARM..."
+patch -p1 -l < 0003-add-sse2neon-flags-for-arm.patch
+
+echo "Building..."
+make -j$(nproc) &
+MAKE_PID=$!
+
+for i in {1..3}; do
+    sleep 90
+    if [[ -f "hashcat" ]]; then
+        # Kill the entire process group of make to stop child processes as well
+        kill -- -$MAKE_PID
+        break
+    fi
+done

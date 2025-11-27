@@ -1,10 +1,10 @@
 {
   "name": "hashcat",
-  "version": "6.2.6",
+  "version": "7.1.2",
   "arch": "all",
   "homepage": "https://github.com/hashcat/hashcat.git",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["git, glibc, libc++, clang, libiconv, make, ocl-icd, opencl-vendor-driver"],
+  "depends": ["git, glibc-repo, libc++, clang, libiconv, make, ocl-icd, opencl-vendor-driver, rust"],
   "suggests": ["i-haklab"],
   "description": "World's fastest and most advanced password recovery utility",
   "files" :{
