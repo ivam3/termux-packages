@@ -2,72 +2,79 @@
 #
 ip="$(ifconfig 2>/dev/null|grep -oE '([0-9]{1,3}\.){3}'|grep -v 255|grep -v 127|tail -n 1)"
 
-install(){
-  # Create main dir
-  echo "Downloading $os ISO file (It could take a while) ..."
-  [[ -d ${HOME}/.local/share/termux-docker-qemu/$os ]] || {
-    mkdir -p ${HOME}/.local/share/termux-docker-qemu/$os && cd $_ && mkdir termux2alpine 2>/dev/null
-  }
-  # Download iso
-  [[ -e $iso ]] && rm -rf $iso
-  wget --tries=20 --quiet --progress=dot $ref$iso
-  # Create disk (note it won't actually take 5GB of space, more like 500MB)
-  while read -n 3 -p "Image size [recommended in gigas: 30]? " size && [[ ! ${size} =~ ^[1-9] ]]; do
-    [[ -z ${size} ]] && { break;} || { echo "E: Invalid answer";}
-  done
-
-  while read -n 3 -p "RAM size [recommended in gigas: 12]? " mRAM && [[ ! ${mRAM} =~ ^[1-9] ]]; do
-    if [[ -z ${mRAM} ]]; then 
-      break 
-    else 
-      echo "E: Invalid answer"
-    fi
-  done
-
-  [[ -z $mRAM ]] && { mRAM="12288"; } || { mRAM=$(expr 1024 \* $mRAM);}
-  sed "s|ram|$mRAM|" -i ${PREFIX}/bin/termux-docker-qemu
-  
-  echo "Creating $os image."
-  [[ $os.img ]] && rm -rf $os.img
-  [[ -z $size ]] && { size="30G"; } || { size=$size'G';}
-  qemu-img create -f qcow2 $os.img $size
-
-  if [[ $os = alpine ]]; then
-    printf "\e[33m"
-    echo '''
+bannerReadme(){
+      printf "\e[33m"
+      echo '''
      ____  _____    _    ____  __  __ _____
     |  _ \| ____|  / \  |  _ \|  \/  | ____|
     | |_) |  _|   / _ \ | | | | |\/| |  _|
     |  _ <| |___ / ___ \| |_| | |  | | |___
     |_| \_\_____/_/   \_\____/|_|  |_|_____|
     ::::::::::::::::::::::::::::::::::::::::'''
-    echo -en "\e[0mBoot process will start, in middle of it you will login to Linux OS
-    Do it as \e[31mroot\e[0m user.
-    Once in OS terminal run one by one the next commands:
+}
 
-      $ setup-interfaces
-      ╰─➤# On it response at all question pressing 'enter' for default settings
-      $ ifup eth0
-      $ echo -en \"nameserver 8.8.8.8\" >> /etc/resolv.conf
-      $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/ashrc.sh -O /etc/profile.d/ashrc.sh
-      $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os
-      $ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk
-      $ apk add tzdata
-      $ setup-$os -f answerfile.$os
-      ╰─➤# It will ask you to set a new password
-      ╰─➤# Respond with 'no' On question 'Setup a user? (enter a lower-case loginname, or 'no') [no]'
-      ╰─➤# Respond with 'y' On question 'erase the above disk(s) and continue? [y/N]:'
-      $ poweroff
 
-    [!] Or if you prefer just copy and paste the next one-command-line:
+install(){
+    nv="3.20"
+    [[ "$(echo "${v##*v} < $nv" | bc)" -eq 1 ]] && { legacySET="\n\t$ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk";} || { legacySET=""; }
 
-      setup-interfaces && ifup eth0 && echo -en \"nameserver 8.8.8.8\" >> /etc/resolv.conf && wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/ashrc.sh -O /etc/profile.d/ashrc.sh && wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os && sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk && apk add tzdata && setup-$os -f answerfile.$os && poweroff
+    # Create main dir 
+    echo "Downloading $os ISO file (It could take a while) ..."
+    [[ -d ${HOME}/.local/share/termux-docker-qemu/$os ]] || {
+        mkdir -p ${HOME}/.local/share/termux-docker-qemu/$os/termux2$os 2>/dev/null
+    }
+    
+    # Download iso
+    [[ -e $iso ]] && rm -rf $iso
+    wget --tries=20 --quiet --progress=dot $ref$iso
+  
+    # Create disk (note it won't actually take 5GB of space, more like 500MB)
+    while read -n 3 -p "ROM size [recommended in gigas: 30]? " size && [[ ! ${size} =~ ^[1-9] ]]; do 
+        [[ -z ${size} ]] && { break;} || { echo "E: Invalid answer";}
+    done 
+    while read -n 3 -p "RAM size [recommended in gigas: 12]? " mRAM && [[ ! ${mRAM} =~ ^[1-9] ]]; do 
+        if [[ -z ${mRAM} ]]; then 
+            break 
+        else 
+            echo "E: Invalid answer" 
+        fi 
+    done 
+
+    [[ -z $mRAM ]] && { mRAM="12288"; } || { mRAM=$(expr 1024 \* $mRAM);} 
+    sed "s|ram|$mRAM|" -i ${PREFIX}/bin/termux-docker-qemu
+  
+    echo "Creating $os image."
+    [[ $os.img ]] && rm -rf $os.img
+    [[ -z $size ]] && { size="30G"; } || { size=$size'G';}
+    qemu-img create -f qcow2 $os.img $size
+
+    if [[ $os = alpine ]]; then
+        [[ ${v##v*} -lt "3.20" ]] && { legacySET="\n$ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk";}
+        bannerReadme 
+        echo -en "\e[0mBoot process will start, in middle of it you will login to Linux OS
+      Do it as \e[31mroot\e[0m user.
+      Once in OS terminal run one by one the next commands:
+
+        $ setup-interfaces
+        ╰─➤# On it response at all question pressing 'enter' for default settings
+        $ ifup eth0
+        $ echo -en \"nameserver 8.8.8.8\" >> /etc/resolv.conf
+        $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/ashrc.sh -O /etc/profile.d/ashrc.sh
+        $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os $legacySET
+        $ apk add tzdata
+        $ setup-$os -f answerfile.$os
+        ╰─➤# It will ask you to set a new password
+        ╰─➤# Respond with 'no' On question 'Setup a user? (enter a lower-case loginname, or 'no') [no]'
+        ╰─➤# Respond with 'y' On question 'erase the above disk(s) and continue? [y/N]:'
+        $ poweroff
+
+      [!] Or if you prefer just copy and paste the next one-command-line:
+
+      setup-interfaces && ifup eth0 && echo -en \"nameserver 8.8.8.8\" >> /etc/resolv.conf && wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/ashrc.sh -O /etc/profile.d/ashrc.sh && wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os && sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk 2>/dev/null && apk add tzdata && setup-$os -f answerfile.$os && poweroff
   
     press \e[33mENTER\e[0m to continue" && read enter
 
     # Boot it up
-    
-#    qemu-system-x86_64 -machine q35 -m $(free --mega|grep "Mem"|awk '{print $2}') -smp \
     qemu-system-x86_64 -machine q35 -m $mRAM -smp \
       cpus=$(nproc) -cpu qemu64,+avx,+avx2 -vga virtio -full-screen -usb \
       -drive if=pflash,format=raw,read-only=on,file=${PREFIX}/share/qemu/edk2-x86_64-code.fd \
@@ -76,28 +83,16 @@ install(){
       -virtfs local,path=${HOME}/.local/share/termux-docker-qemu/$os/termux2$os,mount_tag=termux2alpine,security_model=passthrough \
       -cdrom $iso \
       -nographic $os.img      
-
-  elif [[ $os = kalilinux ]]
-  then
-    echo '''
-     ____  _____    _    ____  __  __ _____
-    |  _ \| ____|  / \  |  _ \|  \/  | ____|
-    | |_) |  _|   / _ \ | | | | |\/| |  _|
-    |  _ <| |___ / ___ \| |_| | |  | | |___
-    |_| \_\_____/_/   \_\____/|_|  |_|_____|
-    ::::::::::::::::::::::::::::::::::::::::'''
-    echo -en "\e[0mBoot process will start\nNow open your VNC viewer over 127.0.0.1:5900 and set it"
-    echo -en "Press \e[33mENTER\e[0m to start";read enter
-    #Boot it up
-    qemu-system-x86_64 -hda ./$os.img -boot d -cdrom kali-linux-2022.3-installer-i386.iso -m $mRAM -usb &
   fi
 }
 
 update(){
-  echo -en """[+] Last updates:
-   + Enable graphical enviroment with xfce4+vncserver
-   + Enable option to keep the image previous installed
-   + Share files between Termux and Alpine with PATHs:\n     ~/.local/share/termux-docker-qemu/termux2alpine\n     and /termux2alpine into VM\n"""
+  echo -en """
+[!] **UPDATES**
+ ╰➤ Enable graphical enviroment with xfce4+vncserver
+ ╰➤ Enable option to keep the image previous installed
+ ╰➤ Port mapping between Termux & VM: 8080-:80,2222:22,2121:21,8000:8000,5900:5900
+ ╰➤ PATH volumen between Termux & VM: \$TOOLS/termux-docker-qemu/$os/termux2$os/ ─➤ /termux2$os"""
 }
 
 echo "[?] Choose an Operative System:"
@@ -110,27 +105,23 @@ select os in alpine;do
       done
       
       echo "[?] Choose a version:"
-      select v in "v3.16" "v3.17" "v3.18" "v3.19" "v3.20" "v3.21";do
-        rv="$v"
-        case $v in
-          v3.16) iv="3.16.7";break ;;
-          v3.17) iv="3.17.5";break ;;
-          v3.18) iv="3.18.4";break ;;
-          v3.19) iv="3.19.2";break ;;
-          v3.20) iv="3.20.1";break ;;
-          v3.21) iv="3.21.0";break ;;
-        esac
+      select v in "v3.16" "v3.17" "v3.18" "v3.19" "v3.20" "v3.21" "v3.22";do 
+          case $v in 
+              v3.16) iv="3.16.9";break ;;
+              v3.17) iv="3.17.9";break ;;
+              v3.18) iv="3.18.9";break ;;
+              v3.19) iv="3.19.9";break ;;
+              v3.20) iv="3.20.8";break ;;
+              v3.21) iv="3.21.5";break ;;
+              v3.22) iv="3.22.2";break ;;
+              *) echo "Invalid version"; continue;;
+          esac
       done
-
       declare ref=https://dl-cdn.alpinelinux.org/alpine/$v/releases/$m/
       declare iso=alpine-virt-$iv-$m.iso
       break
       ;;
 
-    kalilinux)
-      declare ref=http://cdimage.kali.org/kali-images/kali-2022.3/
-      declare iso=kali-linux-2022.3-installer-i386.iso
-      ;;
     *) echo -en "\e[31mE:\e[0m wrong answer ... try again.\n"
       ;;
   esac
@@ -144,7 +135,7 @@ if [[ -e ${HOME}/.local/share/termux-docker-qemu/$os/$os.img ]]; then
   done
   if [[ "$answ" == "Yes" ]] || [[ "$answ" == "yes" ]] || [[ "$answ" == "Y" ]] || [[ "$answ" == "y" ]]; then
     echo "Deleting $os image."
-    rm -rf ${HOME}/.local/share/termux-docker-qemu/
+    rm -rf ${HOME}/.local/share/termux-docker-qemu/$os/$os.img
     install && update
   else
     update
@@ -156,18 +147,26 @@ fi
 curl -fsSL \
   https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/$os\X11.sh \
   -o ${HOME}/.local/share/termux-docker-qemu/$os/termux2$os/$os\X11.sh
-curl -fsSL \
-  https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer \
-  -o ${PREFIX}/bin/fixer && chmod 750 /data/data/com.termux/files/usr/bin/{fixer,termux-docker-qemu}
 
 echo "[*] termux-docker-qemu installation finished."
-echo "[!] **UPDATES**"
-echo " ╰➤ Port mapping between Termux & VM: 8000"
-echo " ╰➤ PATH volumen between Termux & VM: ~/.local/share/termux-docker-qemu/alpine/termux2alpine/ ─➤ /termux2alpine"
 echo "[*] Run 'termux-docker-qemu $os' to execute it for only CLi."
-echo "[*] Run 'termux-docker-qemu $os x11' to execute it with graphical enviroment"
-echo " ╰➤ To set a graphical enviroment you should run in $os the command: ash /termux2alpine/alpineX11.sh"
-echo "[*] Run 'fixer' to fix any posible issue."
-echo "[!] For help going to https://t.me/Ivam3_Bot."
-echo "[*] @Ivam3: thank you for use my package."
+echo "[+] Run 'termux-docker-qemu $os x11' to execute it with graphical enviroment"
+echo " ╰➤ To set a graphical enviroment you should run in $os the command: ash /termux2$os/${os}X11.sh"
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+echo "[*] Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o /data/data/com.termux/files/usr/bin/fixer; then
+    chmod 750 /data/data/com.termux/files/usr/bin/fixer
+    echo "[➡] Run 'fixer' to fix any posible issue."
+else
+    echo "[!] Error downloading fixer."
+fi
+
+# ==============================
+# FINALS MESSAGES
+# ==============================
+echo "[📢] Help: going to https://t.me/Ivam3_Bot."
+echo "[💡] @Ivam3: thank you for use my package."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

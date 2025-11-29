@@ -1,2 +1,0 @@
-export rows=$(stty size|awk -F " " '{print $1}')
-export columns=$(stty size|awk -F " " '{print $NF}')

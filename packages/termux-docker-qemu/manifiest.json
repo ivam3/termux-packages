@@ -6,7 +6,7 @@
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
   "depends": ["termux-api, openssh, wget, samba, procps, qemu-utils, qemu-common, qemu-system-x86-64-headless"],
   "suggests": ["i-haklab"],
-  "description": "Docker container for running x86,x86_64,armv7 and aarch64 Linux virtual machines using QEMU",
+  "description": "Manage docker containers from linux x86, x86_64, armv7 and aarch64 virtual machines using QEMU (Quick EMUlator)",
   "files" :{
     "termux-docker-qemu": "bin/termux-docker-qemu"
   }

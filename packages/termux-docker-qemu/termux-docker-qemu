@@ -27,23 +27,23 @@ mnt="${HOME}/.local/share/termux-docker-qemu/$os/termux2$os"
 
 case "$os" in
   alpine)
-    #$(free --mega|grep "Mem"|awk '{print $2}') -smp \
-    ipnet=$(ifconfig 2>/dev/null|grep -oE '([0-9]{1,3}\.){3}'|grep -v 255|grep -v 127|tail -n 1)
-    iplan=$(ifconfig 2>/dev/null|grep -oE '([0-9]{1,3}\.){3}([0-9]{1,3})'|grep -v 255|grep -v 127|tail -n 1)
-    qemu-system-x86_64 -machine q35 -m $mRAM -smp \
-      cpus=$(nproc) -cpu qemu64,+avx,+avx2 -vga virtio -full-screen -usb \
-      -drive if=pflash,format=raw,read-only=on,file=${PREFIX}/share/qemu/edk2-x86_64-code.fd \
-      -netdev user,id=n1,net=$ipnet\0/24,dhcpstart=$ipnet\9,hostfwd=tcp::2222-:22,hostfwd=tcp::8000-:8000 \
-      -device virtio-net,netdev=n1 \
-      -virtfs local,path=$mnt,mount_tag=termux2$os,security_model=passthrough \
-      $XorCLi $os.img
-    ;;
-  kalilinux)
-    echo "W: kalilinux is unavailable, use it into a docker container with Alpine OS."
-    ;;
+      # GET SCREEN SIZE TO SET IT INTO VM
+      stty size > ${HOME}/.local/share/termux-docker-qemu/alpine/termux2alpine/screen.txt
+      #$(free --mega|grep "Mem"|awk '{print $2}') -smp \ 
+      ipnet=$(ifconfig 2>/dev/null|grep -oE '([0-9]{1,3}\.){3}'|grep -v 255|grep -v 127|tail -n 1) 
+      iplan=$(ifconfig 2>/dev/null|grep -oE '([0-9]{1,3}\.){3}([0-9]{1,3})'|grep -v 255|grep -v 127|tail -n 1)
+
+      qemu-system-x86_64 -machine q35 -m $mRAM -smp \
+          cpus=$(nproc) -cpu qemu64,+avx,+avx2 -vga virtio -full-screen -usb \
+          -drive if=pflash,format=raw,read-only=on,file=${PREFIX}/share/qemu/edk2-x86_64-code.fd \
+          -netdev user,id=n1,net=$ipnet\0/24,dhcpstart=$ipnet\9,hostfwd=tcp::8080-:80,hostfwd=tcp::2222-:22,hostfwd=tcp::2121-:21,hostfwd=tcp::8000-:8000,hostfwd=tcp::5900-:5900 \
+          -device virtio-net,netdev=n1 \
+          -virtfs local,path=$mnt,mount_tag=termux2$os,security_model=passthrough \
+          $XorCLi $os.img
+      ;;
   *)
-    echo "E: Invalid Operative System.. Aborting."
-    exit 3
-    ;;
+      echo "E: Invalid Operative System.. Aborting."
+      exit 3
+      ;;
 esac
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
