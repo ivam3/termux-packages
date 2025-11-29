@@ -16,17 +16,16 @@ bannerReadme(){
 
 install(){
     nv="3.20"
-    [[ "$(echo "${v##*v} < $nv" | bc)" -eq 1 ]] && { legacySET="\n\t$ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk";} || { legacySET=""; }
+    [[ "$(echo "${v##*v} < $nv" | bc)" -eq 1 ]] && { legacySET="\n\t  $ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk";} || { legacySET=""; }
 
     # Create main dir 
     echo "Downloading $os ISO file (It could take a while) ..."
-    [[ -d ${HOME}/.local/share/termux-docker-qemu/$os ]] || {
-        mkdir -p ${HOME}/.local/share/termux-docker-qemu/$os/termux2$os 2>/dev/null
-    }
+    mkdir -p ${HOME}/.local/share/termux-docker-qemu/$os/termux2$os 2>/dev/null
+    cd ${HOME}/.local/share/termux-docker-qemu/$os
     
     # Download iso
-    [[ -e $iso ]] && rm -rf $iso
-    wget --tries=20 --quiet --progress=dot $ref$iso
+    [[ -e ${HOME}/.local/share/termux-docker-qemu/$so/$iso ]] && { rm -rf ${HOME}/.local/share/termux-docker-qemu/$so/$iso; }
+    wget --tries=20 --quiet --progress=dot $ref$iso -O ${HOME}/.local/share/termux-docker-qemu/$os/$iso
   
     # Create disk (note it won't actually take 5GB of space, more like 500MB)
     while read -n 3 -p "ROM size [recommended in gigas: 30]? " size && [[ ! ${size} =~ ^[1-9] ]]; do 
@@ -49,7 +48,9 @@ install(){
     qemu-img create -f qcow2 $os.img $size
 
     if [[ $os = alpine ]]; then
-        [[ ${v##v*} -lt "3.20" ]] && { legacySET="\n$ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk";}
+        nv="3.20"
+        [[ "$(echo "${v##*v} < $nv" | bc)" -eq 1 ]] && { legacySET="\n      $ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk";} || { legacySET=""; }
+
         bannerReadme 
         echo -en "\e[0mBoot process will start, in middle of it you will login to Linux OS
       Do it as \e[31mroot\e[0m user.
@@ -128,30 +129,27 @@ select os in alpine;do
 done
 
 # Validate previous image
-if [[ -e ${HOME}/.local/share/termux-docker-qemu/$os/$os.img ]]; then
-  echo -en "W: There is a previous $os image created\n╰─➤ Do you wanna overwrite it? [y/n]"
-  while read -p ": " answ && [ -z $answ ]; do
-    continue
-  done
-  if [[ "$answ" == "Yes" ]] || [[ "$answ" == "yes" ]] || [[ "$answ" == "Y" ]] || [[ "$answ" == "y" ]]; then
-    echo "Deleting $os image."
-    rm -rf ${HOME}/.local/share/termux-docker-qemu/$os/$os.img
-    install && update
-  else
-    update
-  fi
+if [[ -e ${HOME}/.local/share/termux-docker-qemu/$os/$os.img ]]; then 
+    echo -en "W: There is a previous $os image created\n╰─➤ Do you wanna overwrite it? [y/n]"
+    while read -p ": " answ && [ -z $answ ]; do 
+        continue
+    done
+
+    if [[ "$answ" == "Yes" ]] || [[ "$answ" == "yes" ]] || [[ "$answ" == "Y" ]] || [[ "$answ" == "y" ]]; then 
+        echo "Deleting $os image."
+        rm -rf ${HOME}/.local/share/termux-docker-qemu/$os/$os.img 
+        install && update
+    else 
+        update
+    fi
 else
-  install && update
+    install && update
 fi
 
 curl -fsSL \
   https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/$os\X11.sh \
   -o ${HOME}/.local/share/termux-docker-qemu/$os/termux2$os/$os\X11.sh
 
-echo "[*] termux-docker-qemu installation finished."
-echo "[*] Run 'termux-docker-qemu $os' to execute it for only CLi."
-echo "[+] Run 'termux-docker-qemu $os x11' to execute it with graphical enviroment"
-echo " ╰➤ To set a graphical enviroment you should run in $os the command: ash /termux2$os/${os}X11.sh"
 # ==============================
 # INSTALLING SCRIPT FIXER
 # ==============================
@@ -163,6 +161,11 @@ if curl -fsSL "$fixerURL" -o /data/data/com.termux/files/usr/bin/fixer; then
 else
     echo "[!] Error downloading fixer."
 fi
+
+echo "[*] termux-docker-qemu installation finished."
+echo "[*] Run 'termux-docker-qemu $os' to execute it for only CLi."
+echo "[+] Run 'termux-docker-qemu $os x11' to execute it with graphical enviroment"
+echo " ╰➤ To set a graphical enviroment you should run in $os the command: ash /termux2$os/${os}X11.sh"
 
 # ==============================
 # FINALS MESSAGES
