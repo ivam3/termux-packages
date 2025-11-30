@@ -2,8 +2,8 @@
 IFS=$'\n\t'
 v="2.0.1"
 echo "Installing JAR file ..."
-wget --quiet https://github.com/codyi96/xml2axml/releases/download/$v/xml2axml-$v.jar \
-    -O ${HOME}/.local/share/xml2axml.jar
+curl -fsSL https://github.com/codyi96/xml2axml/releases/download/$v/xml2axml-$v.jar \
+    -o ${HOME}/.local/share/xml2axml.jar
 [[ -e ${HOME}/.local/share/xml2axml.jar ]] && { 
     chmod 751 ${HOME}/.local/share/xml2axml.jar ${PREFIX}/bin/xml2axml
     echo "[✔] xml2axml installation finished."

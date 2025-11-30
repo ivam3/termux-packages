@@ -162,6 +162,7 @@ else
     echo "[!] Error downloading fixer."
 fi
 
+echo ""
 echo "[*] termux-docker-qemu installation finished."
 echo "[*] Run 'termux-docker-qemu $os' to execute it for only CLi."
 echo "[+] Run 'termux-docker-qemu $os x11' to execute it with graphical enviroment"

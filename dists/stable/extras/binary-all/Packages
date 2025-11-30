@@ -1007,7 +1007,7 @@ SHA256: 70e6288789ba6deafecef89e24b446b455c927044d0feeebb29eddd105b88c6d
 SHA512: 7a9a5dc2ff092066d700f1488789dd4b4ea00ad69559e570191dfdbf160937f1b21477abb530acc918ec42a3b54fb05d74bf7280e01410fdba1349251c8b8608
 
 Package: metasploit-framework
-Version: 6.4.92
+Version: 6.4.101
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
@@ -1015,12 +1015,12 @@ Depends: build-essential, ruby, python, libcap, openjdk-21, termux-tools, autoco
 Suggests: embed, i-haklab
 Homepage: https://github.com/rapid7/metasploit-framework
 Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
-Filename: dists/stable/extras/binary-all/metasploit-framework_6.4.92_all.deb
-Size: 4948
-MD5Sum: d65bcfdf7063969962f553d17c435501
-SHA1: 2856e6526a89597b7eb16495b512c14f5751e7f4
-SHA256: 320309b599b5a59496b376ec2655093f9c983e639bc770fb22d460e17334ed1d
-SHA512: aa2d4cafb5cebbe402a06cd036f6c3d4e02ec6134b48915d834fde9ab9f199d474feb5a432a8d7c1e350e9891418927d4413c1acf421e5643df8a68f7cf7f9c4
+Filename: dists/stable/extras/binary-all/metasploit-framework_6.4.101_all.deb
+Size: 4944
+MD5Sum: 1a2d8d6c0371cf3054688effbaf8f89d
+SHA1: 909634743e5c5c152f8bd18d120e9a508de24ee5
+SHA256: 1c3783b0f71a8878a67e554f08e4ee56df7e6d40cada43895c61718e924e341d
+SHA512: d73a92ac4b010bc9b9e710b314f7605454ed1aeaf2a7045aaeb3eee64696da308c200451e1c46928c719ac9b4d36190e496b2a0bc9e82c9f273b1a93e1743b19
 
 Package: mimikatz
 Version: 0.11.0
@@ -1702,11 +1702,11 @@ Suggests: i-haklab
 Homepage: https://github.com/codyi96/xml2axml
 Description: Encoding xml to axml OR decoding axml to xml
 Filename: dists/stable/extras/binary-all/xml2axml_2.0.1_all.deb
-Size: 1996
-MD5Sum: d9a4f4427cb613a00d6ba0b873d654b6
-SHA1: 6428a7067e327b061abd8b2b54852a645c5cb939
-SHA256: 82e0f22f935ffd0adee83decf6babe75bd25027f1e2751d19b15bd010d3d63e2
-SHA512: aa9a83546bfe07e4fda08e7203b995226a9fdf663e0207d99ee7ee1a6d3685b96054f396a71d0fb275396328f25f59dd6ab93d801ee6ab15a056d81bd110a2f4
+Size: 1992
+MD5Sum: f9ad0d837a5e2a56528ab0e2ec312fdc
+SHA1: 3880d4f9706cde89a490a0ebcd3fc34d8a43b271
+SHA256: a1384cfa1a38852e160f8072e35d528041992379b77f75a0c0a3ce625196997b
+SHA512: 2dbc6b085bce43de738fb871a85a688076288894f079fbf323cb773442948932f871101121093372ac22b28813a4c6d39899b04ed972a028ef2d13c4dff68411
 
 Package: zaproxy
 Version: 2.16.1
