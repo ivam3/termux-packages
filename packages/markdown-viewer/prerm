@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+python -m pip --no-color --quiet uninstall \
+    -r ${HOME}/.local/share/markdown-viewer/markdown_viewer_app/requirements.txt;
+
+if [[ -d ${HOME}/.local/share/markdown-viewer ]]; then
+    rm -rf ${HOME}/.local/share/markdown-viewer
+fi
+
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -1,0 +1,15 @@
+{
+  "name": "markdown-viewer",
+  "version": "1.0.0",
+  "arch": "all",
+  "homepage": "https://github.com/ivam3/markdown-viewer",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, python, python-pip"],
+  "suggests": ["i-haklab, firefox"],
+  "description": "A lightweight web application to view markdown files.",
+  "files" :{
+    "markdown-viewer": "bin/markdown-viewer",
+    "img/markdown-viewer.png": "/data/data/com.termux/files/usr/share/applications/markdown-viewer/img/markdown-viewer.png",
+    "markdown-viewer.desktop": "/data/data/com.termux/files/usr/share/applications/markdown-viewer/markdown-viewer.desktop"
+  }
+}

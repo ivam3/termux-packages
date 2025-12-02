@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=markdown-viewer
+GenericName=markdown-viewer
+Comment=
+Comment[es]=
+Version=1.0.0
+Exec=/data/data/com.termux/files/usr/bin/markdown-viewer
+Icon=/data/data/com.termux/files/usr/share/applications/markdown-viewer/img/markdown-viewer.png
+Terminal=false
+Type=Application
+Categories=System
+X-Desktop-File-Install-Version=1.0.0

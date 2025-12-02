@@ -114,6 +114,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/adminpanel.md  
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/aircrack-ng.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/amass.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/androbugs.md    i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/androforensic.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/androidsdk-cli.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/apksigner.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/apktool.md      i-haklab
@@ -285,6 +286,7 @@ data/data/com.termux/files/home/.local/libexec/i-Haklab/4share                  
 data/data/com.termux/files/home/.local/libexec/i-Haklab/ESmsg                    i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/Xwayland                 i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/about                    i-haklab
+data/data/com.termux/files/home/.local/libexec/i-Haklab/androforensic            i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/apkactivity              i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/aptup                    i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/backup                   i-haklab
@@ -299,6 +301,7 @@ data/data/com.termux/files/home/.local/libexec/i-Haklab/passwd                  
 data/data/com.termux/files/home/.local/libexec/i-Haklab/payvid                   i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/pd                       i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/phonescan                i-haklab
+data/data/com.termux/files/home/.local/libexec/i-Haklab/qemufy                   i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/ransomux                 i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/servers4test             i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/setapikey                i-haklab
