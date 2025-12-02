@@ -1057,6 +1057,9 @@ data/data/com.termux/files/usr/bin/lockphish                                    
 data/data/com.termux/files/usr/bin/maltego                                       maltego
 data/data/com.termux/files/usr/share/applications/maltego/img/maltego.png        maltego
 data/data/com.termux/files/usr/share/applications/maltego/maltego.desktop        maltego
+data/data/com.termux/files/usr/bin/markdown-viewer                               markdown-viewer
+data/data/com.termux/files/usr/share/applications/markdown-viewer/img/markdown-viewer.png markdown-viewer
+data/data/com.termux/files/usr/share/applications/markdown-viewer/markdown-viewer.desktop markdown-viewer
 data/data/com.termux/files/usr/bin/msfconsole                                    metasploit-framework
 data/data/com.termux/files/usr/bin/mimikatz-installer                            mimikatz
 data/data/com.termux/files/usr/bin/nexphisher                                    nexphisher
