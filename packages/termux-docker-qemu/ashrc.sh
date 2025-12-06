@@ -28,39 +28,37 @@ http://dl-cdn.alpinelinux.org/alpine/latest-stable/community
 
 ## SET DNS
 chk=$(grep -oE "8.8.8.8" /etc/resolv.conf)
-if [[ -z $chk ]]; then 
-    echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+if [[ -z $chk ]]; then
+  echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 fi
 
 ## EXPORT B8NARIES PATH
 export PATH="/root/.local/bin:$PATH"
 
 ## CONF PIP TO FORCE MODULE INSTALLATION IN ALPINE OS ENVIROMENT
-if ! command -v python3 >/dev/null; then
-    apk add python3 py3-pip
-fi 
-if ! grep "true" /root/.config/pip/pip.conf &>/dev/null; then 
-    python3 -m pip config set global.break-system-packages true
+if ! grep "true" /root/.config/pip/pip.conf &>/dev/null; then
+  python3 -m pip config set global.break-system-packages true
 fi
 
 ## INSTALL AND RUN DOCKER SERVICE
-if ! command -v docker >/dev/null; then 
-    apk update 
-    apk upgrade 
-    apk add docker 
-    service docker start 
-    rc-update add docker
+if ! command -v docker >/dev/null; then
+  apk update
+  apk upgrade
+  apk add docker
+  service docker start
 fi
+rc-update add docker &>/dev/null
+service docker restart
 
 ## INSTALL AND RUN PLEX TERMINAL TMUX
-if ! command -v tmux >/dev/null; then 
-    echo "Installing tmux ..." 
-    apk update 
-    apk upgrade 
-    apk add tmux git perl 
-    cd;git clone https://github.com/gpakosz/.tmux.git 
-    ln -s -f .tmux/.tmux.conf 
-    cp .tmux/.tmux.conf.local .
+if ! command -v tmux >/dev/null; then
+  echo "Installing tmux ..."
+  apk update
+  apk upgrade
+  apk add tmux git perl
+  cd;git clone https://github.com/gpakosz/.tmux.git
+  ln -s -f .tmux/.tmux.conf
+  cp .tmux/.tmux.conf.local .
 fi
 
 #s=$(tmux list-session|grep "Alpine") 2>/dev/null
