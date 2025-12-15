@@ -882,17 +882,17 @@ Package: i-haklab
 Version: 3.11.5
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 30555
+Installed-Size: 30533
 Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, fd, file, findutils, fish, fzf, gawk, git, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
 Filename: dists/stable/extras/binary-all/i-haklab_3.11.5_all.deb
-Size: 8030508
-MD5Sum: cbabdffe6ff9b2eab884cb1ab1cb2d9a
-SHA1: dda9b97d43cfbacb0844b302fdad7ffb15250aa0
-SHA256: eb81e891fc99692d5503cf13b399eedee0e5e9123225f8375f4319c9a515e975
-SHA512: b0b03573f03be0673045fa5a8a1950c8dc6c7ff091f60b3bfc37bb6ecd6a1713e20cb9251854e91e5209115ef72a12b2c46362b7d0c0cd373fc7d5ccd619be04
+Size: 8023436
+MD5Sum: 90ee286194a0e5e065ced76bf549ba57
+SHA1: 552be93b8697c32330f989abe36a771af69eca30
+SHA256: 42ab48385864be5bb01ad6f7b8e3c6b78911642243667f04e4a468bdcb7cb84f
+SHA512: 07bb2a8c0349e48098a96fe76f1f3e39cce85e9ea34a7228e5cf52c20483d2e676db19667bab9fe4437b21fdd17994fa199e61cc268807a5621fffc944e62c88
 
 Package: infoga
 Version: 1.0
