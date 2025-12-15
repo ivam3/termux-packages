@@ -8,6 +8,8 @@ else
     stderr=$(ls ${PREFIX}/etc/apt/sources.list.d/x11.list &>/dev/null ; echo $?) 
   
     [[ $stderr -eq 0 ]] || {
+        echo "deb https://plug-mirror.rcac.purdue.edu/termux/termux-x11 x11 main" > \
+            $PREFIX/etc/apt/sources.list.d/x11.list
         echo "! x11-repo repository is required, please install it running ... 'apt install x11-repo'"
         exit 1
     }

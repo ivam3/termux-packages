@@ -879,20 +879,20 @@ SHA256: 989b6693900ff471e790c0c36dd4c31ca64f6868221b00a599cadb6ded2ad98c
 SHA512: b2acf2821c4fa7423aaca5ba2e39c36ff1c4b5cb01f5e10c1ff4e00aaa889ac417570cb2b57d506be35c9a5c1e29baa32e7030c5c9dc15ff7ce941036a28720b
 
 Package: i-haklab
-Version: 3.11.4
+Version: 3.11.5
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 30552
+Installed-Size: 30555
 Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, fd, file, findutils, fish, fzf, gawk, git, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.11.4_all.deb
-Size: 8030456
-MD5Sum: 2219340c6cfb1e107abf8c5fef94c7b5
-SHA1: 3009018c7a02587b59e627b590f11ae4218b8ddb
-SHA256: 0b1342b4ffdfb593c7265f54a551d589a3ffb7d8ae73fa228d99f306e2f9b976
-SHA512: b951755087b661ab1878ae65e7a43d5e81eb0410300ba513a53896617e152cbbe121187cfd446ea233241a39ee9355da6ab8ad9ecd1dfedc47647cc11df0f633
+Filename: dists/stable/extras/binary-all/i-haklab_3.11.5_all.deb
+Size: 8030508
+MD5Sum: cbabdffe6ff9b2eab884cb1ab1cb2d9a
+SHA1: dda9b97d43cfbacb0844b302fdad7ffb15250aa0
+SHA256: eb81e891fc99692d5503cf13b399eedee0e5e9123225f8375f4319c9a515e975
+SHA512: b0b03573f03be0673045fa5a8a1950c8dc6c7ff091f60b3bfc37bb6ecd6a1713e20cb9251854e91e5209115ef72a12b2c46362b7d0c0cd373fc7d5ccd619be04
 
 Package: infoga
 Version: 1.0
@@ -1526,11 +1526,11 @@ Suggests: i-haklab, burpsuite, ghidra, hydra, putty, maltego, zaproxy
 Homepage: https://github.com/ivam3/termux-packages
 Description: A Meta-package and data, themes, icons and wallpapers to configurate a desktop enviroment for Termux with xfce4 as window manager.
 Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0.11_all.deb
-Size: 3524
-MD5Sum: fe7a02ce7689158214a23cc4796cbe1e
-SHA1: 04140dc6cfd8e6462e0e3a627fed26c999472635
-SHA256: 205ad32cd77c1af285f2c75b42fe73bcaa49aa3a357f05f585ee6fdd78ec2396
-SHA512: 3a122e207592f25de221ced4a8cbcd75b59652ac3c2f944abe0c3b10b087f6334934efde800b362b60f0ec856cc8cc8f8cbe075fd0213924b80468b91181f36d
+Size: 3716
+MD5Sum: f131229a940a2bd786743d8f8eae73bd
+SHA1: b261bc08bfb74523b6896fb20000836f669901c4
+SHA256: 87a85cb810bd4be00df50bcf8de449ebcde466e4ac390b685b45cbddc8846c66
+SHA512: 7d7d9d40ea18a1867c919062a2f8217713e35b6abb721fe7633ce9122146c923a2b34599a2ad6160279f88ae7b3f7f0b9253590b80eeb7a50864e7b1c4114ed5
 
 Package: termux-docker-qemu
 Version: 0.6.5

@@ -1,4 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
+fontsV="v3.4.0"
 maindir=$(df|grep fuse|awk -F "/" '{print $NF}'|grep -iv emulated)
 [[ -z $maindir ]] && { maindir="${HOME}";} || { maindir="$maindir/Android/data/com.termux/files";}
 mkdir -p ${HOME}/Desktop $maindir/{Documents,downloads,Pictures,Public,Video}
@@ -14,7 +15,7 @@ curl -fsSL "https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.t
 echo "Setting x11 fonts ..."
 mkdir -p ${PREFIX}/share/fonts/
 curl -fsSL "https://github.com/ryanoasis/nerd-fonts/releases/download/$fontsV/ProFont.zip" \
-  -o ${PREFIX}/share/fonts/ProFont.zip
+  -o ${PREFIX}/share/fonts/ProFont.zip >/dev/null 2>/dev/null
 [[ -e ${PREFIX}/share/fonts/ProFont.zip ]] && {
   unzip ${PREFIX}/share/fonts/ProFont.zip -d ${PREFIX}/share/fonts/
 } || { echo "W: Fonts are unreachable.";}
@@ -37,15 +38,28 @@ curl -fsSL "https://github.com/ivam3/termux-packages/raw/gh-pages/packages/termu
 } || { echo "E: Termux Wayland app missing ... Please install it manually.";}
 
 rm -rf ${TMPDIR}/desktmp
-curl -fsSL "https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer" \
-    -o /data/data/com.termux/files/usr/bin/fixer
-chmod 750 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] termux-desktop-xfce installation finished."
-echo "[!] don't forget join to your device settings
+echo """[!] don't forget join to your device settings 
     and bring to Termux Wayland app the permissions
-    'run commands in Termux-app' & 'super potitions' too."
-echo "[*] Run 'desktop' to execute it."
-echo "[*] Run 'fixer' to fix any posible issue."
-echo "[!] For help going to https://t.me/Ivam3_Bot."
-echo "[*] @Ivam3: thank you for use my package."
+    'run commands in Termux-app' & 'super potitions' too."""
+echo "[💡] Run 'desktop' to execute it."
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+echo "[*] Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o /data/data/com.termux/files/usr/bin/fixer; then
+    chmod 750 /data/data/com.termux/files/usr/bin/fixer
+    echo "[➡] Run 'fixer' to fix any posible issue."
+else
+    echo "[!] Error downloading fixer."
+fi
+
+# ==============================
+# FINALS MESSAGES
+# ==============================
+echo "[📢] Help: going to https://t.me/Ivam3_Bot."
+echo "[💡] @Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
