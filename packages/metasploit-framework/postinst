@@ -12,11 +12,9 @@ echo "Installing and updating ruby gems ..."
 cd $msfDir
 mkdir -p $PREFIX/include/libxml/
 ln -s $PREFIX/include/libxml2/libxml/* $PREFIX/include/libxml/ >/dev/null 2>/dev/null
-nokoSED=$(cat metasploit-framework.gemspec|grep -i nokogiri|sed 's/nokogiri [\(\)]/(/g'|head -n 1|awk -F " " '{print $2,$3,$4}')
-nokogiriVer="1.16.2"
-sed -i "s|$nokoSED|'nokogiri', '~> $nokogiriVer'|" metasploit-framework.gemspec
-#$(cat Gemfile.lock|grep -i nokogiri|sed 's/nokogiri [\(\)]/(/g'|cut -d ' ' -f 5|grep -oP "(.).[[:digit:]][\w+]?[.].")
-#sed -i "5a gem 'net-smtp', require: false" $msfDir/Gemfile
+
+################################
+# Updating rubygems and bundler
 [[ -d ${HOME}/.local/share/gem ]] && { rm -rf ${HOME}/.local/share/gem/*;} || { mkdir -p ${HOME}/.local/share/gem;}
 gem install --no-document --verbose rubygems-update > $msfDir/rubygems-update.log
 verToUp=$(grep "gem update" $msfDir/rubygems-update.log|grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+')
@@ -24,29 +22,44 @@ rm -rf $msfDir/rubygems-update.log
 [[ -z $verToUp ]] || { gem update --system $verToUp;}
 update_rubygems
 gem install --no-document --verbose bundle bundler
-bundle config build.nokogiri --platform=ruby -- --use-system-libraries \
-  --with-xml2-include=$(pkg-config libxml-2.0 --cflags-only-I) \
-  --with-xml2-lib=$(pkg-config libxml-2.0 --libs) \
-  --with-xslt-include=$(pkg-config libxslt --cflags-only-I) \
-  --with-xslt-lib=$(pkg-config libxslt --libs)
+bundle update --bundler 2>/dev/null
 
-for i in nokogiri reline ansi; do 
+################################
+# Fixing nokogiri version to avoid build issues
+line=$(cat -n metasploit-framework.gemspec|grep -i nokogiri|sed 's/nokogiri [\(\)]/(/g'|head -n 1|awk -F " " '{print $1}')
+nokogiriVer="1.18.10"
+sed -i "$line {s/^/#/}" metasploit-framework.gemspec
+sed -i "${line}a spec.add_runtime_dependency 'nokogiri', '~> $nokogiriVer'" \
+    metasploit-framework.gemspec
+line=$((line+1))
+sed -i "$line {s/^/  /}" metasploit-framework.gemspec
+for i in reline ansi; do 
   find $PREFIX/lib/ruby -iname "$i-[0-9]\.[0-9]\.[0-9].gemspec" -type f|xargs rm 2>/dev/null
   case $i in
-    reline) version="0.5.10" ;;
     ansi) version="1.5.0" ;;
     nokogiri) version="$nokogiriVer" ;;
+    reline) version="0.6.3" ;;
   esac
-
-  gem uninstall $i -v "<$version"
+  gem uninstall $i -v "<$version" 2>/dev/null
   gem install $i -v "$version" --platform=ruby -- --use-system-libraries \
-    --with-xml2-include=$(pkg-config libxml-2.0 --cflags-only-I) \
-    --with-xml2-lib=$(pkg-config libxml-2.0 --libs) \
-    --with-xslt-include=$(pkg-config libxslt --cflags-only-I) \
-    --with-xslt-lib=$(pkg-config libxslt --libs)
+    --with-xml2-include="$(pkg-config libxml-2.0 --cflags-only-I | sed 's/-I//g')" \
+    --with-xml2-lib="$(pkg-config libxml-2.0 --libs)" \
+    --with-xslt-include="$(pkg-config libxslt --cflags-only-I | sed 's/-I//g')" \
+    --with-xslt-lib="$(pkg-config libxslt --libs)" \
+    --with-cflags="-Wno-default-const-init-field-unsafe"
 done
+bundle config build.nokogiri --platform=ruby -- --use-system-libraries \
+    --with-xml2-include="$(pkg-config libxml-2.0 --cflags-only-I | sed 's/-I//g')" \
+    --with-xml2-lib="$(pkg-config libxml-2.0 --libs)" \
+    --with-xslt-include="$(pkg-config libxslt --cflags-only-I | sed 's/-I//g')" \
+    --with-xslt-lib="$(pkg-config libxslt --libs)" \
+    --with-cflags="-Wno-default-const-init-field-unsafe"
 
-bundle update --bundler 2>/dev/null
+################################
+# Fixing smtp issue
+#sed -i "5a gem 'net-smtp', require: false" $msfDir/Gemfile
+
+# Installing gems via bundler
 [[ -e $msfDir/Gemfile.lock ]] && { rm -rf $msfDir/Gemfile.lock;}
 bundle install -j$(nproc --all) --verbose
 
