@@ -96,7 +96,7 @@ SHA256: 7adf48f6532f740e93c13e34e2e73982db7950a45830a09a5bd22021334596df
 SHA512: 630372b4ecf428fa3b1ee0e216fe2c7bcb6198e6f39a0d5655f42c4b72e9ddb6c2015db34a42db8113323626a55a13ef0c0b1909bda7af4dd9c3d1713f169e0a
 
 Package: apktool
-Version: 2.12.0
+Version: 2.12.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
@@ -104,12 +104,12 @@ Depends: openjdk-21, aapt, wget
 Suggests: i-haklab
 Homepage: https://bitbucket.org/iBotPeaches/apktool/src/master/
 Description: A tool for reverse engineering Android apk files
-Filename: dists/stable/extras/binary-all/apktool_2.12.0_all.deb
-Size: 1824
-MD5Sum: 9b22102f99835c661a4cd4230826f1a5
-SHA1: 398fcf685432abdfae187bf873b667a81f965493
-SHA256: fa1cc48779dd602acb41b00a99363ce2f5f91aafa123c8d54b33162dbddbb83b
-SHA512: 5c330f8b134c586c57acedb66eda0f5a8d92b5da1d90de121d01bf9c55c0e2e13d599ed7c622e54a718f6d03a91c3fad35a66a69c44ab2024c4642c0327ddb46
+Filename: dists/stable/extras/binary-all/apktool_2.12.1_all.deb
+Size: 1812
+MD5Sum: 593845bac3d4aca072457b36bf160e1e
+SHA1: 808b5cf883f97b72c728c648b33c0b472b44c169
+SHA256: 74fe8ad56608939cd70a7fc18e732904995a2befe063db45877252e366f675f6
+SHA512: 67b138ff6ca2d9b9badf025ccb2bbacce8607638c5ff2a92e51a2f36a51b64356a3fbc440df21f4f363655c7f85d4fae674b095a7cd5c6011cff04846f48d311
 
 Package: appshark
 Version: 0.1.2
