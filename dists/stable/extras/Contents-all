@@ -1122,6 +1122,7 @@ data/data/com.termux/files/usr/bin/wpscan-installer                             
 data/data/com.termux/files/usr/bin/xapt                                          xapt-management
 data/data/com.termux/files/usr/bin/xapt-installer                                xapt-management
 data/data/com.termux/files/usr/bin/xerosploit                                    xerosploit
+data/data/com.termux/files/usr/share/xleak/xleak_patch.py                        xleak
 data/data/com.termux/files/usr/bin/xml2axml                                      xml2axml
 data/data/com.termux/files/usr/bin/zaproxy                                       zaproxy
 data/data/com.termux/files/usr/share/applications/zaproxy/img/zaproxy-logo.png   zaproxy

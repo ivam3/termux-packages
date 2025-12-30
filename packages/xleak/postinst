@@ -1,0 +1,41 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+echo "Cloning repository ..."
+git clone --quiet https://github.com/bgreenwell/xleak ${HOME}/.local/share/xleak
+[[ -d ${HOME}/.local/share/xleak ]] && {
+    echo "Patching xleak ..."
+    cd ${HOME}/.local/share/xleak
+    chmod 751 -R *
+    python3 ${PREFIX}/share/xleak/xleak_patch.py
+    cargo install --path .
+
+    if [[ -e ${HOME}/.cargo/bin/xleak ]]; then
+        ln -s ${HOME}/.cargo/bin/xleak ${PREFIX}/bin/xleak 2>/dev/null
+        echo "[✔] xleak installation finished."
+        echo "[📢] xleak requiere termux-api APK."
+        echo "[➡] Run 'xleak' to execute it."
+    else 
+        echo -en "\e[31mE:\e[0m Patching failed ... \e[33mAborting.\e[0m\n";
+    fi
+} || {
+  echo -en "\e[31mE:\e[0m xleak directory missing ... \e[33mAborting.\e[0m\n";
+}
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+echo "[*] Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o /data/data/com.termux/files/usr/bin/fixer; then
+    chmod 750 /data/data/com.termux/files/usr/bin/fixer
+    echo "[➡] Run 'fixer' to fix any posible issue."
+else
+    echo "[!] Error downloading fixer."
+fi
+
+# ==============================
+# FINALS MESSAGES
+# ==============================
+echo "[📢] Help: going to https://t.me/Ivam3_Bot."
+echo "[💡] @Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

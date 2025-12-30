@@ -1,0 +1,13 @@
+{
+  "name": "xleak",
+  "version": "0.2.5",
+  "arch": "all",
+  "homepage": "https://github.com/bgreenwell/xleak",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, python, rust, clang, make, build-essential, libtool, patch, libxcb, libx11, termux-api"],
+  "suggests": ["i-haklab"],
+  "description": "A fast terminal Excel viewer with an interactive TUI.",
+  "files" :{
+    "xleak_patch.py": "/data/data/com.termux/files/usr/share/xleak/xleak_patch.py"
+  }
+}

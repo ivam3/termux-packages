@@ -1708,6 +1708,22 @@ SHA1: a4ace9ee9fe93a2359507ab20414218845801bd9
 SHA256: 1a5c605b022c409ac46b910cafd3c6656687278d926314b8a3fb07f5ae88703a
 SHA512: 92ce715a9eb624c47461e901980fc8969276d04eaef6bf21bb47b89e31fab9cb1c84bda1e9d68121e8e1ea4e038a21cebc6467915cefa50a93c7ee63710d59aa
 
+Package: xleak
+Version: 0.2.5
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 9
+Depends: git, python, rust, clang, make, build-essential, libtool, patch, libxcb, libx11, termux-api
+Suggests: i-haklab
+Homepage: https://github.com/bgreenwell/xleak
+Description: A fast terminal Excel viewer with an interactive TUI.
+Filename: dists/stable/extras/binary-all/xleak_0.2.5_all.deb
+Size: 3664
+MD5Sum: dbb61dbcf26b4f27a1f96e82c545a550
+SHA1: d1de9756bc066869036b6e569c7cbeeb62df5d49
+SHA256: 21f6a2b20f7ae17d7e43abd992545fb21270ee7d1abeabc7bd98aa32dc060adc
+SHA512: 3999e63efd6a59b61ea76b96acad09c7b63cf05b13851338515dbd6b2355624d109fce9cfce752407a8c611dfd64e9336368a66399689a7161aaf88410ffb282
+
 Package: xml2axml
 Version: 2.0.1
 Architecture: all
