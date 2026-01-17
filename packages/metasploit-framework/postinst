@@ -48,7 +48,7 @@ for i in reline ansi; do
     --with-xslt-lib="$(pkg-config libxslt --libs)" \
     --with-cflags="-Wno-default-const-init-field-unsafe"
 done
-bundle config build.nokogiri --platform=ruby -- --use-system-libraries \
+bundle config get build.nokogiri --platform=ruby -- --use-system-libraries \
     --with-xml2-include="$(pkg-config libxml-2.0 --cflags-only-I | sed 's/-I//g')" \
     --with-xml2-lib="$(pkg-config libxml-2.0 --libs)" \
     --with-xslt-include="$(pkg-config libxslt --cflags-only-I | sed 's/-I//g')" \
