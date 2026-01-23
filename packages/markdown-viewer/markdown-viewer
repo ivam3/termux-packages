@@ -8,6 +8,7 @@ B="\e[34m"
 if [[ -d ${HOME}/.local/share/markdown-viewer ]]
 then
   cd ${HOME}/.local/share/$(basename $0) >/dev/null
+  echo -en "(>_) Reading files from:\n  ╰──➤ ~/.local/share/markdown-viewer/markdown_viewer_app/src/storage/mds/\n"
   echo -en "(>_) Starting Markdown Viewer over : "
   flet run markdown_viewer_app/ -w -p 4444 2>/dev/null
 else

@@ -1016,11 +1016,11 @@ Suggests: i-haklab, firefox
 Homepage: https://github.com/ivam3/markdown-viewer
 Description: A lightweight web application to view markdown files.
 Filename: dists/stable/extras/binary-all/markdown-viewer_1.0.0_all.deb
-Size: 84888
-MD5Sum: f08124ea156dc7c845b52e9b904b5dd8
-SHA1: bf95f8a47ad175595a33b390842a80b94043d136
-SHA256: 92d0ed86803d9f37682dfc9af67c347f6a147989b6c62963c87f80575ed6b7e9
-SHA512: a9cb3a4f1f02a36986b424a4eab685eff34a7242ec8011b9c13d901dbf7573008baf84bd602afed14d2bf7700d547273ef7a1675a6e9805ee378f06e3bf5a104
+Size: 84924
+MD5Sum: 029e2787cc9b1aff29c79efc8650de38
+SHA1: 95ef0bc7820ad6d2015ebae312d85c34c8fab5e7
+SHA256: 6be50582c586d99a2b37a9cac017f01b2f54245d954bafc608b614d6bd1e6a74
+SHA512: 7dab3f24d0bc522c551f3a7965eb867069cb71565dec434784b5d24c0c19785876f65b896327c332e079155e9d5ba21bced8096610a2b737381746522aff8a2a
 
 Package: metasploit-framework
 Version: 6.4.109
