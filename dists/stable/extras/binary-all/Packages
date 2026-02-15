@@ -105,11 +105,11 @@ Suggests: i-haklab
 Homepage: https://bitbucket.org/iBotPeaches/apktool/src/master/
 Description: A tool for reverse engineering Android apk files
 Filename: dists/stable/extras/binary-all/apktool_2.12.1_all.deb
-Size: 1812
-MD5Sum: 593845bac3d4aca072457b36bf160e1e
-SHA1: 808b5cf883f97b72c728c648b33c0b472b44c169
-SHA256: 74fe8ad56608939cd70a7fc18e732904995a2befe063db45877252e366f675f6
-SHA512: 67b138ff6ca2d9b9badf025ccb2bbacce8607638c5ff2a92e51a2f36a51b64356a3fbc440df21f4f363655c7f85d4fae674b095a7cd5c6011cff04846f48d311
+Size: 1808
+MD5Sum: a8a9df09a42355852f70abb6042bda12
+SHA1: b2a35b53093af7a61350dd4b90e7a81a33a539dd
+SHA256: 4423f40a1a63121497b3ff6083c593698a020214e3bafa8e59341dd30d020f13
+SHA512: bbae2aa6407effea18a3bf7982cbc9169d90dd6688ae340e7e5c70bd4a5a9f984ccc8577d246d530276f35143470797bd0360196513613eb007a8eef6e02816c
 
 Package: appshark
 Version: 0.1.2
@@ -1023,7 +1023,7 @@ SHA256: 6be50582c586d99a2b37a9cac017f01b2f54245d954bafc608b614d6bd1e6a74
 SHA512: 7dab3f24d0bc522c551f3a7965eb867069cb71565dec434784b5d24c0c19785876f65b896327c332e079155e9d5ba21bced8096610a2b737381746522aff8a2a
 
 Package: metasploit-framework
-Version: 6.4.109
+Version: 6.4.115
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
@@ -1031,12 +1031,12 @@ Depends: build-essential, ruby, python, libcap, openjdk-21, termux-tools, autoco
 Suggests: embed, i-haklab
 Homepage: https://github.com/rapid7/metasploit-framework
 Description: Advanced open-source platform for developing, testing and using exploit code. (git-release installer)
-Filename: dists/stable/extras/binary-all/metasploit-framework_6.4.109_all.deb
-Size: 4992
-MD5Sum: 1e883fffe81ac6e0a8506e1fc4db5e8d
-SHA1: 70bbdd520b59565c12db2576ffc5e899cd16a1cf
-SHA256: da9c803358e01a2de5ebe35e92bb520d3161f7dee72f9ebb66e1067d807e12f9
-SHA512: 26fd9c0199f00351c3706faf544b0f407baa7edd196311ef1b07d2894c8bf066f237f61986f493509146c5cd93e33cce0d45dd2bb4042b86b7e4f958c74ed719
+Filename: dists/stable/extras/binary-all/metasploit-framework_6.4.115_all.deb
+Size: 5052
+MD5Sum: 705b39a9b953bc4d8aa547b526a5f0f8
+SHA1: 7fc1287b1592cc8a74cce4e70841cab771065234
+SHA256: c162724579080a69484fd8c61a9a5bb7bbdf55a077869a5b80a1f84eebcbbc70
+SHA512: 889a78dff76ac826fea54ae8993460c1102de74e2494f11ea8f29084bcfeeaad6cd6e1f4f1e24e6b53286d822377efc4cd0484dd6f2ebe5f0c001cf83955fa97
 
 Package: mimikatz
 Version: 0.11.0

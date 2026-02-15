@@ -26,18 +26,19 @@ bundle update --bundler 2>/dev/null
 
 ################################
 # Fixing nokogiri version to avoid build issues
-line=$(cat -n metasploit-framework.gemspec|grep -i nokogiri|sed 's/nokogiri [\(\)]/(/g'|head -n 1|awk -F " " '{print $1}')
 nokogiriVer="1.18.10"
-sed -i "$line {s/^/#/}" metasploit-framework.gemspec
-sed -i "${line}a spec.add_runtime_dependency 'nokogiri', '~> $nokogiriVer'" \
-    metasploit-framework.gemspec
-line=$((line+1))
-sed -i "$line {s/^/  /}" metasploit-framework.gemspec
+if ! grep -q "nokogiri', '~> $nokogiriVer" metasploit-framework.gemspec; then
+  line=$(grep -nE "spec.add_runtime_dependency ['\"]nokogiri['\"]" metasploit-framework.gemspec | head -n 1 | cut -d: -f1)
+  if [ -n "$line" ]; then
+    sed -i "${line}s/^/  # /" metasploit-framework.gemspec
+    sed -i "${line}a   spec.add_runtime_dependency 'nokogiri', '~> $nokogiriVer'" metasploit-framework.gemspec
+  fi
+fi
+
 for i in reline ansi; do 
   find $PREFIX/lib/ruby -iname "$i-[0-9]\.[0-9]\.[0-9].gemspec" -type f|xargs rm 2>/dev/null
   case $i in
     ansi) version="1.5.0" ;;
-    nokogiri) version="$nokogiriVer" ;;
     reline) version="0.6.3" ;;
   esac
   gem uninstall $i -v "<$version" 2>/dev/null
@@ -48,12 +49,12 @@ for i in reline ansi; do
     --with-xslt-lib="$(pkg-config libxslt --libs)" \
     --with-cflags="-Wno-default-const-init-field-unsafe"
 done
-bundle config get build.nokogiri --platform=ruby -- --use-system-libraries \
-    --with-xml2-include="$(pkg-config libxml-2.0 --cflags-only-I | sed 's/-I//g')" \
-    --with-xml2-lib="$(pkg-config libxml-2.0 --libs)" \
-    --with-xslt-include="$(pkg-config libxslt --cflags-only-I | sed 's/-I//g')" \
-    --with-xslt-lib="$(pkg-config libxslt --libs)" \
-    --with-cflags="-Wno-default-const-init-field-unsafe"
+bundle config set --local build.nokogiri "--use-system-libraries \
+    --with-xml2-include=$(pkg-config libxml-2.0 --cflags-only-I | sed 's/-I//g') \
+    --with-xml2-lib=$(pkg-config libxml-2.0 --libs) \
+    --with-xslt-include=$(pkg-config libxslt --cflags-only-I | sed 's/-I//g') \
+    --with-xslt-lib=$(pkg-config libxslt --libs) \
+    --with-cflags=-Wno-default-const-init-field-unsafe"
 
 ################################
 # Fixing smtp issue
@@ -75,7 +76,10 @@ for gem in logger ansi ostruct; do
 
   [[ -z "$gem_output" ]] || {
     formatted_gem=$(format_gem "$gem_output")
-    sed -i '31i\'"$formatted_gem" $msfDir/Gemfile
+    gem_name=$(echo "$gem_output" | awk '{print $1}')
+    if ! grep -q "gem '$gem_name'" $msfDir/Gemfile; then
+      sed -i '31i\'"$formatted_gem" $msfDir/Gemfile
+    fi
   }
 done
 ########
@@ -124,11 +128,12 @@ find ${PREFIX}/lib/ruby/gems -type f -iname \*.so -print0 | xargs -0 -r termux-e
 #sed -i '342 {s/^/#/}' $PRYCODEFILE
 
 # Confirm Compatibility of Action View version
-ActionView_version=$(grep actionview $msfDir/Gemfile.lock|awk -F" " 'NR==1 { print $3 }'|tr -d ")")
-line=$(grep -n "^raise unless ActionView" $msfDir/config/application.rb|awk -F ":" '{print $1}')
-sed -i "$line {s/^/#/}" $msfDir/config/application.rb
-sed -i "$line a\ raise unless ActionView::VERSION::STRING >= '$ActionView_version'" \
-    $msfDir/config/application.rb
+ActionView_version=$(grep actionview $msfDir/Gemfile.lock|awk -F" " 'NR==1 { print $3 }'|tr -d "()"|awk '{print $1}')
+if [ -n "$ActionView_version" ]; then
+  if ! grep -q "ActionView::VERSION::STRING >= '$ActionView_version'" $msfDir/config/application.rb; then
+    sed -i "s/.*raise unless ActionView::VERSION::STRING ==.*/  raise unless ActionView::VERSION::STRING >= '$ActionView_version'/" $msfDir/config/application.rb
+  fi
+fi
 
 echo "Fixing option '-x' on msfvenom command ..."
 JAVADB="https://raw.githubusercontent.com/ivam3/java/master"
@@ -178,7 +183,7 @@ chmod +x ${PREFIX}/bin/msfconsole
 # ==============================
 echo "[*] Installing script fixer..."
 fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
-if wget --quiet "$fixerURL" -O /data/data/com.termux/files/usr/bin/fixer; then
+if curl -fsSL "$fixerURL" -o /data/data/com.termux/files/usr/bin/fixer; then
     chmod 750 /data/data/com.termux/files/usr/bin/fixer
 else
     echo "[!] Error downloading fixer."
