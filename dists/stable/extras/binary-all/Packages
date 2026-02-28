@@ -1517,20 +1517,20 @@ SHA256: 434041e91d4fb70203dfdcafd6c96a679ac2947d152d16d80f054eaeaef740f7
 SHA512: 1278135e433b817e22ff137e18363e6243c6299e5b22792e3b6f098bb02364b3701ff68cde6290a615190000a45a6d5635efe023a804053ad574863997844e6d
 
 Package: termux-desktop-xfce
-Version: 1.0.11
+Version: 1.0.12
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
-Depends: xfce4, adwaita-icon-theme, atk, binutils-is-llvm, dbus-glib, dconf, desktop-file-utils, dosbox, exo, feh, file-roller, firefox, findutils, fluent-gtk-theme, fluent-icon-theme, galculator, garcon, gcr, geany, geany-plugins, gnome-themes-extra, gsettings-desktop-schemas, gtk-update-icon-cache, gtk2-engines-murrine, gtk2, gtk3, gtksourceview4, gvfs, hicolor-icon-theme, htop, iso-codes, leafpad, libcanberra, libepoxy, libfontenc, libhandy, libmatekbd, libnotify, libpciaccess, libvte, libwayland-protocols, libwayland, libwnck, libx11, libxcomposite, libxdamage, libxfce4ui, libxfce4util, libxfont2, libxinerama, libxkbfile, libxklavier, libxmu, libxslt, loqui, lxappearance, lxde-icon-theme, mousepad, mpv-x, mtpaint, neofetch, openjdk-21, papirus-icon-theme, parole, python, python-pip, python-tkinter, recordmydesktop, ristretto, sdl-net, sdl2, sdl, shared-mime-info, startup-notification, tar, termux-api, thunar-archive-plugin, thunar, tumbler, unzip, vim-gtk, webkit2gtk-4.1, wget, xarchiver, xapt-management, xcb-util, xfconf,xfdesktop, xfwm4, xkeyboard-config, xorg-iceauth, xorg-xauth, xorg-xhost, xorg-xkbcomp, xorg-xrdb, xwayland, zenity
+Depends: xfce4, adwaita-icon-theme, atk, binutils-is-llvm, dbus-glib, dconf, desktop-file-utils, dosbox, exo, feh, file-roller, firefox, findutils, fluent-gtk-theme, fluent-icon-theme, galculator, garcon, gcr, geany, geany-plugins, gnome-themes-extra, gsettings-desktop-schemas, gtk-update-icon-cache, gtk2-engines-murrine, gtk2, gtk3, gtksourceview4, gvfs, hicolor-icon-theme, htop, iso-codes, l3afpad, libcanberra, libepoxy, libfontenc, libhandy, libmatekbd, libnotify, libpciaccess, libvte, libwayland-protocols, libwayland, libwnck, libx11, libxcomposite, libxdamage, libxfce4ui, libxfce4util, libxfont2, libxinerama, libxkbfile, libxklavier, libxmu, libxslt, loqui, lxappearance, lxde-icon-theme, mousepad, mpv-x, mtpaint, neofetch, openjdk-21, papirus-icon-theme, parole, python, python-pip, python-tkinter, recordmydesktop, ristretto, sdl-net, sdl2, sdl, shared-mime-info, startup-notification, tar, termux-api, thunar-archive-plugin, thunar, tumbler, unzip, vim-gtk, webkit2gtk-4.1, wget, xarchiver, xapt-management, xcb-util, xfconf,xfdesktop, xfwm4, xkeyboard-config, xorg-iceauth, xorg-xauth, xorg-xhost, xorg-xkbcomp, xorg-xrdb, xwayland, zenity
 Suggests: i-haklab, burpsuite, ghidra, hydra, putty, maltego, zaproxy
 Homepage: https://github.com/ivam3/termux-packages
 Description: A Meta-package and data, themes, icons and wallpapers to configurate a desktop enviroment for Termux with xfce4 as window manager.
-Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0.11_all.deb
-Size: 3716
-MD5Sum: f131229a940a2bd786743d8f8eae73bd
-SHA1: b261bc08bfb74523b6896fb20000836f669901c4
-SHA256: 87a85cb810bd4be00df50bcf8de449ebcde466e4ac390b685b45cbddc8846c66
-SHA512: 7d7d9d40ea18a1867c919062a2f8217713e35b6abb721fe7633ce9122146c923a2b34599a2ad6160279f88ae7b3f7f0b9253590b80eeb7a50864e7b1c4114ed5
+Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0.12_all.deb
+Size: 3700
+MD5Sum: 21ffa07fd1ab7f5d56a850cb607806c0
+SHA1: c54a4d9d9dfdbf2adbfa2e39db5590684e90f82d
+SHA256: cb56e70e710807f3dfc7e053f5412c199dc4bde2f22d9bb1ac2d53640cba3e66
+SHA512: f9c527f10f24e64a511840c6d450f70b450d107939b7366bda126d71d49a0c7511f48da16f7f26fdf0634bbf8399e3b4cf7de0cf840bf8cef7d39af743a3718f
 
 Package: termux-docker-qemu
 Version: 0.6.5
