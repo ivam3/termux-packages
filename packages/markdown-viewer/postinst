@@ -1,16 +1,18 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
 echo "Cloning repository ..."
-git clone --quiet https://github.com/ivam3/markdown-viewer ${HOME}/.local/share/markdown-viewer
-[[ -d ${HOME}/.local/share/markdown-viewer ]] && {
+git clone --quiet https://github.com/ivam3/proyectos_flet.git ${TMPDIR}/proyectos_flet
+[[ -d ${TMPDIR}/proyectos_flet ]] && {
     echo "Installing requirements ...";
-    chmod 751 -R ${HOME}/.local/share/markdown-viewer;
-    python -m pip --no-color --quiet --no-cache-dir install \
-        -r ${HOME}/.local/share/markdown-viewer/markdown_viewer_app/requirements.txt;
+    chmod 751 -R ${TMPDIR}/proyectos_flet/;
+    mv ${TMPDIR}/proyectos_flet/markdown_viewer_app ${HOME}/.local/share/;
+    cd ${HOME}/.local/share/markdown_viewer_app/;
+    python -m pip --no-color --quiet --no-cache-dir install -r requirements.txt;
+    rm -rf ${TMPDIR}/proyectos_flet/;
     echo "[✔] markdown-viewer installation finished."
     echo "[➡] Run 'markdown-viewer' to execute it."
 } || {
-  echo -en "\e[31mE:\e[0m markdown-viewer directory missing ... \e[33mAborting.\e[0m\n";
+  echo -en "\e[31mE:\e[0m markdown_viewer_app directory missing ... \e[33mAborting.\e[0m\n";
 }
 
 # ==============================
