@@ -239,7 +239,7 @@ SHA256: 0a3312567a5ea695838228c4b710b5e8e2a14a73dc82ac8cfddcb013945db7a0
 SHA512: 9d064b445c4c4808b0201a07b1acf850a074e67bce21b48c6b3fc89dd0ade1a3aef133b65fb3c720bcbd951a09046d53f03c89625b45087b5200111fd4c07cad
 
 Package: burpsuite
-Version: 2025.10.5
+Version: 2026.2.3
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 37
@@ -247,12 +247,12 @@ Depends: openjdk-21, wget, jython-lts, giflib
 Suggests: termux-x11, xwayland, i-haklab
 Homepage: https://portswigger.net
 Description: An integrated platform/graphical tool for performing security testing of web applications.
-Filename: dists/stable/extras/binary-all/burpsuite_2025.10.5_all.deb
-Size: 36968
-MD5Sum: 2b0dc12e412caf5d313f064c8f8e0d50
-SHA1: fcf641524c0f424d8cb635df56327b1b562e3563
-SHA256: 4ce88ca845a26c553c555b0f86885373af927a5db30eebb9934aad29ce381a0e
-SHA512: 2b654b8c278acb4215c011afaa48982fd3625d378198e6a9121530ac5d30d0cddb792744c13a68fde0066a40d7dfbba5ab5dc18db81be0d0478f45c2be04ffbc
+Filename: dists/stable/extras/binary-all/burpsuite_2026.2.3_all.deb
+Size: 36972
+MD5Sum: 2e0c01b58ea605467864a21589be2155
+SHA1: f6e9e2e622f080756754a1d877d3e9a479210730
+SHA256: 06fa5208a399521ca95ff3463f60e4d31eab87d22436933a0cd13bd2e6d67c3d
+SHA512: e65b3d58e71980af47f843493953245b803e26a2cbacc81a935fdfbb1c325d95cc8b1345f1295f49e510e8ecf2b1b15c681d9c60e0f974271328f86b6a32493c
 
 Package: cewl
 Version: 5.5.2
@@ -879,20 +879,20 @@ SHA256: 989b6693900ff471e790c0c36dd4c31ca64f6868221b00a599cadb6ded2ad98c
 SHA512: b2acf2821c4fa7423aaca5ba2e39c36ff1c4b5cb01f5e10c1ff4e00aaa889ac417570cb2b57d506be35c9a5c1e29baa32e7030c5c9dc15ff7ce941036a28720b
 
 Package: i-haklab
-Version: 3.11.5
+Version: 3.12.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 30533
-Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, fd, file, findutils, fish, fzf, gawk, git, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, zip, zlib
+Installed-Size: 30627
+Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, fd, file, findutils, fish, fzf, gawk, git, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, yazi, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.11.5_all.deb
-Size: 8023436
-MD5Sum: 90ee286194a0e5e065ced76bf549ba57
-SHA1: 552be93b8697c32330f989abe36a771af69eca30
-SHA256: 42ab48385864be5bb01ad6f7b8e3c6b78911642243667f04e4a468bdcb7cb84f
-SHA512: 07bb2a8c0349e48098a96fe76f1f3e39cce85e9ea34a7228e5cf52c20483d2e676db19667bab9fe4437b21fdd17994fa199e61cc268807a5621fffc944e62c88
+Filename: dists/stable/extras/binary-all/i-haklab_3.12.0_all.deb
+Size: 8047544
+MD5Sum: 0d9517b269e4df0b1191b7a1fb79de73
+SHA1: 71ef7a920621adde9ea0ba53f72d730020dbb305
+SHA256: 700914ed4daba95f5bc3f06ac3089bed67fad966bc0869c58c3c0adae227f2e9
+SHA512: 4402b4536dcdc8af4f187480044adf9419d813d88fabe9bf278ca386ef7338e64f71ad7e47ec37175cef6ad8e6065bf24739bc98e2018bb07a4edd5c13313ed3
 
 Package: infoga
 Version: 1.0
@@ -1100,6 +1100,22 @@ MD5Sum: 3d907ba6e857e4bc2ccc8e2b626adea7
 SHA1: 2c08f2cfc37071672cafa88bc2e0aca559b080d0
 SHA256: 6694a5b19a00d82ec8322aa70d7fa1346590979cbf3880a20bd2627e09ff795c
 SHA512: 343283ad3863e2edc5307ee761db4a8a38a001e37ff821cf7a56103bd9ff34e10329d236f321b247f1dfbb27b11004ca989eeaf0cf2b8941484e68c3dffd58ed
+
+Package: opencode
+Version: 0.0.55
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: goland, rust
+Suggests: i-haklab
+Homepage: https://github.com/opencode-ai/opencode
+Description: A powerful AI coding agent. Built for the terminal.
+Filename: dists/stable/extras/binary-all/opencode_0.0.55_all.deb
+Size: 1908
+MD5Sum: a6012f56b77b8cc97f461e000335b3d9
+SHA1: 0c1ee549883daf816e249cbcac6b9b6f7d10b70c
+SHA256: 953f2a0219f02e8c5254017ba77dc3dffac733eabf4723c41ca27a9d5f4e613d
+SHA512: 0e301bc1ee94c53929862cbb91f4986b520205800e3b92f6d2783a59dc757e95a86a98f147e8584cb513727b1232f34fc0310b00a98906fd5a160dd01186adc2
 
 Package: openjdk-21-source
 Architecture: all

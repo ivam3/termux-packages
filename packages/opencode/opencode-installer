@@ -1,0 +1,13 @@
+#!/data/data/com.termux/files/usr/bin/bash
+## SET VARIABLES FOR GO COMPILER
+export GOPATH=$HOME/go
+export GOROOT=/data/data/com.termux/files/usr/lib/go
+export GOCACHE="$HOME/.cache/go"
+export GOMODCACHE="$GOPATH/pkg/mod"
+export LD_LIBRARY_PATH=/data/data/com.termux/files/usr/lib
+export LLVM_BUILD=/data/data/com.termux/files/usr/lib
+export LLVM_HOME=/data/data/com.termux/files/usr/lib/cmake/llvm
+export ANDROID_API_LEVEL=24
+
+go install github.com/opencode-ai/opencode@latest
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

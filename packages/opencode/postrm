@@ -1,0 +1,3 @@
+#!/data/data/com.termux/files/usr/bin/bash
+rm -rf ${HOME}/{.opencode, .opencode.json} 2>/dev/null
+echo "Done. Package 'opencode' removed."
