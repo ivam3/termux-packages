@@ -1,11 +1,11 @@
 {
   "name": "burpsuite",
-  "version": "2026.2.3",
+  "version": "2026.1.5",
   "arch": "all",
   "homepage": "https://portswigger.net",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
   "depends": ["openjdk-21, wget, jython-lts, giflib"],
-  "suggests": ["termux-x11, xwayland, i-haklab"],
+  "suggests": ["termux-desktop-xfce, termux-x11, xwayland, i-haklab"],
   "description": "An integrated platform/graphical tool for performing security testing of web applications.",
   "files" :{
     "burpsuite": "bin/burpsuite",
