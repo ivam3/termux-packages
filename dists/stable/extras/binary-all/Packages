@@ -1693,20 +1693,20 @@ SHA256: 91f562a30391bec171069baf6b29a9c3dddc897a9ea225ca37c8e2b3f19a273d
 SHA512: 88ae8eea62c834eb3a6d925b7721d2e1ceb381765efa74595b6d942664541c4a460edac2b32817f5196e75486ff7539ad750df62e88aa48c92266af2bc9be352
 
 Package: xapt-management
-Version: 1.0
+Version: 1.0.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
-Depends: x11-repo, xwayland, python, python-tkinter
-Suggests: i-haklab
+Depends: x11-repo, git, xwayland, python, python-tkinter
+Suggests: i-haklab, termux-desktop-xfce
 Homepage: https://github.com/ivam3/xapt-management
 Description: Graphical interface for Advance Package Tool (APT) written in python.
-Filename: dists/stable/extras/binary-all/xapt-management_1.0_all.deb
-Size: 2108
-MD5Sum: fdd98c371511b72f5d9d0cc34bb8bc8c
-SHA1: 3a1cbbfbb2592464738152058f77d7de573f6a38
-SHA256: 4e14d13ffd0571cc46f8ccbae469bbb9cc66d7db5706e142eb66ed8695ebff03
-SHA512: 6c4cca7eaf190581ea1b1dff0e9b22e2fb2b2bcd529828025d03c4bac450f859987a3f276b3f9d15b881f68dbe670e8b31b0b7a999c204ab25edab80d3ec7443
+Filename: dists/stable/extras/binary-all/xapt-management_1.0.1_all.deb
+Size: 2348
+MD5Sum: d4689c7c916584c3d59949675b637459
+SHA1: a60d4a60841aaec3afc618e3d21e9bf2e280e500
+SHA256: 19ca23b4d8c2a0695cfc5e7b2796ac71648a5dec3b907357ece12226db5d6cb5
+SHA512: 9351ece2016248d1d957e744b40fce40c0ed21a618e8d53d4d8183bcd4c642b2e50c370a2d27f6b4319a78d38c14f057a67441ba9c58ec4e64bf2989e5990d9d
 
 Package: xerosploit
 Version: 0.1
