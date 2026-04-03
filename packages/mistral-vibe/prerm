@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash 
+
+! command -v vibe &>/dev/null || {
+    uv tool uninstall mistral-vibe;
+}
+
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

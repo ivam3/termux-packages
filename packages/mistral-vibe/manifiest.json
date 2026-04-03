@@ -1,0 +1,13 @@
+{
+  "name": "mistral-vibe",
+  "version": "2.7.2",
+  "arch": "all",
+  "homepage": "https://github.com/mistralai/mistral-vibe",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["curl, uv, python, python-pip, python-cryptography"],
+  "suggests": ["i-haklab, neovim"],
+  "description": "Minimal CLI coding assistant/agent powered by Mistral's models.",
+  "files" :{
+    "mistralvibe_installer": "bin/mistralvibe_installer"
+  }
+}

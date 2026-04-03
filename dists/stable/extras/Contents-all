@@ -1087,6 +1087,7 @@ data/data/com.termux/files/usr/share/applications/markdown-viewer/img/markdown-v
 data/data/com.termux/files/usr/share/applications/markdown-viewer/markdown-viewer.desktop markdown-viewer
 data/data/com.termux/files/usr/bin/msfconsole                                    metasploit-framework
 data/data/com.termux/files/usr/bin/mimikatz-installer                            mimikatz
+data/data/com.termux/files/usr/bin/mistralvibe_installer                         mistral-vibe
 data/data/com.termux/files/usr/bin/nexphisher                                    nexphisher
 data/data/com.termux/files/usr/bin/nexphisher.sh                                 nexphisher
 data/data/com.termux/files/home/.ssh/config                                      ngrok
