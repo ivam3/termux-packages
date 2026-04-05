@@ -1,0 +1,16 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+if [[ -d ${HOME}/.openclaw ]]; then
+    rm -rf ${HOME}/.openclaw
+fi
+if [[ -d ${HOME}/.openclaw-android ]]; then
+    rm -rf ${HOME}/.openclaw-android
+fi
+
+python -m pip --no-color --quiet uninstall pyyaml
+for i in openclaw clawdhub grammy @grammyjs/runner @grammyjs/transformer-throttler; do 
+    npm uninstall -g $i
+done
+rm -rf "$PREFIX/lib/node_modules/clawdhub" 2>/dev/null
+rm -rf "$HOME/.npm/_cacache" 2>/dev/null
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

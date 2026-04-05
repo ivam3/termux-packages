@@ -76,6 +76,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [nexphisher](https://github.com/htr-tech/nexphisher) | Advanced Phishing tool for Termux. |
 | [ngrok](https://ngrok.com) | Globally distributed reverse proxy fronting your web services running in any cloud or private network, or your machine. |
 | [nikto](https://github.com/sullo/nikto) | A web server scanner. |
+| [openclaw](https://github.com/AidanPark/openclaw-android) | Open-source autonomous artificial intelligence agent. |
 | [opencode](https://github.com/opencode-ai/opencode) | A powerful AI coding agent. Built for the terminal. |
 | [openjdk-21](https://jdk.java.net/) | Java development kit and runtime. |
 | [osintgram](https://github.com/datalux/Osintgram) | A OSINT tool on Instagram. It offers an interactive shell to perform analysis on Instagram account of any users by its nickname. |

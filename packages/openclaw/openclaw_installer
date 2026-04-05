@@ -1,0 +1,67 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+set -euo pipefail
+SCRIPT_DIR="${HOME}/.openclaw"
+
+source "$SCRIPT_DIR/scripts/lib.sh"
+if command -v termux-wake-lock &>/dev/null; then
+    termux-wake-lock 2>/dev/null || true
+fi
+bash "$SCRIPT_DIR/scripts/check-env.sh"
+SELECTED_PLATFORM="openclaw"
+load_platform_config "$SELECTED_PLATFORM" "$SCRIPT_DIR"
+mkdir -p "$PROJECT_DIR/patches"
+
+if [ "${PLATFORM_NEEDS_GLIBC:-false}" = true ]; then 
+    bash "$SCRIPT_DIR/scripts/install-glibc.sh"; 
+fi
+if [ "${PLATFORM_NEEDS_NODEJS:-false}" = true ]; then 
+    bash "$SCRIPT_DIR/scripts/install-nodejs.sh"; 
+fi
+if [ ! -e "${PREFIX}/bin/ar" ] && [ -x "${PREFIX}/bin/llvm-ar" ]; then 
+    ln -s "${PREFIX}/bin/llvm-ar" "${PREFIX}/bin/ar"
+    echo -e "${GREEN}[OK]${NC}   Created ar → llvm-ar symlink"
+fi
+
+# Source environment for current session (needed by platform install)
+GLIBC_BIN_DIR="$PROJECT_DIR/bin"
+GLIBC_NODE_DIR="$PROJECT_DIR/node"
+export PATH="$GLIBC_BIN_DIR:$GLIBC_NODE_DIR/bin:${HOME}/.local/bin:$PATH"
+export TMPDIR="${PREFIX}/tmp"
+export TMP="${TMPDIR}"
+export TEMP="${TMPDIR}"
+export OA_GLIBC=1
+
+echo "Platform Package Install (L2)"
+bash "$SCRIPT_DIR/platforms/$SELECTED_PLATFORM/install.sh"
+
+echo ""
+echo -e "${BOLD}[6.5] Environment Variables + CLI + Marker${NC}"
+echo "----------------------------------------"
+bash "$SCRIPT_DIR/scripts/setup-env.sh"
+
+PLATFORM_ENV_SCRIPT="$SCRIPT_DIR/platforms/$SELECTED_PLATFORM/env.sh"
+if [ -f "$PLATFORM_ENV_SCRIPT" ]; then
+    eval "$(bash "$PLATFORM_ENV_SCRIPT")"
+fi
+
+mkdir -p "$PROJECT_DIR"
+echo "$SELECTED_PLATFORM" > "$PLATFORM_MARKER"
+
+chmod +x "$PREFIX/bin/oa"
+chmod +x "$PREFIX/bin/oaupdate"
+
+cp "$SCRIPT_DIR/scripts/uninstall.sh" "$PROJECT_DIR/uninstall.sh"
+chmod +x "$PROJECT_DIR/uninstall.sh"
+
+mkdir -p "$PROJECT_DIR/scripts"
+mkdir -p "$PROJECT_DIR/platforms"
+cp "$SCRIPT_DIR/scripts/lib.sh" "$PROJECT_DIR/scripts/lib.sh"
+cp "$SCRIPT_DIR/scripts/setup-env.sh" "$PROJECT_DIR/scripts/setup-env.sh"
+cp "$SCRIPT_DIR/scripts/backup.sh" "$PROJECT_DIR/scripts/backup.sh"
+rm -rf "$PROJECT_DIR/platforms/$SELECTED_PLATFORM" 2>/dev/null
+cp -R "$SCRIPT_DIR/platforms/$SELECTED_PLATFORM" "$PROJECT_DIR/platforms/$SELECTED_PLATFORM"
+
+step 7 "Verification"
+bash "$SCRIPT_DIR/tests/verify-install.sh"
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

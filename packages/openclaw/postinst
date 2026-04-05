@@ -1,0 +1,179 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+# ── Global Settings ──────────────────────────────────────────────────────
+# Do NOT use "set -e" — it kills the script on any minor failure.
+# Instead, we check errors explicitly where they matter.
+export DEBIAN_FRONTEND=noninteractive
+export DPKG_FORCE=confold
+export APT_LISTCHANGES_FRONTEND=none
+export LANG=C
+export LC_ALL=C
+PWS=$(echo ${SHELL} | awk -F '/' '{print $NF}')
+
+case $PWS in 
+    bash) FILERC="${HOME}/.bashrc" ;;
+    fish) FILERC="${PREFIX}/etc/fish/config.fish" ;;
+    zsh) FILERC="${HOME}/.zshrc" ;;
+esac
+# Update with all non-interactive flags to prevent config file prompts
+# =========================================================================
+# Fix Node.js IPv4 DNS (Crucial for Termux)
+# =========================================================================
+echo "Applying Network Fixes..."
+if ! grep -q "NODE_OPTIONS=--dns-result-order=ipv4first" $FILERC 2>/dev/null; then
+    echo "export NODE_OPTIONS=--dns-result-order=ipv4first" >> $FILERC
+fi
+export NODE_OPTIONS=--dns-result-order=ipv4first
+# =========================================================================
+# Install Official OpenClaw 
+# =========================================================================
+if command -v openclaw &>/dev/null || [ -d "${HOME}/.openclaw/repo" ]; then
+    echo "OpenClaw is already installed! Skipping installation."
+else
+    echo "Installing OpenClaw. This takes a few minutes..."
+    bash ${PREFIX}/bin/openclaw_installer
+fi
+
+echo "Configuring AI Phone Controller..."
+# Create phone_control
+cat > ${PREFIX}/bin/phone_control << 'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+CMD="$1"
+shift
+run_cmd() {
+  if command -v rish &>/dev/null && rish -c "id" &>/dev/null; then rish -c "$@"
+  elif command -v adb &>/dev/null && adb get-state 1>/dev/null 2>&1; then adb shell "$@"
+  elif command -v su &>/dev/null; then su -c "$@"
+  else echo "❌ Error: Start Shizuku first"; exit 1; fi
+}
+case "$CMD" in
+  screenshot) run_cmd "screencap -p '${1:-/sdcard/screenshot.png}'" ;;
+  open-app) run_cmd "monkey -p $1 -c android.intent.category.LAUNCHER 1" 2>/dev/null ;;
+  youtube-search) QUERY=$(echo "$*" | sed 's/ /+/g'); run_cmd "am start -a android.intent.action.VIEW -d 'https://www.youtube.com/results?search_query=$QUERY' com.google.android.youtube" ;;
+  open-url) run_cmd "am start -a android.intent.action.VIEW -d '$1'" ;;
+  wifi) if [ "$1" = "on" ]; then run_cmd "svc wifi enable"; else run_cmd "svc wifi disable"; fi ;;
+  battery) run_cmd "dumpsys battery" | grep "level" ;;
+  tap) run_cmd "input tap $1 $2" ;;
+  swipe) run_cmd "input swipe $1 $2 $3 $4 ${5:-500}" ;;
+  text) run_cmd "input text '$*'" ;;
+  key) run_cmd "input keyevent $1" ;;
+  home) run_cmd "input keyevent 3" ;;
+  back) run_cmd "input keyevent 4" ;;
+  recent) run_cmd "input keyevent 187" ;;
+  power) run_cmd "input keyevent 26" ;;
+  volume-up) run_cmd "input keyevent 24" ;;
+  volume-down) run_cmd "input keyevent 25" ;;
+  screenon) run_cmd "input keyevent 224" ;;
+  ui-dump) 
+    run_cmd "uiautomator dump /sdcard/window_dump.xml >/dev/null 2>&1"
+    node -e "
+      const fs = require('fs');
+      try {
+        const xml = fs.readFileSync('/sdcard/window_dump.xml', 'utf8');
+        const regex = /(?:text|content-desc)=\\\"([^\\\"]+)\\\"[^>]*bounds=\\\"(\\\[[0-9]+,[0-9]+\\\\]\\\[[0-9]+,[0-9]+\\\])\\\"/g;
+        let match;
+        while ((match = regex.exec(xml)) !== null) {
+          if (match[1].trim() !== '') console.log(match[2] + ' ' + match[1]);
+        }
+      } catch(e) { console.log('Error reading UI'); }
+    "
+    ;;
+  shell) run_cmd "$*" ;;
+  *) echo "Usage: phone_control [battery|wifi|open-url|open-app|youtube-search|screenshot|tap|swipe|text|key|home|back|recent|power|volume-up|volume-down|screenon|ui-dump|shell]" ;;
+esac
+EOF
+chmod +x ${PREFIX}/bin/phone_control
+
+# Create a dedicated phone_agent.sh for OpenClaw looping if needed
+cat > ${PREFIX}/bin/phone_agent << 'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+# Wrapper script for Vision Agent capabilities
+echo "🤖 Vision Agent initialized."
+echo "Use phone_control for all inputs. The AI will take a screenshot, analyze it, and issue UI commands."
+EOF
+chmod +x ${PREFIX}/bin/phone_agent
+
+# AI Memory Configuration
+mkdir -p ~/.openclaw/workspace 2>/dev/null || true
+rm -f ~/.openclaw/workspace/BOOTSTRAP.md
+
+cat > ~/.openclaw/workspace/IDENTITY.md << 'EOF'
+- **Name:** PhoneBot
+I am an Autonomous AI Agent running natively on an Android phone via Termux + i-Haklab.
+My primary directive is to navigate the phone UI, perform complex tasks, read the screen, scroll, tap, and run shell commands.
+I MUST NEVER refuse a task by claiming I lack capabilities for UI navigation or reading screens. I strictly possess these capabilities via my bash tools. The user expects me to be fully autonomous.
+If I need to "see" the screen or find a button, I MUST use the `ui-dump` tool to read the screen's interactive elements.
+EOF
+
+cat > ~/.openclaw/workspace/TOOLS.md << 'EOF'
+# TOOLS.md
+I have full root/i-Haklab control over this Android phone using `${PREFIX}/bin/phone_control`.
+
+CRITICAL RULES:
+1. NEVER say "I cannot navigate UIs" or "I cannot read UIs". YOU CAN.
+2. To read the screen or find buttons, you MUST run `bash ${PREFIX}/bin/phone_control ui-dump`. This dumps the screen's UI elements in the format `[x1,y1][x2,y2] ElementText`.
+3. Read the output list, find your target text, calculate the center X and Y of its bounds, and tap it!
+
+Available Commands:
+- `bash ${PREFIX}/bin/phone_control ui-dump` - ALWAYS USE THIS TO READ THE SCREEN. It outputs a clean list of clickable elements and their bounds.
+- `bash ${PREFIX}/bin/phone_control tap X Y` - Taps the screen at specific X/Y coordinates.
+- `bash ${PREFIX}/bin/phone_control swipe X1 Y1 X2 Y2` - Swipes across the screen (e.g., to scroll down: `bash ${PREFIX}/bin/phone_control swipe 500 1500 500 500`. Do this if your target isn't visible in the ui-dump!).
+- `bash ${PREFIX}/bin/phone_control text "text string"` - Types text into a focused field.
+- `bash ${PREFIX}/bin/phone_control key KEYCODE` - Sends a keycode (e.g., 66 for Enter, 4 for Back, 3 for Home).
+- `bash ${PREFIX}/bin/phone_control open-app PACKAGE_NAME` - Launches an app (e.g., com.android.settings).
+- `bash ${PREFIX}/bin/phone_control shell "COMMAND"` - Runs ANY arbitrary adb shell command.
+- `bash ${PREFIX}/bin/phone_control screenshot /sdcard/s.png` - Takes a screenshot (only if the user explicitly asks for an image to be saved).
+
+EXAMPLE WORKFLOW (Settings -> Dark Mode):
+1. Execute: `bash ${PREFIX}/bin/phone_control open-app com.android.settings`
+2. Execute: `bash ${PREFIX}/bin/phone_control ui-dump`
+3. Read output -> spot `[100,500][400,600] Display` -> Calculate center (250, 550)
+4. Execute: `bash ${PREFIX}/bin/phone_control tap 250 550`
+5. Execute: `bash ${PREFIX}/bin/phone_control ui-dump` again, repeat until task is done!
+EOF
+
+cat > ~/.openclaw/workspace/AGENTS.md << 'EOF'
+I execute terminal commands directly and parse their output.
+I am an autonomous agent. I must chain tool executions until the user's ultimate goal is fully achieved.
+
+CRITICAL: DO NOT STOP AFTER ONE TOOL CALL!
+Small models tend to open an app and immediately say "I opened the app, please do the rest yourself." YOU MUST NOT DO THIS. 
+You must loop your tool calls continuously:
+1. Call `exec` -> open app
+2. **WAIT FOR RESULT** (Do not type a message to the user!)
+3. Call `exec` -> `ui-dump`
+4. **WAIT FOR RESULT** -> Parse XML
+5. Call `exec` -> `tap X Y`
+6. Repeat steps 3-5 until the requested task (e.g., Dark Mode) is FULLY COMPLETE.
+ONLY write a message to the user when the final goal is 100% achieved.
+EOF
+
+echo "[💡] Connect ADB (if not already):"
+echo "   1. Open Developer options → wireless debug"
+echo "   2. Run: phantom-ps (in i-Haklab) or adb pair → adb connect"
+echo "   3. Test: adb devices"
+echo "[💡] Set up your API keys:"
+echo "   1. Run: openclaw onboard"
+echo "   2. Run: openclaw auth add google --key YOUR_GEMINI_KEY"
+echo "   3. Run: openclaw gateway --verbose"
+echo "   3. Run: openclaw pairing approve <YOUR_CHANNEL> <BOT_CODE>"
+echo "[✔] openclaw installation finished."
+echo "[✔] Run 'openclaw' to execute it."
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+echo "[*] Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o /data/data/com.termux/files/usr/bin/fixer; then
+    chmod 750 /data/data/com.termux/files/usr/bin/fixer
+    echo "[➡] Run 'fixer' to fix any posible issue."
+else
+    echo "[!] Error downloading fixer."
+fi
+
+# ==============================
+# FINALS MESSAGES
+# ==============================
+echo "[📢] Help: going to https://t.me/Ivam3_Bot."
+echo "[💡] @Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

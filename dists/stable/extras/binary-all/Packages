@@ -879,7 +879,7 @@ SHA256: 989b6693900ff471e790c0c36dd4c31ca64f6868221b00a599cadb6ded2ad98c
 SHA512: b2acf2821c4fa7423aaca5ba2e39c36ff1c4b5cb01f5e10c1ff4e00aaa889ac417570cb2b57d506be35c9a5c1e29baa32e7030c5c9dc15ff7ce941036a28720b
 
 Package: i-haklab
-Version: 3.12.1
+Version: 3.12.2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 30628
@@ -887,12 +887,12 @@ Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-pack
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.12.1_all.deb
-Size: 8047516
-MD5Sum: 978f23ed0986510d150b7797a1cb4fb4
-SHA1: 030ca7369882e5572350bfb2094a225c029e2110
-SHA256: 645fc393cb3fa6d6ed889455b741dfc3054a0623cda42139959fdd841da84603
-SHA512: 71d9bd996c768d092ef7d6613251f5151d942ac39222375cd8c04d89692b01e7e1479fdf1f24a07a164a04c67c6e6d81c9e751fcb8c9028338e2f4aaf497da7c
+Filename: dists/stable/extras/binary-all/i-haklab_3.12.2_all.deb
+Size: 8047584
+MD5Sum: 11d222cccac658b0331e4df9a15d78ee
+SHA1: ac49c7368ebd6aa01612ce146e5564136b63eb75
+SHA256: 313b5ef20fdee430b405a4e15166df9ebbc9eddc5b65896fa48a6ae851a10bf2
+SHA512: 2a63357629d1b0921e843679d633f546907702896e9edfe038841c8d4c9de2f184d8c278a8d177b2d8a7b6ad017d7900baafce1ae1d663a9d4fc979fa260587e
 
 Package: infoga
 Version: 1.0
@@ -1116,6 +1116,22 @@ MD5Sum: 3d907ba6e857e4bc2ccc8e2b626adea7
 SHA1: 2c08f2cfc37071672cafa88bc2e0aca559b080d0
 SHA256: 6694a5b19a00d82ec8322aa70d7fa1346590979cbf3880a20bd2627e09ff795c
 SHA512: 343283ad3863e2edc5307ee761db4a8a38a001e37ff821cf7a56103bd9ff34e10329d236f321b247f1dfbb27b11004ca989eeaf0cf2b8941484e68c3dffd58ed
+
+Package: openclaw
+Version: 2026.4.2
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 114
+Depends: android-tools, git, curl, nodejs-lts, pacman, python, python-pip, make, cmake, clang, binutils, proot
+Suggests: i-haklab, botgram
+Homepage: https://github.com/AidanPark/openclaw-android
+Description: Open-source autonomous artificial intelligence agent.
+Filename: dists/stable/extras/binary-all/openclaw_2026.4.2_all.deb
+Size: 28452
+MD5Sum: 59409c97f2a2247deb04b907e2a3eadc
+SHA1: 3b4be0e759beb2bd23556d70a9b9e8df08ee19a4
+SHA256: 1de883c0055222c2ccdbc262dc26445ca5d29eff3c78e8e0319aaad7037dd7c6
+SHA512: 617072d5be3d3da443c19785d1fd155ce1a27f6c0c610385a08d603500cd79aed43677bcd9f934cecd32b678017eb243b485b56915e51deac505fbc5e2cd342a
 
 Package: opencode
 Version: 0.0.55
