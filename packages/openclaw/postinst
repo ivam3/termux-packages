@@ -19,11 +19,28 @@ esac
 # =========================================================================
 # Fix Node.js IPv4 DNS (Crucial for Termux)
 # =========================================================================
+echo "Applying Enviroment Fixes..."
+if ! grep -q "" $FILERC 2>/dev/null; then
+    echo """
+# >>> OpenClaw on Android >>>
+# platform: openclaw
+export PATH="$HOME/.openclaw-android/bin:$HOME/.openclaw-android/node/bin:$PATH"
+export TMPDIR="$PREFIX/tmp"
+export TMP="$TMPDIR"
+export TEMP="$TMPDIR"
+export OA_GLIBC=1
+export CONTAINER=1
+export CLAWDHUB_WORKDIR="$HOME/.openclaw/workspace"
+export CPATH="$PREFIX/include/glib-2.0:$PREFIX/lib/glib-2.0/include"
+# <<< OpenClaw on Android <<<
+""" >> $FILERC
+fi
 echo "Applying Network Fixes..."
 if ! grep -q "NODE_OPTIONS=--dns-result-order=ipv4first" $FILERC 2>/dev/null; then
     echo "export NODE_OPTIONS=--dns-result-order=ipv4first" >> $FILERC
 fi
 export NODE_OPTIONS=--dns-result-order=ipv4first
+
 # =========================================================================
 # Install Official OpenClaw 
 # =========================================================================
