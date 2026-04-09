@@ -148,6 +148,39 @@ You must loop your tool calls continuously:
 ONLY write a message to the user when the final goal is 100% achieved.
 EOF
 
+############################################################################################ 
+# Script para corregir el error de 'unrecognized option' en OpenClaw para Android/Termuxx # 
+# Causa: Ruta errónea en glibc-compat.js que impide la redirección de process.execPath     #
+#############################################################################################
+TARGET_FILE="$HOME/.openclaw-android/patches/glibc-compat.js"
+OLD_PATH="'.openclaw-android', 'node', 'bin', 'node'"
+NEW_PATH="'.openclaw-android', 'bin', 'node'"
+
+echo "--- Corrector de OpenClaw-Android ---"
+
+# 1. Verificar si el archivo existe
+if [ ! -f "$TARGET_FILE" ]; then
+    echo "Error: No se encontró el archivo en $TARGET_FILE"
+    exit 1
+fi
+
+# 2. Crear respaldo
+cp "$TARGET_FILE" "${TARGET_FILE}.bak"
+echo "✓ Respaldo creado: ${TARGET_FILE}.bak"
+
+# 3. Aplicar la corrección
+if grep -q "$OLD_PATH" "$TARGET_FILE"; then
+    sed -i "s|$OLD_PATH|$NEW_PATH|g" "$TARGET_FILE"
+    echo "✓ Corrección aplicada exitosamente."
+else
+    # Verificar si ya estaba corregido
+    if grep -q "$NEW_PATH" "$TARGET_FILE"; then
+        echo "i El archivo ya parece estar corregido."
+    else
+        echo "Error: No se encontró la línea específica para parchear. Es posible que la versión sea distinta."
+    fi
+fi
+
 echo "[💡] Connect ADB (if not already):"
 echo "   1. Open Developer options → wireless debug"
 echo "   2. Run: phantom-ps (in i-Haklab) or adb pair → adb connect"
