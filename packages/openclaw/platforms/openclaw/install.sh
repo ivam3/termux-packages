@@ -18,7 +18,7 @@ chmod +x "${PREFIX}/bin/systemctl"
 
 # Clean up existing installation for smooth reinstall
 if npm list -g openclaw &>/dev/null 2>&1 || [ -d "${PREFIX}/lib/node_modules/openclaw" ]; then
-    echo "Existing installation detected \u2014 cleaning up for reinstall..."
+    echo -en "Existing installation detected \u2014 cleaning up for reinstall..."
     npm uninstall -g openclaw 2>/dev/null || true
     rm -rf "$PREFIX/lib/node_modules/openclaw" 2>/dev/null || true
     npm uninstall -g clawdhub 2>/dev/null || true
@@ -41,7 +41,7 @@ if [ -d "$OPENCLAW_DIR/node_modules/@snazzah/davey" ]; then
     (cd "$OPENCLAW_DIR" && npm install @snazzah/davey --no-fund --no-audit --no-save 2>/dev/null) || true
 fi
 
-bash "$SCRIPT_DIR/patches/openclaw-apply-patches.sh"
+bash "$SCRIPT_DIR/platforms/openclaw/patches/openclaw-apply-patches.sh"
 
 echo ""
 echo "Installing clawdhub (skill manager)..."

@@ -43,7 +43,7 @@ if [ -d "$OPENCLAW_DIR/node_modules/@snazzah/davey" ]; then
     fi
 fi
 
-bash "$SCRIPT_DIR/patches/openclaw-apply-patches.sh"
+bash "$SCRIPT_DIR/platforms/openclaw/patches/openclaw-apply-patches.sh"
 
 if [ "$OPENCLAW_UPDATED" = true ]; then
     bash "$SCRIPT_DIR/patches/openclaw-build-sharp.sh" || true

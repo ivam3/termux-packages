@@ -1,6 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-python -m pipx --quiet uninstall sherlock-project;
+python -m pipx uninstall sherlock-project;
 if [[ -d ${HOME}/.local/share/pipx/venvs/sherlock-project ]]; then
     rm -rf ${HOME}/.local/share/pipx/venvs/sherlock-project
 fi
