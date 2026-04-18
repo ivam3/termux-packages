@@ -1,6 +1,13 @@
 #!/data/data/com.termux/files/usr/bin/bash
-#
+# COLORS
+W="\e[0m"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+B="\e[34m"
+
 ip="$(ifconfig 2>/dev/null|grep -oE '([0-9]{1,3}\.){3}'|grep -v 255|grep -v 127|tail -n 1)"
+[[ -z "$ip" ]] && ip="10.0.2."
 
 bannerReadme(){
       printf "\e[33m"
@@ -15,19 +22,18 @@ bannerReadme(){
 
 
 install(){
-    nv="3.20"
-    [[ "$(echo "${v##*v} < $nv" | bc)" -eq 1 ]] && { legacySET="\n\t  $ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk";} || { legacySET=""; }
-
     # Create main dir 
-    echo "Downloading $os ISO file (It could take a while) ..."
+    echo "[*] Preparando instalación de $os..."
     mkdir -p ${HOME}/.local/share/termux-docker-qemu/$os/termux2$os 2>/dev/null
     cd ${HOME}/.local/share/termux-docker-qemu/$os
     
     # Download iso
-    [[ -e ${HOME}/.local/share/termux-docker-qemu/$so/$iso ]] && { rm -rf ${HOME}/.local/share/termux-docker-qemu/$so/$iso; }
-    wget --tries=20 --quiet --progress=dot $ref$iso -O ${HOME}/.local/share/termux-docker-qemu/$os/$iso
+    [[ -e $iso ]] && { echo "[!] Usando ISO existente."; } || {
+        echo "[+] Descargando $os ISO ($iso)..."
+        wget --tries=20 --quiet --progress=dot $ref$iso -O $iso
+    }
   
-    # Create disk (note it won't actually take 5GB of space, more like 500MB)
+    # Create disk
     while read -n 3 -p "ROM size [recommended in gigas: 30]? " size && [[ ! ${size} =~ ^[1-9] ]]; do 
         [[ -z ${size} ]] && { break;} || { echo "E: Invalid answer";}
     done 
@@ -35,22 +41,21 @@ install(){
         if [[ -z ${mRAM} ]]; then 
             break 
         else 
-            echo "E: Invalid answer" 
+            echo -en "\e[31mE:\e[0m Invalid answer\n" 
         fi 
     done 
 
     [[ -z $mRAM ]] && { mRAM="12288"; } || { mRAM=$(expr 1024 \* $mRAM);} 
-    sed "s|ram|$mRAM|" -i ${PREFIX}/bin/termux-docker-qemu
+    
+    # Actualizar RAM en el script ejecutable si existe
+    [[ -f ${PREFIX}/bin/termux-docker-qemu ]] && sed -i "s/mRAM=.*/mRAM=\"$mRAM\"/" ${PREFIX}/bin/termux-docker-qemu
   
-    echo "Creating $os image."
-    [[ $os.img ]] && rm -rf $os.img
+    echo "[+] Creando imagen QCOW2 (Optimización VirtIO)."
+    [[ -f $os.qcow2 ]] && rm -f $os.qcow2
     [[ -z $size ]] && { size="30G"; } || { size=$size'G';}
-    qemu-img create -f qcow2 $os.img $size
+    qemu-img create -f qcow2 $os.qcow2 $size
 
     if [[ $os = alpine ]]; then
-        nv="3.20"
-        [[ "$(echo "${v##*v} < $nv" | bc)" -eq 1 ]] && { legacySET="\n      $ sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk";} || { legacySET=""; }
-
         bannerReadme 
         echo -en "\e[0mBoot process will start, in middle of it you will login to Linux OS
       Do it as \e[31mroot\e[0m user.
@@ -61,39 +66,43 @@ install(){
         $ ifup eth0
         $ echo -en \"nameserver 8.8.8.8\" >> /etc/resolv.conf
         $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/ashrc.sh -O /etc/profile.d/ashrc.sh
-        $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os $legacySET
+        $ wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os
         $ apk add tzdata
         $ setup-$os -f answerfile.$os
         ╰─➤# It will ask you to set a new password
-        ╰─➤# Respond with 'no' On question 'Setup a user? (enter a lower-case loginname, or 'no') [no]'
+        ╰─➤# Respond with 'no' On question 'Setup a user?'
         ╰─➤# Respond with 'y' On question 'erase the above disk(s) and continue? [y/N]:'
         $ poweroff
 
-      [!] Or if you prefer just copy and paste the next one-command-line:
+      [!] Or if you prefer just copy and paste the next one-command-line (FAST VIRTIO INSTALL):
 
-      setup-interfaces && ifup eth0 && echo -en \"nameserver 8.8.8.8\" >> /etc/resolv.conf && wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/ashrc.sh -O /etc/profile.d/ashrc.sh && wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os && sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk 2>/dev/null && apk add tzdata && setup-$os -f answerfile.$os && poweroff
+      setup-interfaces && ifup eth0 && echo -en \"nameserver 8.8.8.8\" >> /etc/resolv.conf && wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/ashrc.sh -O /etc/profile.d/ashrc.sh && wget https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/answerfile.$os && sed -i 's/sda/vda/g' answerfile.$os && apk add tzdata && setup-$os -f answerfile.$os && poweroff
   
     press \e[33mENTER\e[0m to continue" && read enter
 
-    # Boot it up
+    # Boot it up with VirtIO and Entropy RNG
     qemu-system-x86_64 -machine q35 -m $mRAM -smp \
       cpus=$(nproc) -cpu qemu64,+avx,+avx2 -vga virtio -full-screen -usb \
+      -device usb-tablet -device virtio-rng-pci \
       -drive if=pflash,format=raw,read-only=on,file=${PREFIX}/share/qemu/edk2-x86_64-code.fd \
-      -netdev user,id=n1,net=$ip\0/24,dhcpstart=$ip\9,hostfwd=tcp::2222-:22 \
-      -device virtio-net,netdev=n1 \
+      -netdev user,id=n1,net=${ip}0/24,dhcpstart=${ip}9,hostfwd=tcp::2222-:22 \
+      -device virtio-net-pci,netdev=n1 \
       -virtfs local,path=${HOME}/.local/share/termux-docker-qemu/$os/termux2$os,mount_tag=termux2alpine,security_model=passthrough \
+      -drive file=$os.qcow2,if=virtio,format=qcow2,cache=unsafe,discard=on \
       -cdrom $iso \
-      -nographic $os.img      
+      -nographic 
   fi
 }
 
 update(){
   echo -en """
 [!] **UPDATES**
+ ╰➤ Optimized VirtIO drivers for Disk, Net and Entropy (Faster Docker)
+ ╰➤ Native QCOW2 support
  ╰➤ Enable graphical enviroment with xfce4+vncserver
  ╰➤ Enable option to keep the image previous installed
  ╰➤ Port mapping between Termux & VM: 8080-:80,2222:22,2121:21,8000:8000,5900:5900
- ╰➤ PATH volumen between Termux & VM: \$TOOLS/termux-docker-qemu/$os/termux2$os/ ─➤ /termux2$os"""
+"""
 }
 
 echo "[?] Choose an Operative System:"
@@ -106,15 +115,16 @@ select os in alpine;do
       done
       
       echo "[?] Choose a version:"
-      select v in "v3.16" "v3.17" "v3.18" "v3.19" "v3.20" "v3.21" "v3.22";do 
+      select v in "v3.16" "v3.17" "v3.18" "v3.19" "v3.20" "v3.21" "v3.22" "v3.23";do 
           case $v in 
               v3.16) iv="3.16.9";break ;;
               v3.17) iv="3.17.9";break ;;
               v3.18) iv="3.18.9";break ;;
               v3.19) iv="3.19.9";break ;;
-              v3.20) iv="3.20.8";break ;;
-              v3.21) iv="3.21.5";break ;;
-              v3.22) iv="3.22.2";break ;;
+              v3.20) iv="3.20.9";break ;;
+              v3.21) iv="3.21.7";break ;;
+              v3.22) iv="3.22.4";break ;;
+              v3.23) iv="3.23.4";break ;;
               *) echo "Invalid version"; continue;;
           esac
       done
@@ -122,22 +132,18 @@ select os in alpine;do
       declare iso=alpine-virt-$iv-$m.iso
       break
       ;;
-
     *) echo -en "\e[31mE:\e[0m wrong answer ... try again.\n"
       ;;
   esac
 done
 
 # Validate previous image
-if [[ -e ${HOME}/.local/share/termux-docker-qemu/$os/$os.img ]]; then 
-    echo -en "W: There is a previous $os image created\n╰─➤ Do you wanna overwrite it? [y/n]"
-    while read -p ": " answ && [ -z $answ ]; do 
-        continue
-    done
-
-    if [[ "$answ" == "Yes" ]] || [[ "$answ" == "yes" ]] || [[ "$answ" == "Y" ]] || [[ "$answ" == "y" ]]; then 
+if [[ -e ${HOME}/.local/share/termux-docker-qemu/$os/$os.qcow2 ]]; then 
+    echo -en "W: There is a previous $os image (.qcow2)\n╰─➤ Do you wanna overwrite it? [y/n]"
+    while read -p ": " answ && [ -z $answ ]; do continue; done
+    if [[ "$answ" =~ ^[Yy] ]]; then 
         echo "Deleting $os image."
-        rm -rf ${HOME}/.local/share/termux-docker-qemu/$os/$os.img 
+        rm -f ${HOME}/.local/share/termux-docker-qemu/$os/$os.qcow2 
         install && update
     else 
         update
@@ -150,27 +156,6 @@ curl -fsSL \
   https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/termux-docker-qemu/$os\X11.sh \
   -o ${HOME}/.local/share/termux-docker-qemu/$os/termux2$os/$os\X11.sh
 
-# ==============================
-# INSTALLING SCRIPT FIXER
-# ==============================
-echo "[*] Installing script fixer..."
-fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
-if curl -fsSL "$fixerURL" -o /data/data/com.termux/files/usr/bin/fixer; then
-    chmod 750 /data/data/com.termux/files/usr/bin/fixer
-    echo "[➡] Run 'fixer' to fix any posible issue."
-else
-    echo "[!] Error downloading fixer."
-fi
-
 echo ""
-echo "[*] termux-docker-qemu installation finished."
-echo "[*] Run 'termux-docker-qemu $os' to execute it for only CLi."
-echo "[+] Run 'termux-docker-qemu $os x11' to execute it with graphical enviroment"
-echo " ╰➤ To set a graphical enviroment you should run in $os the command: ash /termux2$os/${os}X11.sh"
-
-# ==============================
-# FINALS MESSAGES
-# ==============================
-echo "[📢] Help: going to https://t.me/Ivam3_Bot."
-echo "[💡] @Ivam3: thank you for use my package."
-####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
+echo "[*] termux-docker-qemu installation finished (Optimized with VirtIO)."
+echo "[📢] Help: https://t.me/Ivam3_Bot."

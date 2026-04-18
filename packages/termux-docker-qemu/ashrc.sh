@@ -55,7 +55,7 @@ if ! command -v tmux >/dev/null; then
   echo "Installing tmux ..."
   apk update
   apk upgrade
-  apk add tmux git perl
+  apk add tmux git perl python3 py3-pip
   cd;git clone https://github.com/gpakosz/.tmux.git
   ln -s -f .tmux/.tmux.conf
   cp .tmux/.tmux.conf.local .
