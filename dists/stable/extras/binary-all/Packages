@@ -1143,11 +1143,11 @@ Suggests: i-haklab
 Homepage: https://github.com/opencode-ai/opencode
 Description: A powerful AI coding agent. Built for the terminal.
 Filename: dists/stable/extras/binary-all/opencode_1.14.19_all.deb
-Size: 1864
-MD5Sum: 1add279d2eaf62062c1764dd86ebc9e5
-SHA1: b0cfbbbfe25ff72139bf1e76a885f3c6211a849f
-SHA256: 1ea1107c22959d06c3a9ecc490b6a78471adc3df309d2d994924210e2a3f9e1c
-SHA512: 5fc46288bdbcc86a492d00dbb9aa1a637c791fcff8c2f35f10c2d549c68aa463950a6a856b6e5b2c65709a1af462686f9a954c0d43d76402bd27c9a8ffd16272
+Size: 2028
+MD5Sum: 75e13a208845857d64760303eb45eeeb
+SHA1: 827fb5db34b827baa20462e5e2bc37e31b27c17f
+SHA256: 39f28eb28ec35ac9644644ec7140aecfb2682a356f50bfac0ae5ebe864f4837d
+SHA512: 78fe79cb1e24e2df06c6ee6f94252435d9e749b037ad75b01cd808596c0427f2134ac9621ff7742c1a324ea382acd1ecff2a1a3c582d3f09f0f389b76c73caa8
 
 Package: openjdk-21-source
 Architecture: all

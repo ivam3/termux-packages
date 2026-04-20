@@ -8,4 +8,15 @@
     pkg i udocker
 }
 
-udocker run --rm ghcr.io/anomalyco/opencode "$@"
+echo "[📢] Working directories:
+ ╰──────➤ workspace path: $(pwd)
+ ╰──────➤ root path: ${HOME}/.opencode
+ " 
+read -p "Press [Enter] to continue"
+
+echo "[+] Running OpenCode with udocker..."
+udocker run --rm \
+    -v $(pwd):/home/opencode/workspace \
+    -v $HOME/.opencode:/home/opencode/.opencode \
+    -w /home/opencode/workspace \
+    ghcr.io/anomalyco/opencode "$@"
