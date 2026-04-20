@@ -1,13 +1,13 @@
 {
   "name": "opencode",
-  "version": "0.0.55",
+  "version": "1.14.19",
   "arch": "all",
   "homepage": "https://github.com/opencode-ai/opencode",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["goland", "rust"],
+  "depends": ["python", "python-pip", "tur-repo"],
   "suggests": ["i-haklab"],
   "description": "A powerful AI coding agent. Built for the terminal.",
   "files" :{
-    "opencode-installer": "bin/opencode-installer"
+    "opencode": "bin/opencode"
   }
 }

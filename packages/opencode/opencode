@@ -1,0 +1,11 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+! command -v udocker &>/dev/null && { 
+    dep=$(apt list 2>/dev/null | grep tur-repo | grep -o "installed")
+    if [[ -z "$dep" ]]; then
+        pkg i tur-repo
+    fi
+    pkg i udocker
+}
+
+udocker run --rm ghcr.io/anomalyco/opencode "$@"

@@ -1,3 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash 
+[[ -d ${HOME}/.udocker/repos/ghcr.io/ ]] && rm -rf ${HOME}/.udocker/repos/ghcr.io/
 echo "!: Removing opencode data history"
+python -m pip --no-color --no-cache-dir uninstall udocker
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

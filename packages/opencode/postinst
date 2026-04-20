@@ -1,9 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
-
-mkdir -p ${HOME}/go ${PREFIX}/lib/go ${HOME}/.cache/go ${HOME}/go/pkg/mod ${PREFIX}/cmake/llvm
-bash ${PREFIX}/bin/opencode-installer
-[[ -e ${HOME}/go/bin/opencode ]] && {
+python -m pip --no-color --no-cache-dir install udocker
+udocker pull ghcr.io/anomalyco/opencode
+[[ -d ${HOME}/.udocker/repos/ghcr.io/anomalyco/opencode/latest ]] && {
     echo "[✔] opencode installation finished."
     echo "[➡] Run 'opencode' to execute it."
 } || {
