@@ -1123,6 +1123,7 @@ data/data/com.termux/files/usr/bin/oa                                           
 data/data/com.termux/files/usr/bin/oaupdate                                      openclaw
 data/data/com.termux/files/usr/bin/openclaw_installer                            openclaw
 data/data/com.termux/files/usr/bin/systemctl                                     openclaw
+data/data/com.termux/files/home/.opencode/.env                                   opencode
 data/data/com.termux/files/usr/bin/opencode                                      opencode
 data/data/com.termux/files/usr/opt/openjdk-21.0.1/lib/src.zip                    openjdk-21-source
 data/data/com.termux/files/usr/bin/osintgram                                     osintgram

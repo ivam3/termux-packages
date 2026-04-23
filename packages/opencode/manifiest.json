@@ -1,6 +1,6 @@
 {
   "name": "opencode",
-  "version": "1.14.19",
+  "version": "1.14.21",
   "arch": "all",
   "homepage": "https://github.com/opencode-ai/opencode",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
@@ -8,6 +8,7 @@
   "suggests": ["i-haklab"],
   "description": "A powerful AI coding agent. Built for the terminal.",
   "files" :{
-    "opencode": "bin/opencode"
+    "opencode": "bin/opencode",
+    ".env": "/data/data/com.termux/files/home/.opencode/.env"
   }
 }
