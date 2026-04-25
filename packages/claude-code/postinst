@@ -1,0 +1,48 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+trap ctrl_c 2
+distro="alpine"
+filerc="etc/profile.d/ashrc.sh"
+ALPINE_ROOT="/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/alpine"
+LOADER="$ALPINE_ROOT/lib/ld-musl-aarch64.so.1"
+LIB_PATH="$ALPINE_ROOT/lib"
+BINARY_PATH="$ALPINE_ROOT/bin/claude"
+
+# INSTALLED proot-distro
+[[ ! -d $ALPINE_ROOT ]] && { proot-distro install $distro;}
+
+# UPGRADE ALPINE PACKAGES 
+proot-distro login $distro --shared-tmp \
+    -- /bin/ash -c 'apk update && yes|apk upgrade && yes|apk add --no-cache musl ca-certificates'
+
+curl -fsSL "https://github.com/anthropics/claude-code/releases/download/v2.1.119/claude-linux-arm64-musl.tar.gz" -o $ALPINE_ROOT/tmp/claude.tar.gz && \
+    tar -xzf $ALPINE_ROOT/tmp/claude.tar.gz -C $BINARY_PATH && \
+    rm $ALPINE_ROOT/tmp/claude.tar.gz && \
+    chmod 750 $BINARY_PATH
+
+[[ -e $BINARY_PATH ]] && {
+    chmod 750 $BINARY_PATH
+    echo "[✔] claude-code installation finished."
+    echo "[➡] Run 'claude' to execute it."
+} || {
+  echo -en "\e[31mE:\e[0m claude-code binary missing ... \e[33mAborting.\e[0m\n";
+}
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+echo "[*] Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o /data/data/com.termux/files/usr/bin/fixer; then
+    chmod 750 /data/data/com.termux/files/usr/bin/fixer
+    echo "[➡] Run 'fixer' to fix any posible issue."
+else
+    echo "[!] Error downloading fixer."
+fi
+
+# ==============================
+# FINALS MESSAGES
+# ==============================
+echo "[📢] Help: going to https://t.me/Ivam3_Bot."
+echo "[💡] @Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

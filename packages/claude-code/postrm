@@ -1,0 +1,12 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${PREFIX}/var/lib/proot-distro/installed-rootfs/alpine ]]; then
+    echo -en "[!] Removing Alpine Linux rootfs? "
+    read -p "(y/n) " -n 1 -r yesornot
+    [[ $yesornot == "y" ]] && { 
+        rm -rf ${PREFIX}/var/lib/proot-distro/installed-rootfs/Alpine
+    } || {
+        rm -rf $ALPINE_ROOTFS/bin/claude
+    }
+fi
+echo "Done. Package 'claude-code' removed."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

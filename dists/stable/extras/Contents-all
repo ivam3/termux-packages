@@ -23,6 +23,7 @@ data/data/com.termux/files/usr/share/applications/burpsuite/burpsuite.desktop   
 data/data/com.termux/files/usr/share/applications/burpsuite/img/burpsuite.png    burpsuite
 data/data/com.termux/files/usr/bin/cewl                                          cewl
 data/data/com.termux/files/usr/bin/cewl-installer                                cewl
+data/data/com.termux/files/usr/bin/claude                                        claude-code
 data/data/com.termux/files/usr/bin/cloudbunny                                    cloudbunny
 data/data/com.termux/files/usr/bin/cloudbunny-installer                          cloudbunny
 data/data/com.termux/files/usr/bin/code-server-installer                         code-server

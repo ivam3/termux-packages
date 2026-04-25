@@ -27,6 +27,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [cewl](https://github.com/digininja/CeWL) | Custom word lists spidering a targets website |
 | [cloudbunny](https://github.com/Warflop/CloudBunny) | Capture the real IP of the server that uses a WAF as a proxy or protection |
 | [code-server](https://github.com/Leask/code-server-nodejs) | VS Code with Nodejs development environment running on a remote server |
+| [clude-code](https://github.com/anthropics/claude-code) | Agentic AI coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands |
 | [converter](https://github.com/miluxmil/milux/blob/master/converter) | Easy multimedia file converter |
 | [credmap](https://github.com/lightos/credmap) | Test the user credentials provided on several popular websites to see if the password has been reused on any of them |
 | [cryptovenom](https://github.com/lightos/credmap) | Test the user credentials provided on several popular websites to see if the password has been reused on any of them |

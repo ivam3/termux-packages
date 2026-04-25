@@ -1,0 +1,13 @@
+{
+  "name": "claude-code",
+  "version": "2.1.119",
+  "arch": "all",
+  "homepage": "https://https://github.com/anthropics/claude-code",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["proot-distro"],
+  "suggests": ["i-haklab"],
+  "description": "Agentic coding tool that lives in your termux, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows -- all through natural language commands",
+  "files" :{
+    "claude": "bin/claude"
+  }
+}

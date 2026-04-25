@@ -270,6 +270,22 @@ SHA1: 14dec3f1b9db1426728ae6de740866c88d5cabcf
 SHA256: df1181811f5493bb7a297c845c61e46b97426584bd16139f5acb9a0d119719d9
 SHA512: 6a303daa1f8661bb11ae2f5ab43d1bc69bc8b50b2ceb24a0d483f5d5403401cd82daae15c59bf4e55f8faf89744953acea24cf1868d7c331375e9c21fad199f7
 
+Package: claude-code
+Version: 2.1.119
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: proot-distro
+Suggests: i-haklab
+Homepage: https://https://github.com/anthropics/claude-code
+Description: Agentic coding tool that lives in your termux, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows -- all through natural language commands
+Filename: dists/stable/extras/binary-all/claude-code_2.1.119_all.deb
+Size: 2448
+MD5Sum: b7b61db94f098ca0e460e1bee2924f0b
+SHA1: 40e50c8a58dcedb54c25de725bf3d67f335cf236
+SHA256: 8d5c9d0264d4d20e54693155a1265246a5c27282f79660b63caa7446ad4d9211
+SHA512: b4778149e31808c3bd00f1ebb95ac262d9cf214d3e60d67a6d3f43e2329cc7e68ec5fc12f0ce9dacd22d41913eee7a2be96d5819e7054f2ea5a9d584ca78b61e
+
 Package: cloudbunny
 Version: 1.0
 Architecture: all
@@ -879,7 +895,7 @@ SHA256: 989b6693900ff471e790c0c36dd4c31ca64f6868221b00a599cadb6ded2ad98c
 SHA512: b2acf2821c4fa7423aaca5ba2e39c36ff1c4b5cb01f5e10c1ff4e00aaa889ac417570cb2b57d506be35c9a5c1e29baa32e7030c5c9dc15ff7ce941036a28720b
 
 Package: i-haklab
-Version: 3.12.3
+Version: 3.12.4
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 30629
@@ -887,12 +903,12 @@ Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-pack
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.12.3_all.deb
-Size: 8048144
-MD5Sum: c7885a6c421044532ca5c00ec2660dc7
-SHA1: 92e18e88279787d210bb69dff0dedf564d3aa626
-SHA256: 37201b4a2fddb1308883d476a85e47f364bf4588d8287032fef27f96b9b45453
-SHA512: 2f1e32665d8cd382ebc46373b3548890838cc710135f5685d798c49201e5bf66a67fcefbf7df134accbffc2a71bd6e68c45d233760b04a2638a3ecb7011e61cb
+Filename: dists/stable/extras/binary-all/i-haklab_3.12.4_all.deb
+Size: 8047748
+MD5Sum: e3874e60f34752127477da69afe1d13c
+SHA1: 22bdf8070dc0ca411aef606192397aa8ac442f4b
+SHA256: d44634d2d27f828673176e31382fdf24030a97ac199be10977e5b19972dabe2f
+SHA512: 5b481ad3f52fcbd8904ddfda650fdd11e6cecc30501bc716c4798a25070beac2a9e67ace744a2a87346b6adfaae3b872f46e9df841ea0c6187b4818507575a0c
 
 Package: infoga
 Version: 1.0
