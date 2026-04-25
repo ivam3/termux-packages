@@ -1,32 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
-trap ctrl_c 2
-
-toolname="opencode"
-version='v1.14.22'
-distro="alpine"
-filerc="etc/profile.d/ashrc.sh"
-ALPINE_ROOT="/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/alpine"
-LOADER="$ALPINE_ROOT/lib/ld-musl-aarch64.so.1"
-LIB_PATH="$ALPINE_ROOT/lib"
-BINARY_PATH="$ALPINE_ROOT/bin/$toolname"
-TARFILE="$toolname-linux-arm64-musl.tar.gz"
-REPOLINK="https://github.com/anomalyco/$toolname/releases/download/$version/$TARFILE"
-# INSTALLED proot-distro
-[[ ! -d $ALPINE_ROOT ]] && { proot-distro install $distro;}
-
-# UPGRADE ALPINE PACKAGES
-proot-distro login $distro --shared-tmp \
-    -- /bin/ash -c 'apk update && apk upgrade && apk add --no-cache musl ca-certificates libstdc++ libgcc gcompat'
-
-mkdir -p "$(dirname "$BINARY_PATH")"
-curl -fsSL "$REPOLINK" -o ${TMPDIR}/$toolname.tar.gz && \
-    tar -xzf ${TMPDIR}/$toolname.tar.gz -C "$(dirname "$BINARY_PATH")" --strip-components=1 && \
-    rm ${TMPDIR}/$toolname.tar.gz
-
-chmod +x "$BINARY_PATH"
-
-[[ -e $BINARY_PATH ]] && {
+python -m pip --no-color --no-cache-dir install udocker
+udocker pull ghcr.io/anomalyco/opencode
+[[ -d ${HOME}/.udocker/repos/ghcr.io/anomalyco/opencode/latest ]] && {
     echo "[✔] opencode installation finished."
     echo "[📢] Set your API keys: ~/.opencode/.env"
     echo "[➡] Run 'opencode' to execute it."

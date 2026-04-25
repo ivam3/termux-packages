@@ -1,10 +1,10 @@
 {
   "name": "opencode",
-  "version": "1.14.21",
+  "version": "1.14.22",
   "arch": "all",
   "homepage": "https://github.com/opencode-ai/opencode",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["python", "python-pip", "tur-repo"],
+  "depends": ["proot-distro, curl"],
   "suggests": ["i-haklab"],
   "description": "A powerful AI coding agent. Built for the terminal.",
   "files" :{
