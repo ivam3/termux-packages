@@ -21,7 +21,7 @@ proot-distro login $distro --shared-tmp \
 
 mkdir -p "$(dirname "$BINARY_PATH")"
 curl -fsSL "$REPOLINK" -o ${TMPDIR}/$toolname.tar.gz && \
-    tar -xzf ${TMPDIR}/$toolname.tar.gz -C "$(dirname "$BINARY_PATH")" --strip-components=1 && \
+    tar -xzf ${TMPDIR}/$toolname.tar.gz -C "$(dirname "$BINARY_PATH")" && \
     rm ${TMPDIR}/$toolname.tar.gz
 
 chmod +x "$BINARY_PATH"
