@@ -3,7 +3,7 @@ IFS=$'\n\t'
 trap ctrl_c 2
 
 toolname="opencode"
-version='v1.14.26'
+version=$(curl -sI "https://github.com/anomalyco/opencode/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
 distro="alpine"
 filerc="/etc/profile.d/ashrc.sh"
 ALPINE_ROOT="/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/alpine"

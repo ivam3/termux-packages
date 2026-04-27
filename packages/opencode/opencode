@@ -25,7 +25,7 @@ proot-distro login \
     "${ENV_ARGS[@]}" \
     --termux-home \
     --shared-tmp \
-    --work-dir /root \
+    --work-dir $PWD \
     alpine \
     -- /bin/opencode "$@"
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
