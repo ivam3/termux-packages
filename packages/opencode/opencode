@@ -1,15 +1,31 @@
 #!/data/data/com.termux/files/usr/bin/bash 
 
-toolname="opencode"
-ALPINE_ROOT="/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/alpine"
-LOADER="$ALPINE_ROOT/lib/ld-musl-aarch64.so.1"
-LIB_PATH="$ALPINE_ROOT/lib:$ALPINE_ROOT/usr/lib"
-BINARY_PATH="$ALPINE_ROOT/bin/$toolname"
+# 1. Lista de variables a EXCLUIR (porque romperían Alpine)
+EXCLUDE_REGEX="^(PATH|LD_PRELOAD|LD_LIBRARY_PATH|PREFIX|HOME|PWD|OLDPWD|SHELL|IFS|_|SHLVL|PROMPT_COMMAND|TERMCAP|LS_COLORS|TERM)="
 
-[[ -d ${HOME}/.opencode ]] || { mkdir -p ${HOME}/.opencode >/dev/null ;}
-# Limpiar LD_PRELOAD para evitar errores de símbolos con Bionic
+# 2. Construir dinámicamente los argumentos --env
+ENV_ARGS=()
+while IFS= read -r line; do
+    # Evitar líneas vacías o variables problemáticas
+    if [[ -n "$line" && ! "$line" =~ $EXCLUDE_REGEX ]]; then
+        ENV_ARGS+=("--env" "$line")
+    fi
+done < <(env)
+
+# 3. Añadir variables obligatorias y recomendadas
+ENV_ARGS+=(
+    "--env" "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt"
+    "--env" "TERM=$TERM"
+    "--env" "HOME=/root"
+)
+
+# 4. Ejecutar proot-distro
 unset LD_PRELOAD
-
-# Ejecutar Claude
-$LOADER --library-path $LIB_PATH $BINARY_PATH "$@"
+proot-distro login \
+    "${ENV_ARGS[@]}" \
+    --termux-home \
+    --shared-tmp \
+    --work-dir /root \
+    alpine \
+    -- /bin/opencode "$@"
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
