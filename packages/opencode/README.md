@@ -1,77 +1,78 @@
 # Opencode for Termux 🚀
 
-**Opencode** es un potente agente de codificación basado en IA, diseñado específicamente para la terminal. Esta versión está optimizada para ejecutarse de forma nativa en **Termux (Android)**, utilizando un puente de compatibilidad con librerías de Alpine Linux para garantizar el máximo rendimiento sin salir de tu entorno local.
+**Opencode** es un potente agente de codificación basado en IA, diseñado específicamente para la terminal. Esta versión está optimizada para **Termux (Android)**, utilizando un entorno híbrido con Alpine Linux para garantizar compatibilidad total y alto rendimiento sin abandonar tu sesión de terminal.
 
 ---
 
 ## 🛠 Características
 
-- **Agente de IA Nativo:** Ejecuta el binario oficial de alto rendimiento.
-- **Entorno Híbrido:** Utiliza librerías `musl` de Alpine dentro de Termux (Bionic) mediante un cargador dinámico.
-- **Conectividad Total:** Implementación de un túnel quirúrgico con `proot` para resolución DNS y validación SSL/TLS desde Android.
-- **Ligero y Rápido:** No requiere iniciar una sesión completa de proot-distro; se ejecuta como un comando estándar de Termux.
+- **Agente de IA Nativo:** Ejecuta el binario oficial de alto rendimiento (134MB+).
+- **Entorno Robusto:** Utiliza la infraestructura de `proot-distro` para evitar conflictos de memoria con binarios de dirección fija (non-PIE).
+- **Herencia de Entorno:** Mapeo automático de variables de entorno desde Termux a Alpine (claves de API, configuración de terminal, etc.).
+- **Integración Transparente:** Tu carpeta `$HOME` de Termux es totalmente accesible dentro de Opencode.
+- **Conectividad Estable:** Resolución DNS nativa y validación SSL/TLS configurada automáticamente.
 
 ---
 
 ## 📥 Instalación
 
-Para instalar Opencode en tu entorno Termux, asegúrate de tener instalados los requisitos previos y ejecuta el script de instalación:
+Para instalar Opencode en tu entorno Termux, asegúrate de tener instalados los requisitos previos:
 
 ### Requisitos previos
-- `proot-distro`
+- `proot-distro` (con la distribución `alpine` instalada)
 - `curl`
 
-### Comando de Instalación
+### Preparación de Alpine
 ```bash
-# El instalador descarga el binario y prepara el entorno
-# (Asegúrate de ejecutar el script de post-instalación proporcionado)
+proot-distro install alpine
+proot-distro login alpine -- apk add --no-cache musl ca-certificates libstdc++ libgcc gcompat
 ```
 
-> **Nota del Mantenedor:** El instalador configurará automáticamente un entorno Alpine mínimo necesario para las dependencias de ejecución.
+> **Nota:** El comando `opencode` se encargará de gestionar el puente entre Termux y Alpine automáticamente.
 
 ---
 
 ## ⚙️ Configuración
 
-Antes de empezar, debes configurar tus claves de API para que el agente pueda comunicarse con los modelos de lenguaje (LLM).
+### 1. Variables de Entorno (Recomendado)
+Opencode heredará automáticamente cualquier variable de entorno que exportes en Termux. Puedes añadir tus claves a tu `.bashrc` o `.zshrc`:
+```bash
+export ANTHROPIC_API_KEY="tu_clave_aqui"
+```
 
-1. Crea o edita el archivo de entorno:
-   ```bash
-   nano ~/.opencode/.env
-   ```
-2. Añade tus credenciales (ejemplo):
-   ```env
-   ANTHROPIC_API_KEY=tu_api_key_aqui
-   # Otras variables de configuración
-   ```
+### 2. Archivo .env
+También puedes usar el archivo de configuración tradicional:
+```bash
+nano ~/.opencode/.env
+```
 
 ---
 
 ## 🚀 Uso
 
-Simplemente ejecuta el comando en tu terminal:
+Simplemente ejecuta el comando en tu terminal de Termux:
 
 ```bash
 opencode
 ```
 
+Opencode se iniciará en tu carpeta personal (`/data/data/com.termux/files/home`) mapeada internamente, permitiéndote trabajar sobre tus proyectos locales directamente.
+
 ---
 
 ## 🔍 Detalles Técnicos (The "Bridge" Implementation)
 
-Este proyecto utiliza una técnica avanzada de ejecución para superar la incompatibilidad entre la `libc` de Android (Bionic) y la de Linux estándar (Musl):
+A diferencia de otros ports, esta implementación utiliza un enfoque de **Aislamiento dinámico**:
 
-1. **Loader Musl:** Se utiliza el cargador dinámico de Alpine (`ld-musl-aarch64.so.1`) para mapear las librerías necesarias en memoria.
-2. **PRoot Binding:** Para solucionar problemas de conexión ("Cannot connect to API"), el ejecutor mapea quirúrgicamente archivos críticos del sistema de archivos de Alpine hacia el entorno de ejecución:
-   - `/etc/resolv.conf` & `/etc/hosts` para DNS.
-   - `/etc/ssl` para certificados CA.
-3. **Optimización de Memoria:** Al no ejecutar un sistema operativo completo, el impacto en la RAM es mínimo.
+1. **Gestión de Memoria:** Dado que el binario de Opencode es un ejecutable de tipo `EXEC` (dirección fija), se utiliza `proot-distro` para inicializar un mapa de memoria limpio que evita colisiones con las librerías de Android (Bionic).
+2. **Puente de Entorno:** Un script envolvente filtra y traslada dinámicamente tus variables de sesión hacia el contenedor Alpine, excluyendo aquellas que causarían inestabilidad (como `PATH` o `LD_PRELOAD`).
+3. **Mapeo de Red:** Se utiliza un montaje quirúrgico de los servicios de resolución de nombres de Alpine para asegurar que las llamadas a las APIs de LLM nunca fallen por problemas de DNS o certificados SSL.
 
 ---
 
 ## 🤝 Soporte y Reportes
 
-Si encuentras algún problema o tienes sugerencias, puedes contactar al mantenedor o reportar issues en:
+Si encuentras algún problema o tienes sugerencias:
 
 - **Mantenedor:** [Ivam3](https://t.me/Ivam3_Bot)
 - **Repositorio Original:** [opencode-ai/opencode](https://github.com/opencode-ai/opencode)
@@ -81,5 +82,5 @@ Si encuentras algún problema o tienes sugerencias, puedes contactar al mantened
 ## 💡 Créditos
 
 - Basado en el trabajo original de **AnomalyCo**.
-- Empaquetado y optimización para Termux por **Ivam3**.
-- ¡Gracias por usar este paquete!
+- Optimización y puente de arquitectura para Termux por **Ivam3**.
+- ¡Gracias por potenciar el desarrollo móvil con IA!
