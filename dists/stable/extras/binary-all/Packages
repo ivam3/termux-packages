@@ -271,20 +271,20 @@ SHA256: df1181811f5493bb7a297c845c61e46b97426584bd16139f5acb9a0d119719d9
 SHA512: 6a303daa1f8661bb11ae2f5ab43d1bc69bc8b50b2ceb24a0d483f5d5403401cd82daae15c59bf4e55f8faf89744953acea24cf1868d7c331375e9c21fad199f7
 
 Package: claude-code
-Version: 2.1.119
+Version: 2.1.123
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
 Depends: proot-distro
 Suggests: i-haklab
-Homepage: https://https://github.com/anthropics/claude-code
+Homepage: https://github.com/anthropics/claude-code
 Description: Agentic coding tool that lives in your termux, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows -- all through natural language commands
-Filename: dists/stable/extras/binary-all/claude-code_2.1.119_all.deb
-Size: 2448
-MD5Sum: b7b61db94f098ca0e460e1bee2924f0b
-SHA1: 40e50c8a58dcedb54c25de725bf3d67f335cf236
-SHA256: 8d5c9d0264d4d20e54693155a1265246a5c27282f79660b63caa7446ad4d9211
-SHA512: b4778149e31808c3bd00f1ebb95ac262d9cf214d3e60d67a6d3f43e2329cc7e68ec5fc12f0ce9dacd22d41913eee7a2be96d5819e7054f2ea5a9d584ca78b61e
+Filename: dists/stable/extras/binary-all/claude-code_2.1.123_all.deb
+Size: 2776
+MD5Sum: 7ad76be12c0f4a60cd787fc3e0b175fa
+SHA1: 21ff5eb8948a935b1ba889e73a3feb2cdd495e36
+SHA256: 088690c92ccb27a0726c6f4635bc59f7c820a462c57abd2bd24da44b74dc98ab
+SHA512: 357ae106927d45b3459ca1ce60922b402019041a50a6b083c535362c1cac42f12d1470fe8d381c59aec9929c478a9fde464d4f1225dbf76bd1b8a60d93b93490
 
 Package: cloudbunny
 Version: 1.0
@@ -445,6 +445,22 @@ MD5Sum: 1e1c8d63c28fdb73791e12af898a89e3
 SHA1: cdf964039103a1fce1afe00f079e8d400408b30a
 SHA256: 115acf00c211ca2decc6379848336e43109619b321620cd3c32bf6f65337343d
 SHA512: 65fd549a7d8384cff34e70c8aa7b711c3ce855fc8ebfd82114e4fb7f7cae4f1dabfb650a0f788ef1061a2eb6e1f5e0e7f40f5616858305edf527153e03cedf87
+
+Package: engram
+Version: 1.14.8
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: git, golang
+Suggests: i-haklab
+Homepage: https://github.com/Gentleman-Programming/engram
+Description: Persistent memory system for AI coding agents
+Filename: dists/stable/extras/binary-all/engram_1.14.8_all.deb
+Size: 2340
+MD5Sum: 15f85427621ff7e374ee5c598aed439c
+SHA1: f915e6f1bc70cf97730c2551ec794396002a10e9
+SHA256: 7592766a01796a5d888e10937746838f3c17e40df58a0f13d52de816e0ff5cd2
+SHA512: fdd069d7eb15256d0e486e4c899fe1121faf7a52f4b97fc6f5876bc060dc37a08fdde6d9cbc6f2ffaced767efd69279e98e27d30e95d16845c1bb779b3784523
 
 Package: enum4linux-ng
 Version: 1.3.5
@@ -895,20 +911,20 @@ SHA256: 989b6693900ff471e790c0c36dd4c31ca64f6868221b00a599cadb6ded2ad98c
 SHA512: b2acf2821c4fa7423aaca5ba2e39c36ff1c4b5cb01f5e10c1ff4e00aaa889ac417570cb2b57d506be35c9a5c1e29baa32e7030c5c9dc15ff7ce941036a28720b
 
 Package: i-haklab
-Version: 3.12.4
+Version: 3.12.5
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 30629
+Installed-Size: 30635
 Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, fd, file, findutils, fish, fzf, gawk, git, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, yazi, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.12.4_all.deb
-Size: 8047748
-MD5Sum: e3874e60f34752127477da69afe1d13c
-SHA1: 22bdf8070dc0ca411aef606192397aa8ac442f4b
-SHA256: d44634d2d27f828673176e31382fdf24030a97ac199be10977e5b19972dabe2f
-SHA512: 5b481ad3f52fcbd8904ddfda650fdd11e6cecc30501bc716c4798a25070beac2a9e67ace744a2a87346b6adfaae3b872f46e9df841ea0c6187b4818507575a0c
+Filename: dists/stable/extras/binary-all/i-haklab_3.12.5_all.deb
+Size: 8048832
+MD5Sum: d20b5afa50976acb56f6e6d641fbb62a
+SHA1: 1714d8641a199baaa2bcf25118ab69246384a2ae
+SHA256: ed16ff7ee89f47537032bfa56d7ba49dfc0de925f810ab5c336b4ce85fbab7ee
+SHA512: ec39fab1a72344d0765c945cfcf598f5d4d6c71843cd40a7401a392e9a5af9b2279a85698e743d6ca8d088fb274323b22d879b82cb01061f12e3fb77dfefa20d
 
 Package: infoga
 Version: 1.0

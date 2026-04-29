@@ -2,8 +2,10 @@
 IFS=$'\n\t'
 trap ctrl_c 2
 distro="alpine"
-filerc="etc/profile.d/ashrc.sh"
-ALPINE_ROOT="/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/alpine"
+releasesPATH="https://github.com/anthropics/claude-code/releases"
+version=$(curl -sI "$releasesPATH/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
+tarFILE="$releasesPATH/download/$version/claude-linux-arm64-musl.tar.gz"
+ALPINE_ROOT="/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/$distro"
 LOADER="$ALPINE_ROOT/lib/ld-musl-aarch64.so.1"
 LIB_PATH="$ALPINE_ROOT/lib"
 BINARY_PATH="$ALPINE_ROOT/bin/claude"
@@ -15,7 +17,7 @@ BINARY_PATH="$ALPINE_ROOT/bin/claude"
 proot-distro login $distro --shared-tmp \
     -- /bin/ash -c 'apk update && yes|apk upgrade && yes|apk add --no-cache musl ca-certificates'
 
-curl -fsSL "https://github.com/anthropics/claude-code/releases/download/v2.1.119/claude-linux-arm64-musl.tar.gz" -o $ALPINE_ROOT/tmp/claude.tar.gz && \
+curl -fsSL "$tarFILE" -o $ALPINE_ROOT/tmp/claude.tar.gz && \
     tar -xzf $ALPINE_ROOT/tmp/claude.tar.gz -C $BINARY_PATH && \
     rm $ALPINE_ROOT/tmp/claude.tar.gz && \
     chmod 750 $BINARY_PATH

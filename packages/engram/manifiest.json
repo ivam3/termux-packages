@@ -1,0 +1,13 @@
+{
+  "name": "engram",
+  "version": "1.14.8",
+  "arch": "all",
+  "homepage": "https://github.com/Gentleman-Programming/engram",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git, golang"],
+  "suggests": ["i-haklab"],
+  "description": "Persistent memory system for AI coding agents",
+  "files" :{
+    "engram": "bin/engram"
+  }
+}

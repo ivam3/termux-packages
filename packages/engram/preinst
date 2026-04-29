@@ -1,0 +1,48 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ $(id -u) -eq 0 ]]
+then
+  echo -en "\e[31mE:\e[0m You need to be a common user\n"
+  exit 1
+else
+  echo "Preparing enviroment ..."
+  if [[ -d ${HOME}/.local/share/engram ]]
+  then
+    rm -rf ${HOME}/.local/share/engram
+  else
+    mkdir -p ${HOME}/.local/share 2>/dev/null
+  fi
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ $(id -u) -eq 0 ]]
+then
+  echo -en "\e[31mE:\e[0m You need to be a common user\n"
+  exit 1
+else
+    if [[ -e ${HOME}/.local/bin/i-Haklab ]]; then 
+        [[ -d ${HOME}/go/pkg/mod/github.com ]] || mkdir -p ${HOME}/go/pkg/mod/github.com
+        [[ -d ${PREFIX}/lib/go/src ]] || mkdir -p ${PREFIX}/lib/go/src
+    else 
+        checkshell=$(echo $SHELL | rev | cut -d "/" -f1 | rev)
+        
+        echo "Preparing enviroment ..."
+        case $checkshell in 
+            "bash") INITFILE=${HOME}/.bashrc ;;
+            "zsh") INITFILE=${HOME}/.zshrc ;;
+            "fish") INITFILE=${HOME}/.config/fish/config.fish ;;
+            *)
+              checkshell="echo -en \"\e[31mE:\e[0m Invalid shell\e[34m$checkshell\e[0m\n\"" 
+              ;;
+        esac 
+
+        [[ -f $INITFILE ]] || touch $INITFILE 
+        
+        if ! $(grep -oE "GOPATH" $INITFILE); then
+            sed -i "21a set GOPATH ${HOME}/go" $INITFILE
+        fi
+        if ! $(grep -oE "GOROOT" $INITFILE); then
+            sed -i "22a set GOROOT ${PREFIX}/lib/go" $INITFILE
+        fi
+    fi
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

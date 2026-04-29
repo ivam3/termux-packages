@@ -1,8 +1,8 @@
 {
   "name": "claude-code",
-  "version": "2.1.119",
+  "version": "2.1.123",
   "arch": "all",
-  "homepage": "https://https://github.com/anthropics/claude-code",
+  "homepage": "https://github.com/anthropics/claude-code",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
   "depends": ["proot-distro"],
   "suggests": ["i-haklab"],

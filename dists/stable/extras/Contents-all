@@ -38,6 +38,7 @@ data/data/com.termux/files/usr/bin/dex2jar-installer                            
 data/data/com.termux/files/usr/bin/dnsenum                                       dnsenum
 data/data/com.termux/files/usr/bin/DoS-A-Tool                                    dos-a-tool
 data/data/com.termux/files/usr/bin/embed                                         embed
+data/data/com.termux/files/usr/bin/engram                                        engram
 data/data/com.termux/files/usr/bin/enum4linux-installer                          enum4linux-ng
 data/data/com.termux/files/usr/bin/enum4linux-installer                          enum4linux
 data/data/com.termux/files/usr/bin/evilginx2                                     evilginx2
@@ -151,6 +152,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/dns2tcp.md     
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/dnsenum.md      i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/dos-a-tool.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/embed.md        i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/engram.md       i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/enum4linux-ng.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/enum4linux.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/evilginx2.md    i-haklab
@@ -211,6 +213,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/nmap.md        
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/objection.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/octosuite.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/open-lovable.md i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/openclaw.md.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/opencode.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/openjdk-21.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/orbitaldump.md  i-haklab

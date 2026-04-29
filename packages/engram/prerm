@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+tool="engram"
+
+[[ -d ${HOME}/go/pkg/mod/ ]] && {
+	gob=$(find ${HOME}/go/ -iname "*gentleman*")
+  [[ -d $gob ]] && { rm -rf $gob ;}
+  [[ -h ${HOME}/.local/share/$tool ]] && { rm -rf ${HOME}/.local/share/$tool;}
+  [[ -e ${HOME}/go/bin/$tool ]] && { rm ${HOME}/go/bin/$tool;}
+}
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

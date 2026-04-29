@@ -36,6 +36,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [dex2jar](https://github.com/pxb1988/dex2jar) | Toolkit to work with android .dex and java .class files |
 | [dnsenum](https://github.com/fwaeytens/dnsenum) | Enumerate DNS information |
 | [embed](https://github.com/ivam3/embed) | Embed metasploit payload into a legtim APK |
+| [engram](https://github.com/Gentleman-Programming/engram) | Persistent memory system for AI coding agents. Agent-agnostic Go binary with SQLite + FTS5, MCP server, HTTP API, CLI, and TUI. |
 | [enum4linux](https://github.com/CiscoCXSecurity/enum4linux) | Linux alternative to enum.exe for enumerating data from Windows and Samba hosts |
 | [enum4linux-ng](https://github.com/cddmp/enum4linux-ng) | A next generation version of enum4linux (a Windows/Samba enumeration tool) with additional features like JSON/YAML export |
 | [evilginx2](https://github.com/kgretzky/evilginx2) | Standalone man-in-the-middle attack framework used for phishing login credentials along with session cookies, allowing for the bypass of 2-factor authentication. |
