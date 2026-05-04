@@ -3,6 +3,9 @@
     
 This project is with the purpose of offering easy and fast access to the installation of tools and/or frameworks provided by the cyber security and pentesting laboratory [i-Haklab](https://github.com/ivam3/i-Haklab), for the Android operating system under the [Termux](https://github.com/termux/termux-app) application.
 
+### IA ASSISTANT 
+Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and ask your questions about termux-packages to our IA assistant trained with all the information about the project and its tools.
+
 ## Available tools and/or frameworks
 
 | Tool | Description |
@@ -158,6 +161,8 @@ Or if you prefer, you can do it with one command line to add the repository copy
 ```bash
 yes|apt install gnupg && mkdir -p $PREFIX/etc/apt/sources.list.d && curl -s https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/ivam3-termux-packages.list -o $PREFIX/etc/apt/sources.list.d/ivam3-termux-packages.list && curl -fsSL "https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/dists/stable/public_key.gpg" | gpg --dearmor|tee "$PREFIX/etc/apt/trusted.gpg.d/ivam3.gpg" >/dev/null && apt update
 ```
+
+**Explore and search this repository with AI on [DeepWiki](https://deepwiki.com/ivam3/termux-packages)**
 
 ### License
 
