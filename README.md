@@ -3,6 +3,9 @@
     
 This project is with the purpose of offering easy and fast access to the installation of tools and/or frameworks provided by the cyber security and pentesting laboratory [i-Haklab](https://github.com/ivam3/i-Haklab), for the Android operating system under the [Termux](https://github.com/termux/termux-app) application.
 
+### IA ASSISTANT 
+Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and ask your questions about termux-packages to our IA assistant trained with all the information about the project and its tools.
+
 ## Available tools and/or frameworks
 
 | Tool | Description |
@@ -27,6 +30,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [cewl](https://github.com/digininja/CeWL) | Custom word lists spidering a targets website |
 | [cloudbunny](https://github.com/Warflop/CloudBunny) | Capture the real IP of the server that uses a WAF as a proxy or protection |
 | [code-server](https://github.com/Leask/code-server-nodejs) | VS Code with Nodejs development environment running on a remote server |
+| [clude-code](https://github.com/anthropics/claude-code) | Agentic AI coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands |
 | [converter](https://github.com/miluxmil/milux/blob/master/converter) | Easy multimedia file converter |
 | [credmap](https://github.com/lightos/credmap) | Test the user credentials provided on several popular websites to see if the password has been reused on any of them |
 | [cryptovenom](https://github.com/lightos/credmap) | Test the user credentials provided on several popular websites to see if the password has been reused on any of them |
@@ -35,6 +39,7 @@ This project is with the purpose of offering easy and fast access to the install
 | [dex2jar](https://github.com/pxb1988/dex2jar) | Toolkit to work with android .dex and java .class files |
 | [dnsenum](https://github.com/fwaeytens/dnsenum) | Enumerate DNS information |
 | [embed](https://github.com/ivam3/embed) | Embed metasploit payload into a legtim APK |
+| [engram](https://github.com/Gentleman-Programming/engram) | Persistent memory system for AI coding agents. Agent-agnostic Go binary with SQLite + FTS5, MCP server, HTTP API, CLI, and TUI. |
 | [enum4linux](https://github.com/CiscoCXSecurity/enum4linux) | Linux alternative to enum.exe for enumerating data from Windows and Samba hosts |
 | [enum4linux-ng](https://github.com/cddmp/enum4linux-ng) | A next generation version of enum4linux (a Windows/Samba enumeration tool) with additional features like JSON/YAML export |
 | [evilginx2](https://github.com/kgretzky/evilginx2) | Standalone man-in-the-middle attack framework used for phishing login credentials along with session cookies, allowing for the bypass of 2-factor authentication. |
@@ -156,6 +161,8 @@ Or if you prefer, you can do it with one command line to add the repository copy
 ```bash
 yes|apt install gnupg && mkdir -p $PREFIX/etc/apt/sources.list.d && curl -s https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/ivam3-termux-packages.list -o $PREFIX/etc/apt/sources.list.d/ivam3-termux-packages.list && curl -fsSL "https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/dists/stable/public_key.gpg" | gpg --dearmor|tee "$PREFIX/etc/apt/trusted.gpg.d/ivam3.gpg" >/dev/null && apt update
 ```
+
+**Explore and search this repository with AI on [DeepWiki](https://deepwiki.com/ivam3/termux-packages)**
 
 ### License
 
