@@ -3,8 +3,10 @@
     
 This project is with the purpose of offering easy and fast access to the installation of tools and/or frameworks provided by the cyber security and pentesting laboratory [i-Haklab](https://github.com/ivam3/i-Haklab), for the Android operating system under the [Termux](https://github.com/termux/termux-app) application.
 
-### IA ASSISTANT 
-Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and ask your questions about termux-packages to our IA assistant trained with all the information about the project and its tools.
+### IA ASSISTANT
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/ivam3/termux-packages)
+
+Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more about this project asking to Devin, our IA assistant trained with all the information about this project and its tools.
 
 ## Available tools and/or frameworks
 
