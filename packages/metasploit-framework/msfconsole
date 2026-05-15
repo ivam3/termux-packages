@@ -1,8 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/bash
 METASPLOIT_PATH="${PREFIX}/opt/metasploit-framework"
-RUBYv=$(ls ${PREFIX}/lib/ruby |grep -m 1 '[0-9].[0-9].[0-9]')
-LINUXANDROID=$(find ${PREFIX}/lib/ruby/gems/$RUBYv -iname "bigdecimal.so"|tail -n1) #awk -F "/" '{print $12}'|head -n1)
-export LD_PRELOAD="$LD_PRELOAD:$LINUXANDROID" #${PREFIX}/lib/ruby/gems/$RUBYv/$LINUXANDROID/bigdecimal.so"
+# RUBYv=$(ls ${PREFIX}/lib/ruby |grep -m 1 '[0-9].[0-9].[0-9]')
+# LINUXANDROID=$(find ${PREFIX}/lib/ruby/gems/$RUBYv -iname "bigdecimal.so"|tail -n1) #awk -F "/" '{print $12}'|head -n1)
+# export LD_PRELOAD="$LD_PRELOAD:$LINUXANDROID" #${PREFIX}/lib/ruby/gems/$RUBYv/$LINUXANDROID/bigdecimal.so"
 
 case "$(basename $0)" in
   msfconsole)
