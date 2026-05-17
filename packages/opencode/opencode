@@ -21,6 +21,7 @@ ENV_ARGS+=(
 
 # 4. Ejecutar proot-distro
 unset LD_PRELOAD
+echo  "Running opencode environment (It could take a while)..."
 proot-distro login \
     "${ENV_ARGS[@]}" \
     --termux-home \

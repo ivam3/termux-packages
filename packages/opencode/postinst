@@ -12,20 +12,25 @@ LIB_PATH="$ALPINE_ROOT/lib"
 BINARY_PATH="$ALPINE_ROOT/bin/$toolname"
 TARFILE="$toolname-linux-arm64-musl.tar.gz"
 REPOLINK="https://github.com/anomalyco/$toolname/releases/download/$version/$TARFILE"
+
 # INSTALLED proot-distro
 [[ ! -d $ALPINE_ROOT ]] && { proot-distro install $distro;}
 
-# UPGRADE ALPINE PACKAGES
+# UPGRADE AND INSTALL REQUIRED ALPINE PACKAGES
 proot-distro login $distro --shared-tmp \
-    -- /bin/ash -c 'apk update && apk upgrade && apk add --no-cache musl ca-certificates libstdc++ libgcc gcompat'
+    -- /bin/ash -c 'apk update && apk upgrade && apk add --no-cache musl ca-certificates libstdc++ libgcc gcompat libucontext patchelf'
 
+# INSTALLING BINARY FILE
 mkdir -p "$(dirname "$BINARY_PATH")"
 curl -fsSL "$REPOLINK" -o ${TMPDIR}/$toolname.tar.gz && \
     tar -xzf ${TMPDIR}/$toolname.tar.gz -C "$(dirname "$BINARY_PATH")" && \
     rm ${TMPDIR}/$toolname.tar.gz
 
-chmod +x "$BINARY_PATH"
+# PATCHING BINARY FOR LIBUCONTEXT (REQUIRED FOR v1.15.3+)
+proot-distro login $distro --shared-tmp -- /usr/bin/patchelf --add-needed libucontext_posix.so.1 /bin/opencode
 
+# SETTING ALPINE ENVIRONMENT FOR OPENCODE 
+chmod +x "$BINARY_PATH"
 cat > $ALPINE_ROOT/etc/profile.d/ashrc.sh << 'EOF'
 #!/bin/bash
 # SOURCE TERMUX USER ENVIRONMENT VARIABLES FOR PROOT-DISTRO SESSIONS

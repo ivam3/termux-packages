@@ -1166,7 +1166,7 @@ SHA256: 51dd537c8961894e6c0fa9b97cb7073792468dd07d525b32f2d3f4b592ff5e3b
 SHA512: 8768f08f0565c18ef35301c1df728169b9f0f6947477350ab53f6a9fa62b2132dc26c14e8ad2277e1cadfefa4480e1892e35a129ff2b14a948d535b205c9f2b9
 
 Package: opencode
-Version: 1.14.27
+Version: 1.15.3
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
@@ -1174,12 +1174,12 @@ Depends: proot-distro, curl
 Suggests: i-haklab
 Homepage: https://github.com/opencode-ai/opencode
 Description: A powerful AI coding agent. Built for the terminal.
-Filename: dists/stable/extras/binary-all/opencode_1.14.27_all.deb
-Size: 3280
-MD5Sum: a744b8bd188c5c2c41fd9a2c24379ff1
-SHA1: 217fd78785bfba745a6b939db999ac8083d0944f
-SHA256: 9f13b5e8b46180720183f78baecfa52760f3d843d017ba860873643a4b7819e1
-SHA512: c11f581460cf400a011bb4329bc896e56f1711b1c8932399c457843ebda1d60442e95f92b9c9cc6172b01f81565228551a002a369df74ffbedb8de24b2402676
+Filename: dists/stable/extras/binary-all/opencode_1.15.3_all.deb
+Size: 3428
+MD5Sum: 59b4c3086b968a347c6ab2985e436bf4
+SHA1: 593028618ee6d8f2fb866f455a030edc77ead03f
+SHA256: e4d1a7aaca5295789a2c2aff2a9db3d64db06493327e9c960d4c7a340de2d789
+SHA512: e5099163b09c1fd093db6a9e035c23aa5e9c771237a817c9d37bdb3dc495c7b05f3e111f2f64288f747105759c73439efc36ea89b5a267c77870eeea6e4c040d
 
 Package: openjdk-21-source
 Architecture: all
