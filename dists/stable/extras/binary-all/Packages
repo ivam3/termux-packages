@@ -271,7 +271,7 @@ SHA256: df1181811f5493bb7a297c845c61e46b97426584bd16139f5acb9a0d119719d9
 SHA512: 6a303daa1f8661bb11ae2f5ab43d1bc69bc8b50b2ceb24a0d483f5d5403401cd82daae15c59bf4e55f8faf89744953acea24cf1868d7c331375e9c21fad199f7
 
 Package: claude-code
-Version: 2.1.123
+Version: 2.1.143
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
@@ -279,12 +279,12 @@ Depends: proot-distro
 Suggests: i-haklab
 Homepage: https://github.com/anthropics/claude-code
 Description: Agentic coding tool that lives in your termux, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows -- all through natural language commands
-Filename: dists/stable/extras/binary-all/claude-code_2.1.123_all.deb
-Size: 2776
-MD5Sum: 7ad76be12c0f4a60cd787fc3e0b175fa
-SHA1: 21ff5eb8948a935b1ba889e73a3feb2cdd495e36
-SHA256: 088690c92ccb27a0726c6f4635bc59f7c820a462c57abd2bd24da44b74dc98ab
-SHA512: 357ae106927d45b3459ca1ce60922b402019041a50a6b083c535362c1cac42f12d1470fe8d381c59aec9929c478a9fde464d4f1225dbf76bd1b8a60d93b93490
+Filename: dists/stable/extras/binary-all/claude-code_2.1.143_all.deb
+Size: 2772
+MD5Sum: 476a2ccf4a7d4845070fb832f69598df
+SHA1: 3473eb94a5ff2096316b5d21a5a4abfe523f0e9a
+SHA256: 77889c72ed716fefd78d13e480a8c5ad0577fc6deafea1642879d80f5b197579
+SHA512: 863ea284558bc9592b3229c3cca0c977c67db6d8e6c7917712d6292bd30058745cfe285fe9711b5ae20287ceb344bc5bfadf2ba5ac00bc62c1ce11385753d38e
 
 Package: cloudbunny
 Version: 1.0
@@ -1150,7 +1150,7 @@ SHA256: 6694a5b19a00d82ec8322aa70d7fa1346590979cbf3880a20bd2627e09ff795c
 SHA512: 343283ad3863e2edc5307ee761db4a8a38a001e37ff821cf7a56103bd9ff34e10329d236f321b247f1dfbb27b11004ca989eeaf0cf2b8941484e68c3dffd58ed
 
 Package: openclaw
-Version: 2026.4.9-3
+Version: 2026.5.12-0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 116
@@ -1158,12 +1158,12 @@ Depends: android-tools, git, curl, nodejs-lts, pacman, python, python-pip, make,
 Suggests: i-haklab, botgram
 Homepage: https://github.com/AidanPark/openclaw-android
 Description: Open-source autonomous artificial intelligence agent.
-Filename: dists/stable/extras/binary-all/openclaw_2026.4.9-3_all.deb
-Size: 29508
-MD5Sum: 4fe3430d36a4a1a95ccf2a3eeb2aaaa6
-SHA1: 82f8730529ef1b688b52bdb00a1c244dff823fa3
-SHA256: 51dd537c8961894e6c0fa9b97cb7073792468dd07d525b32f2d3f4b592ff5e3b
-SHA512: 8768f08f0565c18ef35301c1df728169b9f0f6947477350ab53f6a9fa62b2132dc26c14e8ad2277e1cadfefa4480e1892e35a129ff2b14a948d535b205c9f2b9
+Filename: dists/stable/extras/binary-all/openclaw_2026.5.12-0_all.deb
+Size: 29492
+MD5Sum: 14bc471bc586dffad73063b6c35357c4
+SHA1: d5c10eb5ed3d721fff7e88d018010ba107f5185a
+SHA256: ac95b10ab15be00692efa50a744c371bdc7dc010fa5ae27f03580a88f38c70c8
+SHA512: 89b46a72bd4a170a0e81b35dcf0f8db3721ac0e6cf9efe90cb5c64af788529fba21ad05dab95ff846fe3df58ee08f98e4c60d9c479a09cc178c768b6992494aa
 
 Package: opencode
 Version: 1.15.3
