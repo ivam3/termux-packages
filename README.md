@@ -20,6 +20,7 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [amass](https://github.com/OWASP/Amass) | In-depth Attack Surface Mapping and Asset Discovery |
 | [androbugs](https://github.com/AndroBugs/AndroBugs_Framework) | Android vulnerability scanner |
 | [androidsdk-cli](https://developer.android.com/studio/index.html#command-tools) | Official command line Integrated Development Environment (IDE) for Android app development |
+| [antigravity-cli](https://github.com/google-antigravity/antigravity-cli) | Official Antigravity CLI with real-time VA39 memory patching for Termux |
 | [apktool](https://bitbucket.org/iBotPeaches/apktool/downloads) | command-line tool used for reverse engineering Android application package (APK) |
 | [appshark](https://github.com/bytedance/appshark) | An static taint analysis platform to scan vulnerabilities in an Android app |
 | [axmlprinter2](https://code.google.com/archive/p/android4me) | Prints XML document from binary XML file (with correct namespace handing & attribute formatting) |
@@ -32,7 +33,7 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [cewl](https://github.com/digininja/CeWL) | Custom word lists spidering a targets website |
 | [cloudbunny](https://github.com/Warflop/CloudBunny) | Capture the real IP of the server that uses a WAF as a proxy or protection |
 | [code-server](https://github.com/Leask/code-server-nodejs) | VS Code with Nodejs development environment running on a remote server |
-| [clude-code](https://github.com/anthropics/claude-code) | Agentic AI coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands |
+| [claude-code](https://github.com/anthropics/claude-code) | Agentic AI coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands |
 | [converter](https://github.com/miluxmil/milux/blob/master/converter) | Easy multimedia file converter |
 | [credmap](https://github.com/lightos/credmap) | Test the user credentials provided on several popular websites to see if the password has been reused on any of them |
 | [cryptovenom](https://github.com/lightos/credmap) | Test the user credentials provided on several popular websites to see if the password has been reused on any of them |
@@ -84,7 +85,7 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [ngrok](https://ngrok.com) | Globally distributed reverse proxy fronting your web services running in any cloud or private network, or your machine. |
 | [nikto](https://github.com/sullo/nikto) | A web server scanner. |
 | [openclaw](https://github.com/AidanPark/openclaw-android) | Open-source autonomous artificial intelligence agent. |
-| [opencode](https://github.com/opencode-ai/opencode) | A powerful AI coding agent. Built for the terminal. |
+| [opencode](https://github.com/opencode-ai/opencode) | A powerful AI coding agent. Built for the terminal patching for Termux. |
 | [openjdk-21](https://jdk.java.net/) | Java development kit and runtime. |
 | [osintgram](https://github.com/datalux/Osintgram) | A OSINT tool on Instagram. It offers an interactive shell to perform analysis on Instagram account of any users by its nickname. |
 | [ovh-ttyrec](https://github.com/ovh/ovh-ttyrec) | Terminal recorder and player (an alternative of ttyrec). |
