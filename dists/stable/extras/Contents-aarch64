@@ -103,6 +103,9 @@ data/data/com.termux/files/usr/share/man/man8/wesside-ng.8.gz                   
 data/data/com.termux/files/usr/lib/libaircrack-ce-wpa.so                         aircrack-ng
 data/data/com.termux/files/usr/lib/libaircrack-osdep.so                          aircrack-ng
 data/data/com.termux/files/usr/share/doc/aircrack-ng/LICENSE                     aircrack-ng
+data/data/com.termux/files/usr/share/antigravity-cli/agy_helper.c                antigravity-cli
+data/data/com.termux/files/home/.opencode/.env                                   opencode
+data/data/com.termux/files/usr/share/opencode/opencode_helper.c                  opencode
 data/data/com.termux/files/usr/opt/openjdk-21.0.1/include/jawt.h                 openjdk-21-x
 data/data/com.termux/files/usr/opt/openjdk-21.0.1/include/linux/jawt_md.h        openjdk-21-x
 data/data/com.termux/files/usr/opt/openjdk-21.0.1/jmods/java.desktop.jmod        openjdk-21-x

@@ -1,0 +1,147 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# Antigravity CLI Termux - Post-Installation Script  
+IFS=$'\n\t'
+set -Eeuo pipefail
+
+# Configuration
+MANIFEST_URL="https://antigravity-cli-auto-updater-974169037036.us-central1.run.app/manifests/linux_arm64.json"
+STAGING_DIR="${HOME}/.local/share/antigravity-cli/agy-staging"
+
+# Colors
+CYAN="\033[36m" 
+GREEN="\033[32m"
+RED="\033[31m"
+DIM="\033[2m"
+RESET="\033[0m"
+
+info() { printf "%b[..]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+ok()   { printf "%b[✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+err()  { printf "%b[ERR]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+tip()  { printf "[💡] " "$*"; }
+msg()  { printf "[📢] " "$*"; }
+
+# Cleanup on exit or failure
+cleanup() {
+    info "Cleaning up temporary files..."
+    rm -rf "$STAGING_DIR"
+}
+trap cleanup EXIT
+
+mkdir -p "$STAGING_DIR"
+
+[[ -d ${HOME}/.local/share/antigravity-cli ]] && {
+    # 1. Fetch Upstream Binary
+    info "Querying latest official version..."
+    manifest=$(curl -fsSL "$MANIFEST_URL")
+    latest_version=$(echo "$manifest" | jq -r .version)
+    download_url=$(echo "$manifest" | jq -r .url)
+
+    info "Downloading Antigravity v$latest_version..."
+    curl -fsSL -o "$STAGING_DIR/agy.tar.gz" "$download_url"
+    tar -xzf "$STAGING_DIR/agy.tar.gz" -C "$STAGING_DIR/"
+
+    if [[ -f "$STAGING_DIR/antigravity" ]]; then
+        UPSTREAM_BIN="$STAGING_DIR/antigravity"
+    elif [[ -f "$STAGING_DIR/agy" ]]; then
+        UPSTREAM_BIN="$STAGING_DIR/agy"
+    else
+        err "Could not find binary in extracted archive."
+        exit 1
+    fi
+
+    # 2. Apply VA39 Patches (Native Python Logic)
+    info "Applying VA39 memory patches..."
+    python3 - "$UPSTREAM_BIN" "${PREFIX}/bin/agy.va39" <<'PY'
+import sys, shutil, struct, pathlib
+src = pathlib.Path(sys.argv[1])
+dst = pathlib.Path(sys.argv[2])
+shutil.copyfile(src, dst)
+data = bytearray(dst.read_bytes())
+def get(off): return struct.unpack_from("<I", data, off)[0]
+def put(off, word): struct.pack_into("<I", data, off, word)
+
+lo, hi = 0, len(data)
+for off in range(lo, hi, 4):
+    w = get(off)
+    if (w & 0x7F800000) == 0x53000000:
+        immr, imms = (w >> 16) & 0x3F, (w >> 10) & 0x3F
+        if immr == 42 and imms == 44:
+            put(off, (w & ~((0x3F << 16) | (0x3F << 10))) | (35 << 16) | (37 << 10))
+        elif immr == 22 and imms == 21:
+            put(off, (w & ~((0x3F << 16) | (0x3F << 10))) | (29 << 16) | (28 << 10))
+for off in range(lo, hi - 4, 4):
+    if get(off) == 0x92D3800A and get(off + 4) == 0xF2E0000A:
+        put(off, 0x9280000A); put(off + 4, 0xD35DFD4A)
+for off in range(lo, hi, 4):
+    if get(off) == 0xF2E00029: put(off, 0xD3596129)
+word_rewrites = {
+    0xD2C20009: 0xD2C00409, 0xD2C2000A: 0xD2C0040A, 0xF2C20008: 0xF2DFF408,
+    0xF2C20009: 0xF2DFF409, 0xD2C10009: 0xD2C00209, 0xD2C1000A: 0xD2C0020A,
+    0xF2C38008: 0xF2DFF708, 0xF2C38009: 0xF2DFF709, 0x92560A6C: 0x925D0A6C,
+    0x92560A6A: 0x925D0A6A, 0xD2C3000D: 0xD2C0060D, 0xD2C3000C: 0xD2C0060C,
+    0xD2C08008: 0xD2C00108,
+}
+for off in range(lo, hi, 4):
+    w = get(off)
+    if w in word_rewrites: put(off, word_rewrites[w])
+for off in range(0, len(data) - 12, 4):
+    if get(off) == 0xAA1F03E5 and get(off + 4) == 0xAA1F03E6 and get(off + 8) == 0xD28036E0 and (get(off + 12) & 0xFC000000) == 0x94000000:
+        put(off + 8, 0xD2800600)
+dst.write_bytes(data)
+PY
+    chmod +x "${PREFIX}/bin/agy.va39"
+    ok "Patched binary generated: agy.va39"
+
+    # 3. Compile and Install Wrapper
+    # We expect agy_helper.c to be provided by the package at a known location
+    # For this script, we'll assume it was placed in a temporary or shared lib folder during installation.
+    # If you are building the .deb, you should include lib/agy_helper.c in the package.
+    HELPER_SOURCE="${PREFIX}/share/antigravity-cli/agy_helper.c"
+
+    # If the file doesn't exist (e.g. not in staging), we try to find it in the current dir during build
+    if [[ ! -f "$HELPER_SOURCE" ]]; then
+        if [[ -f "./lib/agy_helper.c" ]]; then
+            HELPER_SOURCE="./lib/agy_helper.c"
+        else
+            err "Bootstrapper source (agy_helper.c) not found."
+            exit 1
+        fi
+    fi
+
+    info "Compiling Termux bootstrapper..."
+    clang -O2 -o "${PREFIX}/bin/agy" "$HELPER_SOURCE"
+    chmod +x "${PREFIX}/bin/agy"
+    ok "Bootstrapper installed: ${PREFIX}/bin/agy"
+
+    # 4. Final verification
+    if [[ -x "${PREFIX}/bin/agy" ]]; then
+        ok "Antigravity CLI adapted and installed successfully."
+        "${PREFIX}/bin/agy" --version || true
+        echo "[✔] antigravity-cli installation finished."
+        msg "Run 'agy' to execute it."
+    else
+        err "Installation failed: Binary not executable."
+        exit 1
+    fi
+} || {
+  err "antigravity-cli directory missing... Aborting.";
+}
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+info "Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o /data/data/com.termux/files/usr/bin/fixer; then
+    chmod 750 /data/data/com.termux/files/usr/bin/fixer
+    tip "Run 'fixer' to fix any posible issue."
+else
+    err "Error downloading fixer."
+fi
+
+# ==============================
+# FINALS MESSAGES
+# ==============================
+info "Help: going to https://t.me/Ivam3_Bot."
+tip "@Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

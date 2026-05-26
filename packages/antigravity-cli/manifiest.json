@@ -1,0 +1,13 @@
+{
+  "name": "antigravity-cli",
+  "version": "1.0.2-1",
+  "arch": "aarch64",
+  "homepage": "https://github.com/google-antigravity/antigravity-cli",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["clang", "python", "jq", "curl", "tar", "glibc"],
+  "suggests": ["i-haklab"],
+  "description": "Official Antigravity CLI with real-time VA39 memory patching for Termux.",
+  "files" :{
+    "usr/lib/agy_helper.c": "/data/data/com.termux/files/usr/share/antigravity-cli/agy_helper.c"
+  }
+}

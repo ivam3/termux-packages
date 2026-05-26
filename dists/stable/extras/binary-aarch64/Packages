@@ -13,6 +13,38 @@ SHA1: 3b48269d66d8caac73712047b0b83e5f4e35762f
 SHA256: 76e3648071c8623ab848a2b278ac1e4c3185fd5dd3d69a2d8d44a99b4f8b713c
 SHA512: c97867ebd0f71dc50e153f7239e3cfe55ee794e4929ae225306723ab0fd6bae2206269e2aebc7f9f0ad1bc7f11ca850802882d34447262de6407ec71851111f2
 
+Package: antigravity-cli
+Version: 1.0.2-1
+Architecture: aarch64
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: clang, python, jq, curl, tar, glibc
+Suggests: i-haklab
+Homepage: https://github.com/google-antigravity/antigravity-cli
+Description: Official Antigravity CLI with real-time VA39 memory patching for Termux.
+Filename: dists/stable/extras/binary-aarch64/antigravity-cli_1.0.2-1_aarch64.deb
+Size: 4188
+MD5Sum: cfc883cf675e4215fb884a2da2c02fee
+SHA1: 461aa7c43b1d72d3266e73d7b8fff7bcf207cb64
+SHA256: 12a7367800044452ec1636addaa501b4f27a0d5388d3f5c40baba0b59a6dce90
+SHA512: a386344900c5cb64b2fb57a7b34311929a2f7dce279bb5eb9a3bc0854679a2f4431c64b66a7bfe4cce230716d50ae15fe3e0fe65bdf9b5f1487a121c12b07493
+
+Package: opencode
+Version: 1.15.10-2
+Architecture: aarch64
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 3
+Depends: glibc, clang, python, jq, curl, tar
+Suggests: i-haklab
+Homepage: https://github.com/opencode-ai/opencode
+Description: A powerful AI coding agent. Built for the terminal (Native glibc version for Termux).
+Filename: dists/stable/extras/binary-aarch64/opencode_1.15.10-2_aarch64.deb
+Size: 3708
+MD5Sum: 148677461bb0623855ef3050bd01c82d
+SHA1: 2214009554af75d10812e7313c8132b614b0dbd6
+SHA256: 238dab434c4fa1fbf6f58fbcd6868d4abc188b6c1c9fa5f9aa4545f4bfa6168c
+SHA512: 0cb118f75807e051a5ab160dd21c6cd190b928674421a07f6673a912174443b1406c763e55849034ded90d834045bda172239d263c35a90ef17b42d36acb6c96
+
 Package: openjdk-21-x
 Architecture: aarch64
 Installed-Size: 16652

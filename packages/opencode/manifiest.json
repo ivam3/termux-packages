@@ -1,14 +1,14 @@
 {
   "name": "opencode",
-  "version": "1.15.10",
-  "arch": "all",
+  "version": "1.15.10-2",
+  "arch": "aarch64",
   "homepage": "https://github.com/opencode-ai/opencode",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["proot-distro, curl"],
+  "depends": ["glibc", "clang", "python", "jq", "curl", "tar"],
   "suggests": ["i-haklab"],
-  "description": "A powerful AI coding agent. Built for the terminal.",
+  "description": "A powerful AI coding agent. Built for the terminal (Native glibc version for Termux).",
   "files" :{
-    "opencode": "bin/opencode",
+    "lib/opencode_helper.c": "/data/data/com.termux/files/usr/share/opencode/opencode_helper.c",
     ".env": "/data/data/com.termux/files/home/.opencode/.env"
   }
 }

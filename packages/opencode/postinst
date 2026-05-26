@@ -1,77 +1,98 @@
 #!/data/data/com.termux/files/usr/bin/bash
-IFS=$'\n\t'
-trap ctrl_c 2
+# opencode Termux - Native Post-Installation Script
+set -Eeuo pipefail
 
-toolname="opencode"
-version=$(curl -sI "https://github.com/anomalyco/opencode/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
-distro="alpine"
-filerc="/etc/profile.d/ashrc.sh"
-ALPINE_ROOT="/data/data/com.termux/files/usr/var/lib/proot-distro/containers/alpine/rootfs"
-LOADER="$ALPINE_ROOT/lib/ld-musl-aarch64.so.1"
-LIB_PATH="$ALPINE_ROOT/lib"
-BINARY_PATH="$ALPINE_ROOT/bin/$toolname"
-TARFILE="$toolname-linux-arm64-musl.tar.gz"
-REPOLINK="https://github.com/anomalyco/$toolname/releases/download/$version/$TARFILE"
+# Configuration
+VERSION=$(curl -sI "https://github.com/anomalyco/opencode/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
+TARFILE="opencode-linux-arm64.tar.gz"
+DOWNLOAD_URL="https://github.com/anomalyco/opencode/releases/download/${VERSION}/${TARFILE}"
+TERMUX_PREFIX="/data/data/com.termux/files/usr"
+INSTALL_BIN_DIR="${TERMUX_PREFIX}/bin"
+SHARE_DIR="${TERMUX_PREFIX}/share/opencode"
+STAGING_DIR="${TERMUX_PREFIX}/tmp/opencode-staging"
 
-# INSTALLED proot-distro
-[[ ! -d $ALPINE_ROOT ]] && { proot-distro install $distro;}
+# Colors
+CYAN="\033[36m"
+GREEN="\033[32m"
+RED="\033[31m"
+DIM="\033[2m"
+RESET="\033[0m"
 
-# UPGRADE AND INSTALL REQUIRED ALPINE PACKAGES
-proot-distro login $distro --shared-tmp \
-    -- /bin/ash -c 'apk update && apk upgrade && apk add --no-cache musl ca-certificates libstdc++ libgcc gcompat libucontext patchelf'
+info() { printf "%b[..]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+ok()   { printf "%b [✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+msg()  { printf "%b[📢]%b %s\n" "$CYAN" "$RESET" "$*"; }
+tip()  { printf "%b[💡]%b %s\n" "$CYAN" "$RESET" "$*"; }
+err()  { printf "%b[ERR]%b %s\n" "$RED" "$RESET" "$*" >&2; }
 
-# INSTALLING BINARY FILE
-mkdir -p "$(dirname "$BINARY_PATH")"
-curl -fsSL "$REPOLINK" -o ${TMPDIR}/$toolname.tar.gz && \
-    tar -xzf ${TMPDIR}/$toolname.tar.gz -C "$(dirname "$BINARY_PATH")" && \
-    rm ${TMPDIR}/$toolname.tar.gz
-
-# PATCHING BINARY FOR LIBUCONTEXT (REQUIRED FOR v1.15.3+)
-proot-distro login $distro --shared-tmp -- /usr/bin/patchelf --add-needed libucontext_posix.so.1 /bin/opencode
-
-# SETTING ALPINE ENVIRONMENT FOR OPENCODE 
-chmod +x "$BINARY_PATH"
-cat > $ALPINE_ROOT/etc/profile.d/ashrc.sh << 'EOF'
-#!/bin/bash
-# SOURCE TERMUX USER ENVIRONMENT VARIABLES FOR PROOT-DISTRO SESSIONS
-
-if [ -f /data/data/com.termux/files/home/.local/etc/i-Haklab/envvariables ]; then
-    source /data/data/com.termux/files/home/.local/etc/i-Haklab/envvariables
-fi
-
-if [ -f /data/data/com.termux/files/home/.opencode/.envvar ]; then
-    source /data/data/com.termux/files/home/.opencode/.envvar
-fi
-
-# REQUIRED ENVIRONMENT VARIABLES FOR PROOT-DISTRO SESSION INTO X11 DESKTOP ENVIRONMENT
-export DISPLAY=:0
-export XDG_RUNTIME_DIR=/tmp
-EOF
-
-[[ -e $BINARY_PATH ]] && {
-    echo "[✔] opencode installation finished."
-    echo "[📢] Set your API keys: ~/.opencode/.env"
-    echo "[📢] Set your variables: ~/.opencode/.envvar"
-    echo "[➡] Run 'opencode' to execute it."
-} || {
-  echo -en "\e[31mE:\e[0m opencode binary missing ... \e[33mAborting.\e[0m\n";
+# Cleanup
+cleanup() {
+    info "Cleaning up temporary files..."
+    rm -rf "$STAGING_DIR"
 }
+trap cleanup EXIT
+
+mkdir -p "$STAGING_DIR" "$SHARE_DIR" "$INSTALL_BIN_DIR"
+mkdir -p "${HOME}/.opencode"
+
+# 1. Download and Extract Binary
+info "Downloading opencode ${VERSION} (glibc)..."
+if curl -fsSL -o "$STAGING_DIR/opencode.tar.gz" "$DOWNLOAD_URL"; then
+    info "Extracting binary..."
+    tar -xzf "$STAGING_DIR/opencode.tar.gz" -C "$STAGING_DIR/"
+    # Move to final location
+    if [[ -f "$STAGING_DIR/opencode" ]]; then
+        mv -f "$STAGING_DIR/opencode" "$SHARE_DIR/opencode.real"
+        chmod +x "$SHARE_DIR/opencode.real"
+        ok "Binary installed to $SHARE_DIR/opencode.real"
+    else
+        err "Binary not found in archive."
+        exit 1
+    fi
+else
+    err "Failed to download opencode."
+    exit 1
+fi
+
+# 2. Compile Wrapper
+HELPER_SOURCE="${SHARE_DIR}/opencode_helper.c"
+if [[ ! -f "$HELPER_SOURCE" ]]; then
+    if [[ -f "./lib/opencode_helper.c" ]]; then
+        HELPER_SOURCE="./lib/opencode_helper.c"
+    else
+        err "Source opencode_helper.c not found."
+        exit 1
+    fi
+fi
+
+info "Compiling native bootstrapper..."
+if clang -O2 -o "$INSTALL_BIN_DIR/opencode" "$HELPER_SOURCE"; then
+    chmod +x "$INSTALL_BIN_DIR/opencode"
+    ok "Bootstrapper installed: $INSTALL_BIN_DIR/opencode"
+else
+    err "Compilation failed."
+    exit 1
+fi
+
+# 3. Verification
+if [[ -x "$INSTALL_BIN_DIR/opencode" ]]; then 
+    ok "opencode installation finished." 
+    msg "Run 'opencode' to execute it."
+else
+    err "Installation failed."
+    exit 1
+fi
 
 # ==============================
 # INSTALLING SCRIPT FIXER
 # ==============================
-echo "[*] Installing script fixer..."
+info "Installing script fixer..."
 fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
-if curl -fsSL "$fixerURL" -o /data/data/com.termux/files/usr/bin/fixer; then
-    chmod 750 /data/data/com.termux/files/usr/bin/fixer
-    echo "[➡] Run 'fixer' to fix any posible issue."
+if curl -fsSL "$fixerURL" -o "$INSTALL_BIN_DIR/fixer"; then
+    chmod 750 $INSTALL_BIN_DIR/fixer
+    ok "Fixer installed."
 else
-    echo "[!] Error downloading fixer."
+    err "Error downloading fixer."
 fi
 
-# ==============================
-# FINALS MESSAGES
-# ==============================
-echo "[📢] Help: going to https://t.me/Ivam3_Bot."
-echo "[💡] @Ivam3: thank you for use my package."
-####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
+info "Help: https://t.me/Ivam3_Bot"
+tip "@Ivam3: thank you for use my package."

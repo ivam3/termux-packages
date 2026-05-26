@@ -1,5 +1,15 @@
 #!/data/data/com.termux/files/usr/bin/bash 
-[[ -d ${HOME}/.udocker/repos/ghcr.io/ ]] && rm -rf ${HOME}/.udocker/repos/ghcr.io/
-echo "!: Removing opencode data history"
-python -m pip --no-color --no-cache-dir uninstall udocker
+echo "!: Removing opencode data... continue?"
+while read -p "[Y/n]: " -n 1 -r; do
+    case $REPLY in
+        [Yy]* ) 
+            rm -rf ${HOME}/.local/share/opencode ${HOME}/{.opencode, .opencode.json} 2>/dev/null
+            echo "!: Removed opencode data history"
+            break;;
+        [Nn]* ) 
+            echo "!: Keeped opencode data history"
+            break;;
+        * ) echo "Please answer [Y/n]";;
+    esac
+done
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -5,9 +5,9 @@ then
   exit 1
 else
   echo "Preparing enviroment ..."
-  if [[ -d ${HOME}/.local/share/opencode ]]
+  if [[ -d ${HOME}/.local/share/antigravity-cli ]]
   then
-    rm -rf ${HOME}/.local/share/opencode
+    rm -rf ${HOME}/.local/share/antigravity-cli
   else
     mkdir -p ${HOME}/.local/share 2>/dev/null
   fi
