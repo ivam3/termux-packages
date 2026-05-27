@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
     // In our deb structure, opencode.real is in /usr/share/opencode/
     // This bootstrapper is usually in /usr/bin/
     char* loader = "/data/data/com.termux/files/usr/glibc/lib/ld-linux-aarch64.so.1";
-    char real_bin[] = "/data/data/com.termux/files/usr/share/opencode/opencode.real";
+    char real_bin[] = "/data/data/com.termux/files/home/.local/share/opencode/opencode.real";
     char lib_path[] = "/data/data/com.termux/files/usr/glibc/lib";
 
     // 5. Construct argument array for execv

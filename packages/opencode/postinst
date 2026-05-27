@@ -6,10 +6,9 @@ set -Eeuo pipefail
 VERSION=$(curl -sI "https://github.com/anomalyco/opencode/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
 TARFILE="opencode-linux-arm64.tar.gz"
 DOWNLOAD_URL="https://github.com/anomalyco/opencode/releases/download/${VERSION}/${TARFILE}"
-TERMUX_PREFIX="/data/data/com.termux/files/usr"
-INSTALL_BIN_DIR="${TERMUX_PREFIX}/bin"
-SHARE_DIR="${TERMUX_PREFIX}/share/opencode"
-STAGING_DIR="${TERMUX_PREFIX}/tmp/opencode-staging"
+INSTALL_BIN_DIR="${PREFIX}/bin"
+SHARE_DIR="${HOME}/.local/share/opencode"
+STAGING_DIR="${SHARE_DIR}/opencode-staging"
 
 # Colors
 CYAN="\033[36m"
