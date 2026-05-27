@@ -1,7 +1,11 @@
 #!/data/data/com.termux/files/usr/bin/bash
 if [[ $(id -u) -eq 0 ]]
-then
+then 
   echo -en "\e[31mE:\e[0m You need to be a common user\n"
+  exit 1
+elif [[ ! -e ${PREFIX}/glibc/lib/ld-linux-aarch64.so.1 ]] 
+then
+  echo -en "\e[31mE:\e[0m glibc-repo package needed. Run 'apt install glibc-repo' and retry\n"
   exit 1
 else
   echo "Preparing enviroment ..."

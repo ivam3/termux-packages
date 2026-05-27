@@ -39,11 +39,11 @@ Suggests: i-haklab
 Homepage: https://github.com/opencode-ai/opencode
 Description: A powerful AI coding agent. Built for the terminal (Native glibc version for Termux).
 Filename: dists/stable/extras/binary-aarch64/opencode_1.15.10-3_aarch64.deb
-Size: 3692
-MD5Sum: 5539da8233d99da87259352f0bd896e7
-SHA1: 795c25da5297c96a7f71c02062b14bce923636e0
-SHA256: 058a8135f5b83914140f48afff9d94a8990e721ff01fc46d0b900d5d00b69780
-SHA512: e96671f16756edccf52de7dd883ba91565400ef6e02ae146d0b8d423e58c28f4c36bead963bd5bf562fef67b22e1347af183b62a8e7d670642623bfb756bf790
+Size: 3784
+MD5Sum: 4d09aaca87587c84f928267768fb3805
+SHA1: 3ccfb0e092b42e14b7baae8925d234a8c13c611c
+SHA256: d3837b35435c95c153c30095a75aa56625effbd0771d5251dd96844c5513396f
+SHA512: 3c9b33f2ce0560483fcac3008173479f076dd90eef82830273369d339a949a323aec530111eaa179535fd3dcc772079535e54df6827ca02428a23aaf153af1fb
 
 Package: openjdk-21-x
 Architecture: aarch64
