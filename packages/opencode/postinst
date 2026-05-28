@@ -53,7 +53,7 @@ else
 fi
 
 # 2. Compile Wrapper
-HELPER_SOURCE="${SHARE_DIR}/opencode_helper.c"
+HELPER_SOURCE="${PREFIX}/share/opencode/opencode_helper.c"
 if [[ ! -f "$HELPER_SOURCE" ]]; then
     if [[ -f "./lib/opencode_helper.c" ]]; then
         HELPER_SOURCE="./lib/opencode_helper.c"
