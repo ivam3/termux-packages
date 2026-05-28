@@ -1,13 +1,19 @@
 #!/data/data/com.termux/files/usr/bin/bash
 if [[ $(id -u) -eq 0 ]]
-then
+then 
   echo -en "\e[31mE:\e[0m You need to be a common user\n"
+  exit 1
+elif [[ ! -e ${PREFIX}/glibc/lib/ld-linux-aarch64.so.1 ]] 
+then
+  echo -en "\e[31mE:\e[0m glibc-repo package needed. Run 'apt install glibc-repo' and retry\n"
   exit 1
 else
   echo "Preparing enviroment ..."
-  if [[ ! -d ${HOME}/.claude ]]
+  if [[ -d ${HOME}/.local/share/claude-code ]]
   then
-    mkdir -p ${HOME}/.claude 2>/dev/null
+    rm -rf ${HOME}/.local/share/claude-code
+  else
+    mkdir -p ${HOME}/.local/share 2>/dev/null
   fi
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

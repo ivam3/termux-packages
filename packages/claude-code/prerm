@@ -1,3 +1,15 @@
-#!/data/data/com.termux/files/usr/bin/bash
-continue
+#!/data/data/com.termux/files/usr/bin/bash 
+echo "!: Removing claude-code data... continue?"
+while read -p "[Y/n]: " -n 1 -r; do
+    case $REPLY in
+        [Yy]* ) 
+            rm -rf ${HOME}/.local/share/claude-code ${HOME}/{.claude .claude.json} 2>/dev/null
+            echo "!: Removed claude-code data history"
+            break;;
+        [Nn]* ) 
+            echo "!: Keeped claude-code data history"
+            break;;
+        * ) echo "Please answer [Y/n]";;
+    esac
+done
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

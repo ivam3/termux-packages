@@ -29,6 +29,22 @@ SHA1: 461aa7c43b1d72d3266e73d7b8fff7bcf207cb64
 SHA256: 12a7367800044452ec1636addaa501b4f27a0d5388d3f5c40baba0b59a6dce90
 SHA512: a386344900c5cb64b2fb57a7b34311929a2f7dce279bb5eb9a3bc0854679a2f4431c64b66a7bfe4cce230716d50ae15fe3e0fe65bdf9b5f1487a121c12b07493
 
+Package: claude-code
+Version: 2.1.153-1
+Architecture: aarch64
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: glibc, clang, python, jq, curl, tar
+Suggests: i-haklab
+Homepage: https://github.com/anthropics/claude-code
+Description: NATIVE adaptation of Claude Code for Termux. Agentic coding tool that understands your codebase and helps you code faster through natural language commands.
+Filename: dists/stable/extras/binary-aarch64/claude-code_2.1.153-1_aarch64.deb
+Size: 3472
+MD5Sum: 48213cc70acc930dd3eda07e6c12af3b
+SHA1: 15e65c8d33e044617d7bd41b52e2cc4884b877de
+SHA256: 4a3a91be89acd01b5245499a633a1f19d481f944fd0e3d79b2f702c491c22d29
+SHA512: 61cb99557c157fd2e5f607d7b022d3c1e12d1c9fe79176c7e22a0c113e44f253f35dd8a8a324b7a579d46cc042092181b6c133988e4bacad59e05ecb20764b08
+
 Package: opencode
 Version: 1.15.10-3
 Architecture: aarch64

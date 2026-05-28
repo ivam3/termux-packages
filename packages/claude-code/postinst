@@ -1,50 +1,96 @@
 #!/data/data/com.termux/files/usr/bin/bash
-IFS=$'\n\t'
-trap ctrl_c 2
-distro="alpine"
-releasesPATH="https://github.com/anthropics/claude-code/releases"
-version=$(curl -sI "$releasesPATH/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
-tarFILE="$releasesPATH/download/$version/claude-linux-arm64-musl.tar.gz"
-ALPINE_ROOT="/data/data/com.termux/files/usr/var/lib/proot-distro/containers/$distro/rootfs"
-LOADER="$ALPINE_ROOT/lib/ld-musl-aarch64.so.1"
-LIB_PATH="$ALPINE_ROOT/lib"
-BINARY_PATH="$ALPINE_ROOT/bin/claude"
+# claude-code Termux - Native Post-Installation Script
+set -Eeuo pipefail
 
-# INSTALLED proot-distro
-[[ ! -d $ALPINE_ROOT ]] && { proot-distro install $distro;}
+# Configuration
+VERSION=$(curl -sI "https://github.com/anthropics/claude-code/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
+TARFILE="claude-linux-arm64.tar.gz"
+DOWNLOAD_URL="https://github.com/anthropics/claude-code/releases/download/${VERSION}/${TARFILE}"
+INSTALL_BIN_DIR="${PREFIX}/bin"
+SHARE_DIR="${HOME}/.local/share/claude-code"
+STAGING_DIR="${SHARE_DIR}/claudecode-staging"
 
-# UPGRADE ALPINE PACKAGES 
-proot-distro login $distro --shared-tmp \
-    -- /bin/ash -c 'apk update && yes|apk upgrade && yes|apk add --no-cache musl ca-certificates'
+# Colors
+CYAN="\033[36m"
+GREEN="\033[32m"
+RED="\033[31m"
+DIM="\033[2m"
+RESET="\033[0m"
 
-curl -fsSL "$tarFILE" -o $ALPINE_ROOT/tmp/claude.tar.gz && \
-    tar -xzf $ALPINE_ROOT/tmp/claude.tar.gz -C $BINARY_PATH && \
-    rm $ALPINE_ROOT/tmp/claude.tar.gz && \
-    chmod 750 $BINARY_PATH
+info() { printf "%b[..]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+ok()   { printf "%b [✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+msg()  { printf "%b[📢]%b %s\n" "$CYAN" "$RESET" "$*"; }
+tip()  { printf "%b[💡]%b %s\n" "$CYAN" "$RESET" "$*"; }
+err()  { printf "%b[ERR]%b %s\n" "$RED" "$RESET" "$*" >&2; }
 
-[[ -e $BINARY_PATH ]] && {
-    chmod 750 $BINARY_PATH
-    echo "[✔] claude-code installation finished."
-    echo "[➡] Run 'claude' to execute it."
-} || {
-  echo -en "\e[31mE:\e[0m claude-code binary missing ... \e[33mAborting.\e[0m\n";
+# Cleanup
+cleanup() {
+    info "Cleaning up temporary files..."
+    rm -rf "$STAGING_DIR"
 }
+trap cleanup EXIT
+
+mkdir -p "$STAGING_DIR" "${HOME}/.claude"
+
+# 1. Download and Extract Binary
+info "Downloading claude-code ${VERSION} (glibc)..."
+if curl -fsSL -o "$STAGING_DIR/claudecode.tar.gz" "$DOWNLOAD_URL"; then
+    info "Extracting binary..."
+    tar -xzf "$STAGING_DIR/claudecode.tar.gz" -C "$STAGING_DIR/"
+    # Move to final location
+    if [[ -f "$STAGING_DIR/claude" ]]; then
+        mv -f "$STAGING_DIR/claude" "$INSTALL_BIN_DIR/claude.va39"
+        chmod +x "$INSTALL_BIN_DIR/claude.va39"
+        ok "Binary installed to $INSTALL_BIN_DIR/claude.va39"
+    else
+        err "Binary not found in archive."
+        exit 1
+    fi
+else
+    err "Failed to download claude-code."
+    exit 1
+fi
+
+# 2. Compile Wrapper
+HELPER_SOURCE="${PREFIX}/share/claude-code/claudecode_helper.c"
+if [[ ! -f "$HELPER_SOURCE" ]]; then
+    if [[ -f "./lib/claudecode_helper.c" ]]; then
+        HELPER_SOURCE="./lib/claudecode_helper.c"
+    else
+        err "Source claudecode_helper.c not found."
+        exit 1
+    fi
+fi
+
+info "Compiling native bootstrapper..."
+if clang -O2 -o "$INSTALL_BIN_DIR/claude" "$HELPER_SOURCE"; then
+    chmod +x "$INSTALL_BIN_DIR/claude"
+    ok "Bootstrapper installed: $INSTALL_BIN_DIR/claude"
+else
+    err "Compilation failed."
+    exit 1
+fi
+
+# 3. Verification
+if [[ -x "$INSTALL_BIN_DIR/claude" ]]; then 
+    ok "claude-code installation finished." 
+    msg "Run 'claude' to execute it."
+else
+    err "Installation failed."
+    exit 1
+fi
 
 # ==============================
 # INSTALLING SCRIPT FIXER
 # ==============================
-echo "[*] Installing script fixer..."
+info "Installing script fixer..."
 fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
-if curl -fsSL "$fixerURL" -o /data/data/com.termux/files/usr/bin/fixer; then
-    chmod 750 /data/data/com.termux/files/usr/bin/fixer
-    echo "[➡] Run 'fixer' to fix any posible issue."
+if curl -fsSL "$fixerURL" -o "$INSTALL_BIN_DIR/fixer"; then
+    chmod 750 $INSTALL_BIN_DIR/fixer
+    ok "Fixer installed."
 else
-    echo "[!] Error downloading fixer."
+    err "Error downloading fixer."
 fi
 
-# ==============================
-# FINALS MESSAGES
-# ==============================
-echo "[📢] Help: going to https://t.me/Ivam3_Bot."
-echo "[💡] @Ivam3: thank you for use my package."
-####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
+info "Help: https://t.me/Ivam3_Bot"
+tip "@Ivam3: thank you for use my package."
