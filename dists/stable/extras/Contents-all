@@ -166,6 +166,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/finalrecon.md  
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/fish.md         i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/frida.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/fuzzdb.md       i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/fzf.md          i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/gdb.md          i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/gemini-cli.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/geo-recon.md    i-haklab
@@ -176,6 +177,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ghidra.md      
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ghost.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ghunt.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/git-filter-repo.md i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/glow.md         i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/gobuster.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/gophish.md      i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/h8mail.md       i-haklab
@@ -269,6 +271,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/termux-docker-q
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/tigervnc.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/tmux.md         i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/tor.md          i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/traductor.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/translate-shell.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/trape.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/twifo-cli.md    i-haklab
