@@ -431,7 +431,7 @@ SHA256: 115acf00c211ca2decc6379848336e43109619b321620cd3c32bf6f65337343d
 SHA512: 65fd549a7d8384cff34e70c8aa7b711c3ce855fc8ebfd82114e4fb7f7cae4f1dabfb650a0f788ef1061a2eb6e1f5e0e7f40f5616858305edf527153e03cedf87
 
 Package: engram
-Version: 1.16.1-1
+Version: 1.16.3-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
@@ -439,12 +439,12 @@ Depends: git, golang
 Suggests: i-haklab
 Homepage: https://github.com/Gentleman-Programming/engram
 Description: Persistent memory system for AI coding agents
-Filename: dists/stable/extras/binary-all/engram_1.16.1-1_all.deb
-Size: 2324
-MD5Sum: d689e5476026465a0a9dc6fa36219a24
-SHA1: 9840e2190b17cad8487e4085998574af80dab165
-SHA256: 518e9780b512c500c70ba74fd51455f5f30c42fcb37eb1192acb88d0a8a5200f
-SHA512: 9766af9319af2b6f447d506e27b1c1b61dd6c69ab3ff28c2943b9cd18e76d2be58261209223e20ebf996f823cafbf4431c5b2b040b6fb5a3d485df3ed7b7f9ef
+Filename: dists/stable/extras/binary-all/engram_1.16.3-1_all.deb
+Size: 2328
+MD5Sum: a491bb29309823b2eac4d069eed009df
+SHA1: dcc5eceab9e3d522f7496ab43b6a0a78e9680599
+SHA256: 350c48eb28ad3be8d1b6c44bd5853c5ab2eec6919f6f3628387f37471b16667e
+SHA512: e0d32deaed1cbfaea6f7b98b7c3b358f97886438bfc4784611c1755e1caa6e3c3f10e622d523de2cd0bf779be1fd77bb30e5512d9c232fe725523435fba094e5
 
 Package: enum4linux-ng
 Version: 1.3.5
@@ -895,20 +895,20 @@ SHA256: 989b6693900ff471e790c0c36dd4c31ca64f6868221b00a599cadb6ded2ad98c
 SHA512: b2acf2821c4fa7423aaca5ba2e39c36ff1c4b5cb01f5e10c1ff4e00aaa889ac417570cb2b57d506be35c9a5c1e29baa32e7030c5c9dc15ff7ce941036a28720b
 
 Package: i-haklab
-Version: 3.12.13
+Version: 3.12.14
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 25747
+Installed-Size: 25750
 Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, fd, file, findutils, fish, fzf, gawk, git, glibc-repo, glow, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, yazi, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.12.13_all.deb
-Size: 3658276
-MD5Sum: 8546972f899df511cff89b55893f2c4d
-SHA1: 2a8329c8683b1920ec871d139c60d0841b4105c4
-SHA256: 26c77413f5286d304a923da98e41b02e43925464873fa089856c74912a013c27
-SHA512: 5f4fb51c0e98b1fc670a6701f64b7126c9aa7dd05d1ce419820a3f1cb52e3cab1d10c45a4fc81cb735fbccab678746b40a8d70bb22a3554b422c36c250fe5d96
+Filename: dists/stable/extras/binary-all/i-haklab_3.12.14_all.deb
+Size: 3658528
+MD5Sum: 82644f5e7dff54e188ae5d093b4d6d18
+SHA1: 84fc0afdaba6d7db1fba40138332f94c103147c5
+SHA256: 13d8f193a6cfb4efa0363ebd56369d14266ca180c46d5e3eeff1628955f1a828
+SHA512: fca248d3c670abdc4a6fac3429f12e607b1cf12285fd652cd73979ffe70cdf822fce245f0c5c5fb0606211d2faf5f6d7ce36d5aca820632c1cb86f5279c47d33
 
 Package: infoga
 Version: 1.0
@@ -1071,7 +1071,7 @@ SHA256: 4c0c23cbcc8c663bbabeba017cef000e4f416aa31532686775f34032d340b83c
 SHA512: e6e71c73a9d26b6271e5a9b0eb7b215b6012bbe2846258f7b12326cdd54087e12bc1a37bc6c8f7dbbbe35170d61dc72cdd3ece97632cb2d46b8b88dbd7b2a9aa
 
 Package: mistral-vibe
-Version: 2.13.0-1
+Version: 2.15.0-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 4
@@ -1079,12 +1079,12 @@ Depends: curl, uv, python, python-pip, python-cryptography
 Suggests: i-haklab, neovim
 Homepage: https://github.com/mistralai/mistral-vibe
 Description: Minimal CLI coding assistant/agent powered by Mistral's models.
-Filename: dists/stable/extras/binary-all/mistral-vibe_2.13.0-1_all.deb
+Filename: dists/stable/extras/binary-all/mistral-vibe_2.15.0-1_all.deb
 Size: 2820
-MD5Sum: 98831de84da29a7180cbcd00367c3f23
-SHA1: bce275ffc35dc1dfc41ebdc50ca4a050c6c8fd93
-SHA256: e626bf3622c0fa4529416a72990aab81f1b467f5ae233b29e3b3b850f152c4e8
-SHA512: dbcc17e996b8d4d328834717de1c35f1b6f14066f7c064e433b74f599e7869fd29e9b16b72369f14226b6219f37996ce96bebdf6efe1e9cac574b8e578ef2dce
+MD5Sum: 24e73bee7932513f0962b07d7d7f90f3
+SHA1: 543fa08c386414e4a28938976a649b0ab9ca2477
+SHA256: f7b8687a7600a8caf7c60c877b59a4409db8497ef666a85cc06e789a4fb0005f
+SHA512: 8e0892e4b6ccb55be2eb91c69e207e392090196078d6d1716580ff0d5b2e01bc103b70f8a2f0224b7bdc95a1e93f35ca76bb0fbb25186a211f657570f5bcfd9e
 
 Package: nexphisher
 Version: 1.0.6
@@ -1134,7 +1134,7 @@ SHA256: 6694a5b19a00d82ec8322aa70d7fa1346590979cbf3880a20bd2627e09ff795c
 SHA512: 343283ad3863e2edc5307ee761db4a8a38a001e37ff821cf7a56103bd9ff34e10329d236f321b247f1dfbb27b11004ca989eeaf0cf2b8941484e68c3dffd58ed
 
 Package: openclaw
-Version: 2026.5.22-1
+Version: 2026.6.6-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 116
@@ -1142,12 +1142,12 @@ Depends: android-tools, git, curl, nodejs-lts, pacman, python, python-pip, make,
 Suggests: i-haklab, botgram
 Homepage: https://github.com/AidanPark/openclaw-android
 Description: Open-source autonomous artificial intelligence agent.
-Filename: dists/stable/extras/binary-all/openclaw_2026.5.22-1_all.deb
-Size: 29500
-MD5Sum: fc28f664a3969b479535c74f413d803b
-SHA1: 21800d8d75c66a0af31e97b4e70e10afd76eb2d8
-SHA256: 99c35b94e0cd7422cabd054d27144ac775c7c5cc2cdc485436772e87d74584b1
-SHA512: 8bdc74d29aa7490ed5ec9aeffa23afd3869dc3c8e9cbaea10d0adee91ef942ca343896d7535404bc64ca7dd969c4e3049a210e67eaa2ccc81713d25a20975054
+Filename: dists/stable/extras/binary-all/openclaw_2026.6.6-1_all.deb
+Size: 29492
+MD5Sum: c12d1237b58b73fd6a6335856f821ad9
+SHA1: 530861e92e77ccc7820b4ecb0c134434154a45c5
+SHA256: 813bbcd67a194f4c82b19874487511e9d562047aef1a345c61793e936923d4fa
+SHA512: 9ab1f5107818d88e49f94ed5cd6397b2e66ca095cfe1c6d0d2157e796d52a824a3f678539064d23e1a8b12d43b2fae45dfbef58d94ac76b292329445dcef41bc
 
 Package: openjdk-21-source
 Architecture: all

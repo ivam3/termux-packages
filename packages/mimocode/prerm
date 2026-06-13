@@ -1,0 +1,15 @@
+#!/data/data/com.termux/files/usr/bin/bash 
+echo "!: Removing mimocode data... continue?"
+while read -p "[Y/n]: " -n 1 -r; do
+    case $REPLY in
+        [Yy]* ) 
+            rm -rf ${HOME}/.local/share/mimocode ${HOME}/{.mimocode, .mimocode.json} 2>/dev/null
+            echo "!: Removed mimocode data history"
+            break;;
+        [Nn]* ) 
+            echo "!: Keeped mimocode data history"
+            break;;
+        * ) echo "Please answer [Y/n]";;
+    esac
+done
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

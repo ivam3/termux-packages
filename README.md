@@ -81,6 +81,7 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [markdown-viewer](https://github.com/ivam3/markdown-viewer) | A lightweight application developed using the Python programming language and the flet module. |
 | [metasploit-framework](https://github.com/rapid7/metasploit-framework) | World's leading open-source penetrating framework |
 | [mimikatz](https://github.com/fortra/impacket/blob/master/examples/mimikatz.py) | Mini shell to control a remote mimikatz RPC server. |
+| [mimocode](https://github.com/XiaomiMiMo/MiMo-Code) | An open-source AI coding agent with cross-session memory. Built for the terminal (Native glibc version for Termux). |
 | [nexphisher](https://github.com/htr-tech/nexphisher) | Advanced Phishing tool for Termux. |
 | [ngrok](https://ngrok.com) | Globally distributed reverse proxy fronting your web services running in any cloud or private network, or your machine. |
 | [nikto](https://github.com/sullo/nikto) | A web server scanner. |

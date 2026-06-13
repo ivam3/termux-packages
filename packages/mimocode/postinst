@@ -1,0 +1,99 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# opencode Termux - Native Post-Installation Script
+set -Eeuo pipefail
+
+# Configuration
+VERSION=$(curl -sI "https://github.com/XiaomiMiMo/MiMo-Code/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
+TOOL_NAME="mimocode"
+BINARY="mimo"
+TARFILE="$TOOL_NAME-linux-arm64.tar.gz"
+DOWNLOAD_URL="https://github.com/XiaomiMiMo/MiMo-Code/releases/download/${VERSION}/${TARFILE}"
+INSTALL_BIN_DIR="${PREFIX}/bin"
+SHARE_DIR="${HOME}/.local/share/$TOOL_NAME"
+STAGING_DIR="${SHARE_DIR}/$TOOL_NAME-staging"
+
+# Colors
+CYAN="\033[36m"
+GREEN="\033[32m"
+RED="\033[31m"
+DIM="\033[2m"
+RESET="\033[0m"
+
+info() { printf "%b[..]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+ok()   { printf "%b [✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+msg()  { printf "%b[📢]%b %s\n" "$CYAN" "$RESET" "$*"; }
+tip()  { printf "%b[💡]%b %s\n" "$CYAN" "$RESET" "$*"; }
+err()  { printf "%b[ERR]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+
+# Cleanup
+cleanup() {
+    info "Cleaning up temporary files..."
+    rm -rf "$STAGING_DIR"
+}
+trap cleanup EXIT
+
+mkdir -p "$STAGING_DIR" "$SHARE_DIR" "$INSTALL_BIN_DIR"
+mkdir -p "${HOME}/.$TOOL_NAME"  # For config and data
+
+# 1. Download and Extract Binary
+info "Downloading $TOOL_NAME ${VERSION} (glibc)..."
+if curl -fsSL -o "$STAGING_DIR/$TOOL_NAME.tar.gz" "$DOWNLOAD_URL"; then
+    info "Extracting binary..."
+    tar -xzf "$STAGING_DIR/$TOOL_NAME.tar.gz" -C "$STAGING_DIR/"
+    # Move to final location
+    if [[ -f "$STAGING_DIR/$BINARY" ]]; then
+        mv -f "$STAGING_DIR/$BINARY" "$SHARE_DIR/$BINARY.real"
+        chmod +x "$SHARE_DIR/$BINARY.real"
+        ok "Binary installed to $SHARE_DIR/$BINARY.real"
+    else
+        err "Binary not found in archive."
+        exit 1
+    fi
+else
+    err "Failed to download $TOOL_NAME."
+    exit 1
+fi
+
+# 2. Compile Wrapper
+HELPER_SOURCE="${PREFIX}/share/$TOOL_NAME/${TOOL_NAME}_helper.c"
+if [[ ! -f "$HELPER_SOURCE" ]]; then
+    if [[ -f "./lib/$TOOL_NAME_helper.c" ]]; then
+        HELPER_SOURCE="./lib/$TOOL_NAME_helper.c"
+    else
+        err "Source $TOOL_NAME_helper.c not found."
+        exit 1
+    fi
+fi
+
+info "Compiling native bootstrapper..."
+if clang -O2 -o "$INSTALL_BIN_DIR/$BINARY" "$HELPER_SOURCE"; then
+    chmod +x "$INSTALL_BIN_DIR/$BINARY"
+    ok "Bootstrapper installed: $INSTALL_BIN_DIR/$BINARY"
+else
+    err "Compilation failed."
+    exit 1
+fi
+
+# 3. Verification
+if [[ -x "$INSTALL_BIN_DIR/$BINARY" ]]; then 
+    ok "$TOOL_NAME installation finished." 
+    msg "Run '$BINARY' to execute it."
+else
+    err "Installation failed."
+    exit 1
+fi
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+info "Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o "$INSTALL_BIN_DIR/fixer"; then
+    chmod 750 $INSTALL_BIN_DIR/fixer
+    ok "Fixer installed."
+else
+    err "Error downloading fixer."
+fi
+
+info "Help: https://t.me/Ivam3_Bot"
+tip "@Ivam3: thank you for use my package."
