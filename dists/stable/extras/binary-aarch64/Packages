@@ -62,7 +62,7 @@ SHA256: c8fae1b40b7e7748bad38e1e7217b061ab6102207d9ac2af35169efac9b294b9
 SHA512: 61eda8455bbeb1996611be86ee1f0bcd21603c303e6e6534526e5e3b7b368a1d7da8d620d64e1889420d3abf5867d2e0c94584722fc492fe4224aa106155f606
 
 Package: opencode
-Version: 1.17.4-1
+Version: 1.17.6-1
 Architecture: aarch64
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 3
@@ -70,12 +70,12 @@ Depends: glibc, clang, python, jq, curl, tar
 Suggests: i-haklab
 Homepage: https://github.com/opencode-ai/opencode
 Description: A powerful AI coding agent. Built for the terminal (Native glibc version for Termux).
-Filename: dists/stable/extras/binary-aarch64/opencode_1.17.4-1_aarch64.deb
-Size: 3792
-MD5Sum: 5f7fbe2df560b0c332b16a3ea4b2ac0a
-SHA1: e679006bbaef7ba921132b3fe51af9e1d5cc719b
-SHA256: 09b15e717d8ee46ecab80ef97eb4b25b9b07429ad5aec437be3257a5dbe233bd
-SHA512: 0d88f71cc7c851a313b576abfad510146e7e544275f93320fbc6252574ea6888afd95c70727930f6f5870cb85c92f69a0064f8cc1838400a6cf36b3a149c5984
+Filename: dists/stable/extras/binary-aarch64/opencode_1.17.6-1_aarch64.deb
+Size: 3768
+MD5Sum: ed861cbbe21c502dd69117f501bc75c3
+SHA1: 668a2ac0e16473a94826c093403240c7a03d9662
+SHA256: c2f4c9be75b5b2a7b28f6c4f00e6c385ef2325370f2f3d5bea4e2d86e265dff2
+SHA512: c07657196d56f6630f1a511942caa5ea79fbbc454a7a118efac7c67ff6bee10535fc9a6ddbd0157efbf79371d7686739505b017df37ee65265b816e8ef3e62fb
 
 Package: openjdk-21-x
 Architecture: aarch64
