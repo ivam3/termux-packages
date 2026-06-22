@@ -1,13 +1,14 @@
 #!/data/data/com.termux/files/usr/bin/bash
-# opencode Termux - Native Post-Installation Script
+# mimocode Termux - Native Post-Installation Script
 set -Eeuo pipefail
 
 # Configuration
-VERSION=$(curl -sI "https://github.com/XiaomiMiMo/MiMo-Code/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
+GITHUB_URL="https://github.com/XiaomiMiMo/MiMo-Code"
+VERSION=$(curl -sI "$GITHUB_URL/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
 TOOL_NAME="mimocode"
 BINARY="mimo"
 TARFILE="$TOOL_NAME-linux-arm64.tar.gz"
-DOWNLOAD_URL="https://github.com/XiaomiMiMo/MiMo-Code/releases/download/${VERSION}/${TARFILE}"
+DOWNLOAD_URL="$GITHUB_URL/releases/download/${VERSION}/${TARFILE}"
 INSTALL_BIN_DIR="${PREFIX}/bin"
 SHARE_DIR="${HOME}/.local/share/$TOOL_NAME"
 STAGING_DIR="${SHARE_DIR}/$TOOL_NAME-staging"

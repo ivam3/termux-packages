@@ -141,7 +141,9 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/claude-code.md 
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/cloudbunny.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/cloudflared.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/code-server.md  i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/codex.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/converter.md    i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/copilot-cli.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/credmap.md      i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/crunch.md       i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/cryptovenom.md  i-haklab
@@ -257,6 +259,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/sherlock.md    
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/shodan.md       i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/slowhttptest.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/snscrape.md     i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/speedtest-cli.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/speedtest-go.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/sqlite.md       i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/sqlite3.md      i-haklab
