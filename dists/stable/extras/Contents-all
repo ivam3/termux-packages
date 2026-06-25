@@ -231,6 +231,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/phomber.md     
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/phoneintel.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/phonesploit.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/phpmyadmin.md   i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/playwright-proot.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/pnpm.md         i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/postgresql.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/privoxy.md      i-haklab

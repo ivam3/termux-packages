@@ -109,3 +109,18 @@ SHA1: 5e7b0e7abb09cbf492749aa8355ea00f43274361
 SHA256: 67d735a99f8cbcc7ba033e42c6944b2f212076f37a2c2afb81dd20cc85db4b56
 SHA512: 5fbfc2b5aaf50e13102e7ebba2ee1534d7cbfac2dd9e65925a51539ccb259622ff5eb18eeea51fbe84e396911a21b1b20a226a369b4637ccb016c46761d3eee8
 
+Package: playwright-proot
+Version: 0.1.14-1
+Architecture: aarch64
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 5
+Depends: proot-distro, curl, tar
+Homepage: https://playwright.dev
+Description: Playwright CLI for Termux via proot-distro Ubuntu. Enables browser automation (snapshot, screenshot, click, fill) for testing PWAs and web apps on Android.
+Filename: dists/stable/extras/binary-aarch64/playwright-proot_0.1.14-1_aarch64.deb
+Size: 4416
+MD5Sum: b3c085235a94ac51700dde7f2f5a4c67
+SHA1: c5c76e6f1ab7cbde2e5204d6e47858f13445aee9
+SHA256: 9283b4735fb2a5eafaf6caa7966f024ed55ac230bdc58886561ee21bf0d1d186
+SHA512: ead1852d75a48e6b9eb2c67758b13f5645cb6bde0e5d40f1ddc53392372ccb55481a189857191c8b0a6b62f2996ec16984d03b890f012874440242b2b74d0365
+

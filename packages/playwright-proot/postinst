@@ -1,0 +1,100 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# playwright-proot Termux - Post-Installation Script
+set -Eeuo pipefail
+
+PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
+DISTRO_NAME="ubuntu"
+LINUX_LIBS="libglib2.0-0t64 libnss3 libnspr4 libdbus-1-3 libatk1.0-0t64 libatk-bridge2.0-0t64 libcups2t64 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libpango-1.0-0 libcairo2 libasound2t64 libatspi2.0-0t64 libudev1"
+
+CYAN="\033[36m"; GREEN="\033[32m"; RED="\033[31m"; DIM="\033[2m"; RESET="\033[0m"
+info() { printf "%b[..]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+ok()   { printf "%b [✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+msg()  { printf "%b[📢]%b %s\n" "$CYAN" "$RESET" "$*"; }
+err()  { printf "%b[ERR]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+
+cleanup() { rm -rf ${PREFIX}/tmp/playwright-proot-setup 2>/dev/null; }
+trap cleanup EXIT
+
+# 1. Install Ubuntu if not present
+if ! proot-distro list 2>/dev/null | grep -q "^${DISTRO_NAME}$"; then
+    info "Installing ${DISTRO_NAME} via proot-distro (first download may take a while)..."
+    proot-distro install "$DISTRO_NAME" || {
+        err "Failed to install $DISTRO_NAME"
+        exit 1
+    }
+    ok "$DISTRO_NAME installed"
+else
+    ok "$DISTRO_NAME already installed"
+fi
+
+# 2. Install packages and setup inside Ubuntu
+info "Installing system libraries inside ${DISTRO_NAME}..."
+proot-distro login "$DISTRO_NAME" --shared-tmp -- /bin/bash -c "
+    set -Eeuo pipefail
+    export DEBIAN_FRONTEND=noninteractive
+
+    # System libraries for Chromium
+    apt update -qq && apt install -y -qq $LINUX_LIBS 2>&1 | tail -2
+    ldconfig 2>/dev/null
+
+    # Node.js via NodeSource
+    if ! command -v node &>/dev/null; then
+        curl -fsSL https://deb.nodesource.com/setup_22.x | bash - 2>&1 | tail -2
+        apt install -y -qq nodejs 2>&1 | tail -2
+    fi
+    echo \"Node: \$(node --version), npm: \$(npm --version)\"
+" || { err "Failed to install dependencies inside $DISTRO_NAME"; exit 1; }
+ok "System dependencies installed inside $DISTRO_NAME"
+
+# 3. Install playwright-cli and Chromium
+info "Installing playwright-cli and Chromium inside ${DISTRO_NAME}..."
+proot-distro login "$DISTRO_NAME" --shared-tmp -- /bin/bash -c "
+    set -Eeuo pipefail
+    export PLAYWRIGHT_BROWSERS_PATH=/root/.cache/ms-playwright
+
+    if ! command -v playwright-cli &>/dev/null; then
+        npm install -g @playwright/cli@latest 2>&1 | tail -2
+    fi
+
+    # Install chromium browser channel
+    mkdir -p /root/.cache/ms-playwright
+    playwright-cli install-browser chromium 2>&1 | tail -2
+
+    # Verify
+    echo \"playwright-cli: \$(playwright-cli --version)\"
+    echo \"Chromium: \$(\"$PLAYWRIGHT_BROWSERS_PATH\"/chromium-*/chrome-linux/chrome --version 2>/dev/null)\"
+" || { err "Failed to install playwright-cli inside $DISTRO_NAME"; exit 1; }
+ok "playwright-cli and Chromium installed"
+
+# 4. Create the wrapper script (omited in deb installation)
+# mkdir -p ${HOME}/.local/share/playwright-proot
+# WRAPPER_SRC="${HOME}/.local/share/playwright-proot/playwright-proot.sh"
+# if [[ -f "./playwright-proot.sh" ]]; then
+#     WRAPPER_SRC="./playwright-proot.sh"
+# fi
+# install -Dm755 "$WRAPPER_SRC" "${PREFIX}/bin/playwright-proot"
+ok "Wrapper installed: ${PREFIX}/bin/playwright-proot"
+
+# 5. Verify
+if command -v playwright-proot &>/dev/null; then
+    ok "playwright-proot installation finished." 
+    msg "Run 'playwright-proot' to execute it."
+else
+    err "Installation failed."
+    exit 1
+fi
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+info "Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o "$INSTALL_BIN_DIR/fixer"; then
+    chmod 750 $INSTALL_BIN_DIR/fixer
+    ok "Fixer installed."
+else
+    err "Error downloading fixer."
+fi
+
+info "Help: https://t.me/Ivam3_Bot"
+tip "@Ivam3: thank you for use my package."

@@ -117,3 +117,4 @@ data/data/com.termux/files/usr/opt/openjdk-21.0.1/lib/libfontmanager.so         
 data/data/com.termux/files/usr/opt/openjdk-21.0.1/lib/libjawt.so                 openjdk-21-x
 data/data/com.termux/files/usr/opt/openjdk-21.0.1/lib/libsplashscreen.so         openjdk-21-x
 data/data/com.termux/files/usr/bin/fixer                                         openjdk-21
+data/data/com.termux/files/usr/bin/playwright-proot                              playwright-proot

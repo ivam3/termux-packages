@@ -1,0 +1,17 @@
+#!/data/data/com.termux/files/usr/bin/bash
+echo "!: Remove playwright-proot (Ubuntu distro, Chromium cache, node_modules)?"
+while read -p "[Y/n]: " -n 1 -r; do
+    case $REPLY in
+        [Yy]* )
+            echo ""
+            echo "!: Removing Ubuntu distro..."
+            proot-distro remove ubuntu 2>/dev/null || true
+            echo "!: playwright-proot data removed"
+            break;;
+        [Nn]* )
+            echo ""
+            echo "!: Kept Ubuntu distro and playwright-proot data"
+            break;;
+        * ) echo "Please answer [Y/n]";;
+    esac
+done

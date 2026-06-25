@@ -1,0 +1,162 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# playwright-proot - Playwright CLI bridge via proot-distro Ubuntu
+set -Eeuo pipefail
+
+DISTRO="ubuntu"
+CHROME_PORT="9222"
+BROWSERS_PATH="/root/.cache/ms-playwright"
+HELP_URL="https://t.me/Ivam3_Bot"
+
+# ── helpers ──────────────────────────────────────────
+
+distro_ok() {
+    proot-distro list 2>&1 | sed 's/\r//g; s/\x1b\[[0-9]*K//g' | grep -qF "* ${DISTRO}"
+}
+
+chrome_bin() {
+    proot-distro login "$DISTRO" --shared-tmp -- /bin/bash \
+        -c "ls -d ${BROWSERS_PATH}/chromium-*/chrome-linux/chrome 2>/dev/null" 2>/dev/null | tail -1
+}
+
+wait_chrome() {
+    local tries=15
+    while ((tries--)); do
+        if proot-distro login "$DISTRO" --shared-tmp -- /bin/bash \
+            -c "curl -so /dev/null -w '%{http_code}' http://127.0.0.1:${CHROME_PORT}/json/version 2>/dev/null" 2>/dev/null | grep -q 200
+        then return 0; fi
+        sleep 1
+    done
+    return 1
+}
+
+# ── commands ─────────────────────────────────────────
+
+cmd_run() {
+    local script_content
+    if [[ $# -ge 1 ]]; then
+        script_content="$*"
+    else
+        script_content=$(cat)
+    fi
+
+    local chrb
+    chrb=$(chrome_bin)
+    [[ -n "$chrb" ]] || { echo "Error: Chromium no encontrado. Reinstala playwright-proot." >&2; exit 1; }
+
+    # Build inline script for proot
+    local cmds
+    cmds=$(echo "$script_content" | tr ';' '\n' | sed 's/^[[:space:]]*//' | grep -v '^$')
+
+    local inline
+    inline=$(cat << INLINE
+#!/bin/bash
+set -Eeuo pipefail
+export CHRB="$chrb"
+export PORT="$CHROME_PORT"
+
+# Start Chromium
+\${CHRB} --headless --no-sandbox --remote-debugging-port=\${PORT} \
+    --disable-gpu --disable-dev-shm-usage about:blank &
+CPID=\$!
+for i in \$(seq 1 15); do
+    curl -so /dev/null -w '%{http_code}' http://127.0.0.1:\${PORT}/json/version 2>/dev/null | grep -q 200 && break
+    sleep 1
+done
+
+# Attach session (non-blocking)
+playwright-cli attach --cdp="http://127.0.0.1:\${PORT}" 2>/dev/null
+
+# Run commands
+$(echo "$cmds" | sed 's/^/playwright-cli --s=default /')
+
+# Cleanup
+playwright-cli close 2>/dev/null || true
+kill \${CPID:-} 2>/dev/null || true
+INLINE
+)
+
+    proot-distro login "$DISTRO" --shared-tmp -- /bin/bash -c "$inline" 2>&1
+}
+
+cmd_open() {
+    local target_url="${1:-http://localhost:8550}"
+    local chrb
+    chrb=$(chrome_bin)
+    [[ -n "$chrb" ]] || { echo "Error: Chromium no encontrado. Reinstala playwright-proot." >&2; exit 1; }
+
+    local inline
+    inline=$(cat << INLINE
+#!/bin/bash
+set -Eeuo pipefail
+CHRB="$chrb"
+PORT="$CHROME_PORT"
+URL="$target_url"
+
+echo "Iniciando Chromium..."
+\${CHRB} --headless --no-sandbox --remote-debugging-port=\${PORT} \
+    --disable-gpu --disable-dev-shm-usage "\${URL}" &
+CPID=\$!
+for i in \$(seq 1 15); do
+    if curl -so /dev/null -w '%{http_code}' http://127.0.0.1:\${PORT}/json/version 2>/dev/null | grep -q 200; then
+        echo "Chromium listo en puerto \${PORT}"
+        break
+    fi
+    sleep 1
+done
+
+echo "Adjuntando playwright-cli..."
+echo "Usa: playwright-proot <comando>  (en otra terminal)"
+echo ""
+playwright-cli attach --cdp="http://127.0.0.1:\${PORT}"
+kill \${CPID:-} 2>/dev/null || true
+INLINE
+)
+
+    proot-distro login "$DISTRO" --shared-tmp -- /bin/bash -c "$inline" 2>&1
+}
+
+cmd_close() {
+    proot-distro login "$DISTRO" --shared-tmp -- /bin/bash \
+        -c "pkill -f 'chrome.*remote-debugging' 2>/dev/null; echo 'Chromium detenido'" 2>&1 | tail -1
+}
+
+# ── main ─────────────────────────────────────────────
+
+case "${1:-help}" in
+    run)
+        shift
+        cmd_run "$@"
+        ;;
+    open)
+        shift
+        cmd_open "${1:-}"
+        ;;
+    close)
+        cmd_close
+        ;;
+    help|--help|-h|"")
+        cat <<EOF
+playwright-proot - Browser automation para Termux via proot-distro Ubuntu
+
+USAGE:
+  playwright-proot run <comandos>     Ejecuta comandos en una sola sesion
+  playwright-proot open [url]         Sesion interactiva
+  playwright-proot close              Detiene Chromium
+  playwright-proot help               Ayuda
+
+EJEMPLOS:
+  playwright-proot run "snapshot; screenshot --filename=p.png"
+  echo "goto http://localhost:8550; snapshot" | playwright-proot run
+  playwright-proot open http://localhost:8550
+  playwright-proot close
+
+Funciona en modo headless (sin X11/Wayland).
+
+Reportes: ${HELP_URL}
+EOF
+        ;;
+    *)
+        echo "Error: comando desconocido '$1'. Usa: playwright-proot help" >&2
+        exit 1
+        ;;
+esac

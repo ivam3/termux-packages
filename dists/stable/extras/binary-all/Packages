@@ -895,20 +895,20 @@ SHA256: 989b6693900ff471e790c0c36dd4c31ca64f6868221b00a599cadb6ded2ad98c
 SHA512: b2acf2821c4fa7423aaca5ba2e39c36ff1c4b5cb01f5e10c1ff4e00aaa889ac417570cb2b57d506be35c9a5c1e29baa32e7030c5c9dc15ff7ce941036a28720b
 
 Package: i-haklab
-Version: 3.12.15
+Version: 3.12.16
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 25747
+Installed-Size: 25750
 Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, fd, file, findutils, fish, fzf, gawk, git, glibc-repo, glow, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, yazi, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.12.15_all.deb
-Size: 3658056
-MD5Sum: b2ecf9d296c6738c51c9daaacac1fd5e
-SHA1: b0f1e3255c207c5060d1629c357450e5f82a1933
-SHA256: 696bc9d6d39c9be8f55a6da6f3899a79037637d4294d569d30d2afb01ec96442
-SHA512: dbf069d580bfd7fc27b3cd8ad5567f8e57e8beae024dff4dda0d9a21b841a2cc056e26e4b6e705976ce23f24fd49e55e6dd3ff984c72ab0ac766fcd330e73dd6
+Filename: dists/stable/extras/binary-all/i-haklab_3.12.16_all.deb
+Size: 3658880
+MD5Sum: cda20a97ff4f5ba1cdc09353cdaf5735
+SHA1: ca0f02a6602d7f31f3d976c232c16f41b59515ec
+SHA256: f7c836df62238dd5aba5c592092ae657a2d22f5c8ecf93d86bd84effd2e60f1c
+SHA512: a23ed99d9e421cd1ff7ae1dbcc74c9c99191869f6ae5d14f2ea262c0af3ecf755420f58fe25a8f825b846d70f4a88cc9df5100e11077a95cdb9dbc5317623efb
 
 Package: infoga
 Version: 1.0
