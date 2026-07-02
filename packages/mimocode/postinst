@@ -58,10 +58,10 @@ fi
 # 2. Compile Wrapper
 HELPER_SOURCE="${PREFIX}/share/$TOOL_NAME/${TOOL_NAME}_helper.c"
 if [[ ! -f "$HELPER_SOURCE" ]]; then
-    if [[ -f "./lib/$TOOL_NAME_helper.c" ]]; then
-        HELPER_SOURCE="./lib/$TOOL_NAME_helper.c"
+    if [[ -f "./lib/${TOOL_NAME}_helper.c" ]]; then
+        HELPER_SOURCE="./lib/${TOOL_NAME}_helper.c"
     else
-        err "Source $TOOL_NAME_helper.c not found."
+        err "Source ${TOOL_NAME}_helper.c not found."
         exit 1
     fi
 fi
