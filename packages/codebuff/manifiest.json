@@ -1,0 +1,14 @@
+{
+  "name": "codebuff",
+  "version": "1.0.420-1",
+  "arch": "aarch64",
+  "homepage": "https://github.com/CodebuffAI/codebuff",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["glibc", "clang", "python", "jq", "wget", "tar"],
+  "suggests": ["i-haklab"],
+  "description": "AI coding assistant that edits your codebase through natural language instructions",
+  "files" :{
+    "lib/codebuff_helper.c": "/data/data/com.termux/files/usr/share/codebuff/codebuff_helper.c",
+    ".env": "/data/data/com.termux/files/home/.codebuff/.env"
+  }
+}

@@ -45,8 +45,40 @@ SHA1: 28ced3f1289b92bd21db44739757cb9df143ac53
 SHA256: f51fa341dcd1a2725b392e234653d73d54e6e0878fe2f06db36d14427d332f2f
 SHA512: f50a6748704977c23506e0226a7233a7ea5e48e460ea1bd2b817237042266aa3cd322cb253a74eb5224dd95fdf83fcc3e300b9405b03d18562ae0fc23b794bb5
 
+Package: codebuff
+Version: 1.0.420-1
+Architecture: aarch64
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 3
+Depends: glibc, clang, python, jq, wget, tar
+Suggests: i-haklab
+Homepage: https://github.com/CodebuffAI/codebuff
+Description: AI coding assistant that edits your codebase through natural language instructions
+Filename: dists/stable/extras/binary-aarch64/codebuff_1.0.420-1_aarch64.deb
+Size: 3912
+MD5Sum: 331dc57e238e169e782c865c1f2854c8
+SHA1: 37d90783b29c2633cf9f4d5b36088043c1e5877a
+SHA256: 8d7a49d8efdf74dea6f00842b2810ba2c1dec94d6b59278607bc9a278ce7188b
+SHA512: 6b6f1e0053520c1a2416a2136685fa1982b5a14c4bf47294f4b004eab401a68a5210d547cf9303d769c48e43aa38c570a8e6797eb006c732b51cd6665a5332a1
+
+Package: freebuff
+Version: 0.0.117
+Architecture: aarch64
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 3
+Depends: glibc, clang, python, jq, wget, tar
+Suggests: i-haklab
+Homepage: https://github.com/CodebuffAI/codebuff-community
+Description: AI coding assistant that edits your codebase through natural language instructions. A buffcode free version with ad-supported — no subscription, no credits, no configuration.
+Filename: dists/stable/extras/binary-aarch64/freebuff_0.0.117_aarch64.deb
+Size: 3956
+MD5Sum: 293523b96e9160562550ad8c207587fa
+SHA1: 3a4bb8b3bdd23a21e89bdf1650b58e6a00909670
+SHA256: 97fab80ea3c78e29c4f10d593ef5f74c349f3136491fc80d14c9624da35f1dfb
+SHA512: 16a4080e00aba1a713e19dd8019a7ae2696a20d93c97ef3d9c57b6213c10d6b91459f14dd67dccceb387c3ee0129ed6460cb653b9ddde80a445fc43e42897421
+
 Package: mimocode
-Version: 0.1.1-1
+Version: 0.1.4-1
 Architecture: aarch64
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 3
@@ -54,12 +86,12 @@ Depends: glibc, clang, python, jq, curl, tar
 Suggests: i-haklab
 Homepage: https://github.com/XiaomiMiMo/MiMo-Code
 Description: An open-source AI coding agent with cross-session memory. Built for the terminal (Native glibc version for Termux).
-Filename: dists/stable/extras/binary-aarch64/mimocode_0.1.1-1_aarch64.deb
-Size: 3884
-MD5Sum: 238be873ae3963b88ff9ed9e6d0f5229
-SHA1: a0d324cae0062c77819c3b3ecb2cef0bcd75320b
-SHA256: 5815ba19e1792cd97ff0c28f8d351f2af244328c87bad97e5c5a42f8a54adcb3
-SHA512: 2e18208463d55270cfacdfe48c5ea90c406fd5fd2583eb75c207701905c5787e6c60f96eac3b723784a042c112d9f9ca4abdbdf31bddcf0ebb0a59fdefbfe35b
+Filename: dists/stable/extras/binary-aarch64/mimocode_0.1.4-1_aarch64.deb
+Size: 3900
+MD5Sum: c3ffc4e01075d6c3098d8eedf9cf438b
+SHA1: 18f95f85f91a1f29ca64d86b775a74ca130d0e47
+SHA256: a30a6b652479c1cfa26e376bcdf8f0135e6b2bf739e24b43c1a241861ef5ce29
+SHA512: 1e93b7652d008ed61e3e340846e9e66889db34c41053e90f80e9618de84414499c32e74676ba188444ceac8104c999da908aaf30ffcc69b8469a60ee7cb270e2
 
 Package: opencode
 Version: 1.17.9-1

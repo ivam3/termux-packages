@@ -3,11 +3,12 @@
 set -Eeuo pipefail
 
 # Configuration
-GITHUB_URL="https://github.com/XiaomiMiMo/MiMo-Code"
-VERSION=$(curl -sI "$GITHUB_URL/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
-TOOL_NAME="mimocode"
-BINARY="mimo"
-TARFILE="$TOOL_NAME-linux-arm64.tar.gz"
+GITHUB_URL="https://github.com/CodebuffAI/codebuff"
+#VERSION=$(curl -sI "$GITHUB_URL/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
+VERSION="v1.0.420-beta.185"
+TOOL_NAME="codebuff"
+BINARY="codecane"
+TARFILE="$BINARY-linux-arm64.tar.gz"
 DOWNLOAD_URL="$GITHUB_URL/releases/download/${VERSION}/${TARFILE}"
 INSTALL_BIN_DIR="${PREFIX}/bin"
 SHARE_DIR="${HOME}/.local/share/$TOOL_NAME"
@@ -38,7 +39,7 @@ mkdir -p "${HOME}/.$TOOL_NAME"  # For config and data
 
 # 1. Download and Extract Binary
 info "Downloading $TOOL_NAME ${VERSION} (glibc)..."
-if curl -fsSL -o "$STAGING_DIR/$TOOL_NAME.tar.gz" "$DOWNLOAD_URL"; then
+if wget -O "$STAGING_DIR/$TOOL_NAME.tar.gz" "$DOWNLOAD_URL"; then
     info "Extracting binary..."
     tar -xzf "$STAGING_DIR/$TOOL_NAME.tar.gz" -C "$STAGING_DIR/"
     # Move to final location

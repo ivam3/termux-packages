@@ -1,0 +1,15 @@
+#!/data/data/com.termux/files/usr/bin/bash 
+echo "!: Removing codebuff data... continue?"
+while read -p "[Y/n]: " -n 1 -r; do
+    case $REPLY in
+        [Yy]* ) 
+            rm -rf ${HOME}/.local/share/codebuff ${HOME}/{.codebuff, .codebuff.json} 2>/dev/null
+            echo "!: Removed codebuff data history"
+            break;;
+        [Nn]* ) 
+            echo "!: Keeped codebuff data history"
+            break;;
+        * ) echo "Please answer [Y/n]";;
+    esac
+done
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

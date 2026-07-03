@@ -141,6 +141,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/claude-code.md 
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/cloudbunny.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/cloudflared.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/code-server.md  i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/codebuff.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/codex.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/converter.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/copilot-cli.md  i-haklab
@@ -166,6 +167,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/fbi.md         
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ffmpeg.md       i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/finalrecon.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/fish.md         i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/freebuff.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/frida.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/fuzzdb.md       i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/fzf.md          i-haklab

@@ -1,0 +1,14 @@
+{
+  "name": "freebuff",
+  "version": "0.0.117",
+  "arch": "aarch64",
+  "homepage": "https://github.com/CodebuffAI/codebuff-community",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["glibc", "clang", "python", "jq", "wget", "tar"],
+  "suggests": ["i-haklab"],
+  "description": "AI coding assistant that edits your codebase through natural language instructions. A buffcode free version with ad-supported — no subscription, no credits, no configuration.",
+  "files" :{
+    "lib/freebuff_helper.c": "/data/data/com.termux/files/usr/share/freebuff/freebuff_helper.c",
+    ".env": "/data/data/com.termux/files/home/.freebuff/.env"
+  }
+}

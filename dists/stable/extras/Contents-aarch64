@@ -105,6 +105,10 @@ data/data/com.termux/files/usr/lib/libaircrack-osdep.so                         
 data/data/com.termux/files/usr/share/doc/aircrack-ng/LICENSE                     aircrack-ng
 data/data/com.termux/files/usr/share/antigravity-cli/agy_helper.c                antigravity-cli
 data/data/com.termux/files/usr/share/claude-code/claudecode_helper.c             claude-code
+data/data/com.termux/files/home/.codebuff/.env                                   codebuff
+data/data/com.termux/files/usr/share/codebuff/codebuff_helper.c                  codebuff
+data/data/com.termux/files/home/.freebuff/.env                                   freebuff
+data/data/com.termux/files/usr/share/freebuff/freebuff_helper.c                  freebuff
 data/data/com.termux/files/home/.mimocode/.env                                   mimocode
 data/data/com.termux/files/usr/share/mimocode/mimocode_helper.c                  mimocode
 data/data/com.termux/files/home/.opencode/.env                                   opencode

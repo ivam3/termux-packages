@@ -895,20 +895,20 @@ SHA256: 989b6693900ff471e790c0c36dd4c31ca64f6868221b00a599cadb6ded2ad98c
 SHA512: b2acf2821c4fa7423aaca5ba2e39c36ff1c4b5cb01f5e10c1ff4e00aaa889ac417570cb2b57d506be35c9a5c1e29baa32e7030c5c9dc15ff7ce941036a28720b
 
 Package: i-haklab
-Version: 3.12.16
+Version: 3.12.17
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 25750
+Installed-Size: 25756
 Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, fd, file, findutils, fish, fzf, gawk, git, glibc-repo, glow, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, yazi, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.12.16_all.deb
-Size: 3658880
-MD5Sum: cda20a97ff4f5ba1cdc09353cdaf5735
-SHA1: ca0f02a6602d7f31f3d976c232c16f41b59515ec
-SHA256: f7c836df62238dd5aba5c592092ae657a2d22f5c8ecf93d86bd84effd2e60f1c
-SHA512: a23ed99d9e421cd1ff7ae1dbcc74c9c99191869f6ae5d14f2ea262c0af3ecf755420f58fe25a8f825b846d70f4a88cc9df5100e11077a95cdb9dbc5317623efb
+Filename: dists/stable/extras/binary-all/i-haklab_3.12.17_all.deb
+Size: 3660584
+MD5Sum: 5d3261484e49240b88ad286f2d253f38
+SHA1: 28074b02b4f380265632c14e519789fc790ad149
+SHA256: c3316334b72047341df2289df3e33bb5dc1f0edfd75cb935d9b0aecfcbca806e
+SHA512: eb14449ff02931def7ed33db526cda0df9b3f9b286d7b1b2f9cee2d29ef7de5d4ac1b55d21ffccc8a5d7b8402515b4fda999e7facf09c802f98d274cbe41e744
 
 Package: infoga
 Version: 1.0
