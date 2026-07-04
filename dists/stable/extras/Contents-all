@@ -209,7 +209,6 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/metasploit-fram
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/mimikatz.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/mimocode.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/minimax-cli.md  i-haklab
-data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/mvt             i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/mvt.md          i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/n8n.md          i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/nano.md         i-haklab
@@ -276,6 +275,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/sublist3r.md   
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/tangalanga.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/termux-desktop-xfce.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/termux-docker-qemu.md i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/termux-oracle-skill.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/tigervnc.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/tmux.md         i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/tor.md          i-haklab
