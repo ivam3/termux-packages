@@ -1596,6 +1596,22 @@ SHA1: bc1b7a3690cb4b00c09b290b1a6ecbaeed510a48
 SHA256: 536e4708fdf035ebdcafcb525183045ab33f593b51a2961e88b5320eaea64aee
 SHA512: b5aeea5785ceca2d2c64e11c0c18bdc39f466ed257ec72e1add08c062be3bea3d4e1d5708b529a8f0045c76cee7c7f247aef930a4de935602fb03a627a32e1f5
 
+Package: termux-oracle-skill
+Version: 0.1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 6
+Depends: git
+Suggests: i-haklab
+Homepage: https://github.com/ivam3/termux-oracle
+Description: A termux skill for AI coding agents with all context about termux, i-Haklab and Ivam3 termux-packages.
+Filename: dists/stable/extras/binary-all/termux-oracle-skill_0.1.0_all.deb
+Size: 4388
+MD5Sum: 20e36c2684429b0e7da9dad142512f2e
+SHA1: cac5f8ac7b803a0da36dde153c91a11b03dddfc5
+SHA256: 2b42c96df7bfe3cae9c5ed2b956865c5e6f8aa1b6aa3c869b23a9caea42c17dc
+SHA512: b94858a5daba9dc6eca1b2cd239a3183f5956da2e98056f3905b4d2f9350d39269f4bc77218805d53e27dee9d5f8d76ab5e2064ffeab83d2a5e5216f1c6e6893
+
 Package: trape
 Version: 2.0
 Architecture: all

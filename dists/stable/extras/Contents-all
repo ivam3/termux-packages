@@ -1174,6 +1174,7 @@ data/data/com.termux/files/usr/bin/tangalanga                                   
 data/data/com.termux/files/usr/bin/tangalanga-installer                          tangalanga
 data/data/com.termux/files/usr/bin/desktop                                       termux-desktop-xfce
 data/data/com.termux/files/usr/bin/termux-docker-qemu                            termux-docker-qemu
+data/data/com.termux/files/home/.agents/skills/termux-oracle/SKILL.md            termux-oracle-skill
 data/data/com.termux/files/usr/bin/trape                                         trape
 data/data/com.termux/files/usr/bin/unshc-installer                               unshc
 data/data/com.termux/files/usr/bin/vulnx                                         vulnx

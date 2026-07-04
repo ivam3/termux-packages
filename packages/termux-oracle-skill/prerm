@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.agents/skills/termux-oracle ]]; then
+    rm -rf ${HOME}/.agents/skills/termux-oracle
+fi
+
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

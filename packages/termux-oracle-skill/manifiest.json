@@ -1,0 +1,13 @@
+{
+  "name": "termux-oracle-skill",
+  "version": "0.1.0",
+  "arch": "all",
+  "homepage": "https://github.com/ivam3/termux-oracle",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git"],
+  "suggests": ["i-haklab"],
+  "description": "A termux skill for AI coding agents with all context about termux, i-Haklab and Ivam3 termux-packages.",
+  "files" :{ 
+      "home/.agents/skills/termux-oracle/SKILL.md": "/data/data/com.termux/files/home/.agents/skills/termux-oracle/SKILL.md"
+  }
+}
