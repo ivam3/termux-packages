@@ -121,6 +121,7 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [tangalanga](github.com/elcuervo/tangalanga) | The Zoom conference scanner hacking tool. |
 | [termux-desktop-xfce](https://github.com/Yisus7u7/termux-desktop-xfce) | Set up a beautiful xfce desktop in termux. |
 | [termux-docker-qemu](https://telegra.ph/Docker-en-Android-10-26) | Provide an additional layer of application virtualization with Linux kernel resource isolation features. |
+| [termux-oracle-skill](https://github.com/ivam3/termux-oracle) | Termux skill for AI coding agents with all context about termux, i-Haklab and Ivam3 termux-packages. |
 | [trape](https://github.com/jofpin/trape) | OSINT analysis and research tool. |
 | [unshc](https://github.com/yanncam/UnSHc) | The Shell Script UnCompiler (UNSHC) decode and decrypt SHC file on X86/x64 architecture. |
 | [vulnx](https://github.com/anouarbensaad/vulnx) | An intelligent bot auto shell injector that detects vulnerabilities in multiple types of cms. |

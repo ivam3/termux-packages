@@ -16,7 +16,7 @@ while getopts g:a:u:h opts; do
   esac
 done 
 
-[[ $actions = create ]] && {
+[[ $action = create ]] && {
   #Generate key
   gpg --full-generate-key
   #Export key 
