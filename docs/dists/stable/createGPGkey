@@ -32,6 +32,6 @@ gpg --default-key $your_key_id --clearsign -o InRelease Release
 echo """
 [W]: Dont forget download the key in users device :
 
-curl -fsSL "https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/dists/stable/public_key.gpg"|gpg --dearmor|tee "\$PREFIX/etc/apt/trusted.gpg.d/ivam3.gpg" >/dev/null && apt update
+curl -fsSL "https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/docs/dists/stable/public_key.gpg"|gpg --dearmor|tee "\$PREFIX/etc/apt/trusted.gpg.d/ivam3.gpg" >/dev/null && apt update
 """
 
