@@ -8,6 +8,6 @@
   "suggests": ["i-haklab, neovim"],
   "description": "Minimal CLI coding assistant/agent powered by Mistral's models.",
   "files" :{
-    "mistralvibe_installer": "bin/mistralvibe_installer"
+    "mistralvibe_installer": "/data/data/com.termux/files/usr/bin/mistralvibe_installer"
   }
 }

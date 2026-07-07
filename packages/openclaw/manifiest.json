@@ -1,13 +1,17 @@
 {
   "name": "openclaw",
-  "version": "2026.6.6-1",
+  "version": "2026.6.11-1",
   "arch": "all",
   "homepage": "https://github.com/AidanPark/openclaw-android",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["android-tools, git, curl, nodejs-lts, pacman, python, python-pip, make, cmake, clang, binutils, proot"],
-  "suggests": ["i-haklab, botgram"],
+  "depends": [
+    "android-tools, git, curl, nodejs-lts, pacman, python, python-pip, make, cmake, clang, binutils, proot"
+  ],
+  "suggests": [
+    "i-haklab, botgram"
+  ],
   "description": "Open-source autonomous artificial intelligence agent.",
-  "files" :{
+  "files": {
     "openclaw_installer": "bin/openclaw_installer",
     "bin/oa": "bin/oa",
     "bin/oaupdate": "bin/oaupdate",
