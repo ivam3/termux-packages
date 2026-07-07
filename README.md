@@ -158,7 +158,7 @@ curl -s https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/ivam3-t
 
 - Download signed key 
 ```
-curl -fsSL "https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/dists/stable/public_key.gpg" \
+curl -fsSL "https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/docs/dists/stable/public_key.gpg" \
 |gpg --dearmor|tee "$PREFIX/etc/apt/trusted.gpg.d/ivam3.gpg" >/dev/null
 ```
 
@@ -168,7 +168,7 @@ apt update
 ```
 Or if you prefer, you can do it with one command line to add the repository copy and paste the following command in your Termux terminal:
 ```bash
-yes|apt install gnupg && mkdir -p $PREFIX/etc/apt/sources.list.d && curl -s https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/ivam3-termux-packages.list -o $PREFIX/etc/apt/sources.list.d/ivam3-termux-packages.list && curl -fsSL "https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/dists/stable/public_key.gpg" | gpg --dearmor|tee "$PREFIX/etc/apt/trusted.gpg.d/ivam3.gpg" >/dev/null && apt update
+yes|apt install gnupg && mkdir -p $PREFIX/etc/apt/sources.list.d && curl -s https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/ivam3-termux-packages.list -o $PREFIX/etc/apt/sources.list.d/ivam3-termux-packages.list && curl -fsSL "https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/docs/dists/stable/public_key.gpg" | gpg --dearmor|tee "$PREFIX/etc/apt/trusted.gpg.d/ivam3.gpg" >/dev/null && apt update
 ```
 
 **Explore and search this repository with AI on [DeepWiki](https://deepwiki.com/ivam3/termux-packages)**
