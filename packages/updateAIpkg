@@ -1,0 +1,64 @@
+#!/data/data/com.termux/files/usr/bin/bash 
+
+export freebuff=$(curl -fsSL https://api.github.com/repos/CodebuffAI/codebuff-community/releases/latest | grep '"tag_name":' | sed -E 's/.*"freebuff-v([^"]+)".*/\1/')
+
+export agy=$(curl -s "https://antigravity-cli-auto-updater-974169037036.us-central1.run.app/manifests/linux_arm64.json" | jq -r .version)
+
+export engram=$(curl -sI "https://github.com/Gentleman-Programming/engram/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|'|awk -F "-" '{print $NF}')
+
+export termuxOracle=$(curl -sI "https://github.com/ivam3/termux-oracle/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
+
+export mimocode=$(curl -sI "https://github.com/XiaomiMiMo/MiMo-Code/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
+
+export claudecode=$(curl -sI "https://github.com/anthropics/claude-code/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
+
+export opencode=$(curl -sI "https://github.com/anomalyco/opencode/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
+
+export mistral=$(curl -sI "https://github.com/mistralai/mistral-vibe/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
+
+export openclaw=$(curl -sI "https://github.com/openclaw/openclaw/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
+
+export playwright=$(curl -sI "https://github.com/microsoft/playwright/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
+
+# ---- Comparacion y actualizacion de manifiestos ----
+
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+
+declare -A AGENT_MAP=(
+  [freebuff]="freebuff"
+  [agy]="antigravity-cli"
+  [engram]="engram"
+  [termuxOracle]="termux-oracle-skill"
+  [mimocode]="mimocode"
+  [claudecode]="claude-code"
+  [opencode]="opencode"
+  [mistral]="mistral-vibe"
+  [openclaw]="openclaw"
+  [playwright]="playwright-proot"
+)
+
+for var in "${!AGENT_MAP[@]}"; do
+  pkg_dir="${AGENT_MAP[$var]}"
+  manifest="$SCRIPT_DIR/$pkg_dir/manifiest.json"
+  github_ver="${!var}"
+
+  [ -z "$github_ver" ] && continue
+  github_ver="${github_ver#v}"
+
+  [ ! -f "$manifest" ] && continue
+
+  manifest_ver=$(jq -r '.version' "$manifest")
+  [ -z "$manifest_ver" ] && continue
+
+  manifest_upstream=$(echo "$manifest_ver" | sed 's/-[0-9]\{1,\}$//')
+
+  if dpkg --compare-versions "$github_ver" gt "$manifest_upstream" 2>/dev/null; then
+    new_ver="${github_ver}-1"
+    jq --arg ver "$new_ver" '.version = $ver' "$manifest" > "${manifest}.tmp" && mv "${manifest}.tmp" "$manifest"
+    rm -f "$SCRIPT_DIR/../${pkg_dir}_"*.deb
+    (cd "$SCRIPT_DIR/$pkg_dir" && termux-create-package manifiest.json && mv *.deb ../../)
+    echo "Actualizado $pkg_dir: $manifest_ver → $new_ver ✓ paquete reconstruido"
+  fi
+done
+
+
