@@ -62,6 +62,7 @@ Esto retorna JSON con: `termux_native`, `proot_distro`, `ssh`, `ihaklab_installe
 | Escritorio gráfico, X11, XFCE | `references/termux-setup.md` | `docs/termux/termux-x11.md` |
 | Wrapper apt/npm/pnpm | `references/ihaklab.md` | `docs/recursos/herramientas-ihaklab.md#13` |
 | Error de compilación/instalación | `references/python-ecosystem.md` | `docs/termux/troubleshooting.md`, `docs/termux/fixer.md` |
+| Neovim, configuración, atajos LSP/fold/terminal | `references/tool-install.md` | `docs/recursos/herramientas/neovim.md` |
 
 ## 4. Conceptos clave inline
 
