@@ -1,0 +1,17 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+
+if [[ $(id -u) -eq 0 ]]; then
+    echo -en "\e[31mE:\e[0m You need to be a common user\n"
+    exit 1
+else
+  echo "Preparing enviroment ..."
+  if [[ -d "${HOME}/.hermes/hermes-agent" ]]
+  then
+    echo "[→] Deleting previous installation..."
+    rm -rf "${HOME}/.hermes/hermes-agent" 
+  else
+    mkdir -p "${HOME}/.hermes/hermes-agent" 2>/dev/null
+  fi
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

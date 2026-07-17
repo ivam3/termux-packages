@@ -71,6 +71,7 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [hasher](https://github.com/CiKu370/hasher) | Hash cracker with auto detect hash |
 | [hashid](https://gitlab.com/kalilinux/packages/hash-identifier/) | Software to identify the different types of hashes used to encrypt data and especially passwords. |
 | [hatcloud](https://github.com/HatBashBR/HatCloud) | Make bypass in CloudFlare for discover real IP. |
+| [hermes-agent](https://github.com/NousResearch/hermes-agent) | Personal AI agent by Nous Research with CLI, TUI, messaging gateway, and browser automation. |
 | [hunner-framework](https://github.com/b3-v3r/Hunner) | Hacking framework to DOS sites, ftp|ssh bruteforce, scan sql and xxs vulnerabilities. |
 | [hydra-gtk](https://github.com/vanhauser-thc/thc-hydra) | Number one brute forcing tool in ciber security. |
 | [infoga](https://github.com/m4ll0k/infoga) | Gathering email accounts informations from different public source and check if emails was leaked using haveibeenpwned.com API. |

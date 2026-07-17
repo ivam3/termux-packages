@@ -1,0 +1,164 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+
+INSTALL_DIR="${HOME}/.hermes/hermes-agent"
+HERMES_HOME="${HOME}/.hermes"
+VENV_PYTHON="${INSTALL_DIR}/venv/bin/python"
+
+cd "${HOME}" || exit 1
+
+echo "[*] Hermes Agent — post-installation setup"
+echo ""
+
+# ============================================================================
+# 1. Repository
+# ============================================================================
+echo "[→] Preparing repository at ${INSTALL_DIR}..."
+
+if [[ -d "${INSTALL_DIR}/.git" ]]; then
+    cd "${INSTALL_DIR}"
+    git stash push --include-untracked -m "pkg-update-$(date -u +%Y%m%d-%H%M%S)" 2>/dev/null || true
+    git remote set-branches origin main 2>/dev/null || true
+    git fetch origin main
+    git checkout main
+    git pull --ff-only origin main || git reset --hard origin/main
+    echo "[✔] Repository updated"
+else
+    rm -rf "${INSTALL_DIR}" 2>/dev/null || true
+    mkdir -p "$(dirname "${INSTALL_DIR}")"
+    git clone --depth 1 --branch main \
+        "https://github.com/NousResearch/hermes-agent.git" "${INSTALL_DIR}" && \
+    echo "[✔] Repository cloned" || {
+        echo -en "\e[31mE:\e[0m Error cloning repository"
+        exit 1
+    }
+fi
+
+cd "${INSTALL_DIR}" || exit 1
+
+# ============================================================================
+# 2. Python virtual environment
+# ============================================================================
+if [[ -f "${VENV_PYTHON}" ]]; then
+    echo "[→] Existing virtual environment, upgrading pip..."
+    ${VENV_PYTHON} -m pip install --upgrade pip setuptools wheel --quiet
+else
+    echo "[→] Creating Python virtual environment..."
+    rm -rf venv
+    python -m venv venv
+    ${VENV_PYTHON} -m pip install --upgrade pip setuptools wheel --quiet
+    echo "[✔] Virtual environment created"
+fi
+
+# ============================================================================
+# 3. Python dependencies (pip)
+# ============================================================================
+echo "[→] Installing Python dependencies (termux-all profile)..."
+export VIRTUAL_ENV="${INSTALL_DIR}/venv"
+export ANDROID_API_LEVEL="${ANDROID_API_LEVEL:-$(getprop ro.build.version.sdk 2>/dev/null || echo 24)}"
+
+# psutil and cryptography come from system packages (python-psutil,
+# python-cryptography). pip skips them automatically since satisfied.
+if ${VENV_PYTHON} -m pip install -e '.[termux-all]' -c constraints-termux.txt --quiet; then
+    echo "[✔] Dependencies installed (termux-all profile)"
+elif ${VENV_PYTHON} -m pip install -e '.[termux]' -c constraints-termux.txt --quiet; then
+    echo "[✔] Dependencies installed (termux baseline)"
+elif ${VENV_PYTHON} -m pip install -e '.' -c constraints-termux.txt --quiet; then
+    echo "[✔] Dependencies installed (core only)"
+else
+    echo -en "\e[31mE:\e[0m Python package installation failed.\n"
+    echo "[→] Check: pkg install clang rust make pkg-config libffi openssl"
+    echo "[→] Retry: cd ${INSTALL_DIR} && python -m pip install -e '.[termux-all]' -c constraints-termux.txt"
+    exit 1
+fi
+
+# ============================================================================
+# 4. Node.js dependencies (browser tools + TUI)
+# ============================================================================
+if [[ -f "${INSTALL_DIR}/package.json" ]]; then
+    echo "[→] Installing Node.js dependencies (browser tools)..."
+    cd "${INSTALL_DIR}" && npm install --silent || echo "[!] npm install failed"
+    echo "[✔] Node.js dependencies installed"
+fi
+
+if [[ -f "${INSTALL_DIR}/ui-tui/package.json" ]]; then
+    echo "[→] Installing TUI dependencies..."
+    cd "${INSTALL_DIR}/ui-tui" && npm install --silent || echo "[!] TUI npm install failed"
+    echo "[✔] TUI dependencies installed"
+fi
+
+# ============================================================================
+# 5. Configuration files (~/.hermes/)
+# ============================================================================
+echo "[→] Creating configuration structure..."
+mkdir -p "${HERMES_HOME}"/{cron,sessions,logs,pairing,hooks,image_cache,audio_cache,memories,skills}
+
+if [[ ! -f "${HERMES_HOME}/.env" ]]; then
+    if [[ -f "${INSTALL_DIR}/.env.example" ]]; then
+        cp "${INSTALL_DIR}/.env.example" "${HERMES_HOME}/.env"
+    else
+        touch "${HERMES_HOME}/.env"
+    fi
+    chmod 600 "${HERMES_HOME}/.env"
+    echo "[✔] Created ~/.hermes/.env"
+fi
+
+if [[ ! -f "${HERMES_HOME}/config.yaml" ]] && [[ -f "${INSTALL_DIR}/cli-config.yaml.example" ]]; then
+    cp "${INSTALL_DIR}/cli-config.yaml.example" "${HERMES_HOME}/config.yaml"
+    echo "[✔] Created ~/.hermes/config.yaml from template"
+fi
+
+if [[ ! -f "${HERMES_HOME}/SOUL.md" ]]; then
+    cat > "${HERMES_HOME}/SOUL.md" <<-'SOUL_EOF'
+You are Hermes Agent, an intelligent AI assistant created by Nous Research.
+You are helpful, knowledgeable, and direct.
+SOUL_EOF
+    echo "[✔] Created ~/.hermes/SOUL.md"
+fi
+
+# ============================================================================
+# 6. Bundled skills
+# ============================================================================
+echo "[→] Syncing bundled skills..."
+if [[ -x "${VENV_PYTHON}" ]] && [[ -f "${INSTALL_DIR}/tools/skills_sync.py" ]]; then
+    "${VENV_PYTHON}" "${INSTALL_DIR}/tools/skills_sync.py" 2>/dev/null && \
+        echo "[✔] Skills synced" || true
+fi
+if [[ -d "${INSTALL_DIR}/skills" ]]; then
+    cp -r "${INSTALL_DIR}/skills/"* "${HERMES_HOME}/skills/" 2>/dev/null || true
+fi
+
+# ============================================================================
+# 7. Verify entry point
+# ============================================================================
+if [[ -x "${INSTALL_DIR}/venv/bin/hermes" ]]; then
+    echo ""
+    echo "[💡] Connect ADB (if not already):"
+    echo "   1. Open Developer options → wireless debug"
+    echo "   2. Run: phantom-ps (in i-Haklab) or adb pair → adb connect"
+    echo "   3. Test: adb devices"
+    echo "[💡] Set up your API keys:"
+    echo "   1. Run: hermes setup"
+    echo "   2. Run: hermes gateway --verbose"
+    echo "[✔] Hermes-agent installation finished."
+    echo "[✔] Run 'hermes' to execute it."
+fi 
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+echo "[→] Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o /data/data/com.termux/files/usr/bin/fixer; then
+    chmod 750 /data/data/com.termux/files/usr/bin/fixer
+    echo "[➡] Run 'fixer' to fix any posible issue."
+else
+    echo "[!] Error downloading fixer."
+fi
+
+# ==============================
+# FINALS MESSAGES
+# ==============================
+echo "[📢] Help: going to https://t.me/Ivam3_Bot."
+echo "[💡] @Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

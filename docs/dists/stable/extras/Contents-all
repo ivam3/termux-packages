@@ -73,6 +73,7 @@ data/data/com.termux/files/usr/bin/hatcloud                                     
 data/data/com.termux/files/usr/bin/hatcloud-installer                            hatcloud
 data/data/com.termux/files/usr/bin/hcdecryptor                                   hcdecryptor
 data/data/com.termux/files/usr/bin/hcdecryptor-installer                         hcdecryptor
+data/data/com.termux/files/usr/bin/hermes                                        hermes-agent
 data/data/com.termux/files/usr/bin/hunner                                        hunner-framework
 data/data/com.termux/files/usr/bin/hunner-installer                              hunner-framework
 data/data/com.termux/files/usr/bin/xhydra                                        hydra-gtk
@@ -191,6 +192,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/hasher.md      
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/hashid.md       i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/hatcloud.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/hcdecryptor.md  i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/hermes-agent.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/hexer.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/holehe.md       i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/hunner-framework.md i-haklab
@@ -261,6 +263,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/shellsploit-fra
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/sherlock.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/shodan.md       i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/slowhttptest.md i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/smithery.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/snscrape.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/speedtest-cli.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/speedtest-go.md i-haklab

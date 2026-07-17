@@ -1,0 +1,13 @@
+#!/data/data/com.termux/files/usr/bin/env bash
+# hermes-agent — resolvedor de entry point en runtime
+unset PYTHONPATH PYTHONHOME
+export HERMES_HOME="${HOME}/.hermes"
+HERMES_BIN="${HERMES_HOME}/hermes-agent/venv/bin/hermes"
+
+if [[ -x "${HERMES_BIN}" ]]; then
+    exec "${HERMES_BIN}" "$@"
+else
+    echo "hermes-agent is corrupt."
+    echo "Run: apt reinstall hermes-agent"
+    exit 1
+fi

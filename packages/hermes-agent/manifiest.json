@@ -1,0 +1,13 @@
+{
+  "name": "hermes-agent",
+  "version": "2026.7.7.2-1",
+  "arch": "all",
+  "homepage": "https://github.com/NousResearch/hermes-agent",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python", "nodejs-lts", "python-pip", "python-psutil", "python-cryptography", "clang", "rust", "make", "pkg-config", "libffi", "openssl", "ca-certificates", "curl", "git", "ripgrep", "ffmpeg", "playwright-proot", "termux-api", "termux-oracle-skill"],
+  "suggests": ["i-haklab"],
+  "description": "Personal AI agent by Nous Research with CLI, TUI, messaging gateway, and browser automation. Runs the same agent core across Telegram, Discord, Slack, and 20+ platforms. Features persistent memory, skill learning, subagent delegation, scheduled cron jobs, and terminal/browser control.",
+  "files" :{
+    "hermes": "bin/hermes"
+  }
+}

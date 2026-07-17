@@ -862,6 +862,22 @@ SHA1: 7df8a3ce22195b5a977a0e4ea94f8a24862b9670
 SHA256: 6f4b5d437570652986e969d468206915f37c794e20c9dca4cc81a980bef3e30d
 SHA512: 4b8ba5b4ea51d7ee74b5e6d49b0c990c2da6ad93af6d83944ebb7c0c4e8afd3a47ff3084d30b50f9592d0b5544574014f9331b28d49efe3395d662c73f6a378d
 
+Package: hermes-agent
+Version: 2026.7.7.2-1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: python, nodejs-lts, python-pip, python-psutil, python-cryptography, clang, rust, make, pkg-config, libffi, openssl, ca-certificates, curl, git, ripgrep, ffmpeg, playwright-proot, termux-api, termux-oracle-skill
+Suggests: i-haklab
+Homepage: https://github.com/NousResearch/hermes-agent
+Description: Personal AI agent by Nous Research with CLI, TUI, messaging gateway, and browser automation. Runs the same agent core across Telegram, Discord, Slack, and 20+ platforms. Features persistent memory, skill learning, subagent delegation, scheduled cron jobs, and terminal/browser control.
+Filename: dists/stable/extras/binary-all/hermes-agent_2026.7.7.2-1_all.deb
+Size: 3624
+MD5Sum: 77789c19d4a5dccbce612c94804c4075
+SHA1: 4f6f5ab070ec980a74dac7515233a170fc571eb7
+SHA256: 1ca0c9ba2e0896578719b914a1254c5a09bfe07bea21f09735baab0d5284a298
+SHA512: 5bf737f856e22e7a478378882fd741cf7302e93bc74de4e5b241178561cbf823702f11d3137680095356cf3331f8fe26e17d202186b702098bd39b6c567a109a
+
 Package: hunner-framework
 Version: 1.0
 Architecture: all
@@ -895,20 +911,20 @@ SHA256: 989b6693900ff471e790c0c36dd4c31ca64f6868221b00a599cadb6ded2ad98c
 SHA512: b2acf2821c4fa7423aaca5ba2e39c36ff1c4b5cb01f5e10c1ff4e00aaa889ac417570cb2b57d506be35c9a5c1e29baa32e7030c5c9dc15ff7ce941036a28720b
 
 Package: i-haklab
-Version: 3.12.20
+Version: 3.12.21
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 25762
-Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, fd, file, findutils, fish, fzf, gawk, git, glibc-repo, glow, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, man, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, yazi, zip, zlib
+Installed-Size: 25789
+Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, fd, file, findutils, fish, fzf, gawk, git, glibc-repo, glow, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, mandoc, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, yazi, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.12.20_all.deb
-Size: 3661696
-MD5Sum: 8c896a747e8f8766dda6b9641c9e1224
-SHA1: 642e8efdf488b6f37eb1b49ec03866ed1396ca12
-SHA256: 7c09c749861b16474d4eedb052acc25f858fe85dd7d22263239f0f80b8571824
-SHA512: a68f08d531cc5a436f99a5aa2b39b39cc7c1df874a6d84601c6bb72b515521eb50c00e422d434608e73360113f798d58d7c390ca8861f58c9ccd5c5294c95496
+Filename: dists/stable/extras/binary-all/i-haklab_3.12.21_all.deb
+Size: 3668888
+MD5Sum: ca5b69d2beffed9ac50fa45f9610e2fd
+SHA1: ee937f40f56e336ff2bfcec02ff5966df4892bfb
+SHA256: 19db123726a6b68f7bc32639cd0b7cc930b47deb146a60b85bc9fbcf3378af9d
+SHA512: bf531d4509faa1e497b47c109583b8b6d5da53a3f191533bb3bca6eceedd5d14bf0f0d63c853092abd5c7579933532dfb7482343211cf57d547eefc8b2c1da25
 
 Package: infoga
 Version: 1.0

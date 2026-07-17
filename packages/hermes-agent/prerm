@@ -1,0 +1,15 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+
+INSTALL_DIR="${HOME}/.hermes/hermes-agent"
+
+if [[ -d "${INSTALL_DIR}" ]]; then
+    echo "[→] Deleting hermes-agent installation..."
+    rm -rf "${INSTALL_DIR}"
+    echo "[✔] Installation deleted"
+else
+    echo "[→] Previous installation not found ${INSTALL_DIR}"
+fi
+
+echo "[→] Configuration files (~/.hermes/) keeped."
+echo " ╰──➤ Remove them manually if you want a complete clean."

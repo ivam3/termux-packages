@@ -2,6 +2,8 @@
 
 export freebuff=$(curl -fsSL https://api.github.com/repos/CodebuffAI/codebuff-community/releases/latest | grep '"tag_name":' | sed -E 's/.*"freebuff-v([^"]+)".*/\1/')
 
+export hermes=$(curl -sI "https://github.com/NousResearch/hermes-agent/releases/latest" | grep -i location | awk -F "v" '{print $NF}')
+
 export agy=$(curl -s "https://antigravity-cli-auto-updater-974169037036.us-central1.run.app/manifests/linux_arm64.json" | jq -r .version)
 
 export engram=$(curl -sI "https://github.com/Gentleman-Programming/engram/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|'|awk -F "-" '{print $NF}')
@@ -27,14 +29,15 @@ SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 declare -A AGENT_MAP=(
   [freebuff]="freebuff"
   [agy]="antigravity-cli"
-  [engram]="engram"
-  [termuxOracle]="termux-oracle-skill"
-  [mimocode]="mimocode"
   [claudecode]="claude-code"
-  [opencode]="opencode"
+  [engram]="engram"
+  [hermes]="hermes-agent"
+  [mimocode]="mimocode"
   [mistral]="mistral-vibe"
+  [opencode]="opencode"
   [openclaw]="openclaw"
   [playwright]="playwright-proot"
+  [termuxOracle]="termux-oracle-skill"
 )
 
 for var in "${!AGENT_MAP[@]}"; do
