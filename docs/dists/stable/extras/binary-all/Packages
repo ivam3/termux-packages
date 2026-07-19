@@ -863,7 +863,7 @@ SHA256: 6f4b5d437570652986e969d468206915f37c794e20c9dca4cc81a980bef3e30d
 SHA512: 4b8ba5b4ea51d7ee74b5e6d49b0c990c2da6ad93af6d83944ebb7c0c4e8afd3a47ff3084d30b50f9592d0b5544574014f9331b28d49efe3395d662c73f6a378d
 
 Package: hermes-agent
-Version: 2026.7.7.2-1
+Version: 2026.7.7.2-2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
@@ -871,12 +871,12 @@ Depends: python, nodejs-lts, python-pip, python-psutil, python-cryptography, cla
 Suggests: i-haklab
 Homepage: https://github.com/NousResearch/hermes-agent
 Description: Personal AI agent by Nous Research with CLI, TUI, messaging gateway, and browser automation. Runs the same agent core across Telegram, Discord, Slack, and 20+ platforms. Features persistent memory, skill learning, subagent delegation, scheduled cron jobs, and terminal/browser control.
-Filename: dists/stable/extras/binary-all/hermes-agent_2026.7.7.2-1_all.deb
-Size: 3624
-MD5Sum: 77789c19d4a5dccbce612c94804c4075
-SHA1: 4f6f5ab070ec980a74dac7515233a170fc571eb7
-SHA256: 1ca0c9ba2e0896578719b914a1254c5a09bfe07bea21f09735baab0d5284a298
-SHA512: 5bf737f856e22e7a478378882fd741cf7302e93bc74de4e5b241178561cbf823702f11d3137680095356cf3331f8fe26e17d202186b702098bd39b6c567a109a
+Filename: dists/stable/extras/binary-all/hermes-agent_2026.7.7.2-2_all.deb
+Size: 4528
+MD5Sum: 63e348321af18c6723f754fe81dfa2d5
+SHA1: b27960a24e203d77cc6e638493d66aeed0513795
+SHA256: 4d762e079fc81ea1a3264e62c616b05d50ad1dcb1060f47c76b3c2d4ed10a622
+SHA512: f23f5deb8e90b1af4cd7cce25e04e39a62384ad3255854c8956bdbb6ebf71de7cca0ecb396e41076b35ce5f140483192e5861c6ac571fffe441df1de9e0658c4
 
 Package: hunner-framework
 Version: 1.0

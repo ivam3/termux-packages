@@ -26,7 +26,7 @@ if [[ -d "${INSTALL_DIR}/.git" ]]; then
 else
     rm -rf "${INSTALL_DIR}" 2>/dev/null || true
     mkdir -p "$(dirname "${INSTALL_DIR}")"
-    git clone --depth 1 --branch main \
+    git clone --quiet --depth 1 --branch main \
         "https://github.com/NousResearch/hermes-agent.git" "${INSTALL_DIR}" && \
     echo "[✔] Repository cloned" || {
         echo -en "\e[31mE:\e[0m Error cloning repository"
@@ -35,6 +35,19 @@ else
 fi
 
 cd "${INSTALL_DIR}" || exit 1
+
+# ============================================================================
+# 1b. Patch pyproject.toml — remove Python <3.14 upper bound
+# ============================================================================
+# The upstream caps requires-python at <3.14 because pydantic-core has no
+# cp314 wheel on PyPI (avoids a maturin source-build on standard platforms).
+# Termux always builds those packages from source anyway (no Android wheel on
+# PyPI), so the cap is counterproductive — it blocks pip before it starts.
+echo "[→] Patching pyproject.toml for Python 3.14 compatibility..."
+sed -i 's/requires-python = ">=3.11,<3.14"/requires-python = ">=3.11"/' pyproject.toml
+# Relax cryptography pin: system Termux ships 49.0.0, which is newer than
+# the upstream pin (46.0.7) and includes all CVE fixes.
+sed -i 's/"cryptography==46.0.7"/"cryptography>=46.0.7"/' pyproject.toml
 
 # ============================================================================
 # 2. Python virtual environment
@@ -51,14 +64,39 @@ else
 fi
 
 # ============================================================================
+# 2b. Symlink system psutil/cryptography into venv
+# ============================================================================
+# psutil and cryptography come from Termux system packages (python-psutil,
+# python-cryptography). Piping them via symlink into the venv before pip
+# install prevents pip from attempting a source build (which requires the
+# full Rust toolchain and often fails on Termux). pip sees them as already
+# "satisfied" and skips them.
+PY_VER=$(python -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')")
+VENV_SITE="${INSTALL_DIR}/venv/lib/python${PY_VER}/site-packages"
+SYS_SITE="${PREFIX}/lib/python${PY_VER}/site-packages"
+
+for pkg in cryptography psutil; do
+    # Symlink package dir
+    if [[ -d "${SYS_SITE}/${pkg}" ]] && [[ -d "${VENV_SITE}" ]] && [[ ! -e "${VENV_SITE}/${pkg}" ]]; then
+        ln -s "${SYS_SITE}/${pkg}" "${VENV_SITE}/${pkg}"
+        echo "[→] Linked system ${pkg} into venv"
+    fi
+    # Symlink .dist-info metadata (pip needs it to detect the package as installed)
+    for distinfo in "${SYS_SITE}/${pkg}"-*.dist-info; do
+        distname=$(basename "$distinfo")
+        if [[ -d "$distinfo" ]] && [[ ! -e "${VENV_SITE}/${distname}" ]]; then
+            ln -s "$distinfo" "${VENV_SITE}/${distname}"
+            echo "[→] Linked ${distname} into venv"
+        fi
+    done
+done
+
+# ============================================================================
 # 3. Python dependencies (pip)
 # ============================================================================
 echo "[→] Installing Python dependencies (termux-all profile)..."
 export VIRTUAL_ENV="${INSTALL_DIR}/venv"
 export ANDROID_API_LEVEL="${ANDROID_API_LEVEL:-$(getprop ro.build.version.sdk 2>/dev/null || echo 24)}"
-
-# psutil and cryptography come from system packages (python-psutil,
-# python-cryptography). pip skips them automatically since satisfied.
 if ${VENV_PYTHON} -m pip install -e '.[termux-all]' -c constraints-termux.txt --quiet; then
     echo "[✔] Dependencies installed (termux-all profile)"
 elif ${VENV_PYTHON} -m pip install -e '.[termux]' -c constraints-termux.txt --quiet; then
@@ -77,7 +115,7 @@ fi
 # ============================================================================
 if [[ -f "${INSTALL_DIR}/package.json" ]]; then
     echo "[→] Installing Node.js dependencies (browser tools)..."
-    cd "${INSTALL_DIR}" && npm install --silent || echo "[!] npm install failed"
+    cd "${INSTALL_DIR}" && ELECTRON_SKIP_BINARY_DOWNLOAD=1 npm install --silent || echo "[!] npm install failed"
     echo "[✔] Node.js dependencies installed"
 fi
 
@@ -129,9 +167,20 @@ if [[ -d "${INSTALL_DIR}/skills" ]]; then
 fi
 
 # ============================================================================
-# 7. Verify entry point
+# 7. Apply patches
+# ============================================================================
+[[ -f "${INSTALL_DIR}/pyproject.toml" ]] || {
+    echo "[❌] Pyproject not found"
+}
+
+# Fix main.py: PROJECT_ROOT may not resolve in editable installs
+sed -i 's|print(f"Install directory: {PROJECT_ROOT}")|print(f"Install directory: {os.path.dirname(os.path.dirname(os.path.abspath(__file__)))}")|' "${INSTALL_DIR}/hermes_cli/main.py"
+
+# ============================================================================
+# 8. Verify entry point
 # ============================================================================
 if [[ -x "${INSTALL_DIR}/venv/bin/hermes" ]]; then
+    chmod +x "${INSTALL_DIR}/venv/bin/hermes" "${PREFIX}/bin/hermes"
     echo ""
     echo "[💡] Connect ADB (if not already):"
     echo "   1. Open Developer options → wireless debug"
@@ -145,7 +194,7 @@ if [[ -x "${INSTALL_DIR}/venv/bin/hermes" ]]; then
 fi 
 
 # ==============================
-# INSTALLING SCRIPT FIXER
+# 9. INSTALLING SCRIPT FIXER
 # ==============================
 echo "[→] Installing script fixer..."
 fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
@@ -157,7 +206,7 @@ else
 fi
 
 # ==============================
-# FINALS MESSAGES
+# 10. FINALS MESSAGES
 # ==============================
 echo "[📢] Help: going to https://t.me/Ivam3_Bot."
 echo "[💡] @Ivam3: thank you for use my package."
