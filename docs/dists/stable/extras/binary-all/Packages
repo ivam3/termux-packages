@@ -911,20 +911,20 @@ SHA256: 989b6693900ff471e790c0c36dd4c31ca64f6868221b00a599cadb6ded2ad98c
 SHA512: b2acf2821c4fa7423aaca5ba2e39c36ff1c4b5cb01f5e10c1ff4e00aaa889ac417570cb2b57d506be35c9a5c1e29baa32e7030c5c9dc15ff7ce941036a28720b
 
 Package: i-haklab
-Version: 3.12.21
+Version: 3.12.22
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 25789
+Installed-Size: 25795
 Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, fd, file, findutils, fish, fzf, gawk, git, glibc-repo, glow, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, mandoc, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, yazi, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.12.21_all.deb
-Size: 3668888
-MD5Sum: ca5b69d2beffed9ac50fa45f9610e2fd
-SHA1: ee937f40f56e336ff2bfcec02ff5966df4892bfb
-SHA256: 19db123726a6b68f7bc32639cd0b7cc930b47deb146a60b85bc9fbcf3378af9d
-SHA512: bf531d4509faa1e497b47c109583b8b6d5da53a3f191533bb3bca6eceedd5d14bf0f0d63c853092abd5c7579933532dfb7482343211cf57d547eefc8b2c1da25
+Filename: dists/stable/extras/binary-all/i-haklab_3.12.22_all.deb
+Size: 3670744
+MD5Sum: 1bc7fbb91802541e309b91540f7c4288
+SHA1: e08cab908e4c686c7bfc9cc1560073944ed2c426
+SHA256: 9f4df041f57b005b33c17c2a1646aaee5e10c6d449342fcef15d65d2f7b1441f
+SHA512: 22f7a09c3f71ce062b3effcb238cc7d375052a9dd2c4b7b7169ec98ebab9c6a0d4917d6fcf799cb7336a0266ad7d2227119143382c224a4bb8678beafec12d9b
 
 Package: infoga
 Version: 1.0
@@ -1148,6 +1148,22 @@ MD5Sum: 3d907ba6e857e4bc2ccc8e2b626adea7
 SHA1: 2c08f2cfc37071672cafa88bc2e0aca559b080d0
 SHA256: 6694a5b19a00d82ec8322aa70d7fa1346590979cbf3880a20bd2627e09ff795c
 SHA512: 343283ad3863e2edc5307ee761db4a8a38a001e37ff821cf7a56103bd9ff34e10329d236f321b247f1dfbb27b11004ca989eeaf0cf2b8941484e68c3dffd58ed
+
+Package: omniroute
+Version: 3.8.48
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 10
+Depends: nodejs, build-essential, cmake, make, pkg-config, python3, curl
+Suggests: i-haklab, playwright-proot
+Homepage: https://github.com/diegosouzapw/OmniRoute
+Description: Smart AI Router with 160+ providers, auto-fallback, and OpenAI-compatible APIs. Termux-native adaptation with playwright-core mock for Android platform compatibility.
+Filename: dists/stable/extras/binary-all/omniroute_3.8.48_all.deb
+Size: 6788
+MD5Sum: 6ccdeea4d005839d953fcdb352064a04
+SHA1: 430da465b50b06dd000c447f545b94a3fd1e7d03
+SHA256: 0d699fef5c6b0d81a4fc346a08be6b892f918665c0e786bf6c46c56c5112ddc3
+SHA512: d329561ed042cc9c4654ecad1956d52b4a2be32f4fd4d13e33a9dbca021b29097ecf49309f50cf5155fd5e474b0aed01d0c9eaf9bfa759b87e2ed97939c657d5
 
 Package: openclaw
 Version: 2026.6.11-1

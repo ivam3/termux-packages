@@ -2,6 +2,8 @@
 
 export freebuff=$(curl -fsSL https://api.github.com/repos/CodebuffAI/codebuff-community/releases/latest | grep '"tag_name":' | sed -E 's/.*"freebuff-v([^"]+)".*/\1/')
 
+export omniroute=$(curl -sI "https://github.com/diegosouzapw/OmniRoute/releases/latest" | grep -i location | awk -F "v" '{print $NF}')
+
 export hermes=$(curl -sI "https://github.com/NousResearch/hermes-agent/releases/latest" | grep -i location | awk -F "v" '{print $NF}')
 
 export agy=$(curl -s "https://antigravity-cli-auto-updater-974169037036.us-central1.run.app/manifests/linux_arm64.json" | jq -r .version)

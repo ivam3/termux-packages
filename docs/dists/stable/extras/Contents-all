@@ -144,6 +144,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/cloudflared.md 
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/code-server.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/codebuff.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/codex.md        i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/context7.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/converter.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/copilot-cli.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/credmap.md      i-haklab
@@ -221,6 +222,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/nikto.md       
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/nmap.md         i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/objection.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/octosuite.md    i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/omniroute.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/open-lovable.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/openclaw.md.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/opencode.md     i-haklab
@@ -1110,6 +1112,9 @@ data/data/com.termux/files/home/.ssh/config                                     
 data/data/com.termux/files/usr/bin/ngrok                                         ngrok
 data/data/com.termux/files/usr/bin/nikto                                         nikto
 data/data/com.termux/files/usr/bin/nikto-installer                               nikto
+data/data/com.termux/files/usr/bin/omniroute                                     omniroute
+data/data/com.termux/files/usr/share/omniroute/omniroute.sh                      omniroute
+data/data/com.termux/files/usr/share/omniroute/patch-playwright.sh               omniroute
 data/data/com.termux/files/home/.openclaw/patches_bak/apply-patches.sh           openclaw
 data/data/com.termux/files/home/.openclaw/patches_bak/argon2-stub.js             openclaw
 data/data/com.termux/files/home/.openclaw/patches_bak/glibc-compat.js            openclaw

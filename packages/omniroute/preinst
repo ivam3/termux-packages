@@ -1,0 +1,20 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ $(id -u) -eq 0 ]]; then
+  echo -en "\e[31mE:\e[0m You need to be a common user\n"
+  exit 1
+fi
+
+echo -e "\e[36m[*]\e[0m Preparing environment for omniroute..."
+
+INSTALL_DIR="${HOME}/.local/share/omniroute"
+INSTALL_BIN="${HOME}/.local/bin"
+
+if [[ -d "$INSTALL_DIR" ]]; then
+  echo -e "\e[33m[!]\e[0m Removing previous installation..."
+  rm -rf "$INSTALL_DIR"
+fi
+
+mkdir -p "$INSTALL_DIR" "$INSTALL_BIN"
+
+echo -e "\e[32m[✔]\e[0m Pre-installation preparation done."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

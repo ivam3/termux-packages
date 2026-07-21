@@ -1,0 +1,22 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ $(id -u) -eq 0 ]]; then
+  echo -en "\e[31mE:\e[0m You need to be a common user\n"
+  exit 1
+fi
+
+INSTALL_DIR="${HOME}/.local/share/omniroute"
+INSTALL_BIN="${HOME}/.local/bin"
+
+echo -e "\e[36m[*]\e[0m Removing omniroute..."
+
+# Stop any running server
+if [[ -f "${INSTALL_DIR}/server.pid" ]]; then
+  kill "$(cat "${INSTALL_DIR}/server.pid")" 2>/dev/null || true
+fi
+
+# Kill any omniroute processes
+pkill -f "omniroute" 2>/dev/null || true
+sleep 1
+
+echo -e "\e[32m[✔]\e[0] Pre-removal cleanup done."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

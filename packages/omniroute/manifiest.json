@@ -1,0 +1,26 @@
+{
+  "name": "omniroute",
+  "version": "3.8.48",
+  "arch": "all",
+  "homepage": "https://github.com/diegosouzapw/OmniRoute",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": [
+    "nodejs",
+    "build-essential",
+    "cmake",
+    "make",
+    "pkg-config",
+    "python3",
+    "curl"
+  ],
+  "suggests": [
+    "i-haklab",
+    "playwright-proot"
+  ],
+  "description": "Smart AI Router with 160+ providers, auto-fallback, and OpenAI-compatible APIs. Termux-native adaptation with playwright-core mock for Android platform compatibility.",
+  "files": {
+    "omniroute": "bin/omniroute",
+    "lib/omniroute.sh": "/data/data/com.termux/files/usr/share/omniroute/omniroute.sh",
+    "lib/patch-playwright.sh": "/data/data/com.termux/files/usr/share/omniroute/patch-playwright.sh"
+  }
+}

@@ -1,0 +1,169 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -Eeuo pipefail
+
+# ==============================
+# CONFIGURATION
+# ==============================
+INSTALL_DIR="${HOME}/.local/share/omniroute"
+INSTALL_BIN="${PREFIX}/bin"
+OMNIROUTE_VERSION="$(curl -sI "https://github.com/diegosouzapw/OmniRoute/releases/latest" | grep -i location | awk -F "v" '{print $NF}')"
+NPX_CACHE_DIR="${HOME}/.npm/_npx"
+
+# Colors
+CYAN="\033[36m"; GREEN="\033[32m"; RED="\033[31m"; YELLOW="\033[33m"; DIM="\033[2m"; RESET="\033[0m"
+msg()   { printf "[➡] %s\n" "$*"; }
+ok()   { printf "%b[✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+info() { printf "%b[📢]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+tip() { printf "%b[💡]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+warn() { printf "%b[!]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+err()  { printf "%b[❌]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+
+# ==============================
+# CLEANUP TRAP
+# ==============================
+cleanup() {
+  local ec=$?
+  [[ -d "$STAGING_DIR" ]] && rm -rf "$STAGING_DIR" 2>/dev/null
+  return $ec
+}
+trap cleanup EXIT
+
+# ==============================
+# STEP 1: CREATE PROJECT & INSTALL
+# ==============================
+info "Initializing omniroute project..."
+cd "$INSTALL_DIR"
+
+# Create stub package.json
+cat > package.json << 'PKGEOF'
+{
+  "name": "omniroute-termux",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "omniroute": "latest"
+  }
+}
+PKGEOF
+
+# Configure allow-scripts for npm v11+
+cat > .npmrc << 'NPMRCEOF'
+foreground-scripts=true
+script-shell=/data/data/com.termux/files/usr/bin/sh
+allow-scripts=omniroute,better-sqlite3,keytar,sharp,@swc/core,esbuild
+NPMRCEOF
+
+# Install
+info "Downloading and installing omniroute (this may take a while)..."
+if ! npm install --production --no-audit --no-fund 2>/dev/null; then
+  warn "npm install failed, trying with --ignore-scripts..."
+  npm install --production --no-audit --no-fund --ignore-scripts
+fi
+
+# Verify installation
+if [[ ! -x "node_modules/omniroute/bin/omniroute.mjs" ]]; then
+  err "OmnIRoute binary not found after installation."
+  exit 1
+fi
+ok "OmnIRoute installed."
+
+# ==============================
+# STEP 2: REBUILD NATIVE MODULES
+# ==============================
+info "Rebuilding native module (better-sqlite3)..."
+
+NATIVE_DIR="$INSTALL_DIR/node_modules/better-sqlite3"
+if [[ -d "$NATIVE_DIR" ]]; then
+  cd "$NATIVE_DIR"
+  if npm rebuild 2>/dev/null; then
+    ok "better-sqlite3 rebuilt successfully."
+
+    # Copy to dist/ for standalone bundle
+    DIST_NATIVE="$INSTALL_DIR/node_modules/omniroute/dist/node_modules/better-sqlite3/build/Release"
+    SRC_NATIVE="$NATIVE_DIR/build/Release/better_sqlite3.node"
+    if [[ -f "$SRC_NATIVE" ]] && [[ -d "$(dirname "$DIST_NATIVE")" ]]; then
+      mkdir -p "$DIST_NATIVE"
+      cp "$SRC_NATIVE" "$DIST_NATIVE/"
+      ok "Native binary copied to dist/."
+    fi
+  else
+    warn "better-sqlite3 rebuild failed — some features may not work."
+  fi
+fi
+
+cd "$INSTALL_DIR"
+
+# ==============================
+# STEP 3: PATCH PLAYWRIGHT-CORE
+# ==============================
+info "Patching playwright-core for Android compatibility..."
+PATCH_SCRIPT="${PREFIX}/lib/omniroute/patch-playwright.sh"
+if [[ -x "$PATCH_SCRIPT" ]]; then
+  "$PATCH_SCRIPT" --mock || warn "playwright patch failed — continuing anyway."
+else
+  warn "patch-playwright.sh not found at $PATCH_SCRIPT."
+fi
+
+# ==============================
+# STEP 4: CONFIGURE USER NPMRC
+# ==============================
+info "Configuring npm allow-scripts..."
+
+if [[ -f "${HOME}/.npmrc" ]]; then
+  if ! grep -q "omniroute" "${HOME}/.npmrc" 2>/dev/null; then
+    # Add omniroute and native deps to existing allow-scripts
+    local current=$(grep "^allow-scripts=" "${HOME}/.npmrc" 2>/dev/null | cut -d= -f2-)
+    if [[ -n "$current" ]]; then
+      sed -i "s/^allow-scripts=.*/allow-scripts=${current},omniroute,better-sqlite3,keytar,sharp,@swc\/core,esbuild/" "${HOME}/.npmrc"
+    else
+      echo 'allow-scripts=omniroute,better-sqlite3,keytar,sharp,@swc/core,esbuild' >> "${HOME}/.npmrc"
+    fi
+  fi
+else
+  echo 'allow-scripts=omniroute,better-sqlite3,keytar,sharp,@swc/core,esbuild' > "${HOME}/.npmrc"
+  echo 'foreground-scripts=true' >> "${HOME}/.npmrc"
+  echo 'script-shell=/data/data/com.termux/files/usr/bin/sh' >> "${HOME}/.npmrc"
+fi
+ok "npm allow-scripts configured."
+
+# ==============================
+# STEP 5: VERIFICATION
+# ==============================
+# ==============================
+info "Verifying installation..."
+if "${INSTALL_BIN}/omniroute" --version &>/dev/null; then
+  local version=$("${INSTALL_BIN}/omniroute" --version 2>/dev/null | tail -1)
+  ok "OmnIRoute ${version} is ready."
+else
+  warn "Binary version check failed — trying alternative..."
+  # Direct node execution
+  if /data/data/com.termux/files/usr/bin/node \
+    "${INSTALL_DIR}/node_modules/omniroute/bin/omniroute.mjs" \
+    --version &>/dev/null; then
+    ok "OmnIRoute binary works via direct node execution."
+    tip "Run 'omniroute serve' to start the server."
+    tip "Access the dashboard at http://localhost:20128"
+    tip "For browser/web automation features, install: apt install playwright-proot"
+  else
+    err "OmnIRoute binary verification failed. Try running 'fixer'."
+  fi
+fi
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+info "Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o "${INSTALL_BIN}/fixer" 2>/dev/null; then
+  chmod 750 "${INSTALL_BIN}/fixer"
+  ok "Fixer installed."
+else
+  warn "Could not download fixer."
+fi
+
+# ==============================
+# FINAL MESSAGES
+# ==============================
+info "Help: https://t.me/Ivam3_Bot"
+info "@Ivam3: thank you for using my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

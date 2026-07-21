@@ -1,0 +1,30 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# OmnIRoute - Smart AI Router for Termux
+# Launcher script - tries installed location, falls back to npx cache
+
+set -Eeuo pipefail
+
+SHARE_DIR="${HOME}/.local/share/omniroute"
+BIN_DIR="${HOME}/.local/bin"
+NODE="/data/data/com.termux/files/usr/bin/node"
+
+# Try local installation first
+if [[ -x "${SHARE_DIR}/node_modules/omniroute/bin/omniroute.mjs" ]]; then
+  exec "${NODE}" "${SHARE_DIR}/node_modules/omniroute/bin/omniroute.mjs" "$@"
+fi
+
+# Try npx cache
+for npx_dir in "${HOME}/.npm/_npx/"*/node_modules/omniroute; do
+  if [[ -x "${npx_dir}/bin/omniroute.mjs" ]]; then
+    exec "${NODE}" "${npx_dir}/bin/omniroute.mjs" "$@"
+  fi
+done 2>/dev/null
+
+# Fallback: try npx
+if command -v npx &>/dev/null; then
+  exec npx -y omniroute "$@"
+fi
+
+echo -en "\e[31mE:\e[0m omniroute not found. Run 'fixer' to reinstall."
+exit 1
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
