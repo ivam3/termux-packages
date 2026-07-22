@@ -1150,7 +1150,7 @@ SHA256: 6694a5b19a00d82ec8322aa70d7fa1346590979cbf3880a20bd2627e09ff795c
 SHA512: 343283ad3863e2edc5307ee761db4a8a38a001e37ff821cf7a56103bd9ff34e10329d236f321b247f1dfbb27b11004ca989eeaf0cf2b8941484e68c3dffd58ed
 
 Package: omniroute
-Version: 3.8.48
+Version: 3.8.48-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 10
@@ -1158,12 +1158,12 @@ Depends: nodejs, build-essential, cmake, make, pkg-config, python3, curl
 Suggests: i-haklab, playwright-proot
 Homepage: https://github.com/diegosouzapw/OmniRoute
 Description: Smart AI Router with 160+ providers, auto-fallback, and OpenAI-compatible APIs. Termux-native adaptation with playwright-core mock for Android platform compatibility.
-Filename: dists/stable/extras/binary-all/omniroute_3.8.48_all.deb
-Size: 6788
-MD5Sum: 6ccdeea4d005839d953fcdb352064a04
-SHA1: 430da465b50b06dd000c447f545b94a3fd1e7d03
-SHA256: 0d699fef5c6b0d81a4fc346a08be6b892f918665c0e786bf6c46c56c5112ddc3
-SHA512: d329561ed042cc9c4654ecad1956d52b4a2be32f4fd4d13e33a9dbca021b29097ecf49309f50cf5155fd5e474b0aed01d0c9eaf9bfa759b87e2ed97939c657d5
+Filename: dists/stable/extras/binary-all/omniroute_3.8.48-1_all.deb
+Size: 6792
+MD5Sum: a97a253c53b0152cc222fe93be67d8fe
+SHA1: 14f73843755ae89e16f58650e46ad1c24d33f312
+SHA256: 9a2f71d1b6a3fea243eba00ace597d3f28f5f24a00e54c6c79644411bcd0d3ae
+SHA512: 7d285c5ef469a0c2f840d711953ab6236479f2a03ea2c83e18006648d29291aa913a788dd01ef660646ddd0b7047b893150553fc1898a83069bc8dc62a2eb897
 
 Package: openclaw
 Version: 2026.6.11-1

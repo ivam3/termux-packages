@@ -23,7 +23,7 @@ err()  { printf "%b[❌]%b %s\n" "$RED" "$RESET" "$*" >&2; }
 # ==============================
 cleanup() {
   local ec=$?
-  [[ -d "$STAGING_DIR" ]] && rm -rf "$STAGING_DIR" 2>/dev/null
+  [[ -d "$NPX_CACHE_DIR" ]] && rm -rf "$NPX_CACHE_DIR" 2>/dev/null
   return $ec
 }
 trap cleanup EXIT
