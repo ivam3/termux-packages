@@ -143,6 +143,7 @@ else
     ok "OmnIRoute binary works via direct node execution."
     tip "Run 'omniroute serve' to start the server."
     tip "Access the dashboard at http://localhost:20128"
+    tip "Login default password: CHANGEME"
     tip "For browser/web automation features, install: apt install playwright-proot"
   else
     err "OmnIRoute binary verification failed. Try running 'fixer'."

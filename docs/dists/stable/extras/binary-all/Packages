@@ -1159,11 +1159,11 @@ Suggests: i-haklab, playwright-proot
 Homepage: https://github.com/diegosouzapw/OmniRoute
 Description: Smart AI Router with 160+ providers, auto-fallback, and OpenAI-compatible APIs. Termux-native adaptation with playwright-core mock for Android platform compatibility.
 Filename: dists/stable/extras/binary-all/omniroute_3.8.48-1_all.deb
-Size: 6792
-MD5Sum: a97a253c53b0152cc222fe93be67d8fe
-SHA1: 14f73843755ae89e16f58650e46ad1c24d33f312
-SHA256: 9a2f71d1b6a3fea243eba00ace597d3f28f5f24a00e54c6c79644411bcd0d3ae
-SHA512: 7d285c5ef469a0c2f840d711953ab6236479f2a03ea2c83e18006648d29291aa913a788dd01ef660646ddd0b7047b893150553fc1898a83069bc8dc62a2eb897
+Size: 6812
+MD5Sum: 0fb46ab641e255e7fe0ff3a336910aac
+SHA1: a0d4b5865969294ce327b03d73a7ab5ce4f605bb
+SHA256: 7f1cebc17002bb7125289d12816e74cb157ab7f20a7fc326a86ff13010734db1
+SHA512: 3a573eed5a3e3a44fb8d3b747d10eff3f2e0ca67acdacd246e1054f4dcc8ae533ec2c5116fbd664cf59bd2a3d9473ce6f700d78d97e24d313df78215a00dba28
 
 Package: openclaw
 Version: 2026.6.11-1
