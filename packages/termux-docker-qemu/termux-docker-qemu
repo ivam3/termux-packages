@@ -5,24 +5,98 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 B="\e[34m"
-os="$1"
-mRAM="12288"
-DISPLAY=":0"
-base_path="${HOME}/.local/share/termux-docker-qemu"
-mnt="$base_path/$os/termux2$os"
 
-[[ $# -eq 0 ]] && { 
-  echo -en "\e[33mUsage:\e[0m termux-docker-qemu <operative system name> [x11]"
-  exit 1
+mRAM="12288"
+DISPLAY_NUM=":0"
+base_path="${HOME}/.local/share/termux-docker-qemu"
+
+# Defaults (headless)
+os=""
+graphic_mode=""
+XorCLi="-nographic"
+VGA="-vga none"
+
+show_usage() {
+    echo -e "\e[33mUsage:\e[0m termux-docker-qemu <os>"
+    echo "       termux-docker-qemu <os> x11"
+    echo "       termux-docker-qemu <os> x11 vnc|sdl"
 }
 
-if [[ $2 == 'x11' ]]; then
-    XorCLi="-vnc $DISPLAY"
+choose_x11_mode() {
+    local choice
+    echo
+    echo "┌─────────────────────────────────────────┐"
+    echo "│   termux-docker-qemu - Modo Grafico     │"
+    echo "│   Sistema: $os                          │"
+    echo "├─────────────────────────────────────────┤"
+    echo "│  1) SDL         - Renderizado directo   │"
+    echo "│     (DISPLAY=:0 + Termux:X11)            │"
+    echo "│  2) VNC         - Puerto 5900           │"
+    echo "│     (funciona con paquete actual)        │"
+    echo "└─────────────────────────────────────────┘"
+    read -p $'\e[33mSelecciona una opcion [1-2]:\e[0m ' choice
+    case "$choice" in
+        1|sdl) graphic_mode="sdl" ;;
+        2|vnc) graphic_mode="vnc" ;;
+        *) echo -e "${R}Opcion invalida${W}"; exit 5 ;;
+    esac
+}
+
+setup_termux_x11() {
+    if ! pgrep -f "com.termux.x11" &>/dev/null; then
+        echo -e "${G}[+] Abriendo app Termux:X11...${W}"
+        am start -n com.termux.x11/com.termux.x11.MainActivity 2>/dev/null || true
+    fi
+
+    if ! pgrep -f "termux-x11 ${DISPLAY_NUM}" &>/dev/null; then
+        echo -e "${G}[+] Iniciando servidor termux-x11 en ${DISPLAY_NUM}...${W}"
+        termux-x11 "${DISPLAY_NUM}" &
+        for i in 1 2 3 4 5; do
+            [[ -e "/tmp/.X11-unix/X${DISPLAY_NUM#:}" ]] && break
+            sleep 1
+        done
+    fi
+
+    export DISPLAY="${DISPLAY_NUM}"
+    XorCLi="-display gtk,zoom-to-fit=on,grab-on-hover=on"
     VGA="-vga virtio"
-else
-    XorCLi="-nographic"
-    VGA="-vga none"
+
+    echo -e "${G}[+] Modo GTK listo (zoom-to-fit, DISPLAY=${DISPLAY_NUM})${W}"
+}
+
+# --- Argument parsing ---
+# termux-docker-qemu <os>                    -> headless
+# termux-docker-qemu <os> x11                -> menu interactivo
+# termux-docker-qemu <os> x11 vnc            -> VNC
+# termux-docker-qemu <os> x11 sdl            -> SDL (termux-x11)
+
+os="$1"
+
+if [[ "$2" == "x11" ]]; then
+    case "$3" in
+        vnc|termux-x11) graphic_mode="$3" ;;
+        sdl)            graphic_mode="sdl" ;;
+        "")             graphic_mode="menu" ;;
+        *)              echo -e "${R}E: Modo grafico invalido: $3${W}"; exit 5 ;;
+    esac
 fi
+
+[[ -z "$os" ]] && { show_usage; exit 1; }
+
+# --- Interactive menu ---
+if [[ "$graphic_mode" == "menu" ]]; then
+    choose_x11_mode
+fi
+
+# --- Apply display mode ---
+if [[ "$graphic_mode" == "vnc" ]]; then
+    XorCLi="-vnc $DISPLAY_NUM"
+    VGA="-vga virtio"
+elif [[ "$graphic_mode" == "sdl" ]]; then
+    setup_termux_x11
+fi
+
+mnt="$base_path/$os/termux2$os"
 
 if [[ -d "$base_path/$os" ]]; then
     cd "$base_path/$os"
@@ -36,7 +110,7 @@ if [[ -f "$os.qcow2" ]]; then
     DISK_IMG="$os.qcow2"
     DISK_FMT="qcow2"
 else
-    echo -e $R"E: No se encontró la imagen $os.qcow2$W"
+    echo -e $R"E: No se encontro la imagen $os.qcow2$W"
     exit 4
 fi
 
@@ -61,7 +135,7 @@ case "$os" in
           -drive if=pflash,format=raw,read-only=on,file=${PREFIX}/share/qemu/edk2-x86_64-code.fd \
           -device virtio-blk-pci,drive=drive0,bootindex=0 \
           -drive file="$DISK_IMG",if=none,id=drive0,format=$DISK_FMT,discard=on,cache=unsafe \
-          -netdev user,id=n1,net=${ipnet}0/24,dhcpstart=${ipnet}9,hostfwd=tcp::8080-:80,hostfwd=tcp::2222-:22,hostfwd=tcp::2121-:21,hostfwd=tcp::8000-:8000,hostfwd=tcp::5900-:5900 \
+          -netdev user,id=n1,net=${ipnet}0/24,dhcpstart=${ipnet}9,hostfwd=tcp::8080-:80,hostfwd=tcp::2222-:22,hostfwd=tcp::2121-:21,hostfwd=tcp::8000-:8000,hostfwd=tcp::5900-:5900,hostfwd=tcp::1080-:1080 \
           -device virtio-net-pci,netdev=n1 \
           -virtfs local,path="$mnt",mount_tag=termux2$os,security_model=passthrough \
           $XorCLi

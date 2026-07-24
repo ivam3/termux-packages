@@ -1,15 +1,15 @@
 Codename: termux
 Version: 1
-Architectures: aarch64 arm i686 all x86_64
+Architectures: i686 arm aarch64 x86_64 all
 Description: stable repository
 Suite: stable
-Date: Wed, 22 Jul 2026 05:34:04 UTC
+Date: Fri, 24 Jul 2026 00:12:55 UTC
 Components: extras lfs
 MD5Sum:
  9160380c1c3e82ce79320a88207cc2ac 83112 extras/binary-all/Packages
  5189892679cb7cab1eabd5a987934777 28696 extras/binary-all/Packages.xz
- f9639ada5596f474f95ca73b5c1aa5c0 7358 extras/binary-aarch64/Packages
- fadf46643c77b2eb2d1cea1cdca85b09 2948 extras/binary-aarch64/Packages.xz
+ ae42bc175fdd9670629b4efc48776617 7358 extras/binary-aarch64/Packages
+ 1eb6789efb5e14e42a7a10ff99f59a4a 2952 extras/binary-aarch64/Packages.xz
  9bf648ba93f94377a97bd7b8109c57e0 648 extras/binary-arm/Packages
  26f2c140ad1b9ae7c28dc845a20035fb 552 extras/binary-arm/Packages.xz
  26a8ea77089c652ca565ac530fb0b86d 651 extras/binary-i686/Packages
@@ -33,8 +33,8 @@ MD5Sum:
 SHA1:
  83bed73bde585fe100e93587aa69590c30cd1e2d 83112 extras/binary-all/Packages
  8d26ceed417bd7092917a154beddae915c079495 28696 extras/binary-all/Packages.xz
- b951a73ade84953686ae1cc47927780c724af156 7358 extras/binary-aarch64/Packages
- 8cac32e534121b701177eaf7eee4a7928adbbd9f 2948 extras/binary-aarch64/Packages.xz
+ c8bd024e904ef898f816789c63e76c409e31171e 7358 extras/binary-aarch64/Packages
+ 221fab58267249fc9ded25117825026bbc64f4d0 2952 extras/binary-aarch64/Packages.xz
  e258741cebff9fb452aadcf88e561f2d2f040ae1 648 extras/binary-arm/Packages
  15a94ca5a7beba00c1fe555c3e126dfce56d0367 552 extras/binary-arm/Packages.xz
  c9d387cbb504727b14b7f4b03dd58bd06ef2c911 651 extras/binary-i686/Packages
@@ -58,8 +58,8 @@ SHA1:
 SHA256:
  01b240b44e029316f17ede9e07132037dc9823ffb821811e1a604d3418f118f2 83112 extras/binary-all/Packages
  217d570f6c24b6f220abd58be36a2cff60a611384e0eba9961963dec0ed08741 28696 extras/binary-all/Packages.xz
- 5e919da83e59a19e88f54d3c7233c540b8e9f50da6e761ecc8975f9222f8a404 7358 extras/binary-aarch64/Packages
- 5244039d991feb46b41165d797a38cae2762295c80491dcefe63e1ac7fa39013 2948 extras/binary-aarch64/Packages.xz
+ 6e30b418dae50201195690c5075e8be29d8bf4e7e7cc8f08acc65a360ece332b 7358 extras/binary-aarch64/Packages
+ a3b5de80e4001aafcd810baee65f5a7391aff5d7bf1a0928157eff5afc90602a 2952 extras/binary-aarch64/Packages.xz
  12072025524bff02bcc94b8f0e24b76c0ce525d00c4457f8c4e31bd5a8a01fcb 648 extras/binary-arm/Packages
  79503611c51239ebd2f11722022fc5f1f97735af664de3fd81d766155207b242 552 extras/binary-arm/Packages.xz
  365f9ef071995439fe8ada16343142a020f5a191be5fb9c0e1a66e40b96a5796 651 extras/binary-i686/Packages
@@ -83,8 +83,8 @@ SHA256:
 SHA512:
  e7cbf62c1be687e3ca716bcecc6d8fe0934c735084243965dee8e7af6c7dad5346854e0afbbc4914ab770a6999c28d17f46cfb490acf7eb20396f9d0c382f833 83112 extras/binary-all/Packages
  6a5890c2ec8a71edbc1c533a1c3d1ed65c9135cc52658b9d965a10bec8242fcbc36ac737246629db2da7a98ae80e14a9d8f12dcde1b3ca7132d0eecd6dfe853b 28696 extras/binary-all/Packages.xz
- 2f3c5154c30920072d7dfe6474beb527b2a507ea4c6698ac6b8ad261a64141dc3eb98c265d62ec459a1dc6c775f0cc751cc90c76eb6fd70208ca59887f35c215 7358 extras/binary-aarch64/Packages
- b03d396ede64d0e7904c96c6ada32320936e220c45ea32ef28a14030a8527d9b45b43f8f41478cc49c8ea5477a51e919c2497345e9c07eb0374b9d9789c3bf30 2948 extras/binary-aarch64/Packages.xz
+ 15067a0e9270de466e1f718cc5e1b1b329df20c3a283c4d034a822508cdd3700fd292ac2bf6f6cea668c482f321206c9f9d13e83bb7536208b0f8a976580bcad 7358 extras/binary-aarch64/Packages
+ ec275bd88c382f3effe3920f0fab73491916b7baf2a48412e67fd689c7b303146d278b5738beacd1e92abb7f65a4d1bc82b76a1b2f252fe4b21913b3537e5ccb 2952 extras/binary-aarch64/Packages.xz
  189799a59b800688623a42bf35d956406b819dc52863075da5b39ad9019b90148ab475a7e95949d8fe314ea16b0b465ce1448fca060357b3c82716402c2938df 648 extras/binary-arm/Packages
  89cc9132dca2569858b4620611bbb816416a78a9aaf026b59729dc8fda7b951f6e028f7082ad8faa910e7397e45acfa3ced4cff31df51ae9681647797688df01 552 extras/binary-arm/Packages.xz
  6a583738f0f16e63e6ddae86805c746ad680d6e936961feae84e12a3a9885aa042c362a964852f76c7bed7fe5ce72262651ae9bf2102506b21c4f0904475b3f3 651 extras/binary-i686/Packages
