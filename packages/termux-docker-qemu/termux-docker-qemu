@@ -9,6 +9,8 @@ B="\e[34m"
 mRAM="12288"
 DISPLAY_NUM=":0"
 base_path="${HOME}/.local/share/termux-docker-qemu"
+XRES=""
+YRES=""
 
 # Defaults (headless)
 os=""
@@ -30,9 +32,9 @@ choose_x11_mode() {
     echo "│   Sistema: $os                          │"
     echo "├─────────────────────────────────────────┤"
     echo "│  1) SDL         - Renderizado directo   │"
-    echo "│     (DISPLAY=:0 + Termux:X11)            │"
+    echo "│     (DISPLAY=:0 + Termux:X11)           │"
     echo "│  2) VNC         - Puerto 5900           │"
-    echo "│     (funciona con paquete actual)        │"
+    echo "│     (Requiere RealVNC viewer app)       │"
     echo "└─────────────────────────────────────────┘"
     read -p $'\e[33mSelecciona una opcion [1-2]:\e[0m ' choice
     case "$choice" in
@@ -50,18 +52,30 @@ setup_termux_x11() {
 
     if ! pgrep -f "termux-x11 ${DISPLAY_NUM}" &>/dev/null; then
         echo -e "${G}[+] Iniciando servidor termux-x11 en ${DISPLAY_NUM}...${W}"
-        termux-x11 "${DISPLAY_NUM}" &
+        termux-x11 "${DISPLAY_NUM}" & 2>/dev/null
         for i in 1 2 3 4 5; do
             [[ -e "/tmp/.X11-unix/X${DISPLAY_NUM#:}" ]] && break
             sleep 1
-        done
+        done 
+        xfwm4 --display=${DISPLAY_NUM} & >/dev/null
     fi
 
     export DISPLAY="${DISPLAY_NUM}"
-    XorCLi="-display gtk,zoom-to-fit=on,grab-on-hover=on"
-    VGA="-vga virtio"
+    XorCLi="-display sdl,window-close=on"
 
-    echo -e "${G}[+] Modo GTK listo (zoom-to-fit, DISPLAY=${DISPLAY_NUM})${W}"
+    if command -v xrandr &>/dev/null; then
+        read XRES YRES <<< $(xrandr --current 2>/dev/null | grep '*' | awk '{print $1}' | tr 'x' ' ' | head -1)
+    fi
+
+    if [[ -n "$XRES" && -n "$YRES" ]]; then
+        VGA="-device virtio-vga,xres=$XRES,yres=$YRES"
+        echo -e "${G}[+] Resolution detectada: ${XRES}x${YRES}${W}"
+    else
+        VGA="-vga virtio"
+        echo -e "${Y}[!] No se pudo detectar resolution, usando virtio por defecto${W}"
+    fi
+
+    echo -e "${G}[+] Modo SDL listo (fullscreen nativo, DISPLAY=${DISPLAY_NUM})${W}"
 }
 
 # --- Argument parsing ---
@@ -138,7 +152,22 @@ case "$os" in
           -netdev user,id=n1,net=${ipnet}0/24,dhcpstart=${ipnet}9,hostfwd=tcp::8080-:80,hostfwd=tcp::2222-:22,hostfwd=tcp::2121-:21,hostfwd=tcp::8000-:8000,hostfwd=tcp::5900-:5900,hostfwd=tcp::1080-:1080 \
           -device virtio-net-pci,netdev=n1 \
           -virtfs local,path="$mnt",mount_tag=termux2$os,security_model=passthrough \
-          $XorCLi
+          $XorCLi &
+
+      QEMU_PID=$!
+      for i in $(seq 1 15); do
+          WID=$(xdotool search --pid "$QEMU_PID" 2>/dev/null | tail -1)
+          if [[ -n "$WID" ]]; then
+              xdotool windowactivate --sync "$WID" key Ctrl+Alt+F
+              break
+          fi
+          sleep 1
+      done
+
+      wait $QEMU_PID
+      if ! pgrep -f "termux-x11 ${DISPLAY_NUM}" &>/dev/null; then 
+          pkill termux-x11
+      fi
       ;;
   *)
       echo "E: Invalid Operative System.. Aborting."
