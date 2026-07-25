@@ -99,9 +99,10 @@ update(){
 [!] **UPDATES**
  ╰➤ Optimized VirtIO drivers for Disk, Net and Entropy (Faster Docker)
  ╰➤ Native QCOW2 support
- ╰➤ Enable graphical enviroment with xfce4+vncserver
+ ╰➤ Enable graphical enviroment with xfce4+termux-x11
  ╰➤ Enable option to keep the image previous installed
  ╰➤ Port mapping between Termux & VM: 8080-:80,2222:22,2121:21,8000:8000,5900:5900
+ ╰➤ Storage volume sharing between both systems named 'termux2<VMname>' (ej: termux2alpine)  
 """
 }
 
@@ -157,5 +158,5 @@ curl -fsSL \
   -o ${HOME}/.local/share/termux-docker-qemu/$os/termux2$os/$os\X11.sh
 
 echo ""
-echo "[*] termux-docker-qemu installation finished (Optimized with VirtIO)."
+echo "[*] termux-docker-qemu installation finished."
 echo "[📢] Help: https://t.me/Ivam3_Bot."
