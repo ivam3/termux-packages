@@ -1,0 +1,22 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${PREFIX}/lib/proroot ]]; then
+    rm -rf ${PREFIX}/lib/proroot
+fi
+
+echo "!: Remove Ubuntu ${UBUNTU_VERSION:-24.04} rootfs (${PREFIX}/var/lib/proot-distro/containers/proroot)?"
+while read -p "[Y/n]: " -n 1 -r; do
+    case $REPLY in
+        [Yy]* )
+            echo ""
+            echo "!: Removing rootfs..."
+            rm -rf "${PREFIX}/var/lib/proot-distro/containers/proroot"
+            echo "!: proroot data removed"
+            break;;
+        [Nn]* )
+            echo ""
+            echo "!: Kept rootfs and proroot data"
+            break;;
+        * ) echo "Please answer [Y/n]";;
+    esac
+done
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

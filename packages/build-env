@@ -121,13 +121,20 @@ INSTALL_DIR="${HOME}/.local/share/$pkgName"
 VERSION="0.0.0"
 
 # Colors
-CYAN="\033[36m"; GREEN="\033[32m"; RED="\033[31m"; YELLOW="\033[33m"; DIM="\033[2m"; RESET="\033[0m"
-info() { printf "%b[📢]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
-msg()   { printf "[➡] %s\n" "$*"; }
-ok()   { printf "%b[✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
-warn() { printf "%b[!]%b %s\n" "$YELLOW" "$RESET" "$*"; }
-tip() { printf "%b[💡]%b %s\n" "$YELLOW" "$RESET" "$*"; }
-err()  { printf "%b[❌]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+CYAN="\033[36m"
+GREEN="\033[32m"
+RED="\033[31m"
+YELLOW="\033[33m"
+DIM="\033[2m"
+RESET="\033[0m"
+
+# Msg
+info() { printf "%b[📢]%b %b%s%b\n" "\$CYAN" "\$RESET" "\$DIM" "\$*" "\$RESET"; }
+msg()   { printf "[➡] %s\\n" "\$*"; }
+ok()   { printf "%b[✔]%b %s\\n" "\$GREEN" "\$RESET" "\$*"; }
+warn() { printf "%b[!]%b %s\\n" "$YELLOW" "\$RESET" "\$*"; }
+tip() { printf "%b[💡]%b %s\\n" "\$YELLOW" "\$RESET" "\$*"; }
+err()  { printf "%b[❌]%b %s\\n" "\$RED" "\$RESET" "\$*" >&2; }
 
 echo "Cloning repository ..."
 git clone --quiet https://$page \${HOME}/.local/share/$pkgName

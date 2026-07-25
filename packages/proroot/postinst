@@ -1,0 +1,55 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+
+UBUNTU_VERSION="24.04"
+ROOTFS_NAME="proroot"
+CONTAINER_DIR="${PREFIX}/var/lib/proot-distro/containers/${ROOTFS_NAME}/rootfs"
+ROOTFS_URL="https://cloud-images.ubuntu.com/releases/${UBUNTU_VERSION}/release/ubuntu-${UBUNTU_VERSION}-server-cloudimg-arm64-root.tar.xz"
+VERSION="v1.2.8"
+BASE_URL="https://github.com/coderredlab/proroot/releases/download/${VERSION}"
+INSTALL_DIR="${PREFIX}/lib/proroot"
+
+LIBS=(
+    "libproroot.so"
+    "libproroot-runtime.so"
+    "libproroot-bridge.so"
+    "libproroot-linker.so"
+    "libproroot-stub-loader.so"
+)
+
+# 1. Download and extract Ubuntu rootfs if not present
+if [[ ! -e ${CONTAINER_DIR}/bin/sh ]]; then
+    echo "[*] Downloading Ubuntu ${UBUNTU_VERSION} rootfs for proroot..."
+    mkdir -p "${CONTAINER_DIR}"
+    wget --tries=20 --quiet "${ROOTFS_URL}" -O "${TMPDIR}/ubuntu-${UBUNTU_VERSION}-root.tar.xz" || {
+        echo "[!] Failed to download Ubuntu rootfs"
+        exit 1
+    }
+    echo "[*] Extracting rootfs (this may take a while)..."
+    tar -xf "${TMPDIR}/ubuntu-${UBUNTU_VERSION}-root.tar.xz" -C "${CONTAINER_DIR}" 2>/dev/null || true
+    rm -f "${TMPDIR}/ubuntu-${UBUNTU_VERSION}-root.tar.xz"
+    echo "[*] Ubuntu ${UBUNTU_VERSION} installed at ${CONTAINER_DIR}"
+else
+    echo "[*] Ubuntu ${UBUNTU_VERSION} already installed at ${CONTAINER_DIR}"
+fi
+
+# 2. Download proroot libraries
+echo "[*] Downloading proroot ${VERSION} libraries..."
+
+for lib in "${LIBS[@]}"; do
+    echo "  -> ${lib}"
+    wget --tries=20 --quiet "${BASE_URL}/${lib}" -O "${INSTALL_DIR}/${lib}" || {
+        echo "[!] Failed to download ${lib}"
+        exit 1
+    }
+    chmod 744 "${INSTALL_DIR}/${lib}"
+done
+
+chmod 744 "${PREFIX}/bin/proroot"
+
+# 3. Final messages
+echo "[*] proroot installation finished."
+echo "[*] Run 'proroot <command>' to execute in Ubuntu ${UBUNTU_VERSION} rootfs."
+echo "[*] For help going to https://t.me/Ivam3_Bot."
+echo "[*] @Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

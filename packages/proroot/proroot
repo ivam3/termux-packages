@@ -1,0 +1,28 @@
+#!/data/data/com.termux/files/usr/bin/bash
+W="\e[0m"; R="\e[31m"; G="\e[32m"; Y="\e[33m"; B="\e[34m"
+PROROOT_LIB="${PREFIX}/lib/proroot"
+PROROOT_EXE="${PROROOT_LIB}/libproroot.so"
+ROOTFS_DIR="${PREFIX}/var/lib/proot-distro/containers/proroot/rootfs"
+
+if [[ ! -e ${PROROOT_EXE} ]]; then
+    echo -en "${R}E:${W} proroot libraries missing at ${PROROOT_LIB}...${Y}Aborting.${W}"
+    exit 1
+fi
+
+# Auto-detect rootfs from proot-distro if -r not provided
+HAS_ROOTFS=false
+for arg; do
+    [[ "$arg" == "-r" ]] && { HAS_ROOTFS=true; break; }
+done
+
+if ! $HAS_ROOTFS; then
+    if [[ -d "$ROOTFS_DIR" ]]; then
+        exec ${PROROOT_EXE} -r "$ROOTFS_DIR" -0 --link2symlink -w / "$@"
+    else
+        echo -en "${R}E:${W} No rootfs found. Provide -r <path> or run 'proot-distro install ubuntu' first.${Y} Aborting.${W}"
+        exit 1
+    fi
+fi
+
+exec ${PROROOT_EXE} "$@"
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
