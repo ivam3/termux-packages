@@ -4,7 +4,7 @@
   "arch": "aarch64",
   "homepage": "https://github.com/coderredlab/proroot",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["wget", "proot-distro"],
+  "depends": ["wget"],
   "suggests": ["i-haklab"],
   "description": "Rootless Linux runtime for Android. Drop-in proot replacement with zero ptrace overhead. Run full glibc Linux userspace (Node.js, Python, Git, Chromium) inside Android without root.",
   "files": {

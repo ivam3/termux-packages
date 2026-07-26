@@ -1,15 +1,15 @@
 {
   "name": "playwright-proot",
-  "version": "1.61.1-2",
+  "version": "1.61.1-3",
   "arch": "aarch64",
   "homepage": "https://playwright.dev",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
   "depends": [
-    "proot-distro",
+    "proroot",
     "curl",
     "tar"
   ],
-  "description": "Playwright CLI for Termux via proot-distro Ubuntu. Enables browser automation (snapshot, screenshot, click, fill) for testing PWAs and web apps on Android.",
+  "description": "Playwright CLI for Termux via proroot (Ubuntu 24.04). Enables browser automation (snapshot, screenshot, click, fill) for testing PWAs and web apps on Android.",
   "files": {
     "playwright-proot": "/data/data/com.termux/files/usr/bin/playwright-proot"
   }

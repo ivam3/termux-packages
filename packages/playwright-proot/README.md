@@ -1,6 +1,6 @@
 # Playwright-proot 🎭
 
-**Playwright CLI** para Termux via **proot-distro Ubuntu**. Permite automatización de navegador (snapshot, screenshot, click, fill, eval) para testing de PWAs y apps web en Android.
+**Playwright CLI** para Termux via **proroot** (Ubuntu 24.04). Permite automatización de navegador (snapshot, screenshot, click, fill, eval) para testing de PWAs y apps web en Android.
 
 ## 📥 Instalación
 
@@ -9,7 +9,7 @@ apt install playwright-proot
 ```
 
 El `postinst` configura automáticamente:
-1. Ubuntu en proot-distro (si no existe)
+1. proroot rootfs (dependencia)
 2. Librerías glibc para Chromium
 3. Node.js + @playwright/cli
 4. Chromium headless (arm64)
@@ -43,7 +43,7 @@ playwright-proot close
 ```
 Termux (Host)
 ├── Python + Flet → flet run --web --port 8550 main.py
-└── proot-distro Ubuntu
+└── proroot (Ubuntu 24.04, sin ptrace)
     ├── Node.js + @playwright/cli
     ├── Chromium headless (glibc arm64)
     └── playwright-cli attach --cdp=http://localhost:9222
@@ -51,7 +51,7 @@ Termux (Host)
 
 ## 📋 Requisitos
 
-- `proot-distro` (se instala automáticamente como dependencia)
+- `proroot` (se instala automáticamente como dependencia)
 - ~1.2GB de espacio para Ubuntu + Chromium
 - Conexión a internet para la instalación inicial
 

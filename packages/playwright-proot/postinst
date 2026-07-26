@@ -1,10 +1,9 @@
 #!/data/data/com.termux/files/usr/bin/bash
-# playwright-proot Termux - Post-Installation Script
+# playwright-proot Termux - Post-Installation Script (proroot backend)
 set -Eeuo pipefail
 
 PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
-DISTRO_NAME="ubuntu"
-CONTAINER_DIR="${PREFIX}/$DISTRO_NAME"
+CONTAINER_DIR="${PREFIX}/var/lib/proot-distro/containers/proroot/rootfs"
 LINUX_LIBS="libglib2.0-0t64 libnss3 libnspr4 libdbus-1-3 libatk1.0-0t64 libatk-bridge2.0-0t64 libcups2t64 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libpango-1.0-0 libcairo2 libasound2t64 libatspi2.0-0t64 libudev1"
 
 CYAN="\033[36m"; GREEN="\033[32m"; RED="\033[31m"; DIM="\033[2m"; RESET="\033[0m"
@@ -16,21 +15,21 @@ err()  { printf "%b[ERR]%b %s\n" "$RED" "$RESET" "$*" >&2; }
 cleanup() { rm -rf ${PREFIX}/tmp/playwright-proot-setup 2>/dev/null; }
 trap cleanup EXIT
 
-# 1. Install Ubuntu if not present
-if [ ! -d ${CONTAINER_DIR} ] ; then
-    info "Installing ${DISTRO_NAME} via proot-distro (first download may take a while)..."
-    proot-distro install "$DISTRO_NAME" || {
-        err "Failed to install $DISTRO_NAME"
-        exit 1
-    }
-    ok "$DISTRO_NAME installed"
-else
-    ok "$DISTRO_NAME already installed"
+# 1. Verify proroot is installed
+if ! command -v proroot &>/dev/null; then
+    err "proroot is required. Run: pkg install proroot"
+    exit 1
 fi
 
-# 2. Install packages and setup inside Ubuntu
-info "Installing system libraries inside ${DISTRO_NAME}..."
-proot-distro login "$DISTRO_NAME" --shared-tmp -- /bin/bash -c "
+if [ ! -d ${CONTAINER_DIR} ] ; then
+    err "proroot rootfs not found at ${CONTAINER_DIR}. Reinstall proroot."
+    exit 1
+fi
+ok "proroot rootfs found"
+
+# 2. Install packages and setup inside proroot
+info "Installing system libraries inside proroot..."
+proroot /bin/bash -c "
     set -Eeuo pipefail
     export DEBIAN_FRONTEND=noninteractive
 
@@ -44,12 +43,12 @@ proot-distro login "$DISTRO_NAME" --shared-tmp -- /bin/bash -c "
         apt install -y -qq nodejs 2>&1 | tail -2
     fi
     echo \"Node: \$(node --version), npm: \$(npm --version)\"
-" || { err "Failed to install dependencies inside $DISTRO_NAME"; exit 1; }
-ok "System dependencies installed inside $DISTRO_NAME"
+" || { err "Failed to install dependencies inside proroot"; exit 1; }
+ok "System dependencies installed inside proroot"
 
 # 3. Install playwright-cli and Chromium
-info "Installing playwright-cli and Chromium inside ${DISTRO_NAME}..."
-proot-distro login "$DISTRO_NAME" --shared-tmp -- /bin/bash -c "
+info "Installing playwright-cli and Chromium inside proroot..."
+proroot /bin/bash -c "
     set -Eeuo pipefail
     export PLAYWRIGHT_BROWSERS_PATH=/root/.cache/ms-playwright
 
@@ -64,19 +63,10 @@ proot-distro login "$DISTRO_NAME" --shared-tmp -- /bin/bash -c "
     # Verify
     echo \"playwright-cli: \$(playwright-cli --version)\"
     echo \"Chromium: \$(\"$PLAYWRIGHT_BROWSERS_PATH\"/chromium-*/chrome-linux/chrome --version 2>/dev/null)\"
-" || { err "Failed to install playwright-cli inside $DISTRO_NAME"; exit 1; }
+" || { err "Failed to install playwright-cli inside proroot"; exit 1; }
 ok "playwright-cli and Chromium installed"
 
-# 4. Create the wrapper script (omited in deb installation)
-# mkdir -p ${HOME}/.local/share/playwright-proot
-# WRAPPER_SRC="${HOME}/.local/share/playwright-proot/playwright-proot.sh"
-# if [[ -f "./playwright-proot.sh" ]]; then
-#     WRAPPER_SRC="./playwright-proot.sh"
-# fi
-# install -Dm755 "$WRAPPER_SRC" "${PREFIX}/bin/playwright-proot"
-ok "Wrapper installed: ${PREFIX}/bin/playwright-proot"
-
-# 5. Verify
+# 4. Verify wrapper
 if command -v playwright-proot &>/dev/null; then
     ok "playwright-proot installation finished." 
     msg "Run 'playwright-proot' to execute it."

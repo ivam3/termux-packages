@@ -9,6 +9,26 @@ if [[ ! -e ${PROROOT_EXE} ]]; then
     exit 1
 fi
 
+# Default bind-mounts (same paths proot-distro shares by default)
+BIND_MOUNTS=()
+for mount in \
+    "/sdcard:/sdcard" \
+    "/storage:/storage" \
+    "/data/data/com.termux/files/home:/data/data/com.termux/files/home"; do
+    host_path="${mount%%:*}"
+    if [[ -e "$host_path" ]]; then
+        BIND_MOUNTS+=(-b "$mount")
+    fi
+done
+
+# DNS: bind host resolv.conf or use default Google DNS
+if [[ -e /etc/resolv.conf ]]; then
+    BIND_MOUNTS+=(-b "/etc/resolv.conf:/etc/resolv.conf")
+else
+    echo "nameserver 8.8.8.8" > "${TMPDIR}/proroot-resolv.conf" 2>/dev/null
+    BIND_MOUNTS+=(-b "${TMPDIR}/proroot-resolv.conf:/etc/resolv.conf")
+fi
+
 # Auto-detect rootfs from proot-distro if -r not provided
 HAS_ROOTFS=false
 for arg; do
@@ -17,12 +37,12 @@ done
 
 if ! $HAS_ROOTFS; then
     if [[ -d "$ROOTFS_DIR" ]]; then
-        exec ${PROROOT_EXE} -r "$ROOTFS_DIR" -0 --link2symlink -w / "$@"
+        exec env HOME=/root TMPDIR=/var/tmp ${PROROOT_EXE} -r "$ROOTFS_DIR" -0 --link2symlink -w / "${BIND_MOUNTS[@]}" "$@"
     else
         echo -en "${R}E:${W} No rootfs found. Provide -r <path> or run 'proot-distro install ubuntu' first.${Y} Aborting.${W}"
         exit 1
     fi
 fi
 
-exec ${PROROOT_EXE} "$@"
+exec env HOME=/root TMPDIR=/var/tmp ${PROROOT_EXE} "${BIND_MOUNTS[@]}" "$@"
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -1,27 +1,26 @@
 #!/data/data/com.termux/files/usr/bin/bash
-# playwright-proot - Playwright CLI bridge via proot-distro Ubuntu
+# playwright-proot - Playwright CLI bridge via proroot (Ubuntu 24.04)
 set -Eeuo pipefail
 
-DISTRO="ubuntu"
 CHROME_PORT="9222"
 BROWSERS_PATH="/root/.cache/ms-playwright"
 HELP_URL="https://t.me/Ivam3_Bot"
 
 # ── helpers ──────────────────────────────────────────
 
-distro_ok() {
-    proot-distro list 2>&1 | sed 's/\r//g; s/\x1b\[[0-9]*K//g' | grep -qF "* ${DISTRO}"
+proroot_ok() {
+    command -v proroot &>/dev/null && [[ -d "${PREFIX}/var/lib/proot-distro/containers/proroot/rootfs" ]]
 }
 
 chrome_bin() {
-    proot-distro login "$DISTRO" --shared-tmp -- /bin/bash \
+    proroot /bin/bash \
         -c "ls -d ${BROWSERS_PATH}/chromium-*/chrome-linux/chrome 2>/dev/null" 2>/dev/null | tail -1
 }
 
 wait_chrome() {
     local tries=15
     while ((tries--)); do
-        if proot-distro login "$DISTRO" --shared-tmp -- /bin/bash \
+        if proroot /bin/bash \
             -c "curl -so /dev/null -w '%{http_code}' http://127.0.0.1:${CHROME_PORT}/json/version 2>/dev/null" 2>/dev/null | grep -q 200
         then return 0; fi
         sleep 1
@@ -43,7 +42,7 @@ cmd_run() {
     chrb=$(chrome_bin)
     [[ -n "$chrb" ]] || { echo "Error: Chromium no encontrado. Reinstala playwright-proot." >&2; exit 1; }
 
-    # Build inline script for proot
+    # Build inline script for proroot
     local cmds
     cmds=$(echo "$script_content" | tr ';' '\n' | sed 's/^[[:space:]]*//' | grep -v '^$')
 
@@ -75,7 +74,7 @@ kill \${CPID:-} 2>/dev/null || true
 INLINE
 )
 
-    proot-distro login "$DISTRO" --shared-tmp -- /bin/bash -c "$inline" 2>&1
+    proroot /bin/bash -c "$inline" 2>&1
 }
 
 cmd_open() {
@@ -112,11 +111,11 @@ kill \${CPID:-} 2>/dev/null || true
 INLINE
 )
 
-    proot-distro login "$DISTRO" --shared-tmp -- /bin/bash -c "$inline" 2>&1
+    proroot /bin/bash -c "$inline" 2>&1
 }
 
 cmd_close() {
-    proot-distro login "$DISTRO" --shared-tmp -- /bin/bash \
+    proroot /bin/bash \
         -c "pkill -f 'chrome.*remote-debugging' 2>/dev/null; echo 'Chromium detenido'" 2>&1 | tail -1
 }
 
@@ -136,7 +135,7 @@ case "${1:-help}" in
         ;;
     help|--help|-h|"")
         cat <<EOF
-playwright-proot - Browser automation para Termux via proot-distro Ubuntu
+playwright-proot - Browser automation para Termux via proroot (Ubuntu 24.04)
 
 USAGE:
   playwright-proot run <comandos>     Ejecuta comandos en una sola sesion
