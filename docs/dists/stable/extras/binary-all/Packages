@@ -1613,7 +1613,7 @@ SHA256: 8faf535bd4e1e74bbb44b6dc65c3a238e63d4611186c538f14c058ae13322db1
 SHA512: c3f28b1ae445f77eaf6c28dcc8bcb7f8ef823de54edac82c931cdd593486dc65ba89ab431d267ae776743eb68400cbfea65c94846aa8143efee4659475c2a39c
 
 Package: termux-docker-qemu
-Version: 0.9.1
+Version: 0.9.2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 6
@@ -1621,12 +1621,12 @@ Depends: openssh, wget, samba, procps, net-tools, xorg-xrandr, xfwm4, xdotool, t
 Suggests: i-haklab
 Homepage: https://www.docker.com/products/docker-desktop/
 Description: Manage docker containers from linux x86, x86_64, armv7 and aarch64 virtual machines using QEMU (Quick EMUlator)
-Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.9.1_all.deb
-Size: 5812
-MD5Sum: 76470197d903aea9885016110bc8e947
-SHA1: 744783815d881426e515eb26365eb312f6555fa3
-SHA256: 26341f870942cdd4f793cb0876eabf211fec1d7f7888b24eba59bac05b426994
-SHA512: cd80c8231ab593eb2fb5e2924f3c810850626a1c83c9b3987a24f9cd79884196546c580d05c750526b12363c84ffd39b0b6b9fadc39927b1bf241a50091ffc01
+Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.9.2_all.deb
+Size: 5816
+MD5Sum: 78d17eac28a82d78acc8e19e16b1e896
+SHA1: eca4b154dfbebcdd6fe6296a85d41a23f63c2b34
+SHA256: 3de27362523de66b84b9d4729722c6ceef5332ee2074fbe4b5dc7453da0c5fa7
+SHA512: 4e5734f31e01b38fa4390b1dcb277de6ae8dc6848e56ed8457109c657959038370714064ffc58935e5aa6f48d22ea33a4850e45a32d30dcfa8e816fb118eb066
 
 Package: termux-oracle-skill
 Version: 0.1.0
@@ -1638,11 +1638,11 @@ Suggests: i-haklab, antigravity-cli, opencode, claude-code, codebuff, freebuff, 
 Homepage: https://github.com/ivam3/termux-oracle
 Description: A termux skill for AI coding agents with all context about termux, i-Haklab and Ivam3 termux-packages.
 Filename: dists/stable/extras/binary-all/termux-oracle-skill_0.1.0_all.deb
-Size: 4504
-MD5Sum: ddbc6ec16b1c82e233deffd8c5e505bd
-SHA1: ec5106b66568705819b608a785ab591990ad14e9
-SHA256: d68df10d197f3fd6824b8de79c387dd27cbe325f37cb552df6c46eb7d71b4bd2
-SHA512: bfaa735db33c01a8299c2328115dc9bdd5dabaa6f1d0db14e44c3de8c50da4dc1b6f77eb1429d2ab819464a4b12a433f696a7b651381635ee9bbbe0f8d8d22c3
+Size: 4540
+MD5Sum: 869ebfb73cf2a48e0347828198e57f11
+SHA1: 61d3e2a097a5dfa809df0c8df946fd98e8ff9afe
+SHA256: bd8b1aefaeb40045f5502fd1ab2230d911717e9ce3361020f465f234457820ee
+SHA512: c61f8215cfd09daafb2965115e6fc6e58b49789beb86a416024a858e72547be21c75b7c8317a32771d19be96f73424ac307d22e8254bd3c1d09701acaceaf086
 
 Package: trape
 Version: 2.0

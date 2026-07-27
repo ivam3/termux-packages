@@ -126,6 +126,7 @@ select os in alpine;do
               v3.21) iv="3.21.7";break ;;
               v3.22) iv="3.22.4";break ;;
               v3.23) iv="3.23.4";break ;;
+              v3.24) iv="3.24.1";break ;;
               *) echo "Invalid version"; continue;;
           esac
       done
