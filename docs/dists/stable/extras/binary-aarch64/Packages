@@ -142,17 +142,33 @@ SHA256: 67d735a99f8cbcc7ba033e42c6944b2f212076f37a2c2afb81dd20cc85db4b56
 SHA512: 5fbfc2b5aaf50e13102e7ebba2ee1534d7cbfac2dd9e65925a51539ccb259622ff5eb18eeea51fbe84e396911a21b1b20a226a369b4637ccb016c46761d3eee8
 
 Package: playwright-proot
-Version: 1.61.1-2
+Version: 1.61.1-3
 Architecture: aarch64
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 5
-Depends: proot-distro, curl, tar
+Depends: proroot, curl, tar
 Homepage: https://playwright.dev
-Description: Playwright CLI for Termux via proot-distro Ubuntu. Enables browser automation (snapshot, screenshot, click, fill) for testing PWAs and web apps on Android.
-Filename: dists/stable/extras/binary-aarch64/playwright-proot_1.61.1-2_aarch64.deb
-Size: 4416
-MD5Sum: 11d6fa91288927b9933fa3f496e5ab50
-SHA1: 1bdbd39669a609b62fe86613988ba1891584cbbd
-SHA256: 51db427ff73b1e7aa7b26df873a361aebcd039914e473e0502274051be6393a7
-SHA512: 7ade846a108d2d42a12a6c4770ed3292b3a5262076c3c2b8e8dbc3eb7127844083972548e19b50ee284422c0a45530d06a83add10e157fa495cf6a9c94f8137f
+Description: Playwright CLI for Termux via proroot (Ubuntu 24.04). Enables browser automation (snapshot, screenshot, click, fill) for testing PWAs and web apps on Android.
+Filename: dists/stable/extras/binary-aarch64/playwright-proot_1.61.1-3_aarch64.deb
+Size: 4276
+MD5Sum: 2cd3db7b0f1b770633c16bd50f7576ce
+SHA1: 782dd41cb5aa2a4c3ba44eeadfac829a8d37a986
+SHA256: 785a62d6c09965d313772132342b855a1755c06ccd0a291ab0d58f26428b7bb4
+SHA512: 267ce46c397272d30f19507e738f46e7a751eed8877b465e1a5ae3425a875ab3ca542cbea3c6ceef7051eb1ffc390546ffd2e16a9671b780fdd1ffc6acd11074
+
+Package: proroot
+Version: 1.2.8-1
+Architecture: aarch64
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: wget
+Suggests: i-haklab
+Homepage: https://github.com/coderredlab/proroot
+Description: Rootless Linux runtime for Android. Drop-in proot replacement with zero ptrace overhead. Run full glibc Linux userspace (Node.js, Python, Git, Chromium) inside Android without root.
+Filename: dists/stable/extras/binary-aarch64/proroot_1.2.8-1_aarch64.deb
+Size: 2888
+MD5Sum: ef5bc6ef7a56cbff40d65951399104b4
+SHA1: 88cfc468acd8a9841cd99655585a9a33dc74961c
+SHA256: 37955780baa2e5fe6bb925d19fbefb383e37badba7a4e0150409a6826ecd0343
+SHA512: da310abcad66b1c391f7f71b2a4602a7bbb17e3b6514d824988a62edf0b1d5c25955e95b71a1c5eab3a39d59ff0807e0ee5b786935930bbff62d6d00c52b8b4b
 
