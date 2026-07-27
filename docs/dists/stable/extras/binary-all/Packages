@@ -1628,21 +1628,21 @@ SHA1: 62f451d38b0e533a6beac7d47bf16755349b0ca0
 SHA256: 98a5820dad68bc68765561730619ffe8a058da6c586746be1523f77f2a96e469
 SHA512: d9694e1c49ef2bf740c2919562c3faeb38a15a55754a560089fc82fa16ef23b08c2d936bfceaaff39be1041ba7550212c0497e44647bdcbcaeb44a0d9c7e1d4a
 
-Package: termux-oracle-skill
-Version: 0.1.0
+Package: termux-docker-qemu
+Version: 0.9.4
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 6
-Depends: git, tar, curl, wget, termux-api, termux-tools, termux-services, termux-exec
-Suggests: i-haklab, antigravity-cli, opencode, claude-code, codebuff, freebuff, openclaw, mimocode, mistral-vibe
-Homepage: https://github.com/ivam3/termux-oracle
-Description: A termux skill for AI coding agents with all context about termux, i-Haklab and Ivam3 termux-packages.
-Filename: dists/stable/extras/binary-all/termux-oracle-skill_0.1.0_all.deb
-Size: 4540
-MD5Sum: 869ebfb73cf2a48e0347828198e57f11
-SHA1: 61d3e2a097a5dfa809df0c8df946fd98e8ff9afe
-SHA256: bd8b1aefaeb40045f5502fd1ab2230d911717e9ce3361020f465f234457820ee
-SHA512: c61f8215cfd09daafb2965115e6fc6e58b49789beb86a416024a858e72547be21c75b7c8317a32771d19be96f73424ac307d22e8254bd3c1d09701acaceaf086
+Installed-Size: 7
+Depends: openssh, wget, samba, procps, net-tools, xorg-xrandr, xfwm4, xdotool, termux-x11-nightly, qemu-utils, qemu-common, qemu-system-x86-64
+Suggests: i-haklab
+Homepage: https://www.docker.com/products/docker-desktop/
+Description: Manage docker containers from linux x86, x86_64, armv7 and aarch64 virtual machines using QEMU (Quick EMUlator)
+Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.9.4_all.deb
+Size: 5852
+MD5Sum: 1fe5b44cab5018ceefccdfea174bf898
+SHA1: fd8b8a844ae9642ba5410646635860af2ed2c845
+SHA256: ec8bef7804849837d0e6505a8cf19c80306d992f755ee86be14d21a8f6a73d72
+SHA512: 656b492992737b0b00b6efe87a55c81c95adf0cc6c9092ab7a2371025acda2e114cc4114e4aa5ded1b9aa467b67b6ff5b5e74aca3e736821860766705191f413
 
 Package: trape
 Version: 2.0
