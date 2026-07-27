@@ -136,37 +136,57 @@ case "$os" in
 
       echo -e "$G[+] Iniciando Alpine (VirtIO Boost)$W"
 
-      qemu-system-x86_64 \
-          -machine q35 \
-          -m $mRAM \
-          -smp cpus=$(nproc) \
-          -cpu qemu64,+avx,+avx2 \
-          $VGA \
-          -full-screen \
-          -usb \
-          -device usb-tablet \
-          -device virtio-rng-pci \
-          -drive if=pflash,format=raw,read-only=on,file=${PREFIX}/share/qemu/edk2-x86_64-code.fd \
-          -device virtio-blk-pci,drive=drive0,bootindex=0 \
-          -drive file="$DISK_IMG",if=none,id=drive0,format=$DISK_FMT,discard=on,cache=unsafe \
-          -netdev user,id=n1,net=${ipnet}0/24,dhcpstart=${ipnet}9,hostfwd=tcp::8080-:80,hostfwd=tcp::2222-:22,hostfwd=tcp::2121-:21,hostfwd=tcp::8000-:8000,hostfwd=tcp::5900-:5900,hostfwd=tcp::1080-:1080 \
-          -device virtio-net-pci,netdev=n1 \
-          -virtfs local,path="$mnt",mount_tag=termux2$os,security_model=passthrough \
-          $XorCLi &
+      if [[ "$XorCLi" == "-nographic" ]]; then
+          qemu-system-x86_64 \
+              -machine q35 \
+              -m $mRAM \
+              -smp cpus=$(nproc) \
+              -cpu qemu64,+avx,+avx2 \
+              $VGA \
+              -full-screen \
+              -usb \
+              -device usb-tablet \
+              -device virtio-rng-pci \
+              -drive if=pflash,format=raw,read-only=on,file=${PREFIX}/share/qemu/edk2-x86_64-code.fd \
+              -device virtio-blk-pci,drive=drive0,bootindex=0 \
+              -drive file="$DISK_IMG",if=none,id=drive0,format=$DISK_FMT,discard=on,cache=unsafe \
+              -netdev user,id=n1,net=${ipnet}0/24,dhcpstart=${ipnet}9,hostfwd=tcp::8080-:80,hostfwd=tcp::2222-:22,hostfwd=tcp::2121-:21,hostfwd=tcp::8000-:8000,hostfwd=tcp::5900-:5900,hostfwd=tcp::1080-:1080 \
+              -device virtio-net-pci,netdev=n1 \
+              -virtfs local,path="$mnt",mount_tag=termux2$os,security_model=passthrough \
+              $XorCLi
+      else
+          qemu-system-x86_64 \
+              -machine q35 \
+              -m $mRAM \
+              -smp cpus=$(nproc) \
+              -cpu qemu64,+avx,+avx2 \
+              $VGA \
+              -full-screen \
+              -usb \
+              -device usb-tablet \
+              -device virtio-rng-pci \
+              -drive if=pflash,format=raw,read-only=on,file=${PREFIX}/share/qemu/edk2-x86_64-code.fd \
+              -device virtio-blk-pci,drive=drive0,bootindex=0 \
+              -drive file="$DISK_IMG",if=none,id=drive0,format=$DISK_FMT,discard=on,cache=unsafe \
+              -netdev user,id=n1,net=${ipnet}0/24,dhcpstart=${ipnet}9,hostfwd=tcp::8080-:80,hostfwd=tcp::2222-:22,hostfwd=tcp::2121-:21,hostfwd=tcp::8000-:8000,hostfwd=tcp::5900-:5900,hostfwd=tcp::1080-:1080 \
+              -device virtio-net-pci,netdev=n1 \
+              -virtfs local,path="$mnt",mount_tag=termux2$os,security_model=passthrough \
+              $XorCLi &
 
-      QEMU_PID=$!
-      for i in $(seq 1 15); do
-          WID=$(xdotool search --pid "$QEMU_PID" 2>/dev/null | tail -1)
-          if [[ -n "$WID" ]]; then
-              xdotool windowactivate --sync "$WID" key Ctrl+Alt+F
-              break
+          QEMU_PID=$!
+          for i in $(seq 1 15); do
+              WID=$(xdotool search --pid "$QEMU_PID" 2>/dev/null | tail -1)
+              if [[ -n "$WID" ]]; then
+                  xdotool windowactivate --sync "$WID" key Ctrl+Alt+F
+                  break
+              fi
+              sleep 1
+          done
+
+          wait $QEMU_PID
+          if ! pgrep -f "termux-x11 ${DISPLAY_NUM}" &>/dev/null; then
+              pkill termux-x11
           fi
-          sleep 1
-      done
-
-      wait $QEMU_PID
-      if ! pgrep -f "termux-x11 ${DISPLAY_NUM}" &>/dev/null; then 
-          pkill termux-x11
       fi
       ;;
   *)
