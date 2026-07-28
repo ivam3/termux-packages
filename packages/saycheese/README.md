@@ -1,30 +1,30 @@
-# playwright-proot
+# saycheese
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Grab target's webcam shots right from the browser using a phishing page with access request to the camera.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install saycheese
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [saycheese](https://github.com/hangetzzu/saycheese) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, php, curl`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+saycheese [options]
 ```
 
 ## Part of i-HakLab

@@ -1,30 +1,30 @@
-# playwright-proot
+# stegsnow
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Steganography tool that conceals messages in ASCII text by appending whitespace to the ends of lines.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install stegsnow
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `20130616` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [stegsnow](http://www.darkside.com.au/snow) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`make, clang`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+stegsnow [options]
 ```
 
 ## Part of i-HakLab

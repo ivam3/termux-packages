@@ -1,30 +1,30 @@
-# playwright-proot
+# zaproxy
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install zaproxy
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `2.16.1` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [ZAP](https://www.zaproxy.org) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`wget, openjdk-21`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+zaproxy [options]
 ```
 
 ## Part of i-HakLab

@@ -1,30 +1,30 @@
-# playwright-proot
+# fuzzdb
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Dictionary of attack patterns and primitives for black-box application fault injection and resource discovery.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install fuzzdb
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `20.11.25` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [fuzzdb](https://github.com/fuzzdb-project/fuzzdb) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+fuzzdb-installer [options]
 ```
 
 ## Part of i-HakLab

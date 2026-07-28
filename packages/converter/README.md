@@ -1,30 +1,30 @@
-# playwright-proot
+# converter
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Unit conversion tool from the command line: currency, temperature, length, weight and more.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install converter
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [converter](https://github.com/Ivam3/converter) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+converter [options]
 ```
 
 ## Part of i-HakLab

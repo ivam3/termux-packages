@@ -1,30 +1,30 @@
-# playwright-proot
+# enum4linux
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Linux alternative to enum.exe for enumerating data from Windows and Samba hosts.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install enum4linux
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `0.9.1` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [enum4linux](https://github.com/CiscoCXSecurity/enum4linux) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`perl, dnsutils, samba, openldap`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+enum4linux-installer [options]
 ```
 
 ## Part of i-HakLab

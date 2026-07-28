@@ -1,30 +1,30 @@
-# playwright-proot
+# wpscan
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> WordPress security scanner — identify vulnerabilities in WordPress installations, plugins and themes.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install wpscan
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0-1` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [WPScan](https://github.com/wpscanteam/wpscan) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, ruby, ndk-multilib`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+wpscan-installer [options]
 ```
 
 ## Part of i-HakLab

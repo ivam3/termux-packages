@@ -1,30 +1,30 @@
-# playwright-proot
+# ransomux
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Educational ransomware simulator for Termux. Demonstrates file encryption/decryption mechanisms for security research.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install ransomux
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [ransomux](https://github.com/Ivam3/ransomux) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+ransomux [options]
 ```
 
 ## Part of i-HakLab

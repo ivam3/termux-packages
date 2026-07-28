@@ -1,30 +1,30 @@
-# playwright-proot
+# fake-sms
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> A small script to send messages anonymously. Very fast and secure SMS sending script.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install fake-sms
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `2.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [fake-sms](https://github.com/machine1337/fake-sms) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, python, python-pip`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+fake-sms [options]
 ```
 
 ## Part of i-HakLab

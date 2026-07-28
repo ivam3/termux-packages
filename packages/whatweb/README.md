@@ -1,30 +1,30 @@
-# playwright-proot
+# whatweb
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Next generation web scanner. WhatWeb identifies websites — CMS, blogging platforms, stats packages, JavaScript libraries, web servers, embedded devices and more.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install whatweb
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `0.6.3` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [WhatWeb](https://github.com/urbanadventurer/WhatWeb) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, ruby`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+whatweb [options]
 ```
 
 ## Part of i-HakLab

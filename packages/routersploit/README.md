@@ -1,30 +1,30 @@
-# playwright-proot
+# routersploit
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> The RouterSploit Framework is an open-source exploitation framework dedicated to embedded devices (routers, cameras, NAS).
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install routersploit
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `3.4.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [RouterSploit](https://github.com/threat9/routersploit) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, python, python-pip`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+routersploit [options]
 ```
 
 ## Part of i-HakLab

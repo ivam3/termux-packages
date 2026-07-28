@@ -1,30 +1,30 @@
-# playwright-proot
+# tangalanga
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Zoom conference scanner — discovers open Zoom meetings by brute-forcing meeting IDs.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install tangalanga
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [tangalanga](https://github.com/elpassion/tangalanga) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`golang, git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+tangalanga-installer [options]
 ```
 
 ## Part of i-HakLab

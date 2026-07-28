@@ -1,31 +1,35 @@
-# playwright-proot
+# unshc
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> UnSHc is a tool to unpack and decompile SHC-compiled shell scripts back to readable source.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install unshc
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `0.1` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [UnSHc](https://github.com/yanncam/UnSHc) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`wget`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+unshc-installer [options]
 ```
+
+## Suggestions
+
+Also install: `shc` — to compile shell scripts into binaries.
 
 ## Part of i-HakLab
 

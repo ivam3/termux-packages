@@ -10,6 +10,11 @@ rc-update add lightdm
 apk add polkit consolekit2
 echo "autologin-user=root" >> /etc/lightdm/lightdm.conf
 apk add firefox
+
+# VirtIO-GPU 3D (virgl): aceleración GPU via host
+# Requiere que QEMU use -device virtio-vga-gl y -display sdl,gl=on
+apk add mesa-dri-gallium mesa-egl mesa-gl
+
 echo "Installation finished."
 echo "The system will shutdown"
 echo "Re-start it with: termux-docker-qemu alpine x11 sdl"

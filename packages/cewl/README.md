@@ -1,30 +1,30 @@
-# playwright-proot
+# cewl
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> CeWL is a custom word list generator that spiders a given URL to a specified depth, optionally following external links, and returns a list of words.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install cewl
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `6.2.1` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [CeWL](https://digi.ninja/projects/cewl.php) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, ruby`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+cewl [options]
 ```
 
 ## Part of i-HakLab

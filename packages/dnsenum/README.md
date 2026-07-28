@@ -1,30 +1,30 @@
-# playwright-proot
+# dnsenum
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Multithreaded perl script to enumerate DNS information of a domain and to discover non-contiguous ip blocks.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install dnsenum
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.2.4` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [dnsenum](https://github.com/fwaeytens/dnsenum) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, perl`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+dnsenum [options]
 ```
 
 ## Part of i-HakLab

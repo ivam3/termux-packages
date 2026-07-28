@@ -1,30 +1,30 @@
-# playwright-proot
+# evilginx2
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Standalone man-in-the-middle attack framework used for phishing login credentials along with session cookies, allowing for the bypass of 2-factor authentication.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install evilginx2
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `2.4.2` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [evilginx2](https://github.com/kgretzky/evilginx2) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, golang, make, wget`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+evilginx2 [options]
 ```
 
 ## Part of i-HakLab

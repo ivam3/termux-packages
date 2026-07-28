@@ -1,30 +1,30 @@
-# playwright-proot
+# evilurl
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Generate unicode domains for IDN Homograph Attack and detect them.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install evilurl
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `3.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [EvilURL](https://github.com/UndeadSec/EvilURL) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python, python-pip, git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+evilurl [options]
 ```
 
 ## Part of i-HakLab

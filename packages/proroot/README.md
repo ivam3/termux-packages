@@ -1,30 +1,30 @@
-# playwright-proot
+# proroot
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Simplified proot-distro wrapper — quickly install and manage Linux distributions (Debian, Ubuntu, Kali, Alpine) inside Termux.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install proroot
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [proroot](https://github.com/Ivam3/proroot) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`proot-distro`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+proroot [options]
 ```
 
 ## Part of i-HakLab

@@ -1,30 +1,30 @@
-# playwright-proot
+# jython-lts
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Jython is an implementation of the Python programming language written in Java, enabling Python scripts to run on the JVM.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install jython-lts
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `2.7.4` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [jython.org](https://jython.org) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`wget, openjdk-21`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+jython [options]
 ```
 
 ## Part of i-HakLab

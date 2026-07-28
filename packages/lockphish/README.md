@@ -1,30 +1,30 @@
-# playwright-proot
+# lockphish
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Lockphish is the first phishing attack tool for the lock screen, designed to capture Windows, Android and iPhone passcodes.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install lockphish
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [lockphish](https://github.com/JasonJerry/lockphish) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, php, curl`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+lockphish [options]
 ```
 
 ## Part of i-HakLab

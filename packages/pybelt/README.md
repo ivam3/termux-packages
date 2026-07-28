@@ -1,30 +1,30 @@
-# playwright-proot
+# pybelt
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> The hackers tool belt — an all-in-one hacking toolkit: port scanner, hash cracker, SQL injection tester, XSS scanner and dorker.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install pybelt
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.5.6` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [Pybelt](https://github.com/Ekultek/Pybelt) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python, python-pip, git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+pybelt [options]
 ```
 
 ## Part of i-HakLab

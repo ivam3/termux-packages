@@ -1,30 +1,30 @@
-# playwright-proot
+# ghost
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Ghost Framework is an Android post-exploitation framework that exploits the Android Debug Bridge to remotely access and control Android devices.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install ghost
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [ghost](https://github.com/EntySec/ghost) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python, python-pip, git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+ghost [options]
 ```
 
 ## Part of i-HakLab

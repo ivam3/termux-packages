@@ -1,31 +1,33 @@
-# playwright-proot
+# adbfastboot
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Android Debug Bridge (adb) and fastboot tools from Android platform-tools.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install adbfastboot
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
+| Version | `33.0.3` |
 | Architecture | `aarch64` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [platform-tools](https://developer.android.com/tools/releases/platform-tools) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`wget`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+adbfastboot-installer
 ```
+
+> Run the installer first to set up adb and fastboot binaries on your system.
 
 ## Part of i-HakLab
 

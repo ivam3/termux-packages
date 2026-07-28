@@ -1,30 +1,30 @@
-# playwright-proot
+# cloudbunny
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> CloudBunny is a tool used to hunt the real IP of a server protected by a WAF (Cloudflare, Sucuri, Incapsula).
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install cloudbunny
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [CloudBunny](https://github.com/Warflop/CloudBunny) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python, python-pip, git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+cloudbunny [options]
 ```
 
 ## Part of i-HakLab

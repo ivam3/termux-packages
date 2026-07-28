@@ -1,30 +1,30 @@
-# playwright-proot
+# slowhttptest
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Application layer DoS attack simulator — tests servers for Slowloris, Slow HTTP POST, Slow Read and Apache Range Header attacks.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install slowhttptest
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.8.2` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [slowhttptest](https://github.com/shekyan/slowhttptest) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`make, clang, libssl, openssl`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+slowhttptest [options]
 ```
 
 ## Part of i-HakLab

@@ -1,30 +1,30 @@
-# playwright-proot
+# quack
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Quack Toolkit — a set of tools for information gathering: IP info, DNS lookup, port scanning and more.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install quack
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [quack](https://github.com/entynetproject/quack) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python, python-pip, git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+quack [options]
 ```
 
 ## Part of i-HakLab

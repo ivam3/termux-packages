@@ -1,30 +1,30 @@
-# opencode
+# openclaw
 
-> OpenCode — open source AI coding agent. Works with any model provider (OpenAI, Anthropic, Groq, Ollama). Runs in the terminal.
+> OpenRouter-powered AI coding agent for Termux. Access multiple AI models (GPT-4, Claude, Mistral) from a single terminal interface.
 
 ## Installation
 
 ```bash
-pkg install opencode
+pkg install openclaw
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `0.3.86` |
+| Version | `0.1.0` |
 | Architecture | `aarch64` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [opencode.ai](https://opencode.ai) |
+| Homepage | [openclaw](https://github.com/Ivam3/openclaw) |
 
 ## Dependencies
 
-`glibc, golang, wget, tar`
+`glibc, nodejs-lts, wget, tar`
 
 ## Usage
 
 ```bash
-opencode [options]
+openclaw [options]
 ```
 
 ## Suggestions

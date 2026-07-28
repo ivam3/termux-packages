@@ -1,30 +1,30 @@
-# playwright-proot
+# openjdk-21
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> OpenJDK 21 LTS for Android/Termux via glibc-runner. Enables Java applications including Metasploit, Ghidra, Burp Suite and more.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install openjdk-21
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
+| Version | `21.0.5` |
 | Architecture | `aarch64` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [openjdk.org](https://openjdk.org) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`wget, tar`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+java [options]
 ```
 
 ## Part of i-HakLab

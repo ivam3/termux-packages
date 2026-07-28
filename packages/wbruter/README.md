@@ -1,31 +1,35 @@
-# playwright-proot
+# wbruter
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> WBRUTER is a tool that brute-forces web-based logins, PIN codes and more using wordlists.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install wbruter
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `3.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [WBRUTER](https://github.com/wuseman/WBRUTER) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+wbruter-installer [options]
 ```
+
+## Suggestions
+
+Also install: `adbfastboot`
 
 ## Part of i-HakLab
 

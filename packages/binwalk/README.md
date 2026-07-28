@@ -1,30 +1,30 @@
-# playwright-proot
+# binwalk
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Fast, easy to use tool for analyzing, reverse engineering, and extracting firmware images.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install binwalk
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `2.3.4` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [binwalk](https://github.com/ReFirmLabs/binwalk) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, python, python-pip`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+binwalk [options]
 ```
 
 ## Part of i-HakLab

@@ -1,30 +1,30 @@
-# playwright-proot
+# ovh-ttyrec
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> OVH fork of ttyrec — a terminal session recorder and player. Records and replays shell sessions.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install ovh-ttyrec
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.2.1` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [ovh-ttyrec](https://github.com/ovh/ovh-ttyrec) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`make, clang`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+ttyrec [options]
 ```
 
 ## Part of i-HakLab

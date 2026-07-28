@@ -1,30 +1,30 @@
-# playwright-proot
+# redhawk
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> An all in one tool for Information Gathering and Vulnerability Scanning. Scans for SQLI, XSS, LFI, RFI, Clickjacking and more.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install redhawk
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `2.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [RED_HAWK](https://github.com/Tuhinshubhra/RED_HAWK) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`php, git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+redhawk [options]
 ```
 
 ## Part of i-HakLab

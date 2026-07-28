@@ -1,31 +1,33 @@
-# playwright-proot
+# amass
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> In-depth attack surface mapping and asset discovery.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install amass
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `v4.2.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [OWASP Amass](https://github.com/OWASP/Amass) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, golang, make, wget`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+amass-installer
 ```
+
+> Run the installer first, then use `amass [options]` to perform attack surface mapping and subdomain enumeration.
 
 ## Part of i-HakLab
 

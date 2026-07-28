@@ -1,30 +1,30 @@
-# playwright-proot
+# webscan
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Lightweight web scanner — gathers information about a web target: headers, technologies, directories and vulnerabilities.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install webscan
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.6` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [webscan](https://github.com/Fenrir-00/investigar-web) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python, git, dirb`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+webscan-installer [options]
 ```
 
 ## Part of i-HakLab

@@ -1,30 +1,30 @@
-# playwright-proot
+# bitb
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Browser In The Browser (BITB) attack templates for advanced phishing.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install bitb
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [BITB](https://github.com/mrd0x/BITB) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, php`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+bitb [options]
 ```
 
 ## Part of i-HakLab

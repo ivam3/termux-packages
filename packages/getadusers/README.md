@@ -1,30 +1,30 @@
-# playwright-proot
+# getadusers
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Impacket GetADUsers.py — queries Active Directory for users via LDAP.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install getadusers
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `0.11.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [impacket](https://github.com/SecureAuthCorp/impacket) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python, python-pip, wget, rust`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+getadusers-installer [options]
 ```
 
 ## Part of i-HakLab

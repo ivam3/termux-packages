@@ -1,30 +1,30 @@
-# playwright-proot
+# ntlmrelayx
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Impacket ntlmrelayx — NTLM relay attack tool. Relays NTLM authentication to various protocols.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install ntlmrelayx
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `0.11.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [impacket](https://github.com/SecureAuthCorp/impacket) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python, python-pip, wget, rust`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+ntlmrelayx-installer [options]
 ```
 
 ## Part of i-HakLab

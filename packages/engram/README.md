@@ -1,30 +1,30 @@
-# playwright-proot
+# engram
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Persistent memory system for AI coding agents.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install engram
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.16.3-1` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [engram](https://github.com/Gentleman-Programming/engram) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, golang`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+engram [options]
 ```
 
 ## Part of i-HakLab

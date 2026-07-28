@@ -1,30 +1,30 @@
-# playwright-proot
+# ipgeolocation
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Retrieve IP geolocation information: city, country, latitude, longitude, organization, and ASN.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install ipgeolocation
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.3` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [IPGeoLocation](https://github.com/maldevel/IPGeoLocation) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python, python-pip, git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+ipgeolocation [options]
 ```
 
 ## Part of i-HakLab

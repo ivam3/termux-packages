@@ -1,30 +1,30 @@
-# playwright-proot
+# userrecon
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Find usernames across over 75 social networks.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install userrecon
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [userrecon](https://github.com/issamelferkh/userrecon) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+userrecon-installer [options]
 ```
 
 ## Part of i-HakLab

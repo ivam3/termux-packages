@@ -1,30 +1,30 @@
-# playwright-proot
+# freebuff
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> AI coding assistant that edits your codebase through natural language instructions. A codebuff free version with ad-supported — no subscription, no credits, no configuration.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install freebuff
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
+| Version | `0.0.119-1` |
 | Architecture | `aarch64` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [codebuff-community](https://github.com/CodebuffAI/codebuff-community) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`glibc, clang, python, jq, wget, tar`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+freebuff [options]
 ```
 
 ## Part of i-HakLab

@@ -1,30 +1,30 @@
-# playwright-proot
+# recondog
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Reconnaissance Swiss Army Knife — OSINT tool for quick info gathering: whois, port scan, DNS lookup, subdomain finder and more.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install recondog
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [ReconDog](https://github.com/s0md3v/ReconDog) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python, git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+recondog [options]
 ```
 
 ## Part of i-HakLab

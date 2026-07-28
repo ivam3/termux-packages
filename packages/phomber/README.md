@@ -1,30 +1,30 @@
-# playwright-proot
+# phomber
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Get information about any phone number from the internet — operator, region, timezone, and more.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install phomber
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.5.1` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [phomber](https://github.com/s41r4j/phomber) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python, python-pip, git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+phomber [options]
 ```
 
 ## Part of i-HakLab

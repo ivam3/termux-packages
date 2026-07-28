@@ -1,30 +1,30 @@
-# playwright-proot
+# xml2axml
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Encoding xml to axml OR decoding axml to xml — essential for Android APK reverse engineering.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install xml2axml
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `2.0.1` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [xml2axml](https://github.com/codyi96/xml2axml) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`wget, openjdk-21`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+xml2axml [options]
 ```
 
 ## Part of i-HakLab

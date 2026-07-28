@@ -1,30 +1,30 @@
-# playwright-proot
+# seeker
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Accurately locate smartphones using social engineering. Seeker hosts a fake website on ngrok and uses the HTML Geolocation API to grab the target's location.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install seeker
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `2.4.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [Seeker](https://github.com/thewhiteh4t/seeker) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, python, python-pip, php`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+seeker [options]
 ```
 
 ## Part of i-HakLab

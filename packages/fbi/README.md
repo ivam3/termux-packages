@@ -1,30 +1,30 @@
-# playwright-proot
+# fbi
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Accurate facebook account information gathering.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install fbi
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [fbi](https://github.com/xHak9x/fbi) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, python2`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+fbi-installer [options]
 ```
 
 ## Part of i-HakLab

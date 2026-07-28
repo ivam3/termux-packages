@@ -1,30 +1,30 @@
-# playwright-proot
+# sayhello
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Simple hello-world demo package for the Ivam3 termux-packages APT repository.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install sayhello
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [sayhello](https://github.com/Ivam3/sayhello) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`curl`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+sayhello [options]
 ```
 
 ## Part of i-HakLab

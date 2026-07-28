@@ -1,30 +1,30 @@
-# playwright-proot
+# kerbrute
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> A fast Kerberos pre-auth bruteforcing tool for enumerating valid Active Directory users and spraying passwords.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install kerbrute
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0.3` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [kerbrute](https://github.com/ropnop/kerbrute) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`golang, git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+kerbrute-installer [options]
 ```
 
 ## Part of i-HakLab

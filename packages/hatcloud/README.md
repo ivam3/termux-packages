@@ -1,30 +1,30 @@
-# playwright-proot
+# hatcloud
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Bypass Cloudflare to find real IP address. Makes requests to crimeflare.com.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install hatcloud
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `4.5` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [HatCloud](https://github.com/HatBashBR/HatCloud) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`ruby, git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+hatcloud [options]
 ```
 
 ## Part of i-HakLab

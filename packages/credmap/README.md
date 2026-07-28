@@ -1,30 +1,30 @@
-# playwright-proot
+# credmap
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> The credential mapper — an OSINT tool that tests discovered credentials across multiple websites.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install credmap
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `0.1` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [credmap](https://github.com/lightos/credmap) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, python2`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+credmap [options]
 ```
 
 ## Part of i-HakLab

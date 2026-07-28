@@ -1,30 +1,30 @@
-# playwright-proot
+# gobuster
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Directory/file, DNS and VHost busting tool written in Go.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install gobuster
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `3.6.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [gobuster](https://github.com/OJ/gobuster) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, golang, make`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+gobuster-installer [options]
 ```
 
 ## Part of i-HakLab

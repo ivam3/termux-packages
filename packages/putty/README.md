@@ -1,30 +1,30 @@
-# playwright-proot
+# putty
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> PuTTY for Android/Termux — SSH, Telnet and serial terminal client. Runs in graphical mode via X11.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install putty
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `0.81` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`wget, openjdk-21`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+putty [options]
 ```
 
 ## Part of i-HakLab

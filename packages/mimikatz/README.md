@@ -1,30 +1,30 @@
-# playwright-proot
+# mimikatz
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> A post-exploitation credential harvesting tool for Windows. Extracts plaintext passwords, hashes, PINs and Kerberos tickets from memory.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install mimikatz
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `2.2.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [mimikatz](https://github.com/gentilkiwi/mimikatz) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`wget`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+mimikatz-installer [options]
 ```
 
 ## Part of i-HakLab

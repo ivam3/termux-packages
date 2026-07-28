@@ -1,30 +1,30 @@
-# playwright-proot
+# androbugs
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> An efficient Android vulnerability scanner that helps developers or hackers find potential security vulnerabilities in Android applications.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install androbugs
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `2.0.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [AndroBugs Framework](https://github.com/AndroBugs/AndroBugs_Framework) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, python2`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+androbugs [options]
 ```
 
 ## Part of i-HakLab

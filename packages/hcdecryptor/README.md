@@ -1,30 +1,30 @@
-# playwright-proot
+# hcdecryptor
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> HashCat output decryptor — parses hashcat potfile and maps cracked hashes to their plaintext passwords.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install hcdecryptor
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [hcdecryptor](https://github.com/Ivam3/hcdecryptor) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+hcdecryptor [options]
 ```
 
 ## Part of i-HakLab

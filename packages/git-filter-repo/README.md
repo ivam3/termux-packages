@@ -1,30 +1,30 @@
-# playwright-proot
+# git-filter-repo
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Quickly rewrite git repository history (filter-branch replacement with better performance and safety).
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install git-filter-repo
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `2.47.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [git-filter-repo](https://github.com/newren/git-filter-repo) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python, git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+git-filter-repo [options]
 ```
 
 ## Part of i-HakLab

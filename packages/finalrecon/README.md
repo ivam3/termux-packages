@@ -1,30 +1,30 @@
-# playwright-proot
+# finalrecon
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> FinalRecon is an all in one automatic web reconnaissance tool written in python.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install finalrecon
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.1.7` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [FinalRecon](https://github.com/thewhiteh4t/FinalRecon) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, python, python-pip, python-cryptography`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+finalrecon [options]
 ```
 
 ## Part of i-HakLab

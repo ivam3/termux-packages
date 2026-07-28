@@ -1,30 +1,30 @@
-# playwright-proot
+# acccheck
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> A password dictionary attack tool that targets windows authentication via the SMB protocol.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install acccheck
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `0.2.1` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [acccheck](https://github.com/quasar98/acccheck) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`samba`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+acccheck [options]
 ```
 
 ## Part of i-HakLab

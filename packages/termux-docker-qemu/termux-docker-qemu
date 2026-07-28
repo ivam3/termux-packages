@@ -29,7 +29,7 @@ choose_x11_mode() {
     echo
     echo "┌─────────────────────────────────────────┐"
     echo "│   termux-docker-qemu - Modo Grafico     │"
-    echo "│   Sistema: $os                          │"
+    echo "│   Sistema: $os                       │"
     echo "├─────────────────────────────────────────┤"
     echo "│  1) SDL         - Renderizado directo   │"
     echo "│     (DISPLAY=:0 + Termux:X11)           │"
@@ -61,17 +61,17 @@ setup_termux_x11() {
     fi
 
     export DISPLAY="${DISPLAY_NUM}"
-    XorCLi="-display sdl,window-close=on"
+    XorCLi="-display sdl,gl=on,window-close=on"
 
     if command -v xrandr &>/dev/null; then
         read XRES YRES <<< $(xrandr --current 2>/dev/null | grep '*' | awk '{print $1}' | tr 'x' ' ' | head -1)
     fi
 
     if [[ -n "$XRES" && -n "$YRES" ]]; then
-        VGA="-device virtio-vga,xres=$XRES,yres=$YRES"
+        VGA="-device virtio-vga-gl,xres=$XRES,yres=$YRES"
         echo -e "${G}[+] Resolution detectada: ${XRES}x${YRES}${W}"
     else
-        VGA="-vga virtio"
+        VGA="-device virtio-vga-gl"
         echo -e "${Y}[!] No se pudo detectar resolution, usando virtio por defecto${W}"
     fi
 

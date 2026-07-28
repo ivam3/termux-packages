@@ -1,30 +1,30 @@
-# playwright-proot
+# hydra-gtk
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> THC-Hydra GTK — graphical interface for the Hydra network login cracker.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install hydra-gtk
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `9.5` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [thc-hydra](https://github.com/vanhauser-thc/thc-hydra) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`hydra`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+hydra-gtk [options]
 ```
 
 ## Part of i-HakLab

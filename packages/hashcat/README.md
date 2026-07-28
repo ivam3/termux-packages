@@ -1,30 +1,30 @@
-# playwright-proot
+# hashcat
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> World's fastest and most advanced password recovery utility supporting 300+ highly optimized hashing algorithms.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install hashcat
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `6.2.6` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [hashcat.net](https://hashcat.net) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`wget`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+hashcat-installer [options]
 ```
 
 ## Part of i-HakLab

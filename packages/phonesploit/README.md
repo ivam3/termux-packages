@@ -1,30 +1,30 @@
-# playwright-proot
+# phonesploit
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> An all-in-one hacking tool to remotely exploit Android devices via ADB with a simple interactive menu.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install phonesploit
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `3.0.6` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [PhoneSploit-Pro](https://github.com/AzeemIdrisi/PhoneSploit-Pro) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python, python-pip, git, adbfastboot, scrcpy`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+phonesploit [options]
 ```
 
 ## Part of i-HakLab

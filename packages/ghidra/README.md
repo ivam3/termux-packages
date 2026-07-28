@@ -1,30 +1,30 @@
-# playwright-proot
+# ghidra
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> A software reverse engineering (SRE) framework developed by NSA. Supports disassembly, decompilation, scripting, and graphing.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install ghidra
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `11.1.2` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [ghidra-sre.org](https://ghidra-sre.org) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`wget, openjdk-21`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+ghidra-installer [options]
 ```
 
 ## Part of i-HakLab

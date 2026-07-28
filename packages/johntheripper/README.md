@@ -1,30 +1,30 @@
-# playwright-proot
+# johntheripper
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> John the Ripper is a fast password cracker, currently available for many flavors of Unix, macOS, Windows, and more.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install johntheripper
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.9.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [openwall.com/john](https://www.openwall.com/john) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, make, clang, libssl, zlib`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+john-installer [options]
 ```
 
 ## Part of i-HakLab

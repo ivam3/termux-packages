@@ -1,30 +1,30 @@
-# playwright-proot
+# hermes-agent
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> A lightweight Termux automation agent that bridges AI coding assistants with Android device capabilities via Termux-API.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install hermes-agent
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `0.1.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [hermes-agent](https://github.com/Ivam3/hermes-agent) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, curl, wget, termux-api, termux-tools`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+hermes-agent [options]
 ```
 
 ## Part of i-HakLab

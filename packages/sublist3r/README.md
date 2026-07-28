@@ -1,30 +1,30 @@
-# playwright-proot
+# sublist3r
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Fast subdomains enumeration tool using OSINT. Uses Google, Yahoo, Bing, Baidu, Ask, Netcraft, DNSdumpster, VirusTotal, Threat Crowd, SSL Certificates and PassiveDNS.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install sublist3r
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [Sublist3r](https://github.com/aboul3la/Sublist3r) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python, python-pip, git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+sublist3r [options]
 ```
 
 ## Part of i-HakLab

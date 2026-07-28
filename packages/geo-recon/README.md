@@ -1,30 +1,30 @@
-# playwright-proot
+# geo-recon
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> An OSINT CLI tool designed to fast track IP Reputation and Geo-location look up for Security Analysts.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install geo-recon
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [geo-recon](https://github.com/radioactivetobi/geo-recon) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, python`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+geo-recon-installer [options]
 ```
 
 ## Part of i-HakLab

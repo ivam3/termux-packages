@@ -1,30 +1,30 @@
-# playwright-proot
+# ghunt
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> GHunt is an offensive Google framework, with multiple modules, allowing to investigate Google accounts, get target's information, documents and play with Google APIs.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install ghunt
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `2.0.3` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [GHunt](https://github.com/mxrch/GHunt) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python, python-pip, git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+ghunt [options]
 ```
 
 ## Part of i-HakLab

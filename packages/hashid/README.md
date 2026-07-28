@@ -1,30 +1,30 @@
-# playwright-proot
+# hashid
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Identify the different types of hashes used to encrypt data and especially passwords.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install hashid
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `3.1.4` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [hashID](https://github.com/psypanda/hashID) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+hashid [options]
 ```
 
 ## Part of i-HakLab

@@ -1,30 +1,30 @@
-# playwright-proot
+# nexphisher
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Advanced phishing tool with 30+ templates including Facebook, Instagram, Google, Snapchat, GitHub, Twitter and more.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install nexphisher
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `6.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [nexphisher](https://github.com/htr-tech/nexphisher) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, php, curl`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+nexphisher [options]
 ```
 
 ## Part of i-HakLab

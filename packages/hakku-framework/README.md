@@ -1,30 +1,30 @@
-# playwright-proot
+# hakku-framework
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Simple and powerful penetration testing framework with a terminal interface similar to Metasploit.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install hakku-framework
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `3.5.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [hakkuframework](https://github.com/4shadoww/hakkuframework) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python, python-pip, git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+hakku-framework [options]
 ```
 
 ## Part of i-HakLab

@@ -1,30 +1,30 @@
-# playwright-proot
+# osintgram
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> OSINT tool on Instagram to collect, analyze and run reconnaissance on the target profile and its followers/following.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install osintgram
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.3` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [Osintgram](https://github.com/Datalux/Osintgram) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, python, python-pip`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+osintgram [options]
 ```
 
 ## Part of i-HakLab

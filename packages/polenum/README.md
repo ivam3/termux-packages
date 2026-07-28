@@ -1,30 +1,30 @@
-# playwright-proot
+# polenum
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Polenum extracts the password policy information from a Windows machine. Uses the Impacket library.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install polenum
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `0.2.1` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [polenum](https://github.com/Wh1t3Fox/polenum) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python, python-pip, samba`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+polenum [options]
 ```
 
 ## Part of i-HakLab

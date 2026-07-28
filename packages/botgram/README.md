@@ -1,30 +1,30 @@
-# playwright-proot
+# botgram
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Telegram bot framework for Node.js with minimal configuration.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install botgram
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `2.0.1` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [botgram](https://github.com/nicowillis/botgram) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`nodejs, npm, git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+botgram [options]
 ```
 
 ## Part of i-HakLab

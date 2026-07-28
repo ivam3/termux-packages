@@ -1,30 +1,30 @@
-# playwright-proot
+# vulnx
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> An Intelligent Bot Auto Shell Injector that detects vulnerabilities in multiple types of CMS (WordPress, Joomla, Drupal, OpenCart).
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install vulnx
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `2.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [vulnx](https://github.com/anouarbensaad/vulnx) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, python, python-pip`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+vulnx [options]
 ```
 
 ## Part of i-HakLab

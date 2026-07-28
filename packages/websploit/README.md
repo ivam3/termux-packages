@@ -1,30 +1,30 @@
-# playwright-proot
+# websploit
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Advanced MITM framework — network sniffing, web exploitation and man-in-the-middle attacks.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install websploit
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `4.0.4` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [WebSploit](https://github.com/The404Hacking/websploit) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python, python-pip, git`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+websploit-installer [options]
 ```
 
 ## Part of i-HakLab

@@ -1,30 +1,30 @@
-# playwright-proot
+# gophish
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Open-source phishing framework — build, test and manage phishing campaigns with a full web UI.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install gophish
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `0.12.1` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [getgophish.com](https://getgophish.com) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, golang, make`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+gophish-installer [options]
 ```
 
 ## Part of i-HakLab

@@ -1,30 +1,30 @@
-# playwright-proot
+# penelope
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Penelope is an advanced shell handler designed to be used in CTFs and pentests as well as in real engagements — upgrades reverse shells automatically.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install penelope
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `0.9.2` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [penelope](https://github.com/brightio/penelope) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+penelope [options]
 ```
 
 ## Part of i-HakLab

@@ -1,30 +1,30 @@
-# playwright-proot
+# infoga
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Email information gathering tool that collects emails, IP, URL from different public sources (Google, Bing, Yahoo, etc.).
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install infoga
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [Infoga](https://github.com/m4ll0k/Infoga) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, python2`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+infoga [options]
 ```
 
 ## Part of i-HakLab

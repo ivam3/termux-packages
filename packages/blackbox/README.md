@@ -1,30 +1,30 @@
-# playwright-proot
+# blackbox
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Safely store secrets in git — encrypt files with GPG, only authorized people can decrypt.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install blackbox
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [blackbox](https://github.com/StackExchange/blackbox) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, gnupg`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+blackbox [options]
 ```
 
 ## Part of i-HakLab

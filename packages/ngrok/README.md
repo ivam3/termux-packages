@@ -1,30 +1,30 @@
-# playwright-proot
+# ngrok
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Secure tunnels to localhost. Expose local servers behind NATs and firewalls to the public internet over secure tunnels.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install ngrok
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
+| Version | `3.22.1` |
 | Architecture | `aarch64` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [ngrok.com](https://ngrok.com) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`wget`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+ngrok [options]
 ```
 
 ## Part of i-HakLab

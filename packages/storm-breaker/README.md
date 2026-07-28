@@ -1,30 +1,30 @@
-# playwright-proot
+# storm-breaker
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Social engineering tool — access microphone, camera and GPS of target devices through browser-based attacks.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install storm-breaker
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `2.1` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [Storm-Breaker](https://github.com/ultrasecurity/Storm-Breaker) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python, python-pip, git, nodejs, npm`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+storm-breaker [options]
 ```
 
 ## Part of i-HakLab

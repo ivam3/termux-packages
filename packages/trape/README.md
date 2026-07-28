@@ -1,30 +1,30 @@
-# playwright-proot
+# trape
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> People tracker on the Internet — tracks target's real location and social movements in real-time.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install trape
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `2.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [trape](https://github.com/jofpin/trape) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, python, python-pip`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+trape [options]
 ```
 
 ## Part of i-HakLab

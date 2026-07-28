@@ -1,30 +1,30 @@
-# playwright-proot
+# axmlprinter2
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Prints the content of binary XML files from Android in human-readable format.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install axmlprinter2
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `0.1.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [axml-printer2](https://github.com/rchiossi/axml-printer2) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`wget, openjdk-21`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+axmlprinter2 [options]
 ```
 
 ## Part of i-HakLab

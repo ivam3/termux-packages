@@ -1,30 +1,30 @@
-# playwright-proot
+# DoS-A-Tool
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> A multipurpose Denial of Service toolkit designed to automate most of the DoS attacks currently available on the internet.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install DoS-A-Tool
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `2.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [dos-a-tool](https://github.com/rlyonheart/dos-a-tool) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`git, python, python-pip`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+DoS-A-Tool [options]
 ```
 
 ## Part of i-HakLab

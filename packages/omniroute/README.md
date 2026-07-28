@@ -1,30 +1,30 @@
-# playwright-proot
+# omniroute
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Multi-proxy routing manager for Termux — route traffic through TOR, SOCKS5, HTTP and chain proxies with a single command.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+pkg install omniroute
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
-| Architecture | `aarch64` |
+| Version | `1.0.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [playwright.dev](https://playwright.dev) |
+| Homepage | [omniroute](https://github.com/Ivam3/omniroute) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`python, curl, wget, tor, proxychains-ng`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+omniroute [options]
 ```
 
 ## Part of i-HakLab
