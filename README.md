@@ -118,11 +118,11 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [spix](https://github.com/VictorH028/spix) | A command line (CLI) tool written in C++ that displays an animated spinner while a background process is running. |
 | [sqliv](https://github.com/the-robot/sqliv) | Massive SQL injection vulnerability scanner. |
 | [stegsnow](https://www.kali.org/tools/stegsnow/) | Hide messages in ASCII text by appending whitespaces to the end of lines |
-| [storm-breaker](https://https://github.com/ultrasecurity/Storm-Breaker) | Social engineering tool [Access Webcam & Microphone & Location Finder] With {Py,JS,PHP} |
+| [storm-breaker](https://github.com/ultrasecurity/Storm-Breaker) | Social engineering tool [Access Webcam & Microphone & Location Finder] With {Py,JS,PHP} |
 | [sublist3r](https://github.com/aboul3la/Sublist3r) | Fast subdomains enumeration tool for penetration testers. |
-| [tangalanga](github.com/elcuervo/tangalanga) | The Zoom conference scanner hacking tool. |
-| [termux-desktop-xfce](https://github.com/Yisus7u7/termux-desktop-xfce) | Set up a beautiful xfce desktop in termux. |
-| [termux-docker-qemu](https://telegra.ph/Docker-en-Android-10-26) | Provide an additional layer of application virtualization with Linux kernel resource isolation features. |
+| [tangalanga](https://github.com/elcuervo/tangalanga) | The Zoom conference scanner hacking tool. |
+| [termux-desktop-xfce](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/termux-desktop-xfce/README.md) | Set up a beautiful xfce desktop in termux. |
+| [termux-docker-qemu](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/termux-docker-qemu/README.md) | Manage Docker containers from Linux VMs (x86/x86_64/ARMv7/AArch64) using QEMU. Includes VirtIO-GPU acceleration via virgl. |
 | [termux-oracle-skill](https://github.com/ivam3/termux-oracle) | Termux skill for AI coding agents with all context about termux, i-Haklab and Ivam3 termux-packages. |
 | [trape](https://github.com/jofpin/trape) | OSINT analysis and research tool. |
 | [unshc](https://github.com/yanncam/UnSHc) | The Shell Script UnCompiler (UNSHC) decode and decrypt SHC file on X86/x64 architecture. |

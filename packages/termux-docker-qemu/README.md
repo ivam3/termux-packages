@@ -15,7 +15,7 @@ pkg install termux-docker-qemu
 | Version | `0.9.4` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [Docker Desktop](https://www.docker.com/products/docker-desktop/) |
+| Homepage | [termux-docker-qemu](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/termux-docker-qemu/README.md) |
 
 ## Dependencies
 
