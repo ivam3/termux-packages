@@ -179,4 +179,4 @@ yes|apt install gnupg && mkdir -p $PREFIX/etc/apt/sources.list.d && curl -s http
 
 GNU
 
-##### Follow me on [Socials Network](https://link.space/@ivam3)
+##### Follow me on [Socials Network](https://ivam3.github.io)

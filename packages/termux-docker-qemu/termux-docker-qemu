@@ -21,7 +21,7 @@ VGA="-vga none"
 show_usage() {
     echo -e "\e[33mUsage:\e[0m termux-docker-qemu <os>"
     echo "       termux-docker-qemu <os> x11"
-    echo "       termux-docker-qemu <os> x11 vnc|sdl"
+    echo "       termux-docker-qemu <os> x11 vnc|sdl|tcp"
 }
 
 choose_x11_mode() {
@@ -31,20 +31,23 @@ choose_x11_mode() {
     echo "│   termux-docker-qemu - Modo Grafico     │"
     echo "│   Sistema: $os                       │"
     echo "├─────────────────────────────────────────┤"
-    echo "│  1) SDL         - Renderizado directo   │"
+    echo "│  1) SDL         - Renderizado virtio-gl │"
     echo "│     (DISPLAY=:0 + Termux:X11)           │"
     echo "│  2) VNC         - Puerto 5900           │"
     echo "│     (Requiere RealVNC viewer app)       │"
+    echo "│  3) TCP Bridge  - Direct X11 Socket     │"
+    echo "│     (socat + DISPLAY=10.0.2.2:0)        │"
     echo "└─────────────────────────────────────────┘"
-    read -p $'\e[33mSelecciona una opcion [1-2]:\e[0m ' choice
+    read -p $'\e[33mSelecciona una opcion [1-3]:\e[0m ' choice
     case "$choice" in
         1|sdl) graphic_mode="sdl" ;;
         2|vnc) graphic_mode="vnc" ;;
+        3|tcp) graphic_mode="tcp" ;;
         *) echo -e "${R}Opcion invalida${W}"; exit 5 ;;
     esac
 }
 
-setup_termux_x11() {
+ensure_termux_x11() {
     if ! pgrep -f "com.termux.x11" &>/dev/null; then
         echo -e "${G}[+] Abriendo app Termux:X11...${W}"
         am start -n com.termux.x11/com.termux.x11.MainActivity 2>/dev/null || true
@@ -59,7 +62,26 @@ setup_termux_x11() {
         done 
         xfwm4 --display=${DISPLAY_NUM} & >/dev/null
     fi
+}
 
+setup_termux_x11_tcp() {
+    ensure_termux_x11
+    local x11_socket="${PREFIX}/tmp/.X11-unix/X${DISPLAY_NUM#:}"
+    if ! pgrep -f "socat.*LISTEN:6000" &>/dev/null; then
+        echo -e "${G}[+] Iniciando bridge socat TCP 6000 -> ${x11_socket}...${W}"
+        socat TCP-LISTEN:6000,fork,reuseaddr UNIX-CONNECT:"${x11_socket}" &>/dev/null &
+    fi
+    host_ip="${ipnet}2"
+    [[ -d "$mnt" ]] || mkdir -p "$mnt"
+    echo "export DISPLAY=${host_ip}:0" > "$mnt/x11_env.sh" 2>/dev/null || true
+    XorCLi="-nographic"
+    VGA="-vga none"
+    echo -e "${G}[+] Modo TCP Bridge listo (socat TCP:6000)${W}"
+    echo -e "${Y}[!] En Alpine ejecuta: source /termux2alpine/x11_env.sh (o export DISPLAY=${host_ip}:0)${W}"
+}
+
+setup_termux_x11() {
+    ensure_termux_x11
     export DISPLAY="${DISPLAY_NUM}"
     XorCLi="-display sdl,gl=on,window-close=on"
 
@@ -83,6 +105,7 @@ setup_termux_x11() {
 # termux-docker-qemu <os> x11                -> menu interactivo
 # termux-docker-qemu <os> x11 vnc            -> VNC
 # termux-docker-qemu <os> x11 sdl            -> SDL (termux-x11)
+# termux-docker-qemu <os> x11 tcp            -> TCP Direct Bridge (socat)
 
 os="$1"
 
@@ -90,6 +113,7 @@ if [[ "$2" == "x11" ]]; then
     case "$3" in
         vnc|termux-x11) graphic_mode="$3" ;;
         sdl)            graphic_mode="sdl" ;;
+        tcp)            graphic_mode="tcp" ;;
         "")             graphic_mode="menu" ;;
         *)              echo -e "${R}E: Modo grafico invalido: $3${W}"; exit 5 ;;
     esac
@@ -100,14 +124,6 @@ fi
 # --- Interactive menu ---
 if [[ "$graphic_mode" == "menu" ]]; then
     choose_x11_mode
-fi
-
-# --- Apply display mode ---
-if [[ "$graphic_mode" == "vnc" ]]; then
-    XorCLi="-vnc $DISPLAY_NUM"
-    VGA="-vga virtio"
-elif [[ "$graphic_mode" == "sdl" ]]; then
-    setup_termux_x11
 fi
 
 mnt="$base_path/$os/termux2$os"
@@ -126,6 +142,19 @@ if [[ -f "$os.qcow2" ]]; then
 else
     echo -e $R"E: No se encontro la imagen $os.qcow2$W"
     exit 4
+fi
+
+ipnet=$(ifconfig 2>/dev/null|grep -oE '([0-9]{1,3}\.){3}'|grep -v 255|grep -v 127|tail -n 1)
+[[ -z "$ipnet" ]] && ipnet="10.0.2."
+
+# --- Apply display mode ---
+if [[ "$graphic_mode" == "vnc" ]]; then
+    XorCLi="-vnc $DISPLAY_NUM"
+    VGA="-vga virtio"
+elif [[ "$graphic_mode" == "sdl" ]]; then
+    setup_termux_x11
+elif [[ "$graphic_mode" == "tcp" ]]; then
+    setup_termux_x11_tcp
 fi
 
 case "$os" in

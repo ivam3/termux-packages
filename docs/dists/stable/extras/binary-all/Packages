@@ -1613,22 +1613,6 @@ SHA256: 8faf535bd4e1e74bbb44b6dc65c3a238e63d4611186c538f14c058ae13322db1
 SHA512: c3f28b1ae445f77eaf6c28dcc8bcb7f8ef823de54edac82c931cdd593486dc65ba89ab431d267ae776743eb68400cbfea65c94846aa8143efee4659475c2a39c
 
 Package: termux-docker-qemu
-Version: 0.9.3
-Architecture: all
-Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 7
-Depends: openssh, wget, samba, procps, net-tools, xorg-xrandr, xfwm4, xdotool, termux-x11-nightly, qemu-utils, qemu-common, qemu-system-x86-64
-Suggests: i-haklab
-Homepage: https://www.docker.com/products/docker-desktop/
-Description: Manage docker containers from linux x86, x86_64, armv7 and aarch64 virtual machines using QEMU (Quick EMUlator)
-Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.9.3_all.deb
-Size: 5852
-MD5Sum: 3f36aeff14c5c8e91471d40ce83e31a3
-SHA1: 62f451d38b0e533a6beac7d47bf16755349b0ca0
-SHA256: 98a5820dad68bc68765561730619ffe8a058da6c586746be1523f77f2a96e469
-SHA512: d9694e1c49ef2bf740c2919562c3faeb38a15a55754a560089fc82fa16ef23b08c2d936bfceaaff39be1041ba7550212c0497e44647bdcbcaeb44a0d9c7e1d4a
-
-Package: termux-docker-qemu
 Version: 0.9.4
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
@@ -1643,6 +1627,22 @@ MD5Sum: 1fe5b44cab5018ceefccdfea174bf898
 SHA1: fd8b8a844ae9642ba5410646635860af2ed2c845
 SHA256: ec8bef7804849837d0e6505a8cf19c80306d992f755ee86be14d21a8f6a73d72
 SHA512: 656b492992737b0b00b6efe87a55c81c95adf0cc6c9092ab7a2371025acda2e114cc4114e4aa5ded1b9aa467b67b6ff5b5e74aca3e736821860766705191f413
+
+Package: termux-docker-qemu
+Version: 0.9.5
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 8
+Depends: openssh, wget, samba, procps, net-tools, xorg-xrandr, xfwm4, xdotool, termux-x11-nightly, qemu-utils, qemu-common, qemu-system-x86-64
+Suggests: i-haklab
+Homepage: https://www.docker.com/products/docker-desktop/
+Description: Manage docker containers from linux x86, x86_64, armv7 and aarch64 virtual machines using QEMU (Quick EMUlator)
+Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.9.5_all.deb
+Size: 6140
+MD5Sum: 19ec9ea4fcdaf51c36fda2b317ed1723
+SHA1: 6564bc9fafff67685c60f789e9e8aebca242d958
+SHA256: 92cb5a98ad08116cd18a53ba7d40c5ebd363d5d38c6a5f36e79032e2c8b659b2
+SHA512: 539902e8aa75cf985f523bcdada5a1f3d7528e64f8f5afb5f3434c2ce1b490d9c6c020196f019340fbfffb366ca6fd5bbdac51f871b4e9917d9b8f818c7dafba
 
 Package: trape
 Version: 2.0

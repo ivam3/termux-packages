@@ -32,7 +32,7 @@ termux-docker-qemu [options]
 **1. Headless (no display, SSH only)**
 
 ```bash
-termux-docker-qemu --headless
+termux-docker-qemu alpine
 ```
 
 Starts the VM without any graphical output. Connect via SSH on port 2222:
@@ -41,21 +41,34 @@ Starts the VM without any graphical output. Connect via SSH on port 2222:
 ssh root@localhost -p 2222
 ```
 
-**2. X11 / SDL display**
+**2. X11 / SDL display (VirtIO 3D Hardware Accelerated)**
 
 ```bash
-termux-docker-qemu --display sdl
+termux-docker-qemu alpine x11 sdl
 ```
 
-Launches the VM with an SDL window through Termux:X11. Requires `termux-x11-nightly` to be running.
+Launches the VM with an SDL window using VirtIO-GPU 3D (virgl) through Termux:X11.
 
 **3. X11 / VNC display**
 
 ```bash
-termux-docker-qemu --display vnc
+termux-docker-qemu alpine x11 vnc
 ```
 
 Starts the VM with a VNC server. Connect with any VNC client to `localhost:5900`.
+
+**4. Direct X11 TCP Bridge (Ultra Lightweight)**
+
+```bash
+termux-docker-qemu alpine x11 tcp
+```
+
+Launches QEMU in headless mode (`-nographic`) while bridging host Termux:X11 socket to TCP port 6000 via `socat`. Alpine apps send X11 drawing commands directly over TCP to the host Termux:X11 display without QEMU frame translation overhead. Inside Alpine:
+
+```sh
+source /termux2alpine/x11_env.sh
+xfce4-terminal &   # or xfce4-session &
+```
 
 ---
 
@@ -145,7 +158,28 @@ apk add mesa-dri-gallium mesa-egl mesa-gl
 
 - Termux:X11 must be running before launching the VM.
 - The host device must support OpenGL ES 3.0 or higher (most modern Android devices).
-- Use `--display sdl` mode to take advantage of GPU acceleration.
+- Use `sdl` mode (`termux-docker-qemu alpine x11 sdl`) to take advantage of GPU acceleration.
+
+---
+
+## Direct X11 TCP Bridge (Ultra-Lightweight Display)
+
+Starting with **version 0.9.4**, `termux-docker-qemu` also introduces the **TCP Bridge** mode (`termux-docker-qemu alpine x11 tcp`).
+
+### How It Works
+
+1. **Zero QEMU Framebuffer Overhead**: QEMU runs in `-nographic` mode, consuming minimal host CPU.
+2. **Dynamic Socket Bridge**: A `socat` background process bridges host TCP port `6000` directly to Termux:X11's UNIX domain socket (`${PREFIX}/tmp/.X11-unix/X0`).
+3. **Dynamic Host IP Resolution**: Automatically computes host gateway IP (`${ipnet}2`, e.g. `192.168.1.2` on WiFi or `10.0.2.2` offline) and exports it into `/termux2alpine/x11_env.sh`.
+
+### Usage inside Alpine
+
+```sh
+source /termux2alpine/x11_env.sh  # exports DISPLAY=${host_ip}:0
+xfce4-terminal &                 # opens window directly in Termux:X11
+# or launch full session:
+xfce4-session &
+```
 
 ---
 
