@@ -911,20 +911,20 @@ SHA256: 989b6693900ff471e790c0c36dd4c31ca64f6868221b00a599cadb6ded2ad98c
 SHA512: b2acf2821c4fa7423aaca5ba2e39c36ff1c4b5cb01f5e10c1ff4e00aaa889ac417570cb2b57d506be35c9a5c1e29baa32e7030c5c9dc15ff7ce941036a28720b
 
 Package: i-haklab
-Version: 3.12.22
+Version: 3.13.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 25795
+Installed-Size: 25827
 Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, fd, file, findutils, fish, fzf, gawk, git, glibc-repo, glow, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, mandoc, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, yazi, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.12.22_all.deb
-Size: 3670744
-MD5Sum: 1bc7fbb91802541e309b91540f7c4288
-SHA1: e08cab908e4c686c7bfc9cc1560073944ed2c426
-SHA256: 9f4df041f57b005b33c17c2a1646aaee5e10c6d449342fcef15d65d2f7b1441f
-SHA512: 22f7a09c3f71ce062b3effcb238cc7d375052a9dd2c4b7b7169ec98ebab9c6a0d4917d6fcf799cb7336a0266ad7d2227119143382c224a4bb8678beafec12d9b
+Filename: dists/stable/extras/binary-all/i-haklab_3.13.0_all.deb
+Size: 3678772
+MD5Sum: 729f18c8dce5d5bd6f63ff804c3cc59d
+SHA1: 8c11af9c9292ed001affb201c187587440d86d9e
+SHA256: 8a5f9cca0c87950c542059ce29495825678e4b79a937db23099a9375b0a327d4
+SHA512: 303e63556a9c564dd0510137570b4138f309374ea6bca5ad429bd2db07d22be820d28d81fdf4bc1beff6435ef2a1ea784b6ed64e99af837357fee9b66c51fbd1
 
 Package: infoga
 Version: 1.0
@@ -1611,22 +1611,6 @@ MD5Sum: adbc8d5215369e9f39e002f0e856012d
 SHA1: 27b041168eebbdc4530fc83ef874f6fed4c4c023
 SHA256: 8faf535bd4e1e74bbb44b6dc65c3a238e63d4611186c538f14c058ae13322db1
 SHA512: c3f28b1ae445f77eaf6c28dcc8bcb7f8ef823de54edac82c931cdd593486dc65ba89ab431d267ae776743eb68400cbfea65c94846aa8143efee4659475c2a39c
-
-Package: termux-docker-qemu
-Version: 0.9.4
-Architecture: all
-Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 7
-Depends: openssh, wget, samba, procps, net-tools, xorg-xrandr, xfwm4, xdotool, termux-x11-nightly, qemu-utils, qemu-common, qemu-system-x86-64
-Suggests: i-haklab
-Homepage: https://www.docker.com/products/docker-desktop/
-Description: Manage docker containers from linux x86, x86_64, armv7 and aarch64 virtual machines using QEMU (Quick EMUlator)
-Filename: dists/stable/extras/binary-all/termux-docker-qemu_0.9.4_all.deb
-Size: 5852
-MD5Sum: 1fe5b44cab5018ceefccdfea174bf898
-SHA1: fd8b8a844ae9642ba5410646635860af2ed2c845
-SHA256: ec8bef7804849837d0e6505a8cf19c80306d992f755ee86be14d21a8f6a73d72
-SHA512: 656b492992737b0b00b6efe87a55c81c95adf0cc6c9092ab7a2371025acda2e114cc4114e4aa5ded1b9aa467b67b6ff5b5e74aca3e736821860766705191f413
 
 Package: termux-docker-qemu
 Version: 0.9.5

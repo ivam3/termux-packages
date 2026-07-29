@@ -241,6 +241,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/playwright-proo
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/pnpm.md         i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/postgresql.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/privoxy.md      i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/proroot.md      i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/proxychains-ng.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/putty.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/pybelt.md       i-haklab
@@ -307,12 +308,15 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/youtubedr.md   
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ytfzf.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/zaproxy.md      i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/zsh.md          i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/categories             i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/listofpkg2conf         i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/listoftools            i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/banner/IbyC                  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/banner/Ivam3                 i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/banner/fixer                 i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/banner/i-Haklab              i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/banner/i-Haklab_legacy       i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/banner/i-Haklab_minimal      i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/banner/k-boom                i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/banner/map                   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/banner/thanks                i-haklab
@@ -359,6 +363,7 @@ data/data/com.termux/files/home/.local/libexec/i-Haklab/tunnel                  
 data/data/com.termux/files/home/.local/libexec/i-Haklab/weechat                  i-haklab
 data/data/com.termux/files/home/.local/libexec/iH-AI.py                          i-haklab
 data/data/com.termux/files/home/.local/libexec/pkg2conf                          i-haklab
+data/data/com.termux/files/home/.local/libexec/tips                              i-haklab
 data/data/com.termux/files/home/.local/var/service/www/veno-file-manager/UPGRADE-README.html i-haklab
 data/data/com.termux/files/home/.local/var/service/www/veno-file-manager/documentation/README.md i-haklab
 data/data/com.termux/files/home/.local/var/service/www/veno-file-manager/documentation/assets/docs.js i-haklab
@@ -1181,7 +1186,6 @@ data/data/com.termux/files/usr/bin/sublist3r                                    
 data/data/com.termux/files/usr/bin/tangalanga                                    tangalanga
 data/data/com.termux/files/usr/bin/tangalanga-installer                          tangalanga
 data/data/com.termux/files/usr/bin/desktop                                       termux-desktop-xfce
-data/data/com.termux/files/usr/bin/termux-docker-qemu                            termux-docker-qemu
 data/data/com.termux/files/usr/bin/termux-docker-qemu                            termux-docker-qemu
 data/data/com.termux/files/usr/bin/trape                                         trape
 data/data/com.termux/files/usr/bin/unshc-installer                               unshc
