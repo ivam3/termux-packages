@@ -431,7 +431,7 @@ SHA256: 115acf00c211ca2decc6379848336e43109619b321620cd3c32bf6f65337343d
 SHA512: 65fd549a7d8384cff34e70c8aa7b711c3ce855fc8ebfd82114e4fb7f7cae4f1dabfb650a0f788ef1061a2eb6e1f5e0e7f40f5616858305edf527153e03cedf87
 
 Package: engram
-Version: 1.16.3-1
+Version: 1.20.0-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
@@ -439,12 +439,12 @@ Depends: git, golang
 Suggests: i-haklab
 Homepage: https://github.com/Gentleman-Programming/engram
 Description: Persistent memory system for AI coding agents
-Filename: dists/stable/extras/binary-all/engram_1.16.3-1_all.deb
-Size: 2324
-MD5Sum: 61bcc3a4940e3665a9f91a7ac9c330ce
-SHA1: 295393c0139e9b6ca69a3889d0aa29f4738e5f0a
-SHA256: 4e1b6a491a6a21a0dc372fbaae45ac0850b5b391175f937aa0b324ab3f731d26
-SHA512: c745e9d76ca6d5837b6ca2f81508fb18a364a4193ff55305607843f93d3a7a1f66a051612941b02c7b115c0d522db1a1629c601a8dabf46b76c2e2d3ba2cf8b4
+Filename: dists/stable/extras/binary-all/engram_1.20.0-1_all.deb
+Size: 2332
+MD5Sum: 0d7c21564a67793bf71c9ab0b5efa85c
+SHA1: 6a4287f86a9b17c0d14534bd442cd2802cef14f9
+SHA256: 928030ab29ee6a7a299b9cbf2473b496dc17d98ae2e916c3b8c67b335d5e8c29
+SHA512: 8564e4a7ff54ba4f5274775177375db7ffa9426981abd8518f76607275d26ebf2395e97ab443483f3814246e25022eaba3bb3dbbc281830531d739affdcb166c
 
 Package: enum4linux-ng
 Version: 1.3.5
@@ -863,7 +863,7 @@ SHA256: 6f4b5d437570652986e969d468206915f37c794e20c9dca4cc81a980bef3e30d
 SHA512: 4b8ba5b4ea51d7ee74b5e6d49b0c990c2da6ad93af6d83944ebb7c0c4e8afd3a47ff3084d30b50f9592d0b5544574014f9331b28d49efe3395d662c73f6a378d
 
 Package: hermes-agent
-Version: 2026.7.7.2-2
+Version: 2026.7.20-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
@@ -871,12 +871,12 @@ Depends: python, nodejs-lts, python-pip, python-psutil, python-cryptography, cla
 Suggests: i-haklab
 Homepage: https://github.com/NousResearch/hermes-agent
 Description: Personal AI agent by Nous Research with CLI, TUI, messaging gateway, and browser automation. Runs the same agent core across Telegram, Discord, Slack, and 20+ platforms. Features persistent memory, skill learning, subagent delegation, scheduled cron jobs, and terminal/browser control.
-Filename: dists/stable/extras/binary-all/hermes-agent_2026.7.7.2-2_all.deb
-Size: 4528
-MD5Sum: 63e348321af18c6723f754fe81dfa2d5
-SHA1: b27960a24e203d77cc6e638493d66aeed0513795
-SHA256: 4d762e079fc81ea1a3264e62c616b05d50ad1dcb1060f47c76b3c2d4ed10a622
-SHA512: f23f5deb8e90b1af4cd7cce25e04e39a62384ad3255854c8956bdbb6ebf71de7cca0ecb396e41076b35ce5f140483192e5861c6ac571fffe441df1de9e0658c4
+Filename: dists/stable/extras/binary-all/hermes-agent_2026.7.20-1_all.deb
+Size: 4524
+MD5Sum: 68531babf5ec9f3fdff2c76ad5afa48f
+SHA1: edde0384615660616f6730d78b7a694dc3ff1d82
+SHA256: 2f5d9c24dd42512673faea7f95e1321c9a4f93a87b2018e862d610590c1a88e3
+SHA512: 5086e0c54e0db45ed5b05a17151b4e89c866d562649eabaccf544b5e7a310520375aba49d1a92c26d42232c525aea85146dcbc404dacf9fbe230c1eb7f4e1ff2
 
 Package: hunner-framework
 Version: 1.0
@@ -911,7 +911,7 @@ SHA256: 989b6693900ff471e790c0c36dd4c31ca64f6868221b00a599cadb6ded2ad98c
 SHA512: b2acf2821c4fa7423aaca5ba2e39c36ff1c4b5cb01f5e10c1ff4e00aaa889ac417570cb2b57d506be35c9a5c1e29baa32e7030c5c9dc15ff7ce941036a28720b
 
 Package: i-haklab
-Version: 3.13.0
+Version: 3.13.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 25827
@@ -919,12 +919,12 @@ Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-pack
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.13.0_all.deb
-Size: 3678772
-MD5Sum: 729f18c8dce5d5bd6f63ff804c3cc59d
-SHA1: 8c11af9c9292ed001affb201c187587440d86d9e
-SHA256: 8a5f9cca0c87950c542059ce29495825678e4b79a937db23099a9375b0a327d4
-SHA512: 303e63556a9c564dd0510137570b4138f309374ea6bca5ad429bd2db07d22be820d28d81fdf4bc1beff6435ef2a1ea784b6ed64e99af837357fee9b66c51fbd1
+Filename: dists/stable/extras/binary-all/i-haklab_3.13.1_all.deb
+Size: 3678164
+MD5Sum: d340647da3c6909f75ada7639e94b995
+SHA1: 9784e0fbe0e80ec5e5f6813c1f91c1e691cb654c
+SHA256: 410a13803119fc1115dc75b4b3b192f5a0d59e79e48d15337f3d050a558df12a
+SHA512: 6da200e9401dd15d38ad5e8b573d0d51f501be98870c6642f56929b79caa03b6802556ef24641ec2b789b02b92419c40f01a1e046906ae8958ee35951aa303ea
 
 Package: infoga
 Version: 1.0
@@ -1087,7 +1087,7 @@ SHA256: 4c0c23cbcc8c663bbabeba017cef000e4f416aa31532686775f34032d340b83c
 SHA512: e6e71c73a9d26b6271e5a9b0eb7b215b6012bbe2846258f7b12326cdd54087e12bc1a37bc6c8f7dbbbe35170d61dc72cdd3ece97632cb2d46b8b88dbd7b2a9aa
 
 Package: mistral-vibe
-Version: 2.19.0-1
+Version: 2.23.1-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 4
@@ -1095,12 +1095,12 @@ Depends: curl, uv, python, python-pip, python-cryptography
 Suggests: i-haklab, neovim
 Homepage: https://github.com/mistralai/mistral-vibe
 Description: Minimal CLI coding assistant/agent powered by Mistral's models.
-Filename: dists/stable/extras/binary-all/mistral-vibe_2.19.0-1_all.deb
+Filename: dists/stable/extras/binary-all/mistral-vibe_2.23.1-1_all.deb
 Size: 2820
-MD5Sum: 39d2dcb335d56b539f58777777e1ddb3
-SHA1: 4691444f0207c8e79978bafcc9596e13f4a82615
-SHA256: 48bb04660e03e6960640b2053ae47dd3f8f0f4e82256c1973a689f4f5042660c
-SHA512: f37d59c586025044b588f42b208f7d45f9c86c27871359dfc5b67440b90bb583b24d7b860434f6f8f004ced294cb7d9e6327082ee3ac40c42819d781a0e952e6
+MD5Sum: 4021bd85759b73bc2cf5a882600423e4
+SHA1: 3a929b3ad880ad0b59ad34315bde036bfb3621a2
+SHA256: 54e386344e060df6bdf746fbf35f964f484c741c3da92f9553a85e21ed998f5b
+SHA512: e76e0a63f970baf11a69a3f2acd51f340bfc8f518ab089ad2f2a9d2bdf2b794952704e6c12c41404f9c8262b971ab923319719a293fa0790978555b89c442cd3
 
 Package: nexphisher
 Version: 1.0.6
@@ -1166,7 +1166,7 @@ SHA256: 7f1cebc17002bb7125289d12816e74cb157ab7f20a7fc326a86ff13010734db1
 SHA512: 3a573eed5a3e3a44fb8d3b747d10eff3f2e0ca67acdacd246e1054f4dcc8ae533ec2c5116fbd664cf59bd2a3d9473ce6f700d78d97e24d313df78215a00dba28
 
 Package: openclaw
-Version: 2026.6.11-1
+Version: 2026.7.1-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 116
@@ -1174,12 +1174,12 @@ Depends: android-tools, git, curl, nodejs-lts, pacman, python, python-pip, make,
 Suggests: i-haklab, botgram
 Homepage: https://github.com/AidanPark/openclaw-android
 Description: Open-source autonomous artificial intelligence agent.
-Filename: dists/stable/extras/binary-all/openclaw_2026.6.11-1_all.deb
-Size: 29488
-MD5Sum: a67d16ccc3ecae6f91ea9709c187ff57
-SHA1: 9465b878dece8bbe4abdad2fed717d9cbdd9ebbc
-SHA256: 375e1581fb063fc1ad78feafaeb315eb14807a409cc568481a9c1325ec011314
-SHA512: ff968df32435c3581e835fd5a22aeec99faec378334bb45cf2225b3b07d9203e4d44e7184f2afa2ea920c73b0bb721a9a9f2d967c1129fe39e04b51a7703f339
+Filename: dists/stable/extras/binary-all/openclaw_2026.7.1-1_all.deb
+Size: 29500
+MD5Sum: e0e1a21bef79fe88175bed79835c2c5b
+SHA1: c9fd6bc895faf73fc2c2a5b697444d39a6cc9892
+SHA256: 615d093558537451f96cef46d87c2f4287283def13aa1939263ba7c908f23691
+SHA512: 3348d653176f36a618088105b0f7d76700bf1c4f9db47ba0feaf307b97a2556e5e0fdd814a38c165a9effbfdaec109b58eda94bfc525813da79e01cdd5fa6414
 
 Package: openjdk-21-source
 Architecture: all
@@ -1627,6 +1627,22 @@ MD5Sum: 19ec9ea4fcdaf51c36fda2b317ed1723
 SHA1: 6564bc9fafff67685c60f789e9e8aebca242d958
 SHA256: 92cb5a98ad08116cd18a53ba7d40c5ebd363d5d38c6a5f36e79032e2c8b659b2
 SHA512: 539902e8aa75cf985f523bcdada5a1f3d7528e64f8f5afb5f3434c2ce1b490d9c6c020196f019340fbfffb366ca6fd5bbdac51f871b4e9917d9b8f818c7dafba
+
+Package: termux-oracle-skill
+Version: 0.2.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 6
+Depends: git, tar, curl, wget, termux-api, termux-tools, termux-services, termux-exec
+Suggests: i-haklab, antigravity-cli, opencode, claude-code, codebuff, freebuff, openclaw, mimocode, mistral-vibe
+Homepage: https://github.com/ivam3/termux-oracle
+Description: A termux skill for AI coding agents with all context about termux, i-Haklab and Ivam3 termux-packages.
+Filename: dists/stable/extras/binary-all/termux-oracle-skill_0.2.0_all.deb
+Size: 4544
+MD5Sum: 3da0ba66dcf63f60424d0f542b9d5d2d
+SHA1: cf10aca05840a850218950aee0142964c97462dd
+SHA256: 73d779dfae6b114dbbc7f882d061c6cc0a86f1d135949c17606f49867673196c
+SHA512: 62fd08d2d7e3d74be127c59997e0f534d84de3c088c46ba7abcb3b82fa9a4699a65d9ed4b417ce4468a42234a28c3143488bb5c63a30fd58d478d48d9217ab04
 
 Package: trape
 Version: 2.0

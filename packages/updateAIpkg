@@ -10,15 +10,13 @@ export agy=$(curl -s "https://antigravity-cli-auto-updater-974169037036.us-centr
 
 export engram=$(curl -sI "https://github.com/Gentleman-Programming/engram/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|'|awk -F "-" '{print $NF}')
 
-export termuxOracle=$(curl -sI "https://github.com/ivam3/termux-oracle/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
-
 export mimocode=$(curl -sI "https://github.com/XiaomiMiMo/MiMo-Code/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
 
 export claudecode=$(curl -sI "https://github.com/anthropics/claude-code/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
 
-export opencode=$(curl -sI "https://github.com/anomalyco/opencode/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
+export opencode=$(curl -sI "https://github.com/anomalyco/opencode/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|'|awk -F "v" '{print $NF}')
 
-export mistral=$(curl -sI "https://github.com/mistralai/mistral-vibe/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
+export mistral=$(curl -sI "https://github.com/mistralai/mistral-vibe/releases/latest" | grep -i location | awk -F "v" '{print $NF}')
 
 export openclaw=$(curl -sI "https://github.com/openclaw/openclaw/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
 
