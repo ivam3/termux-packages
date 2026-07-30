@@ -179,10 +179,12 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/geo-recon.md   
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/getadusers.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/getnpusers.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/getuserspns.md  i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/gh.md           i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ghidra.md       i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ghost.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ghunt.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/git-filter-repo.md i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/glab-cli.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/glow.md         i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/gobuster.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/gophish.md      i-haklab
@@ -203,6 +205,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ipgeolocation.m
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/johntheripper.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/jython-lts.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/kerbrute.md     i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/kimi-code.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/localtunnel.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/lockphish.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/maltego.md      i-haklab
@@ -212,6 +215,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/metasploit-fram
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/mimikatz.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/mimocode.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/minimax-cli.md  i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/mistral-vibe.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/mvt.md          i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/n8n.md          i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/nano.md         i-haklab
@@ -224,7 +228,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/objection.md   
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/octosuite.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/omniroute.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/open-lovable.md i-haklab
-data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/openclaw.md.md  i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/openclaw.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/opencode.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/openjdk-21.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/openspec.md     i-haklab
@@ -249,6 +253,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/python.md      
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/quack.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/qwen-code.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/radare2.md      i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/railway-cli.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ransomux.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/recon-ng.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/recondog.md     i-haklab
