@@ -1,11 +1,11 @@
 {
   "name": "mistral-vibe",
-  "version": "2.23.1\r-1",
+  "version": "2.23.1\r-2",
   "arch": "all",
   "homepage": "https://github.com/mistralai/mistral-vibe",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
   "depends": [
-    "curl, uv, python, python-pip, python-cryptography"
+      "coreutils", "curl", "uv", "perl", "python", "python-pip", "python-cryptography"
   ],
   "suggests": [
     "i-haklab, neovim"
