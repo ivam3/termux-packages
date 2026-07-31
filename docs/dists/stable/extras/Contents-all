@@ -88,6 +88,7 @@ data/data/com.termux/files/home/.config/fish/functions/github.fish              
 data/data/com.termux/files/home/.config/fish/functions/unset.fish                i-haklab
 data/data/com.termux/files/home/.local/bin/LOCALHOST                             i-haklab
 data/data/com.termux/files/home/.local/bin/adminfiles                            i-haklab
+data/data/com.termux/files/home/.local/bin/ai                                    i-haklab
 data/data/com.termux/files/home/.local/bin/apt                                   i-haklab
 data/data/com.termux/files/home/.local/bin/cmd                                   i-haklab
 data/data/com.termux/files/home/.local/bin/gitbrowsering                         i-haklab
@@ -114,6 +115,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/.Ivam3byCinderella          
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/acccheck.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/adbfastboot.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/adminpanel.md   i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ai.md           i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/aircrack-ng.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/amass.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/androbugs.md    i-haklab
@@ -270,6 +272,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/shc.md         
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/shellsploit-framework.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/sherlock.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/shodan.md       i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/sleepwalker.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/slowhttptest.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/smithery.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/snscrape.md     i-haklab
@@ -333,6 +336,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/shodan/query                
 data/data/com.termux/files/home/.local/etc/i-Haklab/shodan/usrpasswd.txt         i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/variables                    i-haklab
 data/data/com.termux/files/home/.local/etc/zsh/zshrc                             i-haklab
+data/data/com.termux/files/home/.local/libexec/cleanup                           i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab.login                    i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/403bypass                i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/4share                   i-haklab
@@ -368,6 +372,7 @@ data/data/com.termux/files/home/.local/libexec/i-Haklab/tunnel                  
 data/data/com.termux/files/home/.local/libexec/i-Haklab/weechat                  i-haklab
 data/data/com.termux/files/home/.local/libexec/iH-AI.py                          i-haklab
 data/data/com.termux/files/home/.local/libexec/pkg2conf                          i-haklab
+data/data/com.termux/files/home/.local/libexec/preconf                           i-haklab
 data/data/com.termux/files/home/.local/libexec/tips                              i-haklab
 data/data/com.termux/files/home/.local/var/service/www/veno-file-manager/UPGRADE-README.html i-haklab
 data/data/com.termux/files/home/.local/var/service/www/veno-file-manager/documentation/README.md i-haklab

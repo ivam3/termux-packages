@@ -911,20 +911,20 @@ SHA256: 989b6693900ff471e790c0c36dd4c31ca64f6868221b00a599cadb6ded2ad98c
 SHA512: b2acf2821c4fa7423aaca5ba2e39c36ff1c4b5cb01f5e10c1ff4e00aaa889ac417570cb2b57d506be35c9a5c1e29baa32e7030c5c9dc15ff7ce941036a28720b
 
 Package: i-haklab
-Version: 3.13.2
+Version: 3.13.3
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 25841
-Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, fd, file, findutils, fish, fzf, gawk, git, glibc-repo, glow, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, mandoc, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, yazi, zip, zlib
+Installed-Size: 25855
+Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, fd, file, findutils, fish, fzf, gawk, git, glibc-repo, glow, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, mandoc, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, ollama, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, unzip, weechat, wget, yazi, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.13.2_all.deb
-Size: 3681456
-MD5Sum: 66d976243a2d458f224fd5cf7e91e337
-SHA1: cf327aca3ee615a284de802cf6d2c24077130495
-SHA256: 2f8cdc463258a67d186cac516b31c1440ab87fe8d7190d82b30fba4cb3c2972d
-SHA512: be74e7b628b3bab14250370a2c338ee9967d2211ad0c4f976397cbe87839847209a35dd0136a9d80c85bf1c8a60709d9693da674bfd83fce8f2c465106a7c5b6
+Filename: dists/stable/extras/binary-all/i-haklab_3.13.3_all.deb
+Size: 3685884
+MD5Sum: ded00d1fe79e6bc73c5f84addb4d97d9
+SHA1: f9f9cbfcd73629f8595a828b816ae69a8531b8cd
+SHA256: 2b4665ccbd9d9b2fa60709a99bdbeecd415cf4760acba1494ac3dbcee7327909
+SHA512: d0d0b3a3f1181560e982171b47a6e70f9e364003f04ff2c3ae79f646eaa03c337925cf6291d4ee5b5af875392f5ff1b2cbf632da15e39f2179078c5a6232b113
 
 Package: infoga
 Version: 1.0
@@ -1597,7 +1597,7 @@ SHA256: 434041e91d4fb70203dfdcafd6c96a679ac2947d152d16d80f054eaeaef740f7
 SHA512: 1278135e433b817e22ff137e18363e6243c6299e5b22792e3b6f098bb02364b3701ff68cde6290a615190000a45a6d5635efe023a804053ad574863997844e6d
 
 Package: termux-desktop-xfce
-Version: 1.0.13
+Version: 1.0.14
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
@@ -1605,12 +1605,12 @@ Depends: xfce4, adwaita-icon-theme, atk, binutils, dbus-glib, dconf, desktop-fil
 Suggests: i-haklab, burpsuite, ghidra, hydra, putty, maltego, zaproxy
 Homepage: https://github.com/ivam3/termux-packages
 Description: A Meta-package and data, themes, icons and wallpapers to configurate a desktop enviroment for Termux with xfce4 as window manager.
-Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0.13_all.deb
-Size: 3696
-MD5Sum: adbc8d5215369e9f39e002f0e856012d
-SHA1: 27b041168eebbdc4530fc83ef874f6fed4c4c023
-SHA256: 8faf535bd4e1e74bbb44b6dc65c3a238e63d4611186c538f14c058ae13322db1
-SHA512: c3f28b1ae445f77eaf6c28dcc8bcb7f8ef823de54edac82c931cdd593486dc65ba89ab431d267ae776743eb68400cbfea65c94846aa8143efee4659475c2a39c
+Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0.14_all.deb
+Size: 3976
+MD5Sum: d328639bb89fbe96636e581febd5b82a
+SHA1: 0ed3e8287d1fa7902cb4312b111d144cdc4897f2
+SHA256: a87b68724011154b3cb8ba6c69db01b59ac3a1c747be88aeb17c6d72345bd237
+SHA512: d4b0825a6611e3ffbb51fefa331073624b81e3cc13a16c962a176f9e7458a0788bb218495510d56268080fb60510c3b43ff9b0c5a3f5ac388e07ec378b482f4f
 
 Package: termux-docker-qemu
 Version: 0.9.5
