@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
-command -v vibe >/dev/null && echo "uv tool uninstall mistral-vibe 2>/dev/null" || true
-#curl -LsSf https://mistral.ai/vibe/install.sh | bash
+uv tool install mistral-vibe
+
 command -v vibe &>/dev/null || {
     echo "[✔] mistral-vibe installation finished."
     echo "[!] Don't forget set your API key."
