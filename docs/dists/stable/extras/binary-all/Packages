@@ -1087,7 +1087,7 @@ SHA256: 4c0c23cbcc8c663bbabeba017cef000e4f416aa31532686775f34032d340b83c
 SHA512: e6e71c73a9d26b6271e5a9b0eb7b215b6012bbe2846258f7b12326cdd54087e12bc1a37bc6c8f7dbbbe35170d61dc72cdd3ece97632cb2d46b8b88dbd7b2a9aa
 
 Package: mistral-vibe
-Version: 2.23.1-2
+Version: 2.23.1-3
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 4
@@ -1095,12 +1095,12 @@ Depends: coreutils, curl, uv, perl, python, python-pip, python-cryptography
 Suggests: i-haklab, neovim
 Homepage: https://github.com/mistralai/mistral-vibe
 Description: Minimal CLI coding assistant/agent powered by Mistral's models.
-Filename: dists/stable/extras/binary-all/mistral-vibe_2.23.1-2_all.deb
-Size: 2856
-MD5Sum: b59b4e0e49b9af9fc13e9d05d5afc56f
-SHA1: 9565d5b05211bfc15e465c50f73017a85b20fc66
-SHA256: 6543153d24f149df4c08aa9678a1ebf5cae1bc00c05a61f8bc16032fa7a8937f
-SHA512: 5c59befa9bdd56032eb9d7867db9631c295d3f1d175998038e0b94a8eb505bf4eff79df50ce6e8584ab91449c486e00bcd1f37e703344024226ed03b7e38b38f
+Filename: dists/stable/extras/binary-all/mistral-vibe_2.23.1-3_all.deb
+Size: 2864
+MD5Sum: 996862297f647fef2ebdd9aa62b7dae1
+SHA1: 6429a6b3c6479ddeb4eccef04660f0a1b81752e2
+SHA256: 8a640c06192c75c8d6be6fc2a7a5303d3f5b547c9a2d62b81c5bb35cb5164e7a
+SHA512: da5cad4649ecf500fd74b3fa6b92c7e27c3a4fa0156b37f66ce1c185fc82f3c3a74d0b6b6ae8ae6181706e34252256de54ae0cef9f751d3e314e6c6ccccfb17b
 
 Package: nexphisher
 Version: 1.0.6
