@@ -1,6 +1,6 @@
 {
   "name": "termux-oracle-skill",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "arch": "all",
   "homepage": "https://github.com/ivam3/termux-oracle",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
