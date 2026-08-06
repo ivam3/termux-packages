@@ -1,0 +1,384 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+set -Eeuo pipefail
+
+# ==============================
+# CONFIGURATION
+# ==============================
+INSTALL_DIR="${HOME}/.local/share/walkie"
+INSTALL_BIN="${PREFIX}/bin"
+NODE="/data/data/com.termux/files/usr/bin/node"
+NPM_BIN="${PREFIX}/bin/npm"
+GLOBAL_DIR="${PREFIX}/lib/node_modules"
+PATCH_SOURCE="${PREFIX}/share/walkie/network-interfaces.js"
+NPM_ALLOW="--allow-scripts=walkie-sh,udx-native,sodium-native"
+
+# walkie-sh source.
+#   Default: git main (v1.5.0) — includes chat/agent/pair, not yet on npm.
+#   Legacy:  walkie-sh@1.4.0 (npm registry) — set WALKIE_USE_140=1
+WALKIE_SOURCE="github:vikasprogrammer/walkie"
+WALKIE_140_SOURCE="walkie-sh@1.4.0"
+
+# Installation mode: local (default) | global (forced)
+# Force global with: WALKIE_INSTALL_GLOBAL=1
+INSTALL_TYPE="local"
+[[ "${WALKIE_INSTALL_GLOBAL:-0}" == "1" ]] && INSTALL_TYPE="global"
+
+# Colors
+CYAN="\033[36m"
+GREEN="\033[32m"
+RED="\033[31m"
+YELLOW="\033[33m"
+DIM="\033[2m"
+RESET="\033[0m"
+
+# Msg
+info() { printf "%b[📢]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+msg()   { printf "[➡] %s\n" "$*"; }
+ok()   { printf "%b[✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+warn() { printf "%b[!]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+tip() { printf "%b[💡]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+err()  { printf "%b[❌]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+
+# ==============================
+# INSTALL FUNCTIONS
+# ==============================
+apply_patch() {
+  local target="$1"
+  if [[ -f "$target" ]]; then
+    cp -f "${PATCH_SOURCE}" "$target"
+    ok "Patch applied to ${target}"
+    return 0
+  fi
+  return 1
+}
+
+find_and_patch() {
+  local root="$1"
+  apply_patch "${root}/node_modules/udx-native/lib/network-interfaces.js" && return 0
+  apply_patch "${root}/node_modules/walkie-sh/node_modules/udx-native/lib/network-interfaces.js" && return 0
+  return 1
+}
+
+# Local isolated install of walkie-sh into ~/.local/share/walkie
+# $1: npm dependency spec (e.g. "github:vikasprogrammer/walkie" or "walkie-sh@1.4.0")
+install_local() {
+  local spec="$1"
+  mkdir -p "${INSTALL_DIR}"
+  cd "${INSTALL_DIR}"
+
+  cat > package.json << EOF
+{
+  "name": "walkie-termux",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "walkie-sh": "${spec}"
+  }
+}
+EOF
+
+  cat > .npmrc << 'NPMRCEOF'
+foreground-scripts=true
+script-shell=/data/data/com.termux/files/usr/bin/sh
+allow-scripts=walkie-sh,udx-native,sodium-native
+NPMRCEOF
+
+  msg "Installing walkie-sh (${spec}) locally (this may take a while)..."
+  if ! ${NPM_BIN} install --production --no-audit --no-fund 2>/dev/null; then
+    warn "npm install failed, trying with --ignore-scripts..."
+    ${NPM_BIN} install --production --no-audit --no-fund --ignore-scripts
+  fi
+}
+
+# Global shared install of walkie-sh into ${PREFIX}/lib/node_modules
+# --no-bin-links: keep our launcher in ${PREFIX}/bin/walkie, don't let npm
+# create its own symlink over it.
+# $1: npm dependency spec
+install_global() {
+  local spec="$1"
+  msg "Installing walkie-sh (${spec}) globally (this may take a while)..."
+  if ! ${NPM_BIN} install -g "${spec}" --no-audit --no-fund --no-bin-links ${NPM_ALLOW} 2>/dev/null; then
+    warn "npm install failed, trying with --ignore-scripts..."
+    ${NPM_BIN} install -g "${spec}" --no-audit --no-fund --no-bin-links ${NPM_ALLOW} --ignore-scripts
+  fi
+}
+
+# Generic installer: local first, fallback to global on failure.
+# $1: npm dependency spec
+install_package() {
+  local spec="$1"
+
+  if [[ "$INSTALL_TYPE" == "global" ]]; then
+    install_global "$spec"
+    if [[ ! -x "${GLOBAL_DIR}/walkie-sh/bin/walkie.js" ]]; then
+      err "Global installation failed. No walkie binary found."
+      exit 1
+    fi
+    ok "walkie-sh installed globally."
+    return
+  fi
+
+  install_local "$spec"
+  if [[ ! -x "${INSTALL_DIR}/node_modules/walkie-sh/bin/walkie.js" ]]; then
+    warn "Local installation failed (possible architecture conflict)."
+    warn "Falling back to GLOBAL installation..."
+    install_global "$spec"
+    if [[ ! -x "${GLOBAL_DIR}/walkie-sh/bin/walkie.js" ]]; then
+      err "Global installation failed. No walkie binary found."
+      exit 1
+    fi
+    INSTALL_TYPE="global"
+    ok "walkie-sh installed globally."
+  else
+    ok "walkie-sh installed locally."
+  fi
+}
+
+# ==============================
+# LEGACY: walkie-sh 1.4.0 (npm registry)
+# Encapsulated for future scenarios where the stable published version is
+# required (e.g. git install unavailable or a regression in main).
+# Usage: WALKIE_USE_140=1
+# ==============================
+install_v140() {
+  info "Legacy mode: installing walkie-sh 1.4.0 from npm registry."
+  install_package "${WALKIE_140_SOURCE}"
+}
+
+# ==============================
+# STEP 1: INSTALL VIA NPM
+# ==============================
+if [[ "${WALKIE_USE_140:-0}" == "1" ]]; then
+  install_v140
+else
+  info "Installing walkie-sh from git main (v1.5.0)..."
+  install_package "${WALKIE_SOURCE}"
+fi
+
+# Resolve the active binary location for the patch step
+if [[ "$INSTALL_TYPE" == "global" ]]; then
+  WALKIE_JS="${GLOBAL_DIR}/walkie-sh/bin/walkie.js"
+  PATCH_ROOT="${GLOBAL_DIR}/walkie-sh"
+else
+  WALKIE_JS="${INSTALL_DIR}/node_modules/walkie-sh/bin/walkie.js"
+  PATCH_ROOT="${INSTALL_DIR}"
+fi
+
+# ==============================
+# STEP 2: APPLY NETLINK/SELINUX PATCH
+# ==============================
+# Android SELinux blocks bind() on AF_NETLINK (netlink_route_socket) for
+# non-root apps. udx-native needs a network interface watcher to build the
+# DHT, but the watcher cannot start on Android. The patched file degrades
+# gracefully to interfaces=[] (local IP falls back to 127.0.0.1), which
+# keeps the daemon running; WAN discovery still works (HyperDHT learns the
+# external IP from the UDP packet source).
+info "Applying netlink/SELinux patch to udx-native..."
+
+if [[ ! -f "${PATCH_SOURCE}" ]]; then
+  err "Patch source not found: ${PATCH_SOURCE}"
+  exit 1
+fi
+
+if ! find_and_patch "${PATCH_ROOT}"; then
+  err "udx-native not found in ${PATCH_ROOT}."
+  exit 1
+fi
+
+# ==============================
+# STEP 2.5: GENERIC AI-AGENT RUNNER PATCH
+# ==============================
+# walkie agent only accepts --cli claude|codex upstream. The patch relaxes
+# the validation and injects a generic runner so any agent CLI can be used
+# (agy, vibe, opencode, gemini, qwen, mimo, kilo, copilot, ... or any
+# fallback). Only relevant for v1.5.0+ (has the agent command); skipped in
+# legacy 1.4.0 mode where the anchors do not exist.
+if [[ "${WALKIE_USE_140:-0}" != "1" ]]; then
+  PATCH_AGENTS="${PREFIX}/share/walkie/patch-agents.js"
+  if [[ ! -f "${PATCH_AGENTS}" ]]; then
+    err "Patch source not found: ${PATCH_AGENTS}"
+    exit 1
+  fi
+  info "Applying generic agent runner patch to walkie.js..."
+  if ! "${NODE}" "${PATCH_AGENTS}" "${WALKIE_JS}"; then
+    err "Generic agent runner patch failed."
+    exit 1
+  fi
+  ok "Generic agent runner patch applied."
+fi
+
+# ==============================
+# STEP 2.6: AGENT AI WRAPPERS
+# ==============================
+# Detect the AI agents installed in the environment (list from the i-Haklab
+# "Agent AI" category, the same shown by `i-Haklab show alltools`) and
+# generate a launcher wrapper for each one in ${HOME}/.local/bin so walkie's
+# generic runner can spawn them (fixes the broken "#!/usr/bin/env" shebang on
+# Termux, e.g. copilot/qwen). ctx7/engram/smithery are NOT agents and are
+# always skipped.
+WRAP_DIR="${HOME}/.local/bin"
+WRAP_MARKER="# walkie agent wrapper"
+
+# Package -> candidate binaries. First installed candidate wins.
+declare -A AGENT_BINS
+AGENT_BINS[antigravity-cli]="agy"
+AGENT_BINS[claude-code]="claude"
+AGENT_BINS[codebuff]="codebuff"
+AGENT_BINS[codex]="codex"
+AGENT_BINS[copilot-cli]="copilot copilot-cli"
+AGENT_BINS[freebuff]="freebuff"
+AGENT_BINS[hermes-agent]="hermes hermes-agent"
+AGENT_BINS[kimi-code]="kimi kimi-code"
+AGENT_BINS[mimocode]="mimo mimocode"
+AGENT_BINS[minimax-cli]="minimax mmx"
+AGENT_BINS[mistral-vibe]="vibe"
+AGENT_BINS[openclaw]="openclaw"
+AGENT_BINS[opencode]="opencode"
+AGENT_BINS[qwen-code]="qwen qwen-code"
+
+# Manual (i-Haklab style) wrapper for these; universal for the rest.
+MANUAL_PKGS="codex claude"
+
+# Source the agent package list from i-Haklab when available.
+AGENT_LIST=""
+if [[ -f "${HOME}/.local/etc/i-Haklab/Tools/categories" ]]; then
+  AGENT_LIST=$(awk -F: '$2=="Agent AI"{print $1}' "${HOME}/.local/etc/i-Haklab/Tools/categories" 2>/dev/null)
+fi
+# Fallback (offline / i-Haklab not installed): the Agent AI tool list.
+[[ -z "${AGENT_LIST}" ]] && AGENT_LIST="antigravity-cli claude-code codebuff codex context7 copilot-cli engram freebuff hermes-agent kimi-code mimocode minimax-cli mistral-vibe openclaw opencode qwen-code smithery"
+# Normalize to newline-separated (IFS=$'\n\t' does not split on spaces).
+AGENT_LIST=$(printf '%s' "${AGENT_LIST}" | sed 's/ /\n/g' | sed '/^$/d')
+
+mkdir -p "${WRAP_DIR}"
+
+# Remove stale wrappers from a previous install (identified by marker).
+for f in "${WRAP_DIR}"/*; do
+  [[ -f "$f" ]] || continue
+  grep -q "${WRAP_MARKER}" "$f" 2>/dev/null && rm -f "$f"
+done
+
+# Manual wrapper (codex / claude): delegate to the real binary.
+write_manual_wrapper() {
+  local name="$1" real="$2"
+  # Keep an existing manual wrapper (e.g. the codex one) untouched.
+  if [[ -e "${WRAP_DIR}/${name}" ]] && ! grep -q "${WRAP_MARKER}" "${WRAP_DIR}/${name}" 2>/dev/null; then
+    info "Keeping existing manual wrapper ${WRAP_DIR}/${name}"
+    return
+  fi
+  rm -f "${WRAP_DIR}/${name}"
+  cat > "${WRAP_DIR}/${name}" << 'WRAPEOF'
+#!/data/data/com.termux/files/usr/bin/bash
+# walkie agent wrapper: @NAME@
+# Delegates to the real binary (fixes shebang issues on Termux).
+exec "@REAL@" "$@"
+WRAPEOF
+  sed -i "s|@NAME@|${name}|g; s|@REAL@|${real}|g" "${WRAP_DIR}/${name}"
+  chmod +x "${WRAP_DIR}/${name}"
+}
+
+# Universal wrapper: resolves a broken "#!/usr/bin/env" shebang at runtime.
+write_universal_wrapper() {
+  local name="$1" real="$2"
+  rm -f "${WRAP_DIR}/${name}"
+  cat > "${WRAP_DIR}/${name}" << 'WRAPEOF'
+#!/data/data/com.termux/files/usr/bin/bash
+# walkie agent wrapper: @NAME@
+REAL="@REAL@"
+[[ -x "$REAL" ]] || { echo "walkie-wrapper: $REAL not found (agent removed?)" >&2; exit 127; }
+[[ "$(head -c 2 "$REAL")" != '#!' ]] && exec "$REAL" "$@"
+read -r first < "$REAL"
+if [[ "$first" == '#!/usr/bin/env '* ]]; then
+  prog=${first#*env }; prog=${prog%% *}
+  [[ "$prog" == python* ]] && prog=python3
+  command -v "$prog" >/dev/null 2>&1 && exec "$prog" "$REAL" "$@"
+fi
+exec "$REAL" "$@"
+WRAPEOF
+  sed -i "s|@NAME@|${name}|g; s|@REAL@|${real}|g" "${WRAP_DIR}/${name}"
+  chmod +x "${WRAP_DIR}/${name}"
+}
+
+# Resolve the real executable of a candidate binary.
+# Returns: 0 + real path | 1 = not installed | 2 = existing manual wrapper.
+resolve_agent_real() {
+  local cand="$1" bin real
+  bin=$(command -v "$cand" 2>/dev/null) || return 1
+  [[ -n "${bin}" ]] || return 1
+  # Existing plain wrapper in WRAP_DIR without our marker: leave it alone.
+  if [[ -f "${bin}" ]] && [[ "$(dirname "${bin}")" == "${WRAP_DIR}" ]] \
+     && ! grep -q "${WRAP_MARKER}" "${bin}" 2>/dev/null; then
+    return 2
+  fi
+  real=$(readlink -f "${bin}")
+  # Unwrap our own previous wrapper to avoid an exec loop.
+  if [[ -f "${bin}" ]] && grep -q "${WRAP_MARKER}" "${bin}" 2>/dev/null; then
+    real=$(grep '^REAL="' "${bin}" | head -1 | sed 's/^REAL="\(.*\)"$/\1/')
+  fi
+  [[ -n "${real}" ]] && [[ -e "${real}" ]] || return 1
+  echo "${real}"
+  return 0
+}
+
+info "Detecting installed AI agents and generating wrappers..."
+for pkg in ${AGENT_LIST}; do
+  case "${pkg}" in
+    context7|engram|smithery) continue ;;   # not agents
+  esac
+  local_bins="${AGENT_BINS[${pkg}]:-${pkg}}"
+  local_bins=$(printf '%s' "${local_bins}" | sed 's/ /\n/g' | sed '/^$/d')
+  installed=""
+  real=""
+  for cand in ${local_bins}; do
+    rc=0
+    r=$(resolve_agent_real "${cand}") || rc=$?
+    if [[ ${rc} -eq 0 ]]; then
+      installed="yes"; real="${r}"; break
+    elif [[ ${rc} -eq 2 ]]; then
+      installed="manual"; break
+    fi
+  done
+  [[ -z "${installed}" ]] && continue
+  if [[ "${installed}" == "manual" ]]; then
+    info "Manual wrapper for ${pkg} already present, skipping"
+    continue
+  fi
+  for alias in ${local_bins}; do
+    if [[ " ${MANUAL_PKGS} " == *" ${pkg} "* ]]; then
+      write_manual_wrapper "${alias}" "${real}"
+    else
+      write_universal_wrapper "${alias}" "${real}"
+    fi
+  done
+  ok "Wrappers generated for ${pkg} (${local_bins})"
+done
+
+# ==============================
+# STEP 3: VERIFICATION
+# ==============================
+info "Verifying installation..."
+if timeout 20 "${NODE}" "${WALKIE_JS}" status &>/dev/null; then
+  ok "walkie installation finished. (mode: ${INSTALL_TYPE})"
+  msg "Run 'walkie' to execute it."
+else
+  warn "Daemon verification timed out (expected on first run). Run 'walkie status' to check."
+fi
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+msg "Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o "${INSTALL_BIN}/fixer"; then
+    chmod 750  "${INSTALL_BIN}/fixer" "${INSTALL_BIN}/walkie"
+    info "Run 'fixer' to fix any posible issue."
+else
+    warn "Could not download fixer."
+fi
+
+# ==============================
+# FINALS MESSAGES
+# ==============================
+tip "Help: going to https://t.me/Ivam3_Bot."
+msg "@Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

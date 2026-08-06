@@ -97,7 +97,7 @@ cd "$INSTALL_DIR"
 # STEP 3: PATCH PLAYWRIGHT-CORE
 # ==============================
 info "Patching playwright-core for Android compatibility..."
-PATCH_SCRIPT="${PREFIX}/lib/omniroute/patch-playwright.sh"
+PATCH_SCRIPT="${PREFIX}/share/omniroute/patch-playwright.sh"
 if [[ -x "$PATCH_SCRIPT" ]]; then
   "$PATCH_SCRIPT" --mock || warn "playwright patch failed — continuing anyway."
 else

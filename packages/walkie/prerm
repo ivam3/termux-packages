@@ -1,0 +1,18 @@
+#!/data/data/com.termux/files/usr/bin/bash
+PREFIX="/data/data/com.termux/files/usr"
+
+echo "!: Removing walkie data... continue?"
+while read -p "[Y/n]: " -n 1 -r; do
+    case $REPLY in
+        [Yy]* )
+            rm -rf ${HOME}/.local/share/walkie ${HOME}/.walkie 2>/dev/null
+            rm -rf ${PREFIX}/lib/node_modules/walkie-sh 2>/dev/null
+            echo "!: Removed walkie data"
+            break;;
+        [Nn]* )
+            echo "!: Keeped walkie data"
+            break;;
+        * ) echo "Please answer [Y/n]";;
+    esac
+done
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

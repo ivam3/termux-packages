@@ -117,8 +117,8 @@ has_playwright_proot() {
 }
 
 has_proot_chromium() {
-  # Check if Chromium is accessible via proot
-  proot-distro login ubuntu --shared-tmp -- /bin/bash -c \
+  # Check if Chromium is accessible via proroot
+  proroot /bin/bash -c \
     'ls /root/.cache/ms-playwright/chromium-*/chrome-linux/chrome 2>/dev/null' &>/dev/null
 }
 

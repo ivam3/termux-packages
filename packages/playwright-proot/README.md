@@ -1,31 +1,45 @@
 # playwright-proot
 
-> Playwright for Termux via proot-distro. Full browser automation (Chromium, Firefox, WebKit) running inside a proot Debian container.
+> Playwright CLI for Termux via **proroot** (Ubuntu 24.04 rootless runtime). Full browser automation (Chromium) running inside a proroot glibc container.
 
 ## Installation
 
 ```bash
-pkg install playwright-proot
+apt install playwright-proot
 ```
 
 ## Info
 
 | Field | Value |
 |-------|-------|
-| Version | `1.50.0` |
+| Version | `1.62.0` |
 | Architecture | `aarch64` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [playwright.dev](https://playwright.dev) |
 
 ## Dependencies
 
-`proot-distro, wget, tar`
+`proroot, curl, tar`
 
 ## Usage
 
 ```bash
-playwright-proot [options]
+playwright-proot run <comandos>     Ejecuta comandos en una sola sesion
+playwright-proot open [url]         Sesion interactiva (Chromium headless en :9222)
+playwright-proot close              Detiene Chromium
+playwright-proot help               Ayuda
 ```
+
+Ejemplos:
+
+```bash
+playwright-proot run "snapshot; screenshot --filename=p.png"
+echo "goto http://localhost:8550; snapshot" | playwright-proot run
+playwright-proot open http://localhost:8550
+playwright-proot close
+```
+
+Funciona en modo headless (sin X11/Wayland).
 
 ## Part of i-HakLab
 
