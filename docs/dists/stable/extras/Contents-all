@@ -1201,6 +1201,9 @@ data/data/com.termux/files/home/.agents/skills/termux-oracle/SKILL.md           
 data/data/com.termux/files/usr/bin/trape                                         trape
 data/data/com.termux/files/usr/bin/unshc-installer                               unshc
 data/data/com.termux/files/usr/bin/vulnx                                         vulnx
+data/data/com.termux/files/usr/bin/walkie                                        walkie
+data/data/com.termux/files/usr/share/walkie/network-interfaces.js                walkie
+data/data/com.termux/files/usr/share/walkie/patch-agents.js                      walkie
 data/data/com.termux/files/usr/bin/wbruter                                       wbruter
 data/data/com.termux/files/usr/bin/wbruter-installer                             wbruter
 data/data/com.termux/files/usr/bin/webscan                                       webscan

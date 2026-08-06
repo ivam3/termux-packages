@@ -1692,6 +1692,22 @@ SHA1: ef05552d8fe14286cbde4576e545a1b145111b12
 SHA256: 40b0052188b286864a767e63eeeec47910796be10c8e7c926f63d59dbf70be5b
 SHA512: b8ff499118a029ca5642615a0c8af599470e41868ceaa57cb3e68d8c72b4b65f406e059e040e31275452894d8b3195ab1725c594c30d9cec69ab1bb985c0442c
 
+Package: walkie
+Version: 1.5.0-1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 10
+Depends: nodejs-lts, git, curl, ollama
+Suggests: i-haklab
+Homepage: https://github.com/vikasprogrammer/walkie
+Description: P2P communication CLI for AI agents. No server. No setup. Just talk. Termux adaptation with netlink/SELinux patch for Android.
+Filename: dists/stable/extras/binary-all/walkie_1.5.0-1_all.deb
+Size: 9376
+MD5Sum: 0236d67cc2c0e73d2ad87c63b80e6eec
+SHA1: ee799560533b77c2feca0f0ed19ad90540ef371a
+SHA256: 1ad0327d284c524ce5161f0117b848d475b3dbbddf168ff151d25d76da179e64
+SHA512: 1abb0d84db3993515be6479d014bc1cd4cff55977280c4f0ba464370bf528bcf0539b973d4da32fb60749b723265ba692ec95efa1bd4a2fa10c06e8a9b3d0408
+
 Package: wbruter
 Version: 3.0
 Architecture: all
