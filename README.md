@@ -127,6 +127,7 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [trape](https://github.com/jofpin/trape) | OSINT analysis and research tool. |
 | [unshc](https://github.com/yanncam/UnSHc) | The Shell Script UnCompiler (UNSHC) decode and decrypt SHC file on X86/x64 architecture. |
 | [vulnx](https://github.com/anouarbensaad/vulnx) | An intelligent bot auto shell injector that detects vulnerabilities in multiple types of cms. |
+| [walkie](https://github.com/vikasprogrammer/walkie) | P2P communication CLI for AI agents. No server. No setup. Just talk. Termux adaptation with netlink/SELinux patch for Android. |
 | [wbruter](https://github.com/wuseman/WBRUTER) | Disable device pin code aslong as usb debugging and brute force methods like dictionary attacks for gmail, ftp, rar, zip and some other file extensions. |
 | [webscan](https://github.com/Fenrir-00/investigar-web) | A lightweight webscanner tool. |
 | [websploit](https://github.com/The404Hacking/websploit) | MITM framework. |
