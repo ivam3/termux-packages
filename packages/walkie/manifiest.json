@@ -1,13 +1,14 @@
 {
   "name": "walkie",
-  "version": "1.5.0",
+  "version": "1.5.0-1",
   "arch": "all",
   "homepage": "https://github.com/vikasprogrammer/walkie",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
   "depends": [
     "nodejs-lts",
     "git",
-    "curl"
+    "curl",
+    "ollama"
   ],
   "suggests": [
     "i-haklab"
