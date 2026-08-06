@@ -296,11 +296,13 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/tor.md         
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/traductor.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/translate-shell.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/trape.md        i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ttyd.md         i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/twifo-cli.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/unshc.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/vim.md          i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/virustotal-cli.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/vulnx.md        i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/walkie.md       i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/wbruter.md      i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/webhackshl.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/webscan.md      i-haklab
@@ -312,7 +314,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/xapt-management
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/xerosploit.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/xleak.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/xml2axml.md     i-haklab
-data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/youtubedr.md    i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/yt-dlp.md       i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ytfzf.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/zaproxy.md      i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/zsh.md          i-haklab
