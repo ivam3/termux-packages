@@ -38,7 +38,13 @@ for arg; do
 done
 
 if ! $HAS_ROOTFS; then
-    if [[ -d "$ROOTFS_DIR" ]]; then
+    if [[ -d "$ROOTFS_DIR" ]] && command -v proot-distro >/dev/null 2>&1; then
+        if [[ $# -eq 0 ]]; then
+            exec proot-distro login --shared-x11 proroot
+        else
+            exec proot-distro login --shared-x11 proroot -- "$@"
+        fi
+    elif [[ -d "$ROOTFS_DIR" ]]; then
         exec env HOME=/root TMPDIR=/var/tmp ${PROROOT_EXE} -r "$ROOTFS_DIR" -0 --link2symlink -w / "${BIND_MOUNTS[@]}" "$@"
     else
         echo -en "${R}E:${W} No rootfs found. Provide -r <path> or run 'proot-distro install ubuntu' first.${Y} Aborting.${W}"
