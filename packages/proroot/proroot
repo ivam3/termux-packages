@@ -14,12 +14,14 @@ BIND_MOUNTS=()
 for mount in \
     "/sdcard:/sdcard" \
     "/storage:/storage" \
-    "/data/data/com.termux/files/home:/data/data/com.termux/files/home"; do
+    "/data/data/com.termux/files/home:/data/data/com.termux/files/home" \
+    "${PREFIX}/tmp/.X11-unix:/tmp/.X11-unix"; do
     host_path="${mount%%:*}"
     if [[ -e "$host_path" ]]; then
         BIND_MOUNTS+=(-b "$mount")
     fi
 done
+
 
 # DNS: bind host resolv.conf or use default Google DNS
 if [[ -e /etc/resolv.conf ]]; then
