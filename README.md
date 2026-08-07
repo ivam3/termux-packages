@@ -86,6 +86,7 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [mimikatz](https://github.com/fortra/impacket/blob/master/examples/mimikatz.py) | Mini shell to control a remote mimikatz RPC server. |
 | [mimocode](https://github.com/XiaomiMiMo/MiMo-Code) | An open-source AI coding agent with cross-session memory. Built for the terminal (Native glibc version for Termux). |
 | [mistral-vibe](https://github.com/mistralai/mistral-vibe) | Minimal CLI coding assistant/agent powered by Mistral's models (Native glibc version for Termux). |
+| [muse-code](https://developer.meta.com/ai/products/muse-code) | Meta Muse Code interactive terminal AI coding agent. |
 | [nexphisher](https://github.com/htr-tech/nexphisher) | Advanced Phishing tool for Termux. |
 | [ngrok](https://ngrok.com) | Globally distributed reverse proxy fronting your web services running in any cloud or private network, or your machine. |
 | [nikto](https://github.com/sullo/nikto) | A web server scanner. |
@@ -98,6 +99,7 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [phomber](https://github.com/s41r4j/phomber) | Infomation grathering tool that reverse search phone numbers and get their details. |
 | [phonesploit](https://github.com/aerosol-can/PhoneSploit) | A tool for remote ADB exploitation for all Machines. |
 | [playwright-proot](https://playwright.dev) | Playwright CLI for Termux via proot-distro Ubuntu. Enables browser automation (snapshot, screenshot, click, fill) for testing PWAs and web apps on Android |
+| [proroot](https://github.com/coderredlab/proroot) | Rootless Linux runtime for Android. Drop-in proot replacement with zero ptrace overhead. Run full glibc Linux userspace (Node.js, Python, Git, Chromium) inside Android without root. |
 | [PuTTY](https://www.ssh.com/academy/ssh/putty/linux) | Graphical terminal program that supports the SSH, telnet, and rlogin protocols and connecting to serial ports. |
 | [pybelt](https://github.com/Ekultek/Pybelt) | An open source hackers tool belt complete. |
 | [quack](https://github.com/Monkey-hk4/quack) | Toolkit with SMS attack tool, HTTP attack tool and many other attack tools. |
@@ -117,15 +119,16 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [spix](https://github.com/VictorH028/spix) | A command line (CLI) tool written in C++ that displays an animated spinner while a background process is running. |
 | [sqliv](https://github.com/the-robot/sqliv) | Massive SQL injection vulnerability scanner. |
 | [stegsnow](https://www.kali.org/tools/stegsnow/) | Hide messages in ASCII text by appending whitespaces to the end of lines |
-| [storm-breaker](https://https://github.com/ultrasecurity/Storm-Breaker) | Social engineering tool [Access Webcam & Microphone & Location Finder] With {Py,JS,PHP} |
+| [storm-breaker](https://github.com/ultrasecurity/Storm-Breaker) | Social engineering tool [Access Webcam & Microphone & Location Finder] With {Py,JS,PHP} |
 | [sublist3r](https://github.com/aboul3la/Sublist3r) | Fast subdomains enumeration tool for penetration testers. |
-| [tangalanga](github.com/elcuervo/tangalanga) | The Zoom conference scanner hacking tool. |
-| [termux-desktop-xfce](https://github.com/Yisus7u7/termux-desktop-xfce) | Set up a beautiful xfce desktop in termux. |
-| [termux-docker-qemu](https://telegra.ph/Docker-en-Android-10-26) | Provide an additional layer of application virtualization with Linux kernel resource isolation features. |
+| [tangalanga](https://github.com/elcuervo/tangalanga) | The Zoom conference scanner hacking tool. |
+| [termux-desktop-xfce](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/termux-desktop-xfce/README.md) | Set up a beautiful xfce desktop in termux. |
+| [termux-docker-qemu](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/termux-docker-qemu/README.md) | Manage Docker containers from Linux VMs (x86/x86_64/ARMv7/AArch64) using QEMU. Includes VirtIO-GPU acceleration via virgl. |
 | [termux-oracle-skill](https://github.com/ivam3/termux-oracle) | Termux skill for AI coding agents with all context about termux, i-Haklab and Ivam3 termux-packages. |
 | [trape](https://github.com/jofpin/trape) | OSINT analysis and research tool. |
 | [unshc](https://github.com/yanncam/UnSHc) | The Shell Script UnCompiler (UNSHC) decode and decrypt SHC file on X86/x64 architecture. |
 | [vulnx](https://github.com/anouarbensaad/vulnx) | An intelligent bot auto shell injector that detects vulnerabilities in multiple types of cms. |
+| [walkie](https://github.com/vikasprogrammer/walkie) | P2P communication CLI for AI agents. No server. No setup. Just talk. Termux adaptation with netlink/SELinux patch for Android. |
 | [wbruter](https://github.com/wuseman/WBRUTER) | Disable device pin code aslong as usb debugging and brute force methods like dictionary attacks for gmail, ftp, rar, zip and some other file extensions. |
 | [webscan](https://github.com/Fenrir-00/investigar-web) | A lightweight webscanner tool. |
 | [websploit](https://github.com/The404Hacking/websploit) | MITM framework. |
@@ -178,4 +181,4 @@ yes|apt install gnupg && mkdir -p $PREFIX/etc/apt/sources.list.d && curl -s http
 
 GNU
 
-##### Follow me on [Socials Network](https://link.space/@ivam3)
+##### Follow me on [Socials Network](https://ivam3.github.io)
