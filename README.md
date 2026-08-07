@@ -86,6 +86,7 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [mimikatz](https://github.com/fortra/impacket/blob/master/examples/mimikatz.py) | Mini shell to control a remote mimikatz RPC server. |
 | [mimocode](https://github.com/XiaomiMiMo/MiMo-Code) | An open-source AI coding agent with cross-session memory. Built for the terminal (Native glibc version for Termux). |
 | [mistral-vibe](https://github.com/mistralai/mistral-vibe) | Minimal CLI coding assistant/agent powered by Mistral's models (Native glibc version for Termux). |
+| [muse-code](https://developer.meta.com/ai/products/muse-code) | Meta Muse Code interactive terminal AI coding agent. |
 | [nexphisher](https://github.com/htr-tech/nexphisher) | Advanced Phishing tool for Termux. |
 | [ngrok](https://ngrok.com) | Globally distributed reverse proxy fronting your web services running in any cloud or private network, or your machine. |
 | [nikto](https://github.com/sullo/nikto) | A web server scanner. |

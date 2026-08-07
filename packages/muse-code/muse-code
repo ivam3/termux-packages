@@ -1,0 +1,19 @@
+#!/data/data/com.termux/files/usr/bin/env bash
+set -euo pipefail
+
+PREFIX="/data/data/com.termux/files/usr"
+LAUNCHER="${HOME}/.local/share/muse-code/muse-launcher"
+
+if [[ ! -f "$LAUNCHER" ]]; then
+  printf 'muse-code: launcher missing at %s; rerun the package installation\n' "$LAUNCHER" >&2
+  exit 1
+fi
+
+bindings=()
+for d in data system vendor product odm apex dev proc sys storage sdcard mnt; do
+  [[ -e "/$d" ]] && bindings+=( -b "/$d:/$d" )
+done
+
+export TZ="${TZ:-$(getprop persist.sys.timezone 2>/dev/null || true)}"
+
+exec proot -r "$PREFIX" "${bindings[@]}" "$PREFIX/bin/bash" "$LAUNCHER" "$@"

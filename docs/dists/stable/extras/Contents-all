@@ -109,6 +109,7 @@ data/data/com.termux/files/home/.local/bin/serverphp                            
 data/data/com.termux/files/home/.local/bin/sudo                                  i-haklab
 data/data/com.termux/files/home/.local/bin/telegram                              i-haklab
 data/data/com.termux/files/home/.local/bin/traductor                             i-haklab
+data/data/com.termux/files/home/.local/bin/walkie-tg                             i-haklab
 data/data/com.termux/files/home/.local/etc/bash/bashrc                           i-haklab
 data/data/com.termux/files/home/.local/etc/fish/config.fish                      i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/.Ivam3byCinderella           i-haklab
@@ -218,6 +219,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/mimikatz.md    
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/mimocode.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/minimax-cli.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/mistral-vibe.md i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/muse-code.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/mvt.md          i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/n8n.md          i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/nano.md         i-haklab
@@ -302,6 +304,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/unshc.md       
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/vim.md          i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/virustotal-cli.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/vulnx.md        i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/walkie-tg.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/walkie.md       i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/wbruter.md      i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/webhackshl.md   i-haklab
@@ -376,6 +379,7 @@ data/data/com.termux/files/home/.local/libexec/iH-AI.py                         
 data/data/com.termux/files/home/.local/libexec/pkg2conf                          i-haklab
 data/data/com.termux/files/home/.local/libexec/preconf                           i-haklab
 data/data/com.termux/files/home/.local/libexec/tips                              i-haklab
+data/data/com.termux/files/home/.local/libexec/walkie-tg/bridge.js               i-haklab
 data/data/com.termux/files/home/.local/var/service/www/veno-file-manager/UPGRADE-README.html i-haklab
 data/data/com.termux/files/home/.local/var/service/www/veno-file-manager/documentation/README.md i-haklab
 data/data/com.termux/files/home/.local/var/service/www/veno-file-manager/documentation/assets/docs.js i-haklab

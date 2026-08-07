@@ -1,0 +1,194 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+set -Eeuo pipefail
+
+# ==============================
+# CONFIGURATION
+# ==============================
+PREFIX="/data/data/com.termux/files/usr"
+DATA_DIR="${HOME}/.local/share/muse-code"
+LAUNCHER_URL="https://api.meta.ai/muse-launcher.sh"
+LAUNCHER="$DATA_DIR/muse-launcher"
+
+# Colors
+CYAN="\033[36m"
+GREEN="\033[32m"
+RED="\033[31m"
+YELLOW="\033[33m"
+DIM="\033[2m"
+RESET="\033[0m"
+
+# Msg
+info() { printf "%b[📢]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+msg()   { printf "[➡] %s\n" "$*"; }
+ok()   { printf "%b[✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+warn() { printf "%b[!]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+tip() { printf "%b[💡]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+err()  { printf "%b[❌]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+
+sha256_of() {
+  local file="$1"
+  sha256sum "$file" | awk '{print tolower($1)}'
+}
+
+# ==============================
+# DOWNLOADING MUSE LAUNCHER
+# ==============================
+msg "Installing muse-code from meta..."
+mkdir -p "$DATA_DIR"
+
+launcher_tmp=""
+launcher_headers=""
+cleanup() {
+  [[ -z "$launcher_tmp" ]] || rm -f "$launcher_tmp"
+  [[ -z "$launcher_headers" ]] || rm -f "$launcher_headers"
+}
+trap cleanup EXIT
+
+launcher_tmp="$(mktemp "$DATA_DIR/.muse-launcher.XXXXXX")"
+launcher_headers="$launcher_tmp.headers"
+curl \
+  --fail \
+  --silent \
+  --show-error \
+  --location \
+  --max-redirs 3 \
+  --proto '=https' \
+  --proto-redir '=https' \
+  --tlsv1.2 \
+  --dump-header "$launcher_headers" \
+  --output "$launcher_tmp" \
+  "$LAUNCHER_URL"
+bash -n "$launcher_tmp" || {
+  err "downloaded launcher is invalid; aborting."
+  exit 1
+}
+
+advertised="$(tr -d '\r' <"$launcher_headers" | \
+  awk -F': ' 'tolower($1)=="x-content-sha256"{v=$2} END{gsub(/[ \t]/,"",v); print tolower(v)}')"
+if [[ "$advertised" =~ ^[0-9a-f]{64}$ ]]; then
+  actual="$(sha256_of "$launcher_tmp")"
+  [[ "$actual" == "$advertised" ]] || {
+    err "downloaded launcher failed checksum verification; aborting."
+    exit 1
+  }
+fi
+
+chmod 755 "$launcher_tmp"
+mv -f "$launcher_tmp" "$LAUNCHER"
+launcher_tmp=""
+ok "launcher installed."
+
+# ==============================
+# DOWNLOADING MUSE BINARY
+# ==============================
+msg "Downloading muse binary (best effort, the launcher self-heals on first run)..."
+if MUSE_LAUNCHER_INSTALL=1 bash "$LAUNCHER"; then
+  ok "muse binary installed."
+else
+  warn "binary download failed; the first 'muse-code' run will retry it."
+fi
+
+# ==============================
+# ALIAS
+# ==============================
+if [[ -e "${PREFIX}/bin/muse-code" ]]; then
+  ln -sf muse-code "${PREFIX}/bin/muse"
+fi
+
+# ==============================
+# SUPPORT FILES (best effort)
+# ==============================
+if [[ -r /linkerconfig/ld.config.txt ]]; then
+  mkdir -p "${PREFIX}/linkerconfig"
+  cp /linkerconfig/ld.config.txt "${PREFIX}/linkerconfig/ld.config.txt"
+  ok "linker config installed."
+fi
+
+if command -v python3 >/dev/null 2>&1 && command -v pip >/dev/null 2>&1; then
+  if pip install -q tzdata 2>/dev/null; then
+    zdir="$(python3 -c "import tzdata,pathlib;print(pathlib.Path(tzdata.__path__[0])/'zoneinfo')" 2>/dev/null || true)"
+    if [[ -n "$zdir" && -d "$zdir" ]]; then
+      mkdir -p "${PREFIX}/share/zoneinfo"
+      cp -r "$zdir"/. "${PREFIX}/share/zoneinfo/" 2>/dev/null || true
+      tz="$(getprop persist.sys.timezone 2>/dev/null || true)"
+      if [[ -n "$tz" && -f "${PREFIX}/share/zoneinfo/$tz" ]]; then
+        cp "${PREFIX}/share/zoneinfo/$tz" "${PREFIX}/etc/localtime" 2>/dev/null || true
+      fi
+      ok "timezone data installed."
+    fi
+  fi
+fi
+
+# ==============================
+# FINAL VERIFICATION
+# ==============================
+if [[ -x "${PREFIX}/bin/muse-code" ]]; then
+  "${PREFIX}/bin/muse-code" --version >/dev/null 2>&1 \
+    && ok "muse-code runs correctly." \
+    || warn "muse-code installed but the first run reported an error."
+else
+  warn "muse-code wrapper not found."
+fi
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+msg "Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o "${PREFIX}/bin/fixer"; then
+    chmod 750 "${PREFIX}/bin/fixer"
+    info "Run 'fixer' to fix any posible issue."
+else
+    warn "Could not download fixer."
+fi
+
+# ==============================
+# PATH CONFIGURATION
+# ==============================
+configure_path() {
+  local bin_dir="$HOME/.local/bin"
+  case ":$PATH:" in
+    *":$bin_dir:"*)
+      ok "$bin_dir is already on PATH (i-HakLab or previously configured)."
+      return 0
+      ;;
+  esac
+
+  local shell_name="${SHELL##*/}"
+  local rc=""
+  case "$shell_name" in
+    fish) rc="$HOME/.config/fish/config.fish" ;;
+    zsh)  rc="$HOME/.zshrc" ;;
+    bash) rc="$HOME/.bashrc" ;;
+    *)    rc="$HOME/.profile" ;;
+  esac
+
+  if grep -qs "$bin_dir" "$rc" 2>/dev/null; then
+    ok "$bin_dir is already configured in $rc."
+    return 0
+  fi
+
+  mkdir -p "$(dirname "$rc")"
+  {
+    printf '\n# muse-code: prepend user-local binaries to PATH (i-HakLab convention)\n'
+    case "$shell_name" in
+      fish) printf 'set -gx PATH "%s" $PATH\n' "$bin_dir" ;;
+      *)    printf 'export PATH="%s:$PATH"\n' "$bin_dir" ;;
+    esac
+  } >> "$rc"
+  ok "$bin_dir added to $rc."
+  tip "Restart your shell or run 'source $rc' to apply it."
+}
+
+msg "Checking PATH configuration..."
+configure_path
+
+# ==============================
+# FINALS MESSAGES
+# ==============================
+ok "muse-code installation finished."
+info "Run 'muse-code' (or 'muse') to execute it."
+tip "Help: going to https://t.me/Ivam3_Bot."
+msg "@Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

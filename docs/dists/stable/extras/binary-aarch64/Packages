@@ -93,6 +93,22 @@ SHA1: 273798a15d6eb530a8d2de2dd057fcefb6061852
 SHA256: e257af71d1f09dd7c7e152f0b90307d599b755684001b8953a8bda1cbe5e6c07
 SHA512: f26cd8ed8d565f552a6325935cc3b753198c5422750e76ab30d106ca5d727c0b5bbc487839435b093330be32a4edebe32fa114f3a95f42fc7f7c8f0682e4d5aa
 
+Package: muse-code
+Version: 0.1.0~R708.1-1
+Architecture: aarch64
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: proot, curl, coreutils, python
+Suggests: i-haklab
+Homepage: https://developer.meta.com/ai/products/muse-code/
+Description: Meta Muse Code interactive terminal AI coding agent for Termux. Runs under proot to work around Android app-data isolation.
+Filename: dists/stable/extras/binary-aarch64/muse-code_0.1.0~R708.1-1_aarch64.deb
+Size: 3704
+MD5Sum: 86005f99ee676f8336e839016230f340
+SHA1: bf365988b598321ab772c860896f4a91affcafdb
+SHA256: 14cf73033ee3ee083cf10ec39711a97f538d901f8543b859b281b3cd5d484f1e
+SHA512: 70f33b7bf4338f6259ec8de7c03fedb10e84d996b8124b91f5eb4a20361f09999e63fe9b0d6c3ec4d4153958730fe167b1e70f006c208ed7c276968092db294d
+
 Package: opencode
 Version: 1.18.9-1
 Architecture: aarch64
@@ -157,7 +173,7 @@ SHA256: e72928cafa90a446ef730f8a5232ee7454c44f9df03d02b1c2f43ebc4a311203
 SHA512: ea54ca43db7b3a4389f8e62e06b964a9f4d2b0efe6df7b3e3a238b625448a5391e9dc8173383bc824afaa77225e3d3543c436f4752718bb8e7e2f45cce0fc64c
 
 Package: proroot
-Version: 1.2.8-1
+Version: 1.2.8-2
 Architecture: aarch64
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
@@ -165,10 +181,10 @@ Depends: wget
 Suggests: i-haklab
 Homepage: https://github.com/coderredlab/proroot
 Description: Rootless Linux runtime for Android. Drop-in proot replacement with zero ptrace overhead. Run full glibc Linux userspace (Node.js, Python, Git, Chromium) inside Android without root.
-Filename: dists/stable/extras/binary-aarch64/proroot_1.2.8-1_aarch64.deb
-Size: 2888
-MD5Sum: ef5bc6ef7a56cbff40d65951399104b4
-SHA1: 88cfc468acd8a9841cd99655585a9a33dc74961c
-SHA256: 37955780baa2e5fe6bb925d19fbefb383e37badba7a4e0150409a6826ecd0343
-SHA512: da310abcad66b1c391f7f71b2a4602a7bbb17e3b6514d824988a62edf0b1d5c25955e95b71a1c5eab3a39d59ff0807e0ee5b786935930bbff62d6d00c52b8b4b
+Filename: dists/stable/extras/binary-aarch64/proroot_1.2.8-2_aarch64.deb
+Size: 2968
+MD5Sum: 996fc33012ceebfd9935a5aefb2fa275
+SHA1: 6d1125aa696f50032325075976af724336ca63ab
+SHA256: d2f6e819d29cb0a0660e8c53bda44a3092e53e2d1dc31b24353fe0632ec083e5
+SHA512: 34c9feb113a5deb17b8a3e2667026a9cf45a0a4cf6cf06d9cafe8b4b0d09fbdc0c0cf1ecc142180c05737d0d7d0ed73c42b7df8bace8b19f4179394c104f904e
 

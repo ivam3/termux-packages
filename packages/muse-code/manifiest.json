@@ -1,0 +1,20 @@
+{
+  "name": "muse-code",
+  "version": "0.1.0~R708.1-1",
+  "arch": "aarch64",
+  "homepage": "https://developer.meta.com/ai/products/muse-code/",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": [
+    "proot",
+    "curl",
+    "coreutils",
+    "python"
+  ],
+  "suggests": [
+    "i-haklab"
+  ],
+  "description": "Meta Muse Code interactive terminal AI coding agent for Termux. Runs under proot to work around Android app-data isolation.",
+  "files": {
+    "muse-code": "/data/data/com.termux/files/usr/bin/muse-code"
+  }
+}

@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+rm -f ${PREFIX}/bin/muse 2>/dev/null
+
+if [[ -d ${HOME}/.local/share/muse-code ]]; then
+    rm -rf ${HOME}/.local/share/muse-code
+fi
+
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
