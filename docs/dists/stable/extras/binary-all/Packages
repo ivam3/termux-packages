@@ -1245,20 +1245,20 @@ SHA256: 4db477d30fe4fabc77c8b6e0af18de3af5274fdf2dec95ccd1b683d539dca446
 SHA512: d0a5fb52e0537051b2ded9abc7e40c139454c340f691bf0487043f023b6f0257415d4dc240a26f14bb1bfab02735f6b2c4bc9245b1ba44021260dd38ba62ed39
 
 Package: phomber
-Version: 2.0
+Version: 3.1.1-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
+Installed-Size: 1
 Depends: python, git
 Suggests: i-haklab
 Homepage: https://github.com/s41r4j/phomber
 Description: A Infomation Grathering tool that reverse search phone numbers and get their details
-Filename: dists/stable/extras/binary-all/phomber_2.0_all.deb
-Size: 2192
-MD5Sum: 7ae8080b9920cf19030309ac9e8fd87c
-SHA1: 1a3cc78ab7fca13f43061e4b4563a121a3dddcf4
-SHA256: 8be3696d4b136bde8b3a28fcb7848e5b43b2241178fa2e263c442191ad74dc06
-SHA512: 85ffae612f62f310ceb9dac9ef02da5fa8c7809d0120abdeb061aa008167fc56a65aa9efe426e4d4e9bec7a915fede75577a4db19497c7c01ca0721efd7350cb
+Filename: dists/stable/extras/binary-all/phomber_3.1.1-1_all.deb
+Size: 2568
+MD5Sum: 016c7ee321f12b5bcb3b355fa83b8d3d
+SHA1: 24c7d8cc5fee180c0aa96470cd3d3eb79267d934
+SHA256: 6bae1a4e5ea424bc1761436a9204dbcfd53eff52feb1cf2f4d0d4f479cddb0e5
+SHA512: e9ea2142602b6c8195339943a6fb1ee7fab03341121a6eff583cc28deba596e78a96d40ba4d84ea916bc3cf5b0cb8529295ed9f3d918301bc1ba296da3716df2
 
 Package: phonesploit
 Version: 1.0
