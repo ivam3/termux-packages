@@ -1209,6 +1209,7 @@ data/data/com.termux/files/usr/bin/vulnx                                        
 data/data/com.termux/files/usr/bin/walkie                                        walkie
 data/data/com.termux/files/usr/share/walkie/network-interfaces.js                walkie
 data/data/com.termux/files/usr/share/walkie/patch-agents.js                      walkie
+data/data/com.termux/files/usr/share/walkie/patch-mention-only.js                walkie
 data/data/com.termux/files/usr/bin/wbruter                                       wbruter
 data/data/com.termux/files/usr/bin/wbruter-installer                             wbruter
 data/data/com.termux/files/usr/bin/webscan                                       webscan

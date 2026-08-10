@@ -12,7 +12,7 @@ pkg install walkie
 
 | Field | Value |
 |-------|-------|
-| Version | `1.5.0` |
+| Version | `1.5.0-2` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [walkie](https://github.com/vikasprogrammer/walkie) |
@@ -80,6 +80,47 @@ Known invocation registry (prompt flag per agent):
 
 `walkie pair` also benefits via `--brain` / `--exec-cli`. `claude`/`codex` keep
 their dedicated runners untouched.
+
+### Strict solo-tag mode (agent only responds when mentioned)
+
+`walkie agent` stock also responds to messages with **no** mentions, which
+would let an agent interfere in a human-to-human chat. This package applies a
+second patch (`lib/patch-mention-only.js`, idempotent, must run after
+`patch-agents.js`) that adds two flags plus an anti-replay guard:
+
+```bash
+walkie agent ops:secret --cli codex --mention-only            # respond only when @mentioned
+walkie agent ops:secret --cli codex --respond-to brain-id     # respond only to that sender
+```
+
+- `--mention-only` → the agent answers ONLY when addressed as `@<name>`.
+- `--respond-to <id>` → the agent answers ONLY messages from that sender
+  (e.g. an executor that must only obey the brain).
+- **Anti-replay**: messages with `ts` older than agent start are dropped, so a
+  daemon restart can never re-trigger old tasks.
+
+Validated end-to-end (test channel with a dummy CLI): human message without a
+tag is ignored; `@name` is answered; `--respond-to` obeys only the trusted
+sender and ignores humans; a fresh agent does not reprocess old history.
+
+Example — two-role remote assistance (admin + user chatting, brain delegating
+to an executor on the user's device). Brain (admin device):
+
+```bash
+walkie agent soporte-u1 --secret SECRET \
+  --name termux-oracle-brain --cli codex --mention-only \
+  --prompt "$(cat ~/.config/walkie/prompt-brain.txt)"
+```
+
+Executor (user device, only obeys the brain):
+
+```bash
+walkie agent soporte-u1 --secret SECRET \
+  --name usuario1-executor --cli codex --mention-only \
+  --respond-to termux-oracle-brain \
+  --agent-args "--dangerously-skip-permissions" \
+  --prompt "$(cat ~/.config/walkie/prompt-executor.txt)"
+```
 
 Note: on Termux, node-based CLIs (`gemini`, `qwen`, `copilot`, ...) may fail
 to spawn because their shebang is `#!/usr/bin/env` (which doesn't exist on

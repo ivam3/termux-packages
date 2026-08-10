@@ -209,6 +209,30 @@ if [[ "${WALKIE_USE_140:-0}" != "1" ]]; then
 fi
 
 # ==============================
+# STEP 2.5b: STRICT SOLO-TAG PATCH (--mention-only / --respond-to)
+# ==============================
+# walkie agent stock responds to messages without mentions, which would let
+# an agent interfere in human-to-human chat. This patch makes --mention-only
+# (respond only when @mentioned) and --respond-to <id> (respond only to a
+# trusted sender) available, plus an anti-replay guard (START_TS) so a daemon
+# restart never re-triggers old tasks. Must run AFTER patch-agents (it anchors
+# on the --skip-git-repo-check option inserted by that patch). Skipped in
+# legacy 1.4.0 mode where the anchors do not exist.
+if [[ "${WALKIE_USE_140:-0}" != "1" ]]; then
+  PATCH_MENTION="${PREFIX}/share/walkie/patch-mention-only.js"
+  if [[ ! -f "${PATCH_MENTION}" ]]; then
+    err "Patch source not found: ${PATCH_MENTION}"
+    exit 1
+  fi
+  info "Applying strict solo-tag patch to walkie.js..."
+  if ! "${NODE}" "${PATCH_MENTION}" "${WALKIE_JS}"; then
+    err "Strict solo-tag patch failed."
+    exit 1
+  fi
+  ok "Strict solo-tag patch applied."
+fi
+
+# ==============================
 # STEP 2.6: AGENT AI WRAPPERS
 # ==============================
 # Detect the AI agents installed in the environment (list from the i-Haklab

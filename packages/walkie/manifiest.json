@@ -1,6 +1,6 @@
 {
   "name": "walkie",
-  "version": "1.5.0-1",
+  "version": "1.5.0-2",
   "arch": "all",
   "homepage": "https://github.com/vikasprogrammer/walkie",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
@@ -17,6 +17,7 @@
   "files": {
     "walkie": "bin/walkie",
     "lib/network-interfaces.js": "/data/data/com.termux/files/usr/share/walkie/network-interfaces.js",
-    "lib/patch-agents.js": "/data/data/com.termux/files/usr/share/walkie/patch-agents.js"
+    "lib/patch-agents.js": "/data/data/com.termux/files/usr/share/walkie/patch-agents.js",
+    "lib/patch-mention-only.js": "/data/data/com.termux/files/usr/share/walkie/patch-mention-only.js"
   }
 }
