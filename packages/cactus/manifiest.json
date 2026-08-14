@@ -1,0 +1,30 @@
+{
+  "name": "cactus",
+  "version": "2.0.1-1",
+  "arch": "all",
+  "homepage": "https://github.com/cactus-compute/cactus",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": [
+    "python",
+    "python-pip",
+    "huggingface",
+    "git",
+    "cmake",
+    "build-essential",
+    "binutils",
+    "pkg-config",
+    "libcurl",
+    "rust",
+    "python-numpy",
+    "python-pillow",
+    "python-torch",
+    "python-torchvision",
+    "python-scipy",
+    "python-tokenizers"
+  ],
+  "suggests": ["i-haklab"],
+  "description": "Hybrid edge-cloud AI engine for mobile devices: on-device LLM/VLM/speech inference (Cactus Engine), quantization, kernels and CLI.",
+  "files": {
+    "README.md": "/data/data/com.termux/files/usr/share/doc/cactus/README.md"
+  }
+}

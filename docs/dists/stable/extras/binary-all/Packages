@@ -254,6 +254,22 @@ SHA1: 567460dab3bde2cdad0d760ad3df4a8378b1b86e
 SHA256: 6b0d5f99a525ddc5c176abb3a8e1b9491ecfa55a70ae49625fdb5cf8f0ac67f6
 SHA512: d823a1c8282e47c9de34f116e88bb2d5c1a6d8ca7c3d07962f2736fe4e65a10bc906398bb30a01c5d7a4d56b2b68b379a9c38616932c23c55f3d94260ce45a47
 
+Package: cactus
+Version: 2.0.1-1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: python, python-pip, huggingface, git, cmake, build-essential, binutils, pkg-config, libcurl, rust, python-numpy, python-pillow, python-torch, python-torchvision, python-scipy, python-tokenizers
+Suggests: i-haklab
+Homepage: https://github.com/cactus-compute/cactus
+Description: Hybrid edge-cloud AI engine for mobile devices: on-device LLM/VLM/speech inference (Cactus Engine), quantization, kernels and CLI.
+Filename: dists/stable/extras/binary-all/cactus_2.0.1-1_all.deb
+Size: 4308
+MD5Sum: a87f795b6e81198469cbcffd75ac14e2
+SHA1: 4b6e022d5257c55a0df84a32d3d34c5cf2b01841
+SHA256: dbc6881770a3c01c33a2cc9a66cc043ccda2c31272dc2eae6e85f4676c56cc04
+SHA512: 9eed040f97194cead53b1deb59d29790a0842d3d2ec0c97380205e4b3d88966f51119661985e3cc300f2eb201989505b5799fa690e41d633b534a69c9223c33b
+
 Package: cewl
 Version: 5.5.2
 Architecture: all
@@ -878,6 +894,22 @@ SHA1: edde0384615660616f6730d78b7a694dc3ff1d82
 SHA256: 2f5d9c24dd42512673faea7f95e1321c9a4f93a87b2018e862d610590c1a88e3
 SHA512: 5086e0c54e0db45ed5b05a17151b4e89c866d562649eabaccf544b5e7a310520375aba49d1a92c26d42232c525aea85146dcbc404dacf9fbe230c1eb7f4e1ff2
 
+Package: huggingface
+Version: 1.27.0-1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1
+Depends: python, python-pip
+Suggests: i-haklab
+Homepage: https://github.com/huggingface/huggingface_hub
+Description: Client library for the Hugging Face Hub (huggingface_hub): download, publish and version AI models/datasets; provides the 'huggingface-cli' tool.
+Filename: dists/stable/extras/binary-all/huggingface_1.27.0-1_all.deb
+Size: 3000
+MD5Sum: 36a89ad8c5e661ad14aed62a14c3bd70
+SHA1: e046c821c5284ba8a5c44abcab47550e3de95d85
+SHA256: 8c0cd27ff02c3c34ef742b6bc1a20c04df715bbe9a50324ab7e49a68ae8cdb4a
+SHA512: 6244916a12fa9c6ecd0e16ae1bd04da69a1be27b2285ac015de341eeafd60fd2efe68dede7d519f0bdf9f1314e8945facd1a44c24b267941a29ab5c2a193b9b5
+
 Package: hunner-framework
 Version: 1.0
 Architecture: all
@@ -911,20 +943,20 @@ SHA256: 989b6693900ff471e790c0c36dd4c31ca64f6868221b00a599cadb6ded2ad98c
 SHA512: b2acf2821c4fa7423aaca5ba2e39c36ff1c4b5cb01f5e10c1ff4e00aaa889ac417570cb2b57d506be35c9a5c1e29baa32e7030c5c9dc15ff7ce941036a28720b
 
 Package: i-haklab
-Version: 3.13.7
+Version: 3.13.8
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 25901
+Installed-Size: 25908
 Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, fd, file, findutils, fish, fzf, gawk, git, glibc-repo, glow, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, mandoc, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, ollama, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, sqlite, strace, tar, tor, torsocks, translate-shell, ttyd, unzip, weechat, wget, yazi, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.13.7_all.deb
-Size: 3699960
-MD5Sum: 261a04b74cef72dd6f7ee9396cf96bf4
-SHA1: af29600ca1fa28372195df53a048109a42d8d53d
-SHA256: 479795698c37e19b3578c09330783299c328d4f2e01b4d9cab71e1ae2025fb86
-SHA512: 869a9c916c31fb1d18e637ef0b7bdac839cb8bcdfe0b3df63207b31134ef64faa2dbe0b60b46e0235f9a8ba0b6700786cb2b80e2a7efbc98f0c4299d4ec00b2d
+Filename: dists/stable/extras/binary-all/i-haklab_3.13.8_all.deb
+Size: 3701664
+MD5Sum: f501c4606eb2bd94e95c5f144a56d8fd
+SHA1: 7c0e6d9a1fd04d2b5567514652df21d55c62af75
+SHA256: f1c1643e3fe10ae195ac2a2905c606abc7e7af7952bdeae019d8fe1afdead5b6
+SHA512: 4512f038a6bab12294a36cf6448f97446b24be85f361a005cd0a86ae1e8e87b201d9f603e9040a59fa9610d4e78fb7b4c61b3c1c8bf35db43dad60ac9a79d5bb
 
 Package: infoga
 Version: 1.0

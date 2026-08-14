@@ -1,0 +1,154 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+set -Eeuo pipefail
+
+# ==============================
+# CONFIGURATION
+# ==============================
+INSTALL_DIR="${HOME}/.local/share/cactus"
+INSTALL_BIN="${PREFIX}/bin"
+REPO_URL="https://github.com/cactus-compute/cactus"
+TAG="v2.0.1"
+BUILD_LOG="${INSTALL_DIR}/build.log"
+PIP_TIMEOUT=900
+
+# Colors
+CYAN="\033[36m"
+GREEN="\033[32m"
+RED="\033[31m"
+YELLOW="\033[33m"
+DIM="\033[2m"
+RESET="\033[0m"
+
+# Msg
+info() { printf "%b[📢]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+msg()   { printf "[➡] %s\n" "$*"; }
+ok()   { printf "%b[✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+warn() { printf "%b[!]%b %s\n" "" "$RESET" "$*"; }
+tip() { printf "%b[💡]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+err()  { printf "%b[❌]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+
+echo
+echo "======== Cactus ${TAG} — on-device AI engine ========"
+echo
+
+# ---------- 1. Clone upstream at fixed tag ----------
+msg "1) Cloning upstream repository (${TAG}) ..."
+git clone --quiet --depth 1 --branch "${TAG}" "${REPO_URL}" "${INSTALL_DIR}"
+ok "Cloned to ${INSTALL_DIR}"
+
+cd "${INSTALL_DIR}"
+
+# ---------- 2. Patch requires-python for Python >= 3.14 ----------
+msg "2) Patching requires-python for Python 3.14 ..."
+sed -i 's/requires-python = ">=3.10,<3.14"/requires-python = ">=3.10"/' python/pyproject.toml
+ok "patched python/pyproject.toml"
+
+# ---------- 3. Runtime Python dependencies (pip, global) ----------
+msg "3) Installing runtime Python deps (pip) ..."
+pip install --quiet --no-cache-dir fastapi uvicorn python-multipart httpx "httpcore>=1.0.9"
+ok "runtime deps installed (huggingface_hub comes via 'huggingface' package)"
+
+# ---------- 4. Optional 'convert' stack ----------
+msg "4) Installing 'convert' stack (sentencepiece, protobuf, transformers 5.5.4) ..."
+tip "Only needed for 'cactus convert' (HuggingFace -> CQ weights)."
+if timeout ${PIP_TIMEOUT} pip install --quiet --no-cache-dir sentencepiece protobuf; then
+  ok "sentencepiece + protobuf installed"
+else
+  warn "sentencepiece/protobuf FAILED or timed out (only 'cactus convert' needs them)."
+fi
+if timeout ${PIP_TIMEOUT} pip install --quiet --no-cache-dir --no-deps "transformers==5.5.4" \
+   && timeout ${PIP_TIMEOUT} pip install --quiet --no-cache-dir safetensors regex pyyaml; then
+  ok "convert stack installed (transformers 5.5.4 + safetensors/regex/pyyaml)"
+else
+  warn "convert stack FAILED or timed out (only 'cactus convert' needs it)."
+fi
+# transformers 5.5.4 exige tokenizers<=0.23.0 en runtime; relax its check to use apt python-tokenizers 0.23.1
+msg "4b) Relaxing transformers tokenizers version check (apt python-tokenizers 0.23.1) ..."
+python3 - <<'PY'
+import importlib.util
+from pathlib import Path
+spec = importlib.util.find_spec("transformers")
+p = Path(spec.submodule_search_locations[0]) / "dependency_versions_table.py"
+s = p.read_text()
+if '"tokenizers": "tokenizers>=0.22.0,<=0.23.0"' in s:
+    p.write_text(s.replace('"tokenizers": "tokenizers>=0.22.0,<=0.23.0"',
+                           '"tokenizers": "tokenizers>=0.22.0"'))
+    ok = "patched"
+else:
+    ok = "already patched"
+print(f"[ ] transformers tokenizers check: {ok}")
+PY
+
+# ---------- 5. Install the Cactus CLI (editable, global) ----------
+msg "5) Installing the Cactus CLI (editable) ..."
+pip install --quiet --no-cache-dir --no-deps -e "${INSTALL_DIR}/python"
+if [[ -f "${PREFIX}/lib/bin/cactus" ]] && ! command -v cactus >/dev/null 2>&1; then
+  ln -sf ../lib/bin/cactus "${INSTALL_BIN}/cactus"
+fi
+ok "CLI installed (cactus -> ${INSTALL_BIN}/cactus)"
+
+# ---------- 6. Build native engine ----------
+msg "6) Building native engine (libcactus_engine.so) ..."
+info "C++20 / ARM NEON kernels. Expect ~5-15 minutes on device."
+(
+  cd "${INSTALL_DIR}/cactus-engine"
+  mkdir -p build && cd build
+  cmake .. -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_RULE_MESSAGES=OFF \
+      -DCMAKE_VERBOSE_MAKEFILE=OFF > "${BUILD_LOG}" 2>&1 || {
+      err "cmake configure failed. Log: ${BUILD_LOG}"; exit 1; }
+  make -j$(nproc) >> "${BUILD_LOG}" 2>&1 || {
+      err "make failed. Log: ${BUILD_LOG}"; exit 1; }
+)
+LIB="${INSTALL_DIR}/cactus-engine/build/libcactus_engine.so"
+if [[ ! -f "${LIB}" ]]; then
+  err "Build did not produce libcactus_engine.so. Manually run:"
+  err "  cd ~/.local/share/cactus/cactus-engine && mkdir -p build && cd build"
+  err "  cmake .. -DCMAKE_SYSTEM_NAME=Linux && make"
+  exit 1
+fi
+ok "Native engine built ($(du -h "${LIB}" | cut -f1))"
+
+# ---------- 7. Smoke test ----------
+msg "7) Smoke test ..."
+cd "${INSTALL_DIR}"
+if timeout 30 cactus --help >/dev/null 2>&1; then
+  ok "CLI ready."
+else
+  warn "CLI smoke test failed (build reported errors below)."
+  timeout 30 cactus --help 2>&1 | tail -20 || true
+fi
+
+# ==============================
+# VERIFICATION
+# ==============================
+info "Verifying installation..."
+if timeout 20 cactus --help &>/dev/null; then
+  ok "cactus installation finished."
+  tip "Usage:"
+  tip "  cactus run Cactus-Compute/needle                    first model (small)"
+  tip "  cactus transcribe openai/whisper-base --file a.wav  transcription"
+  tip "  cactus serve Cactus-Compute/needle --port 8080      OpenAI-compatible API"
+  tip "  cactus convert HuggingFace/model                    convert weights (needs convert stack)"
+else
+  warn "cactus installation failed. Check build log: ${BUILD_LOG}"
+fi
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+msg "Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o "${INSTALL_BIN}/fixer"; then
+    chmod 750 "${INSTALL_BIN}/fixer"
+    info "Run 'fixer' to fix any posible issue."
+else
+    warn "Could not download fixer."
+fi
+
+# ==============================
+# FINALS MESSAGES
+# ==============================
+tip "Help: going to https://t.me/Ivam3_Bot."
+msg "@Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

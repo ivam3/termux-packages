@@ -21,6 +21,7 @@ data/data/com.termux/files/usr/bin/botgram                                      
 data/data/com.termux/files/usr/bin/burpsuite                                     burpsuite
 data/data/com.termux/files/usr/share/applications/burpsuite/burpsuite.desktop    burpsuite
 data/data/com.termux/files/usr/share/applications/burpsuite/img/burpsuite.png    burpsuite
+data/data/com.termux/files/usr/share/doc/cactus/README.md                        cactus
 data/data/com.termux/files/usr/bin/cewl                                          cewl
 data/data/com.termux/files/usr/bin/cewl-installer                                cewl
 data/data/com.termux/files/usr/bin/cloudbunny                                    cloudbunny
@@ -74,6 +75,7 @@ data/data/com.termux/files/usr/bin/hatcloud-installer                           
 data/data/com.termux/files/usr/bin/hcdecryptor                                   hcdecryptor
 data/data/com.termux/files/usr/bin/hcdecryptor-installer                         hcdecryptor
 data/data/com.termux/files/usr/bin/hermes                                        hermes-agent
+data/data/com.termux/files/usr/share/doc/huggingface/README.md                   huggingface
 data/data/com.termux/files/usr/bin/hunner                                        hunner-framework
 data/data/com.termux/files/usr/bin/hunner-installer                              hunner-framework
 data/data/com.termux/files/usr/bin/xhydra                                        hydra-gtk
@@ -138,6 +140,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/blackbox.md    
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/bloodhound.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/botgram.md      i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/burpsuite.md    i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/cactus.md       i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/cewl.md         i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/chatgpt.md      i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/clamav.md       i-haklab
@@ -201,6 +204,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/hcdecryptor.md 
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/hermes-agent.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/hexer.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/holehe.md       i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/huggingface.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/hunner-framework.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/hydra-gtk.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/infoga.md       i-haklab

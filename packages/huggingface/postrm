@@ -1,0 +1,3 @@
+#!/data/data/com.termux/files/usr/bin/bash
+rm -f "${PREFIX}/etc/profile.d/huggingface.sh" 2>/dev/null
+echo "Done. Package 'huggingface' removed."

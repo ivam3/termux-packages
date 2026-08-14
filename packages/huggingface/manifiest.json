@@ -1,0 +1,13 @@
+{
+  "name": "huggingface",
+  "version": "1.27.0-1",
+  "arch": "all",
+  "homepage": "https://github.com/huggingface/huggingface_hub",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["python", "python-pip"],
+  "suggests": ["i-haklab"],
+  "description": "Client library for the Hugging Face Hub (huggingface_hub): download, publish and version AI models/datasets; provides the 'huggingface-cli' tool.",
+  "files": {
+    "README.md": "/data/data/com.termux/files/usr/share/doc/huggingface/README.md"
+  }
+}

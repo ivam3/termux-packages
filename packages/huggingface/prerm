@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+python -m pip --no-color --quiet uninstall -y huggingface-hub || true
+
+if [[ -d ${HOME}/.local/share/huggingface ]]; then
+    rm -rf ${HOME}/.local/share/huggingface
+fi
+
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

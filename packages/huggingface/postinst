@@ -1,0 +1,75 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+set -Eeuo pipefail
+
+# ==============================
+# CONFIGURATION
+# ==============================
+INSTALL_BIN="${PREFIX}/bin"
+
+# Colors
+CYAN="\033[36m"
+GREEN="\033[32m"
+RED="\033[31m"
+YELLOW="\033[33m"
+DIM="\033[2m"
+RESET="\033[0m"
+
+# Msg
+info() { printf "%b[📢]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+msg()   { printf "[➡] %s\n" "$*"; }
+ok()   { printf "%b[✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+warn() { printf "%b[!]%b %s\n" "" "$RESET" "$*"; }
+tip() { printf "%b[💡]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+err()  { printf "%b[❌]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+
+echo
+echo "======== HuggingFace Hub ========"
+echo
+
+msg "Installing huggingface_hub (pip, global, no-deps) ..."
+# --no-deps: huggingface_hub 1.27.0 pulls hf-xet as a hard dep on aarch64, which has
+# no wheel for Termux -> pip tries to build it (Rust/maturin) and hangs. Its other
+# deps below are pure-python wheels and install cleanly.
+pip install --quiet --no-cache-dir --no-deps "httpcore>=1.0.9" huggingface_hub
+pip install --quiet --no-cache-dir click "filelock>=3.10" "fsspec>=2023.5" packaging pyyaml "tqdm>=4.42" "typing-extensions>=4.1"
+if [[ -f "${PREFIX}/lib/bin/huggingface-cli" ]] && ! command -v huggingface-cli >/dev/null 2>&1; then
+  ln -sf ../lib/bin/huggingface-cli "${INSTALL_BIN}/huggingface-cli"
+fi
+if [[ -f "${PREFIX}/lib/bin/hf" ]] && ! command -v hf >/dev/null 2>&1; then
+  ln -sf ../lib/bin/hf "${INSTALL_BIN}/hf"
+fi
+ok "huggingface_hub installed (CLI: hf / huggingface-cli)"
+info "Run 'huggingface-cli' to execute it."
+
+# hf_xet has no working build for Termux Python 3.14 (_Py_FalseStruct missing), and
+# huggingface_hub 1.27.0 declares it as a hard dep on aarch64. This file forces classic
+# HTTP downloads so Xet-hosted repos (e.g. cactus models) work. Safe to delete or
+# `unset HF_HUB_DISABLE_XET` if a working hf-xet wheel ships for Termux in the future.
+PROFILE_D="${PREFIX}/etc/profile.d"
+mkdir -p "${PROFILE_D}"
+cat > "${PROFILE_D}/huggingface.sh" <<'EOF'
+# Disable Xet transfers: hf-xet has no wheel for Termux (aarch64) and is broken on
+# Python 3.14 (_Py_FalseStruct). Removed automatically with the 'huggingface' package.
+export HF_HUB_DISABLE_XET=1
+EOF
+ok "Xet downloads disabled via ${PROFILE_D}/huggingface.sh (hf_xet incompatible with Python 3.14)"
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+msg "Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o "${INSTALL_BIN}/fixer"; then
+    chmod 750 "${INSTALL_BIN}/fixer"
+    info "Run 'fixer' to fix any posible issue."
+else
+    warn "Could not download fixer."
+fi
+
+# ==============================
+# FINALS MESSAGES
+# ==============================
+tip "Help: going to https://t.me/Ivam3_Bot."
+msg "@Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -8,12 +8,12 @@ declare -a pkg=$(find $pkgPATH -maxdepth 1 -type d|awk -F "/" '{print $NF}')
 
 for i in ${pkg[*]}
 do
-	[[ ! -e $i/manifiest.json ]] && {
+	[[ ! -e $i/manifest.json ]] && {
 		echo "$i is not a package"
 	} || {
 		echo -en "Working with:\e[33m $i\e[0m\n"
 		pushd $i
-		termux-create-package manifiest.json
+		termux-create-package manifest.json
 		mv *.deb ../../
 		popd
 	}

@@ -1,0 +1,33 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+
+CACTUS_DIR="${HOME}/.local/share/cactus"
+WEIGHTS_DIR="${CACTUS_DIR}/weights"
+
+echo "Removing cactus CLI (pip package) ..."
+python -m pip --no-color --quiet uninstall -y cactus-compute || true
+
+if [[ -d ${WEIGHTS_DIR} ]] && [[ -n "$(ls -A "${WEIGHTS_DIR}" 2>/dev/null)" ]]; then
+  size="$(du -sh "${WEIGHTS_DIR}" 2>/dev/null | cut -f1)"
+  printf '[!] Downloaded Cactus models detected: %s\n' "${size}"
+  while true; do
+    read -r -p 'Remove downloaded models too? [y/N] ' ans
+    case "${ans,,}" in
+      y|yes) rm -rf "${WEIGHTS_DIR}"; break ;;
+      n|no|'') printf '[.] Keeping models at %s\n' "${WEIGHTS_DIR}"; break ;;
+      *) printf 'Please answer y or n.\n' ;;
+    esac
+  done
+fi
+
+if [[ -d ${CACTUS_DIR} ]]; then
+  if [[ -d ${WEIGHTS_DIR} ]]; then
+    find "${CACTUS_DIR}" -mindepth 1 -maxdepth 1 ! -name weights -exec rm -rf {} +
+    printf '[.] Removed %s (models kept).\n' "${CACTUS_DIR}"
+  else
+    rm -rf "${CACTUS_DIR}"
+  fi
+fi
+
+echo "Done. Package 'cactus' removed."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
