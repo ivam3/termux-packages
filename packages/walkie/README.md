@@ -108,9 +108,16 @@ to an executor on the user's device). Brain (admin device):
 
 ```bash
 walkie agent soporte-u1 --secret SECRET \
-  --name termux-oracle-brain --cli codex --mention-only \
+  --name termux-oracle-brain --cli claude --mention-only \
   --prompt "$(cat ~/.config/walkie/prompt-brain.txt)"
 ```
+
+> The brain must **orchestrate and delegate**, never execute on its own
+> device. Use a text-only CLI (`claude -p`, no tools) instead of `codex` (a
+> tool-use agent with a shell): even if the prompt forbids execution, codex is
+> physically able to run commands and sometimes does. With `claude` the brain
+> *cannot* execute by construction. The only agent that executes is the
+> executor (on the user's device, with codex + permissions).
 
 Executor (user device, only obeys the brain):
 
@@ -136,7 +143,7 @@ several executors present it doesn't know whom to delegate to. A third patch
 `patch-mention-only.js`) adds an opt-in `--track-members` flag:
 
 ```bash
-walkie agent ops:secret --cli codex --track-members --mention-only \
+walkie agent ops:secret --cli claude --track-members --mention-only \
   --prompt "$(cat ~/.config/walkie/prompt-brain.txt)"
 ```
 
