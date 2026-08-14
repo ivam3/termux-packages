@@ -12,7 +12,7 @@ pkg install walkie
 
 | Field | Value |
 |-------|-------|
-| Version | `1.5.0-2` |
+| Version | `1.5.0-3` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [walkie](https://github.com/vikasprogrammer/walkie) |
@@ -126,6 +126,32 @@ Note: on Termux, node-based CLIs (`gemini`, `qwen`, `copilot`, ...) may fail
 to spawn because their shebang is `#!/usr/bin/env` (which doesn't exist on
 Android). A wrapper in `~/.local/bin/<cli>` fixes them, like the existing one
 for `codex`.
+
+### Channel member tracking (roster in the brain prompt)
+
+A brain agent cannot see who joins the channel: it drops the daemon's
+`"X joined"` system announcements together with all system messages, so with
+several executors present it doesn't know whom to delegate to. A third patch
+(`lib/patch-members.js`, idempotent, must run after `patch-agents.js` and
+`patch-mention-only.js`) adds an opt-in `--track-members` flag:
+
+```bash
+walkie agent ops:secret --cli codex --track-members --mention-only \
+  --prompt "$(cat ~/.config/walkie/prompt-brain.txt)"
+```
+
+- Registers **local** members from the daemon's join/leave announcements plus a
+  `members` query at startup, and **remote** peers (other devices) from the
+  `from` id of the first message each one sends.
+- Injects the current roster into the agent prompt **only when membership
+  changed** (Δ-based, zero noise otherwise):
+  `[ROSTER #channel] alice-brain, bob-executor, ...`
+- Persists to `~/.walkie/roster-<channel>.json`, so a restarted brain starts
+  already knowing who is present.
+
+Validated end-to-end (test channel with a dummy CLI): a join is registered and
+persisted, no membership change means no `[ROSTER]` line, a new joiner appears
+in the next prompt, and the roster survives an agent restart.
 
 ## Android / Termux note
 

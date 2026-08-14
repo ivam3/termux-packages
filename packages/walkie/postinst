@@ -233,6 +233,38 @@ if [[ "${WALKIE_USE_140:-0}" != "1" ]]; then
 fi
 
 # ==============================
+# STEP 2.5c: CHANNEL MEMBER TRACKING PATCH (--track-members)
+# ==============================
+# The brain agent cannot see who joins the channel (it drops the daemon's
+# `"X joined"` system announcements along with all system messages), so it
+# can't delegate to the right executor when several are present. This patch
+# (lib/patch-members.js, idempotent, must run after patch-agents and
+# patch-mention-only since it anchors on the options/filters they insert)
+# adds an opt-in `--track-members` flag that:
+#   - keeps a roster of local members (daemon join/leave announcements +
+#     a `members` query at startup) and remote peers (the `from` id of the
+#     first message each one sends);
+#   - injects the roster into the agent prompt ONLY when membership changed
+#     (Δ-based, no noise otherwise), so the brain always knows the executors
+#     and humans present;
+#   - persists the roster to ~/.walkie/roster-<channel>.json so it survives
+#     agent/daemon restarts.
+# Skipped in legacy 1.4.0 mode where the anchors do not exist.
+if [[ "${WALKIE_USE_140:-0}" != "1" ]]; then
+  PATCH_MEMBERS="${PREFIX}/share/walkie/patch-members.js"
+  if [[ ! -f "${PATCH_MEMBERS}" ]]; then
+    err "Patch source not found: ${PATCH_MEMBERS}"
+    exit 1
+  fi
+  info "Applying channel member tracking patch to walkie.js..."
+  if ! "${NODE}" "${PATCH_MEMBERS}" "${WALKIE_JS}"; then
+    err "Channel member tracking patch failed."
+    exit 1
+  fi
+  ok "Channel member tracking patch applied."
+fi
+
+# ==============================
 # STEP 2.6: AGENT AI WRAPPERS
 # ==============================
 # Detect the AI agents installed in the environment (list from the i-Haklab
