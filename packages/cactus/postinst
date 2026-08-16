@@ -109,6 +109,25 @@ if [[ ! -f "${LIB}" ]]; then
 fi
 ok "Native engine built ($(du -h "${LIB}" | cut -f1))"
 
+# ---------- 6b. Build CLI binaries + ELF cleanup ----------
+msg "6b) Building CLI binaries (run/transcribe) + ELF cleanup (termux-elf-cleaner) ..."
+info "Fixes 'executable's TLS segment is underaligned' on ARM64 Bionic (p_align must be >= 64)."
+(
+  cd "${INSTALL_DIR}"
+  python3 - <<'PY'
+from pathlib import Path
+from cactus.cli.compile import build_binary
+lib = Path.home() / ".local/share/cactus/cactus-engine/build/libcactus_engine.a"
+for name in ("run", "transcribe"):
+    if build_binary(name, lib, sdl2=([], [])) != 0:
+        raise SystemExit(f"build_binary({name}) failed")
+PY
+)
+termux-elf-cleaner \
+  "${INSTALL_DIR}/python/cactus/bin/run" \
+  "${INSTALL_DIR}/python/cactus/bin/transcribe"
+ok "CLI binaries built and ELF-cleaned (TLS aligned 0x40)"
+
 # ---------- 7. Smoke test ----------
 msg "7) Smoke test ..."
 cd "${INSTALL_DIR}"

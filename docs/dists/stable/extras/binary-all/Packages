@@ -255,20 +255,20 @@ SHA256: 6b0d5f99a525ddc5c176abb3a8e1b9491ecfa55a70ae49625fdb5cf8f0ac67f6
 SHA512: d823a1c8282e47c9de34f116e88bb2d5c1a6d8ca7c3d07962f2736fe4e65a10bc906398bb30a01c5d7a4d56b2b68b379a9c38616932c23c55f3d94260ce45a47
 
 Package: cactus
-Version: 2.0.1-1
+Version: 2.0.1-2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: python, python-pip, huggingface, git, cmake, build-essential, binutils, pkg-config, libcurl, rust, python-numpy, python-pillow, python-torch, python-torchvision, python-scipy, python-tokenizers
+Depends: python, python-pip, huggingface, git, cmake, build-essential, binutils, pkg-config, libcurl, rust, python-numpy, python-pillow, python-torch, python-torchvision, python-scipy, python-tokenizers, termux-elf-cleaner
 Suggests: i-haklab
 Homepage: https://github.com/cactus-compute/cactus
 Description: Hybrid edge-cloud AI engine for mobile devices: on-device LLM/VLM/speech inference (Cactus Engine), quantization, kernels and CLI.
-Filename: dists/stable/extras/binary-all/cactus_2.0.1-1_all.deb
-Size: 4308
-MD5Sum: a87f795b6e81198469cbcffd75ac14e2
-SHA1: 4b6e022d5257c55a0df84a32d3d34c5cf2b01841
-SHA256: dbc6881770a3c01c33a2cc9a66cc043ccda2c31272dc2eae6e85f4676c56cc04
-SHA512: 9eed040f97194cead53b1deb59d29790a0842d3d2ec0c97380205e4b3d88966f51119661985e3cc300f2eb201989505b5799fa690e41d633b534a69c9223c33b
+Filename: dists/stable/extras/binary-all/cactus_2.0.1-2_all.deb
+Size: 4624
+MD5Sum: b9abd1f960f5603751140eb84d003ba2
+SHA1: 9810bc3f64be63d4d404a9b4b48ac419103d787f
+SHA256: 7952fa6e39afabf6141f7ea568e962d787cdcccf47a50ac9484e2977193460d2
+SHA512: 98e1e67a8946125c251de77da1b59ff2e0d7bf1196122d06befd3e55e87331ddf4516253afb6ee4082f217abb2fc4a68b100d5a50b280f7c16ca7ac590712608
 
 Package: cewl
 Version: 5.5.2
