@@ -255,7 +255,7 @@ SHA256: 6b0d5f99a525ddc5c176abb3a8e1b9491ecfa55a70ae49625fdb5cf8f0ac67f6
 SHA512: d823a1c8282e47c9de34f116e88bb2d5c1a6d8ca7c3d07962f2736fe4e65a10bc906398bb30a01c5d7a4d56b2b68b379a9c38616932c23c55f3d94260ce45a47
 
 Package: cactus
-Version: 2.0.1-2
+Version: 2.0.1-3
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
@@ -263,12 +263,12 @@ Depends: python, python-pip, huggingface, git, cmake, build-essential, binutils,
 Suggests: i-haklab
 Homepage: https://github.com/cactus-compute/cactus
 Description: Hybrid edge-cloud AI engine for mobile devices: on-device LLM/VLM/speech inference (Cactus Engine), quantization, kernels and CLI.
-Filename: dists/stable/extras/binary-all/cactus_2.0.1-2_all.deb
-Size: 4624
-MD5Sum: b9abd1f960f5603751140eb84d003ba2
-SHA1: 9810bc3f64be63d4d404a9b4b48ac419103d787f
-SHA256: 7952fa6e39afabf6141f7ea568e962d787cdcccf47a50ac9484e2977193460d2
-SHA512: 98e1e67a8946125c251de77da1b59ff2e0d7bf1196122d06befd3e55e87331ddf4516253afb6ee4082f217abb2fc4a68b100d5a50b280f7c16ca7ac590712608
+Filename: dists/stable/extras/binary-all/cactus_2.0.1-3_all.deb
+Size: 5124
+MD5Sum: 30deeba1cc7d2f058a68aab01dcd96ba
+SHA1: e2bb6bcba9bf87840b9e07e395b8e7cb614741be
+SHA256: ca638c117cde80947d658759137ca8139be9dea9d3599bf82fc1f955ad06022e
+SHA512: bbd3869e2e3f19d23c242246e2055d7d2b2754b1f1bc4894836fe67db37fc589e435aa0f58290d614ecc3b6937ba2800b6bdf156f043a359921626f56c38993a
 
 Package: cewl
 Version: 5.5.2
@@ -879,7 +879,7 @@ SHA256: 6f4b5d437570652986e969d468206915f37c794e20c9dca4cc81a980bef3e30d
 SHA512: 4b8ba5b4ea51d7ee74b5e6d49b0c990c2da6ad93af6d83944ebb7c0c4e8afd3a47ff3084d30b50f9592d0b5544574014f9331b28d49efe3395d662c73f6a378d
 
 Package: hermes-agent
-Version: 2026.7.20-1
+Version: 2026.8.16-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
@@ -887,12 +887,12 @@ Depends: python, nodejs-lts, python-pip, python-psutil, python-cryptography, cla
 Suggests: i-haklab
 Homepage: https://github.com/NousResearch/hermes-agent
 Description: Personal AI agent by Nous Research with CLI, TUI, messaging gateway, and browser automation. Runs the same agent core across Telegram, Discord, Slack, and 20+ platforms. Features persistent memory, skill learning, subagent delegation, scheduled cron jobs, and terminal/browser control.
-Filename: dists/stable/extras/binary-all/hermes-agent_2026.7.20-1_all.deb
-Size: 4524
-MD5Sum: 68531babf5ec9f3fdff2c76ad5afa48f
-SHA1: edde0384615660616f6730d78b7a694dc3ff1d82
-SHA256: 2f5d9c24dd42512673faea7f95e1321c9a4f93a87b2018e862d610590c1a88e3
-SHA512: 5086e0c54e0db45ed5b05a17151b4e89c866d562649eabaccf544b5e7a310520375aba49d1a92c26d42232c525aea85146dcbc404dacf9fbe230c1eb7f4e1ff2
+Filename: dists/stable/extras/binary-all/hermes-agent_2026.8.16-1_all.deb
+Size: 4520
+MD5Sum: e558e02f7bc6d648df3672c9967ea69d
+SHA1: edd18ef06c65c5cbc1745d89f41563cd525e7097
+SHA256: 054bc31cc63937b4b128e219f27ffabb41b1ae39aa10f88a1bd4e1549d8bcdc7
+SHA512: 12a7c4ee3549b33b554fe4b8d97e0fb9e9b6cfaed622acab2700f9929fc2e0d97eb0f49c5a9b06b574450074dfe142342c6cf4b3ff2ac2ec2e752888c90c5e91
 
 Package: huggingface
 Version: 1.27.0-1
@@ -1119,7 +1119,7 @@ SHA256: 4c0c23cbcc8c663bbabeba017cef000e4f416aa31532686775f34032d340b83c
 SHA512: e6e71c73a9d26b6271e5a9b0eb7b215b6012bbe2846258f7b12326cdd54087e12bc1a37bc6c8f7dbbbe35170d61dc72cdd3ece97632cb2d46b8b88dbd7b2a9aa
 
 Package: mistral-vibe
-Version: 2.23.1-4
+Version: 2.24.1-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 4
@@ -1127,12 +1127,12 @@ Depends: coreutils, curl, uv, python, python-pip, python-cryptography
 Suggests: i-haklab, neovim, termux-oracle-skill
 Homepage: https://github.com/mistralai/mistral-vibe
 Description: Minimal CLI coding assistant/agent powered by Mistral's models.
-Filename: dists/stable/extras/binary-all/mistral-vibe_2.23.1-4_all.deb
-Size: 2836
-MD5Sum: e31d9925dd1ec447792c141e2c247c31
-SHA1: 68b9567bcbbc34325b39cbf73a93d4124d5c05cf
-SHA256: c1428eb8226e4a0ff22436d6d75353074769cb5bb8bf339d3017413b3a200985
-SHA512: 976602016afa1f1dbf9ba6374b5f2c0feaccab97ce283f4e7b81f628f72033b0a37d6ca8f7266015c9f4c33f577fcae84bef86189f8d1e4be6717f42565bab33
+Filename: dists/stable/extras/binary-all/mistral-vibe_2.24.1-1_all.deb
+Size: 2824
+MD5Sum: 83eb541563e1e4bc72904b61143e2503
+SHA1: e2c6806697e05db2a14fdf618cffd577a7147078
+SHA256: ddec77a259e881403deae7194458b1888ee3ebf39f6287fa50530c575ca06730
+SHA512: 6248aac154549222bc768cd3fdcab2d4fa5be0388e30f83997210d5e77e50d4203a923198c906a541573ec334987b5e64a8d041b721f9ef5d1f8dd6220e5ef28
 
 Package: nexphisher
 Version: 1.0.6
@@ -1198,7 +1198,7 @@ SHA256: 7f1cebc17002bb7125289d12816e74cb157ab7f20a7fc326a86ff13010734db1
 SHA512: 3a573eed5a3e3a44fb8d3b747d10eff3f2e0ca67acdacd246e1054f4dcc8ae533ec2c5116fbd664cf59bd2a3d9473ce6f700d78d97e24d313df78215a00dba28
 
 Package: openclaw
-Version: 2026.7.1-1
+Version: 2026.7.1-3
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 116
@@ -1206,12 +1206,12 @@ Depends: android-tools, git, curl, nodejs-lts, pacman, python, python-pip, make,
 Suggests: i-haklab, botgram
 Homepage: https://github.com/AidanPark/openclaw-android
 Description: Open-source autonomous artificial intelligence agent.
-Filename: dists/stable/extras/binary-all/openclaw_2026.7.1-1_all.deb
-Size: 29500
-MD5Sum: e0e1a21bef79fe88175bed79835c2c5b
-SHA1: c9fd6bc895faf73fc2c2a5b697444d39a6cc9892
-SHA256: 615d093558537451f96cef46d87c2f4287283def13aa1939263ba7c908f23691
-SHA512: 3348d653176f36a618088105b0f7d76700bf1c4f9db47ba0feaf307b97a2556e5e0fdd814a38c165a9effbfdaec109b58eda94bfc525813da79e01cdd5fa6414
+Filename: dists/stable/extras/binary-all/openclaw_2026.7.1-3_all.deb
+Size: 29488
+MD5Sum: 2a939f329b9fa66cab7773329a1134c6
+SHA1: 66f4f4ee35f3c73c9447cbb477ce4f37b6e4ad2f
+SHA256: d21109ba26173d726a80e2dcd98e5ecb0302e705afd3b0a1378ff723aeab4572
+SHA512: 0668547b05007729ab0abd0cf3b26510a39d7c513fae92f61e200da519af95006579b07836cfe4989035c3ada06ebb525b1cd5b3599a2172123ea8621f135f6e
 
 Package: openjdk-21-source
 Architecture: all

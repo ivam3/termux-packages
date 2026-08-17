@@ -37,12 +37,11 @@ declare -A AGENT_MAP=(
   [opencode]="opencode"
   [openclaw]="openclaw"
   [playwright]="playwright-proot"
-  [termuxOracle]="termux-oracle-skill"
 )
 
 for var in "${!AGENT_MAP[@]}"; do
   pkg_dir="${AGENT_MAP[$var]}"
-  manifest="$SCRIPT_DIR/$pkg_dir/manifiest.json"
+  manifest="$SCRIPT_DIR/$pkg_dir/manifest.json"
   github_ver="${!var}"
 
   [ -z "$github_ver" ] && continue
@@ -56,10 +55,14 @@ for var in "${!AGENT_MAP[@]}"; do
   manifest_upstream=$(echo "$manifest_ver" | sed 's/-[0-9]\{1,\}$//')
 
   if dpkg --compare-versions "$github_ver" gt "$manifest_upstream" 2>/dev/null; then
-    new_ver="${github_ver}-1"
+    if [[ "$github_ver" =~ ^(.+)-([0-9]+)$ ]]; then
+      new_ver="${BASH_REMATCH[1]}-$(( ${BASH_REMATCH[2]} + 1 ))"
+    else
+      new_ver="${github_ver}-1"
+    fi
     jq --arg ver "$new_ver" '.version = $ver' "$manifest" > "${manifest}.tmp" && mv "${manifest}.tmp" "$manifest"
     rm -f "$SCRIPT_DIR/../${pkg_dir}_"*.deb
-    (cd "$SCRIPT_DIR/$pkg_dir" && termux-create-package manifiest.json && mv *.deb ../../)
+    (cd "$SCRIPT_DIR/$pkg_dir" && termux-create-package manifest.json && mv *.deb ../../)
     echo "Actualizado $pkg_dir: $manifest_ver → $new_ver ✓ paquete reconstruido"
   fi
 done

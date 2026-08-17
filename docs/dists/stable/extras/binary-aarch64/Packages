@@ -14,7 +14,7 @@ SHA256: 76e3648071c8623ab848a2b278ac1e4c3185fd5dd3d69a2d8d44a99b4f8b713c
 SHA512: c97867ebd0f71dc50e153f7239e3cfe55ee794e4929ae225306723ab0fd6bae2206269e2aebc7f9f0ad1bc7f11ca850802882d34447262de6407ec71851111f2
 
 Package: antigravity-cli
-Version: 1.1.8-1
+Version: 1.1.13-1
 Architecture: aarch64
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
@@ -22,15 +22,15 @@ Depends: clang, python, jq, curl, tar, glibc
 Suggests: i-haklab
 Homepage: https://github.com/google-antigravity/antigravity-cli
 Description: Official Antigravity CLI with real-time VA39 memory patching for Termux.
-Filename: dists/stable/extras/binary-aarch64/antigravity-cli_1.1.8-1_aarch64.deb
+Filename: dists/stable/extras/binary-aarch64/antigravity-cli_1.1.13-1_aarch64.deb
 Size: 4188
-MD5Sum: 29f947fddd913359737dfe5c805ee2f4
-SHA1: a56dcfd3a2110daedb25d6b6e3044a48fdc6fc01
-SHA256: ef63fb0a39b54d3c36f2c2d16fd286eea7014dd280fade2537009e7336c7ffdf
-SHA512: 82ff295c2e885ced75934a6c1b5f16e987ec1f4d3658c0d4df3e10fe21618c22b4a200888265115c537778584dcf5eed3825d6abb1ff97f9087c45948988d61d
+MD5Sum: cbf74b32d403e9070e983a9f40b8054d
+SHA1: f56d44c4486fea5029d310188c4904117900236c
+SHA256: 804472a049b2e0903ee41fcda01c36eb95d926f2f34c7e79190c98e7a7395510
+SHA512: 8bb222a2afe71dedba475c208190b3e3380b3332f66e302f29e6ba4ccaf8b232c0a926c01170ec0f1ab13bbf16b5e2e3520ce25ab7c85dabc9ec82c0180f5a76
 
 Package: claude-code
-Version: 2.1.220-1
+Version: 2.1.233-1
 Architecture: aarch64
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
@@ -38,12 +38,12 @@ Depends: glibc, clang, python, jq, curl, tar
 Suggests: i-haklab
 Homepage: https://github.com/anthropics/claude-code
 Description: NATIVE adaptation of Claude Code for Termux. Agentic coding tool that understands your codebase and helps you code faster through natural language commands.
-Filename: dists/stable/extras/binary-aarch64/claude-code_2.1.220-1_aarch64.deb
+Filename: dists/stable/extras/binary-aarch64/claude-code_2.1.233-1_aarch64.deb
 Size: 3464
-MD5Sum: 2bb130c136aa5fdcc72b125f24e944e6
-SHA1: f9857e4a548454f7da70c1f9eb2084257577a280
-SHA256: 933dabeb5a5b1f4ed4b1a886503cf41fcd3034e9866d7cc527aa03704786548f
-SHA512: 296bf7d87ad5cb87dff49493a1be4ac487d294bf8595e401d5d49a1c98092952c748151591ebbf878023ff25176461068636515ddff9a220ccad7835c00b212e
+MD5Sum: 42f7e0237d58d6ce77de6b6d28a29eae
+SHA1: bf88eb35c65659b7ade26c39b86a4cbbbba03f50
+SHA256: e077b8d6599fc29fb164e7cee9bde78a0feb5491c0fcf7cdd06748712a724631
+SHA512: ca5a95041dc92d46502aa1bb92ae2431c60fe0619d95d098a6418cefd1c5170f1f1e82b59384d2be1175b9f3e85b4124fd1156940e095eeb4c36ad510874e687
 
 Package: codebuff
 Version: 1.0.420-1
@@ -62,7 +62,7 @@ SHA256: 8d7a49d8efdf74dea6f00842b2810ba2c1dec94d6b59278607bc9a278ce7188b
 SHA512: 6b6f1e0053520c1a2416a2136685fa1982b5a14c4bf47294f4b004eab401a68a5210d547cf9303d769c48e43aa38c570a8e6797eb006c732b51cd6665a5332a1
 
 Package: freebuff
-Version: 0.0.130-1
+Version: 0.0.149-1
 Architecture: aarch64
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 3
@@ -70,15 +70,15 @@ Depends: glibc, clang, python, jq, wget, tar
 Suggests: i-haklab
 Homepage: https://github.com/CodebuffAI/codebuff-community
 Description: AI coding assistant that edits your codebase through natural language instructions. A buffcode free version with ad-supported — no subscription, no credits, no configuration.
-Filename: dists/stable/extras/binary-aarch64/freebuff_0.0.130-1_aarch64.deb
-Size: 3948
-MD5Sum: 42712316b73e2eb723b11dad1d828e4a
-SHA1: 42d825b7b00f8169dfff04507de59f7fcc000191
-SHA256: 9efc58958cb96557a9de0b6d915f4761c96b8866219393c1f3dd72fa10273b64
-SHA512: df4e9c3ce3dc58e736db4f3da44d3e392d17808a086ae996ccddd1934ba76fbbfe0affa3770442f19e783728ceb469879dc22b0c9f0267e259e7facd59565075
+Filename: dists/stable/extras/binary-aarch64/freebuff_0.0.149-1_aarch64.deb
+Size: 3952
+MD5Sum: e6e49f06b5147b2fe96900cb7722882e
+SHA1: f9a0e5d6789060684107351522d6b23df741fac9
+SHA256: 7ca23d76c1ad7b2c6d8592bd0e943148c20aa5fd17a29180e9ac5b126f6b306d
+SHA512: 82aa3cd9a6e0721eca67a061098f94431e60022fb5b0e0e82720c9d695b4a3f247d612e8b56624afa15f6184fda6671b18442abe290df9430fdfdae805b9d0bf
 
 Package: mimocode
-Version: 0.1.9-1
+Version: 0.1.12-1
 Architecture: aarch64
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 3
@@ -86,12 +86,12 @@ Depends: glibc, clang, python, jq, curl, tar
 Suggests: i-haklab
 Homepage: https://github.com/XiaomiMiMo/MiMo-Code
 Description: An open-source AI coding agent with cross-session memory. Built for the terminal (Native glibc version for Termux).
-Filename: dists/stable/extras/binary-aarch64/mimocode_0.1.9-1_aarch64.deb
+Filename: dists/stable/extras/binary-aarch64/mimocode_0.1.12-1_aarch64.deb
 Size: 3892
-MD5Sum: 38644366d1d40dc956bee89571bac6a0
-SHA1: 273798a15d6eb530a8d2de2dd057fcefb6061852
-SHA256: e257af71d1f09dd7c7e152f0b90307d599b755684001b8953a8bda1cbe5e6c07
-SHA512: f26cd8ed8d565f552a6325935cc3b753198c5422750e76ab30d106ca5d727c0b5bbc487839435b093330be32a4edebe32fa114f3a95f42fc7f7c8f0682e4d5aa
+MD5Sum: fc4e60a1ce30b547c03bfe29e0b766c7
+SHA1: 1e1f92b39b544ed2c729f78401643c1e3af5960f
+SHA256: 83c944caf3fafc9841e342f21771c7c120670dec88604435f6f519c1fa9df8a7
+SHA512: 4e595bf0fc6147717973824cb9d5f86a513bae2f2f508123dfe9f55f43af3bbaf13ff1ddbfdfdc27975f83b5fa9db45d6a897a9b46306c7e8ea9dc3ea838bf9e
 
 Package: muse-code
 Version: 0.1.0~R708.1-1
@@ -110,7 +110,7 @@ SHA256: 14cf73033ee3ee083cf10ec39711a97f538d901f8543b859b281b3cd5d484f1e
 SHA512: 70f33b7bf4338f6259ec8de7c03fedb10e84d996b8124b91f5eb4a20361f09999e63fe9b0d6c3ec4d4153958730fe167b1e70f006c208ed7c276968092db294d
 
 Package: opencode
-Version: 1.18.9-1
+Version: 1.18.18-1
 Architecture: aarch64
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 3
@@ -118,12 +118,12 @@ Depends: glibc, clang, python, jq, curl, tar
 Suggests: i-haklab
 Homepage: https://github.com/opencode-ai/opencode
 Description: A powerful AI coding agent. Built for the terminal (Native glibc version for Termux).
-Filename: dists/stable/extras/binary-aarch64/opencode_1.18.9-1_aarch64.deb
-Size: 3768
-MD5Sum: 2c606b89c66960458be8a623e37e4d18
-SHA1: f37a07957de8e870aa6c2bd7d066298191a16d3b
-SHA256: 608829f1db21ef5a615cb38eae9a7d991efe49100a60512ce9647b38f26c7c6a
-SHA512: d49d87ba7f0a177614fb30f68f2ab28a9b23990b342acb45c2ae05920d69cabff74adce31cc807154ff248854572bd7921b073b7510b8ea777ff17582aa3eee3
+Filename: dists/stable/extras/binary-aarch64/opencode_1.18.18-1_aarch64.deb
+Size: 3772
+MD5Sum: 27d030f07fc5052911194108368e4790
+SHA1: e454ed423dda7cc2a60ad57697f56b2952c6885e
+SHA256: 87a6490084499124ebad9b1e87edcdd68f7fca7b426c9ef75f88f6ec91ba28ef
+SHA512: 3eb1a0886fe9b95b7baff086c1b2703ac70a95c75ede513e089173258e4d1867b3f350b61d5198be0aa15939c9cb55c065554ffbaef777fd995881ce24ae6e54
 
 Package: openjdk-21-x
 Architecture: aarch64
@@ -158,19 +158,19 @@ SHA256: 67d735a99f8cbcc7ba033e42c6944b2f212076f37a2c2afb81dd20cc85db4b56
 SHA512: 5fbfc2b5aaf50e13102e7ebba2ee1534d7cbfac2dd9e65925a51539ccb259622ff5eb18eeea51fbe84e396911a21b1b20a226a369b4637ccb016c46761d3eee8
 
 Package: playwright-proot
-Version: 1.62.0-1
+Version: 1.62.1-1
 Architecture: aarch64
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 5
 Depends: proroot, curl, tar
 Homepage: https://playwright.dev
 Description: Playwright CLI for Termux via proroot (Ubuntu 24.04). Enables browser automation (snapshot, screenshot, click, fill) for testing PWAs and web apps on Android.
-Filename: dists/stable/extras/binary-aarch64/playwright-proot_1.62.0-1_aarch64.deb
-Size: 4276
-MD5Sum: 092381477ab0e1df459ef5946ddf0ce5
-SHA1: 2e4e429c4f6631f0078b08b68f6b9a434b1f6460
-SHA256: e72928cafa90a446ef730f8a5232ee7454c44f9df03d02b1c2f43ebc4a311203
-SHA512: ea54ca43db7b3a4389f8e62e06b964a9f4d2b0efe6df7b3e3a238b625448a5391e9dc8173383bc824afaa77225e3d3543c436f4752718bb8e7e2f45cce0fc64c
+Filename: dists/stable/extras/binary-aarch64/playwright-proot_1.62.1-1_aarch64.deb
+Size: 4264
+MD5Sum: fde71b95a3a549edd1788920162a8abe
+SHA1: 4d3a6dcc5e06d738db5ebffeee322e9aef4aae74
+SHA256: e4feae68bcef5578628255eb9b6add07913b54b3250eede9f04d4a6863ec7ede
+SHA512: e01bcae5d0e6696ce9bb195e7680279a47862cb99306d1dea7eeee1f726d3bdb3611a7446ef568bdaa384dfe8c8e57fac62f764f698a684c871c3f43374d3625
 
 Package: proroot
 Version: 1.2.8-2

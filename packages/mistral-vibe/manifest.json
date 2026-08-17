@@ -1,14 +1,21 @@
 {
   "name": "mistral-vibe",
-  "version": "2.23.1\r-4",
+  "version": "2.24.1\r-1",
   "arch": "all",
   "homepage": "https://github.com/mistralai/mistral-vibe",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
   "depends": [
-      "coreutils", "curl", "uv", "python", "python-pip", "python-cryptography"
+    "coreutils",
+    "curl",
+    "uv",
+    "python",
+    "python-pip",
+    "python-cryptography"
   ],
   "suggests": [
-    "i-haklab", "neovim", "termux-oracle-skill"
+    "i-haklab",
+    "neovim",
+    "termux-oracle-skill"
   ],
   "description": "Minimal CLI coding assistant/agent powered by Mistral's models.",
   "files": {

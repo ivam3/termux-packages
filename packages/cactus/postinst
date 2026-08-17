@@ -44,6 +44,49 @@ msg "2) Patching requires-python for Python 3.14 ..."
 sed -i 's/requires-python = ">=3.10,<3.14"/requires-python = ">=3.10"/' python/pyproject.toml
 ok "patched python/pyproject.toml"
 
+# ---------- 2b. Patch validate_extracted_bundle for SentencePiece bundles ----------
+msg "2b) Patching bundle validation for SentencePiece tokenizers ..."
+info "Prebuilt bundles with tokenizer_type=sentencepiece ship tokenizer.model, not tokenizer.json."
+info "The stock validator rejects them, so e.g. 'cactus download Cactus-Compute/needle' would fall"
+info "back to a local build that is impossible for architectures absent from transformers."
+verdict="$(python3 - <<'PY'
+from pathlib import Path
+
+p = Path.home() / ".local/share/cactus/python/cactus/cli/utils.py"
+s = p.read_text(encoding="utf-8")
+old = (
+    '    optional_required = ["special_tokens.json", "tokenizer.json"]\n'
+    '    if tokenizer_type == "bpe":\n'
+    '        optional_required.append("merges.txt")'
+)
+new = (
+    '    if tokenizer_type == "sentencepiece":\n'
+    '        optional_required = ["special_tokens.json", "tokenizer.model"]\n'
+    '    else:\n'
+    '        optional_required = ["special_tokens.json", "tokenizer.json"]\n'
+    '        if tokenizer_type == "bpe":\n'
+    '            optional_required.append("merges.txt")'
+)
+if old in s:
+    p.write_text(s.replace(old, new), encoding="utf-8")
+    verdict = "patched"
+elif 'tokenizer_type == "sentencepiece"' in s and '"tokenizer.model"' in s:
+    verdict = "already patched"
+else:
+    verdict = "PATTERN NOT FOUND"
+print(verdict)
+PY
+)"
+case "${verdict}" in
+  patched) ok "validate_extracted_bundle accepts SentencePiece bundles (tokenizer.model sidecar)" ;;
+  "already patched") ok "validate_extracted_bundle already accepts SentencePiece bundles" ;;
+  *) warn "validate_extracted_bundle patch not applied (upstream may have changed): ${verdict}" ;;
+esac
+if ! python3 -m py_compile "${INSTALL_DIR}/python/cactus/cli/utils.py"; then
+  err "py_compile failed after validate_extracted_bundle patch."
+  exit 1
+fi
+
 # ---------- 3. Runtime Python dependencies (pip, global) ----------
 msg "3) Installing runtime Python deps (pip) ..."
 pip install --quiet --no-cache-dir fastapi uvicorn python-multipart httpx "httpcore>=1.0.9"
