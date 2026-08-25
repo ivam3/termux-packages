@@ -1,10 +1,10 @@
 {
   "name": "androidsdk-cli",
-  "version": "3.6.0",
+  "version": "22.0",
   "arch": "all",
-  "homepage": "https://https://developer.android.com/studio/command-line",
+  "homepage": "https://developer.android.com/tools",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["termux-api, wget, aapt, apksigner, adbfastboot, gradle, openjdk-21"],
+  "depends": ["curl, unzip, aapt, apksigner, adbfastboot, gradle, openjdk-21"],
   "suggests": ["i-haklab"],
   "description": "Official command line Integrated Development Environment (IDE) for Android app development",
   "files" :{

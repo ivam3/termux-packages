@@ -40,15 +40,31 @@ const RUN_GENERIC = `function runGeneric(cli, prompt, sessionId, model, extraArg
     kilo: ['-p', '{prompt}'], kilocode: ['-p', '{prompt}'],
     minimax: ['-p', '{prompt}'], mmx: ['-p', '{prompt}'],
     'copilot-cli': ['{prompt}'], copilot: ['{prompt}'], codebuff: ['{prompt}'],
-    freebuff: ['{prompt}'], hermes: ['{prompt}'], openclaw: ['{prompt}']
+    freebuff: ['{prompt}'], hermes: ['{prompt}'], openclaw: ['{prompt}'],
+    cactus: ['run', '--prompt', '{prompt}']
   }
   let args = (REGISTRY[cli] || ['{prompt}']).slice()
-  if (model) args.push('--model', model)
+  if (model) {
+    // cactus takes the model positionally: cactus run [model] (no --model).
+    if (cli === 'cactus') args.push(model)
+    else args.push('--model', model)
+  }
   if (extraArgs) args.push(...extraArgs)
   if (args.includes('{prompt}')) {
     args = args.map(a => a === '{prompt}' ? prompt : a)
   } else {
     args.push(prompt)
+  }
+
+  // cactus writes a structured result to --result-json; prefer parsing the
+  // clean response over the raw stdout, which also echoes the interactive
+  // banner/You:/stats framing.
+  let rjPath = null
+  if (cli === 'cactus') {
+    const os = require('os')
+    const path = require('path')
+    rjPath = path.join(os.tmpdir(), 'walkie-cactus-' + process.pid + '-' + Date.now() + '.json')
+    args.push('--result-json', rjPath)
   }
 
   const result = spawnSync(cli, args, {
@@ -62,6 +78,13 @@ const RUN_GENERIC = `function runGeneric(cli, prompt, sessionId, model, extraArg
   if (result.status !== 0) throw new Error(result.stderr || cli + ' exited with code ' + result.status)
 
   let text = (result.stdout || '').trim()
+  if (rjPath) {
+    try {
+      const rj = JSON.parse(require('fs').readFileSync(rjPath, 'utf8'))
+      text = (rj.context_response || rj.response || text).trim()
+    } catch {}
+    try { require('fs').unlinkSync(rjPath) } catch {}
+  }
   text = text.replace(/\\x1b\\[[0-9;]*[A-Za-z]/g, '')
   return { text, sessionId: null }
 }

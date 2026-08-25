@@ -1,44 +1,116 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
-v="6200805"
+v="15859902"
 shell=$(echo ${SHELL}|awk -F "/" '{print $NF}')
+DOWNLOAD_URL="https://dl.google.com/android/repository"
+ZIPFILE="commandlinetools-linux-${v}_latest.zip"
+SDK_ROOT="${HOME}/.local/share/androidsdk-cli"
+TOOL_PATH="${SDK_ROOT}/cmdline-tools"
 
-echo "Downloading suite ..."
-wget --tries=20 --quiet https://dl.google.com/android/repository/commandlinetools-linux-6200805_latest.zip \
-  -O ${TMPDIR}/commandlinetools-linux-6200805_latest.zip
+echo "Downloading suite (cmdline-tools 22.0) ..."
+curl -fsSL $DOWNLOAD_URL/$ZIPFILE -o ${TMPDIR}/$ZIPFILE
 
-[[ -e ${TMPDIR}/commandlinetools-linux-6200805_latest.zip ]] && {
+[[ -e ${TMPDIR}/$ZIPFILE ]] && {
   echo "Unpacking development tools ..."
-  mkdir -p ${HOME}/.local/share/androidsdk-cli/cmdline-tools
-  unzip --quiet ${TMPDIR}/commandlinetools-linux-${v}_latest.zip -d ${HOME}/.local/share/androidsdk-cli/cmdline-tools/
-  chmod 751 -R ${HOME}/.local/share/androidsdk-cli
-  rm -rf ${TMPDIR}/commandlinetools-linux-${v}_latest.zip
-  if [[ $shell = "fish" ]]; then 
-    echo "set JAVA_HOME ${PREFIX}/opt/openjdk" >> ${HOME}/.config/fish/config.fish
-    echo "set ANDROID_SDK_ROOT ${HOME}/.local/share/androidsdk-cli" >> ${HOME}/.config/fish/config.fish
-    echo "set PATH \$PATH:\$ANDROID_SDK_ROOT/cmdline-tools/tools/bin" >> ${HOME}/.config/fish/config.fish
-    reset
-  else
-    [[ -e ${HOME}/.bashrc ]] || { touch ${HOME}/.bashrc;}
-    echo "export JAVA_HOME=${PREFIX}/opt/openjdk" >> ${HOME}/.bashrc   
-    echo "export ANDROID_SDK_ROOT=${HOME}/.local/share/androidsdk-cli" >> ${HOME}/.bashrc
-    echo "export PATH=\$JAVA_HOME:\$PATH:\$ANDROID_SDK_ROOT/cmdline-tools/tools/bin" >> ${HOME}/.bashrc
-    source ${HOME}/.bashrc
+  mkdir -p $TOOL_PATH
+  unzip --quiet ${TMPDIR}/$ZIPFILE -d $TOOL_PATH
+  chmod 751 -R $SDK_ROOT
+  rm -rf ${TMPDIR}/$ZIPFILE
+
+  # sdkmanager moderno exige el layout <sdk>/cmdline-tools/latest/
+  if [[ -d $TOOL_PATH/cmdline-tools ]]; then
+    mv $TOOL_PATH/cmdline-tools $TOOL_PATH/latest
   fi
-  
-  echo "Installing platform for Android 29" 
-  sdkmanager "platform-tools" "platforms;android-29"
-  echo "Build tools for Android 29"
-  sdkmanager "build-tools" "build-tools;29.0.3"
+
+  echo "Set global variables ..."
+  case $shell in
+    bash) INITFILE=${HOME}/.bashrc ;;
+    zsh)  INITFILE=${HOME}/.zshrc ;;
+    fish) INITFILE=${HOME}/.config/fish/config.fish ;;
+    *)
+      echo -en "\e[33mW:\e[0m Unsupported shell '${shell}', skipping env vars\n"
+      INITFILE=""
+      ;;
+  esac
+
+  if [[ -n $INITFILE ]]; then
+    [[ -f $INITFILE ]] || { mkdir -p $(dirname $INITFILE) && touch $INITFILE; }
+
+    # Avoid duplicating lines if the declaration already exists
+    if ! grep -q "ANDROID_SDK_ROOT" $INITFILE; then
+      # i-HakLab already exports JAVA_HOME/PATH through its envvariables file,
+      # but not ANDROID_SDK_ROOT nor the sdkmanager path: declare only what is missing.
+      if [[ -e ${HOME}/.local/bin/i-Haklab ]]; then
+        case $shell in
+          fish)
+            cat >> $INITFILE <<EOF
+
+# termux-packages: androidsdk-cli env (guarded by java presence)
+if command -v java >/dev/null 2>&1
+  set -x ANDROID_SDK_ROOT $HOME/.local/share/androidsdk-cli
+  set -x PATH \$PATH:\$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
+end
+EOF
+            ;;
+          *)
+            cat >> $INITFILE <<EOF
+
+# termux-packages: androidsdk-cli env (guarded by java presence)
+if command -v java >/dev/null 2>&1; then
+  export ANDROID_SDK_ROOT=${HOME}/.local/share/androidsdk-cli
+  export PATH=\$PATH:\$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
+fi
+EOF
+            ;;
+        esac
+      else
+        case $shell in
+          fish)
+            cat >> $INITFILE <<EOF
+
+# termux-packages: androidsdk-cli env (guarded by java presence)
+if command -v java >/dev/null 2>&1
+  set -x JAVA_HOME $PREFIX/lib/jvm/java-21-openjdk
+  set -x ANDROID_SDK_ROOT $HOME/.local/share/androidsdk-cli
+  set -x PATH \$PATH:\$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
+end
+EOF
+            ;;
+          *)
+            cat >> $INITFILE <<EOF
+
+# termux-packages: androidsdk-cli env (guarded by java presence)
+if command -v java >/dev/null 2>&1; then
+  export JAVA_HOME=${PREFIX}/lib/jvm/java-21-openjdk
+  export ANDROID_SDK_ROOT=${HOME}/.local/share/androidsdk-cli
+  export PATH=\$PATH:\$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
+fi
+EOF
+            ;;
+        esac
+      fi
+    fi
+  fi
+
+  export JAVA_HOME=${PREFIX}/lib/jvm/java-21-openjdk
+  export ANDROID_SDK_ROOT=$SDK_ROOT
+  export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
+
+  echo "Installing platform for Android 36"
+  sdkmanager "platform-tools" "platforms;android-36"
+  echo "Build tools for Android 36"
+  sdkmanager "build-tools;36.0.0"
   echo "Accept Android licenses"
-  sdkmanager --licenses
-  
+  yes | sdkmanager --licenses
+
   echo "[*] androidsdk-cli installation finished."
   echo "[*] Run 'androidsdk-cli' to execute it."
 } || {
   echo -en "\e[31mE:\e[0m androidsdk-cli zip file missing ... \e[33mAborting.\e[0m\n";
 }
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+
+curl -fsSL "https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer" \
+    -o /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] Run 'fixer' to fix any posible issue."
 echo "[!] For help going to https://t.me/Ivam3_Bot."

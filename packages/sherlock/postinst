@@ -1,8 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
 
-chmod +x ${PREFIX}/bin/sherlock-installer
-bash ${PREFIX}/bin/sherlock-installer
+echo "Installing requirements ...";
+python -m pip --no-color --quiet --no-cache-dir install requests pipx;
 python -m pipx ensurepath
 python -m pipx install --force sherlock;
 

@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
-version="2.12.1"
+version="3.0.3"
 echo "Downloading jar file ..."
 curl -fsSL "https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_$version.jar" \
   -o ${PREFIX}/var/spool/apktool.jar

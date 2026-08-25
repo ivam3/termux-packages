@@ -5,35 +5,11 @@ then
   exit 1
 else
   echo "Preparing enviroment ..."
-  shell=$(echo $SHELL|awk -F "/" '{print $NF}')
-  
-  [[ -d ${HOME}/go/pkg/mod/github.com ]] || mkdir -p ${HOME}/go/pkg/mod/github.com
-	[[ -d ${PREFIX}/lib/go/src ]] || mkdir -p ${PREFIX}/lib/go/src
-
-  case $shell in
-    bash|zsh) 
-      INITFILE=${HOME}/.${shell}rc
-      [[ -e $INITFILE ]] || touch $INITFILE
-      if ! $(grep -oE "GOPATH" $INITFILE)
-      then
-        sed -i "21a GOPATH=${HOME}/go" $INITFILE
-      fi
-      if ! $(grep -oE "$GOROOT")
-      then
-        sed -i "22a GOROOT=${PREFIX}/lib/go" $INITFILE
-      fi
-      ;;
-    fish) 
-      INITFILE=${HOME}/.config/fish/config.fish
-      if ! $(grep -oE "GOPATH" $INITFILE)
-      then
-        sed -i "21a set GOPATH ${HOME}/go" $INITFILE
-      fi
-      if ! $(grep -oE "GOROOT" $INITFILE)
-      then
-        sed -i "22a set GOROOT ${PREFIX}/lib/go" $INITFILE
-      fi
-      ;;
-  esac
+  if [[ -d ${HOME}/.local/share/evilginx2 ]]
+  then
+    rm -rf ${HOME}/.local/share/evilginx2
+  else
+    mkdir -p ${HOME}/.local/share 2>/dev/null
+  fi
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

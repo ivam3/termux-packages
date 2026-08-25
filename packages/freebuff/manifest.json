@@ -9,7 +9,7 @@
     "clang",
     "python",
     "jq",
-    "wget",
+    "curl",
     "tar"
   ],
   "suggests": [

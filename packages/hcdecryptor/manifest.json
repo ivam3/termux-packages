@@ -4,11 +4,14 @@
   "arch": "all",
   "homepage": "https://gitlab.com/PANCHO7532/HCDecryptor",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["git, nodejs-lts"],
-  "suggests": ["i-haklab"],
+  "depends": [
+    "git, nodejs-lts"
+  ],
+  "suggests": [
+    "i-haklab"
+  ],
   "description": "Decryptor for HTTP Custom, HTTP Injector, APK Custom, eProxy, NapsternetV and SocksHTTP-based configuration files.",
-  "files" :{
-    "hcdecryptor-installer": "bin/hcdecryptor-installer",
+  "files": {
     "hcdecryptor": "bin/hcdecryptor"
-}
+  }
 }

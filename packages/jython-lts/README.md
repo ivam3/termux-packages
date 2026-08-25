@@ -19,7 +19,7 @@ pkg install jython-lts
 
 ## Dependencies
 
-`wget, openjdk-21`
+`openjdk-21, curl, giflib`
 
 ## Usage
 

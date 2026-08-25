@@ -1,7 +1,20 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/cloudbunny-installer
-rm -rf ${PREFIX}/bin/cloudbunny-installer
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+IFS=$'\n\t'
+
+echo "Cloning repository ..."
+git clone --quiet https://github.com/Warflop/CloudBunny ${HOME}/.local/share/cloudbunny
+
+[[ -d ${HOME}/.local/share/cloudbunny ]] && {
+  echo "Installing requirements ...";
+  chmod 751 -R ${HOME}/.local/share/cloudbunny;
+  cd ${HOME}/.local/share/cloudbunny;
+  echo "certificates" >> requirements.txt
+  python -m pip --no-color --quiet --no-cache-dir install -r requirements.txt;
+} || {
+  echo -en "\e[31mE:\e[0m cloudbunny directory missing ... \e[33mAborting.\e[0m\n";
+  exit 1;
+}
+curl -fsSL "https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer" -o "/data/data/com.termux/files/usr/bin/fixer"
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] cloudbunny installation finished."
 echo "[!] For help going to https://t.me/Ivam3_Bot."

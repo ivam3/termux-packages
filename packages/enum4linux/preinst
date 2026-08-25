@@ -5,9 +5,11 @@ then
   exit 1
 else
   echo "Preparing enviroment ..."
-  if [[ -e ${PREFIX}/bin/enum4linux ]]
+  if [[ -d ${HOME}/.local/share/enum4linux ]]
   then
-    rm -rf ${PREFIX}/bin/enum4linux
+    rm -rf ${HOME}/.local/share/enum4linux
+  else
+    mkdir -p ${HOME}/.local/share 2>/dev/null
   fi
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -1,20 +1,17 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
-echo "Cloning repository ..."
-go install github.com/OJ/gobuster/v3@latest
-gob=$(find ${HOME}/go/pkg/mod/github.com -iname gobuster)
-[[ -d $gob/$(ls $gob) ]] && {
-	chmod 751 -R ${HOME}/go
-	ln -s $gob/$(ls $gob) $PREFIX/lib/go/src/gobuster;
-	cd $gob/$(ls $gob);
-	go get;
-	go build;
-	go install;
-} || {
-  echo -en "\e[31mE:\e[0m gobuster directory missing ... \e[33mAborting.\e[0m\n";
-  exit 1;
+echo "Building gobuster v3.8.2 ..."
+export GO111MODULE=on
+go install github.com/OJ/gobuster/v3@v3.8.2 || {
+  echo -en "\e[31mE:\e[0m gobuster build failed ... \e[33mAborting.\e[0m\n"
+  exit 1
 }
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+[[ -e ${HOME}/go/bin/gobuster ]] && chmod 751 ${HOME}/go/bin/gobuster || {
+  echo -en "\e[31mE:\e[0m gobuster binary missing ... \e[33mAborting.\e[0m\n"
+  exit 1
+}
+curl -fsSL "https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer" \
+    -o /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] gobuster installation finished."
 echo "[*] Run 'gobuster' to execute it."

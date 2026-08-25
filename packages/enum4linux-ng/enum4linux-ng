@@ -1,0 +1,14 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# COLORS
+W="\e[0m"
+R="\e[31m"
+Y="\e[33m"
+if [[ -f ${HOME}/.local/share/enum4linux-ng/enum4linux-ng.py ]]
+then
+  cd ${HOME}/.local/share/enum4linux-ng >/dev/null
+  $(command -v python) enum4linux-ng.py ${@:1}
+else
+  echo -en $R"E:$W enum4linux-ng not installed ...$Y Aborting.$W\n"
+  exit 1
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

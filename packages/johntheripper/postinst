@@ -15,7 +15,7 @@ for i in $(find $HOME/.local/share/johntheripper/run -executable);do
   ln -s $i ${PREFIX}/bin/${addon%.$ex} 2>/dev/null
 done
 
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+curl -fsSL https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -o /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] johntheripper installation finished."
 echo "[*] Run 'john' to execute it."

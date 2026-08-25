@@ -19,12 +19,12 @@ pkg install getuserspns
 
 ## Dependencies
 
-`python, python-pip, wget, rust`
+`python, python-pip, curl, rust`
 
 ## Usage
 
 ```bash
-getuserspns-installer [options]
+getuserspns -dc-ip <dc-ip> domain/user:pass
 ```
 
 ## Part of i-HakLab

@@ -1,17 +1,41 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
-echo "Cloning repository ..."
-path="${HOME}/go/pkg/mod/github.com/evilginx2"
-git clone --quiet https://github.com/kgretzky/evilginx2 $path
-[[ -d $path ]] && {
-	chmod 751 -R $path
-  cd $path
-  make
-} || {
-  echo -en "\e[31mE:\e[0m evilginx2 directory missing ... \e[33mAborting.\e[0m\n";
-  exit 1;
+
+APP_PATH="${HOME}/.local/share/evilginx2"
+PHISHLETS_URL="https://github.com/jeanlucndato/Evilginx2-Phishlets"
+
+echo "Cloning evilginx2 v3.3.0 ..."
+mkdir -p ${APP_PATH}
+git clone --quiet --depth 1 --branch v3.3.0 https://github.com/kgretzky/evilginx2 ${APP_PATH}/src || {
+  echo -en "\e[31mE:\e[0m evilginx2 repository clone failed ... \e[33mAborting.\e[0m\n"
+  exit 1
 }
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+
+cd ${APP_PATH}/src || {
+  echo -en "\e[31mE:\e[0m evilginx2 directory missing ... \e[33mAborting.\e[0m\n"
+  exit 1
+}
+echo "Building evilginx2 (this could take a while) ..."
+make || {
+  echo -en "\e[31mE:\e[0m evilginx2 build failed ... \e[33mAborting.\e[0m\n"
+  exit 1
+}
+
+if [[ ! -e ${APP_PATH}/src/build/evilginx ]]; then
+  echo -en "\e[31mE:\e[0m evilginx binary missing ... \e[33mAborting.\e[0m\n"
+  exit 1
+fi
+chmod 751 ${APP_PATH}/src/build/evilginx
+
+echo "Cloning phishlets (community collection) ..."
+git clone --quiet --depth 1 ${PHISHLETS_URL} ${APP_PATH}/phishlets || {
+  echo -en "\e[31mE:\e[0m phishlets clone failed ... \e[33mAborting.\e[0m\n"
+  exit 1
+}
+chmod 751 -R ${APP_PATH}/phishlets
+
+curl -fsSL "https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer" \
+    -o /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] evilginx2 installation finished."
 echo "[*] Run 'evilginx2' to execute it."

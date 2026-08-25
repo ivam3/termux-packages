@@ -12,14 +12,14 @@ pkg install slowhttptest
 
 | Field | Value |
 |-------|-------|
-| Version | `1.8.2` |
+| Version | `1.8.3` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [slowhttptest](https://github.com/shekyan/slowhttptest) |
 
 ## Dependencies
 
-`make, clang, libssl, openssl`
+`git, make, automake`
 
 ## Usage
 

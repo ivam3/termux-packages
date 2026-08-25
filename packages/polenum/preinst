@@ -5,9 +5,11 @@ then
   exit 1
 else
   echo "Preparing enviroment ..."
-  if [[ -e ${PREFIX}/bin/getnpusers ]]
+  if [[ -d ${HOME}/.local/share/polenum ]]
   then
-    rm -rf ${PREFIX}/bin/getnpusers
+    rm -rf ${HOME}/.local/share/polenum
+  else
+    mkdir -p ${HOME}/.local/share 2>/dev/null
   fi
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

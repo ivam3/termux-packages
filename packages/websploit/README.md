@@ -15,7 +15,7 @@ pkg install websploit
 | Version | `4.0.4` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [WebSploit](https://github.com/The404Hacking/websploit) |
+| Homepage | [WebSploit](https://github.com/f4rih/websploit) |
 
 ## Dependencies
 
@@ -24,7 +24,8 @@ pkg install websploit
 ## Usage
 
 ```bash
-websploit-installer [options]
+websploit
+# interactive MITM framework shell
 ```
 
 ## Part of i-HakLab

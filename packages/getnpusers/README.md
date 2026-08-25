@@ -19,12 +19,12 @@ pkg install getnpusers
 
 ## Dependencies
 
-`python, python-pip, wget, rust`
+`python, python-pip, curl, rust`
 
 ## Usage
 
 ```bash
-getnpusers-installer [options]
+getnpusers -dc-ip <dc-ip> domain/user:pass
 ```
 
 ## Part of i-HakLab

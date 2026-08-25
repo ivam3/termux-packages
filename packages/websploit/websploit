@@ -5,10 +5,12 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 B="\e[34m"
-if [[ -d ${HOME}/.local/share/websploit ]]
+
+if [[ -e ${HOME}/.local/share/websploit/websploit/websploit.py ]]
 then
-  cd ${HOME}/.local/share/$(basename $0) >/dev/null
-  $(command -v python2) $(basename $0).py ${@:1}
+  pushd ${HOME}/.local/share/websploit >/dev/null
+  $(command -v python) -c "from websploit.websploit import start_wsf; start_wsf()" ${@:1}
+  popd >/dev/null
 else
   echo -en $R"E:$W $(basename $0) PATH missing ...$Y Aborting.$W"
   exit 1

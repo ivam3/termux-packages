@@ -12,14 +12,14 @@ pkg install recondog
 
 | Field | Value |
 |-------|-------|
-| Version | `1.0` |
+| Version | `2.0` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [ReconDog](https://github.com/s0md3v/ReconDog) |
 
 ## Dependencies
 
-`python, git`
+`python, python-pip, git`
 
 ## Usage
 

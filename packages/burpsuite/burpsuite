@@ -7,11 +7,19 @@ Y="\e[33m"
 B="\e[34m"
 if [[ -e ${HOME}/.local/share/burpsuite.jar ]]
 then
-	[[ $(uname -m) = "aarch64" ]] || { printf >&2 $R"(➤_)$W Incompatible architecture";exit;}
-	[[ $(file $TMPDIR/*|grep -o "socket") >/dev/null ]] || { printf >&2 "$R(➤_)\$W Termux:Wayland server isn't running...$R aborting.$W";exit;}
+	[[ $(uname -m) = "aarch64" ]] || { printf >&2 "$R(➤_)$W Incompatible architecture"; exit 1; }
+	[[ -S $TMPDIR/.X11-unix/X0 || -S $TMPDIR/.x11-unix/X0 || -e $TMPDIR/.X11-unix/X0 ]] || {
+		printf >&2 "$R(➤_)$W Termux:Wayland server isn't running...$R aborting.$W\n"
+		exit 1
+	}
 	export DISPLAY=:0
 	umask 000
-	exec $(command -v java) --add-opens=java.desktop/javax.swing=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -jar ${HOME}/.local/share/burpsuite.jar
+	JNA_LIB=/data/data/com.termux/files/usr/opt/burpsuite/lib
+	exec $(command -v java) -Djna.boot.library.path=$JNA_LIB \
+		-Djna.library.path=$JNA_LIB \
+		--add-opens=java.desktop/javax.swing=ALL-UNNAMED \
+		--add-opens=java.base/java.lang=ALL-UNNAMED \
+		-jar ${HOME}/.local/share/burpsuite.jar
 else
 	echo -en "$R(➤_)$W Jar file is not installed...$R aborting.$W"
 	exit 1

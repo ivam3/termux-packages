@@ -12,14 +12,14 @@ pkg install penelope
 
 | Field | Value |
 |-------|-------|
-| Version | `0.9.2` |
+| Version | `0.14.8` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [penelope](https://github.com/brightio/penelope) |
 
 ## Dependencies
 
-`python`
+`python, python-pip`
 
 ## Usage
 

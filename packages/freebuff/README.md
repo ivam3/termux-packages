@@ -12,14 +12,14 @@ pkg install freebuff
 
 | Field | Value |
 |-------|-------|
-| Version | `0.0.119-1` |
+| Version | `0.0.149-1` |
 | Architecture | `aarch64` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [codebuff-community](https://github.com/CodebuffAI/codebuff-community) |
 
 ## Dependencies
 
-`glibc, clang, python, jq, wget, tar`
+`glibc, clang, python, jq, curl, tar`
 
 ## Usage
 

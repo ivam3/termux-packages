@@ -1,0 +1,14 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -Eeuo pipefail
+
+# Remove binary installed by postinst to $PREFIX/bin (not tracked by dpkg)
+if [[ -f "${PREFIX}/bin/herdr" ]]; then
+  rm -f "${PREFIX}/bin/herdr"
+  echo "[✔] Removed ${PREFIX}/bin/herdr"
+fi
+
+# Do not remove fixer if other ivam3 packages depend on it — leave it
+# rm -f "${PREFIX}/bin/fixer"  # intentionally kept
+
+echo "Done. Package 'herdr' removed."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

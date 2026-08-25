@@ -12,19 +12,19 @@ pkg install ghidra
 
 | Field | Value |
 |-------|-------|
-| Version | `11.1.2` |
+| Version | `11.4.1` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [ghidra-sre.org](https://ghidra-sre.org) |
 
 ## Dependencies
 
-`wget, openjdk-21`
+`tur-repo, openjdk-21, clang, llvm, lldb, gradle, ndk-multilib, gcc-12, swig`
 
 ## Usage
 
 ```bash
-ghidra-installer [options]
+ghidra
 ```
 
 ## Part of i-HakLab

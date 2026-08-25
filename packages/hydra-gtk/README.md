@@ -12,14 +12,14 @@ pkg install hydra-gtk
 
 | Field | Value |
 |-------|-------|
-| Version | `9.5` |
+| Version | `9.6` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [thc-hydra](https://github.com/vanhauser-thc/thc-hydra) |
 
 ## Dependencies
 
-`hydra`
+`autoconf-archive, git, cmake, make, automake, gtk2, libgcrypt, libgpg-error, libssh, libidn, libxfixes, mariadb, openssl, openssl-tool, pcre, pcre2, postgresql, subversion`
 
 ## Usage
 

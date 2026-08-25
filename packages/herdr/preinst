@@ -1,0 +1,14 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -Eeuo pipefail
+
+if [[ $(id -u) -eq 0 ]]; then
+  echo -en "\e[31mE:\e[0m You need to be a common user (don't run as root in Termux)\n"
+  exit 1
+fi
+
+echo "Preparing environment for herdr (aarch64 strict, $PREFIX/bin) ..."
+# Ensure share/doc target for README placeholder
+mkdir -p "${PREFIX}/share/doc/herdr" 2>/dev/null || true
+
+echo "[✔] Environment ready"
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

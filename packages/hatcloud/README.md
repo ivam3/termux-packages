@@ -12,14 +12,14 @@ pkg install hatcloud
 
 | Field | Value |
 |-------|-------|
-| Version | `4.5` |
+| Version | `1.0` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [HatCloud](https://github.com/HatBashBR/HatCloud) |
 
 ## Dependencies
 
-`ruby, git`
+`git, ruby`
 
 ## Usage
 

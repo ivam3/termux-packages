@@ -1,19 +1,17 @@
 #!/data/data/com.termux/files/usr/bin/bash
 # VARIABLES
-burpVer="2026.1.5" ##THE LASTEST COMPATIBLE VERSION FOR TERMUX
-lv="9.1.0"
+burpVer="2026.7.3" ##LASTEST VERSION FIXED FOR TERMUX (JNA bionic lib included)
 
 echo "Downloading jar files (It could take a while) ..."
-wget "https://portswigger.net/burp/releases/download?product=community&version=${burpVer}&type=Jar" \
-	-O ${HOME}/.local/share/burpsuite.jar
+curl -fsSL "https://portswigger.net/burp/releases/startdownload?product=desktop&version=${burpVer}&type=jar" -o ${HOME}/.local/share/burpsuite.jar || {
+		echo -en "\e[31mE:\e[0m burpsuite jar file download failed ... \e[33mAborting.\e[0m\n"
+		exit 1
+	}
 
 if [[ -e ${HOME}/.local/share/burpsuite.jar ]]; then
   echo "Installing requirements ..."
   chmod 751 ${HOME}/.local/share/burpsuite.jar
-  # LIBGIF VERSION SPECIFIC NEEDED 
-  [[ ! -e $PREFIX/opt/openjdk/lib/libgif.so.7 ]] && [[ -e $PREFIX/lib/libgif.so.$lv ]] && {
-    ln -s $PRERIX/lib/libgif.so.$lv $PREFIX/opt/openjdk/lib/libgif.so.7;
-  }
+  # JNA NATIVE LIB FOR TERMUX (BIONIC) IS INSTALLED BY THIS PACKAGE AT $PREFIX/opt/burpsuite/lib
   echo "[*] burpsuite installation finished."
   echo "[!] Burpsuite is not a CLi tool."
   echo "[!] A desktop enviroment needed"
@@ -21,7 +19,7 @@ if [[ -e ${HOME}/.local/share/burpsuite.jar ]]; then
 
 else
   echo -en "\e[31mE:\e[0m burpsuite jar file missing ... \e[33mAborting.\e[0m\n"
-
+  exit 1
 fi
 
 # ==============================

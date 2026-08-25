@@ -5,12 +5,12 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 B="\e[34m"
-if [[ ! -d ${HOME}/.local/share/androidsdk-cli ]]
+if [[ -d ${HOME}/.local/share/androidsdk-cli ]]
 then
   echo -en """${G}Android SDK command line
 
   ${B}Main directory :${W} ~/.local/share/androidsdk-cli
-  ${B}PATH :${W} ~/.local/share/androidsdk-cli/cmdline-tools/tools/bin/
+  ${B}PATH :${W} ~/.local/share/androidsdk-cli/cmdline-tools/latest/bin/
 
   ${Y}Commands available :${W}
 

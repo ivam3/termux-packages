@@ -1,9 +1,44 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/dex2jar-installer
-rm -rf ${PREFIX}/bin/dex2jar-installer
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
-chmod 751 /data/data/com.termux/files/usr/bin/fixer
-echo "[*] dex2jar installation finished."
-echo "[!] For help going to https://t.me/Ivam3_Bot."
-echo "[*] @Ivam3: thank you for use my package."
+# VARIABLES
+link="https://github.com/pxb1988/dex2jar/releases/download"
+releases="v2.4"
+zipFile="dex-tools-v2.4.zip"
+
+echo "Downloading dex-tools ..."
+curl -fsSL "$link/$releases/$zipFile" -o ${TMPDIR}/dex2jar.zip || {
+		echo -en "\e[31mE:\e[0m dex-tools download failed ... \e[33mAborting.\e[0m\n"
+		exit 1
+	}
+unzip -q ${TMPDIR}/dex2jar.zip -d ${HOME}/.local/share
+rm -rf ${HOME}/.local/share/dex2jar
+mv ${HOME}/.local/share/dex-tools-v2.4 ${HOME}/.local/share/dex2jar
+rm -f ${TMPDIR}/dex2jar.zip
+
+if [[ -d ${HOME}/.local/share/dex2jar ]]; then
+  echo "Installing requirements ..."
+  chmod 751 -R ${HOME}/.local/share/dex2jar
+  echo "[*] dex2jar installation finished."
+  echo "[!] Use 'dex2jar' to list available tools."
+else
+  echo -en "\e[31mE:\e[0m dex2jar directory missing ... \e[33mAborting.\e[0m\n"
+  exit 1
+fi
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+echo "[*] Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o /data/data/com.termux/files/usr/bin/fixer; then
+    chmod 750 /data/data/com.termux/files/usr/bin/fixer
+    echo "[➡] Run 'fixer' to fix any posible issue."
+else
+    echo "[!] Error downloading fixer."
+fi
+
+# ==============================
+# FINALS MESSAGES
+# ==============================
+echo "[📢] Help: going to https://t.me/Ivam3_Bot."
+echo "[💡] @Ivam3: thank you for use my package."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

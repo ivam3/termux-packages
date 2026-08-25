@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 [[ -d ${HOME}/go/pkg/mod/github.com ]] && {
 	gob=$(find ${HOME}/go/pkg/mod/github.com -iname gobuster)
-  [[ -d $gob/$(ls $gob) ]] && { rm -rf $gob/$(ls $gob);}
+  [[ -d $gob/$(ls $gob 2>/dev/null) ]] && { rm -rf $gob/$(ls $gob 2>/dev/null);}
   [[ -h ${PREFIX}/lib/go/src/gobuster ]] && { rm ${PREFIX}/lib/go/src/gobuster;}
   [[ -e ${HOME}/go/bin/gobuster ]] && { rm ${HOME}/go/bin/gobuster;}
 }

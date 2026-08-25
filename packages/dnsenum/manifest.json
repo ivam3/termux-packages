@@ -1,10 +1,10 @@
 {
   "name": "dnsenum",
-  "version": "1.2.4",
+  "version": "1.3.2",
   "arch": "all",
-  "homepage": "https://github.com/fwaeytens/dnsenum",
+  "homepage": "https://github.com/SparrowOchon/dnsenum2",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["git, perl"],
+  "depends": ["git, perl, curl"],
   "suggests": ["i-haklab"],
   "description": "Multithreaded perl script to enumerate DNS information of a domain and to discover non-contiguous ip blocks.",
   "files" :{

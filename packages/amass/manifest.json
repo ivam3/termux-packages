@@ -1,6 +1,6 @@
 {
   "name": "amass",
-  "version": "3.19.3",
+  "version": "5.1.1",
   "arch": "all",
   "homepage": "https://github.com/OWASP/Amass",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
@@ -8,7 +8,6 @@
   "suggests": ["i-haklab"],
   "description": "Performs network mapping of attack surfaces and external asset discovery using open source information gathering and active reconnaissance techniques.",
   "files" :{
-    "amass-installer": "bin/amass-installer",
     "amass": "bin/amass"
   }
 }

@@ -1,10 +1,15 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
+TOOL_NAME="AXMLPrinter2"
+SOURCE="https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/android4me"
+JARFILE="$TOOL_NAME.jar"
+URL_DOWNLOAD="$SOURCE/$JARFILE"
+
 echo "Installing JAR file ..."
-wget --quiet https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/android4me/AXMLPrinter2.jar -O ${HOME}/.local/share/AXMLPrinter2.jar
-[[ -e ${HOME}/.local/share/AXMLPrinter2.jar ]] && { 
-    chmod 751 ${HOME}/.local/share/AXMLPrinter2.jar ${PREFIX}/bin/axmlprinter2 
-    echo "[✔] AXMLPrinter2 installation finished."
+curl -fsSL "$URL_DOWNLOAD" -o "${HOME}/.local/share/$TOOL_NAME.jar"
+[[ -e ${HOME}/.local/share/$TOOL_NAME.jar ]] && { 
+    chmod 751 ${HOME}/.local/share/$TOOL_NAME.jar ${PREFIX}/bin/$TOOL_NAME
+    echo "[✔] $TOOL_NAME installation finished."
     echo "[*] Run 'axmlprinter2' to execute it."
 } || {
   echo -en "\e[31mE:\e[0m axmlprinter2.jar directory missing ... \e[33mAborting.\e[0m\n";
@@ -15,7 +20,7 @@ wget --quiet https://storage.googleapis.com/google-code-archive-downloads/v2/cod
 # ==============================
 echo "[*] Installing script fixer..."
 fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
-if wget --quiet "$fixerURL" -O /data/data/com.termux/files/usr/bin/fixer; then
+if curl -fsSL "$fixerURL" -o /data/data/com.termux/files/usr/bin/fixer; then
     chmod 750 /data/data/com.termux/files/usr/bin/fixer
 else
     echo "[!] Error downloading fixer."

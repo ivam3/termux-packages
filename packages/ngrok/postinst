@@ -6,8 +6,8 @@ arch2=$(uname -a|grep -o 'Android'|head -n1)
 
 [[ $arch1 = 'arm' ]] || [[ $arch2 = 'Android' ]] && arch=arm || arch=386
 
-wget --tries=20 --quiet https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-$arch.tgz \
-  -O ${TMPDIR}/ngrok-v3-stable-linux-$arch.tgz
+curl -fsSL https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-$arch.tgz \
+  -o ${TMPDIR}/ngrok-v3-stable-linux-$arch.tgz
 
 if [[ -e ${TMPDIR}/ngrok-v3-stable-linux-$arch.tgz ]];then
 	tar -xvzf ${TMPDIR}/ngrok-v3-stable-linux-$arch.tgz -C ${HOME}/.local/share
@@ -38,7 +38,7 @@ else
 fi
 
 rm -rf ${PREFIX}/bin/ngrok-installer
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+curl -fsSL https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -o /data/data/com.termux/files/usr/bin/fixer
 chmod 751 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] ngrok installation finished."
 echo "[!] For help going to https://t.me/Ivam3_Bot."

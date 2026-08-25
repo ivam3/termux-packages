@@ -4,7 +4,7 @@
   "arch": "all",
   "homepage": "https://ngrok.com",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["wget, proot, openssh"],
+  "depends": ["curl, proot, openssh"],
   "description": "A cross-platform application that exposes local server ports to the Internet.",
   "files" :{
     "ngrok": "bin/ngrok",

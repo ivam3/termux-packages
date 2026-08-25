@@ -1,7 +1,16 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/geo-recon-installer
-rm -rf ${PREFIX}/bin/geo-recon-installer
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+IFS=$'\n\t'
+echo "Cloning repository ..."
+git clone --quiet https://github.com/radioactivetobi/geo-recon ${HOME}/.local/share/geo-recon
+[[ -d ${HOME}/.local/share/geo-recon ]] && {
+  echo "Installing requirements ...";
+  chmod 751 -R ${HOME}/.local/share/geo-recon;
+  python -m pip --no-color --quiet --no-cache-dir install -r ${HOME}/.local/share/geo-recon/requirements.txt;
+} || {
+  echo -en "\e[31mE:\e[0m geo-recon directory missing ... \e[33mAborting.\e[0m\n";
+  exit 1;
+}
+curl -fsSL https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -o /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] geo-recon installation finished."
 echo "[*] Run \'geo-recon\' to execute it."

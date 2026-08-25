@@ -12,14 +12,14 @@ pkg install zaproxy
 
 | Field | Value |
 |-------|-------|
-| Version | `2.16.1` |
+| Version | `2.17.0` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [ZAP](https://www.zaproxy.org) |
 
 ## Dependencies
 
-`wget, openjdk-21`
+`curl, openjdk-21`
 
 ## Usage
 

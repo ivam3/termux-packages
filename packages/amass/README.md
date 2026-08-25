@@ -12,22 +12,22 @@ pkg install amass
 
 | Field | Value |
 |-------|-------|
-| Version | `v4.2.0` |
+| Version | `v5.1.1` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [OWASP Amass](https://github.com/OWASP/Amass) |
 
 ## Dependencies
 
-`git, golang, make, wget`
+`golang`
 
 ## Usage
 
 ```bash
-amass-installer
+amass [options]
 ```
 
-> Run the installer first, then use `amass [options]` to perform attack surface mapping and subdomain enumeration.
+> The postinst builds amass v5 from source via `CGO_ENABLED=0 go install -v github.com/owasp-amass/amass/v5/cmd/amass@main`, then run `amass [options]` to perform attack surface mapping and subdomain enumeration.
 
 ## Part of i-HakLab
 

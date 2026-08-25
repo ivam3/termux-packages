@@ -12,22 +12,25 @@ pkg install androidsdk-cli
 
 | Field | Value |
 |-------|-------|
-| Version | `13` |
-| Architecture | `aarch64` |
+| Version | `22.0` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [Android Tools](https://developer.android.com/tools) |
 
 ## Dependencies
 
-`wget, unzip, openjdk-21`
+`curl, unzip, aapt, apksigner, adbfastboot, gradle, openjdk-21`
 
 ## Usage
 
 ```bash
-androidsdk-cli-installer
+androidsdk-cli
 ```
 
-> Run the installer first to download and set up the Android SDK command line tools.
+> The postinst downloads Android SDK Command-Line Tools 22.0, installs `platforms;android-36` + `build-tools;36.0.0`, accepts licenses and adds `JAVA_HOME`/`ANDROID_SDK_ROOT` to your shell config. The sdkmanager/avdmanager/apkanalyzer binaries are available in `~/.local/share/androidsdk-cli/cmdline-tools/latest/bin/`. Run `androidsdk-cli` to see the available commands.
+
+> [!NOTE]
+> cmdline-tools 23.0+ ships a native `android` binary compiled for x86-64 which does not run on Termux (aarch64). Version 22.0 is the latest whose `sdkmanager` is pure Java and therefore supported on Android/Termux.
 
 ## Part of i-HakLab
 

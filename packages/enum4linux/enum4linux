@@ -1,0 +1,14 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# COLORS
+W="\e[0m"
+R="\e[31m"
+Y="\e[33m"
+if [[ -f ${HOME}/.local/share/enum4linux/enum4linux.pl ]]
+then
+  cd ${HOME}/.local/share/enum4linux >/dev/null
+  $(command -v perl) enum4linux.pl ${@:1}
+else
+  echo -en $R"E:$W enum4linux not installed ...$Y Aborting.$W\n"
+  exit 1
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

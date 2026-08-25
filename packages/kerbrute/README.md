@@ -12,19 +12,19 @@ pkg install kerbrute
 
 | Field | Value |
 |-------|-------|
-| Version | `1.0.3` |
+| Version | `10.03.2023` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [kerbrute](https://github.com/ropnop/kerbrute) |
 
 ## Dependencies
 
-`golang, git`
+`go, git, make`
 
 ## Usage
 
 ```bash
-kerbrute-installer [options]
+kerbrute userenum --domain <domain> users.txt
 ```
 
 ## Part of i-HakLab

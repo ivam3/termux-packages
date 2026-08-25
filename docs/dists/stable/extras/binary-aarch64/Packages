@@ -66,16 +66,32 @@ Version: 0.0.149-1
 Architecture: aarch64
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 3
-Depends: glibc, clang, python, jq, wget, tar
+Depends: glibc, clang, python, jq, curl, tar
 Suggests: i-haklab
 Homepage: https://github.com/CodebuffAI/codebuff-community
 Description: AI coding assistant that edits your codebase through natural language instructions. A buffcode free version with ad-supported — no subscription, no credits, no configuration.
 Filename: dists/stable/extras/binary-aarch64/freebuff_0.0.149-1_aarch64.deb
-Size: 3952
-MD5Sum: e6e49f06b5147b2fe96900cb7722882e
-SHA1: f9a0e5d6789060684107351522d6b23df741fac9
-SHA256: 7ca23d76c1ad7b2c6d8592bd0e943148c20aa5fd17a29180e9ac5b126f6b306d
-SHA512: 82aa3cd9a6e0721eca67a061098f94431e60022fb5b0e0e82720c9d695b4a3f247d612e8b56624afa15f6184fda6671b18442abe290df9430fdfdae805b9d0bf
+Size: 3960
+MD5Sum: 18a440e788a88e748835d520a4998928
+SHA1: 3d83e7f03aad5653b89eafc74d2e4ae20e9a2709
+SHA256: ede366e2be93ce995c888837d4bfe8fbbda1f8e43c598aa527cdbb423003106e
+SHA512: 5d674364c12588bcb0b19bbccc843ef25a66fe031d52ea98c66c014cc735e58e53be003f0e4b7f584f6575b27dad0bc57cbd1cc9d6679cc534fb2705f272fe3c
+
+Package: herdr
+Version: 0.8.2-1
+Architecture: aarch64
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 2
+Depends: curl, coreutils, gawk
+Suggests: i-haklab
+Homepage: https://github.com/herdrdev/herdr
+Description: the runtime your coding agents live on - static binary for Termux (installs to $PREFIX/bin via postinst, always latest stable)
+Filename: dists/stable/extras/binary-aarch64/herdr_0.8.2-1_aarch64.deb
+Size: 4772
+MD5Sum: 5cc6822fd76822ccf1659831e8ff5e68
+SHA1: 10292d27577b411335408d2d2e5b4a6777e8885f
+SHA256: f874843837fa62cbd962b05bed107931d85925a8fb12c3bc03a0d8e6f9d1c81a
+SHA512: a5771e8c79ccded64ccc77f2988fbe906506eff81acd652ea0a2e6a5735e573f40869e846e45b36e1e8607d1bcb8793158df9cd43f2a7579cc928073e7b7bd7a
 
 Package: mimocode
 Version: 0.1.12-1

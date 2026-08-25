@@ -1,14 +1,16 @@
 {
   "name": "burpsuite",
-  "version": "2026.1.5",
+  "version": "2026.7.3",
   "arch": "all",
   "homepage": "https://portswigger.net",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["openjdk-21, wget, jython-lts, giflib"],
+  "depends": ["openjdk-21, curl, libffi, giflib"],
   "suggests": ["termux-desktop-xfce, termux-x11, xwayland, i-haklab"],
   "description": "An integrated platform/graphical tool for performing security testing of web applications.",
   "files" :{
     "burpsuite": "bin/burpsuite",
+    "lib/libjnidispatch.so": "/data/data/com.termux/files/usr/opt/burpsuite/lib/libjnidispatch.so",
+    "lib/libudev.so": "/data/data/com.termux/files/usr/opt/burpsuite/lib/libudev.so",
     "img/burpsuite.png": "/data/data/com.termux/files/usr/share/applications/burpsuite/img/burpsuite.png",
     "burpsuite.desktop": "/data/data/com.termux/files/usr/share/applications/burpsuite/burpsuite.desktop"
   }

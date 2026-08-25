@@ -12,14 +12,14 @@ pkg install hashid
 
 | Field | Value |
 |-------|-------|
-| Version | `3.1.4` |
+| Version | `1.2` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [hashID](https://github.com/psypanda/hashID) |
 
 ## Dependencies
 
-`python`
+`curl, python`
 
 ## Usage
 

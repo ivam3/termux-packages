@@ -1,10 +1,10 @@
 {
   "name": "azure-cli",
-  "version": "2.45.0",
+  "version": "2.89.1",
   "arch": "all",
-  "homepage": "https://https://learn.microsoft.com/en-us/cli/azure/",
+  "homepage": "https://learn.microsoft.com/en-us/cli/azure/",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["binutils, tur-repo, python3.10, wget, ar, tar"],
+  "depends": ["tur-repo, python3.10, curl, openssl"],
   "suggests": ["i-haklab"],
   "description": "Set of commands used to create and manage Azure resources.",
   "files" :{

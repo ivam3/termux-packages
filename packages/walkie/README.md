@@ -12,7 +12,7 @@ pkg install walkie
 
 | Field | Value |
 |-------|-------|
-| Version | `1.5.0-3` |
+| Version | `1.5.0-5` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [walkie](https://github.com/vikasprogrammer/walkie) |
@@ -50,6 +50,8 @@ walkie agent ops:secret --cli vibe
 walkie agent ops:secret --cli agy --agent-args "-p"
 walkie agent ops:secret --cli opencode
 walkie agent ops:secret --cli qwen-code
+walkie agent ops:secret --cli cactus
+walkie agent ops:secret --cli cactus --model google/gemma-4-E2B-it
 walkie agent ops:secret --cli codex --skip-git-repo-check   # codex fuera de un repo git
 ```
 
@@ -75,11 +77,17 @@ Known invocation registry (prompt flag per agent):
 | `opencode` | `run` |
 | `gemini`, `qwen`, `qwen-code`, `mimo`, `mimocode`, `kilo`, `kilocode`, `minimax`, `mmx` | `-p` |
 | `copilot`, `copilot-cli`, `codebuff`, `freebuff`, `hermes`, `openclaw` | (prompt posicional, subcomando vía `--agent-args`) |
+| `cactus` | `run --prompt` (modelo positional: `cactus run [model]`, vía `--model` o `--agent-args`; respuesta limpia vía `--result-json`) |
 | `ollama` | (local LLM via HTTP API, no CLI) |
 | cualquier otro | `<cli> <prompt>` (fallback genérico) |
 
 `walkie pair` also benefits via `--brain` / `--exec-cli`. `claude`/`codex` keep
 their dedicated runners untouched.
+
+`cactus` runs the local on-device model (`cactus run [model]`); the response is
+read from its `--result-json` output, so the channel only sees the assistant
+reply, not the interactive banner. The default model is `google/gemma-4-E2B-it`;
+any model known to `cactus list` can be passed with `--model`.
 
 ### Strict solo-tag mode (agent only responds when mentioned)
 

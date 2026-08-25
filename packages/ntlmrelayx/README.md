@@ -1,6 +1,6 @@
 # ntlmrelayx
 
-> Impacket ntlmrelayx — NTLM relay attack tool. Relays NTLM authentication to various protocols.
+> Impacket ntlmrelayx — tool to perform NTLM relay attacks (SMB, HTTP, LDAP, MSSQL, WinRM, etc.).
 
 ## Installation
 
@@ -12,20 +12,31 @@ pkg install ntlmrelayx
 
 | Field | Value |
 |-------|-------|
-| Version | `0.11.0` |
+| Version | `0.13.1` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [impacket](https://github.com/SecureAuthCorp/impacket) |
+| Homepage | [impacket](https://github.com/fortra/impacket) |
 
 ## Dependencies
 
-`python, python-pip, wget, rust`
+`python, python-pip, curl`
 
 ## Usage
 
 ```bash
-ntlmrelayx-installer [options]
+ntlmrelayx [options]
 ```
+
+Relay NTLM authentication from SMB/HTTP to various protocols:
+
+```bash
+ntlmrelayx -t smb://192.168.1.10 -tf targets.txt
+ntlmrelayx -t ldap://dc.example.com --delegate-access
+ntlmrelayx -t mssql://server --dump-shares
+ntlmrelayx -tf targets.txt -smb2support
+```
+
+El script se instala en `~/.local/share/ntlmrelayx/ntlmrelayx.py` y `impacket` se instala vía pip.
 
 ## Part of i-HakLab
 

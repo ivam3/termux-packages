@@ -12,14 +12,14 @@ pkg install ghunt
 
 | Field | Value |
 |-------|-------|
-| Version | `2.0.3` |
+| Version | `2.2.0` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [GHunt](https://github.com/mxrch/GHunt) |
 
 ## Dependencies
 
-`python, python-pip, git`
+`python, python-pip`
 
 ## Usage
 

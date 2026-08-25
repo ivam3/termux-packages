@@ -19,12 +19,12 @@ pkg install unshc
 
 ## Dependencies
 
-`wget`
+`curl`
 
 ## Usage
 
 ```bash
-unshc-installer [options]
+unshc <shc-compiled-binary>
 ```
 
 ## Suggestions

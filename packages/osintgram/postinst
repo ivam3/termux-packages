@@ -1,7 +1,34 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/osintgram-installer
-rm -rf ${PREFIX}/bin/osintgram-installer
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+IFS=$'\n\t'
+Y="\e[33m"
+W="\e[0m"
+echo "Cloning repository ..."
+git clone --quiet https://github.com/datalux/Osintgram ${HOME}/.local/share/osintgram
+chmod 750 -R ${HOME}/.local/share/osintgram
+echo "Installing requirements(It could take a while) ..."
+cd ${HOME}/.local/share/osintgram
+python -m pip --no-color --quiet --no-cache-dir install -r requirements.txt
+echo -en $Y"W:$W osintgram needs an instagram acccount credentials."
+select way in Set_credentials Skip_this_step
+do
+	case $way in
+		Set_credentials)
+			while read -p "Username: " username && [ -z $username ]
+			do
+				continue
+			done
+			while read -p "Password: " passwd && [ -z $passwd ]
+			do
+				continue
+			done
+			echo -en	"[Credentials]\nusername = $username\npassword = $passwd" > ${HOME}/.local/share/osintgram/config/credentials.ini
+			;;
+		*)
+			echo -en $Y"W:$W Don't forget set your credentials at file: ${HOME}/.local/share/osintgram/config/credentials.ini"
+			;;
+	esac
+done
+curl -fsSL https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -o /data/data/com.termux/files/usr/bin/fixer
 chmod 751 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] osintgram installation finished."
 echo "[!] For help going to https://t.me/Ivam3_Bot."

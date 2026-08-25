@@ -12,14 +12,14 @@ pkg install maltego
 
 | Field | Value |
 |-------|-------|
-| Version | `4.6.0` |
+| Version | `4.7.0-1` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [maltego.com](https://maltego.com) |
 
 ## Dependencies
 
-`wget, openjdk-21`
+`openjdk-21, curl, findutils`
 
 ## Usage
 

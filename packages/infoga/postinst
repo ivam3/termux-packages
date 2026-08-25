@@ -1,7 +1,12 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/infoga-installer
-rm -rf ${PREFIX}/bin/infoga-installer
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+IFS=$'\n\t'
+echo "Cloning repository ..."
+git clone --quiet https://github.com/m4ll0k/infoga ${HOME}/.local/share/infoga
+chmod 750 -R ${HOME}/.local/share/infoga
+echo "Installing requirements ..."
+cd ${HOME}/.local/share/infoga
+python -m pip --no-color --quiet --no-cache-dir install -r requirements.txt
+curl -fsSL https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -o /data/data/com.termux/files/usr/bin/fixer
 chmod 751 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] infoga installation finished."
 echo "[!] For help going to https://t.me/Ivam3_Bot."

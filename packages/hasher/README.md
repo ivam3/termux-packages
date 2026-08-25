@@ -12,14 +12,14 @@ pkg install hasher
 
 | Field | Value |
 |-------|-------|
-| Version | `1.0` |
+| Version | `3.0.1` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [hasher](https://github.com/Ivam3/hasher) |
 
 ## Dependencies
 
-`python`
+`python2, git`
 
 ## Usage
 

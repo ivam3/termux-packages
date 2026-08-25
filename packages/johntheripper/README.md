@@ -19,12 +19,12 @@ pkg install johntheripper
 
 ## Dependencies
 
-`git, make, clang, libssl, zlib`
+`git, make, clang, python, python-pip, opencl-vendor-driver`
 
 ## Usage
 
 ```bash
-john-installer [options]
+john --wordlist=/path/to/wordlist hashfile
 ```
 
 ## Part of i-HakLab

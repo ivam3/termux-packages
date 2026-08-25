@@ -4,7 +4,7 @@
   "arch": "all",
   "homepage": "https://code.google.com/archive/p/android4me",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["wget, openjdk-21"],
+  "depends": ["curl, openjdk-21"],
   "suggests": ["i-haklab"],
   "description": "Prints XML document from binary XML file (with correct namespace handing & attribute formatting).",
   "files" :{

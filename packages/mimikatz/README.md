@@ -1,6 +1,6 @@
 # mimikatz
 
-> A post-exploitation credential harvesting tool for Windows. Extracts plaintext passwords, hashes, PINs and Kerberos tickets from memory.
+> Impacket mimikatz.py — mini shell to control a remote mimikatz RPC server.
 
 ## Installation
 
@@ -12,19 +12,19 @@ pkg install mimikatz
 
 | Field | Value |
 |-------|-------|
-| Version | `2.2.0` |
+| Version | `0.11.0` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [mimikatz](https://github.com/gentilkiwi/mimikatz) |
+| Homepage | [impacket](https://github.com/fortra/impacket) |
 
 ## Dependencies
 
-`wget`
+`python, python-pip, curl, rust`
 
 ## Usage
 
 ```bash
-mimikatz-installer [options]
+mimikatz target.exe
 ```
 
 ## Part of i-HakLab

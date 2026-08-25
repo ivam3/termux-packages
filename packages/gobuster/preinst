@@ -3,19 +3,61 @@ if [[ $(id -u) -eq 0 ]]
 then
   echo -en "\e[31mE:\e[0m You need to be a common user\n"
   exit 1
-else
-  echo "Preparing enviroment ..."
-	[[ -e ${HOME}/.bashrc ]] || touch ${HOME}/.bashrc
-	INITFILE=${HOME}/.bashrc
-	[[ -d ${HOME}/go/pkg/mod/github.com ]] || mkdir -p ${HOME}/go/pkg/mod/github.com
-	[[ -d ${PREFIX}/lib/go/src ]] || mkdir -p ${PREFIX}/lib/go/src
-	if ! $(grep -oE "GOPATH" $INITFILE)
-	then
-		sed -i "21a set GOPATH ${HOME}/go" $INITFILE
-	fi
-	if ! $(grep -oE "GOROOT" $INITFILE)
-	then
-		sed -i "22a set GOROOT ${PREFIX}/lib/go" $INITFILE
-	fi
 fi
+
+echo "Preparing environment ..."
+
+# Dirs always needed by the Go build process
+[[ -d ${HOME}/go/pkg/mod/github.com ]] || mkdir -p ${HOME}/go/pkg/mod/github.com
+[[ -d ${PREFIX}/lib/go/src ]] || mkdir -p ${PREFIX}/lib/go/src
+
+# i-HakLab already exports GOPATH/GOROOT through its envvariables file
+if [[ -e ${HOME}/.local/bin/i-Haklab ]]
+then
+  exit 0
+fi
+
+# Without i-HakLab, declare GOPATH/GOROOT in the shell config file,
+# guarded by the presence of golang so no broken vars remain if golang is removed.
+shell=$(echo ${SHELL} | awk -F "/" '{print $NF}')
+case ${shell} in
+  bash) INITFILE=${HOME}/.bashrc ;;
+  zsh)  INITFILE=${HOME}/.zshrc ;;
+  fish) INITFILE=${HOME}/.config/fish/config.fish ;;
+  *)
+    echo -en "\e[33mW:\e[0m Unsupported shell '${shell}', skipping env vars\n"
+    exit 0
+    ;;
+esac
+
+[[ -f ${INITFILE} ]] || touch ${INITFILE}
+
+# Avoid duplicating lines if the declaration already exists
+if grep -q "GOPATH" ${INITFILE} || grep -q "GOROOT" ${INITFILE}
+then
+  exit 0
+fi
+
+case ${shell} in
+  fish)
+    cat >> ${INITFILE} <<EOF
+
+# termux-packages: GOPATH/GOROOT (guarded by golang presence)
+if command -v go >/dev/null 2>&1
+  set -x GOPATH $HOME/go
+  set -x GOROOT $PREFIX/lib/go
+end
+EOF
+    ;;
+  *)
+    cat >> ${INITFILE} <<EOF
+
+# termux-packages: GOPATH/GOROOT (guarded by golang presence)
+if command -v go >/dev/null 2>&1; then
+  export GOPATH=${HOME}/go
+  export GOROOT=${PREFIX}/lib/go
+fi
+EOF
+    ;;
+esac
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

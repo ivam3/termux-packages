@@ -4,10 +4,14 @@
   "arch": "all",
   "homepage": "https://github.com/yanncam/UnSHc",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["wget, tar, cmake, make, automake"],
-  "suggests": ["i-haklab, unshc"],
+  "depends": [
+    "curl, tar, cmake, make, automake"
+  ],
+  "suggests": [
+    "i-haklab, unshc"
+  ],
   "description": "Shell script compiler.",
-  "files" :{
-    "shc-installer": "bin/shc-installer"
+  "files": {
+    "shc": "bin/shc"
   }
 }

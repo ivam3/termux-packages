@@ -12,14 +12,14 @@ pkg install sherlock
 
 | Field | Value |
 |-------|-------|
-| Version | `0.14.4` |
+| Version | `0.16.0` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [Sherlock](https://github.com/sherlock-project/sherlock) |
 
 ## Dependencies
 
-`python, python-pip, git`
+`python, python-pip, python-numpy, python-pandas`
 
 ## Usage
 

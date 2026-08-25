@@ -19,7 +19,7 @@ pkg install infoga
 
 ## Dependencies
 
-`git, python2`
+`python, git`
 
 ## Usage
 

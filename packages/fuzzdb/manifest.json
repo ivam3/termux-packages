@@ -4,10 +4,15 @@
   "arch": "all",
   "homepage": "https://github.com/fuzzdb-project/fuzzdb",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["git"],
-  "suggests": ["i-haklab", "wfuzz"],
+  "depends": [
+    "git"
+  ],
+  "suggests": [
+    "i-haklab",
+    "wfuzz"
+  ],
   "description": "Dictionary of attack patterns and primitives for black-box application fault injection and resource discovery.",
-  "files" :{
-    "fuzzdb-installer": "bin/fuzzdb-installer"
+  "files": {
+    "fuzzdb": "bin/fuzzdb"
   }
 }

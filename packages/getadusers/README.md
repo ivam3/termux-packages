@@ -19,12 +19,12 @@ pkg install getadusers
 
 ## Dependencies
 
-`python, python-pip, wget, rust`
+`python, python-pip, curl, rust`
 
 ## Usage
 
 ```bash
-getadusers-installer [options]
+getadusers -dc-ip <dc-ip> domain/user:pass
 ```
 
 ## Part of i-HakLab

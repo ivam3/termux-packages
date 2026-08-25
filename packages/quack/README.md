@@ -12,7 +12,7 @@ pkg install quack
 
 | Field | Value |
 |-------|-------|
-| Version | `1.0` |
+| Version | `2.0` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [quack](https://github.com/entynetproject/quack) |

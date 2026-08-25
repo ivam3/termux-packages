@@ -2,9 +2,9 @@
   "name": "maltego",
   "version": "4.7.0-1",
   "arch": "all",
-  "homepage": "https://https://www.maltego.com",
+  "homepage": "https://www.maltego.com",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["openjdk-21, wget, findutils"],
+  "depends": ["openjdk-21, curl, findutils"],
   "suggests": ["i-haklab, xwayland"],
   "description": "Maltego is a software focused mainly on forensic analysis and developed to make link analysis and data mining more conducive from IP domains, emails, telephones, geographic locations... that is, the starting point of an investigation.",
   "files" :{

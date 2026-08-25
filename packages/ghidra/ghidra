@@ -7,8 +7,8 @@ Y="\e[33m"
 B="\e[34m"
 if [[ -d ${HOME}/.local/share/ghidra ]]
 then
-  cd ${HOME}/.local/share/$(basename $0) >/dev/null
-	$(command -v bash) $(basename $0)Run
+  cd ${HOME}/.local/share/ghidra >/dev/null
+  $(command -v bash) ghidraRun ${@:1}
 else
   echo -en $R"E:$W $(basename $0) PATH missing ...$Y Aborting.$W"
   exit 1

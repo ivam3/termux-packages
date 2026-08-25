@@ -12,7 +12,7 @@ pkg install wpscan
 
 | Field | Value |
 |-------|-------|
-| Version | `1.0-1` |
+| Version | `4.1.0` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [WPScan](https://github.com/wpscanteam/wpscan) |
@@ -24,7 +24,8 @@ pkg install wpscan
 ## Usage
 
 ```bash
-wpscan-installer [options]
+wpscan --url https://example.com --enumerate vp
+wpscan --url https://example.com --enumerate u --passwords rockyou.txt
 ```
 
 ## Part of i-HakLab

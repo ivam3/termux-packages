@@ -4,11 +4,14 @@
   "arch": "all",
   "homepage": "https://github.com/CiKu370/hasher",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["python2, git"],
-  "suggests": ["i-haklab"],
+  "depends": [
+    "python2, git"
+  ],
+  "suggests": [
+    "i-haklab"
+  ],
   "description": "Hash cracker with auto detect hash.",
-  "files" :{
-    "hasher-installer": "bin/hasher-installer",
+  "files": {
     "hasher": "bin/hasher"
   }
 }

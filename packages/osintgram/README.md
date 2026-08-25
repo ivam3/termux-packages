@@ -12,14 +12,14 @@ pkg install osintgram
 
 | Field | Value |
 |-------|-------|
-| Version | `1.3` |
+| Version | `1.0` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [Osintgram](https://github.com/Datalux/Osintgram) |
 
 ## Dependencies
 
-`git, python, python-pip`
+`python, git`
 
 ## Usage
 

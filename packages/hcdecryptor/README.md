@@ -12,14 +12,14 @@ pkg install hcdecryptor
 
 | Field | Value |
 |-------|-------|
-| Version | `1.0` |
+| Version | `2.0.1` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [hcdecryptor](https://github.com/Ivam3/hcdecryptor) |
 
 ## Dependencies
 
-`python`
+`git, nodejs-lts`
 
 ## Usage
 

@@ -19,13 +19,15 @@ pkg install enum4linux
 
 ## Dependencies
 
-`perl, dnsutils, samba, openldap`
+`perl, dnsutils, samba, openldap, curl`
 
 ## Usage
 
 ```bash
-enum4linux-installer [options]
+enum4linux [options] <ip>
 ```
+
+> Example: `enum4linux -a 192.168.1.10` performs a comprehensive enumeration of a Windows/Samba host.
 
 ## Part of i-HakLab
 

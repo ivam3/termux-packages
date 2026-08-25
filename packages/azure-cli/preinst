@@ -3,13 +3,30 @@ if [[ $(id -u) -eq 0 ]]
 then
   echo -en "\e[31mE:\e[0m You need to be a common user\n"
   exit 1
+fi
+
+# azure-cli requires 'python3.10' from the Termux User Repository (tur-repo).
+# Without tur-repo configured, apt cannot resolve python3.10 and fails confusingly.
+tur_repo_ok=false
+[[ -f ${PREFIX}/etc/apt/sources.list.d/tur.list ]] && tur_repo_ok=true
+dpkg -s tur-repo >/dev/null 2>&1 && tur_repo_ok=true
+
+if [[ "$tur_repo_ok" == "false" ]]
+then
+  echo -en "\e[31mE:\e[0m tur-repo is not configured.\n"
+  echo "    azure-cli requires 'python3.10' from the Termux User Repository (tur-repo)."
+  echo "    Install it manually first:"
+  echo "        pkg install tur-repo"
+  echo "        apt update"
+  echo "        pkg install azure-cli"
+  exit 1
+fi
+
+echo "Preparing enviroment ..."
+if [[ -d ${PREFIX}/opt/az ]]
+then
+  rm -rf ${PREFIX}/opt/az/*
 else
-  echo "Preparing enviroment ..."
-  if [[ -d ${PREFIX}/opt/az ]]
-  then
-    rm -rf ${PREFIX}/opt/az/*
-  else
-    mkdir -p ${PREFIX}/opt/az 2>/dev/null
-  fi
+  mkdir -p ${PREFIX}/opt/az 2>/dev/null
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

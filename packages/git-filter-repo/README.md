@@ -19,7 +19,7 @@ pkg install git-filter-repo
 
 ## Dependencies
 
-`python, git`
+`git, python3, python3-pip`
 
 ## Usage
 

@@ -12,19 +12,20 @@ pkg install seclists
 
 | Field | Value |
 |-------|-------|
-| Version | `2024.4` |
+| Version | `8.23.0` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [SecLists](https://github.com/danielmiessler/SecLists) |
 
 ## Dependencies
 
-`git, wget`
+`unzip, curl`
 
 ## Usage
 
 ```bash
-seclists-installer [options]
+seclists
+# SecLists saved in: $HOME/.local/share/wordlist/SecLists-master
 ```
 
 ## Part of i-HakLab

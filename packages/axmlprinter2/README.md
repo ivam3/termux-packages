@@ -12,20 +12,22 @@ pkg install axmlprinter2
 
 | Field | Value |
 |-------|-------|
-| Version | `0.1.0` |
+| Version | `2.10.08` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [axml-printer2](https://github.com/rchiossi/axml-printer2) |
+| Homepage | [android4me](https://code.google.com/archive/p/android4me) |
 
 ## Dependencies
 
-`wget, openjdk-21`
+`curl, openjdk-21`
 
 ## Usage
 
 ```bash
 axmlprinter2 [options]
 ```
+
+> The postinst downloads the AXMLPrinter2 jar (original android4me build from the Google Code Archive) to `~/.local/share/AXMLPrinter2.jar` and installs the `axmlprinter2` wrapper.
 
 ## Part of i-HakLab
 

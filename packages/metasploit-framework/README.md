@@ -12,14 +12,14 @@ pkg install metasploit-framework
 
 | Field | Value |
 |-------|-------|
-| Version | `6.4.0` |
+| Version | `6.4.134` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [metasploit.com](https://metasploit.com) |
 
 ## Dependencies
 
-`git, ruby, ruby-dev, make, nmap, curl, wget, openssl, libpcap, postgresql`
+`build-essential, ruby, python, libcap, openjdk-21, termux-tools, autoconf, patchelf, binutils, bison, yarn, clang, coreutils, curl, findutils, gumbo-parser, apr, apr-util, postgresql, openssl, readline, libffi, libgmp, libpcap, libsqlite, libgrpc, libtool, libxml2, libxslt, make, ncurses-utils, ncurses, git, curl, unzip, xz-utils, zip, zlib, tar, xml2axml, termux-elf-cleaner, pkg-config, resolv-conf, aapt, apksigner, apktool`
 
 ## Usage
 

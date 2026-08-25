@@ -4,10 +4,14 @@
   "arch": "all",
   "homepage": "https://github.com/sherlock-project/sherlock",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["python, python-pip, python-numpy, python-pandas"],
-  "suggests": ["i-haklab"],
+  "depends": [
+    "python, python-pip, python-numpy, python-pandas"
+  ],
+  "suggests": [
+    "i-haklab"
+  ],
   "description": "Hunt down social media accounts by username across social networks.",
-  "files" :{
-    "sherlock-installer": "bin/sherlock-installer"
+  "files": {
+    "sherlock": "bin/sherlock"
   }
 }

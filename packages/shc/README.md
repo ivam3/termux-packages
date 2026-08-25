@@ -12,14 +12,14 @@ pkg install shc
 
 | Field | Value |
 |-------|-------|
-| Version | `4.0.3` |
+| Version | `3.8.9b` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [shc](https://github.com/neurobin/shc) |
 
 ## Dependencies
 
-`make, clang`
+`curl, tar, cmake, make, automake`
 
 ## Usage
 

@@ -24,7 +24,8 @@ pkg install geo-recon
 ## Usage
 
 ```bash
-geo-recon-installer [options]
+geo-recon --help
+geo-recon -i 8.8.8.8
 ```
 
 ## Part of i-HakLab

@@ -19,7 +19,7 @@ pkg install stegsnow
 
 ## Dependencies
 
-`make, clang`
+`curl, make, automake`
 
 ## Usage
 

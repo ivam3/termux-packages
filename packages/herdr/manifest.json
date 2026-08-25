@@ -1,0 +1,19 @@
+{
+  "name": "herdr",
+  "version": "0.8.2-1",
+  "arch": "aarch64",
+  "homepage": "https://github.com/herdrdev/herdr",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": [
+    "curl",
+    "coreutils",
+    "gawk"
+  ],
+  "suggests": [
+    "i-haklab"
+  ],
+  "description": "the runtime your coding agents live on - static binary for Termux (installs to $PREFIX/bin via postinst, always latest stable)",
+  "files": {
+    "README.md": "/data/data/com.termux/files/usr/share/doc/herdr/README.md"
+  }
+}

@@ -39,7 +39,7 @@ mkdir -p "${HOME}/.$TOOL_NAME"  # For config and data
 
 # 1. Download and Extract Binary
 info "Downloading $TOOL_NAME ${VERSION} (glibc)..."
-if wget -O "$STAGING_DIR/$TOOL_NAME.tar.gz" "$DOWNLOAD_URL"; then
+if curl -fsSL "$DOWNLOAD_URL" -o "$STAGING_DIR/$TOOL_NAME.tar.gz"; then
     info "Extracting binary..."
     tar -xzf "$STAGING_DIR/$TOOL_NAME.tar.gz" -C "$STAGING_DIR/"
     # Move to final location

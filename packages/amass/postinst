@@ -1,6 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/amass-installer
-rm -rf ${PREFIX}/bin/amass-installer
+echo "Building amass v5 from source (CGO disabled) ..."
+export GO111MODULE=on
+CGO_ENABLED=0 go install -v github.com/owasp-amass/amass/v5/cmd/amass@main
+chmod 751 -R ${HOME}/go
 wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] amass installation finished."

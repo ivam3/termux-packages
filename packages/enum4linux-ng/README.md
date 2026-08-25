@@ -12,20 +12,22 @@ pkg install enum4linux-ng
 
 | Field | Value |
 |-------|-------|
-| Version | `1.3.5` |
+| Version | `1.3.10` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [enum4linux-ng](https://github.com/cddmp/enum4linux-ng) |
 
 ## Dependencies
 
-`python, python-pip, dnsutils, samba, make, openldap`
+`python, python-pip, dnsutils, samba, openldap, curl`
 
 ## Usage
 
 ```bash
-enum4linux-installer [options]
+enum4linux-ng [options] <ip>
 ```
+
+> Example: `enum4linux-ng -A 192.168.1.10` performs a comprehensive enumeration and `-oY out` exports results to YAML.
 
 ## Part of i-HakLab
 

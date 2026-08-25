@@ -12,14 +12,14 @@ pkg install ghost
 
 | Field | Value |
 |-------|-------|
-| Version | `1.0` |
+| Version | `8.0.0` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [ghost](https://github.com/EntySec/ghost) |
 
 ## Dependencies
 
-`python, python-pip, git`
+`openssl, git, android-tools, python, python-cryptography`
 
 ## Usage
 

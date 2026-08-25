@@ -12,14 +12,14 @@ pkg install ovh-ttyrec
 
 | Field | Value |
 |-------|-------|
-| Version | `1.2.1` |
+| Version | `1.1.7.1` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [ovh-ttyrec](https://github.com/ovh/ovh-ttyrec) |
 
 ## Dependencies
 
-`make, clang`
+`git`
 
 ## Usage
 

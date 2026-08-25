@@ -1,7 +1,50 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/wpscan-installer
-rm -rf ${PREFIX}/bin/wpscan-installer
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+IFS=$'\n\t'
+wpsDir="${HOME}/.local/share/wpscan"
+gemDir="${HOME}/.local/share/gem"
+nokogiriVer="1.15.6"
+
+export GEM_HOME=${gemDir}
+export GEM_PATH=${gemDir}
+
+echo "Cloning repository ..."
+git clone --quiet https://github.com/wpscanteam/wpscan $wpsDir
+[[ -d $wpsDir ]] && {
+  echo "Installing requirements ...";
+  cd $wpsDir
+  chmod 751 -R $wpsDir;
+  [[ ! -d $PREFIX/include/libxml/  ]] && { mkdir -p $PREFIX/include/libxml/;}
+  ln -s $PREFIX/include/libxml2/libxml/* $PREFIX/include/libxml/ >/dev/null 2>/dev/null
+  [[ -d $gemDir ]] && { rm -rf $gemDir/*;} || { mkdir -p $gemDir;}
+  gem install --no-document --verbose rubygems-update > $wpsDir/rubygems-update.log
+  verToUp=$(grep "gem update" $wpsDir/rubygems-update.log|grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+')
+  rm -rf $wpsDir/rubygems-update.log
+  [[ -z $verToUp ]] || { gem update --system $verToUp;}
+  gem install --no-document --verbose bundle bundler
+  bundle config build.nokogiri --platform=ruby -- --use-system-libraries \
+  --with-xml2-include=$(pkg-config libxml-2.0 --cflags-only-I) \
+  --with-xml2-lib=$(pkg-config libxml-2.0 --libs) \
+  --with-xslt-include=$(pkg-config libxslt --cflags-only-I) \
+  --with-xslt-lib=$(pkg-config libxslt --libs)
+
+  gem install nokogiri -v "$nokogiriVer" --platform=ruby -- --use-system-libraries \
+    --with-xml2-include=$(pkg-config libxml-2.0 --cflags-only-I) \
+    --with-xml2-lib=$(pkg-config libxml-2.0 --libs) \
+    --with-xslt-include=$(pkg-config libxslt --cflags-only-I) \
+    --with-xslt-lib=$(pkg-config libxslt --libs)
+
+  bundle update --bundler 2>/dev/null
+  [[ -e $wpsDir/Gemfile.lock ]] && { rm -rf $wpsDir/Gemfile.lock;}
+  bundle install -j$(nproc --all) --verbose
+  gem install wpscan;
+  [[ -e ${gemDir}/bin/wpscan ]] && { chmod 751 ${gemDir}/bin/wpscan;}
+} || {
+  echo -en "\e[31mE:\e[0m wpscan directory missing ... \e[33mAborting.\e[0m\n";
+  exit 1;
+}
+
+curl -fsSL "https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer" \
+    -o /data/data/com.termux/files/usr/bin/fixer
 chmod 750 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] wpscan installation finished."
 echo "[*] Run 'wpscan' to execute it."

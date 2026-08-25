@@ -1,5 +1,0 @@
-#!/data/data/com.termux/files/usr/bin/bash
-if [[ -d ${HOME}/.local/share/nexphisher ]]; then
-  rm -rf ${HOME}/.local/share/nexphisher
-fi
-####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

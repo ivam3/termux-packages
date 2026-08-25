@@ -12,14 +12,14 @@ pkg install putty
 
 | Field | Value |
 |-------|-------|
-| Version | `0.81` |
+| Version | `0.77` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty) |
 
 ## Dependencies
 
-`wget, openjdk-21`
+`x11-repo, clang, cmake, openssh, curl, tar, putty-tools`
 
 ## Usage
 

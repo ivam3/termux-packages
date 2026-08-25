@@ -1,7 +1,15 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/getnpusers-installer
-rm -rf ${PREFIX}/bin/getnpusers-installer
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+IFS=$'\n\t'
+echo "Downloading executable ..."
+mkdir -p ${HOME}/.local/share/getnpusers
+curl -fsSL https://raw.githubusercontent.com/fortra/impacket/master/examples/GetNPUsers.py -o ${HOME}/.local/share/getnpusers/GetNPUsers.py
+chmod +x ${HOME}/.local/share/getnpusers/GetNPUsers.py
+echo "Installing dependencies(It could take a while) ..."
+for i in urllib3 requests mock idna biopython rust impacket
+do
+	python -m pip --no-color --quiet --no-cache-dir install $i
+done
+curl -fsSL https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -o /data/data/com.termux/files/usr/bin/fixer
 chmod 751 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] getnpusers installation finished."
 echo "[*] run 'getnpusers' to execute it."

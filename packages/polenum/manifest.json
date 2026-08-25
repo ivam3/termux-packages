@@ -1,13 +1,13 @@
 {
-  "name": "getnpusers",
-  "version": "0.10.0",
+  "name": "polenum",
+  "version": "2025.03.01",
   "arch": "all",
-  "homepage": "https://github.com/SecureAuthCorp/impacket",
+  "homepage": "https://github.com/Wh1t3Fox/polenum",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["python, wget, rust"],
+  "depends": ["python, python-pip, curl"],
   "suggests": ["i-haklab"],
-  "description": "This script will attempt to list and get TGTs for those users that have the property set.",
+  "description": "Polenum extracts the password policy information from a Windows machine. Uses the Impacket library.",
   "files" :{
-    "getnpusers-installer": "bin/getnpusers-installer"
-	}
+    "polenum": "bin/polenum"
+  }
 }

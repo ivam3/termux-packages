@@ -12,22 +12,23 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 
 | Tool | Description |
 | ------ | ------ |
+
+> [!NOTE]
+> Las herramientas marcadas con **(DEPRECADA)** se conservan en el repositorio por compatibilidad, pero **no se recomiendan** en la actualidad (abandonadas, rotas en Android moderno o dependientes de servicios caídos). Ver [AUDITORIA_HERRAMIENTAS.md](packages/AUDITORIA_HERRAMIENTAS.md).
 | [i-Haklab](https://github.com/ivam3/i-Haklab) | Ciber-security and pentesting laboratory for Termux |
 | [acccheck](https://github.com/qashqao/acccheck) | Windows SMB Password Dictionary Attack Tool |
 | [adbfastboot](https://developer.android.com/studio/command-line/adb) | Versatile command-line tool that facilitates a variety of device actions |
-| [adminpanel](https://github.com/Techzindia/admin_penal) | Find website's admin panel |
 | [aircrack-ng](https://github.com/aircrack-ng/aircrack-ng) | WiFi security auditing tools suite |
 | [amass](https://github.com/OWASP/Amass) | In-depth Attack Surface Mapping and Asset Discovery |
-| [androbugs](https://github.com/AndroBugs/AndroBugs_Framework) | Android vulnerability scanner |
 | [androidsdk-cli](https://developer.android.com/studio/index.html#command-tools) | Official command line Integrated Development Environment (IDE) for Android app development |
 | [antigravity-cli](https://github.com/google-antigravity/antigravity-cli) | Official Antigravity CLI with real-time VA39 memory patching for Termux |
 | [apktool](https://bitbucket.org/iBotPeaches/apktool/downloads) | command-line tool used for reverse engineering Android application package (APK) |
 | [appshark](https://github.com/bytedance/appshark) | An static taint analysis platform to scan vulnerabilities in an Android app |
 | [axmlprinter2](https://code.google.com/archive/p/android4me) | Prints XML document from binary XML file (with correct namespace handing & attribute formatting) |
+| [azure-cli](https://learn.microsoft.com/en-us/cli/azure/) | Set of commands used to create and manage Azure resources |
 | [beef](https://www.beefproject.com) | powerful and intuitive security tool focuses on leveraging browser vulnerabilities to assess the security posture of a target |
 | [binwalk](https://github.com/ReFirmLabs/binwalk) | Tool for analyzing, reverse engineering, and extracting firmware images | 
 | [bitb](https://github.com/surya-dev-singh/BITB-framwork) | Phishing technique that simulates a browser window within the browser to spoof a legitimate domain. |
-| [blackbox](https://github.com/jothatron/blackbox) | A penetration testing framework|
 | [botgram](https://github.com/ivam3/botgram) | Fetch all information about Telegram group members |
 | [burpsuite](https://portswigger.net/burp) | Graphical tool for performing security testing of web applications |
 | [cactus](https://github.com/cactus-compute/cactus) | Hybrid edge-cloud AI engine for mobile: on-device LLM/VLM/speech inference (Cactus Engine), quantization, kernels and CLI |
@@ -37,10 +38,8 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [codebuff](https://github.com/CodebuffAI/codebuff) | AI coding assistant that edits your codebase through natural language instructions (Native glibc version for Termux) |
 | [claude-code](https://github.com/anthropics/claude-code) | Agentic AI coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands |
 | [converter](https://github.com/miluxmil/milux/blob/master/converter) | Easy multimedia file converter |
-| [credmap](https://github.com/lightos/credmap) | Test the user credentials provided on several popular websites to see if the password has been reused on any of them |
 | [cryptovenom](https://github.com/lightos/credmap) | Test the user credentials provided on several popular websites to see if the password has been reused on any of them |
-| [d-tect](https://github.com/shawarkhanethicalhacker/D-TECT-1) | Pentest the Modern Web |
-| [dos-a-tool](https://github.com/ivam3/DoS-A-Tool) | Performs denial of service attacks under the SYN Flood method |
+| [dos-a-tool](https://github.com/ivam3/DoS-A-Tool) **(DEPRECADA)** | Performs denial of service attacks under the SYN Flood method |
 | [dex2jar](https://github.com/pxb1988/dex2jar) | Toolkit to work with android .dex and java .class files |
 | [dnsenum](https://github.com/fwaeytens/dnsenum) | Enumerate DNS information |
 | [embed](https://github.com/ivam3/embed) | Embed metasploit payload into a legtim APK |
@@ -48,11 +47,8 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [enum4linux](https://github.com/CiscoCXSecurity/enum4linux) | Linux alternative to enum.exe for enumerating data from Windows and Samba hosts |
 | [enum4linux-ng](https://github.com/cddmp/enum4linux-ng) | A next generation version of enum4linux (a Windows/Samba enumeration tool) with additional features like JSON/YAML export |
 | [evilginx2](https://github.com/kgretzky/evilginx2) | Standalone man-in-the-middle attack framework used for phishing login credentials along with session cookies, allowing for the bypass of 2-factor authentication. |
-| [evilurl](https://github.com/UndeadSec/EvilURL) | Generate unicode domains for IDN Homograph Attack and detect them. |
 | [exif](https://github.com/ivam3/ExiF) | Extract information (meta data) from files. |
 | [exploitdb](https://github.com/offensive-security/exploitdb) | The official [Exploit Database](https://www.exploit-db.com) repository |
-| [fake-sms](https://github.com/machine1337/fake-sms) | Send messages (sms) anonymously. |
-| [fbi](https://github.com/xHak9x/fbi) | Facebook account information gathering |
 | [finalrecon](https://github.com/thewhiteh4t/FinalRecon) | All In One Web Recon. |
 | [freebuff](https://github.com/CodebuffAI/codebuff-community) | AI coding assistant that edits your codebase through natural language instructions. A buffcode free version with ad-supported — no subscription, no credits, no configuration (Native glibc version for Termux) |
 | [fuzzdb](https://github.com/fuzzdb-project/fuzzdb) | Dictionary of attack patterns and primitives for black-box application fault injection and resource discovery |
@@ -67,21 +63,19 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [gobuster](https://github.com/OJ/gobuster/) | Directory/File, DNS and VHost busting tool written in Go |
 | [gophish](https://github.com/gophish/gophish) | Open-Source advance phishing toolkit |
 | [hcdecryptor](https://gitlab.com/PANCHO7532/HCDecryptor) | Decryptor for HTTP Custom, HTTP Injector, APK Custom, eProxy, NapsternetV and SocksHTTP-based configuration files |
-| [hakku-framework](https://github.com/4shadoww/hakkuframework) | Open-source penetration testing platform used to perform web and network-related penetration testing. |
 | [hashcat](https://github.com/hashcat/hashcat.git) | World's fastest and most advanced password recovery utility |
 | [hasher](https://github.com/CiKu370/hasher) | Hash cracker with auto detect hash |
 | [hashid](https://gitlab.com/kalilinux/packages/hash-identifier/) | Software to identify the different types of hashes used to encrypt data and especially passwords. |
 | [hatcloud](https://github.com/HatBashBR/HatCloud) | Make bypass in CloudFlare for discover real IP. |
+| [herdr](https://github.com/herdrdev/herdr) | the runtime your coding agents live on - static binary for Termux (installs to $PREFIX/bin via postinst, always latest stable) |
 | [hermes-agent](https://github.com/NousResearch/hermes-agent) | Personal AI agent by Nous Research with CLI, TUI, messaging gateway, and browser automation. |
 | [huggingface](https://github.com/huggingface/huggingface_hub) | Client library for the Hugging Face Hub (huggingface_hub): download, publish and version AI models/datasets; provides the 'huggingface-cli' tool |
-| [hunner-framework](https://github.com/b3-v3r/Hunner) | Hacking framework to DOS sites, ftp|ssh bruteforce, scan sql and xxs vulnerabilities. |
 | [hydra-gtk](https://github.com/vanhauser-thc/thc-hydra) | Number one brute forcing tool in ciber security. |
 | [infoga](https://github.com/m4ll0k/infoga) | Gathering email accounts informations from different public source and check if emails was leaked using haveibeenpwned.com API. |
 | [ipgeolocation](https://github.com/maldevel/IPGeoLocation) | A tool to retrieve IP Geolocation information. |
 | [johntheripper](https://github.com/openwall/john) | Advanced offline password cracker, which supports hundreds of hash and cipher types, and runs on many operating systems, CPUs, GPUs, and even some FPGAs. |
 | [jython](https://www.jython.org/) | The Jython project provides implementations of Python in Java, providing to Python the benefits of running on the JVM and access to classes written in java |
 | [kerbrute](https://github.com/TarlogicSecurity/kerbrute) | An script to perform kerberos bruteforcing by using the Impacket library. |
-| [lockphish](https://github.com/Heroboycloud/lockphish-master) | A tool for phishing attacks on the lock screen, designed to grab Windows credentials, Windows, iPhone and Android PIN. |
 | [maltego](https://www.maltego.com) | Maltego is a software focused mainly on forensic analysis and developed to make link analysis and data mining more conducive from IP domains, emails, telephones, geographic locations... that is, the starting point of an investigation. |
 | [markdown-viewer](https://github.com/ivam3/markdown-viewer) | A lightweight application developed using the Python programming language and the flet module. |
 | [metasploit-framework](https://github.com/rapid7/metasploit-framework) | World's leading open-source penetrating framework |
@@ -89,7 +83,6 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [mimocode](https://github.com/XiaomiMiMo/MiMo-Code) | An open-source AI coding agent with cross-session memory. Built for the terminal (Native glibc version for Termux). |
 | [mistral-vibe](https://github.com/mistralai/mistral-vibe) | Minimal CLI coding assistant/agent powered by Mistral's models (Native glibc version for Termux). |
 | [muse-code](https://developer.meta.com/ai/products/muse-code) | Meta Muse Code interactive terminal AI coding agent. |
-| [nexphisher](https://github.com/htr-tech/nexphisher) | Advanced Phishing tool for Termux. |
 | [ngrok](https://ngrok.com) | Globally distributed reverse proxy fronting your web services running in any cloud or private network, or your machine. |
 | [nikto](https://github.com/sullo/nikto) | A web server scanner. |
 | [openclaw](https://github.com/AidanPark/openclaw-android) | Open-source autonomous artificial intelligence agent. |
@@ -98,47 +91,33 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [osintgram](https://github.com/datalux/Osintgram) | A OSINT tool on Instagram. It offers an interactive shell to perform analysis on Instagram account of any users by its nickname. |
 | [ovh-ttyrec](https://github.com/ovh/ovh-ttyrec) | Terminal recorder and player (an alternative of ttyrec). |
 | [penelope](https://github.com/brightio/penelope) | A powerful shell handler built as a modern netcat replacement for RCE exploitation, aiming to simplify, accelerate, and optimize post-exploitation workflows. |
-| [phomber](https://github.com/s41r4j/phomber) | Infomation grathering tool that reverse search phone numbers and get their details. |
 | [phonesploit](https://github.com/aerosol-can/PhoneSploit) | A tool for remote ADB exploitation for all Machines. |
 | [playwright-proot](https://playwright.dev) | Playwright CLI for Termux via proot-distro Ubuntu. Enables browser automation (snapshot, screenshot, click, fill) for testing PWAs and web apps on Android |
 | [proroot](https://github.com/coderredlab/proroot) | Rootless Linux runtime for Android. Drop-in proot replacement with zero ptrace overhead. Run full glibc Linux userspace (Node.js, Python, Git, Chromium) inside Android without root. |
 | [PuTTY](https://www.ssh.com/academy/ssh/putty/linux) | Graphical terminal program that supports the SSH, telnet, and rlogin protocols and connecting to serial ports. |
-| [pybelt](https://github.com/Ekultek/Pybelt) | An open source hackers tool belt complete. |
 | [quack](https://github.com/Monkey-hk4/quack) | Toolkit with SMS attack tool, HTTP attack tool and many other attack tools. |
 | [ransomux](https://github.com/ivam3/termux-packages) | "Simulate a ransomware effects searching to lock and encrypt files into internal|external android memory brigning a reversel shell. |
 | [recondog](https://github.com/s0md3v/ReconDog) | Reconnaissance Swiss Army Knife |
 | [recon-ng](https://github.com/lanmaster53/recon-ng) | Open Source Intelligence gathering tool aimed at reducing the time spent harvesting information from open sources. |
-| [redhawk](https://github.com/Tuhinshubhra/RED_HAWK) | All in one tool for Information Gathering, Vulnerability Scanning and Crawling |
-| [routersploit](https://github.com/threat9/routersploit) | Open-source exploitation framework dedicated to embedded devices. |
-| [saycheese](https://github.com/hangetzzu/saycheese) | Grab target's webcam shots by link. |
-| [sayhello](https://github.com/d093w1z/sayhello) | Capturing audio (.wav) from target using a link. |
+| [routersploit](https://github.com/threat9/routersploit) **(DEPRECADA)** | Open-source exploitation framework dedicated to embedded devices. |
 | [seclists](https://github.com/danielmiessler/SecLists) | SecLists it's a collection of multiple types of lists used during security assessments, collected in one place. |
-| [seeker](https://github.com/thewhiteh4t/seeker) | Accurately Locate Smartphones using Social Engineering. |
 | [shc](http://www.datsi.fi.upm.es/~frosal/sources/shc.html) | The Shell Script Compiler (SHC) encodes and encrypts shell scripts into executable binaries. |
-| [shellsploit](https://github.com/vasco2016/shellsploit-framework) |It let's you generate customized shellcodes, backdoors, injectors for various operating system. And let's you obfuscation every byte via encoders. |
 | [sherlock](https://github.com/sherlock-project/sherlock) | Hunt down social media accounts by username across social networks. |
 | [slowhttptest](https://github.com/shekyan/slowhttptest) | A highly configurable tool that simulates some Application Layer Denial of Service attacks by prolonging HTTP connections in different ways. |
 | [spix](https://github.com/VictorH028/spix) | A command line (CLI) tool written in C++ that displays an animated spinner while a background process is running. |
-| [sqliv](https://github.com/the-robot/sqliv) | Massive SQL injection vulnerability scanner. |
 | [stegsnow](https://www.kali.org/tools/stegsnow/) | Hide messages in ASCII text by appending whitespaces to the end of lines |
-| [storm-breaker](https://github.com/ultrasecurity/Storm-Breaker) | Social engineering tool [Access Webcam & Microphone & Location Finder] With {Py,JS,PHP} |
 | [sublist3r](https://github.com/aboul3la/Sublist3r) | Fast subdomains enumeration tool for penetration testers. |
-| [tangalanga](https://github.com/elcuervo/tangalanga) | The Zoom conference scanner hacking tool. |
 | [termux-desktop-xfce](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/termux-desktop-xfce/README.md) | Set up a beautiful xfce desktop in termux. |
 | [termux-docker-qemu](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/termux-docker-qemu/README.md) | Manage Docker containers from Linux VMs (x86/x86_64/ARMv7/AArch64) using QEMU. Includes VirtIO-GPU acceleration via virgl. |
 | [termux-oracle-skill](https://github.com/ivam3/termux-oracle) | Termux skill for AI coding agents with all context about termux, i-Haklab and Ivam3 termux-packages. |
-| [trape](https://github.com/jofpin/trape) | OSINT analysis and research tool. |
 | [unshc](https://github.com/yanncam/UnSHc) | The Shell Script UnCompiler (UNSHC) decode and decrypt SHC file on X86/x64 architecture. |
 | [vulnx](https://github.com/anouarbensaad/vulnx) | An intelligent bot auto shell injector that detects vulnerabilities in multiple types of cms. |
 | [walkie](https://github.com/vikasprogrammer/walkie) | P2P communication CLI for AI agents. No server. No setup. Just talk. Termux adaptation with netlink/SELinux patch for Android. |
-| [wbruter](https://github.com/wuseman/WBRUTER) | Disable device pin code aslong as usb debugging and brute force methods like dictionary attacks for gmail, ftp, rar, zip and some other file extensions. |
-| [webscan](https://github.com/Fenrir-00/investigar-web) | A lightweight webscanner tool. |
 | [websploit](https://github.com/The404Hacking/websploit) | MITM framework. |
 | [wfuzz](https://pypi.org/project/wfuzz/) con [fuzzDB](https://github.com/fuzzdb-project/fuzzdb) | Brute force attack tool with dictionary of attack patterns and primitives for black-box application fault injection and resource discovery |
 | [whatweb](https://github.com/urbanadventurer/WhatWeb) | Recognises web technologies including content management systems (CMS), blogging platforms, statistic/analytics packages, JavaScript libraries, web servers, and embedded devices. |
 | [wpscan](https://github.com/wpscanteam/wpscan) | WordPress security scanner. |
 | [xapt-management](https://github.com/ivam3/xapt-management) | X-Desktop graphical interface for advance package tool(APT) written in python. |
-| [xerosploit](https://github.com/LionSec/xerosploit) | A penetration testing toolkit whose goal is to perform man in the middle attacks for testing purposes. |
 | [xml2axml](https://github.com/codyi96/xml2axml) | Encoding xml to axml OR decoding axml to xml |
 | [zaproxy](https://www.kali.org/tools/zaproxy/) | The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications |
 ##### Suggest a tool and/or framework to be add in our [Telegram Support Group](https://t.me/Ivam3by_Cinderella)

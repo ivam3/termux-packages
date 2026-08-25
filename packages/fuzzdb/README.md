@@ -24,7 +24,8 @@ pkg install fuzzdb
 ## Usage
 
 ```bash
-fuzzdb-installer [options]
+fuzzdb
+# Fuzz data base saved in: $HOME/.local/share/wordlist/fuzzdb
 ```
 
 ## Part of i-HakLab

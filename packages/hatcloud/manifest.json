@@ -4,11 +4,14 @@
   "arch": "all",
   "homepage": "https://github.com/HatBashBR/HatCloud",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["git, ruby"],
-  "suggests": ["i-haklab"],
+  "depends": [
+    "git, ruby"
+  ],
+  "suggests": [
+    "i-haklab"
+  ],
   "description": "It makes bypass in CloudFlare for discover real IP.",
-  "files" :{
-    "hatcloud-installer": "bin/hatcloud-installer",
+  "files": {
     "hatcloud": "bin/hatcloud"
   }
 }

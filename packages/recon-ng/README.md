@@ -19,7 +19,7 @@ pkg install recon-ng
 
 ## Dependencies
 
-`git, python, python-pip`
+`git, rust, python, libxml2, libxml2-utils, libxslt, python-lxml`
 
 ## Usage
 

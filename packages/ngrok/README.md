@@ -12,14 +12,14 @@ pkg install ngrok
 
 | Field | Value |
 |-------|-------|
-| Version | `3.22.1` |
-| Architecture | `aarch64` |
+| Version | `3.15.1` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [ngrok.com](https://ngrok.com) |
+| Homepage | [ngrok](https://ngrok.com) |
 
 ## Dependencies
 
-`wget`
+`curl, proot, openssh`
 
 ## Usage
 

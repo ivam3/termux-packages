@@ -1,6 +1,0 @@
-#!/data/data/com.termux/files/usr/bin/bash
-wget --tries=20 "https://raw.githubusercontent.com/jothatron/blackbox/master/blackbox.py" \
-  -O ${PREFIX}/bin/blackbox
-python2 -m pip install --upgrade pip
-python2 -m pip install passlib pexpect
-####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

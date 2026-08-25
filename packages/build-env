@@ -34,8 +34,8 @@ while getopts "n:v:a:p:h" opts; do
 done
 
 mkdir -p $pkgName/img
-#MANIFIEST
-cat <<- CONF > $pkgName/manifiest.json
+#MANIFEST
+cat <<- CONF > $pkgName/manifest.json
 {
   "name": "$pkgName",
   "version": "$pkgv",

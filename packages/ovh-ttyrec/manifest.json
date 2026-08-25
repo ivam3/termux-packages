@@ -4,10 +4,20 @@
   "arch": "all",
   "homepage": "https://github.com/ovh/ovh-ttyrec",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["git", "glibc-repo", "bionic-host", "make", "clang", "libcompiler-rt", "zstd"],
-  "suggests": ["i-haklab"],
+  "depends": [
+    "git",
+    "glibc-repo",
+    "bionic-host",
+    "make",
+    "clang",
+    "libcompiler-rt",
+    "zstd"
+  ],
+  "suggests": [
+    "i-haklab"
+  ],
   "description": "Terminal recorder and player (an alternative to ttyrec)",
-  "files" :{
-    "ovh-ttyrec-installer": "bin/ovh-ttyrec-installer"
+  "files": {
+    "ovh-ttyrec": "bin/ovh-ttyrec"
   }
 }

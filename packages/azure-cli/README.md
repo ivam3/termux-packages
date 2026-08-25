@@ -12,22 +12,22 @@ pkg install azure-cli
 
 | Field | Value |
 |-------|-------|
-| Version | `2.67.0` |
+| Version | `2.89.1` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [Azure CLI](https://learn.microsoft.com/cli/azure) |
 
 ## Dependencies
 
-`python, python-pip, libffi, openssl`
+`tur-repo, python3.10, curl, openssl`
 
 ## Usage
 
 ```bash
-azure-cli-installer
+az [command]
 ```
 
-> Run the installer first, then use `az [command]` to manage Azure services from the terminal.
+> The postinst installs azure-cli 2.89.1 with `pip install --target ${PREFIX}/opt/az` (requires the `python3.10` package from tur-repo), then runs `az [command]` to manage Azure services from the terminal.
 
 ## Part of i-HakLab
 

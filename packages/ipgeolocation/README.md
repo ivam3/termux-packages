@@ -12,14 +12,14 @@ pkg install ipgeolocation
 
 | Field | Value |
 |-------|-------|
-| Version | `1.3` |
+| Version | `2.0.4` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [IPGeoLocation](https://github.com/maldevel/IPGeoLocation) |
 
 ## Dependencies
 
-`python, python-pip, git`
+`python, git`
 
 ## Usage
 

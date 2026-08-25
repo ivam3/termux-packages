@@ -6,8 +6,12 @@ then
 else
   echo "Preparing enviroment ..."
   [[ -d ${PREFIX}/bin/ghost ]] && rm ${PREFIX}/bin/ghost
-	[[ -d ${PREFIX}/lib/python*/site-packages/ghost ]] && {
-		rm -rf ${PREFIX}/lib/python*/site-packages/ghost;
-	}
+  [[ -d ${PREFIX}/lib/python*/site-packages/ghost ]] && {
+    rm -rf ${PREFIX}/lib/python*/site-packages/ghost;
+  }
+  [[ -d ${HOME}/.local/share/pipx/venvs/ghost ]] && {
+    rm -rf ${HOME}/.local/share/pipx/venvs/ghost;
+  }
+  [[ -e ${HOME}/.local/bin/ghost ]] && rm ${HOME}/.local/bin/ghost
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

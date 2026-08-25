@@ -12,7 +12,7 @@ pkg install cloudbunny
 
 | Field | Value |
 |-------|-------|
-| Version | `1.0` |
+| Version | `2024.02.04` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [CloudBunny](https://github.com/Warflop/CloudBunny) |

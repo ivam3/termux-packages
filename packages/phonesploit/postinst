@@ -1,7 +1,10 @@
 #!/data/data/com.termux/files/usr/bin/bash
-bash ${PREFIX}/bin/phonesploit-installer
-rm -rf ${PREFIX}/bin/phonesploit-installer
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
+IFS=$'\n\t'
+echo "Cloning repository ..."
+git clone --quiet https://github.com/aerosol-can/PhoneSploit ${HOME}/.local/share/phonesploit
+echo "Installing requirements ..."
+python -m pip --no-color --quiet --no-cache-dir install colorama;
+curl -fsSL https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -o /data/data/com.termux/files/usr/bin/fixer
 chmod 751 /data/data/com.termux/files/usr/bin/fixer
 echo "[*] phonesploit installation finished."
 echo "[!] For help going to https://t.me/Ivam3_Bot."

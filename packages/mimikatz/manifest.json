@@ -4,10 +4,14 @@
   "arch": "all",
   "homepage": "https://github.com/fortra/impacket",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["python, wget, rust, python-pip"],
-  "suggests": ["i-haklab"],
+  "depends": [
+    "python, python-pip, curl, rust"
+  ],
+  "suggests": [
+    "i-haklab"
+  ],
   "description": "Mini shell to control a remote mimikatz RPC server.",
-  "files" :{
-    "mimikatz-installer": "bin/mimikatz-installer"
-	}
+  "files": {
+    "mimikatz": "bin/mimikatz"
+  }
 }

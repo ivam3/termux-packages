@@ -279,6 +279,7 @@ WRAP_MARKER="# walkie agent wrapper"
 # Package -> candidate binaries. First installed candidate wins.
 declare -A AGENT_BINS
 AGENT_BINS[antigravity-cli]="agy"
+AGENT_BINS[cactus]="cactus"
 AGENT_BINS[claude-code]="claude"
 AGENT_BINS[codebuff]="codebuff"
 AGENT_BINS[codex]="codex"
@@ -302,7 +303,7 @@ if [[ -f "${HOME}/.local/etc/i-Haklab/Tools/categories" ]]; then
   AGENT_LIST=$(awk -F: '$2=="Agent AI"{print $1}' "${HOME}/.local/etc/i-Haklab/Tools/categories" 2>/dev/null)
 fi
 # Fallback (offline / i-Haklab not installed): the Agent AI tool list.
-[[ -z "${AGENT_LIST}" ]] && AGENT_LIST="antigravity-cli claude-code codebuff codex context7 copilot-cli engram freebuff hermes-agent kimi-code mimocode minimax-cli mistral-vibe openclaw opencode qwen-code smithery"
+[[ -z "${AGENT_LIST}" ]] && AGENT_LIST="antigravity-cli cactus claude-code codebuff codex context7 copilot-cli engram freebuff hermes-agent kimi-code mimocode minimax-cli mistral-vibe openclaw opencode qwen-code smithery"
 # Normalize to newline-separated (IFS=$'\n\t' does not split on spaces).
 AGENT_LIST=$(printf '%s' "${AGENT_LIST}" | sed 's/ /\n/g' | sed '/^$/d')
 

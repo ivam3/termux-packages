@@ -12,14 +12,14 @@ pkg install phonesploit
 
 | Field | Value |
 |-------|-------|
-| Version | `3.0.6` |
+| Version | `1.0` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [PhoneSploit-Pro](https://github.com/AzeemIdrisi/PhoneSploit-Pro) |
 
 ## Dependencies
 
-`python, python-pip, git, adbfastboot, scrcpy`
+`git, python`
 
 ## Usage
 

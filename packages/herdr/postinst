@@ -1,0 +1,180 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -eu
+IFS=$'\n\t'
+
+# ==============================
+# herdr — postinst for Termux
+# Installs static binary to $PREFIX/bin via herdr.dev manifest (always latest stable)
+# Strict arch: aarch64 (Termux). Detects OS/arch like install_herdr.sh.
+# ==============================
+BIN="herdr"
+MANIFEST_URL="https://herdr.dev/latest.json"
+INSTALL_DIR="${PREFIX}/bin"
+
+# Colors
+CYAN="\033[36m"
+GREEN="\033[32m"
+RED="\033[31m"
+YELLOW="\033[33m"
+DIM="\033[2m"
+RESET="\033[0m"
+
+info() { printf "%b[📢]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+msg()  { printf "[➡] %s\n" "$*"; }
+ok()   { printf "%b[✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+warn() { printf "%b[!]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+tip()  { printf "%b[💡]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+err()  { printf "%b[❌]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+
+need() {
+    if ! command -v "$1" >/dev/null 2>&1; then
+        err "requires '$1' — install it first: pkg install $1"
+        exit 1
+    fi
+}
+
+# --- checks ---
+need curl
+need awk
+
+# --- detect platform (same as install_herdr.sh) ---
+OS="$(uname -s)"
+case "$OS" in
+    Linux)  os="linux" ;;
+    Darwin) os="macos" ;;
+    *) err "unsupported OS: $OS"; exit 1 ;;
+esac
+
+ARCH="$(uname -m)"
+case "$ARCH" in
+    x86_64|amd64)   arch="x86_64" ;;
+    aarch64|arm64)  arch="aarch64" ;;
+    *) err "unsupported architecture: $ARCH (herdr deb is aarch64 strict, but postinst supports x86_64/aarch64)"; exit 1 ;;
+esac
+
+TARGET="${os}-${arch}"
+info "detected ${TARGET}"
+
+# --- enforce strict deb arch (aarch64) with warning if mismatch ---
+DEB_ARCH="aarch64"
+if [[ "$arch" != "$DEB_ARCH" ]]; then
+    warn "deb Architecture is $DEB_ARCH strict, but host is $arch — proceeding with $TARGET binary (may still work, but not officially supported)."
+fi
+
+# --- fetch manifest (always latest) ---
+info "fetching latest release manifest from ${MANIFEST_URL}..."
+if ! MANIFEST="$(curl -fsSL --retry 3 --connect-timeout 10 --max-time 20 "$MANIFEST_URL")"; then
+    err "can't reach ${MANIFEST_URL}. herdr.dev might be down. Who let the sheeps out? baaa."
+    exit 1
+fi
+
+URL="$(printf '%s\n' "$MANIFEST" | awk -v target="\"${TARGET}\"" '
+    /^[[:space:]]*"assets"[[:space:]]*:/ { in_assets = 1; next }
+    in_assets && /^[[:space:]]*}/ { exit }
+    in_assets && index($0, target) {
+        sub(/^.*:[[:space:]]*"/, "")
+        sub(/".*$/, "")
+        print
+        exit
+    }
+')"
+SHA256="$(printf '%s\n' "$MANIFEST" | awk -v target="\"${TARGET}\"" '
+    /^[[:space:]]*"sha256"[[:space:]]*:/ { in_sha256 = 1; next }
+    in_sha256 && /^[[:space:]]*}/ { exit }
+    in_sha256 && index($0, target) {
+        sub(/^.*:[[:space:]]*"/, "")
+        sub(/".*$/, "")
+        print
+        exit
+    }
+')"
+VERSION="$(printf '%s\n' "$MANIFEST" | awk -F '"' '/^[[:space:]]*"version"[[:space:]]*:/ { print $4; exit }')"
+
+if [[ -z "$URL" ]]; then
+    err "release manifest does not include a binary for ${TARGET}"
+    exit 1
+fi
+if [[ "${#SHA256}" -ne 64 ]]; then
+    err "release manifest does not include a valid SHA-256 checksum for ${TARGET}"
+    exit 1
+fi
+if ! printf '%s\n' "$SHA256" | awk '/[^0-9A-Fa-f]/ { exit 1 }'; then
+    err "release manifest does not include a valid SHA-256 checksum for ${TARGET}"
+    exit 1
+fi
+SHA256="$(printf '%s\n' "$SHA256" | awk '{ print tolower($0) }')"
+
+if command -v sha256sum >/dev/null 2>&1; then
+    SHA256_TOOL="sha256sum"
+elif command -v shasum >/dev/null 2>&1; then
+    SHA256_TOOL="shasum"
+elif command -v openssl >/dev/null 2>&1; then
+    SHA256_TOOL="openssl"
+else
+    err "SHA-256 verification requires sha256sum, shasum, or openssl — pkg install coreutils"
+    exit 1
+fi
+
+if [[ -n "$VERSION" ]]; then
+    info "downloading v${VERSION} for ${TARGET}..."
+else
+    info "downloading latest release for ${TARGET}..."
+fi
+# pipefail was removed to match install_herdr.sh (printf|awk SIGPIPE with early exit is expected)
+TMP="$(mktemp -d)"
+trap 'rm -rf "$TMP"' EXIT
+
+if ! curl -fsSL --retry 3 --connect-timeout 10 --max-time 120 "$URL" -o "${TMP}/${BIN}"; then
+    err "download failed from ${URL}"
+    exit 1
+fi
+
+case "$SHA256_TOOL" in
+    sha256sum) ACTUAL_SHA256="$(sha256sum < "${TMP}/${BIN}" | awk '{ print $1 }')" ;;
+    shasum)    ACTUAL_SHA256="$(shasum -a 256 < "${TMP}/${BIN}" | awk '{ print $1 }')" ;;
+    openssl)   ACTUAL_SHA256="$(openssl dgst -sha256 < "${TMP}/${BIN}" | awk '{ print $NF }')" ;;
+esac
+if [[ "$ACTUAL_SHA256" != "$SHA256" ]]; then
+    err "downloaded Herdr checksum did not match (expected $SHA256, got $ACTUAL_SHA256)"
+    exit 1
+fi
+
+# --- install to $PREFIX/bin ---
+mkdir -p "$INSTALL_DIR"
+mv "${TMP}/${BIN}" "${INSTALL_DIR}/${BIN}"
+chmod +x "${INSTALL_DIR}/${BIN}"
+ok "installed ${BIN} to ${INSTALL_DIR}/${BIN}"
+
+# --- verify ---
+if [[ -x "${INSTALL_DIR}/${BIN}" ]]; then
+    if command -v "$BIN" >/dev/null 2>&1; then
+        ok "ready. run 'herdr --version' to verify (installed v${VERSION:-unknown})"
+        # show version if possible
+        "${INSTALL_DIR}/${BIN}" --version 2>&1 | while read -r line; do info "$line"; done || true
+    else
+        warn "${INSTALL_DIR} is not in PATH — add: export PATH=\"${INSTALL_DIR}:\$PATH\""
+    fi
+else
+    err "installation failed — ${INSTALL_DIR}/${BIN} not executable"
+    exit 1
+fi
+
+# ==============================
+# INSTALLING SCRIPT FIXER (keep as requested)
+# ==============================
+msg "Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o "${PREFIX}/bin/fixer"; then
+    chmod 750 "${PREFIX}/bin/fixer"
+    ok "Run 'fixer' to fix any posible issue."
+else
+    warn "Could not download fixer."
+fi
+
+# ==============================
+# FINALS MESSAGES
+# ==============================
+tip "Help: https://t.me/Ivam3_Bot"
+msg "@Ivam3: thank you for use my package."
+info "Fallback (cargo) documented in /data/data/com.termux/files/usr/share/doc/herdr/README.md"
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

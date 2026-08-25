@@ -19,7 +19,7 @@ pkg install xml2axml
 
 ## Dependencies
 
-`wget, openjdk-21`
+`curl, openjdk-21`
 
 ## Usage
 

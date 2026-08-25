@@ -1,0 +1,27 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -Eeuo pipefail
+
+# Try to stop running herdr server gracefully (no failure if not running)
+if command -v herdr >/dev/null 2>&1; then
+  herdr server stop 2>/dev/null || true
+fi
+
+# Ask before removing user data (matching opencode pattern)
+echo "!: Removing herdr data... continue? (also removes ~/.config/herdr, ~/.local/share/herdr, ~/.cache/herdr)"
+while read -p "[Y/n]: " -n 1 -r; do
+    case $REPLY in
+        [Yy]* )
+            rm -rf "${HOME}/.local/share/herdr" "${HOME}/.config/herdr" "${HOME}/.cache/herdr" 2>/dev/null || true
+            echo ""
+            echo "!: Removed herdr data history"
+            break;;
+        [Nn]* )
+            echo ""
+            echo "!: Kept herdr data history (config/cache preserved)"
+            break;;
+        * ) echo "Please answer [Y/n]";;
+    esac
+done
+
+# Note: $PREFIX/bin/herdr binary will be removed in postrm (not tracked by dpkg data_files)
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

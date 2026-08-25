@@ -12,19 +12,20 @@ pkg install gophish
 
 | Field | Value |
 |-------|-------|
-| Version | `0.12.1` |
+| Version | `0.12.0` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [getgophish.com](https://getgophish.com) |
 
 ## Dependencies
 
-`git, golang, make`
+`golang`
 
 ## Usage
 
 ```bash
-gophish-installer [options]
+gophish
+# listen on 127.0.0.1:8080 (config.json auto-patched)
 ```
 
 ## Part of i-HakLab

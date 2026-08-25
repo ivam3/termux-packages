@@ -1,6 +1,6 @@
 # gobuster
 
-> Directory/file, DNS and VHost busting tool written in Go.
+> Directory/File, DNS and VHost busting tool written in Go.
 
 ## Installation
 
@@ -12,20 +12,24 @@ pkg install gobuster
 
 | Field | Value |
 |-------|-------|
-| Version | `3.6.0` |
+| Version | `3.8.2` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [gobuster](https://github.com/OJ/gobuster) |
 
 ## Dependencies
 
-`git, golang, make`
+`golang`
 
 ## Usage
 
 ```bash
-gobuster-installer [options]
+gobuster dir -u http://example.com -w wordlist.txt
+gobuster dns -d example.com -w subdomains.txt
+gobuster vhost -u http://example.com -w vhosts.txt
 ```
+
+Gobuster se compila desde el código fuente con `go install github.com/OJ/gobuster/v3@v3.8.2` y el binario queda en `~/.local/bin` / `~/go/bin`.
 
 ## Part of i-HakLab
 

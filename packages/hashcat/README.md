@@ -12,19 +12,20 @@ pkg install hashcat
 
 | Field | Value |
 |-------|-------|
-| Version | `6.2.6` |
+| Version | `7.1.2` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [hashcat.net](https://hashcat.net) |
+| Homepage | [hashcat](https://github.com/hashcat/hashcat) |
 
 ## Dependencies
 
-`wget`
+`git, glibc-repo, libc++, clang, libiconv, make, ocl-icd, opencl-vendor-driver, rust`
 
 ## Usage
 
 ```bash
-hashcat-installer [options]
+hashcat -m 0 hash.txt wordlist.txt
+hashcat --show hash.txt
 ```
 
 ## Part of i-HakLab

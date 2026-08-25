@@ -1,10 +1,10 @@
 {
   "name": "evilginx2",
-  "version": "2.4.2",
+  "version": "3.3.0",
   "arch": "all",
-  "homepage": "https://github.com/kgretzky/evilginx2.git",
+  "homepage": "https://github.com/kgretzky/evilginx2",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["git, golang, make, wget"],
+  "depends": ["git, golang, make, curl"],
   "suggests": ["i-haklab"],
   "description": "Standalone man-in-the-middle attack framework used for phishing login credentials along with session cookies, allowing for the bypass of 2-factor authentication.",
   "files" :{

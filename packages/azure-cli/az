@@ -3,7 +3,8 @@
 import sys
 import os
 
-dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'src')
+prefix = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+dir = os.path.join(prefix, 'opt', 'az')
 
 if os.environ.get('PYTHONPATH') is None:
     os.environ['PYTHONPATH'] = dir

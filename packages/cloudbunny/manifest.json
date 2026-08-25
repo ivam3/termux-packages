@@ -1,14 +1,13 @@
 {
   "name": "cloudbunny",
-  "version": "1.0",
+  "version": "2024.02.04",
   "arch": "all",
   "homepage": "https://github.com/Warflop/CloudBunny",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["git, python2"],
+  "depends": ["git, python, python-pip"],
   "suggests": ["i-haklab"],
   "description": "Tool to capture the real IP of the server that uses a WAF as a proxy or protection.",
   "files" :{
-    "cloudbunny-installer": "bin/cloudbunny-installer",
     "cloudbunny": "bin/cloudbunny"
   }
 }
