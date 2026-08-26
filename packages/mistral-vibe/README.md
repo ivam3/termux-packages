@@ -1,32 +1,36 @@
-# mistral-vibe
+# Mistral Vibe (mistral-vibe)
 
-> Mistral AI coding agent for Termux — vibe-code with Mistral models directly from your terminal.
+## ¿Qué es Mistral Vibe?
 
-## Installation
+**Mistral Vibe** es una herramienta de línea de comandos que integra los modelos de lenguaje de Mistral AI en el flujo de trabajo de desarrollo, proporcionando capacidades de edición agéntica, explicación de código y generación automatizada directamente desde la terminal.
 
-```bash
-pkg install mistral-vibe
-```
+## ¿Para qué es útil?
 
-## Info
+- Asistencia en programación con modelos Mistral AI
+- Generación y refactorización de código
+- Explicación de fragmentos de código complejos
+- Automatización de tareas de desarrollo
 
-| Field | Value |
-|-------|-------|
-| Version | `2.24.3-1` |
-| Architecture | `all` |
-| Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [mistral.ai](https://mistral.ai) |
-
-## Dependencies
-
-`coreutils, curl, uv, python, python-pip, python-cryptography`
-
-## Usage
+## Instalación
 
 ```bash
-mistral-vibe [options]
+# Mediante el wrapper de i-HakLab:
+apt install mistral-vibe
+# O directamente con pip:
+pip install mistral-vibe
 ```
 
-## Suggestions
+## ¿Cómo se usa?
 
-Install also: `termux-oracle-skill`, `opencode`, `antigravity-cli`, `claude-code`
+```bash
+mistral-vibe "describe el propósito de este repositorio"
+```
+
+## Consideraciones Adicionales
+
+- Requiere una API key de Mistral AI configurada en las variables de entorno.
+- Se instala automáticamente como dependencia al instalar `claude-code` o `qwen-code` mediante los wrappers de i-HakLab.
+
+---
+
+*Nota: Herramienta integrada en el ecosistema i-HakLab para desarrollo asistido por IA.*

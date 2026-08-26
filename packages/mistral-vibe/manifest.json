@@ -19,6 +19,6 @@
   ],
   "description": "Minimal CLI coding assistant/agent powered by Mistral's models.",
   "files": {
-    "mistralvibe_installer": "/data/data/com.termux/files/usr/bin/mistralvibe_installer"
+    "README.md": "/data/data/com.termux/files/usr/share/doc/herdr/README.md"
   }
 }
