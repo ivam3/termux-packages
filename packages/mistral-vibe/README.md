@@ -12,14 +12,14 @@ pkg install mistral-vibe
 
 | Field | Value |
 |-------|-------|
-| Version | `0.1.0` |
-| Architecture | `aarch64` |
+| Version | `2.24.3-1` |
+| Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [mistral.ai](https://mistral.ai) |
 
 ## Dependencies
 
-`glibc, nodejs-lts, wget, tar`
+`coreutils, curl, uv, python, python-pip, python-cryptography`
 
 ## Usage
 

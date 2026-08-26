@@ -1,31 +1,61 @@
 #!/data/data/com.termux/files/usr/bin/bash
+set -euo pipefail
 IFS=$'\n\t'
-uv tool install mistral-vibe
 
-command -v vibe &>/dev/null || {
-    echo "[✔] mistral-vibe installation finished."
-    echo "[!] Don't forget set your API key."
-    echo "[➡] Run 'vibe' to execute it."
-    echo "[➡] Run 'vibe-acp' for ACP mode."
-} || {
-  echo -en "\e[31mE:\e[0m mistral-vibe directory missing ... \e[33mAborting.\e[0m\n";
-}
+# Colors
+CYAN="\033[36m"
+GREEN="\033[32m"
+RED="\033[31m"
+YELLOW="\033[33m"
+DIM="\033[2m"
+RESET="\033[0m"
+
+info() { printf "%b[📢]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+msg()  { printf "[➡] %s\n" "$*"; }
+ok()   { printf "%b[✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+warn() { printf "%b[!]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+tip()  { printf "%b[💡]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+err()  { printf "%b[❌]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+
+# Install / upgrade mistral-vibe via uv tool (idempotent, handles python 3.14)
+# Use --force on fresh install and fallback to upgrade if already installed
+msg "Installing mistral-vibe via uv (latest)..."
+if ! uv tool install mistral-vibe --force 2>&1; then
+    msg "'uv tool install --force' failed, trying 'uv tool upgrade'..."
+    uv tool upgrade mistral-vibe || {
+        err "Failed to install/upgrade mistral-vibe via uv."
+        msg "Try 'uv tool uninstall mistral-vibe && uv tool install mistral-vibe' manually."
+        exit 1
+    }
+fi
+
+# Verify installation
+if command -v vibe &>/dev/null; then
+    ok "mistral-vibe installation finished ($(vibe --version 2>/dev/null || echo 'vibe'))"
+    warn "Don't forget to set your API key (MISTRAL_API_KEY)."
+    tip "Run 'vibe' to execute it."
+    tip "Run 'vibe-acp' for ACP mode."
+else
+    err "Installation completed but 'vibe' command not found."
+    tip "Check PATH includes \$HOME/.local/bin and run 'uv tool list'."
+    exit 1
+fi
 
 # ==============================
-# INSTALLING SCRIPT FIXER
+# INSTALLING SCRIPT FIXER (mantenlo siempre)
 # ==============================
-echo "[*] Installing script fixer..."
+msg "Installing script fixer..."
 fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
 if curl -fsSL "$fixerURL" -o /data/data/com.termux/files/usr/bin/fixer; then
     chmod 750 /data/data/com.termux/files/usr/bin/fixer
-    echo "[➡] Run 'fixer' to fix any posible issue."
+    tip "Run 'fixer' to fix any possible issue."
 else
-    echo "[!] Error downloading fixer."
+    err "Error downloading fixer (non-fatal, continuing)."
 fi
 
 # ==============================
 # FINALS MESSAGES
 # ==============================
-echo "[📢] Help: going to https://t.me/Ivam3_Bot."
-echo "[💡] @Ivam3: thank you for use my package."
+msg "Help: going to https://t.me/Ivam3_Bot."
+ok "@Ivam3: thank you for use my package."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

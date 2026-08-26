@@ -1,7 +1,7 @@
-#!/data/data/com.termux/files/usr/bin/bash 
-
-! command -v vibe &>/dev/null || {
-    uv tool uninstall mistral-vibe;
-}
-
+#!/data/data/com.termux/files/usr/bin/bash
+set -euo pipefail
+if command -v vibe &>/dev/null; then
+    echo "[*] Uninstalling mistral-vibe via uv..."
+    uv tool uninstall mistral-vibe || echo "[!] uv tool uninstall failed (non-fatal)"
+fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

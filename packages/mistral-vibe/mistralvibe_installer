@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/env bash
 
 # Mistral Vibe Installation Script
-# This script installs uv if not present and then installs mistral-vibe using uv
+# This script installs uv if not present and then installs mistral-vibe (latest) using uv
 
 set -euo pipefail
 
@@ -88,16 +88,24 @@ function check_vibe_installed() {
 }
 
 function install_vibe() {
-    info "Installing mistral-vibe from GitHub repository using uv..."
-    uv tool install mistral-vibe
-
-    success "Mistral Vibe installed successfully! (commands: vibe, vibe-acp)"
+    info "Installing mistral-vibe (latest) via uv..."
+    # --force ensures clean reinstall if python version changed (3.13 -> 3.14)
+    if uv tool install mistral-vibe --force 2>&1; then
+        success "Mistral Vibe installed successfully! (commands: vibe, vibe-acp)"
+    else
+        error "uv tool install failed, trying upgrade path..."
+        uv tool upgrade mistral-vibe
+        success "Mistral Vibe installed via upgrade path!"
+    fi
 }
 
 function update_vibe() {
-    info "Updating mistral-vibe from GitHub repository using uv..."
-    uv tool upgrade mistral-vibe
-
+    info "Updating mistral-vibe to latest via uv..."
+    # upgrade to latest; if not installed, fallback to install --force
+    if ! uv tool upgrade mistral-vibe 2>&1; then
+        warning "upgrade failed, trying fresh install..."
+        uv tool install mistral-vibe --force
+    fi
     success "Mistral Vibe updated successfully!"
 }
 

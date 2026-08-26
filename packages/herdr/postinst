@@ -26,17 +26,6 @@ warn() { printf "%b[!]%b %s\n" "$YELLOW" "$RESET" "$*"; }
 tip()  { printf "%b[💡]%b %s\n" "$YELLOW" "$RESET" "$*"; }
 err()  { printf "%b[❌]%b %s\n" "$RED" "$RESET" "$*" >&2; }
 
-need() {
-    if ! command -v "$1" >/dev/null 2>&1; then
-        err "requires '$1' — install it first: pkg install $1"
-        exit 1
-    fi
-}
-
-# --- checks ---
-need curl
-need awk
-
 # --- detect platform (same as install_herdr.sh) ---
 OS="$(uname -s)"
 case "$OS" in
