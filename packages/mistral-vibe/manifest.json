@@ -1,6 +1,6 @@
 {
   "name": "mistral-vibe",
-  "version": "2.24.3-2",
+  "version": "2.24.3-4",
   "arch": "all",
   "homepage": "https://github.com/mistralai/mistral-vibe",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
@@ -19,6 +19,6 @@
   ],
   "description": "Minimal CLI coding assistant/agent powered by Mistral's models.",
   "files": {
-    "README.md": "/data/data/com.termux/files/usr/share/doc/herdr/README.md"
+    "README.md": "/data/data/com.termux/files/usr/share/doc/mistral-vibe/README.md"
   }
 }

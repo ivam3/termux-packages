@@ -17,25 +17,13 @@ warn() { printf "%b[!]%b %s\n" "$YELLOW" "$RESET" "$*"; }
 tip()  { printf "%b[💡]%b %s\n" "$YELLOW" "$RESET" "$*"; }
 err()  { printf "%b[❌]%b %s\n" "$RED" "$RESET" "$*" >&2; }
 
-# Install / upgrade mistral-vibe via uv tool (idempotent, handles python 3.14)
-# Use --force on fresh install and fallback to upgrade if already installed
-msg "Installing mistral-vibe via uv (latest)..."
-if ! uv tool install mistral-vibe --force 2>&1; then
-    msg "'uv tool install --force' failed, trying 'uv tool upgrade'..."
-    uv tool upgrade mistral-vibe || {
-        err "Failed to install/upgrade mistral-vibe via uv."
-        msg "Try 'uv tool uninstall mistral-vibe && uv tool install mistral-vibe' manually."
-        exit 1
-    }
-fi
-
-# Ensure ~/.local/bin is in PATH (uv tool shims)
+# Ensure ~/.local/bin is in PATH (uv tool shims) — defined BEFORE uv to suppress warning
 ensure_local_bin_in_path() {
     case ":$PATH:" in
-        *":$HOME/.local/bin:"*) ok "~/.local/bin ya está en PATH"; return 0 ;;
+        *":$HOME/.local/bin:"*) ok "~/.local/bin ya está en PATH" ;;
+        *) warn "~/.local/bin no está en PATH — corrigiendo..."
+           export PATH="$HOME/.local/bin:$PATH" ;;
     esac
-    warn "~/.local/bin no está en PATH — corrigiendo..."
-    export PATH="$HOME/.local/bin:$PATH"
 
     shell_name="$(basename "${SHELL:-}")"
     [ -z "$shell_name" ] && shell_name="$(ps -p $$ -o comm= 2>/dev/null | tr -d ' ')"
@@ -70,19 +58,46 @@ ensure_local_bin_in_path() {
     tip "Reinicia la shell o ejecuta: export PATH=\"\$HOME/.local/bin:\$PATH\""
 }
 
+# Ensure PATH BEFORE calling uv so uv never warns
+# This prevents "Installed 3 executables: ... warning: ~/.local/bin is not on your PATH"
 ensure_local_bin_in_path
 
-# Verify installation
+# Install / upgrade mistral-vibe via uv tool (idempotent, handles python 3.14)
+# Use --force on fresh install and fallback to upgrade if already installed
+# Filter uv's PATH warning defensively (never fatal, already handled above)
+msg "Installing mistral-vibe via uv (latest)..."
+set +e
+_uv_output=$(uv tool install mistral-vibe --force 2>&1)
+_uv_rc=$?
+# Always show output but strip the spurious PATH warning
+printf '%s\n' "$_uv_output" | grep -v "is not on your PATH" | grep -v "uv tool update-shell" | grep -v "fish_add_path" || true
+if [ $_uv_rc -ne 0 ]; then
+    msg "'uv tool install --force' failed (rc=$_uv_rc), trying 'uv tool upgrade'..."
+    _upg_output=$(uv tool upgrade mistral-vibe 2>&1)
+    _upg_rc=$?
+    printf '%s\n' "$_upg_output" | grep -v "is not on your PATH" | grep -v "uv tool update-shell" | grep -v "fish_add_path" || true
+    if [ $_upg_rc -ne 0 ]; then
+        err "Failed to install/upgrade mistral-vibe via uv."
+        msg "Try 'uv tool uninstall mistral-vibe && uv tool install mistral-vibe' manually."
+        exit 1
+    fi
+fi
+set -e
+
+# Re-ensure PATH in case uv created ~/.local/bin after first check
+ensure_local_bin_in_path
+
+# Verify installation — solo warning, nunca truncar por PATH
 if command -v vibe &>/dev/null; then
     ok "mistral-vibe installation finished ($(vibe --version 2>/dev/null || echo 'vibe'))"
     warn "Don't forget to set your API key (MISTRAL_API_KEY)."
     tip "Run 'vibe' to execute it."
     tip "Run 'vibe-acp' for ACP mode."
 else
-    err "Installation completed but 'vibe' command not found."
+    warn "Installation completed but 'vibe' not found in this shell (PATH fix pending)."
     tip "Check PATH includes \$HOME/.local/bin and run 'uv tool list'."
-    tip "Si acabas de corregir PATH, reinicia la shell e intenta de nuevo."
-    exit 1
+    tip "Si acabas de corregir PATH, reinicia la shell o ejecuta: export PATH=\"\$HOME/.local/bin:\$PATH\""
+    # No exit 1 — warning only, installation succeeded
 fi
 
 # ==============================
