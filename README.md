@@ -96,7 +96,6 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [proroot](https://github.com/coderredlab/proroot) | Rootless Linux runtime for Android. Drop-in proot replacement with zero ptrace overhead. Run full glibc Linux userspace (Node.js, Python, Git, Chromium) inside Android without root. |
 | [PuTTY](https://www.ssh.com/academy/ssh/putty/linux) | Graphical terminal program that supports the SSH, telnet, and rlogin protocols and connecting to serial ports. |
 | [quack](https://github.com/Monkey-hk4/quack) | Toolkit with SMS attack tool, HTTP attack tool and many other attack tools. |
-| [ransomux](https://github.com/ivam3/termux-packages) | "Simulate a ransomware effects searching to lock and encrypt files into internal|external android memory brigning a reversel shell. |
 | [recondog](https://github.com/s0md3v/ReconDog) | Reconnaissance Swiss Army Knife |
 | [recon-ng](https://github.com/lanmaster53/recon-ng) | Open Source Intelligence gathering tool aimed at reducing the time spent harvesting information from open sources. |
 | [routersploit](https://github.com/threat9/routersploit) **(DEPRECADA)** | Open-source exploitation framework dedicated to embedded devices. |

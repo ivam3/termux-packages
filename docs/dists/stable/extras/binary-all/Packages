@@ -799,20 +799,20 @@ SHA256: 7314363d3c2ea23da381084bc93d3036961f143a20917f3e61e5ab8fe9c374f6
 SHA512: b6fd9867e1d15bd89b2276105215ffc2079ed00a2c00f7e99f8bf70bc99e6be3a000d2f1936eee7258ab9ae456d8a921aea1267850a0a61cdbb73e278379fb9c
 
 Package: i-haklab
-Version: 3.13.11
+Version: 3.13.12
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 25920
-Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, fd, file, findutils, fish, fzf, gawk, git, glibc-repo, glow, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, mandoc, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nodejs-lts, ollama, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, rust, sqlite, strace, tar, tor, torsocks, translate-shell, ttyd, unzip, wget, yazi, zip, zlib
+Installed-Size: 25903
+Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, fd, file, findutils, fish, fzf, gawk, git, glibc-repo, glow, golang, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, mandoc, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nodejs-lts, ollama, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, rust, sqlite, strace, tar, tor, torsocks, translate-shell, ttyd, unzip, wget, yazi, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.13.11_all.deb
-Size: 3704516
-MD5Sum: 121f72c7bdbf8ba760bad72957abeb1b
-SHA1: 90a0bb1eac15c3129f9b63231991b4a11fd19ced
-SHA256: 852cad6725b22b9ed15fcefc4db63d2a47ea0fd723441ee2fadef3d5ef676f1b
-SHA512: 8e4bc2f3774911bfe58ba91ab91e4e307856540412c0c71b38c0198495354903ac8d461ab7dd2b63846154666efaf238eecd139b530ac5dfb7f93a39e545f503
+Filename: dists/stable/extras/binary-all/i-haklab_3.13.12_all.deb
+Size: 3698876
+MD5Sum: d97ff5be524751ede6fe411307033af3
+SHA1: 97a8c870a13262ecc8748758fa13beb831207517
+SHA256: 223663f6d8c72d2109962bb6c2947215c70290cb0af4a9ba922315d595e177bc
+SHA512: af2fe53196ae331b37331cb848931027258d7ab07d34d06d4ed1115542f4b970e643e87e011aeb1b46bcf9ed6645defd5ea2d00c952835c0c334ddb11b2d8894
 
 Package: infoga
 Version: 1.0
@@ -959,20 +959,20 @@ SHA256: 7e8101235c834b33b092e8bddbafa3483e126331b05a5b8b499947977fdc108d
 SHA512: 522fc2400cfb442c0d388ef4ba242068b84f27f3569a00ae758bcb83c2267c06114bb8b6196a6749395fb1447fd11c0c80f6218d1ef22413a160977c3f75d062
 
 Package: mistral-vibe
-Version: 2.24.1-1
+Version: 2.24.3-2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 4
+Installed-Size: 2
 Depends: coreutils, curl, uv, python, python-pip, python-cryptography
 Suggests: i-haklab, neovim, termux-oracle-skill
 Homepage: https://github.com/mistralai/mistral-vibe
 Description: Minimal CLI coding assistant/agent powered by Mistral's models.
-Filename: dists/stable/extras/binary-all/mistral-vibe_2.24.1-1_all.deb
-Size: 2824
-MD5Sum: 83eb541563e1e4bc72904b61143e2503
-SHA1: e2c6806697e05db2a14fdf618cffd577a7147078
-SHA256: ddec77a259e881403deae7194458b1888ee3ebf39f6287fa50530c575ca06730
-SHA512: 6248aac154549222bc768cd3fdcab2d4fa5be0388e30f83997210d5e77e50d4203a923198c906a541573ec334987b5e64a8d041b721f9ef5d1f8dd6220e5ef28
+Filename: dists/stable/extras/binary-all/mistral-vibe_2.24.3-2_all.deb
+Size: 3440
+MD5Sum: 2ecd216bfcefd9b1f919702019bf4a5e
+SHA1: d58917baf02739063a622e18a010b8fc372b25c4
+SHA256: 5606e587ac82ae1e57b59ae28c187bd4baee779e99380201b04da759712fd406
+SHA512: e622ad3081cadeea65a1b5d9b5dafd836bf866d6864c4bccf608fe3cd952dec92f4c779aa2c0b805148932a8be5251e0d6d56add2ab7cc46d2032b71bb2a4cfa
 
 Package: ngrok
 Version: 3.15.1
@@ -1085,20 +1085,20 @@ SHA256: 7d7cd5176e8aef49326a63031554e4a7c5a0d2463d474a1f048dab4872a78443
 SHA512: 3f8738d94b26eed22aa9e959385e47f4d62e2200858304287718d0cbe0b89f59e420c165f47f060d3f8c8e20665ab91c4239464138258132f221f9c436154997
 
 Package: ovh-ttyrec
-Version: 1.1.7.1
+Version: 1.2.0.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: git, glibc-repo, bionic-host, make, clang, libcompiler-rt, zstd
+Depends: git, make, clang, libcompiler-rt, zstd
 Suggests: i-haklab
 Homepage: https://github.com/ovh/ovh-ttyrec
 Description: Terminal recorder and player (an alternative to ttyrec)
-Filename: dists/stable/extras/binary-all/ovh-ttyrec_1.1.7.1_all.deb
-Size: 1932
-MD5Sum: fc3b95e7e304bb0c1cf2b921fca11bc3
-SHA1: 5930122286516858a23221aee3e81397b153b21d
-SHA256: 719520917f094ff8696de6160fb5ec6048a3c51532eb95fc46de0ebede9b2e1f
-SHA512: 24e2e4f9f913190268a6e09f65f4fc57909ba4c77285bd529ba4f34a8987ccadbb4d158a9100dcc8febd5f9d2fe6e233b95c8ae5a2ecd1ebfc8d5b2b567b2c53
+Filename: dists/stable/extras/binary-all/ovh-ttyrec_1.2.0.0_all.deb
+Size: 2284
+MD5Sum: e83581c216789a05564017681250908a
+SHA1: a2c067e95515a978197998b64fa43c93331fb47c
+SHA256: f22d2c45171a40be2c497949816d02cf80505c7a5b2628655bd815a1de58303e
+SHA512: 5a115854cbad823d15ebadac3e98a598d53f685ae6dca9706e19c9990073b7468423e7975539372936b268e77f99d7ca15cbe50bf6b3f697abe92e6126368eea
 
 Package: penelope
 Version: 0.14.8
@@ -1179,22 +1179,6 @@ MD5Sum: 0977a36206537aab8f49318b9ce039cc
 SHA1: 226b4610fd9cb0b3614eb347fc58fb033e1df5e2
 SHA256: 9fc877a9f1136755556a98d7f9c63ee890c1523058ec2ed5c2307d8f116e453b
 SHA512: cb76efe4927b3162111614c11a8a579b637d16a029bcaa325e919467034ddc24278d4a3a317e28c45a00382a8a9e1e15be153a0db28097d83883972621577a98
-
-Package: ransomux
-Version: 1.0
-Architecture: all
-Maintainer: Kassy Salazar <https://t.me/ladyransomware>
-Installed-Size: 12
-Depends: git, coreutils, curl, gnupg, nmap-ncat, nodejs-lts, exiftool, php, steghide
-Suggests: i-haklab, localtunnel, stegsnow, ngrok
-Homepage: https://github.com/ivam3/termux-packages
-Description: A little bash tool (Only for Termux target) to simulated a ransomware effects searching to lock and encrypt files into internal|external android memory brigning a reversel shell
-Filename: dists/stable/extras/binary-all/ransomux_1.0_all.deb
-Size: 5120
-MD5Sum: aa6847a11bbafa5e1982de8fcb9eff4d
-SHA1: d28acc69b3558d419be78d0089cd3056fbb87fab
-SHA256: 7151d1c4467a332acdf32c5ea7637600eee62bc9fc88ec1078fb12a1f15e38b3
-SHA512: 069f93b64e4343f6b7ff222011838ca654bec8ef5811080d89d0363dd93f8c7acf7dcb3382151ecaab890007e2889ae1b0606ca2c97d476eb21ad3cf6b8d8135
 
 Package: recon-ng
 Version: 5.1.2

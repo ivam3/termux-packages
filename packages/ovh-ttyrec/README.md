@@ -12,19 +12,23 @@ pkg install ovh-ttyrec
 
 | Field | Value |
 |-------|-------|
-| Version | `1.1.7.1` |
+| Version | `1.2.0.0` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [ovh-ttyrec](https://github.com/ovh/ovh-ttyrec) |
 
 ## Dependencies
 
-`git`
+`git`, `make`, `clang`, `libcompiler-rt`, `zstd` (Bionic-native, no `bionic-host`/`glibc-repo` required)
+
+> Note: `bionic-host` was removed from Termux; `ovh-ttyrec` now builds natively with `clang` + `pty.h`/`libutil` + `libzstd`.
 
 ## Usage
 
 ```bash
-ttyrec [options]
+ttyrec [options]   # record: ttyrec -h for help
+ttyplay [options] ./ttyrecord  # replay
+ttytime ./ttyrecord            # print timings
 ```
 
 ## Part of i-HakLab

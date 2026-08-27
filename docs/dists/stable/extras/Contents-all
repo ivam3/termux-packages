@@ -269,7 +269,6 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/quack.md       
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/qwen-code.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/radare2.md      i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/railway-cli.md  i-haklab
-data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ransomux.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/recon-ng.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/recondog.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/redhawk.md      i-haklab
@@ -354,7 +353,6 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/variables                   
 data/data/com.termux/files/home/.local/etc/zsh/zshrc                             i-haklab
 data/data/com.termux/files/home/.local/libexec/cleanup                           i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab.login                    i-haklab
-data/data/com.termux/files/home/.local/libexec/i-Haklab/403bypass                i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/4share                   i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/ESmsg                    i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/Xwayland                 i-haklab
@@ -371,11 +369,9 @@ data/data/com.termux/files/home/.local/libexec/i-Haklab/msf                     
 data/data/com.termux/files/home/.local/libexec/i-Haklab/ngroklink                i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/ngrokssh                 i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/passwd                   i-haklab
-data/data/com.termux/files/home/.local/libexec/i-Haklab/payvid                   i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/pd                       i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/phonescan                i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/qemufy                   i-haklab
-data/data/com.termux/files/home/.local/libexec/i-Haklab/ransomux                 i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/servers4test             i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/setapikey                i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/setbanner                i-haklab
@@ -1133,7 +1129,7 @@ data/data/com.termux/files/usr/share/applications/markdown-viewer/img/markdown-v
 data/data/com.termux/files/usr/share/applications/markdown-viewer/markdown-viewer.desktop markdown-viewer
 data/data/com.termux/files/usr/bin/msfconsole                                    metasploit-framework
 data/data/com.termux/files/usr/bin/mimikatz                                      mimikatz
-data/data/com.termux/files/usr/bin/mistralvibe_installer                         mistral-vibe
+data/data/com.termux/files/usr/share/doc/herdr/README.md                         mistral-vibe
 data/data/com.termux/files/home/.ssh/config                                      ngrok
 data/data/com.termux/files/usr/bin/ngrok                                         ngrok
 data/data/com.termux/files/usr/bin/nikto                                         nikto
@@ -1172,14 +1168,13 @@ data/data/com.termux/files/usr/bin/openclaw_installer                           
 data/data/com.termux/files/usr/bin/systemctl                                     openclaw
 data/data/com.termux/files/usr/opt/openjdk-21.0.1/lib/src.zip                    openjdk-21-source
 data/data/com.termux/files/usr/bin/osintgram                                     osintgram
-data/data/com.termux/files/usr/bin/ovh-ttyrec                                    ovh-ttyrec
+data/data/com.termux/files/usr/share/doc/ovh-ttyrec/README.md                    ovh-ttyrec
 data/data/com.termux/files/usr/bin/penelope                                      penelope
 data/data/com.termux/files/usr/bin/phonesploit                                   phonesploit
 data/data/com.termux/files/usr/bin/polenum                                       polenum
 data/data/com.termux/files/usr/share/applications/putty/img/putty.png            putty
 data/data/com.termux/files/usr/share/applications/putty/putty.desktop            putty
 data/data/com.termux/files/usr/bin/quack                                         quack
-data/data/com.termux/files/usr/bin/ransomux                                      ransomux
 data/data/com.termux/files/usr/bin/recon-ng                                      recon-ng
 data/data/com.termux/files/usr/bin/recondog                                      recondog
 data/data/com.termux/files/usr/bin/routersploit                                  routersploit
