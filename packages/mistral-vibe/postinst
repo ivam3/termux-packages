@@ -29,6 +29,49 @@ if ! uv tool install mistral-vibe --force 2>&1; then
     }
 fi
 
+# Ensure ~/.local/bin is in PATH (uv tool shims)
+ensure_local_bin_in_path() {
+    case ":$PATH:" in
+        *":$HOME/.local/bin:"*) ok "~/.local/bin ya está en PATH"; return 0 ;;
+    esac
+    warn "~/.local/bin no está en PATH — corrigiendo..."
+    export PATH="$HOME/.local/bin:$PATH"
+
+    shell_name="$(basename "${SHELL:-}")"
+    [ -z "$shell_name" ] && shell_name="$(ps -p $$ -o comm= 2>/dev/null | tr -d ' ')"
+    # fish reports as 'fish', bash/zsh accordingly
+
+    resolve_rc() { [ -L "$1" ] && readlink -f "$1" || echo "$1"; }
+
+    line_bash_zsh='export PATH="$HOME/.local/bin:$PATH"  # mistral-vibe (uv tool)'
+    line_fish='fish_add_path -g $HOME/.local/bin  # mistral-vibe (uv tool)'
+
+    add_to_rc() {
+        rc="$(resolve_rc "$1")"; line="$2"
+        [ -f "$rc" ] || { mkdir -p "$(dirname "$rc")"; touch "$rc"; }
+        grep -qF -- "$line" "$rc" 2>/dev/null || {
+            printf '\n# Added by mistral-vibe (uv tool needs ~/.local/bin in PATH)\n%s\n' "$line" >> "$rc"
+            ok "Agregado a $rc"
+        }
+    }
+
+    case "$shell_name" in
+        fish) add_to_rc "$HOME/.config/fish/config.fish" "$line_fish" ;;
+        zsh)  add_to_rc "$HOME/.zshrc" "$line_bash_zsh"
+              add_to_rc "$HOME/.local/etc/zsh/zshrc" "$line_bash_zsh" ;;
+        bash) add_to_rc "$HOME/.bashrc" "$line_bash_zsh"
+              add_to_rc "$HOME/.local/etc/bash/bashrc" "$line_bash_zsh" ;;
+        *) # fallback: parchea los 3 para cubrir Termux multi-shell
+            add_to_rc "$HOME/.bashrc" "$line_bash_zsh"
+            add_to_rc "$HOME/.zshrc" "$line_bash_zsh"
+            add_to_rc "$HOME/.config/fish/config.fish" "$line_fish"
+            ;;
+    esac
+    tip "Reinicia la shell o ejecuta: export PATH=\"\$HOME/.local/bin:\$PATH\""
+}
+
+ensure_local_bin_in_path
+
 # Verify installation
 if command -v vibe &>/dev/null; then
     ok "mistral-vibe installation finished ($(vibe --version 2>/dev/null || echo 'vibe'))"
@@ -38,6 +81,7 @@ if command -v vibe &>/dev/null; then
 else
     err "Installation completed but 'vibe' command not found."
     tip "Check PATH includes \$HOME/.local/bin and run 'uv tool list'."
+    tip "Si acabas de corregir PATH, reinicia la shell e intenta de nuevo."
     exit 1
 fi
 
