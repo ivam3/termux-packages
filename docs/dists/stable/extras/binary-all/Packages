@@ -799,20 +799,20 @@ SHA256: 7314363d3c2ea23da381084bc93d3036961f143a20917f3e61e5ab8fe9c374f6
 SHA512: b6fd9867e1d15bd89b2276105215ffc2079ed00a2c00f7e99f8bf70bc99e6be3a000d2f1936eee7258ab9ae456d8a921aea1267850a0a61cdbb73e278379fb9c
 
 Package: i-haklab
-Version: 3.13.14
+Version: 3.13.15
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 25933
+Installed-Size: 25941
 Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, fd, file, findutils, fish, fzf, gawk, git, glibc-repo, glow, golang, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, mandoc, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nodejs-lts, ollama, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, rust, sqlite, strace, tar, tor, torsocks, translate-shell, ttyd, unzip, wget, yazi, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.13.14_all.deb
-Size: 3704796
-MD5Sum: ce656b1b53aacb160f2781e4a15bd489
-SHA1: e3f04a3e4d2e7c5d3298349321aba7a7ec0939b0
-SHA256: afe8a9dc52809e7ab9d848967c3b27a1dab39be6920d7c4b2625332a57af6403
-SHA512: ed567d07c67216400417c7d270205fcab569c0b4c770e494ef26dcfe61a9f3b70a38ed038b7fbefb9236d54dd7d9fabc38e9c8e91d2d3208c80f258f0f39b84d
+Filename: dists/stable/extras/binary-all/i-haklab_3.13.15_all.deb
+Size: 3706436
+MD5Sum: 26026be780c46c3fe7da7ad58c335f65
+SHA1: 16fec22e9d0883e66c92ed5281d67874f738b062
+SHA256: e988ca7d78fcfb71544b63fe41e7920209a3589460ed0cd57e3f4e4637588480
+SHA512: 90fe6babe21fcf5fc590953146e41b932216f347e008a6e41f550955a3a285a47a9a0f7893b106da00b0ce808b1a555335cc4f2202c0fafbd2af5782a4c9d34c
 
 Package: infoga
 Version: 1.0
