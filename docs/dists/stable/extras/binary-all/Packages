@@ -799,20 +799,20 @@ SHA256: 7314363d3c2ea23da381084bc93d3036961f143a20917f3e61e5ab8fe9c374f6
 SHA512: b6fd9867e1d15bd89b2276105215ffc2079ed00a2c00f7e99f8bf70bc99e6be3a000d2f1936eee7258ab9ae456d8a921aea1267850a0a61cdbb73e278379fb9c
 
 Package: i-haklab
-Version: 3.13.12
+Version: 3.13.13
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 25903
+Installed-Size: 25933
 Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, fd, file, findutils, fish, fzf, gawk, git, glibc-repo, glow, golang, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, mandoc, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nodejs-lts, ollama, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, rust, sqlite, strace, tar, tor, torsocks, translate-shell, ttyd, unzip, wget, yazi, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.13.12_all.deb
-Size: 3698876
-MD5Sum: d97ff5be524751ede6fe411307033af3
-SHA1: 97a8c870a13262ecc8748758fa13beb831207517
-SHA256: 223663f6d8c72d2109962bb6c2947215c70290cb0af4a9ba922315d595e177bc
-SHA512: af2fe53196ae331b37331cb848931027258d7ab07d34d06d4ed1115542f4b970e643e87e011aeb1b46bcf9ed6645defd5ea2d00c952835c0c334ddb11b2d8894
+Filename: dists/stable/extras/binary-all/i-haklab_3.13.13_all.deb
+Size: 3704996
+MD5Sum: 6540435d84878a397ef57aa27ec26509
+SHA1: ff76ca62dc9104f9ef2ca2b1bd45c79c7705eca8
+SHA256: 6c0a83ec6c8ab2b46e7fcde1a0d566cf1d50bf7a4285214b35f512a3201f31f0
+SHA512: 9716152daef6254a891700c63ee64a73e992be3f6d211ab73a26f07b6f70c7e024ae694324436b04d787c03b5e1bfcf87d0cc5d84cd478222c64b9abd720f516
 
 Package: infoga
 Version: 1.0
@@ -1357,7 +1357,7 @@ SHA256: 92cb5a98ad08116cd18a53ba7d40c5ebd363d5d38c6a5f36e79032e2c8b659b2
 SHA512: 539902e8aa75cf985f523bcdada5a1f3d7528e64f8f5afb5f3434c2ce1b490d9c6c020196f019340fbfffb366ca6fd5bbdac51f871b4e9917d9b8f818c7dafba
 
 Package: termux-oracle-skill
-Version: 0.3.0
+Version: 0.3.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 6
@@ -1365,12 +1365,12 @@ Depends: git, tar, curl, wget, termux-api, termux-tools, termux-services, termux
 Suggests: i-haklab, antigravity-cli, opencode, claude-code, codebuff, freebuff, openclaw, mimocode, mistral-vibe
 Homepage: https://github.com/ivam3/termux-oracle
 Description: A termux skill for AI coding agents with all context about termux, i-Haklab and Ivam3 termux-packages.
-Filename: dists/stable/extras/binary-all/termux-oracle-skill_0.3.0_all.deb
-Size: 4544
-MD5Sum: c6c91b0773dada01270662d869d7d3e6
-SHA1: 87754569a7c33bd0689b0be6b4875c6f4d7e224c
-SHA256: 2ea7712bead78614e9906fe13f010c69da14c643d7cb964b8ff5fd693279a8cd
-SHA512: c388de4845117a062a86053cc9cff3668cb9eb8563772d117f644d0b72d312957751f6caee1da354cfd83056931eac6ce6be8c567a95dd14ad82fbec4dc4b70a
+Filename: dists/stable/extras/binary-all/termux-oracle-skill_0.3.1_all.deb
+Size: 4540
+MD5Sum: db56ca309df542f4036811b604d68cd4
+SHA1: 77a5742b2ddceb2ad63b489962ed1813796effb1
+SHA256: 9dc5aaab45a3273beb4e150a93741cd8723cd1809a0cf90542382fd0bb5ccdec
+SHA512: fa5570894ac7f5d43b86ae2948dba8e7d56227904b3ccf1904d7ce0626ca416b27f6a8027771eadecc553cfd940491615e0ab906742f16b685fa3b499fa264b2
 
 Package: unshc
 Version: 0.1
