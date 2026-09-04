@@ -12,7 +12,6 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 
 | Tool | Description |
 | ------ | ------ |
-
 | [i-Haklab](https://github.com/ivam3/i-Haklab) | Ciber-security and pentesting laboratory for Termux |
 | [acccheck](https://github.com/qashqao/acccheck) | Windows SMB Password Dictionary Attack Tool |
 | [adbfastboot](https://developer.android.com/studio/command-line/adb) | Versatile command-line tool that facilitates a variety of device actions |
