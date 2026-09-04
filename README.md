@@ -119,6 +119,7 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [xapt-management](https://github.com/ivam3/xapt-management) | X-Desktop graphical interface for advance package tool(APT) written in python. |
 | [xml2axml](https://github.com/codyi96/xml2axml) | Encoding xml to axml OR decoding axml to xml |
 | [zaproxy](https://www.kali.org/tools/zaproxy/) | The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications |
+| [zcode](https://zcode.z.ai) | AI vibe coding harness (GLM-5.3) native glibc aarch64 for termux-x11 |
 ##### Suggest a tool and/or framework to be add in our [Telegram Support Group](https://t.me/Ivam3by_Cinderella)
     
 ## INSTALLATION ...

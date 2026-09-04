@@ -204,3 +204,19 @@ SHA1: 6d1125aa696f50032325075976af724336ca63ab
 SHA256: d2f6e819d29cb0a0660e8c53bda44a3092e53e2d1dc31b24353fe0632ec083e5
 SHA512: 34c9feb113a5deb17b8a3e2667026a9cf45a0a4cf6cf06d9cafe8b4b0d09fbdc0c0cf1ecc142180c05737d0d7d0ed73c42b7df8bace8b19f4179394c104f904e
 
+Package: zcode
+Version: 3.10.2-1
+Architecture: aarch64
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 6
+Depends: x11-repo, termux-x11-nightly, glibc-repo, glibc, curl, tar, jq, patchelf-glibc, fontconfig-glibc, freetype-glibc, gnome-themes-extra
+Suggests: i-haklab, termux-desktop-xfce
+Homepage: https://zcode.z.ai
+Description: ZCode — AI vibe coding harness (GLM-5.3) native glibc aarch64 for termux-x11.
+Filename: dists/stable/extras/binary-aarch64/zcode_3.10.2-1_aarch64.deb
+Size: 7304
+MD5Sum: 8351384996eec06fe9ffc2a3b10142a9
+SHA1: bf324cd4410e63c902d11815259fb54d5158293b
+SHA256: cbd6a7cd49d6c95f0248921fa992bde05142ffd1e60762f9c70a599e5d28417d
+SHA512: 04d57c4ea299706b1fcd3bcde5414d062e107f5f6aed0ccb8d2fb4e0d28934df9bce44b92a6df08a5641af2bd2112c5c9ee277294d36bb8a1124e9f31c1294f2
+

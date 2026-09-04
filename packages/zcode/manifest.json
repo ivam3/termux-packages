@@ -1,0 +1,28 @@
+{
+  "name": "zcode",
+  "version": "3.10.2-1",
+  "arch": "aarch64",
+  "homepage": "https://zcode.z.ai",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": [
+    "x11-repo",
+    "termux-x11-nightly",
+    "glibc-repo",
+    "glibc",
+    "curl",
+    "tar",
+    "jq",
+    "patchelf-glibc",
+    "fontconfig-glibc",
+    "freetype-glibc",
+    "gnome-themes-extra"
+  ],
+  "suggests": [
+    "i-haklab",
+    "termux-desktop-xfce"
+  ],
+  "description": "ZCode — AI vibe coding harness (GLM-5.3) native glibc aarch64 for termux-x11.",
+  "files": {
+    "lib/zcode_helper.c": "/data/data/com.termux/files/usr/share/zcode/zcode_helper.c"
+  }
+}

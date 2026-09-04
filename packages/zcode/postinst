@@ -1,0 +1,353 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# zcode Termux - Native CLI glibc aarch64 (headless, static --help + xvfb fallback)
+set -Eeuo pipefail
+
+# ==============================
+# CONFIGURATION
+# ==============================
+VERSION="3.10.2"
+DOWNLOAD_URL_DEB="https://cdn-zcode.z.ai/zcode/electron/releases/${VERSION}/linux-arm64/ZCode-${VERSION}-linux-arm64.deb"
+DOWNLOAD_URL_APPIMAGE="https://cdn-zcode.z.ai/zcode/electron/releases/${VERSION}/linux-arm64/ZCode-${VERSION}-linux-arm64.AppImage"
+INSTALL_BIN_DIR="${PREFIX}/bin"
+SHARE_DIR="${HOME}/.local/share/zcode"
+STAGING_DIR="${SHARE_DIR}/zcode-staging"
+
+# Colors
+CYAN="\033[36m"
+GREEN="\033[32m"
+RED="\033[31m"
+YELLOW="\033[33m"
+DIM="\033[2m"
+RESET="\033[0m"
+
+info() { printf "%b[📢]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+msg()   { printf "[➡] %s\n" "$*"; }
+ok()   { printf "%b[✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+warn() { printf "%b[!]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+tip() { printf "%b[💡]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+err()  { printf "%b[❌]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+
+cleanup() {
+    info "Cleaning up temporary files..."
+    rm -rf "$STAGING_DIR"
+}
+trap cleanup EXIT
+
+mkdir -p "$STAGING_DIR"
+
+# ==============================
+# 1. DOWNLOAD arm64 package (.deb preferred)
+# ==============================
+info "Downloading ZCode ${VERSION} (linux-arm64 .deb)..."
+if curl -fsSL -o "$STAGING_DIR/ZCode.deb" "$DOWNLOAD_URL_DEB"; then
+    ok "Deb downloaded: $DOWNLOAD_URL_DEB"
+else
+    warn "Deb download failed, trying AppImage..."
+    if curl -fsSL -o "$STAGING_DIR/ZCode.AppImage" "$DOWNLOAD_URL_APPIMAGE"; then
+        chmod +x "$STAGING_DIR/ZCode.AppImage"
+        ok "AppImage downloaded: $DOWNLOAD_URL_APPIMAGE"
+        cd "$STAGING_DIR"
+        if "$STAGING_DIR/ZCode.AppImage" --appimage-extract >/dev/null 2>&1; then
+            ok "AppImage extracted"
+            EXTRACT_TYPE="appimage"
+            EXTRACTED_ROOT="$STAGING_DIR/squashfs-root"
+        else
+            err "AppImage extraction failed."
+            exit 1
+        fi
+    else
+        err "Failed to download ZCode from both .deb and AppImage URLs"
+        exit 1
+    fi
+fi
+
+if [[ -f "$STAGING_DIR/ZCode.deb" ]]; then
+    info "Extracting .deb (data.tar.xz)..."
+    mkdir -p "$STAGING_DIR/squashfs-root"
+    if command -v dpkg-deb >/dev/null 2>&1; then
+        dpkg-deb --fsys-tarfile "$STAGING_DIR/ZCode.deb" | tar -xf - -C "$STAGING_DIR/squashfs-root" 2>/dev/null || {
+            err "dpkg-deb extraction failed."; exit 1;
+        }
+    else
+        cd "$STAGING_DIR/squashfs-root"
+        ar p "$STAGING_DIR/ZCode.deb" data.tar.xz | tar -xJf - 2>/dev/null || \
+        ar p "$STAGING_DIR/ZCode.deb" data.tar.gz | tar -xzf - 2>/dev/null || {
+            err "ar extraction failed."; exit 1;
+        }
+        cd "$STAGING_DIR"
+    fi
+    ok "Deb extracted"
+    EXTRACT_TYPE="deb"
+    EXTRACTED_ROOT="$STAGING_DIR/squashfs-root"
+fi
+if [[ -z "${EXTRACTED_ROOT:-}" ]]; then
+    EXTRACTED_ROOT="$STAGING_DIR/squashfs-root"
+fi
+BIN_CANDIDATES=(
+    "$EXTRACTED_ROOT/opt/ZCode/zcode"
+    "$EXTRACTED_ROOT/usr/bin/zcode"
+    "$EXTRACTED_ROOT/zcode"
+    "$EXTRACTED_ROOT/AppRun"
+)
+REAL_BIN=""
+for cand in "${BIN_CANDIDATES[@]}"; do
+    if [[ -f "$cand" ]]; then
+        REAL_BIN="$cand"
+        break
+    fi
+done
+if [[ -z "$REAL_BIN" ]]; then
+    REAL_BIN=$(find "$EXTRACTED_ROOT" -type f -name "zcode" | head -1 || true)
+fi
+if [[ -z "$REAL_BIN" || ! -f "$REAL_BIN" ]]; then
+    err "Binary 'zcode' not found in extracted AppImage."
+    find "$EXTRACTED_ROOT" -maxdepth 4 -type f | head -n 20 >&2 || true
+    exit 1
+fi
+
+info "Installing to $SHARE_DIR ..."
+if [[ -d "$EXTRACTED_ROOT/opt/ZCode" ]]; then
+    cp -a "$EXTRACTED_ROOT/opt/ZCode/." "$SHARE_DIR/" 2>/dev/null || mv -f "$EXTRACTED_ROOT/opt/ZCode"/* "$SHARE_DIR/" 2>/dev/null || true
+    if [[ -d "$EXTRACTED_ROOT/usr" ]]; then
+        cp -a "$EXTRACTED_ROOT/usr"/* "${PREFIX}/" 2>/dev/null || true
+    fi
+    if [[ -f "$SHARE_DIR/zcode" ]]; then
+        mv -f "$SHARE_DIR/zcode" "$SHARE_DIR/zcode.real"
+        chmod +x "$SHARE_DIR/zcode.real"
+    else
+        cp -f "$REAL_BIN" "$SHARE_DIR/zcode.real"
+        chmod +x "$SHARE_DIR/zcode.real"
+        if [[ -d "$(dirname "$REAL_BIN")/resources" ]]; then
+            cp -a "$(dirname "$REAL_BIN")/resources" "$SHARE_DIR/" 2>/dev/null || true
+        fi
+    fi
+else
+    cp -a "$EXTRACTED_ROOT/." "$SHARE_DIR/" 2>/dev/null || true
+    if [[ -f "$REAL_BIN" ]]; then
+        cp -f "$REAL_BIN" "$SHARE_DIR/zcode.real"
+        chmod +x "$SHARE_DIR/zcode.real"
+    fi
+fi
+
+if [[ ! -f "$SHARE_DIR/zcode.real" ]]; then
+    err "zcode.real not installed."
+    exit 1
+fi
+ok "Binary installed to $SHARE_DIR/zcode.real"
+
+# ==============================
+# 2. VENDORIZAR LIBS GLIBC FALTANTES (100% glibc)
+# ==============================
+VENDOR_LIB_DIR="$SHARE_DIR/lib"
+mkdir -p "$VENDOR_LIB_DIR"
+declare -A VENDOR_URLS=(
+    ["libnspr4.so"]="https://deb.debian.org/debian/pool/main/n/nspr/libnspr4_4.35-1_arm64.deb"
+    ["libplc4.so"]="https://deb.debian.org/debian/pool/main/n/nspr/libnspr4_4.35-1_arm64.deb"
+    ["libplds4.so"]="https://deb.debian.org/debian/pool/main/n/nspr/libnspr4_4.35-1_arm64.deb"
+    ["libnss3.so"]="https://deb.debian.org/debian/pool/main/n/nss/libnss3_3.87.1-1+deb12u2_arm64.deb"
+    ["libnssutil3.so"]="https://deb.debian.org/debian/pool/main/n/nss/libnss3_3.87.1-1+deb12u2_arm64.deb"
+    ["libsmime3.so"]="https://deb.debian.org/debian/pool/main/n/nss/libnss3_3.87.1-1+deb12u2_arm64.deb"
+    ["libcups.so.2"]="https://deb.debian.org/debian/pool/main/c/cups/libcups2_2.4.2-3+deb12u9_arm64.deb"
+    ["libatspi.so.0"]="https://deb.debian.org/debian/pool/main/a/at-spi2-core/libatspi2.0-0_2.46.0-5_arm64.deb"
+    ["libatk-1.0.so.0"]="https://deb.debian.org/debian/pool/main/a/atk1.0/libatk1.0-0_2.36.0-2_arm64.deb"
+    ["libatk-bridge-2.0.so.0"]="https://deb.debian.org/debian/pool/main/a/at-spi2-atk/libatk-bridge2.0-0_2.38.0-1_arm64.deb"
+    ["libxdamage.so.1"]="https://deb.debian.org/debian/pool/main/libx/libxdamage/libxdamage1_1.1.6-1_arm64.deb"
+    ["libgtk-3.so.0"]="https://deb.debian.org/debian/pool/main/g/gtk+3.0/libgtk-3-0_3.24.38-2~deb12u3_arm64.deb"
+    ["libgdk-3.so.0"]="https://deb.debian.org/debian/pool/main/g/gtk+3.0/libgtk-3-0_3.24.38-2~deb12u3_arm64.deb"
+    ["libavahi-common.so.3"]="https://deb.debian.org/debian/pool/main/a/avahi/libavahi-common3_0.8-10+deb12u1_arm64.deb"
+    ["libavahi-client.so.3"]="https://deb.debian.org/debian/pool/main/a/avahi/libavahi-client3_0.8-10+deb12u1_arm64.deb"
+    ["libgssapi_krb5.so.2"]="https://deb.debian.org/debian/pool/main/k/krb5/libgssapi-krb5-2_1.20.1-2+deb12u5_arm64.deb"
+    ["libkrb5.so.3"]="https://deb.debian.org/debian/pool/main/k/krb5/libkrb5-3_1.20.1-2+deb12u5_arm64.deb"
+    ["libk5crypto.so.3"]="https://deb.debian.org/debian/pool/main/k/krb5/libk5crypto3_1.20.1-2+deb12u5_arm64.deb"
+    ["libkrb5support.so.0"]="https://deb.debian.org/debian/pool/main/k/krb5/libkrb5support0_1.20.1-2+deb12u5_arm64.deb"
+    ["libgdk_pixbuf-2.0.so.0"]="https://deb.debian.org/debian/pool/main/g/gdk-pixbuf/libgdk-pixbuf-2.0-0_2.42.10+dfsg-1+deb12u4_arm64.deb"
+    ["libjpeg.so.62"]="https://deb.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg62-turbo_2.1.5-2_arm64.deb"
+    ["libicuuc.so.76"]="https://deb.debian.org/debian/pool/main/i/icu/libicu76_76.1-4_arm64.deb"
+    ["libicui18n.so.76"]="https://deb.debian.org/debian/pool/main/i/icu/libicu76_76.1-4_arm64.deb"
+    ["libicudata.so.76"]="https://deb.debian.org/debian/pool/main/i/icu/libicu76_76.1-4_arm64.deb"
+    ["libudev.so.1"]="https://deb.debian.org/debian/pool/main/s/systemd/libudev1_252.39-1~deb12u2_arm64.deb"
+    ["libsqlite3.so.0"]="https://deb.debian.org/debian/pool/main/s/sqlite3/libsqlite3-0_3.40.1-2+deb12u2_arm64.deb"
+)
+
+vendor_extract_deb() {
+    local url="$1" dest="$2"
+    local tmpdeb="$STAGING_DIR/vendor-$(basename "$url")"
+    info "Vendoring: downloading $(basename "$url")..."
+    if ! curl -fsSL -o "$tmpdeb" "$url"; then
+        warn "Download failed: $url"
+        return 1
+    fi
+    rm -rf "$STAGING_DIR/vendor-extract"
+    mkdir -p "$STAGING_DIR/vendor-extract"
+    if command -v dpkg-deb >/dev/null 2>&1; then
+        dpkg-deb --fsys-tarfile "$tmpdeb" | tar -tf - 2>/dev/null | grep -E "\.so" | head -5 | while read -r f; do info "  contains $f"; done
+        dpkg-deb --fsys-tarfile "$tmpdeb" | tar -xf - -C "$STAGING_DIR/vendor-extract" 2>/dev/null || return 1
+    else
+        ar p "$tmpdeb" data.tar.xz 2>/dev/null | tar -xJf - -C "$STAGING_DIR/vendor-extract" 2>/dev/null || \
+        ar p "$tmpdeb" data.tar.gz 2>/dev/null | tar -xzf - -C "$STAGING_DIR/vendor-extract" 2>/dev/null || return 1
+    fi
+    local found=0
+    while IFS= read -r so; do
+        cp -a "$so" "$dest/" 2>/dev/null && found=1
+        info "  vendored $(basename "$so") -> $dest/"
+    done < <(find "$STAGING_DIR/vendor-extract" \( -type f -o -type l \) -name "*.so*")
+    [[ $found -eq 1 ]] || return 1
+    return 0
+}
+
+for lib in libnspr4.so libnss3.so libnssutil3.so libsmime3.so libplc4.so libplds4.so libcups.so.2 libatspi.so.0 libatk-1.0.so.0 libatk-bridge-2.0.so.0 libxdamage.so.1 libgtk-3.so.0 libgdk-3.so.0 libavahi-common.so.3 libavahi-client.so.3 libgssapi_krb5.so.2 libkrb5.so.3 libk5crypto.so.3 libkrb5support.so.0 libgdk_pixbuf-2.0.so.0 libjpeg.so.62 libicuuc.so.76 libicui18n.so.76 libicudata.so.76 libudev.so.1 libsqlite3.so.0; do
+    if [[ -f "$VENDOR_LIB_DIR/$lib" ]]; then
+        ok "Vendored $lib already present"
+        continue
+    fi
+    # For libicu and libudev, always use Debian (glibc 78.3 has expf@GLIBCXX bug and missing LIBUDEV_183)
+    if [[ "$lib" == libicu* || "$lib" == libudev* ]]; then
+        : # skip glibc, use Debian
+    elif [[ -f "${PREFIX}/glibc/lib/$lib" ]]; then
+        cp -a "${PREFIX}/glibc/lib/$lib"* "$VENDOR_LIB_DIR/" 2>/dev/null || cp -a "${PREFIX}/glibc/lib/$lib" "$VENDOR_LIB_DIR/"
+        ok "Vendored $lib from PREFIX/glibc/lib"
+        continue
+    fi
+    url="${VENDOR_URLS[$lib]:-}"
+    if [[ -n "$url" ]]; then
+        vendor_extract_deb "$url" "$VENDOR_LIB_DIR" || warn "Vendoring $lib failed"
+    fi
+done
+
+rm -rf "$STAGING_DIR/vendor-extract" "$STAGING_DIR"/vendor-*.deb 2>/dev/null || true
+
+for lib in "$VENDOR_LIB_DIR"/*.so* ; do
+    [[ -e "$lib" ]] || continue
+    chmod 755 "$lib" 2>/dev/null || true
+done
+for so in "$VENDOR_LIB_DIR"/*.so.*.* ; do
+    [[ -f "$so" ]] || continue
+    base=$(basename "$so")
+    soname=$(echo "$base" | sed -E 's/(\.so\.[0-9]+).*/\1/')
+    if [[ "$soname" != "$base" && ! -e "$VENDOR_LIB_DIR/$soname" ]]; then
+        ln -sf "$base" "$VENDOR_LIB_DIR/$soname" 2>/dev/null || true
+        info "  symlink $soname -> $base"
+    fi
+done
+[[ -f "$VENDOR_LIB_DIR/libatk-1.0.so.0.23609.1" && ! -e "$VENDOR_LIB_DIR/libatk-1.0.so.0" ]] && ln -sf libatk-1.0.so.0.23609.1 "$VENDOR_LIB_DIR/libatk-1.0.so.0"
+[[ -f "$VENDOR_LIB_DIR/libgdk-3.so.0.2406.32" && ! -e "$VENDOR_LIB_DIR/libgdk-3.so.0" ]] && ln -sf libgdk-3.so.0.2406.32 "$VENDOR_LIB_DIR/libgdk-3.so.0"
+[[ -f "$VENDOR_LIB_DIR/libgtk-3.so.0.2406.32" && ! -e "$VENDOR_LIB_DIR/libgtk-3.so.0" ]] && ln -sf libgtk-3.so.0.2406.32 "$VENDOR_LIB_DIR/libgtk-3.so.0"
+[[ -f "$VENDOR_LIB_DIR/libXdamage.so.1.1.0" && ! -e "$VENDOR_LIB_DIR/libXdamage.so.1" ]] && ln -sf libXdamage.so.1.1.0 "$VENDOR_LIB_DIR/libXdamage.so.1"
+
+if command -v patchelf >/dev/null 2>&1; then
+    info "Patching interpreter and RPATH for glibc..."
+    for bin in "$SHARE_DIR/zcode.real" "$SHARE_DIR/chrome_crashpad_handler" "$SHARE_DIR/chrome-sandbox" "$SHARE_DIR/libEGL.so" "$SHARE_DIR/libGLESv2.so" "$SHARE_DIR/libffmpeg.so" "$SHARE_DIR/libvk_swiftshader.so" "$SHARE_DIR/libvulkan.so.1"; do
+        [[ -f "$bin" ]] || continue
+        if file "$bin" 2>/dev/null | grep -q "ELF.*aarch64"; then
+            patchelf --set-interpreter /data/data/com.termux/files/usr/glibc/lib/ld-linux-aarch64.so.1 "$bin" 2>/dev/null || true
+            patchelf --set-rpath '$ORIGIN:$ORIGIN/lib:/data/data/com.termux/files/usr/glibc/lib' "$bin" 2>/dev/null || true
+        fi
+    done
+    for res in icudtl.dat v8_context_snapshot.bin snapshot_blob.bin; do
+        if [[ -f "$SHARE_DIR/$res" && ! -e "/data/data/com.termux/files/usr/glibc/lib/$res" ]]; then
+            ln -sf "$SHARE_DIR/$res" "/data/data/com.termux/files/usr/glibc/lib/$res" 2>/dev/null || true
+            info "Linked $res to glibc lib for Electron"
+        fi
+    done
+    # Fonts: glibc fontconfig expects $PREFIX/glibc/share/fonts (missing) -> link Termux fonts
+    if [[ -d "${PREFIX}/share/fonts" ]]; then
+        mkdir -p "${PREFIX}/glibc/share/fonts" 2>/dev/null || true
+        # Link each Termux font dir/file if not already present (avoid duplicates)
+        for f in "${PREFIX}"/share/fonts/*; do
+            base=$(basename "$f")
+            if [[ ! -e "${PREFIX}/glibc/share/fonts/$base" ]]; then
+                ln -sf "$f" "${PREFIX}/glibc/share/fonts/$base" 2>/dev/null || true
+            fi
+        done
+        info "Linked Termux fonts to glibc share for Electron"
+    fi
+    for so in "$VENDOR_LIB_DIR"/*.so*; do
+        [[ -f "$so" ]] || continue
+        if readelf -d "$so" 2>/dev/null | grep -q '\[libc\.so\]'; then
+            warn "$(basename "$so") still needs Bionic libc.so — replacing..."
+            patchelf --replace-needed libc.so libc.so.6 "$so" 2>/dev/null || true
+            patchelf --replace-needed libdl.so libdl.so.2 "$so" 2>/dev/null || true
+        fi
+    done
+else
+    warn "patchelf-glibc not found, skipping RPATH patch"
+fi
+
+ok "Vendored libs: $(ls -1 "$VENDOR_LIB_DIR" 2>/dev/null | tr '\n' ' ' || echo 'none')"
+
+if command -v file >/dev/null 2>&1; then
+    info "Binary info: $(file "$SHARE_DIR/zcode.real" | cut -d',' -f1-2)"
+fi
+
+# ==============================
+# 3. COMPILE WRAPPER (helper C)
+# ==============================
+HELPER_SOURCE="${PREFIX}/share/zcode/zcode_helper.c"
+if [[ ! -f "$HELPER_SOURCE" ]]; then
+    if [[ -f "./lib/zcode_helper.c" ]]; then
+        HELPER_SOURCE="./lib/zcode_helper.c"
+    else
+        err "Source zcode_helper.c not found."
+        exit 1
+    fi
+fi
+
+info "Compiling native bootstrapper..."
+if clang -O2 -o "$INSTALL_BIN_DIR/zcode" "$HELPER_SOURCE"; then
+    chmod +x "$INSTALL_BIN_DIR/zcode"
+    ok "Bootstrapper installed: $INSTALL_BIN_DIR/zcode"
+else
+    err "Compilation failed."
+    exit 1
+fi
+
+# ==============================
+# 4. DESKTOP ENTRY (optional, for X11)
+# ==============================
+DESKTOP_FILE="${PREFIX}/share/applications/zcode.desktop"
+if [[ -f "$SHARE_DIR/resources/app-update.yml" ]] || [[ -f "$EXTRACTED_ROOT/zcode.desktop" ]]; then
+    mkdir -p "$(dirname "$DESKTOP_FILE")"
+    cat > "$DESKTOP_FILE" <<'EOF'
+[Desktop Entry]
+Name=ZCode
+Comment=AI vibe coding harness (GLM-5.3)
+Exec=zcode --no-sandbox %F
+Icon=zcode
+Type=Application
+Categories=Development;IDE;
+StartupWMClass=ZCode
+EOF
+    if [[ -f "$SHARE_DIR/resources/icon.png" ]]; then
+        mkdir -p "${PREFIX}/share/icons/hicolor/512x512/apps"
+        cp -f "$SHARE_DIR/resources/icon.png" "${PREFIX}/share/icons/hicolor/512x512/apps/zcode.png" 2>/dev/null || true
+    elif [[ -f "$EXTRACTED_ROOT/zcode.png" ]]; then
+        mkdir -p "${PREFIX}/share/icons/hicolor/512x512/apps"
+        cp -f "$EXTRACTED_ROOT/zcode.png" "${PREFIX}/share/icons/hicolor/512x512/apps/zcode.png" 2>/dev/null || true
+    fi
+    info "Desktop entry created: $DESKTOP_FILE"
+fi
+
+# ==============================
+# 5. VERIFICATION
+# ==============================
+if [[ -x "$INSTALL_BIN_DIR/zcode" ]]; then
+    ok "zcode installation finished."
+    msg "Run 'zcode --help' for CLI help (static, no X required)."
+    msg "Run 'termux-x11 :0 & DISPLAY=:0 zcode [path]' for GUI (software rendering forced)."
+else
+    err "Installation failed."
+    exit 1
+fi
+
+msg "Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o "$INSTALL_BIN_DIR/fixer"; then
+    chmod 750 "$INSTALL_BIN_DIR/fixer"
+    info "Run 'fixer' to fix any posible issue."
+else
+    warn "Could not download fixer."
+fi
+
+tip "Help: going to https://t.me/Ivam3_Bot."
+msg "@Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

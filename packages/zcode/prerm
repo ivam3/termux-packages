@@ -1,0 +1,12 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# zcode prerm — cleanup before removal
+if [[ -f "${PREFIX}/bin/zcode" ]]; then
+    rm -f "${PREFIX}/bin/zcode"
+fi
+if [[ -f "${PREFIX}/share/applications/zcode.desktop" ]]; then
+    rm -f "${PREFIX}/share/applications/zcode.desktop"
+fi
+if [[ -d "${HOME}/.local/share/zcode" ]]; then
+    rm -rf "${HOME}/.local/share/zcode"
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

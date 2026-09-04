@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# zcode postrm — final cleanup
+if [[ -d "${HOME}/.local/share/zcode" ]]; then
+    rm -rf "${HOME}/.local/share/zcode"
+fi
+# Remove helper source if orphaned (keep PREFIX/share/zcode if other files remain)
+# Desktop/icon already removed in prerm
+echo "Done. Package 'zcode' removed."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
