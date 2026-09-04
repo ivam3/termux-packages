@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=zcode
+GenericName=zcode
+Comment=ZCode — AI vibe coding harness (GLM-5.3) native glibc aarch64 for termux-x11.
+Comment[es]=ADE (Agentic Development Environment), de programación intuitiva de última generación para objetivos complejos.
+Version=3.10.2
+Exec=zcode /data/data/com.termux/files/usr/tmp
+Icon=/data/data/com.termux/files/home/.local/share/zcode/resources/icon_512x512.png
+Terminal=false
+Type=Development
+Categories=System
+X-Desktop-File-Install-Version=3.10.2
