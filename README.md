@@ -13,8 +13,6 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | Tool | Description |
 | ------ | ------ |
 
-> [!NOTE]
-> Las herramientas marcadas con **(DEPRECADA)** se conservan en el repositorio por compatibilidad, pero **no se recomiendan** en la actualidad (abandonadas, rotas en Android moderno o dependientes de servicios caídos). Ver [AUDITORIA_HERRAMIENTAS.md](packages/AUDITORIA_HERRAMIENTAS.md).
 | [i-Haklab](https://github.com/ivam3/i-Haklab) | Ciber-security and pentesting laboratory for Termux |
 | [acccheck](https://github.com/qashqao/acccheck) | Windows SMB Password Dictionary Attack Tool |
 | [adbfastboot](https://developer.android.com/studio/command-line/adb) | Versatile command-line tool that facilitates a variety of device actions |
@@ -39,7 +37,7 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [claude-code](https://github.com/anthropics/claude-code) | Agentic AI coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands |
 | [converter](https://github.com/miluxmil/milux/blob/master/converter) | Easy multimedia file converter |
 | [cryptovenom](https://github.com/lightos/credmap) | Test the user credentials provided on several popular websites to see if the password has been reused on any of them |
-| [dos-a-tool](https://github.com/ivam3/DoS-A-Tool) **(DEPRECADA)** | Performs denial of service attacks under the SYN Flood method |
+| [dos-a-tool](https://github.com/ivam3/DoS-A-Tool) | Performs denial of service attacks under the SYN Flood method |
 | [dex2jar](https://github.com/pxb1988/dex2jar) | Toolkit to work with android .dex and java .class files |
 | [dnsenum](https://github.com/fwaeytens/dnsenum) | Enumerate DNS information |
 | [embed](https://github.com/ivam3/embed) | Embed metasploit payload into a legtim APK |
@@ -98,7 +96,7 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [quack](https://github.com/Monkey-hk4/quack) | Toolkit with SMS attack tool, HTTP attack tool and many other attack tools. |
 | [recondog](https://github.com/s0md3v/ReconDog) | Reconnaissance Swiss Army Knife |
 | [recon-ng](https://github.com/lanmaster53/recon-ng) | Open Source Intelligence gathering tool aimed at reducing the time spent harvesting information from open sources. |
-| [routersploit](https://github.com/threat9/routersploit) **(DEPRECADA)** | Open-source exploitation framework dedicated to embedded devices. |
+| [routersploit](https://github.com/threat9/routersploit) | Open-source exploitation framework dedicated to embedded devices. |
 | [seclists](https://github.com/danielmiessler/SecLists) | SecLists it's a collection of multiple types of lists used during security assessments, collected in one place. |
 | [shc](http://www.datsi.fi.upm.es/~frosal/sources/shc.html) | The Shell Script Compiler (SHC) encodes and encrypts shell scripts into executable binaries. |
 | [sherlock](https://github.com/sherlock-project/sherlock) | Hunt down social media accounts by username across social networks. |
