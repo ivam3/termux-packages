@@ -43,9 +43,11 @@ for var in "${!AGENT_MAP[@]}"; do
   pkg_dir="${AGENT_MAP[$var]}"
   manifest="$SCRIPT_DIR/$pkg_dir/manifest.json"
   github_ver="${!var}"
+  github_ver=$(printf '%s' "$github_ver" | tr -d '\r\n' | xargs)
 
   [ -z "$github_ver" ] && continue
   github_ver="${github_ver#v}"
+  github_ver="${github_ver#V}"
 
   [ ! -f "$manifest" ] && continue
 
