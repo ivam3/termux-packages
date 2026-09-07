@@ -5,7 +5,7 @@ set -Eeuo pipefail
 # ==============================
 # CONFIGURATION
 # ==============================
-VERSION="3.10.2"
+VERSION="3.11.2"
 DOWNLOAD_URL_DEB="https://cdn-zcode.z.ai/zcode/electron/releases/${VERSION}/linux-arm64/ZCode-${VERSION}-linux-arm64.deb"
 DOWNLOAD_URL_APPIMAGE="https://cdn-zcode.z.ai/zcode/electron/releases/${VERSION}/linux-arm64/ZCode-${VERSION}-linux-arm64.AppImage"
 INSTALL_BIN_DIR="${PREFIX}/bin"
