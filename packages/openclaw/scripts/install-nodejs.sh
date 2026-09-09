@@ -24,7 +24,10 @@ BIN_DIR="$OPENCLAW_DIR/bin"
 GLIBC_LDSO="$PREFIX/glibc/lib/ld-linux-aarch64.so.1"
 
 # Node.js LTS version to install
-NODE_VERSION="22.22.0"
+# OpenClaw requires >=24.16.0 <25 || >=26.1.0 (engines + node-version.mjs guard).
+# Keep on Node 24 line for parity with Termux nodejs-lts (bionic) while using
+# the glibc linux-arm64 tarball (distinct binary, not the bionic one).
+NODE_VERSION="24.20.0"
 NODE_TARBALL="node-v${NODE_VERSION}-linux-arm64.tar.xz"
 NODE_URL="https://nodejs.org/dist/v${NODE_VERSION}/${NODE_TARBALL}"
 
@@ -151,7 +154,7 @@ fi
 # ── Step 1: Download Node.js linux-arm64 ──────
 
 echo "Downloading Node.js v${NODE_VERSION} (linux-arm64)..."
-echo "  (File size ~25MB — may take a few minutes depending on network speed)"
+echo "  (File size ~30MB — may take a few minutes depending on network speed)"
 mkdir -p "$NODE_DIR"
 
 TMP_DIR=$(mktemp -d "$PREFIX/tmp/node-install.XXXXXX") || {
@@ -167,7 +170,15 @@ fi
 echo -e "${GREEN}[OK]${NC}   Downloaded $NODE_TARBALL"
 
 # Extract
+# Major upgrades (e.g. 22.x -> 24.x for OpenClaw >=24.16 requirement) must not
+# overlay the old tree: stale lib/node_modules, headers and node.real break
+# the new runtime. Clean NODE_DIR only AFTER a successful download so a
+# network failure never leaves the user without node.
 echo "Extracting Node.js... (this may take a moment)"
+if [ -d "$NODE_DIR" ]; then
+    rm -rf "$NODE_DIR"
+fi
+mkdir -p "$NODE_DIR"
 if ! tar -xJf "$TMP_DIR/$NODE_TARBALL" -C "$NODE_DIR" --strip-components=1; then
     echo -e "${RED}[FAIL]${NC} Failed to extract Node.js"
     exit 1

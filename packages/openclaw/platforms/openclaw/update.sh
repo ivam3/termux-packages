@@ -6,6 +6,50 @@ source "$SCRIPT_DIR/../../scripts/lib.sh"
 
 export CPATH="$PREFIX/include/glib-2.0:$PREFIX/lib/glib-2.0/include"
 
+# ── Ensure Node.js meets OpenClaw >=24.16 <25 || >=26.1 requirement ──
+# Existing installs may still carry glibc Node 22.x (pre-2026.9.3). The
+# openclaw.mjs version guard aborts on those. Self-heal by re-running
+# install-nodejs.sh (now pinned to 24.20.0 linux-arm64 glibc tarball)
+# before touching npm packages.
+_OA_NODE_CMD=""
+if [ -x "$BIN_DIR/node" ]; then
+    _OA_NODE_CMD="$BIN_DIR/node"
+elif command -v node &>/dev/null; then
+    _OA_NODE_CMD="node"
+fi
+_OA_NODE_VER=""
+if [ -n "$_OA_NODE_CMD" ]; then
+    _OA_NODE_VER=$("$_OA_NODE_CMD" --version 2>/dev/null | sed 's/^v//' || true)
+fi
+_OA_NODE_OK=false
+if [ -n "$_OA_NODE_VER" ]; then
+    _OA_MAJOR=$(echo "$_OA_NODE_VER" | cut -d. -f1)
+    _OA_MINOR=$(echo "$_OA_NODE_VER" | cut -d. -f2)
+    _OA_PATCH=$(echo "$_OA_NODE_VER" | cut -d. -f3)
+    if [ "$_OA_MAJOR" = "24" ] && { [ "$_OA_MINOR" -gt 16 ] || { [ "$_OA_MINOR" -eq 16 ] && [ "$_OA_PATCH" -ge 0 ]; }; }; then
+        _OA_NODE_OK=true
+    elif [ "$_OA_MAJOR" = "26" ] && { [ "$_OA_MINOR" -gt 1 ] || { [ "$_OA_MINOR" -eq 1 ] && [ "$_OA_PATCH" -ge 0 ]; }; }; then
+        _OA_NODE_OK=true
+    elif [ "$_OA_MAJOR" -gt 26 ] 2>/dev/null; then
+        _OA_NODE_OK=true
+    fi
+fi
+if [ "$_OA_NODE_OK" = false ]; then
+    echo "Node.js ${_OA_NODE_VER:-missing} does not satisfy OpenClaw (>=24.16 <25 || >=26.1)."
+    echo "Upgrading glibc Node.js before updating packages..."
+    if [ -f "$SCRIPT_DIR/../../scripts/install-nodejs.sh" ]; then
+        bash "$SCRIPT_DIR/../../scripts/install-nodejs.sh" || {
+            echo "Node.js upgrade failed — aborting update (fix node first, then retry)"
+            exit 1
+        }
+        # Re-resolve PATH so npm/openclaw below use the new runtime
+        export PATH="$BIN_DIR:$PATH"
+    else
+        echo "install-nodejs.sh not found — reinstall the openclaw package, then retry"
+        exit 1
+    fi
+fi
+
 echo "=== Updating OpenClaw Platform ==="
 echo ""
 

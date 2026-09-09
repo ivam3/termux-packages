@@ -45,7 +45,12 @@ export NODE_OPTIONS=--dns-result-order=ipv4first
 # Install Official OpenClaw 
 # =========================================================================
 if command -v openclaw &>/dev/null || [ -d "${HOME}/.openclaw/repo" ]; then
-    echo "OpenClaw is already installed! Skipping installation."
+    echo "OpenClaw is already installed! Ensuring Node.js runtime..."
+    # Self-heal: pre-2026.9.3 installs carry glibc Node 22.x, rejected by
+    # OpenClaw >=24.16 guard. install-nodejs.sh is idempotent (SKIP on target).
+    if [ -f "${HOME}/.openclaw/scripts/install-nodejs.sh" ]; then
+        bash "${HOME}/.openclaw/scripts/install-nodejs.sh" || echo "[!] Node.js ensure failed — run 'bash ~/.openclaw/scripts/install-nodejs.sh' manually, then 'openclaw update'."
+    fi
 else
     echo "Installing OpenClaw. This takes a few minutes..."
     bash ${PREFIX}/bin/openclaw_installer

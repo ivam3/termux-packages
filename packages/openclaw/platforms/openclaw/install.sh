@@ -70,4 +70,10 @@ npm install -g @grammyjs/transformer-throttler
 echo "Running: openclaw update"
 echo "  (This includes building native modules and may take 5-10 minutes)"
 echo ""
+echo "NOTE: 'openclaw update' may ask:"
+echo "  Proceed with installation? [y/N]"
+echo "This only confirms installing/updating ClawHub components (skills/plugins)."
+echo "It does NOT delete ~/.openclaw, your workspace, memory, or settings."
+echo "Answer 'y' to continue — it is part of the installation, not an error."
+echo ""
 openclaw update || true
