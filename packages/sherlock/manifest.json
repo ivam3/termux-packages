@@ -1,6 +1,6 @@
 {
   "name": "sherlock",
-  "version": "0.16.0",
+  "version": "0.16.0-1",
   "arch": "all",
   "homepage": "https://github.com/sherlock-project/sherlock",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
@@ -12,6 +12,6 @@
   ],
   "description": "Hunt down social media accounts by username across social networks.",
   "files": {
-    "sherlock": "bin/sherlock"
+    "README.md": "/data/data/com.termux/files/usr/share/doc/sherlock-project/README.md"
   }
 }

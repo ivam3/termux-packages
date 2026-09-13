@@ -1188,7 +1188,7 @@ data/data/com.termux/files/usr/bin/recondog                                     
 data/data/com.termux/files/usr/bin/routersploit                                  routersploit
 data/data/com.termux/files/usr/bin/seclists                                      seclists
 data/data/com.termux/files/usr/bin/shc                                           shc
-data/data/com.termux/files/usr/bin/sherlock                                      sherlock
+data/data/com.termux/files/usr/share/doc/sherlock-project/README.md              sherlock
 data/data/com.termux/files/usr/bin/slowhttptest                                  slowhttptest
 data/data/com.termux/files/usr/bin/stegsnow                                      stegsnow
 data/data/com.termux/files/usr/bin/sublist3r                                     sublist3r

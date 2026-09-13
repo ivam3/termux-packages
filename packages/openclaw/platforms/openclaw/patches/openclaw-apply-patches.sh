@@ -2,6 +2,7 @@
 set -euo pipefail
 
 GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
 RED='\033[0;31m'
 NC='\033[0m'
 
@@ -20,6 +21,13 @@ else
     echo -e "${RED}[FAIL]${NC} openclaw-patch-paths.sh not found in $SCRIPT_DIR"
     echo "  FAILED: openclaw-patch-paths.sh not found" >> "$LOG_FILE"
     exit 1
+fi
+
+if [ -f "$SCRIPT_DIR/openclaw-hardlink-fallback.sh" ]; then
+    bash "$SCRIPT_DIR/openclaw-hardlink-fallback.sh" 2>&1 | tee -a "$LOG_FILE"
+else
+    echo -e "${YELLOW}[WARN]${NC} openclaw-hardlink-fallback.sh not found in $SCRIPT_DIR (skipping)"
+    echo "  SKIPPED: openclaw-hardlink-fallback.sh not found" >> "$LOG_FILE"
 fi
 
 echo ""
