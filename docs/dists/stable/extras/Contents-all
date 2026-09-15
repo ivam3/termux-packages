@@ -1156,6 +1156,7 @@ data/data/com.termux/files/home/.openclaw/platforms/openclaw/env.sh             
 data/data/com.termux/files/home/.openclaw/platforms/openclaw/install.sh          openclaw
 data/data/com.termux/files/home/.openclaw/platforms/openclaw/patches/openclaw-apply-patches.sh openclaw
 data/data/com.termux/files/home/.openclaw/platforms/openclaw/patches/openclaw-build-sharp.sh openclaw
+data/data/com.termux/files/home/.openclaw/platforms/openclaw/patches/openclaw-hardlink-fallback.sh openclaw
 data/data/com.termux/files/home/.openclaw/platforms/openclaw/patches/openclaw-patch-paths.sh openclaw
 data/data/com.termux/files/home/.openclaw/platforms/openclaw/status.sh           openclaw
 data/data/com.termux/files/home/.openclaw/platforms/openclaw/uninstall.sh        openclaw
