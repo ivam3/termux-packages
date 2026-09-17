@@ -1324,6 +1324,22 @@ SHA1: c9e5627041cf8b1ee12a6be794154717d9b57e39
 SHA256: e288acf8a3dcf00083456c02a72f369ff342e94e37561346ae76705c70736a80
 SHA512: d89eafeb96f340522c2acb4d99c6e9ce2e5731eee3bbadbba302bcb096173d5607178a6cbe141029130e23b02399c4801e8c56604156da1e94c210c8905fe9b0
 
+Package: termux-desktop-bspwm
+Version: 0.1.0
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 1318
+Depends: x11-repo, termux-x11-nightly, bspwm, sxhkd, kitty, rofi, polybar, picom, tint2, dmenu, feh, xorg-xsetroot, xfce4-screenshooter, dbus, firefox, thunar, mousepad, pulseaudio, glow, papirus-icon-theme, hicolor-icon-theme, unzip, fontconfig
+Suggests: i-haklab
+Homepage: https://github.com/ivam3/termux-packages
+Description: Meta-package and default configs for a bspwm tiling desktop on termux-x11. Includes launcher, keybindings, polybar, picom, kitty and rofi presets.
+Filename: dists/stable/extras/binary-all/termux-desktop-bspwm_0.1.0_all.deb
+Size: 1311316
+MD5Sum: 73716e002a9358fc733c756c1aa5b09f
+SHA1: 45bf57fe3684a2cf4a9ececc16e89fde1d40e0aa
+SHA256: 096c9840666ee65c0affcf93b9d62828166d749c474a22f1a6046218db6517c7
+SHA512: c44fc54ea85e90a4eab8d73218a1c923f5182b7c8b5a481031aec923d91da9aa523810bc61392b284eb1bbea87a57a4959d32578420c0bb6fc20074f6e0a11f9
+
 Package: termux-desktop-xfce
 Version: 1.0.14
 Architecture: all

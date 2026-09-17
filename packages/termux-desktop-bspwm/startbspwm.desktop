@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=termux-desktop-bspwm
+GenericName=Tiling desktop (bspwm) for Termux:X11
+Comment=Launch bspwm session on Termux:X11 (dual with xfce4)
+Version=0.1.0
+Exec=startbspwm
+Icon=/data/data/com.termux/files/usr/share/termux-desktop-bspwm/wallpaper.jpg
+Terminal=false
+Type=Application
+Categories=System
+X-Desktop-File-Install-Version=0.1.0

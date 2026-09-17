@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=Thunar File Manager
+Comment=Browse files
+GenericName=File Manager
+Exec=thunar
+Terminal=false
+Type=Application
+Icon=/data/data/com.termux/files/usr/share/icons/hicolor/128x128/apps/org.xfce.thunar.png
+Categories=System;FileManager;
+StartupNotify=true
+StartupWMClass=Thunar

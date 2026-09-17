@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# Remove package-owned data only. User configs under ~/.config are kept.
+SHARE_DIR="/data/data/com.termux/files/usr/share/termux-desktop-bspwm"
+[[ -d "$SHARE_DIR" ]] && rm -rf "$SHARE_DIR"
+BIN_FILE="/data/data/com.termux/files/usr/bin/startbspwm"
+[[ -f "$BIN_FILE" ]] && rm -f "$BIN_FILE"
+DESKTOP_DIR="/data/data/com.termux/files/usr/share/applications/termux-desktop-bspwm"
+[[ -d "$DESKTOP_DIR" ]] && rm -rf "$DESKTOP_DIR"
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

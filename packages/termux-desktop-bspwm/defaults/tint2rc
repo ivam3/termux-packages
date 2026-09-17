@@ -1,0 +1,115 @@
+# tint2rc — Termux:X11 + bspwm bottom panel (package defaults: firefox + thunar)
+# Add more launchers by copying .desktop files to
+# /data/data/com.termux/files/usr/share/termux-desktop-bspwm/launchers/
+# and referencing them below, or point launcher_item_app at your own files.
+
+#-------------------------------------
+# Panel (floating centered: 95% width + center position)
+panel_position = bottom center horizontal
+panel_size = 95% 56
+panel_margin = 0 4
+panel_padding = 6 0 6
+panel_background_id = 1
+wm_menu = 0
+panel_dock = 0
+panel_layer = bottom
+strut_policy = minimum
+panel_window_name = tint2
+disable_transparency = 0
+panel_items = LTSC
+font_shadow = 0
+
+#-------------------------------------
+# Backgrounds: blank-line separated blocks, auto-numbered 1, 2... (0 = built-in transparent)
+# id 1 = panel / id 2 = active-hover
+rounded = 0
+border_width = 0
+background_color = #1a1b26 100
+border_color = #1a1b26 100
+
+rounded = 4
+border_width = 0
+background_color = #24283b 100
+border_color = #7aa2f7 100
+
+#-------------------------------------
+# Launcher (firefox + thunar only)
+launcher_padding = 6 3 6
+launcher_background_id = 0
+launcher_icon_size = 39
+launcher_icon_theme = hicolor
+launcher_icon_theme_override = 0
+launcher_tooltip = 1
+launcher_item_app = /data/data/com.termux/files/usr/share/termux-desktop-bspwm/launchers/firefox.desktop
+launcher_item_app = /data/data/com.termux/files/usr/share/termux-desktop-bspwm/launchers/thunar.desktop
+
+#-------------------------------------
+# Taskbar (open windows: click focuses, middle-click closes)
+taskbar_mode = single_desktop
+taskbar_padding = 6 0 6
+taskbar_background_id = 0
+taskbar_active_background_id = 0
+taskbar_name = 0
+taskbar_hide_different_monitor = 0
+taskbar_hide_different_desktop = 0
+taskbar_always_show_all_desktop_tasks = 0
+taskbar_name_font = monospace 14
+taskbar_name_font_color = #c0caf5 100
+taskbar_name_active_font_color = #7aa2f7 100
+
+#-------------------------------------
+# Tasks
+task_icon = 1
+task_text = 1
+task_width = 196
+task_centered = 0
+task_padding = 6 3
+task_font = monospace 14
+task_font_color = #c0caf5 100
+task_active_font_color = #ffffff 100
+task_background_id = 0
+task_active_background_id = 2
+task_urgent_background_id = 2
+task_icon_asb = 100 0 0
+mouse_left = toggle_iconify
+mouse_middle = close
+mouse_right = none
+mouse_scroll_up = toggle
+mouse_scroll_down = iconify
+
+#-------------------------------------
+# System tray
+systray_padding = 6 3 6
+systray_background_id = 0
+systray_sort = ascending
+systray_icon_size = 0
+systray_icon_asb = 100 0 0
+systray_monitor = 1
+
+#-------------------------------------
+# Clock
+time1_format = %H:%M
+time1_font = monospace 15
+time2_format = %d/%m
+time2_font = monospace 13
+clock_font_color = #c0caf5 100
+clock_padding = 8 0
+clock_background_id = 0
+clock_tooltip = %A %d %B
+clock_lclick_command = xfce4-taskmanager
+clock_rclick_command =
+clock_tooltip_timezone =
+
+#-------------------------------------
+# Tooltip
+tooltip_padding = 6 6
+tooltip_show_timeout = 0
+tooltip_hide_timeout = 0
+tooltip_background_id = 2
+tooltip_font = monospace 14
+tooltip_font_color = #c0caf5 100
+
+#-------------------------------------
+# Battery (Android: hidden, Termux:API has no sysfs for tint2)
+battery = 0
+battery_hide = 101

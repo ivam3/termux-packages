@@ -1,0 +1,120 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# termux-desktop-bspwm — seed default configs (only if absent) + verify stack
+IFS=$'\n\t'
+set -Eeuo pipefail
+
+# ==============================
+# CONFIGURATION
+# ==============================
+SHARE_DIR="${PREFIX}/share/termux-desktop-bspwm"
+DEFAULTS_DIR="${SHARE_DIR}/defaults"
+
+# Colors
+CYAN="\033[36m"
+GREEN="\033[32m"
+RED="\033[31m"
+YELLOW="\033[33m"
+DIM="\033[2m"
+RESET="\033[0m"
+
+# Msg
+info() { printf "%b[📢]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+msg()   { printf "[➡] %s\n" "$*"; }
+ok()   { printf "%b[✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+warn() { printf "%b[!]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+tip() { printf "%b[💡]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+err()  { printf "%b[❌]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+
+# Copy default config only when the user has none (never overwrite).
+seed_if_absent() {
+  local src="$1" dest="$2"
+  if [[ -f "$dest" ]]; then
+    info "Keeping existing $(basename "$dest")"
+    return 0
+  fi
+  mkdir -p "$(dirname "$dest")"
+  cp -f "$src" "$dest" && ok "Seeded $(basename "$dest")"
+}
+
+# ==============================
+# STEP 1: SEED DEFAULT CONFIGS
+# ==============================
+info "Seeding default bspwm configs (existing files are kept)..."
+seed_if_absent "${DEFAULTS_DIR}/bspwmrc" "${HOME}/.config/bspwm/bspwmrc"
+seed_if_absent "${DEFAULTS_DIR}/sxhkdrc" "${HOME}/.config/sxhkd/sxhkdrc"
+seed_if_absent "${DEFAULTS_DIR}/polybar.ini" "${HOME}/.config/polybar/config.ini"
+seed_if_absent "${DEFAULTS_DIR}/launch.sh" "${HOME}/.config/polybar/launch.sh"
+seed_if_absent "${DEFAULTS_DIR}/battery.sh" "${HOME}/.config/polybar/battery.sh"
+seed_if_absent "${DEFAULTS_DIR}/wifi.sh" "${HOME}/.config/polybar/wifi.sh"
+seed_if_absent "${DEFAULTS_DIR}/picom.conf" "${HOME}/.config/picom/picom.conf"
+seed_if_absent "${DEFAULTS_DIR}/kitty.conf" "${HOME}/.config/kitty/kitty.conf"
+seed_if_absent "${DEFAULTS_DIR}/config.rasi" "${HOME}/.config/rofi/config.rasi"
+seed_if_absent "${DEFAULTS_DIR}/tint2rc" "${HOME}/.config/tint2/tint2rc"
+mkdir -p "${HOME}/.config/tint2/launchers"
+for launcher in firefox.desktop thunar.desktop; do
+  seed_if_absent "${SHARE_DIR}/launchers/${launcher}" "${HOME}/.config/tint2/launchers/${launcher}"
+done
+[[ -f "${HOME}/.config/bspwm/wallpaper.jpg" ]] || {
+  cp -f "${SHARE_DIR}/wallpaper.jpg" "${HOME}/.config/bspwm/wallpaper.jpg" 2>/dev/null && \
+    ok "Seeded wallpaper.jpg" || warn "Could not seed wallpaper."
+}
+chmod +x "${HOME}/.config/bspwm/bspwmrc" "${HOME}/.config/polybar/launch.sh" \
+  "${HOME}/.config/polybar/battery.sh" "${HOME}/.config/polybar/wifi.sh" 2>/dev/null || true
+
+# ==============================
+# STEP 1.5: HACK NERD FONT (kitty default)
+# ==============================
+# No deb package provides it, so fetch it like termux-desktop-xfce does
+# with ProFont. kitty falls back to monospace if the download fails.
+if fc-match "Hack Nerd Font Mono" 2>/dev/null | grep -qi "hack"; then
+  ok "Hack Nerd Font already installed"
+else
+  info "Downloading Hack Nerd Font (kitty default)..."
+  HFONT_URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Hack.zip"
+  mkdir -p "${PREFIX}/share/fonts"
+  if curl -fsSL "$HFONT_URL" -o "${TMPDIR}/Hack.zip"; then
+    unzip -q -o "${TMPDIR}/Hack.zip" -d "${PREFIX}/share/fonts/" 2>/dev/null \
+      && ok "Hack Nerd Font installed" \
+      || warn "Could not unzip Hack font."
+    rm -f "${TMPDIR}/Hack.zip"
+    fc-cache -f "${PREFIX}/share/fonts" >/dev/null 2>&1 || true
+  else
+    warn "Could not download Hack font (offline?). kitty falls back to monospace."
+  fi
+fi
+
+# ==============================
+# STEP 2: VERIFICATION
+# ==============================
+info "Verifying bspwm stack..."
+missing=0
+for bin in bspwm sxhkd kitty rofi polybar picom tint2 feh xsetroot glow; do
+  if command -v "$bin" >/dev/null 2>&1; then
+    ok "$bin found"
+  else
+    err "$bin missing (pkg install $bin)"
+    missing=1
+  fi
+done
+[[ $missing -eq 0 ]] && ok "termux-desktop-bspwm installation finished."
+msg "Open the Termux:X11 app, then run 'startbspwm' to execute it."
+tip "The xfce4 session is untouched: use your Xwayland shortcut to go back."
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+msg "Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o "${PREFIX}/bin/fixer"; then
+    chmod 750 "${PREFIX}/bin/fixer"
+    info "Run 'fixer' to fix any posible issue."
+else
+    warn "Could not download fixer."
+fi
+
+# ==============================
+# FINALS MESSAGES
+# ==============================
+tip "Help: going to https://t.me/Ivam3_Bot."
+msg "@Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

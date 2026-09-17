@@ -1,0 +1,84 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# startbspwm — bspwm session on termux-x11
+# Dual with xfce4: does NOT touch ~/.shortcuts/Xwayland nor startxfce4
+# Usage: open the Termux:X11 Android app, then run: startbspwm
+IFS=$'\n\t'
+
+# Help: render the package README with glow when available.
+if [[ "${1:-}" == "-h" || "${1:-}" == "--help" || "${1:-}" == "help" ]]; then
+  README_DOC="${PREFIX}/share/doc/termux-desktop-bspwm/README.md"
+  if [[ -f "$README_DOC" ]]; then
+    if command -v glow >/dev/null 2>&1; then
+      exec glow "$README_DOC"
+    else
+      exec cat "$README_DOC"
+    fi
+  else
+    echo "E: README not found at ${README_DOC}" >&2
+    exit 1
+  fi
+fi
+
+# Session-owned processes are killed on ctrl_c (INT), TERM, or normal exit.
+# Covers everything this script starts, directly or via bspwmrc autostart:
+# bspwm, sxhkd, polybar, picom, tint2 and the pcmanfm desktop manager.
+# One-shots (feh, xsetroot, am, dbus-update) and the shared pulseaudio
+# daemon are intentionally left alone. The X server is only killed when
+# this script started it (STARTED_X11=1), never when it was already up.
+CLEANED=0
+STARTED_X11=0
+cleanup() {
+  [[ "$CLEANED" == "1" ]] && return 0
+  CLEANED=1
+  echo "[*] stopping bspwm session..."
+  pkill -x bspwm 2>/dev/null
+  pkill -x sxhkd 2>/dev/null
+  pkill -x polybar 2>/dev/null
+  pkill -x picom 2>/dev/null
+  pkill -x tint2 2>/dev/null
+  pkill -f "pcmanfm --desktop" 2>/dev/null
+  if [[ "$STARTED_X11" == "1" ]]; then
+    pkill -f "termux-x11 :0" 2>/dev/null
+  fi
+  echo "[*] bspwm session finished."
+}
+trap cleanup INT TERM
+
+export DISPLAY=:0
+export XDG_RUNTIME_DIR="${TMPDIR:-/tmp}"
+export XKB_CONFIG_ROOT=${PREFIX}/share/xkeyboard-config-2/
+export XAUTHORITY="${HOME}/.Xauthority"
+
+# audio (same as the xfce session)
+pulseaudio --start --exit-idle-time=-1 2>/dev/null
+pacmd load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1 2>/dev/null
+
+# open the Termux:X11 Android app
+am start -n com.termux.x11/com.termux.x11.MainActivity 2>/dev/null
+sleep 3
+
+# X server (only if not running; remember if we started it)
+if ! pgrep -f "termux-x11 :0" >/dev/null 2>&1; then
+  termux-x11 :0 >/dev/null 2>&1 &
+  STARTED_X11=1
+  sleep 4
+fi
+
+[ -x "$HOME/.config/bspwm/bspwmrc" ] || chmod +x "$HOME/.config/bspwm/bspwmrc"
+
+# avoid clash with xfce running on the same DISPLAY
+if pgrep -x xfce4-session >/dev/null 2>&1; then
+  echo "W: xfce4-session is running on :0. Log out of xfce first,"
+  echo "   or bspwm will fight for the same DISPLAY."
+  read -p "Kill xfce4-session and continue? [y/N] " ans
+  [[ "$ans" == "y" || "$ans" == "Y" ]] || exit 0
+  pkill -x xfce4-session 2>/dev/null
+  pkill -x xfwm4 2>/dev/null
+  sleep 2
+fi
+
+echo "[+] Run 'startbspwm help' for usage information."
+dbus-launch --exit-with-session bspwm
+
+# cleanup on bspwm exit (super+shift+q) — same as the ctrl_c trap
+cleanup

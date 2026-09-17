@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=Firefox Web Browser
+Comment=Browse the World Wide Web
+GenericName=Web Browser
+Exec=firefox %u
+Terminal=false
+Type=Application
+Icon=/data/data/com.termux/files/usr/share/icons/nuoveXT2/96x96/apps/firefox.png
+Categories=Network;WebBrowser;
+StartupNotify=true
+StartupWMClass=firefox

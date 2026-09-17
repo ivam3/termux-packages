@@ -1,0 +1,8 @@
+/* rofi — Termux:X11 (settings only; theme goes via -theme, see sxhkdrc) */
+configuration {
+  modi: "drun,run,window";
+  show-icons: true;
+  icon-theme: "Papirus";
+  font: "monospace 11";
+  drun-display-format: "{name}";
+}
