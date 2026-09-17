@@ -123,6 +123,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/.Ivam3byCinderella          
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/acccheck.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/adbfastboot.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/adminpanel.md   i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/afrog.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ai.md           i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/aircrack-ng.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/amass.md        i-haklab
@@ -154,6 +155,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/clamav.md      
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/claude-code.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/cloudbunny.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/cloudflared.md  i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/code-oss.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/code-server.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/codebuff.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/codex.md        i-haklab
@@ -181,6 +183,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/fake-sms.md    
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/fbi.md          i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ffmpeg.md       i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/finalrecon.md   i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/findomain.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/fish.md         i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/freebuff.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/frida.md        i-haklab
@@ -277,6 +280,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/recondog.md    
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/redhawk.md      i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/rhash.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/routersploit.md i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/rustscan.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/saycheese.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/sayhello.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/scrapy.md       i-haklab
@@ -305,6 +309,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/storm-breaker.m
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/sublist3r.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/tangalanga.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/termux-apk-make.md i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/termux-desktop-bspwm.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/termux-desktop-xfce.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/termux-docker-qemu.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/termux-oracle-skill.md i-haklab
