@@ -103,7 +103,8 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [spix](https://github.com/VictorH028/spix) | A command line (CLI) tool written in C++ that displays an animated spinner while a background process is running. |
 | [stegsnow](https://www.kali.org/tools/stegsnow/) | Hide messages in ASCII text by appending whitespaces to the end of lines |
 | [sublist3r](https://github.com/aboul3la/Sublist3r) | Fast subdomains enumeration tool for penetration testers. |
-| [termux-desktop-xfce](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/termux-desktop-xfce/README.md) | Set up a beautiful xfce desktop in termux. |
+| [termux-desktop-bspwm](https://github.com/baskerville/bspwm) | Meta-package and default configs for a bspwm tiling desktop on termux-x11. |
+| [termux-desktop-xfce](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/termux-desktop-xfce/README.md) | Set up a beautiful xfce desktop on termux-x11. |
 | [termux-docker-qemu](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/termux-docker-qemu/README.md) | Manage Docker containers from Linux VMs (x86/x86_64/ARMv7/AArch64) using QEMU. Includes VirtIO-GPU acceleration via virgl. |
 | [termux-oracle-skill](https://github.com/ivam3/termux-oracle) | Termux skill for AI coding agents with all context about termux, i-Haklab and Ivam3 termux-packages. |
 | [unshc](https://github.com/yanncam/UnSHc) | The Shell Script UnCompiler (UNSHC) decode and decrypt SHC file on X86/x64 architecture. |
