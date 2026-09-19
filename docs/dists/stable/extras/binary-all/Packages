@@ -911,7 +911,7 @@ SHA256: da4df04662d8b68c9f5e9661b2c193ec5abd6c113700b9a6d0aee01ce1baeea1
 SHA512: 029c74a423ccb4bde8cde64be7cf0e42a2748ee89959380a15a446afa6440e263bff33160d0538b16fa1ada1ed42516f963153a286a433e2028e1f6dbb3801d2
 
 Package: markdown-viewer
-Version: 1.0.0
+Version: 1.1.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 84
@@ -919,12 +919,12 @@ Depends: git, python, python-pip
 Suggests: i-haklab, firefox
 Homepage: https://github.com/ivam3/markdown-viewer
 Description: A lightweight web application to view markdown files.
-Filename: dists/stable/extras/binary-all/markdown-viewer_1.0.0_all.deb
-Size: 84924
-MD5Sum: 029e2787cc9b1aff29c79efc8650de38
-SHA1: 95ef0bc7820ad6d2015ebae312d85c34c8fab5e7
-SHA256: 6be50582c586d99a2b37a9cac017f01b2f54245d954bafc608b614d6bd1e6a74
-SHA512: 7dab3f24d0bc522c551f3a7965eb867069cb71565dec434784b5d24c0c19785876f65b896327c332e079155e9d5ba21bced8096610a2b737381746522aff8a2a
+Filename: dists/stable/extras/binary-all/markdown-viewer_1.1.0_all.deb
+Size: 85088
+MD5Sum: 5e5a39aa4379c7d23f8c77c77f8469fd
+SHA1: 7844193c5b2e94eea813f5084a660b086cf35963
+SHA256: 7b07dfbfafb28a44f9cfca902d3e6800ec0148abebd4ae88ac934842aa0b5cf3
+SHA512: 1c9ec6a99ecf0af348d901d78f9d8993ed4043ec97cb8774f8aef4719c645a738a478de113bd18bc076c0d180c58698ca89e83c655441a1bc3634ae167d438ab
 
 Package: metasploit-framework
 Version: 6.4.134
