@@ -12,7 +12,7 @@ pkg install freebuff
 
 | Field | Value |
 |-------|-------|
-| Version | `0.0.149-1` |
+| Version | `0.0.174-2` |
 | Architecture | `aarch64` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [codebuff-community](https://github.com/CodebuffAI/codebuff-community) |

@@ -383,7 +383,7 @@ SHA256: 115acf00c211ca2decc6379848336e43109619b321620cd3c32bf6f65337343d
 SHA512: 65fd549a7d8384cff34e70c8aa7b711c3ce855fc8ebfd82114e4fb7f7cae4f1dabfb650a0f788ef1061a2eb6e1f5e0e7f40f5616858305edf527153e03cedf87
 
 Package: engram
-Version: 1.20.0-1
+Version: 2.0.0-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
@@ -391,12 +391,12 @@ Depends: git, golang
 Suggests: i-haklab
 Homepage: https://github.com/Gentleman-Programming/engram
 Description: Persistent memory system for AI coding agents
-Filename: dists/stable/extras/binary-all/engram_1.20.0-1_all.deb
-Size: 2332
-MD5Sum: 0d7c21564a67793bf71c9ab0b5efa85c
-SHA1: 6a4287f86a9b17c0d14534bd442cd2802cef14f9
-SHA256: 928030ab29ee6a7a299b9cbf2473b496dc17d98ae2e916c3b8c67b335d5e8c29
-SHA512: 8564e4a7ff54ba4f5274775177375db7ffa9426981abd8518f76607275d26ebf2395e97ab443483f3814246e25022eaba3bb3dbbc281830531d739affdcb166c
+Filename: dists/stable/extras/binary-all/engram_2.0.0-1_all.deb
+Size: 2324
+MD5Sum: 9257f584d18cfd55fc35f33757ae41c4
+SHA1: 7001c95d1a4347c34f4e748c30e491235c76c492
+SHA256: 1f02c495a6b70dea3d9c6e71c680a5dc8dd25c8b590e09a53278a3b9b488637b
+SHA512: 2785fe9d109270f55a39c9e05f3091596eb36de3045b868902c966847ac67b9b701e3747646fb28e6885b84374b4c6495641188c3a166d8b2208d25243bf8c31
 
 Package: enum4linux-ng
 Version: 1.3.10
@@ -751,7 +751,7 @@ SHA256: 51ce3347294c70d7fa0d4256e9583523f9af1cfefb91e09aa9310467f1183cf1
 SHA512: 7d428dca2b41f7c7e2b023022c640cfd2e7cf95eb57f8018f677a7b868ee28429089187467baf5b301bd86b8e4906d3d8738603700c94b7fde2989bb3cc41b9f
 
 Package: hermes-agent
-Version: 2026.9.14-1
+Version: 2026.9.21-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
@@ -759,12 +759,12 @@ Depends: python, nodejs-lts, python-pip, python-psutil, python-cryptography, cla
 Suggests: i-haklab
 Homepage: https://github.com/NousResearch/hermes-agent
 Description: Personal AI agent by Nous Research with CLI, TUI, messaging gateway, and browser automation. Runs the same agent core across Telegram, Discord, Slack, and 20+ platforms. Features persistent memory, skill learning, subagent delegation, scheduled cron jobs, and terminal/browser control.
-Filename: dists/stable/extras/binary-all/hermes-agent_2026.9.14-1_all.deb
-Size: 4524
-MD5Sum: b5323c366830ff257b9e74bdc207c132
-SHA1: cbc6fe23bac6539418e239d5c2f1ddf82fffccb3
-SHA256: 2ad4a050045557f5105b34a9645dc10d9e9dc465f0e89b8bc80c45bb57f34bfc
-SHA512: 56c822cdb5ca7f165ecd8ce89faae5ef75777b00756d56a761714fed805e29037a43ce7d343ccc42ddd62c4b1f2fb13ce8576f1875627b16ccf624d25ddc28cb
+Filename: dists/stable/extras/binary-all/hermes-agent_2026.9.21-1_all.deb
+Size: 4520
+MD5Sum: 30bf6199914564e8c64c675ee32b6e85
+SHA1: 31c64939c9e5791c0e2a5a65c764bbdbcf2f465c
+SHA256: 7b3a764a030cf60b72aaefb1935551759285938b095489e132384578674e1ff6
+SHA512: 40a38aada7a0026a429551a30df2d8772b2ea8e07ff01d775cf309fa8a770bb6c3e01471b5f3483126142059b0e9c00d0243cdd26d6a4dab300eb18fd6ec3c07
 
 Package: huggingface
 Version: 1.27.0-1
@@ -959,7 +959,7 @@ SHA256: 7e8101235c834b33b092e8bddbafa3483e126331b05a5b8b499947977fdc108d
 SHA512: 522fc2400cfb442c0d388ef4ba242068b84f27f3569a00ae758bcb83c2267c06114bb8b6196a6749395fb1447fd11c0c80f6218d1ef22413a160977c3f75d062
 
 Package: mistral-vibe
-Version: 2.25.4-1
+Version: 2.25.7-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
@@ -967,12 +967,12 @@ Depends: coreutils, curl, uv, python, python-pip, python-cryptography
 Suggests: i-haklab, neovim, termux-oracle-skill
 Homepage: https://github.com/mistralai/mistral-vibe
 Description: Minimal CLI coding assistant/agent powered by Mistral's models.
-Filename: dists/stable/extras/binary-all/mistral-vibe_2.25.4-1_all.deb
-Size: 3748
-MD5Sum: 4a414302b0d45631958d12d5f08df698
-SHA1: 56cb0650b735dc1739b4e106bd6481c3469d281b
-SHA256: 912f5642d245d2d116882dc2159a87ab757234e33c86f5b1e9e26b2a2b6ca00d
-SHA512: ba17634ef8ac1388da9113e797c38b198cd8d489d612bc3716f62a74a7020b98539eb59d2a3c9062dccdb9e63c8b37961d9275fd4afb8dcca5cc62a32d1215d1
+Filename: dists/stable/extras/binary-all/mistral-vibe_2.25.7-1_all.deb
+Size: 3744
+MD5Sum: 0c0ab2d99e3f50688ef911c449ef5b76
+SHA1: 4c3305a06bc6821404d8b29cddbe735f132d8ac2
+SHA256: b1fcb999f4b08c1d7dea68c30d681a6c21858fe5c2309c581383f4251ca11895
+SHA512: 91685a58abc47381579b7464aba49a27296ffc957c8ff5802bfbef2774e5798242f4d2e27b1b87dc588d8d232a28737b1f3f11bf4ec04e85e627243594496662
 
 Package: ngrok
 Version: 3.15.1
@@ -1038,7 +1038,7 @@ SHA256: 7f1cebc17002bb7125289d12816e74cb157ab7f20a7fc326a86ff13010734db1
 SHA512: 3a573eed5a3e3a44fb8d3b747d10eff3f2e0ca67acdacd246e1054f4dcc8ae533ec2c5116fbd664cf59bd2a3d9473ce6f700d78d97e24d313df78215a00dba28
 
 Package: openclaw
-Version: 2026.9.4-1
+Version: 2026.9.5-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 127
@@ -1046,12 +1046,12 @@ Depends: android-tools, git, curl, nodejs-lts, pacman, python, python-pip, make,
 Suggests: i-haklab, botgram
 Homepage: https://github.com/AidanPark/openclaw-android
 Description: Open-source autonomous artificial intelligence agent.
-Filename: dists/stable/extras/binary-all/openclaw_2026.9.4-1_all.deb
-Size: 31900
-MD5Sum: 4c9ff5edb294c665753fe848caf39b0c
-SHA1: 4e9b241cdcc881e9c1ff0657461f28c0d4f0da66
-SHA256: 0d97249b28e7b2b8c460e73140888f3bc44e584215741dba4a7915118c424e06
-SHA512: 07d3bd43b61de80fe735f998b9102557d3da64f7f58498ab651a9c9b2b8562ae27452132a5fe7d71a3aed7c6683cbca4efb5a1e4586759ca704257ff5ee369ec
+Filename: dists/stable/extras/binary-all/openclaw_2026.9.5-1_all.deb
+Size: 31904
+MD5Sum: b4b1d0f6ea9f9f63de1a3dfc41feaca4
+SHA1: 8315c7bb07c1915ae6af0360edcc521985db33f2
+SHA256: 6234eb67df991f19648edf75dc726502d88f70615f7ca5adae5439b3ac3b8ddb
+SHA512: f8f0b4548b0faba01bf031b9137e5b117bace598bb03526b64b5e2bcaeb92165078d52b2b31f801b02e281d552067afbd2f409c185c37d00f6f12e146ea4c50f
 
 Package: openjdk-21-source
 Architecture: all

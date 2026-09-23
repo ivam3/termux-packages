@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
-# mimocode Termux - Native Post-Installation Script
+# freebuff Termux - Native Post-Installation Script
 set -Eeuo pipefail
 
 # Configuration
@@ -47,6 +47,34 @@ if curl -fsSL "$DOWNLOAD_URL" -o "$STAGING_DIR/$TOOL_NAME.tar.gz"; then
         mv -f "$STAGING_DIR/$BINARY" "$SHARE_DIR/$BINARY.real"
         chmod +x "$SHARE_DIR/$BINARY.real"
         ok "Binary installed to $SHARE_DIR/$BINARY.real"
+        # 1b. Termux glibc broker fix (idempotent):
+        # Bun's process.execPath under `ld-linux … freebuff.real` resolves to
+        # the loader, so the TUI terminal-command broker spawn fails with
+        # "terminal command broker protocol response was missing".
+        # Patch the single yiT() occurrence to use process.env.FB (set by the
+        # native wrapper) instead of process.execPath. Same-length replace.
+        info "Patching terminal-command broker invocation (Termux glibc)..."
+        if python3 - "$SHARE_DIR/$BINARY.real" <<'PYEOF'; then
+import sys
+p = sys.argv[1]
+data = open(p, 'rb').read()
+needle = b'executable:process.execPath,args:'
+repl = b'executable:process.env.FB  ,args:'
+n, r = data.count(needle), data.count(repl)
+if n == 1 and r == 0:
+    open(p, 'wb').write(data.replace(needle, repl))
+    print('broker-patch: applied')
+elif n == 0 and r == 1:
+    print('broker-patch: already applied')
+else:
+    print(f'broker-patch: unexpected state needle={n} repl={r}')
+    sys.exit(1)
+PYEOF
+            ok "Broker invocation patched."
+        else
+            err "Broker patch failed; '!' commands will fail."
+            exit 1
+        fi
     else
         err "Binary not found in archive."
         exit 1
@@ -77,8 +105,33 @@ else
 fi
 
 # 3. Verification
-if [[ -x "$INSTALL_BIN_DIR/$BINARY" ]]; then 
-    ok "$TOOL_NAME installation finished." 
+if [[ -x "$INSTALL_BIN_DIR/$BINARY" ]]; then
+    if "$INSTALL_BIN_DIR/$BINARY" --version >/dev/null 2>&1; then
+        ok "$TOOL_NAME installation finished."
+    else
+        err "Wrapper runs but binary failed to start."
+        exit 1
+    fi
+    # 3b. Broker self-test: simulate what the patched TUI parent does —
+    # spawn the native wrapper (process.env.FB) with the broker flag and a
+    # one-shot protocol file in $TMPDIR. Must print BROKER_OK and write ok:true.
+    info "Verifying terminal-command broker..."
+    _BROKER_PROTO="${TMPDIR:-$PREFIX/tmp}/freebuff-terminal-command-broker-$$-postinst.json"
+    rm -f "$_BROKER_PROTO"
+    _BROKER_REQ="{\"executable\":\"/bin/sh\",\"args\":[\"-c\",\"echo BROKER_OK\"],\"cwd\":\"$HOME\",\"env\":{\"PATH\":\"$PREFIX/bin:/system/bin\",\"HOME\":\"$HOME\"}}"
+    if printf '%s' "$_BROKER_REQ" | setsid env CODEBUFF_TERMINAL_COMMAND_BROKER=1 \
+        "CODEBUFF_TERMINAL_COMMAND_BROKER_PROTOCOL=$_BROKER_PROTO" \
+        "$INSTALL_BIN_DIR/$BINARY" --terminal-command-broker >/dev/null 2>&1; then
+        : # broker self-reaps with SIGKILL; fall through to protocol check
+    fi
+    if [[ -f "$_BROKER_PROTO" ]] && grep -q '"ok":true' "$_BROKER_PROTO" 2>/dev/null; then
+        ok "Terminal-command broker verified."
+        rm -f "$_BROKER_PROTO"
+    else
+        err "Broker self-test failed; '!' commands will fail."
+        rm -f "$_BROKER_PROTO"
+        exit 1
+    fi
     msg "Run '$BINARY' to execute it."
 else
     err "Installation failed."
