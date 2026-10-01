@@ -14,7 +14,7 @@ SHA256: 76e3648071c8623ab848a2b278ac1e4c3185fd5dd3d69a2d8d44a99b4f8b713c
 SHA512: c97867ebd0f71dc50e153f7239e3cfe55ee794e4929ae225306723ab0fd6bae2206269e2aebc7f9f0ad1bc7f11ca850802882d34447262de6407ec71851111f2
 
 Package: antigravity-cli
-Version: 1.2.8-1
+Version: 1.2.14-1
 Architecture: aarch64
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
@@ -22,15 +22,15 @@ Depends: clang, python, jq, curl, tar, glibc
 Suggests: i-haklab
 Homepage: https://github.com/google-antigravity/antigravity-cli
 Description: Official Antigravity CLI with real-time VA39 memory patching for Termux.
-Filename: dists/stable/extras/binary-aarch64/antigravity-cli_1.2.8-1_aarch64.deb
+Filename: dists/stable/extras/binary-aarch64/antigravity-cli_1.2.14-1_aarch64.deb
 Size: 4184
-MD5Sum: ff0058f15bcdae127d05db0ccd6beb6a
-SHA1: a89b56eaf7c20fb2851c74ab0542e7c68074f1de
-SHA256: 20e926bd777181ea9c72bbcde051150bc0f8be7c2b4a9fd4c30143f6e23589e2
-SHA512: 3c4d637b4e640713792ef557606cc973f680dee9152aa76cbfd62e44abcbec25a80798188c0a03dae85aeecfa6869f7536a3d499a6ef1459abe22ab225788f4b
+MD5Sum: 2f07ee324dff1257aa70cdeb907a974f
+SHA1: 8483da1136956fcf5b32b8e5d329dd59b9e06819
+SHA256: 833acb8437c4d04d348f9362f847f69e04a3d15384e4ce0c3514c7b849de7a1c
+SHA512: 1d26ad0bb9013dead8e8bb0b4123cf36f4d7fe7d1f7c81ffea47804a727738f1f02104ec08bbf5c2685dfadb7412b6754264ffce75026e465f86162328bb0f68
 
 Package: claude-code
-Version: 2.1.280-1
+Version: 2.1.286-1
 Architecture: aarch64
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
@@ -38,12 +38,12 @@ Depends: glibc, clang, python, jq, curl, tar
 Suggests: i-haklab
 Homepage: https://github.com/anthropics/claude-code
 Description: NATIVE adaptation of Claude Code for Termux. Agentic coding tool that understands your codebase and helps you code faster through natural language commands.
-Filename: dists/stable/extras/binary-aarch64/claude-code_2.1.280-1_aarch64.deb
-Size: 3460
-MD5Sum: 6484e6b728253960972603f6812a7e09
-SHA1: 96610d309581008090b44793051b2b5339596fb2
-SHA256: bf75c15cd26f8ebaec806e06207e0cdf30366467421d3f1e0758675350203057
-SHA512: 593d9def87ddf215829723936a755f6db5d79f0462af3abd76a11ac4e10150f9405900f050d8e5507576d1b8fc4981f52696322abd1db6993e9a437a5cfa220c
+Filename: dists/stable/extras/binary-aarch64/claude-code_2.1.286-1_aarch64.deb
+Size: 3456
+MD5Sum: a08f0c5d76d7c8e196d857c3f318128e
+SHA1: 11d0d532c55d339276fd72559f74e63e3177e290
+SHA256: abdc633dd7b7b9dc6416b0b6d08baf91ef67c5800e2d9ab70094c458c88d0682
+SHA512: 5e12992204b3c7fbf5b1f59a87eefe2e5b18f6cf576cb64b9c0ec09d74068877702a65ae7a1306bc01daf8f53c110c33195e71ca370cd6219f6a2e245b901d9f
 
 Package: codebuff
 Version: 1.0.420-1
@@ -62,7 +62,7 @@ SHA256: 8d7a49d8efdf74dea6f00842b2810ba2c1dec94d6b59278607bc9a278ce7188b
 SHA512: 6b6f1e0053520c1a2416a2136685fa1982b5a14c4bf47294f4b004eab401a68a5210d547cf9303d769c48e43aa38c570a8e6797eb006c732b51cd6665a5332a1
 
 Package: freebuff
-Version: 0.0.184-1
+Version: 0.2.11-1
 Architecture: aarch64
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 4
@@ -70,12 +70,12 @@ Depends: glibc, clang, python, jq, curl, tar
 Suggests: i-haklab
 Homepage: https://github.com/CodebuffAI/codebuff-community
 Description: AI coding assistant that edits your codebase through natural language instructions. A buffcode free version with ad-supported — no subscription, no credits, no configuration.
-Filename: dists/stable/extras/binary-aarch64/freebuff_0.0.184-1_aarch64.deb
-Size: 5152
-MD5Sum: 2955832b48720ed257de1bee55b57da5
-SHA1: 27aff80ae2b50839126e520b2b9396716b239441
-SHA256: 32c55e23477e8642131c1500caf625605a3611aa629a30bea24e0e92d02a4fa7
-SHA512: 56ce0cdd20555e6275b5bc3939ac9344016e482235f9155e6459a516baa78e4008b9f042a7005e6210cc229120377fe79f774eb10a21f7cca672c21085a90ef4
+Filename: dists/stable/extras/binary-aarch64/freebuff_0.2.11-1_aarch64.deb
+Size: 5140
+MD5Sum: 168e210524c87993e296a7e584a578f7
+SHA1: 0b36a5b7c27f611d0f50013459a41863e5137246
+SHA256: 426d76d028e293d5bcfc23e1fe61ab042fc6b8d61c4d764632075a5429bb00bb
+SHA512: 3835d7cd68bf4f3b6f6d4db198bfb9bcce81095df6491abfc6bf525328db8847faca5af00181e25d2580ecd6bd79983f9ac14a424988758d8811c4c863967615
 
 Package: herdr
 Version: 0.9.0-1
@@ -126,7 +126,7 @@ SHA256: 14cf73033ee3ee083cf10ec39711a97f538d901f8543b859b281b3cd5d484f1e
 SHA512: 70f33b7bf4338f6259ec8de7c03fedb10e84d996b8124b91f5eb4a20361f09999e63fe9b0d6c3ec4d4153958730fe167b1e70f006c208ed7c276968092db294d
 
 Package: opencode
-Version: 1.18.32-1
+Version: 1.18.34-1
 Architecture: aarch64
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 3
@@ -134,12 +134,12 @@ Depends: glibc, clang, python, jq, curl, tar
 Suggests: i-haklab
 Homepage: https://github.com/opencode-ai/opencode
 Description: A powerful AI coding agent. Built for the terminal (Native glibc version for Termux).
-Filename: dists/stable/extras/binary-aarch64/opencode_1.18.32-1_aarch64.deb
-Size: 3772
-MD5Sum: 7bb1ebfc5a6f90d0d87729bfa35092ec
-SHA1: f180c09e93a067316b6c4d34ee7de96af217e078
-SHA256: dde57ad0b21741891650fcf917818248730a1e8883b2ac6ee85f3958ba908337
-SHA512: f7c5e2bdef3b47d20e85cc0dafc2c489767368f3b0de97d427e4d51212625d8eb041c03b46990e926bf768af96c5c97d98ce8cdf9a8ceb601c1a61cbc1798792
+Filename: dists/stable/extras/binary-aarch64/opencode_1.18.34-1_aarch64.deb
+Size: 3768
+MD5Sum: 4209db65641c8779b6ad1a1d665d1d2f
+SHA1: 4c9806a971fde71c23f2864bca82db9971066da0
+SHA256: aeca60f6adc0a2aaf1a2a3f11fd629830208ae8efb7fe34f61562463d95f8c41
+SHA512: fba763131f8fbe6b0af5d6f44b2682ade4ea456d71dd40723df0eabd4b999de3dca9810b647678660aed00754e9c79542f918b0bcaa08cb1ef1f248b9eaf07cc
 
 Package: openjdk-21-x
 Architecture: aarch64

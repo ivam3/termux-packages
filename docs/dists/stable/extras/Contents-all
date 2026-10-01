@@ -115,6 +115,7 @@ data/data/com.termux/files/home/.local/bin/serverapache                         
 data/data/com.termux/files/home/.local/bin/serverphp                             i-haklab
 data/data/com.termux/files/home/.local/bin/sudo                                  i-haklab
 data/data/com.termux/files/home/.local/bin/telegram                              i-haklab
+data/data/com.termux/files/home/.local/bin/telegram-desktop-x11                  i-haklab
 data/data/com.termux/files/home/.local/bin/traductor                             i-haklab
 data/data/com.termux/files/home/.local/bin/walkie-tg                             i-haklab
 data/data/com.termux/files/home/.local/etc/bash/bashrc                           i-haklab
@@ -308,6 +309,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/stegsnow.md    
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/storm-breaker.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/sublist3r.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/tangalanga.md   i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/telegram-desktop.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/termux-apk-make.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/termux-desktop-bspwm.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/termux-desktop-xfce.md i-haklab
@@ -395,6 +397,7 @@ data/data/com.termux/files/home/.local/libexec/i-Haklab/show                    
 data/data/com.termux/files/home/.local/libexec/i-Haklab/speedtest                i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/tunnel                   i-haklab
 data/data/com.termux/files/home/.local/libexec/iH-AI.py                          i-haklab
+data/data/com.termux/files/home/.local/libexec/iH-ai-shell.py                    i-haklab
 data/data/com.termux/files/home/.local/libexec/pkg2conf                          i-haklab
 data/data/com.termux/files/home/.local/libexec/preconf                           i-haklab
 data/data/com.termux/files/home/.local/libexec/tips                              i-haklab
