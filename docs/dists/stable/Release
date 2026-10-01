@@ -1,13 +1,13 @@
 Codename: termux
 Version: 1
-Architectures: x86_64 i686 arm aarch64 all
+Architectures: aarch64 arm x86_64 all i686
 Description: stable repository
 Suite: stable
-Date: Thu, 01 Oct 2026 16:43:41 UTC
+Date: Thu, 01 Oct 2026 18:54:52 UTC
 Components: extras lfs
 MD5Sum:
- 5ab112e719b446709f99280058a4d74f 71288 extras/binary-all/Packages
- 0d5ec97f2f2e02a59f66520045a04775 24992 extras/binary-all/Packages.xz
+ 93a7d60056212f95e413b6df27d33603 71288 extras/binary-all/Packages
+ b444d97e815ee3469b2dfce73a71b564 24988 extras/binary-all/Packages.xz
  31fe1e98a8059673a3bdd5be55863d0d 10439 extras/binary-aarch64/Packages
  75e96b974ab7a6b3f322152399ec74e4 4120 extras/binary-aarch64/Packages.xz
  9bf648ba93f94377a97bd7b8109c57e0 648 extras/binary-arm/Packages
@@ -31,8 +31,8 @@ MD5Sum:
  86abfd52f43237bc59e542543fe34598 52592 lfs/Contents-aarch64
  dec37736952d09badc46419785f9c166 3268 lfs/Contents-aarch64.xz
 SHA1:
- a6fb8e80685a6c346c6b17c07f6b79e1f3882950 71288 extras/binary-all/Packages
- efb0764c6f487a63045b6f59dc48dc1da845ed99 24992 extras/binary-all/Packages.xz
+ bd7784f1bc34a1247ccc461698480c8f63105571 71288 extras/binary-all/Packages
+ 21855dd3e64cb6df821978f16da1fc78f3486cf2 24988 extras/binary-all/Packages.xz
  115c48d92ff6ecb2afdab9565f1d57b0e1c137e2 10439 extras/binary-aarch64/Packages
  594d320283a59f2a4abd890243ba2b446a2aad7c 4120 extras/binary-aarch64/Packages.xz
  e258741cebff9fb452aadcf88e561f2d2f040ae1 648 extras/binary-arm/Packages
@@ -56,8 +56,8 @@ SHA1:
  8488ce7af1673da5c2526ef06669c65405972eeb 52592 lfs/Contents-aarch64
  96f3f3fc0cc7a29f52957e79bd8a7b9ee61aba4e 3268 lfs/Contents-aarch64.xz
 SHA256:
- 517de258ee5a018911c9943561617ae338ffeb08dfbc949b506a20d0ff08d956 71288 extras/binary-all/Packages
- 6c401066c0665eaafa135e81fd5647e016b9540245ca368b7904f60dcc329870 24992 extras/binary-all/Packages.xz
+ 058bfc6696d6a83bb209d329591589b2f990ccd353555c3d7102f90aca3f9866 71288 extras/binary-all/Packages
+ 42f7d1485e737b86d9bd715e2f77200ddcfa6e4933a75fdbe734caf29a0a06a4 24988 extras/binary-all/Packages.xz
  6cc7a45f4d4a6bbb9a499be16da8495c3cd6aadc2512de9062bec449dfe155c9 10439 extras/binary-aarch64/Packages
  450f3a2e1aff034868d60fb1235ffceab73ba9c4a5c3956137f7d2528a3390f7 4120 extras/binary-aarch64/Packages.xz
  12072025524bff02bcc94b8f0e24b76c0ce525d00c4457f8c4e31bd5a8a01fcb 648 extras/binary-arm/Packages
@@ -81,8 +81,8 @@ SHA256:
  a25594aedc65ac85231fe529b0ff319277f7309667d61bc981f5645b05105d55 52592 lfs/Contents-aarch64
  f2b4951171b952684c2cee62cb9d7266aa53b11b4ebe93a85bd2794d4206dd11 3268 lfs/Contents-aarch64.xz
 SHA512:
- dbc9d8d7582c7edece6c21b288610167ace3a57f3a9bcce2223adb4c1602b938ece9181aec107a93e522e962bd294b1ab4ce4a9443928f52d1c3c1749f608bc8 71288 extras/binary-all/Packages
- a423879df9d96b29819562e3ca132c6d10dd80df607e08aac8d86c4eebbeb5f89560aadb4007bbe24cf1d83b11a6c08499c76a0f00f4ce20044b59b6b153bed7 24992 extras/binary-all/Packages.xz
+ df4820b837282b6eb80b7730f1e63486066e6a0c6edd066dbce5351636d20031a4dd5ee34621bf93867b6b0acab55729827c14e4e05c0f025f83c4dcfa425ef5 71288 extras/binary-all/Packages
+ 7b42e34266300ed81cb380c16f401d4651b37972e87acbdf11ce875b16bbe9afa0421c4a580f602866959697f35c27edda11e1aa44f22553c864f7f5b7496f97 24988 extras/binary-all/Packages.xz
  bfa506e569b48ee2ebda3c7abb701ced8550c8f39c15fc777f8fd022362d96754fab21cc0a14d89eb06f1e97e2578597bee193d019725e1acf297d99751a254f 10439 extras/binary-aarch64/Packages
  c62aeea3fa2b0d51dade373572be57302c2cc9053dd465a0f235d0e0572aec2d6c0fb299b59f007441726660f69df2b2d2dea28943c953b5f50b58dd6f941f43 4120 extras/binary-aarch64/Packages.xz
  189799a59b800688623a42bf35d956406b819dc52863075da5b39ad9019b90148ab475a7e95949d8fe314ea16b0b465ce1448fca060357b3c82716402c2938df 648 extras/binary-arm/Packages
