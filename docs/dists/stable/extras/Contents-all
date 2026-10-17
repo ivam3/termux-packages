@@ -396,6 +396,7 @@ data/data/com.termux/files/home/.local/libexec/i-Haklab/setuser                 
 data/data/com.termux/files/home/.local/libexec/i-Haklab/show                     i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/speedtest                i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/tunnel                   i-haklab
+data/data/com.termux/files/home/.local/libexec/i-Haklab/txt2media                i-haklab
 data/data/com.termux/files/home/.local/libexec/iH-AI.py                          i-haklab
 data/data/com.termux/files/home/.local/libexec/iH-ai-shell.py                    i-haklab
 data/data/com.termux/files/home/.local/libexec/pkg2conf                          i-haklab

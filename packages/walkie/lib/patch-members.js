@@ -135,8 +135,8 @@ ${ROSTER_CODE}`
   },
   {
     name: 'append rosterCtx to the prompt passed to the runner',
-    from: `          const out = await askFn(prompt, sessionId, opts.model, extraArgs)`,
-    to: `          const out = await askFn(prompt + rosterCtx, sessionId, opts.model, extraArgs)`
+    from: `            out = await askFn(prompt, sessionId, opts.model, extraArgs)`,
+    to: `            out = await askFn(prompt + rosterCtx, sessionId, opts.model, extraArgs)`
   }
 ]
 

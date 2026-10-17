@@ -136,8 +136,8 @@ async function runOllama(prompt, sessionId, model, extraArgs) {
 const replacements = [
   {
     name: 'relax --cli validation',
-    from: `    if (cli !== 'claude' && cli !== 'codex') {
-      console.error(\`Error: unsupported CLI "\${cli}". Use "claude" or "codex".\`)
+    from: `    if (cli !== 'claude' && cli !== 'codex' && cli !== 'pi') {
+      console.error(\`Error: unsupported CLI "\${cli}". Use "claude", "codex" or "pi".\`)
       process.exit(1)
     }`,
     to: `    ${MARKER}`
@@ -151,21 +151,19 @@ const replacements = [
   },
   {
     name: 'register --skip-git-repo-check option',
-    from: `  .option('--name <name>', 'Agent display name')
-  .option('--agent-args <args>', 'Extra CLI arguments passed to claude/codex (e.g. "--dangerously-skip-permissions")')`,
-    to: `  .option('--name <name>', 'Agent display name')
-  .option('--agent-args <args>', 'Extra CLI arguments passed to claude/codex (e.g. "--dangerously-skip-permissions")')
+    from: `  .option('--agent-args <args>', 'Extra CLI arguments passed to claude/codex (e.g. "--dangerously-skip-permissions")')`,
+    to: `  .option('--agent-args <args>', 'Extra CLI arguments passed to claude/codex (e.g. "--dangerously-skip-permissions")')
   .option('--skip-git-repo-check', 'Skip the git repository check (only forwarded to agents that support it, e.g. codex)')`
   },
   {
     name: 'wire generic runner into askFn',
-    from: `    const askFn = cli === 'claude' ? runClaude : runCodex`,
-    to: `    const askFn = cli === 'claude' ? runClaude : (cli === 'codex' ? (p, s, m, a) => runCodex(p, s, m, [...(a || []), ...(opts.skipGitRepoCheck ? ['--skip-git-repo-check'] : [])]) : (cli === 'ollama' ? runOllama : (p, s, m, a) => runGeneric(cli, p, s, m, a)))`
+    from: `    const askFn = cli === 'claude' ? runClaude : cli === 'codex' ? runCodex : runPi`,
+    to: `    const askFn = cli === 'claude' ? runClaude : (cli === 'codex' ? (p, s, m, a) => runCodex(p, s, m, [...(a || []), ...(opts.skipGitRepoCheck ? ['--skip-git-repo-check'] : [])]) : (cli === 'pi' ? runPi : (cli === 'ollama' ? runOllama : (p, s, m, a) => runGeneric(cli, p, s, m, a))))`
   },
   {
     name: 'await async runners (ollama)',
-    from: `          const out = askFn(prompt, sessionId, opts.model, extraArgs)`,
-    to: `          const out = await askFn(prompt, sessionId, opts.model, extraArgs)`
+    from: `            out = askFn(prompt, sessionId, opts.model, extraArgs)`,
+    to: `            out = await askFn(prompt, sessionId, opts.model, extraArgs)`
   }
 ]
 
