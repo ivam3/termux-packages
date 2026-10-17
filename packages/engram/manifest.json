@@ -5,7 +5,9 @@
   "homepage": "https://github.com/Gentleman-Programming/engram",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
   "depends": [
-    "git, golang"
+    "git",
+    "golang",
+    "curl"
   ],
   "suggests": [
     "i-haklab"

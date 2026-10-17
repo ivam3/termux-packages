@@ -1,23 +1,42 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
 
-echo "Cloning repository ..."
-git clone --quiet https://github.com/Gentleman-Programming/engram ${HOME}/.local/share/engram
+# ==============================
+# RESOLVE LATEST RELEASE
+# ==============================
+echo "Resolving latest engram release ..."
+latest=$(curl -sI "https://github.com/Gentleman-Programming/engram/releases/latest" \
+    | grep -i '^location:' | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
+if [[ -z $latest ]]; then
+    latest=$(curl -s 'https://proxy.golang.org/github.com/!gentleman-!programming/engram/v3/@latest' \
+        | grep -oE '"Version":"[^"]+"' | cut -d'"' -f4)
+fi
+if [[ -z $latest ]]; then
+    echo -en "\e[31mE:\e[0m Could not resolve latest engram version ... \e[33mAborting.\e[0m\n"
+    exit 1
+fi
 
-[[ -d ${HOME}/.local/share/engram ]] && {
-    echo "Installing requirements ...";
-    cd engram
-    go install ./cmd/engram
-    chmod 751 -R ${HOME}/.local/share/engram;
-    if [[ -f ${HOME}/go/bin/engram ]]; then
-        echo "[✔] engram installation finished."
-        echo "[💡] Run 'engram serve' to init init the server."
-        echo "[💡] Run 'engram setup <AI agent name>' to setup your agent."
-        echo "[➡] Run 'engram' to execute it."
-    fi
-} || {
-  echo -en "\e[31mE:\e[0m engram directory missing ... \e[33mAborting.\e[0m\n";
+# ==============================
+# BUILD FROM SOURCE (pinned tag)
+# ==============================
+echo "Installing engram ${latest} ..."
+export GO111MODULE=on
+export CGO_ENABLED=0
+go install "github.com/Gentleman-Programming/engram/v3/cmd/engram@${latest}" || {
+    echo -en "\e[31mE:\e[0m engram build failed ... \e[33mAborting.\e[0m\n"
+    exit 1
 }
+
+if [[ -x ${HOME}/go/bin/engram ]]; then
+    chmod 751 ${HOME}/go/bin/engram
+    echo "[✔] engram ${latest} installation finished."
+    echo "[💡] Run 'engram serve' to init the server."
+    echo "[💡] Run 'engram setup <AI agent name>' to setup your agent."
+    echo "[➡] Run 'engram' to execute it."
+else
+    echo -en "\e[31mE:\e[0m engram binary missing ... \e[33mAborting.\e[0m\n"
+    exit 1
+fi
 
 # ==============================
 # INSTALLING SCRIPT FIXER

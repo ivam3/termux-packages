@@ -387,16 +387,16 @@ Version: 3.4.0-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
-Depends: git, golang
+Depends: git, golang, curl
 Suggests: i-haklab
 Homepage: https://github.com/Gentleman-Programming/engram
 Description: Persistent memory system for AI coding agents
 Filename: dists/stable/extras/binary-all/engram_3.4.0-1_all.deb
-Size: 2328
-MD5Sum: ce6b7ea55bd5ebca19349463de330f72
-SHA1: 5d759ddd20d4d5b66fc01c9d095ead9b9e1be905
-SHA256: 4caae5edd1029bdc29298e9a8f63b7bc6d547fe1354aa97eab505818c9d094a1
-SHA512: 56c30b488682d1ae3800aeb037c76006c7a32c39ada395852a722a6d5e9c6053212efb32b50874caf1cc7bc2e421bc8c2ea45bbb052d854b7f2a5c743b4bbb1d
+Size: 2280
+MD5Sum: fbc53caf2c11574c14f9d4fa0f2dfda9
+SHA1: 70db2a6e47cb2cddeaa81937dd98b19ffa9a1a40
+SHA256: d89235cdf9996448e23ad6cb53b4c3df9afd08c463b08a5f8f60a12bfc4fcfb6
+SHA512: 154713bea5a4f81a1071d31d735f41cbcbe90dcea604fc771555837faf88b21024946d87393c88125725cdfa4dddaf084029dc64fb3bfa236193f7017f672b52
 
 Package: enum4linux-ng
 Version: 1.3.10

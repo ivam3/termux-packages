@@ -1,10 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/bash
 tool="engram"
 
-[[ -d ${HOME}/go/pkg/mod/ ]] && {
-	gob=$(find ${HOME}/go/ -iname "*gentleman*")
-  [[ -d $gob ]] && { rm -rf $gob ;}
-  [[ -h ${HOME}/.local/share/$tool ]] && { rm -rf ${HOME}/.local/share/$tool;}
-  [[ -e ${HOME}/go/bin/$tool ]] && { rm ${HOME}/go/bin/$tool;}
-}
+[[ -e ${HOME}/go/bin/$tool ]] && rm -f ${HOME}/go/bin/$tool
+[[ -d ${HOME}/.local/share/$tool ]] && rm -rf ${HOME}/.local/share/$tool
+[[ -d ${HOME}/go/pkg/mod/github.com ]] && \
+    find ${HOME}/go/pkg/mod/github.com -maxdepth 1 -iname "*gentleman*" -exec rm -rf {} + 2>/dev/null
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
