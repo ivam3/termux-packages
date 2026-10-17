@@ -78,7 +78,7 @@ SHA256: eebafd6228a7ba9c02ccec4ced4404086f96512ad80f1b25d1677fd66505374e
 SHA512: acb7dbc379c2b35ad9fa702b6ebb2ca526e0ae6172767d8d19cf0edb4e2173bacea980361e04cf6e12e6cb120e384fe31c8eb3f7471664d272646c87ed32f278
 
 Package: herdr
-Version: 0.9.0-1
+Version: 0.9.5-1
 Architecture: aarch64
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 2
@@ -86,12 +86,12 @@ Depends: curl, coreutils, gawk
 Suggests: i-haklab
 Homepage: https://github.com/herdrdev/herdr
 Description: the runtime your coding agents live on - static binary for Termux (installs to $PREFIX/bin via postinst, always latest stable)
-Filename: dists/stable/extras/binary-aarch64/herdr_0.9.0-1_aarch64.deb
-Size: 4724
-MD5Sum: e86a4509e2b474278ceb881dcffc79d7
-SHA1: 6406a53816228d4fc4c32f316b9a69d3a959f161
-SHA256: fe48456c5c379342f6a039951924eecb8fef5e830bb9150ad7bdbf0f78b8333d
-SHA512: c7a00dbe0d685c0f2eeada0455b0e7a696157c82aecdabfb13ea654dec633aa8599e28edcf425555f1459cdc4dcfcd898ed4aa2b5d1f21f5ef9fbe20fb7794f3
+Filename: dists/stable/extras/binary-aarch64/herdr_0.9.5-1_aarch64.deb
+Size: 4720
+MD5Sum: 1d5f9d7a9ee445f1f285c9935de9c333
+SHA1: 79d1aab0b1abb457a08e319c01f39fd1d27589f4
+SHA256: 4f729c25bddbd77103d6eed469755af146f81bbd1a97bc7a99a45c61482452d9
+SHA512: dfdaa35dcbc680882a17e86cb5e05d0b7c234d09fbf0f2b584c60e8bfd64ec4d856f61d4bdddb89dbbd596a648fd829032999ce120ddc4e3dce92693678dda6e
 
 Package: mimocode
 Version: 0.1.15-1
