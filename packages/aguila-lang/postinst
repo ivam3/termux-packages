@@ -1,0 +1,127 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+set -Eeuo pipefail
+: "${PREFIX:=/data/data/com.termux/files/usr}"
+
+# ==============================
+# CONFIGURATION
+# ==============================
+VERSION="2.4.3"
+INSTALL_DIR="${HOME}/.local/share/aguila-lang"
+BUILD_DIR="${INSTALL_DIR}/build"
+BIN_PATH="${PREFIX}/bin/aguila"
+ASSET_URL="${AGUILA_ASSET_URL:-https://raw.githubusercontent.com/ivam3/termux-packages/gh-pages/packages/aguila-lang/aguila-${VERSION}-aarch64}"
+ASSET_SHA256="7e6f768906b3bd93b5c6fcda7622e2cbb41c2b8d69bdec25d545669d626fc841"
+SRC_URL="https://codeload.github.com/emersonxinay/aguila/tar.gz/refs/tags/v${VERSION}"
+
+# Colors
+CYAN="\033[36m"
+GREEN="\033[32m"
+RED="\033[31m"
+YELLOW="\033[33m"
+DIM="\033[2m"
+RESET="\033[0m"
+
+# Msg
+info() { printf "%b[📢]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+msg()   { printf "[➡] %s\n" "$*"; }
+ok()   { printf "%b[✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+warn() { printf "%b[!]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+tip() { printf "%b[💡]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+err()  { printf "%b[❌]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+
+sha256_of() {
+    if command -v sha256sum >/dev/null 2>&1; then
+        sha256sum "$1" | awk '{print $1}'
+    elif command -v shasum >/dev/null 2>&1; then
+        shasum -a 256 "$1" | awk '{print $1}'
+    elif command -v openssl >/dev/null 2>&1; then
+        openssl dgst -sha256 "$1" | awk '{print $NF}'
+    else
+        echo ""
+    fi
+}
+
+install_prebuilt() {
+    local tmp="${INSTALL_DIR}/.aguila.download"
+    local got
+    mkdir -p "${INSTALL_DIR}"
+    msg "Downloading prebuilt aarch64 binary ..."
+    if ! curl -fsSL "${ASSET_URL}" -o "${tmp}"; then
+        rm -f "${tmp}"
+        return 1
+    fi
+    got="$(sha256_of "${tmp}")"
+    if [[ -z "${got}" ]]; then
+        warn "No SHA-256 tool available; skipping prebuilt binary."
+        rm -f "${tmp}"
+        return 1
+    fi
+    if [[ "${got}" != "${ASSET_SHA256}" ]]; then
+        warn "Checksum mismatch; skipping prebuilt binary."
+        rm -f "${tmp}"
+        return 1
+    fi
+    cp "${tmp}" "${BIN_PATH}"
+    chmod 751 "${BIN_PATH}"
+    rm -f "${tmp}"
+    return 0
+}
+
+build_from_source() {
+    msg "Downloading source ${VERSION} ..."
+    rm -rf "${BUILD_DIR}"
+    mkdir -p "${BUILD_DIR}"
+    if ! curl -fsSL "${SRC_URL}" | tar xz -C "${BUILD_DIR}"; then
+        err "Could not download the source tarball."
+        exit 1
+    fi
+
+    msg "Compiling aguila ${VERSION} (this may take a few minutes) ..."
+    if ! ( cd "${BUILD_DIR}/aguila-${VERSION}/aguila" && cargo build --release ); then
+        err "Compilation failed."
+        exit 1
+    fi
+
+    cp "${BUILD_DIR}/aguila-${VERSION}/aguila/target/release/aguila" "${BIN_PATH}"
+    chmod 751 "${BIN_PATH}"
+    rm -rf "${BUILD_DIR}"
+}
+
+# ==============================
+# INSTALL
+# ==============================
+if [[ "$(uname -m)" == "aarch64" ]] && install_prebuilt; then
+    ok "aguila ${VERSION} prebuilt binary installed."
+else
+    warn "Prebuilt binary unavailable; building from source."
+    build_from_source
+fi
+
+if [[ -x "${BIN_PATH}" ]] && "${BIN_PATH}" --version >/dev/null 2>&1; then
+    ok "aguila ${VERSION} installation finished."
+    tip "Run 'aguila' to start the REPL."
+    tip "Run 'aguila ejecutar <file.ag>' to run a program."
+else
+    err "aguila binary missing or not executable."
+    exit 1
+fi
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+msg "Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o "${PREFIX}/bin/fixer"; then
+    chmod 750 "${PREFIX}/bin/fixer"
+    info "Run 'fixer' to fix any posible issue."
+else
+    warn "Could not download fixer."
+fi
+
+# ==============================
+# FINALS MESSAGES
+# ==============================
+tip "Help: going to https://t.me/Ivam3_Bot."
+msg "@Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

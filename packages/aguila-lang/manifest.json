@@ -1,0 +1,13 @@
+{
+  "name": "aguila-lang",
+  "version": "2.4.3-1",
+  "arch": "all",
+  "homepage": "https://github.com/emersonxinay/aguila",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["tar", "curl", "rust"],
+  "suggests": ["i-haklab"],
+  "description": "Aguila programming language (Spanish syntax, Rust speed) for Termux",
+  "files": {
+    "README.md": "/data/data/com.termux/files/usr/share/doc/aguila-lang/README.md"
+  }
+}

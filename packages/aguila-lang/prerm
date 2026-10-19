@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+set -Eeuo pipefail
+: "${PREFIX:=/data/data/com.termux/files/usr}"
+
+rm -f "${PREFIX}/bin/aguila"
+rm -rf "${HOME}/.local/share/aguila-lang"
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
