@@ -15,12 +15,14 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [i-Haklab](https://github.com/ivam3/i-Haklab) | Ciber-security and pentesting laboratory for Termux |
 | [acccheck](https://github.com/qashqao/acccheck) | Windows SMB Password Dictionary Attack Tool |
 | [adbfastboot](https://developer.android.com/studio/command-line/adb) | Versatile command-line tool that facilitates a variety of device actions |
+| [aguila-lang](https://github.com/emersonxinay/aguila) | Aguila programming language (Spanish syntax, Rust speed) for Termux |
 | [aircrack-ng](https://github.com/aircrack-ng/aircrack-ng) | WiFi security auditing tools suite |
 | [amass](https://github.com/OWASP/Amass) | In-depth Attack Surface Mapping and Asset Discovery |
 | [androidsdk-cli](https://developer.android.com/studio/index.html#command-tools) | Official command line Integrated Development Environment (IDE) for Android app development |
 | [antigravity-cli](https://github.com/google-antigravity/antigravity-cli) | Official Antigravity CLI with real-time VA39 memory patching for Termux |
 | [apktool](https://bitbucket.org/iBotPeaches/apktool/downloads) | command-line tool used for reverse engineering Android application package (APK) |
 | [appshark](https://github.com/bytedance/appshark) | An static taint analysis platform to scan vulnerabilities in an Android app |
+| [argus](https://github.com/jasonxtn/Argus) | All-in-one Python-powered toolkit for information gathering and reconnaissance |
 | [axmlprinter2](https://code.google.com/archive/p/android4me) | Prints XML document from binary XML file (with correct namespace handing & attribute formatting) |
 | [azure-cli](https://learn.microsoft.com/en-us/cli/azure/) | Set of commands used to create and manage Azure resources |
 | [beef](https://www.beefproject.com) | powerful and intuitive security tool focuses on leveraging browser vulnerabilities to assess the security posture of a target |
@@ -82,14 +84,18 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [muse-code](https://developer.meta.com/ai/products/muse-code) | Meta Muse Code interactive terminal AI coding agent. |
 | [ngrok](https://ngrok.com) | Globally distributed reverse proxy fronting your web services running in any cloud or private network, or your machine. |
 | [nikto](https://github.com/sullo/nikto) | A web server scanner. |
+| [ntlmrelayx](https://github.com/fortra/impacket) | Impacket ntlmrelayx tool to perform NTLM relay attacks (SMB, HTTP, LDAP, MSSQL, WinRM, etc.). |
+| [omniroute](https://github.com/diegosouzapw/OmniRoute) | Smart AI Router with 160+ providers, auto-fallback and OpenAI-compatible APIs (Termux-native) |
 | [openclaw](https://github.com/AidanPark/openclaw-android) | Open-source autonomous artificial intelligence agent. |
 | [opencode](https://github.com/opencode-ai/opencode) | A powerful AI coding agent. Built for the terminal patching for Termux. |
+| [opencode-v2](https://github.com/anomalyco/opencode) | OpenCode v2 AI coding agent (native glibc, coexists with opencode v1). |
 | [openjdk-21](https://jdk.java.net/) | Java development kit and runtime. |
 | [osintgram](https://github.com/datalux/Osintgram) | A OSINT tool on Instagram. It offers an interactive shell to perform analysis on Instagram account of any users by its nickname. |
 | [ovh-ttyrec](https://github.com/ovh/ovh-ttyrec) | Terminal recorder and player (an alternative of ttyrec). |
 | [penelope](https://github.com/brightio/penelope) | A powerful shell handler built as a modern netcat replacement for RCE exploitation, aiming to simplify, accelerate, and optimize post-exploitation workflows. |
 | [phonesploit](https://github.com/aerosol-can/PhoneSploit) | A tool for remote ADB exploitation for all Machines. |
 | [playwright-proot](https://playwright.dev) | Playwright CLI for Termux via proot-distro Ubuntu. Enables browser automation (snapshot, screenshot, click, fill) for testing PWAs and web apps on Android |
+| [polenum](https://github.com/Wh1t3Fox/polenum) | Extracts the password policy information from a Windows machine using the Impacket library |
 | [proroot](https://github.com/coderredlab/proroot) | Rootless Linux runtime for Android. Drop-in proot replacement with zero ptrace overhead. Run full glibc Linux userspace (Node.js, Python, Git, Chromium) inside Android without root. |
 | [PuTTY](https://www.ssh.com/academy/ssh/putty/linux) | Graphical terminal program that supports the SSH, telnet, and rlogin protocols and connecting to serial ports. |
 | [quack](https://github.com/Monkey-hk4/quack) | Toolkit with SMS attack tool, HTTP attack tool and many other attack tools. |
@@ -100,10 +106,10 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [shc](http://www.datsi.fi.upm.es/~frosal/sources/shc.html) | The Shell Script Compiler (SHC) encodes and encrypts shell scripts into executable binaries. |
 | [sherlock](https://github.com/sherlock-project/sherlock) | Hunt down social media accounts by username across social networks. |
 | [slowhttptest](https://github.com/shekyan/slowhttptest) | A highly configurable tool that simulates some Application Layer Denial of Service attacks by prolonging HTTP connections in different ways. |
-| [spix](https://github.com/VictorH028/spix) | A command line (CLI) tool written in C++ that displays an animated spinner while a background process is running. |
 | [stegsnow](https://www.kali.org/tools/stegsnow/) | Hide messages in ASCII text by appending whitespaces to the end of lines |
 | [sublist3r](https://github.com/aboul3la/Sublist3r) | Fast subdomains enumeration tool for penetration testers. |
-| [termux-desktop-xfce](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/termux-desktop-xfce/README.md) | Set up a beautiful xfce desktop in termux. |
+| [termux-desktop-bspwm](https://github.com/baskerville/bspwm) | Meta-package and default configs for a bspwm tiling desktop on termux-x11. |
+| [termux-desktop-xfce](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/termux-desktop-xfce/README.md) | Set up a beautiful xfce desktop on termux-x11. |
 | [termux-docker-qemu](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/termux-docker-qemu/README.md) | Manage Docker containers from Linux VMs (x86/x86_64/ARMv7/AArch64) using QEMU. Includes VirtIO-GPU acceleration via virgl. |
 | [termux-oracle-skill](https://github.com/ivam3/termux-oracle) | Termux skill for AI coding agents with all context about termux, i-Haklab and Ivam3 termux-packages. |
 | [unshc](https://github.com/yanncam/UnSHc) | The Shell Script UnCompiler (UNSHC) decode and decrypt SHC file on X86/x64 architecture. |
@@ -114,6 +120,7 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [whatweb](https://github.com/urbanadventurer/WhatWeb) | Recognises web technologies including content management systems (CMS), blogging platforms, statistic/analytics packages, JavaScript libraries, web servers, and embedded devices. |
 | [wpscan](https://github.com/wpscanteam/wpscan) | WordPress security scanner. |
 | [xapt-management](https://github.com/ivam3/xapt-management) | X-Desktop graphical interface for advance package tool(APT) written in python. |
+| [xleak](https://github.com/bgreenwell/xleak) | A fast terminal Excel viewer with an interactive TUI |
 | [xml2axml](https://github.com/codyi96/xml2axml) | Encoding xml to axml OR decoding axml to xml |
 | [zaproxy](https://www.kali.org/tools/zaproxy/) | The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications |
 | [zcode](https://zcode.z.ai) | AI vibe coding harness (GLM-5.3) native glibc aarch64 for termux-x11 |
