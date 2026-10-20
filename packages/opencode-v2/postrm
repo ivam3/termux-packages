@@ -1,0 +1,11 @@
+#!/data/data/com.termux/files/usr/bin/bash
+case "${1:-}" in
+    purge)
+        rm -rf "${HOME}/.opencode-v2" "${HOME}/.local/share/opencode-v2" 2>/dev/null
+        echo "Purged opencode-v2 data."
+        ;;
+    *)
+        echo "Done. Package 'opencode-v2' removed."
+        ;;
+esac
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

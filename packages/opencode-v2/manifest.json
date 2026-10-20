@@ -1,0 +1,22 @@
+{
+  "name": "opencode-v2",
+  "version": "2.0.32-1",
+  "arch": "aarch64",
+  "homepage": "https://github.com/anomalyco/opencode",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": [
+    "glibc",
+    "clang",
+    "patchelf",
+    "curl",
+    "tar"
+  ],
+  "suggests": [
+    "i-haklab"
+  ],
+  "description": "OpenCode v2 AI coding agent. Native glibc build for Termux, coexists with opencode v1.",
+  "files": {
+    "lib/opencode_helper.c": "/data/data/com.termux/files/usr/share/opencode-v2/opencode_helper.c",
+    ".env": "/data/data/com.termux/files/usr/share/opencode-v2/env.example"
+  }
+}

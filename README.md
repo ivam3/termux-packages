@@ -88,6 +88,7 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [omniroute](https://github.com/diegosouzapw/OmniRoute) | Smart AI Router with 160+ providers, auto-fallback and OpenAI-compatible APIs (Termux-native) |
 | [openclaw](https://github.com/AidanPark/openclaw-android) | Open-source autonomous artificial intelligence agent. |
 | [opencode](https://github.com/opencode-ai/opencode) | A powerful AI coding agent. Built for the terminal patching for Termux. |
+| [opencode-v2](https://github.com/anomalyco/opencode) | OpenCode v2 AI coding agent (native glibc, coexists with opencode v1). |
 | [openjdk-21](https://jdk.java.net/) | Java development kit and runtime. |
 | [osintgram](https://github.com/datalux/Osintgram) | A OSINT tool on Instagram. It offers an interactive shell to perform analysis on Instagram account of any users by its nickname. |
 | [ovh-ttyrec](https://github.com/ovh/ovh-ttyrec) | Terminal recorder and player (an alternative of ttyrec). |

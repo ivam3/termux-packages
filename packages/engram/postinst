@@ -29,6 +29,7 @@ go install "github.com/Gentleman-Programming/engram/v3/cmd/engram@${latest}" || 
 
 if [[ -x ${HOME}/go/bin/engram ]]; then
     chmod 751 ${HOME}/go/bin/engram
+    rm -f ${HOME}/go/bin/engram.real
     echo "[✔] engram ${latest} installation finished."
     echo "[💡] Run 'engram serve' to init the server."
     echo "[💡] Run 'engram setup <AI agent name>' to setup your agent."

@@ -125,6 +125,22 @@ SHA1: bf365988b598321ab772c860896f4a91affcafdb
 SHA256: 14cf73033ee3ee083cf10ec39711a97f538d901f8543b859b281b3cd5d484f1e
 SHA512: 70f33b7bf4338f6259ec8de7c03fedb10e84d996b8124b91f5eb4a20361f09999e63fe9b0d6c3ec4d4153958730fe167b1e70f006c208ed7c276968092db294d
 
+Package: opencode-v2
+Version: 2.0.32-1
+Architecture: aarch64
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 3
+Depends: glibc, clang, patchelf, curl, tar
+Suggests: i-haklab
+Homepage: https://github.com/anomalyco/opencode
+Description: OpenCode v2 AI coding agent. Native glibc build for Termux, coexists with opencode v1.
+Filename: dists/stable/extras/binary-aarch64/opencode-v2_2.0.32-1_aarch64.deb
+Size: 4032
+MD5Sum: f8ab88231626bacafdaa0dfba9b4b942
+SHA1: bc0298d29f3a502c6c94b6405f1742cfaef9ace4
+SHA256: 1575cffeaaa6f1d8b8c59c4789d32a16d3012c4b3a93d40b7a7b7ebe6b5ec15c
+SHA512: 753304132a5867cb0d42098fc6072346bc3e674613dbec021ede54ad9007e727bc7b7a44322c1b26e5980a0e714c77cc8dbffed0e2a3e4998d55136b66a59dbd
+
 Package: opencode
 Version: 1.19.3-1
 Architecture: aarch64

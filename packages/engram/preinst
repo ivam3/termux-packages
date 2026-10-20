@@ -7,5 +7,6 @@ else
   echo "Preparing enviroment ..."
   [[ -d ${HOME}/.local/share/engram ]] && rm -rf ${HOME}/.local/share/engram
   [[ -e ${HOME}/go/bin/engram ]] && rm -f ${HOME}/go/bin/engram
+  [[ -e ${HOME}/go/bin/engram.real ]] && rm -f ${HOME}/go/bin/engram.real
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

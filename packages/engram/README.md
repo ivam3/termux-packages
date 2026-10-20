@@ -12,7 +12,7 @@ pkg install engram
 
 | Field | Value |
 |-------|-------|
-| Version | `3.4.0-1` |
+| Version | `3.4.0-2` |
 | Architecture | `all` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [engram](https://github.com/Gentleman-Programming/engram) |

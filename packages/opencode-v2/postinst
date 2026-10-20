@@ -1,0 +1,119 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# opencode-v2 Termux - Native Post-Installation Script
+set -Eeuo pipefail
+
+VERSION="2.0.32"
+PKG_NAME="cli-linux-arm64"
+DOWNLOAD_URL="https://registry.npmjs.org/@opencode/cli-linux-arm64/-/${PKG_NAME}-${VERSION}.tgz"
+INSTALL_BIN_DIR="${PREFIX}/bin"
+SHARE_DIR="${HOME}/.local/share/opencode-v2"
+CONFIG_DIR="${HOME}/.opencode-v2"
+CACHE_DIR="${PREFIX}/tmp/opencode-v2"
+CACHE_TARBALL="${CACHE_DIR}/${PKG_NAME}-${VERSION}.tgz"
+STAGING_DIR="${SHARE_DIR}/.staging"
+
+CYAN="\033[36m"
+GREEN="\033[32m"
+RED="\033[31m"
+DIM="\033[2m"
+RESET="\033[0m"
+
+info() { printf "%b[..]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+ok()   { printf "%b [\xE2\x9C\x94]%b %s\n" "$GREEN" "$RESET" "$*"; }
+msg()  { printf "%b[\xF0\x9F\x93\xA2]%b %s\n" "$CYAN" "$RESET" "$*"; }
+err()  { printf "%b[ERR]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+
+cleanup() {
+    info "Cleaning up temporary files..."
+    rm -rf "$STAGING_DIR"
+}
+trap cleanup EXIT
+
+mkdir -p "$CACHE_DIR" "$STAGING_DIR" "$SHARE_DIR" "$CONFIG_DIR" "$INSTALL_BIN_DIR"
+
+# 1. Download and extract the pinned v2 binary
+if [[ -f "$CACHE_TARBALL" ]]; then
+    info "Using cached opencode-v2 ${VERSION} archive..."
+else
+    info "Downloading opencode-v2 ${VERSION} (glibc)..."
+    if ! curl -fsSL --retry 3 -o "$CACHE_TARBALL" "$DOWNLOAD_URL"; then
+        err "Failed to download opencode-v2."
+        exit 1
+    fi
+fi
+
+info "Extracting binary..."
+tar -xzf "$CACHE_TARBALL" -C "$STAGING_DIR"
+if [[ -f "$STAGING_DIR/package/bin/opencode" ]]; then
+    mv -f "$STAGING_DIR/package/bin/opencode" "$SHARE_DIR/opencode.real"
+elif [[ -f "$STAGING_DIR/opencode" ]]; then
+    mv -f "$STAGING_DIR/opencode" "$SHARE_DIR/opencode.real"
+else
+    err "Binary not found in archive."
+    exit 1
+fi
+chmod +x "$SHARE_DIR/opencode.real"
+ok "Binary installed to $SHARE_DIR/opencode.real"
+
+# 1b. Point the binary at the Termux glibc loader so Bun can re-exec itself.
+# Without this, process.execPath stays on the loader and the background
+# server dies with "'serve': cannot open shared object file".
+if ! command -v patchelf >/dev/null 2>&1; then
+    err "patchelf not found. Run 'pkg install patchelf' and retry."
+    exit 1
+fi
+
+info "Patching ELF interpreter..."
+# Only the interpreter: adding an rpath makes patchelf rewrite the Bun
+# executable in a way that corrupts it (SIGSEGV). The Termux glibc loader
+# already resolves its libraries from ${PREFIX}/glibc/lib.
+if patchelf --set-interpreter "${PREFIX}/glibc/lib/ld-linux-aarch64.so.1" \
+            "$SHARE_DIR/opencode.real"; then
+    ok "Interpreter: $(patchelf --print-interpreter "$SHARE_DIR/opencode.real")"
+else
+    err "patchelf failed."
+    exit 1
+fi
+
+# 2. Compile the native bootstrapper
+HELPER_SOURCE="${PREFIX}/share/opencode-v2/opencode_helper.c"
+if [[ ! -f "$HELPER_SOURCE" ]]; then
+    if [[ -f "./lib/opencode_helper.c" ]]; then
+        HELPER_SOURCE="./lib/opencode_helper.c"
+    else
+        err "Source opencode_helper.c not found."
+        exit 1
+    fi
+fi
+
+info "Compiling native bootstrapper..."
+if clang -O2 -o "$INSTALL_BIN_DIR/opencode-v2" "$HELPER_SOURCE"; then
+    chmod +x "$INSTALL_BIN_DIR/opencode-v2"
+    ok "Bootstrapper installed: $INSTALL_BIN_DIR/opencode-v2"
+else
+    err "Compilation failed."
+    exit 1
+fi
+
+# 3. Seed the isolated env file only if the user does not have one
+if [[ ! -f "$CONFIG_DIR/.env" ]]; then
+    if [[ -f "${PREFIX}/share/opencode-v2/env.example" ]]; then
+        cp -f "${PREFIX}/share/opencode-v2/env.example" "$CONFIG_DIR/.env"
+    elif [[ -f "./.env" ]]; then
+        cp -f "./.env" "$CONFIG_DIR/.env"
+    fi
+    chmod 600 "$CONFIG_DIR/.env" 2>/dev/null || true
+fi
+
+# 4. Verification (non-fatal: TUI needs a terminal, --version does not)
+info "Verifying installation..."
+if timeout 30 "$INSTALL_BIN_DIR/opencode-v2" --version 2>/dev/null; then
+    ok "opencode-v2 installation finished."
+else
+    err "Verification failed, but the package is installed. Run 'opencode-v2 --version'."
+fi
+
+msg "Run 'opencode-v2' to execute v2 (v1 stays as 'opencode')."
+msg "Config and data live in ${CONFIG_DIR} (isolated from v1)."
+info "Help: https://t.me/Ivam3_Bot"
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

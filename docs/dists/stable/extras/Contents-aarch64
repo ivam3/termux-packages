@@ -113,6 +113,8 @@ data/data/com.termux/files/usr/share/doc/herdr/README.md                        
 data/data/com.termux/files/home/.mimocode/.env                                   mimocode
 data/data/com.termux/files/usr/share/mimocode/mimocode_helper.c                  mimocode
 data/data/com.termux/files/usr/bin/muse-code                                     muse-code
+data/data/com.termux/files/usr/share/opencode-v2/env.example                     opencode-v2
+data/data/com.termux/files/usr/share/opencode-v2/opencode_helper.c               opencode-v2
 data/data/com.termux/files/home/.opencode/.env                                   opencode
 data/data/com.termux/files/usr/share/opencode/opencode_helper.c                  opencode
 data/data/com.termux/files/usr/opt/openjdk-21.0.1/include/jawt.h                 openjdk-21-x

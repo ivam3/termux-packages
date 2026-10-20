@@ -2,6 +2,7 @@
 tool="engram"
 
 [[ -e ${HOME}/go/bin/$tool ]] && rm -f ${HOME}/go/bin/$tool
+[[ -e ${HOME}/go/bin/$tool.real ]] && rm -f ${HOME}/go/bin/$tool.real
 [[ -d ${HOME}/.local/share/$tool ]] && rm -rf ${HOME}/.local/share/$tool
 [[ -d ${HOME}/go/pkg/mod/github.com ]] && \
     find ${HOME}/go/pkg/mod/github.com -maxdepth 1 -iname "*gentleman*" -exec rm -rf {} + 2>/dev/null

@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+case "${1:-}" in
+    remove|purge)
+        rm -f "${PREFIX}/bin/opencode-v2"
+        echo "!: opencode-v2 removed. User data preserved in ${HOME}/.opencode-v2 and ${HOME}/.local/share/opencode-v2"
+        ;;
+esac
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
