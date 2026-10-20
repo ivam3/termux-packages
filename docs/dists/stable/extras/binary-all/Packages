@@ -815,20 +815,20 @@ SHA256: 7314363d3c2ea23da381084bc93d3036961f143a20917f3e61e5ab8fe9c374f6
 SHA512: b6fd9867e1d15bd89b2276105215ffc2079ed00a2c00f7e99f8bf70bc99e6be3a000d2f1936eee7258ab9ae456d8a921aea1267850a0a61cdbb73e278379fb9c
 
 Package: i-haklab
-Version: 3.13.22
+Version: 3.13.23
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 26051
+Installed-Size: 26056
 Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, execline, fd, file, findutils, fish, fzf, gawk, git, glibc-repo, glow, golang, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, mandoc, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nodejs-lts, ollama, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, rust, sqlite, strace, tar, tor, torsocks, translate-shell, ttyd, unzip, wget, yazi, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.13.22_all.deb
-Size: 3730708
-MD5Sum: 1128fb11088b89e63af04865bb9de853
-SHA1: baa43e3c3f6d070765a3e4a90b8f6ffc150f7cef
-SHA256: 55613b816fc8ce35666af86fd4e7a14aebd1a778376026d9acac59cbd3eff0df
-SHA512: 0784d0744bf2f5a51f187502b6b8a68c9305c68d07370e5d5f7f812fd9c92cfd5efcd1586766b3061a9b8a9bd6b19c1c3dd54517cb2e16e345ec368edaabf4be
+Filename: dists/stable/extras/binary-all/i-haklab_3.13.23_all.deb
+Size: 3731524
+MD5Sum: 5fb54d6d63c3478198a1990f00092d61
+SHA1: 1073ebdeef46ac2869cfc8d8ec3a7a867d8d2024
+SHA256: 0a05c6c10699fdd386c0117d41a001e6f44a3fe3ab2cca483700264171f3840c
+SHA512: 842cc27094723184bb8e6b07064967f30927ebf21b094828660dea3e1420e918ed8bc43254c553487a4358fdfe0a0a8466c4b4f9fb079c384d76562fe371efb0
 
 Package: infoga
 Version: 1.0
