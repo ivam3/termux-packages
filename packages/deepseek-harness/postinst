@@ -158,6 +158,7 @@ PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
 HOME="${HOME:-/data/data/com.termux/files/home}"
 SHARE_DIR="${HOME}/.local/share/deepseek-harness"
 export PATH="${SHARE_DIR}/bin:${PATH}"
+export NODE_OPTIONS="--require ${PREFIX}/share/deepseek-harness/link-compat.cjs${NODE_OPTIONS:+ ${NODE_OPTIONS}}"
 exec "${PREFIX}/bin/dsh-node" \
   "${SHARE_DIR}/app/node_modules/@deepseek-ai/dsh/lib/bin.js" "$@"
 DSH_WRAPPER
@@ -234,5 +235,14 @@ if curl -fsSL "$fixerURL" -o "$BIN_DIR/fixer"; then
   ok "Fixer installed."
 else
   warn "Could not download fixer."
+fi
+
+printf '\n'
+info "Configura tu API key de DeepSeek antes de usar dsh:"
+if command -v i-Haklab >/dev/null 2>&1; then
+  printf '  Ejecuta: i-Haklab setapikey\n'
+else
+  printf '  Exporta DEEPSEEK_API_KEY en tu archivo rc (~/.bashrc, ~/.zshrc o ~/.config/fish/config.fish).\n'
+  printf '  Ejemplo: export DEEPSEEK_API_KEY="tu_api_key"\n'
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

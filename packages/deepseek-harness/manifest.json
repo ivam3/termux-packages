@@ -24,6 +24,7 @@
   "files": {
     "lib/dsh_node_helper.c": "/data/data/com.termux/files/usr/share/deepseek-harness/dsh_node_helper.c",
     "lib/glibc-compat.js": "/data/data/com.termux/files/usr/share/deepseek-harness/glibc-compat.js",
+    "lib/link-compat.cjs": "/data/data/com.termux/files/usr/share/deepseek-harness/link-compat.cjs",
     "dsh.desktop": "/data/data/com.termux/files/usr/share/applications/dsh.desktop",
     "img/deepseek-logo.png": "/data/data/com.termux/files/usr/share/applications/dsh/img/deepseek-logo.png"
   }

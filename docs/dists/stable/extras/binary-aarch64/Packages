@@ -65,17 +65,17 @@ Package: deepseek-harness
 Version: 0.2.1-1
 Architecture: aarch64
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 28
+Installed-Size: 31
 Depends: glibc, clang, make, python, pkg-config, curl, tar, xz-utils, ca-certificates, bash, coreutils
 Suggests: i-haklab
 Homepage: https://github.com/deepseek-ai/deepseek-harness
 Description: DeepSeek Harness (dsh): AI coding harness. Native glibc Node.js runtime for Termux.
 Filename: dists/stable/extras/binary-aarch64/deepseek-harness_0.2.1-1_aarch64.deb
-Size: 25048
-MD5Sum: e269187b510b266cdd40b94f2d1fb4ad
-SHA1: 5f95cb3044df60114d24fa6f6dad893e54cea757
-SHA256: d4ff1a27c8fb8ec3f68bc36487253d5dcbdba94eb6b27aa23bc9b33540772af9
-SHA512: d288767b101a35ea2e863c1c4d12f24b6190142c0407564e612879b54eb1377759fca57e7dc5508d298fc5584fed18fe312707c597d3a45e60e52133b1d1b3b5
+Size: 25944
+MD5Sum: a49c6ccbf944d870a6e8e05485c669d9
+SHA1: 2f242659927d7c1fe786d1229a3324013220efca
+SHA256: f2ade49ade26bdf2e2d939fcec2d63580508e514b3abbe3381e4e7570f42e724
+SHA512: 52c9585e0765e3c921a3d4e31edb97b7a6d01dbf119894cc8436d98ce194eb3d31e5437b98884455b3ff1fe47c6d88c882aebcc817295e0a3560fdbc83a079b5
 
 Package: freebuff
 Version: 0.2.29-1

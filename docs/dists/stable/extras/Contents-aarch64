@@ -111,6 +111,7 @@ data/data/com.termux/files/usr/share/applications/dsh.desktop                   
 data/data/com.termux/files/usr/share/applications/dsh/img/deepseek-logo.png      deepseek-harness
 data/data/com.termux/files/usr/share/deepseek-harness/dsh_node_helper.c          deepseek-harness
 data/data/com.termux/files/usr/share/deepseek-harness/glibc-compat.js            deepseek-harness
+data/data/com.termux/files/usr/share/deepseek-harness/link-compat.cjs            deepseek-harness
 data/data/com.termux/files/home/.freebuff/.env                                   freebuff
 data/data/com.termux/files/usr/share/freebuff/freebuff_helper.c                  freebuff
 data/data/com.termux/files/usr/share/doc/herdr/README.md                         herdr
