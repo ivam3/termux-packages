@@ -1,0 +1,28 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -Eeuo pipefail
+
+PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
+HOME="${HOME:-/data/data/com.termux/files/home}"
+SHARE_DIR="${HOME}/.local/share/deepseek-harness"
+
+if [[ $(id -u) -eq 0 ]]; then
+  echo -e "\e[31mE:\e[0m You need to be a common user" >&2
+  exit 1
+fi
+
+if [[ ! -e "${PREFIX}/glibc/lib/ld-linux-aarch64.so.1" ]]; then
+  echo -e "\e[31mE:\e[0m glibc-repo package needed. Run 'apt install glibc-repo' and retry" >&2
+  exit 1
+fi
+
+for cmd in curl tar xz clang sha256sum; do
+  if ! command -v "$cmd" >/dev/null 2>&1; then
+    echo -e "\e[31mE:\e[0m Required command not found: ${cmd}" >&2
+    exit 1
+  fi
+done
+
+mkdir -p "${HOME}/.local/share" "${SHARE_DIR}"
+rm -rf "${SHARE_DIR}/.staging"
+echo "Preparing environment for deepseek-harness ..."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

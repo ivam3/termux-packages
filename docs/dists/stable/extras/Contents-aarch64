@@ -107,6 +107,10 @@ data/data/com.termux/files/usr/share/antigravity-cli/agy_helper.c               
 data/data/com.termux/files/usr/share/claude-code/claudecode_helper.c             claude-code
 data/data/com.termux/files/home/.codebuff/.env                                   codebuff
 data/data/com.termux/files/usr/share/codebuff/codebuff_helper.c                  codebuff
+data/data/com.termux/files/usr/share/applications/dsh.desktop                    deepseek-harness
+data/data/com.termux/files/usr/share/applications/dsh/img/deepseek-logo.png      deepseek-harness
+data/data/com.termux/files/usr/share/deepseek-harness/dsh_node_helper.c          deepseek-harness
+data/data/com.termux/files/usr/share/deepseek-harness/glibc-compat.js            deepseek-harness
 data/data/com.termux/files/home/.freebuff/.env                                   freebuff
 data/data/com.termux/files/usr/share/freebuff/freebuff_helper.c                  freebuff
 data/data/com.termux/files/usr/share/doc/herdr/README.md                         herdr

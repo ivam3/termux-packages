@@ -1,0 +1,238 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -Eeuo pipefail
+
+PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
+HOME="${HOME:-/data/data/com.termux/files/home}"
+SHARE_DIR="${HOME}/.local/share/deepseek-harness"
+NODE_DIR="${SHARE_DIR}/node"
+APP_DIR="${SHARE_DIR}/app"
+NPM_GLOBAL_DIR="${SHARE_DIR}/npm-global"
+STAGING="${SHARE_DIR}/.staging"
+BIN_DIR="${PREFIX}/bin"
+HELPER_SRC="${PREFIX}/share/deepseek-harness/dsh_node_helper.c"
+
+NODE_VERSION="24.22.1"
+NODE_TARBALL="node-v${NODE_VERSION}-linux-arm64.tar.xz"
+NODE_URL="https://nodejs.org/dist/v${NODE_VERSION}/${NODE_TARBALL}"
+DSH_VERSION="0.2.1-rc.2"
+PNPM_VERSION="11.28.5"
+
+CYAN="\033[36m"
+GREEN="\033[32m"
+RED="\033[31m"
+YELLOW="\033[33m"
+DIM="\033[2m"
+RESET="\033[0m"
+
+info() { printf "%b[..]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+ok()   { printf "%b[ok]%b %s\n" "$GREEN" "$RESET" "$*"; }
+warn() { printf "%b[!]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+err()  { printf "%b[ERR]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+
+cleanup() {
+  rm -rf "$STAGING"
+}
+trap cleanup EXIT
+
+mkdir -p "$SHARE_DIR" "$BIN_DIR"
+rm -rf "$STAGING"
+mkdir -p "$STAGING"
+
+if [[ ! -f "$HELPER_SRC" ]]; then
+  err "Helper source not found: $HELPER_SRC"
+  exit 1
+fi
+
+info "Downloading Node ${NODE_VERSION} (linux-arm64, glibc)..."
+curl -fL --retry 3 --max-time 600 -o "$STAGING/$NODE_TARBALL" "$NODE_URL"
+curl -fsSL --retry 3 --max-time 120 \
+  -o "$STAGING/SHASUMS256.txt" \
+  "https://nodejs.org/dist/v${NODE_VERSION}/SHASUMS256.txt"
+
+info "Verifying Node archive..."
+(
+  cd "$STAGING"
+  grep -F "  $NODE_TARBALL" SHASUMS256.txt | sha256sum -c -
+)
+
+info "Extracting Node..."
+mkdir -p "$STAGING/node"
+tar -xJf "$STAGING/$NODE_TARBALL" -C "$STAGING/node" --strip-components=1
+if [[ ! -f "$STAGING/node/bin/node" ]]; then
+  err "Node binary not found in archive."
+  exit 1
+fi
+mv "$STAGING/node/bin/node" "$STAGING/node/bin/node.real"
+chmod 755 "$STAGING/node/bin/node.real"
+
+rm -rf "$NODE_DIR"
+mv "$STAGING/node" "$NODE_DIR"
+
+info "Compiling dsh-node bootstrap..."
+clang -O2 -Wall -Wextra -o "$STAGING/dsh-node" "$HELPER_SRC"
+chmod 755 "$STAGING/dsh-node"
+mkdir -p "$STAGING/node-bin"
+ln -sf "$STAGING/dsh-node" "$STAGING/node-bin/node"
+export PATH="$STAGING/node-bin:$PATH"
+
+info "Toolchain check:"
+"$STAGING/dsh-node" -p 'process.platform + "/" + process.arch + "/napi-" + process.versions.napi'
+
+NPM_CLI="$NODE_DIR/lib/node_modules/npm/bin/npm-cli.js"
+if [[ ! -f "$NPM_CLI" ]]; then
+  err "npm CLI not found in Node archive: $NPM_CLI"
+  exit 1
+fi
+
+export npm_config_script_shell="$PREFIX/bin/sh"
+export npm_config_cache="$STAGING/npm-cache"
+export npm_config_update_notifier=false
+export npm_config_libc=glibc
+
+info "Installing @deepseek-ai/dsh@${DSH_VERSION}..."
+if ! "$STAGING/dsh-node" "$NPM_CLI" install \
+  --prefix "$STAGING/app" \
+  --omit=dev --no-audit --no-fund \
+  --os=linux --cpu=arm64 --libc=glibc \
+  "@deepseek-ai/dsh@${DSH_VERSION}"; then
+  err "npm install failed."
+  exit 1
+fi
+
+if [[ ! -f "$STAGING/app/node_modules/@deepseek-ai/dsh/lib/bin.js" ]]; then
+  err "dsh entrypoint not found after npm install."
+  exit 1
+fi
+
+info "Checking node-addon-require-builtin..."
+if ! (
+  cd "$STAGING/app"
+  "$STAGING/dsh-node" -e 'const addon = require("node-addon-require-builtin"); if (typeof addon.requireBuiltin !== "function") throw new Error("requireBuiltin missing"); addon.requireBuiltin("internal/modules/esm/loader"); console.log("ADDON_OK");'
+); then
+  err "node-addon-require-builtin failed to load."
+  exit 1
+fi
+ok "node-addon-require-builtin loaded."
+
+info "Checking node-pty prebuild..."
+if [[ -n "$(find "$STAGING/app/node_modules" -path '*/node-pty/*' -name 'pty.node' -print -quit 2>/dev/null)" ]] && \
+   ( cd "$STAGING/app" && "$STAGING/dsh-node" -e 'require("node-pty"); console.log("PTY_LOAD_OK")' >/dev/null ); then
+  ok "node-pty native binary present and loadable."
+else
+  warn "node-pty native binary missing or unloadable; persistent terminal may be unavailable."
+fi
+
+info "Checking sharp prebuild..."
+if [[ -n "$(find "$STAGING/app/node_modules" -path '*sharp-linux-arm64*' -name '*.node' -print -quit 2>/dev/null)" ]] && \
+   ( cd "$STAGING/app" && "$STAGING/dsh-node" -e 'require("sharp"); console.log("SHARP_LOAD_OK")' >/dev/null ); then
+  ok "sharp linux-arm64 binary present and loadable."
+else
+  warn "sharp linux-arm64 binary missing or unloadable; attachments may be unavailable."
+fi
+
+info "Installing pnpm ${PNPM_VERSION} for dsh plugin..."
+if ! "$STAGING/dsh-node" "$NPM_CLI" install \
+  --prefix "$STAGING/npm-global" \
+  --omit=dev --no-audit --no-fund \
+  "pnpm@${PNPM_VERSION}"; then
+  warn "pnpm install failed; 'dsh plugin' may not work."
+fi
+
+info "Activating runtime..."
+rm -rf "$APP_DIR" "$NPM_GLOBAL_DIR"
+mv "$STAGING/app" "$APP_DIR"
+if [[ -d "$STAGING/npm-global" ]]; then
+  mv "$STAGING/npm-global" "$NPM_GLOBAL_DIR"
+fi
+mkdir -p "$SHARE_DIR/bin"
+rm -f "$BIN_DIR/dsh-node"
+mv "$STAGING/dsh-node" "$SHARE_DIR/bin/dsh-node"
+chmod 755 "$SHARE_DIR/bin/dsh-node"
+ln -sf "$SHARE_DIR/bin/dsh-node" "$BIN_DIR/dsh-node"
+ln -sf "$SHARE_DIR/bin/dsh-node" "$SHARE_DIR/bin/node"
+
+cat > "$BIN_DIR/dsh" <<'DSH_WRAPPER'
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
+HOME="${HOME:-/data/data/com.termux/files/home}"
+SHARE_DIR="${HOME}/.local/share/deepseek-harness"
+export PATH="${SHARE_DIR}/bin:${PATH}"
+exec "${PREFIX}/bin/dsh-node" \
+  "${SHARE_DIR}/app/node_modules/@deepseek-ai/dsh/lib/bin.js" "$@"
+DSH_WRAPPER
+
+cat > "$BIN_DIR/dsh-npm" <<'NPM_WRAPPER'
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
+HOME="${HOME:-/data/data/com.termux/files/home}"
+SHARE_DIR="${HOME}/.local/share/deepseek-harness"
+export PATH="${SHARE_DIR}/bin:${PATH}"
+export npm_config_script_shell="${PREFIX}/bin/sh"
+export npm_config_cache="${SHARE_DIR}/npm-cache"
+export npm_config_update_notifier=false
+export npm_config_libc=glibc
+exec "${PREFIX}/bin/dsh-node" \
+  "${SHARE_DIR}/node/lib/node_modules/npm/bin/npm-cli.js" "$@"
+NPM_WRAPPER
+
+cat > "$BIN_DIR/dsh-npx" <<'NPX_WRAPPER'
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
+HOME="${HOME:-/data/data/com.termux/files/home}"
+SHARE_DIR="${HOME}/.local/share/deepseek-harness"
+export PATH="${SHARE_DIR}/bin:${PATH}"
+export npm_config_script_shell="${PREFIX}/bin/sh"
+export npm_config_cache="${SHARE_DIR}/npm-cache"
+export npm_config_update_notifier=false
+export npm_config_libc=glibc
+exec "${PREFIX}/bin/dsh-node" \
+  "${SHARE_DIR}/node/lib/node_modules/npm/bin/npx-cli.js" "$@"
+NPX_WRAPPER
+
+PNPM_CJS="$NPM_GLOBAL_DIR/node_modules/pnpm/bin/pnpm.cjs"
+if [[ -f "$PNPM_CJS" ]]; then
+  cat > "$BIN_DIR/dsh-pnpm" <<'PNPM_WRAPPER'
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
+HOME="${HOME:-/data/data/com.termux/files/home}"
+SHARE_DIR="${HOME}/.local/share/deepseek-harness"
+export PATH="${SHARE_DIR}/bin:${PATH}"
+export npm_config_script_shell="${PREFIX}/bin/sh"
+export npm_config_cache="${SHARE_DIR}/npm-cache"
+export npm_config_update_notifier=false
+export npm_config_libc=glibc
+exec "${PREFIX}/bin/dsh-node" \
+  "${SHARE_DIR}/npm-global/node_modules/pnpm/bin/pnpm.cjs" "$@"
+PNPM_WRAPPER
+  chmod 755 "$BIN_DIR/dsh-pnpm"
+  ln -sf "$BIN_DIR/dsh-pnpm" "$SHARE_DIR/bin/pnpm"
+else
+  warn "pnpm entrypoint not found at $PNPM_CJS"
+fi
+
+chmod 755 "$BIN_DIR/dsh" "$BIN_DIR/dsh-npm" "$BIN_DIR/dsh-npx"
+ln -sf "$BIN_DIR/dsh-npm" "$SHARE_DIR/bin/npm"
+ln -sf "$BIN_DIR/dsh-npx" "$SHARE_DIR/bin/npx"
+ln -sf "$BIN_DIR/dsh" "$BIN_DIR/deepseek-harness"
+
+info "Verifying dsh..."
+if timeout 90 "$BIN_DIR/dsh" --version; then
+    ok "deepseek-harness installation finished."
+    info "Run 'dsh web --no-open' and open http://127.0.0.1:3080"
+else
+    warn "dsh --version failed; run it manually to inspect the error."
+fi
+
+info "Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o "$BIN_DIR/fixer"; then
+  chmod 750 "$BIN_DIR/fixer"
+  ok "Fixer installed."
+else
+  warn "Could not download fixer."
+fi
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

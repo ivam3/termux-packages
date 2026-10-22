@@ -1,0 +1,30 @@
+{
+  "name": "deepseek-harness",
+  "version": "0.2.1-1",
+  "arch": "aarch64",
+  "homepage": "https://github.com/deepseek-ai/deepseek-harness",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": [
+    "glibc",
+    "clang",
+    "make",
+    "python",
+    "pkg-config",
+    "curl",
+    "tar",
+    "xz-utils",
+    "ca-certificates",
+    "bash",
+    "coreutils"
+  ],
+  "suggests": [
+    "i-haklab"
+  ],
+  "description": "DeepSeek Harness (dsh): AI coding harness. Native glibc Node.js runtime for Termux.",
+  "files": {
+    "lib/dsh_node_helper.c": "/data/data/com.termux/files/usr/share/deepseek-harness/dsh_node_helper.c",
+    "lib/glibc-compat.js": "/data/data/com.termux/files/usr/share/deepseek-harness/glibc-compat.js",
+    "dsh.desktop": "/data/data/com.termux/files/usr/share/applications/dsh.desktop",
+    "img/deepseek-logo.png": "/data/data/com.termux/files/usr/share/applications/dsh/img/deepseek-logo.png"
+  }
+}

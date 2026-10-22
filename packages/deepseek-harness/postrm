@@ -1,0 +1,20 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -Eeuo pipefail
+
+HOME="${HOME:-/data/data/com.termux/files/home}"
+SHARE_DIR="${HOME}/.local/share/deepseek-harness"
+
+case "${1:-}" in
+  remove)
+    rm -rf "$SHARE_DIR"
+    echo "deepseek-harness runtime removed. User data preserved in ${HOME}/.dsh"
+    ;;
+  purge)
+    rm -rf "$SHARE_DIR" "${HOME}/.dsh"
+    echo "deepseek-harness runtime and ${HOME}/.dsh purged."
+    ;;
+  *)
+    echo "Done. Package 'deepseek-harness' removed."
+    ;;
+esac
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

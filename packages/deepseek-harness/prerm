@@ -1,0 +1,17 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -Eeuo pipefail
+
+PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
+
+case "${1:-}" in
+  remove|purge)
+    rm -f \
+      "${PREFIX}/bin/dsh" \
+      "${PREFIX}/bin/dsh-node" \
+      "${PREFIX}/bin/dsh-npm" \
+      "${PREFIX}/bin/dsh-npx" \
+      "${PREFIX}/bin/dsh-pnpm" \
+      "${PREFIX}/bin/deepseek-harness"
+    ;;
+esac
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

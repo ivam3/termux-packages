@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=DeepSeek Harness
+GenericName=AI Coding Harness
+Comment=DeepSeek Harness: AI coding agent with a local web interface.
+Comment[es]=DeepSeek Harness: agente de programación con interfaz web local.
+Version=1.0
+Exec=/data/data/com.termux/files/usr/bin/dsh web
+Icon=/data/data/com.termux/files/usr/share/applications/dsh/img/deepseek-logo.png
+Terminal=false
+Type=Application
+Categories=Development;
+Keywords=dsh;DeepSeek;AI;agent;web;
+StartupNotify=true
+X-Desktop-File-Install-Version=0.2.1
