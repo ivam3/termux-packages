@@ -238,11 +238,11 @@ else
 fi
 
 printf '\n'
-info "Configura tu API key de DeepSeek antes de usar dsh:"
+info "Configure your DeepSeek API key before using dsh"
 if command -v i-Haklab >/dev/null 2>&1; then
-  printf '  Ejecuta: i-Haklab setapikey\n'
+  printf '  Run: i-Haklab setapikey\n'
 else
-  printf '  Exporta DEEPSEEK_API_KEY en tu archivo rc (~/.bashrc, ~/.zshrc o ~/.config/fish/config.fish).\n'
-  printf '  Ejemplo: export DEEPSEEK_API_KEY="tu_api_key"\n'
+  printf '  Export DEEPSEEK_API_KEY in your rc file (~/.bashrc, ~/.zshrc, or ~/.config/fish/config.fish).\n'
+  printf '  Example: export DEEPSEEK_API_KEY="your_api_key"\n'
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
