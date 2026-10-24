@@ -19,7 +19,7 @@ pkg install ghidra
 
 ## Dependencies
 
-`tur-repo, openjdk-21, clang, llvm, lldb, gradle, ndk-multilib, gcc-12, swig`
+`tur-repo, openjdk-21, clang, llvm, lldb, gradle, ndk-multilib, swig`
 
 ## Usage
 

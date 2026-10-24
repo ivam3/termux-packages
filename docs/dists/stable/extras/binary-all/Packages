@@ -591,20 +591,20 @@ SHA256: fd4e01b1478a05718113010bba67ea39ef0ab89d8bdf36e918525c37df117fca
 SHA512: 153cc07bde187ddbc912388fcd44a39a4206b1fdca37adc93e62de94a6266b6dabee651da151ba33fd7229e9a2fc57ecab83bdb92e1a31f07f1ddb3d8076a3ef
 
 Package: ghidra
-Version: 11.4.1
+Version: 21.0.13-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 51
-Depends: tur-repo, openjdk-21, clang, llvm, lldb, gradle, ndk-multilib, gcc-12, swig
+Depends: tur-repo, openjdk-21, clang, llvm, lldb, gradle, ndk-multilib, swig
 Suggests: i-haklab, termux-desktop-xfce
 Homepage: https://github.com/NationalSecurityAgency/ghidra
 Description: Ghidra is a software reverse engineering (SRE) framework
-Filename: dists/stable/extras/binary-all/ghidra_11.4.1_all.deb
-Size: 52088
-MD5Sum: 113493d2f5dda8f308be49914da08a75
-SHA1: e1b6f6bb7eccfc061bc6cd6f3982ea541206028f
-SHA256: 51d5b035642bd842e1d8e870499ec638cd87c3c95f3017669413aa1eb3f1a092
-SHA512: 1a25399c0561fdccdc8178628b7fb94575c921e164df2702ad9869c79ef0b94238116f9ec91943e5a63f0fe70d22c662cc505e6c61927e64f485b907637d845e
+Filename: dists/stable/extras/binary-all/ghidra_21.0.13-1_all.deb
+Size: 52400
+MD5Sum: 17df75d1797e83738b5f57692486014e
+SHA1: 5baadba42a63ad1269a65ad3cdcc7bcec783f418
+SHA256: 2e5b5e7781c5b07b3a48a0ad5e2a9ade09992f7ec6cd41590cc9c2393705ca43
+SHA512: e8d54af741e6b1c5020008511616804de8ff7ac2a9508e59b07c2cae1336ff3288c10e5b01946b8db0bf70dcfbbaab8d698fd56bbe82483c898488e45cd621b8
 
 Package: ghost
 Version: 8.0.0
