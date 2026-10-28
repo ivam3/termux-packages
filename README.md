@@ -56,7 +56,7 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [getadusers](https://github.com/fortra/impacket/blob/master/examples/GetADUsers.py) | Gather data about the domain's users and their corresponding email addresses |
 | [getnpusers](https://github.com/fortra/impacket/blob/master/examples/GetNPUsers.py) | Attempt to list and get TGTs for those users that have the property 'Do not require Kerberos preauthentication' set  |
 | [getuserspns](https://github.com/fortra/impacket/blob/master/examples/GetUserSPNs.py) | Try to find Service Principal Names that are associated with normal user account. |
-| [ghidra](https://github.com/NationalSecurityAgency/ghidra) | A software reverse engineering (SRE) framework. |
+| [ghidra](https://github.com/NationalSecurityAgency/ghidra) | A software reverse engineering (SRE) framework with Ghidra 12.1.4 and native ARM64 decompiler support for Termux. |
 | [ghost](https://github.com/EntySec/ghost) | Android post-exploitation framework that exploits the Android Debug Bridge to remotely access an Android device. |
 | [ghunt](https://github.com/mxrch/GHunt) | An OSINT offensive Google framework. |
 | [git-filter-repo](https://github.com/newren/git-filter-repo) | Quickly rewrite git repository history (filter-branch replacement). |
@@ -100,6 +100,7 @@ Join to [deepwiki](https://deepwiki.com/ivam3/termux-packages) and learn more ab
 | [proroot](https://github.com/coderredlab/proroot) | Rootless Linux runtime for Android. Drop-in proot replacement with zero ptrace overhead. Run full glibc Linux userspace (Node.js, Python, Git, Chromium) inside Android without root. |
 | [PuTTY](https://www.ssh.com/academy/ssh/putty/linux) | Graphical terminal program that supports the SSH, telnet, and rlogin protocols and connecting to serial ports. |
 | [quack](https://github.com/Monkey-hk4/quack) | Toolkit with SMS attack tool, HTTP attack tool and many other attack tools. |
+| [rea](https://github.com/morluto/rea) | Reverse engineering agent CLI for binaries, Android apps, JavaScript and web apps, with automatic Ghidra 12.1.x native analysis and MCP agent setup. |
 | [recondog](https://github.com/s0md3v/ReconDog) | Reconnaissance Swiss Army Knife |
 | [recon-ng](https://github.com/lanmaster53/recon-ng) | Open Source Intelligence gathering tool aimed at reducing the time spent harvesting information from open sources. |
 | [routersploit](https://github.com/threat9/routersploit) | Open-source exploitation framework dedicated to embedded devices. |
