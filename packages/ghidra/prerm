@@ -1,5 +1,9 @@
 #!/data/data/com.termux/files/usr/bin/bash
-if [[ -d ${HOME}/.local/share/ghidra ]]; then
-  rm -rf ${HOME}/.local/share/ghidra
-fi
+case "${1:-}" in
+  remove|purge)
+    if [[ -d ${HOME}/.local/share/ghidra ]]; then
+      rm -rf ${HOME}/.local/share/ghidra
+    fi
+    ;;
+esac
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

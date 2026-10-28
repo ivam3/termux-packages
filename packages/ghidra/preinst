@@ -5,11 +5,10 @@ then
   exit 1
 else
   echo "Preparing enviroment ..."
+  mkdir -p ${HOME}/.local/share 2>/dev/null
   if [[ -d ${HOME}/.local/share/ghidra ]]
   then
-    rm -rf ${HOME}/.local/share/ghidra
-  else
-    mkdir -p ${HOME}/.local/share 2>/dev/null
+    echo "[*] Existing Ghidra installation preserved until the new build succeeds."
   fi
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -251,6 +251,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/nmap.md        
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ntlmrelayx.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/objection.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/octosuite.md    i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ollama.md       i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/omniroute.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/open-lovable.md i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/openclaw.md     i-haklab
@@ -282,6 +283,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/qwen-code.md   
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/radare2.md      i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/railway-cli.md  i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ransomux.md     i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/rea.md          i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/recon-ng.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/recondog.md     i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/redhawk.md      i-haklab
@@ -1202,6 +1204,7 @@ data/data/com.termux/files/usr/bin/polenum                                      
 data/data/com.termux/files/usr/share/applications/putty/img/putty.png            putty
 data/data/com.termux/files/usr/share/applications/putty/putty.desktop            putty
 data/data/com.termux/files/usr/bin/quack                                         quack
+data/data/com.termux/files/usr/bin/rea-setup                                     rea
 data/data/com.termux/files/usr/bin/recon-ng                                      recon-ng
 data/data/com.termux/files/usr/bin/recondog                                      recondog
 data/data/com.termux/files/usr/bin/routersploit                                  routersploit

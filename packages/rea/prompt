@@ -1,0 +1,4 @@
+1. Jamas me omites la instalacion de fixer
+2. Manten el mismo flujo de codigo (colores,funciones msg/info/tip/warn....etc) mostrado en los scripts actuales (post-pre inst-rm), para asi seguir manteniendo homologado mi estilo en todos mi proyecto termux-packages
+3. apktool, rizin mantenlos como dependencias
+

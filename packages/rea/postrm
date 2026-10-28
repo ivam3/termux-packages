@@ -1,0 +1,37 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -Eeuo pipefail
+
+# ==============================
+# CONFIGURATION
+# ==============================
+PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
+HOME="${HOME:-/data/data/com.termux/files/home}"
+INSTALL_DIR="${HOME}/.local/share/rea"
+BIN_DIR="${PREFIX}/bin"
+
+# Colors
+CYAN="\033[36m"
+GREEN="\033[32m"
+YELLOW="\033[33m"
+DIM="\033[2m"
+RESET="\033[0m"
+
+# Msg
+info() { printf "%b[📢]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+ok()   { printf "%b[✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+warn() { printf "%b[!]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+
+case "${1:-}" in
+  remove|purge)
+    rm -f "${BIN_DIR}/rea"
+    rm -rf "${INSTALL_DIR}/app" "${INSTALL_DIR}/.staging" "${INSTALL_DIR}/.npm-cache"
+    ok "rea runtime removed."
+    info "User data, Hopper and fixer preserved."
+    ;;
+  upgrade)
+    ;;
+  *)
+    echo "Done. Package 'rea' removed."
+    ;;
+esac
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

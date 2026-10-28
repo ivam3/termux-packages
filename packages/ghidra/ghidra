@@ -7,6 +7,7 @@ Y="\e[33m"
 B="\e[34m"
 if [[ -d ${HOME}/.local/share/ghidra ]]
 then
+  export GHIDRA_INSTALL_DIR="${GHIDRA_INSTALL_DIR:-${HOME}/.local/share/ghidra}"
   cd ${HOME}/.local/share/ghidra >/dev/null
   $(command -v bash) ghidraRun ${@:1}
 else

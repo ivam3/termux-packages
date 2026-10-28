@@ -1,0 +1,28 @@
+{
+  "name": "rea",
+  "version": "6.8.0-3",
+  "arch": "all",
+  "homepage": "https://github.com/morluto/rea",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": [
+    "nodejs-lts (>= 22.23.4)",
+    "npm",
+    "apktool",
+    "rizin",
+    "procps",
+    "curl",
+    "ca-certificates",
+    "bash",
+    "coreutils",
+    "binutils"
+  ],
+  "suggests": [
+    "chromium",
+    "ghidra",
+    "i-haklab"
+  ],
+  "description": "Reverse engineering agent CLI for binaries, Android apps, JavaScript and web apps, packaged for Termux.",
+  "files": {
+    "rea-setup": "/data/data/com.termux/files/usr/bin/rea-setup"
+  }
+}

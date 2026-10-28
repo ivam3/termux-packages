@@ -1,0 +1,27 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -Eeuo pipefail
+
+# ==============================
+# CONFIGURATION
+# ==============================
+PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
+BIN_DIR="${PREFIX}/bin"
+
+# Colors
+CYAN="\033[36m"
+GREEN="\033[32m"
+DIM="\033[2m"
+RESET="\033[0m"
+
+# Msg
+info() { printf "%b[📢]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+ok()   { printf "%b[✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+
+case "${1:-}" in
+  remove|purge)
+    info "Removing rea launcher ..."
+    rm -f "${BIN_DIR}/rea"
+    ok "rea launcher removed."
+    ;;
+esac
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

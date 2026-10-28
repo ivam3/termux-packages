@@ -591,20 +591,20 @@ SHA256: fd4e01b1478a05718113010bba67ea39ef0ab89d8bdf36e918525c37df117fca
 SHA512: 153cc07bde187ddbc912388fcd44a39a4206b1fdca37adc93e62de94a6266b6dabee651da151ba33fd7229e9a2fc57ecab83bdb92e1a31f07f1ddb3d8076a3ef
 
 Package: ghidra
-Version: 21.0.13-1
+Version: 12.1.4-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 51
-Depends: tur-repo, openjdk-21, clang, llvm, lldb, gradle, ndk-multilib, swig
-Suggests: i-haklab, termux-desktop-xfce
+Depends: tur-repo, openjdk-21, clang, llvm, lldb, gradle, ndk-multilib, swig, make, curl, unzip
+Suggests: i-haklab, termux-desktop-xfce, rea
 Homepage: https://github.com/NationalSecurityAgency/ghidra
 Description: Ghidra is a software reverse engineering (SRE) framework
-Filename: dists/stable/extras/binary-all/ghidra_21.0.13-1_all.deb
-Size: 52400
-MD5Sum: 17df75d1797e83738b5f57692486014e
-SHA1: 5baadba42a63ad1269a65ad3cdcc7bcec783f418
-SHA256: 2e5b5e7781c5b07b3a48a0ad5e2a9ade09992f7ec6cd41590cc9c2393705ca43
-SHA512: e8d54af741e6b1c5020008511616804de8ff7ac2a9508e59b07c2cae1336ff3288c10e5b01946b8db0bf70dcfbbaab8d698fd56bbe82483c898488e45cd621b8
+Filename: dists/stable/extras/binary-all/ghidra_12.1.4-1_all.deb
+Size: 53068
+MD5Sum: 30f2ea9193bdaffbe8e7bfee3fa25440
+SHA1: a9e1111576f3f863e60dd9b3fa015b17edb850bd
+SHA256: a0a582706c6e38a9379bc30f7ba14fbc8e3e79e0dc91d505aa675c25d08ff44d
+SHA512: 3a3a427dfa7d439fc766759acb31c6469ae7ece5517b42d4d5287a4f736186149d135a104d8094df769109bc34060f14229cb6a020d2593c9a0dd74d813a1830
 
 Package: ghost
 Version: 8.0.0
@@ -815,20 +815,20 @@ SHA256: 7314363d3c2ea23da381084bc93d3036961f143a20917f3e61e5ab8fe9c374f6
 SHA512: b6fd9867e1d15bd89b2276105215ffc2079ed00a2c00f7e99f8bf70bc99e6be3a000d2f1936eee7258ab9ae456d8a921aea1267850a0a61cdbb73e278379fb9c
 
 Package: i-haklab
-Version: 3.13.24
+Version: 3.13.25
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 26061
+Installed-Size: 26074
 Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, execline, fd, file, findutils, fish, fzf, gawk, git, glibc-repo, glow, golang, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, mandoc, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nodejs-lts, ollama, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, rust, sqlite, strace, tar, tor, torsocks, translate-shell, ttyd, unzip, wget, yazi, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.13.24_all.deb
-Size: 3733584
-MD5Sum: 015fd6977ffd548e32c641f043ed7b8e
-SHA1: ef2aabc3b13e69316ffa3c73c86af6c4af90b9cb
-SHA256: e16a002e26242896c6c9a1e42b693bf2e8acd7775fcc54df1abfd09b0e9df29b
-SHA512: f1729435608a5bb1385308ad17dda96b8e7b0b82c891d40b7ed407f2569e7cd22d3bee36dd45c92c0cf03599b7e08f4bdf62ffee4a2dc195e26891a8dcf186f1
+Filename: dists/stable/extras/binary-all/i-haklab_3.13.25_all.deb
+Size: 3736984
+MD5Sum: f82e4d0b01a8381b333b0bb4e04c5125
+SHA1: 2290a88d28a7ba4e3a94e855853a9b3416158fd3
+SHA256: 76d42044c048328c9f59417d84bfcd84ca40f100560be1d4a0f6592790b3be0f
+SHA512: faee0d70bc740fb7c3364fd8711d2846c4ba604f7dcaffcc2b35900417fb78c8890baa5191db288de41335ae1e1219379cd02d090868affc2f25b518e1801b81
 
 Package: infoga
 Version: 1.0
@@ -1195,6 +1195,22 @@ MD5Sum: 0977a36206537aab8f49318b9ce039cc
 SHA1: 226b4610fd9cb0b3614eb347fc58fb033e1df5e2
 SHA256: 9fc877a9f1136755556a98d7f9c63ee890c1523058ec2ed5c2307d8f116e453b
 SHA512: cb76efe4927b3162111614c11a8a579b637d16a029bcaa325e919467034ddc24278d4a3a317e28c45a00382a8a9e1e15be153a0db28097d83883972621577a98
+
+Package: rea
+Version: 6.8.0-3
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 5
+Depends: nodejs-lts (>= 22.23.4), npm, apktool, rizin, procps, curl, ca-certificates, bash, coreutils, binutils
+Suggests: chromium, ghidra, i-haklab
+Homepage: https://github.com/morluto/rea
+Description: Reverse engineering agent CLI for binaries, Android apps, JavaScript and web apps, packaged for Termux.
+Filename: dists/stable/extras/binary-all/rea_6.8.0-3_all.deb
+Size: 5360
+MD5Sum: 2b67e6fea5c7b58fbc6aab3f284d3465
+SHA1: c069d9f22267773d935cb47c3713c5ea0d337049
+SHA256: cb9cf6757e0e2474a594f4dd58bb6ec7509daaff636cf43a1e9e0dc3e59e62f9
+SHA512: fae38f6cf3549d4c8675e207cc3135ba55b0d8b1f104cd40f243a4508789802876c2ba936900c210616629b0d9454215c82820002c34a27ce6eccc62a9168b2e
 
 Package: recon-ng
 Version: 5.1.2

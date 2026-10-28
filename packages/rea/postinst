@@ -1,0 +1,262 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+set -Eeuo pipefail
+
+# ==============================
+# CONFIGURATION
+# ==============================
+PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
+HOME="${HOME:-/data/data/com.termux/files/home}"
+INSTALL_DIR="${HOME}/.local/share/rea"
+APP_DIR="${INSTALL_DIR}/app"
+STAGING="${INSTALL_DIR}/.staging"
+BIN_DIR="${PREFIX}/bin"
+NODE_BIN="${PREFIX}/bin/node"
+NPM_BIN="${PREFIX}/bin/npm"
+VERSION="6.8.0"
+export PATH="${PREFIX}/bin:${PATH:-/usr/bin:/bin}"
+
+# Colors
+CYAN="\033[36m"
+GREEN="\033[32m"
+RED="\033[31m"
+YELLOW="\033[33m"
+DIM="\033[2m"
+RESET="\033[0m"
+
+# Msg
+info() { printf "%b[📢]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+msg()   { printf "[➡] %s\n" "$*"; }
+ok()   { printf "%b[✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+warn() { printf "%b[!]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+tip()  { printf "%b[💡]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+err()  { printf "%b[❌]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+
+cleanup() {
+  rm -rf "$STAGING" "${INSTALL_DIR}/.npm-cache"
+}
+trap cleanup EXIT
+
+install_fixer() {
+  msg "Installing script fixer..."
+  local fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+  if curl -fsSL "$fixerURL" -o "${BIN_DIR}/fixer"; then
+      chmod 750 "${BIN_DIR}/fixer"
+      info "Run 'fixer' to fix any posible issue."
+  else
+      warn "Could not download fixer."
+  fi
+}
+
+# ==============================
+# ENVIRONMENT
+# ==============================
+mkdir -p "${INSTALL_DIR}" "${BIN_DIR}"
+
+if ! command -v curl >/dev/null 2>&1
+then
+  err "Required command not found: curl"
+  exit 1
+fi
+
+if [[ ! -x "$NODE_BIN" ]]
+then
+  NODE_BIN="$(command -v node || true)"
+fi
+
+if [[ -z "$NODE_BIN" || ! -x "$NODE_BIN" ]]
+then
+  err "Node.js not found. Install 'nodejs-lts' and retry."
+  install_fixer
+  exit 1
+fi
+
+if [[ ! -x "$NPM_BIN" ]]
+then
+  NPM_BIN="$(command -v npm || true)"
+fi
+
+if [[ -z "$NPM_BIN" || ! -x "$NPM_BIN" ]]
+then
+  err "npm not found. Install 'npm' and retry."
+  install_fixer
+  exit 1
+fi
+
+info "Node $("$NODE_BIN" -p 'process.versions.node') detected."
+
+# ==============================
+# INSTALLING REA
+# ==============================
+rm -rf "$STAGING"
+mkdir -p "$STAGING"
+
+export npm_config_update_notifier=false
+export npm_config_engine_strict=true
+export npm_config_cache="${INSTALL_DIR}/.npm-cache"
+
+info "Installing rea-agents@${VERSION} ..."
+if ! "$NPM_BIN" install \
+  --prefix "$STAGING" \
+  --omit=dev --omit=optional \
+  --no-audit --no-fund --no-package-lock \
+  "rea-agents@${VERSION}"; then
+  err "npm install failed."
+  install_fixer
+  exit 1
+fi
+
+ENTRY="${STAGING}/node_modules/rea-agents/scripts/rea.mjs"
+if [[ ! -f "$ENTRY" ]]; then
+  err "rea entrypoint not found after npm install."
+  install_fixer
+  exit 1
+fi
+
+info "Verifying rea ..."
+if ! timeout 90 "$NODE_BIN" "$ENTRY" --version; then
+  err "rea --version failed."
+  install_fixer
+  exit 1
+fi
+
+rm -rf "$APP_DIR"
+mv "$STAGING" "$APP_DIR"
+
+cat > "${APP_DIR}/.rea-platform-shim.cjs" <<'REA_SHIM'
+if (process.platform === "android") {
+  Object.defineProperty(process, "platform", { value: "linux" });
+}
+REA_SHIM
+chmod 644 "${APP_DIR}/.rea-platform-shim.cjs"
+
+ENTRY="${APP_DIR}/node_modules/rea-agents/scripts/rea.mjs"
+REAL_ENTRY="${APP_DIR}/node_modules/rea-agents/scripts/rea-real.mjs"
+
+mv "$ENTRY" "$REAL_ENTRY"
+
+cat > "$ENTRY" <<'REA_ENTRY'
+#!/usr/bin/env node
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+import { homedir } from "node:os";
+
+const prefix = process.env.PREFIX ?? "/data/data/com.termux/files/usr";
+const home = process.env.HOME ?? homedir();
+const ghidra = join(home, ".local/share/ghidra");
+const java = join(prefix, "lib/jvm/java-21-openjdk");
+const gobjdump = join(prefix, "bin/gobjdump");
+
+if (!process.env.GHIDRA_INSTALL_DIR && existsSync(join(ghidra, "support/analyzeHeadless"))) {
+  process.env.GHIDRA_INSTALL_DIR = ghidra;
+}
+if (!process.env.JAVA_HOME && existsSync(join(java, "bin/java"))) {
+  process.env.JAVA_HOME = java;
+}
+if (!process.env.REA_OBJDUMP_COMMAND && existsSync(gobjdump)) {
+  process.env.REA_OBJDUMP_COMMAND = gobjdump;
+}
+
+const first = process.argv[2] ?? "";
+if (first === "setup" || first === "mcp" || first === "--mcp") {
+  await import(new URL("../../../.rea-platform-shim.cjs", import.meta.url));
+}
+
+await import(new URL("./rea-real.mjs", import.meta.url));
+REA_ENTRY
+chmod 755 "$ENTRY"
+
+info "Verifying Termux entrypoint ..."
+if ! timeout 90 "$NODE_BIN" "$ENTRY" --version; then
+  err "Termux entrypoint verification failed."
+  install_fixer
+  exit 1
+fi
+ok "Termux entrypoint ready."
+
+# ==============================
+# LAUNCHER
+# ==============================
+cat > "${BIN_DIR}/rea" <<'REA_WRAPPER'
+#!/data/data/com.termux/files/usr/bin/bash
+set -euo pipefail
+
+PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
+HOME="${HOME:-/data/data/com.termux/files/home}"
+APP="${HOME}/.local/share/rea/app"
+ENTRY="${APP}/node_modules/rea-agents/scripts/rea.mjs"
+SHIM="${APP}/.rea-platform-shim.cjs"
+
+if [[ ! -f "$ENTRY" ]]; then
+  printf 'rea: installation incomplete. Run: pkg reinstall rea\n' >&2
+  exit 1
+fi
+
+if [[ -z "${GHIDRA_INSTALL_DIR:-}" && -x "${HOME}/.local/share/ghidra/support/analyzeHeadless" ]]; then
+  export GHIDRA_INSTALL_DIR="${HOME}/.local/share/ghidra"
+fi
+
+if [[ -z "${JAVA_HOME:-}" && -x "${PREFIX}/lib/jvm/java-21-openjdk/bin/java" ]]; then
+  export JAVA_HOME="${PREFIX}/lib/jvm/java-21-openjdk"
+fi
+
+case "${1:-}" in
+  execute-rizin-command|inspect-with-objdump|list-objdump-architectures|debug-with-rizin|\
+  analyze|decompile|decompile-all|function|instructions|xrefs|trace|search|search-bytes|\
+  read-bytes|address-to-file-offset|inspect|capabilities|providers|doctor|inspect-native-*|\
+  annotate-native-function|trace-native-values|resolve-native-call-targets|trace-native-ui-action|\
+  match-native-functions)
+    if [[ -f "$SHIM" ]] && [[ "${NODE_OPTIONS:-}" != *"--require=${SHIM}"* ]]; then
+      export NODE_OPTIONS="${NODE_OPTIONS:+${NODE_OPTIONS} }--require=${SHIM}"
+    fi
+    ;;
+esac
+
+if [[ -z "${REA_OBJDUMP_COMMAND:-}" ]]; then
+  if command -v gobjdump >/dev/null 2>&1; then
+    export REA_OBJDUMP_COMMAND="$(command -v gobjdump)"
+  elif [[ -x "${PREFIX}/bin/gobjdump" ]]; then
+    export REA_OBJDUMP_COMMAND="${PREFIX}/bin/gobjdump"
+  fi
+fi
+
+NODE_BIN="${PREFIX}/bin/node"
+if [[ ! -x "$NODE_BIN" ]]; then
+  NODE_BIN="node"
+fi
+
+exec "$NODE_BIN" "$ENTRY" "$@"
+REA_WRAPPER
+chmod 755 "${BIN_DIR}/rea"
+
+ok "rea installation finished."
+info "Run 'rea' to execute it."
+
+# ==============================
+# AGENT SETUP
+# ==============================
+if [[ "${REA_SKIP_AGENT_SETUP:-0}" == "1" ]]; then
+  info "Skipping agent setup because REA_SKIP_AGENT_SETUP=1."
+elif [[ -x "${BIN_DIR}/rea-setup" ]]; then
+  info "Configuring detected agents ..."
+  if timeout 120 "${BIN_DIR}/rea-setup" --quiet; then
+    ok "Agent setup finished."
+  else
+    warn "Agent setup incomplete. Run 'rea-setup' after installing or updating an agent."
+  fi
+else
+  warn "rea-setup is missing. Run 'rea setup --all-detected --yes' manually."
+fi
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+install_fixer
+
+# ==============================
+# FINALS MESSAGES
+# ==============================
+tip "Install an agent later? Run 'rea-setup' to refresh its MCP registration."
+tip "Help: going to https://t.me/Ivam3_Bot."
+msg "@Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

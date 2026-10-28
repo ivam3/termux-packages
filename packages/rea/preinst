@@ -1,0 +1,48 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -Eeuo pipefail
+
+# ==============================
+# CONFIGURATION
+# ==============================
+PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
+HOME="${HOME:-/data/data/com.termux/files/home}"
+INSTALL_DIR="${HOME}/.local/share/rea"
+BIN_DIR="${PREFIX}/bin"
+export PATH="${PREFIX}/bin:${PATH:-/usr/bin:/bin}"
+
+# Colors
+CYAN="\033[36m"
+GREEN="\033[32m"
+RED="\033[31m"
+YELLOW="\033[33m"
+DIM="\033[2m"
+RESET="\033[0m"
+
+# Msg
+info() { printf "%b[📢]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+ok()   { printf "%b[✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+warn() { printf "%b[!]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+err()  { printf "%b[❌]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+
+info "Preparing environment ..."
+
+if [[ $(id -u) -eq 0 ]]
+then
+  err "You need to be a common user"
+  exit 1
+fi
+
+for cmd in node npm curl
+do
+  if ! command -v "$cmd" >/dev/null 2>&1
+  then
+    err "Required command not found: ${cmd}"
+    exit 1
+  fi
+done
+
+mkdir -p "${HOME}/.local/share" "${INSTALL_DIR}" "${BIN_DIR}"
+rm -rf "${INSTALL_DIR}/.staging"
+
+ok "Environment ready."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

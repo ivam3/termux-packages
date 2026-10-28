@@ -1,0 +1,169 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -Eeuo pipefail
+
+PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
+BIN_DIR="${PREFIX}/bin"
+REA_BIN="${BIN_DIR}/rea"
+HOME="${HOME:-/data/data/com.termux/files/home}"
+APP_DIR="${HOME}/.local/share/rea/app"
+SKILL_SOURCE="${APP_DIR}/node_modules/rea-agents/skills/reverse-engineer-anything"
+QUIET=0
+
+usage() {
+  printf '%s\n' "Usage: rea-setup [--quiet]"
+  printf '%s\n' ""
+  printf '%s\n' "Install or update the REA skill and configure every detected MCP client."
+  printf '%s\n' "Run this again after installing a new agent."
+}
+
+say() {
+  if ((QUIET == 0)); then
+    printf '[rea-setup] %s\n' "$*"
+  fi
+}
+
+warn() {
+  printf '[rea-setup] warning: %s\n' "$*" >&2
+}
+
+install_skill() {
+  local target="$1"
+
+  if [[ ! -d "$SKILL_SOURCE" ]]; then
+    warn "bundled skill not found: $SKILL_SOURCE"
+    return 0
+  fi
+
+  rm -rf "$target"
+  mkdir -p "$(dirname "$target")"
+  cp -a "$SKILL_SOURCE" "$target"
+  say "REA skill installed at $target."
+}
+
+prepare_config() {
+  local target="$1"
+
+  if [[ -e "$target" ]]; then
+    return 0
+  fi
+
+  mkdir -p "$(dirname "$target")"
+  case "$target" in
+    *.json|*.jsonc)
+      printf '{}\n' > "$target"
+      ;;
+    *.toml)
+      : > "$target"
+      ;;
+    *.yml|*.yaml)
+      if [[ "$target" == *"/.dsh/"* ]]; then
+        printf '[]\n' > "$target"
+      else
+        printf '{}\n' > "$target"
+      fi
+      ;;
+    *)
+      : > "$target"
+      ;;
+  esac
+  say "Prepared $target for setup."
+}
+
+while (($# > 0)); do
+  case "$1" in
+    --quiet|-q)
+      QUIET=1
+      ;;
+    --help|-h)
+      usage
+      exit 0
+      ;;
+    *)
+      printf 'rea-setup: unknown argument: %s\n' "$1" >&2
+      usage >&2
+      exit 2
+      ;;
+  esac
+  shift
+done
+
+if [[ ! -x "$REA_BIN" ]]; then
+  warn "rea is not installed or its launcher is not executable: $REA_BIN"
+  exit 1
+fi
+
+export PATH="${BIN_DIR}:${PATH:-/usr/bin:/bin}"
+
+plan=""
+if plan="$("$REA_BIN" setup --dry-run --all-detected --format json 2>/dev/null)"; then
+  :
+else
+  warn "could not inspect detected agents; attempting setup anyway."
+  plan=""
+fi
+
+if [[ -n "$plan" ]]; then
+  while IFS=$'\t' read -r kind target; do
+    [[ -n "$target" ]] || continue
+    case "$kind" in
+      skill)
+        install_skill "$target"
+        ;;
+      config)
+        prepare_config "$target"
+        ;;
+    esac
+  done < <(printf '%s' "$plan" | node -e '
+    let input = "";
+    process.stdin.setEncoding("utf8");
+    process.stdin.on("data", (chunk) => { input += chunk; });
+    process.stdin.on("end", () => {
+      let plan;
+      try { plan = JSON.parse(input); } catch { process.exit(1); }
+      for (const action of plan.plannedActions || []) {
+        if (action.kind === "install_skill" && typeof action.target === "string") {
+          console.log(`skill\t${action.target}`);
+        } else if (action.kind === "configure_client" && action.operation === "create" && typeof action.target === "string") {
+          console.log(`config\t${action.target}`);
+        }
+      }
+    });
+  ' 2>/dev/null || true)
+fi
+
+if [[ ! -f "${HOME}/.agents/skills/reverse-engineer-anything/SKILL.md" ]]; then
+  install_skill "${HOME}/.agents/skills/reverse-engineer-anything"
+fi
+
+if [[ -d "${HOME}/.gemini/config" && ! -f "${HOME}/.gemini/config/skills/reverse-engineer-anything/SKILL.md" ]]; then
+  install_skill "${HOME}/.gemini/config/skills/reverse-engineer-anything"
+fi
+
+say "Configuring detected agents ..."
+
+if setup_output="$(timeout 120 "$REA_BIN" setup --all-detected --yes --format json 2>&1)"; then
+  say "Detected agents configured."
+else
+  setup_rc=$?
+  if ((setup_rc == 124)); then
+    warn "agent configuration timed out."
+    exit 1
+  fi
+
+  reason="$(printf '%s' "$setup_output" | node -e '
+    let input = "";
+    process.stdin.setEncoding("utf8");
+    process.stdin.on("data", (chunk) => { input += chunk; });
+    process.stdin.on("end", () => {
+      try {
+        const result = JSON.parse(input);
+        if (typeof result.remediation === "string" && result.remediation.length > 0) {
+          console.log(result.remediation);
+        }
+      } catch {}
+    });
+  ' 2>/dev/null || true)"
+
+  warn "${reason:-agent configuration failed (exit $setup_rc)}"
+  exit 1
+fi
