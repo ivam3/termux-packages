@@ -1357,36 +1357,36 @@ SHA256: e288acf8a3dcf00083456c02a72f369ff342e94e37561346ae76705c70736a80
 SHA512: d89eafeb96f340522c2acb4d99c6e9ce2e5731eee3bbadbba302bcb096173d5607178a6cbe141029130e23b02399c4801e8c56604156da1e94c210c8905fe9b0
 
 Package: termux-desktop-bspwm
-Version: 0.1.0
+Version: 0.1.1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 1318
+Installed-Size: 1320
 Depends: x11-repo, termux-x11-nightly, bspwm, sxhkd, kitty, rofi, polybar, picom, tint2, dmenu, feh, xorg-xsetroot, xfce4-screenshooter, dbus, firefox, thunar, mousepad, pulseaudio, glow, papirus-icon-theme, hicolor-icon-theme, unzip, fontconfig
 Suggests: i-haklab
 Homepage: https://github.com/ivam3/termux-packages
 Description: Meta-package and default configs for a bspwm tiling desktop on termux-x11. Includes launcher, keybindings, polybar, picom, kitty and rofi presets.
-Filename: dists/stable/extras/binary-all/termux-desktop-bspwm_0.1.0_all.deb
-Size: 1311316
-MD5Sum: 73716e002a9358fc733c756c1aa5b09f
-SHA1: 45bf57fe3684a2cf4a9ececc16e89fde1d40e0aa
-SHA256: 096c9840666ee65c0affcf93b9d62828166d749c474a22f1a6046218db6517c7
-SHA512: c44fc54ea85e90a4eab8d73218a1c923f5182b7c8b5a481031aec923d91da9aa523810bc61392b284eb1bbea87a57a4959d32578420c0bb6fc20074f6e0a11f9
+Filename: dists/stable/extras/binary-all/termux-desktop-bspwm_0.1.1_all.deb
+Size: 1311916
+MD5Sum: 367c92a5b3ef5d1f02e8ef8560f01a46
+SHA1: c6f68404b7cfad963f90634e10eb9ee71a2f626d
+SHA256: d7e904d51e93b53cd397dfffc7ac0663c04b0823d9f78e5882273762e848119d
+SHA512: 14a38fa5ee415438eed33d5083162a4eb30f4bd79fe7aecd5f3734af27c8e9551917bfe0d9562f28b5e492d9f593fc3250634db96ce39d64bedd37f9c3d19b4a
 
 Package: termux-desktop-xfce
-Version: 1.0.14
+Version: 1.0.15
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
+Installed-Size: 4
 Depends: xfce4, adwaita-icon-theme, atk, binutils, dbus-glib, dconf, desktop-file-utils, dosbox, exo, feh, file-roller, firefox, findutils, fluent-gtk-theme, fluent-icon-theme, galculator, garcon, gcr, geany, geany-plugins, gnome-themes-extra, gsettings-desktop-schemas, gtk-update-icon-cache, gtk2-engines-murrine, gtk2, gtk3, gtksourceview4, gvfs, hicolor-icon-theme, htop, iso-codes, l3afpad, libcanberra, libepoxy, libfontenc, libhandy, libmatekbd, libnotify, libpciaccess, libvte, libwayland-protocols, libwayland, libwnck, libx11, libxcomposite, libxdamage, libxfce4ui, libxfce4util, libxfont2, libxinerama, libxkbfile, libxklavier, libxmu, libxslt, loqui, lxappearance, lxde-icon-theme, mousepad, mpv-x, mtpaint, neofetch, openjdk-21, papirus-icon-theme, parole, python, python-pip, python-tkinter, recordmydesktop, ristretto, sdl-net, sdl2, sdl, shared-mime-info, startup-notification, tar, termux-api, thunar-archive-plugin, thunar, tumbler, unzip, vim-gtk, webkit2gtk-4.1, wget, xarchiver, xapt-management, xcb-util, xfconf,xfdesktop, xfwm4, xkeyboard-config, xorg-iceauth, xorg-xauth, xorg-xhost, xorg-xkbcomp, xorg-xrdb, xwayland, zenity
 Suggests: i-haklab, burpsuite, ghidra, hydra, putty, maltego, zaproxy
 Homepage: https://github.com/ivam3/termux-packages
 Description: A Meta-package and data, themes, icons and wallpapers to configurate a desktop enviroment for Termux with xfce4 as window manager.
-Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0.14_all.deb
-Size: 3976
-MD5Sum: d328639bb89fbe96636e581febd5b82a
-SHA1: 0ed3e8287d1fa7902cb4312b111d144cdc4897f2
-SHA256: a87b68724011154b3cb8ba6c69db01b59ac3a1c747be88aeb17c6d72345bd237
-SHA512: d4b0825a6611e3ffbb51fefa331073624b81e3cc13a16c962a176f9e7458a0788bb218495510d56268080fb60510c3b43ff9b0c5a3f5ac388e07ec378b482f4f
+Filename: dists/stable/extras/binary-all/termux-desktop-xfce_1.0.15_all.deb
+Size: 4416
+MD5Sum: b2dc8c3024b393acfc3db1a68bf6e823
+SHA1: e920f693dcc6c2f50f54d378ab386c7429ebd1a8
+SHA256: 1309131aaaae9947ee5e8d224857b0c24ad6832d6b4d1baa4b190222242ffe00
+SHA512: 627013e6a0527c5ddd48f9f4b1f901f274d2fd919d7ce3b45280adea625602803ab269331b02473a833e8a041808cfb112e9dc9ec19f662e385344fcbdb7f14a
 
 Package: termux-docker-qemu
 Version: 0.9.5

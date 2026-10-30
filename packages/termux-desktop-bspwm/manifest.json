@@ -1,6 +1,6 @@
 {
   "name": "termux-desktop-bspwm",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "arch": "all",
   "homepage": "https://github.com/ivam3/termux-packages",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",

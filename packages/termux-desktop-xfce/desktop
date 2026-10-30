@@ -22,6 +22,25 @@ rm -f ${HOME}/.config/pulse/*-runtime 2>/dev/null
 mkdir -p ${TMPDIR}/pulse
 export PULSE_RUNTIME_PATH=${TMPDIR}/pulse
 
+# Micrófono: fuente PulseAudio vía OpenSL ES + permiso Termux:API
+PULSE_D="${PREFIX}/etc/pulse/default.pa.d"
+PULSE_SNIPPET="${PULSE_D}/50-sles-source.pa"
+mkdir -p "$PULSE_D"
+if [[ ! -f "$PULSE_SNIPPET" ]] \
+   || ! grep -qx 'load-module module-sles-source' "$PULSE_SNIPPET" \
+   || ! grep -qx 'set-default-source OpenSL_ES_source' "$PULSE_SNIPPET"; then
+    printf '%s\n' \
+        'load-module module-sles-source' \
+        'set-default-source OpenSL_ES_source' > "$PULSE_SNIPPET"
+fi
+
+if command -v termux-microphone-record >/dev/null 2>&1; then
+    termux-microphone-record -i 2>/dev/null | grep -q 'RECORD_AUDIO' && \
+        echo -e "\e[31mE:\e[0m Micrófono sin permiso. Actívalo en Ajustes > Apps > Termux:API > Permisos > Micrófono."
+else
+    echo -e "\e[33mW:\e[0m termux-api no instalado: el micrófono no estará disponible."
+fi
+
 pulseaudio --start --exit-idle-time=-1 2>/dev/null
 for _ in $(seq 1 10); do
     [[ -S ${PULSE_RUNTIME_PATH}/native ]] && break
@@ -33,6 +52,18 @@ sink=$(PULSE_SERVER=unix:${PULSE_RUNTIME_PATH}/native pactl info 2>/dev/null | s
     pulseaudio --start --exit-idle-time=-1 2>/dev/null
     for _ in $(seq 1 10); do [[ -S ${PULSE_RUNTIME_PATH}/native ]] && break; sleep 1; done
 }
+
+# Garantizar la fuente de micrófono y fijarla como predeterminada
+PULSE_SERVER=unix:${PULSE_RUNTIME_PATH}/native pactl list short sources 2>/dev/null \
+    | grep -q 'OpenSL_ES_source' \
+    || PULSE_SERVER=unix:${PULSE_RUNTIME_PATH}/native pactl load-module module-sles-source 2>/dev/null
+
+PULSE_SERVER=unix:${PULSE_RUNTIME_PATH}/native pactl set-default-source OpenSL_ES_source 2>/dev/null
+
+PULSE_SERVER=unix:${PULSE_RUNTIME_PATH}/native pactl list short sources 2>/dev/null \
+    | grep -q 'OpenSL_ES_source' \
+    || echo -e "\e[33mW:\e[0m No se pudo cargar el micrófono (revisa el permiso de Termux:API)."
+
 PULSE_SERVER=unix:${PULSE_RUNTIME_PATH}/native pacmd load-module \
     module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1 2>/dev/null
 export PULSE_SERVER=tcp:127.0.0.1:4713
