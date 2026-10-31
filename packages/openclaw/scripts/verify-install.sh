@@ -28,12 +28,18 @@ echo ""
 
 if command -v node &>/dev/null; then
     NODE_VER=$(node -v)
-    NODE_MAJOR="${NODE_VER%%.*}"
-    NODE_MAJOR="${NODE_MAJOR#v}"
-    if [ "$NODE_MAJOR" -ge 22 ] 2>/dev/null; then
-        check_pass "Node.js $NODE_VER (>= 22)"
+    NODE_CLEAN="${NODE_VER#v}"
+    NODE_MAJOR="${NODE_CLEAN%%.*}"
+    NODE_OK=false
+    if [ "$NODE_MAJOR" = "24" ] && [ "$(printf '%s\n24.22.1\n' "$NODE_CLEAN" | sort -V | head -1)" = "24.22.1" ]; then
+        NODE_OK=true
+    elif [ "$(printf '%s\n26.12.1\n' "$NODE_CLEAN" | sort -V | head -1)" = "26.12.1" ]; then
+        NODE_OK=true
+    fi
+    if [ "$NODE_OK" = true ]; then
+        check_pass "Node.js $NODE_VER (>= 24.22.1 <25 || >= 26.12.1)"
     else
-        check_fail "Node.js $NODE_VER (need >= 22)"
+        check_fail "Node.js $NODE_VER (need >= 24.22.1 <25 || >= 26.12.1)"
     fi
 else
     check_fail "Node.js not found"

@@ -6,10 +6,10 @@ source "$SCRIPT_DIR/../../scripts/lib.sh"
 
 export CPATH="$PREFIX/include/glib-2.0:$PREFIX/lib/glib-2.0/include"
 
-# ── Ensure Node.js meets OpenClaw >=24.16 <25 || >=26.1 requirement ──
-# Existing installs may still carry glibc Node 22.x (pre-2026.9.3). The
+# ── Ensure Node.js meets OpenClaw >=24.22.1 <25 || >=26.12.1 requirement ──
+# Existing installs may still carry older glibc Node builds. The
 # openclaw.mjs version guard aborts on those. Self-heal by re-running
-# install-nodejs.sh (now pinned to 24.20.0 linux-arm64 glibc tarball)
+# install-nodejs.sh (now pinned to 24.22.2 linux-arm64 glibc tarball)
 # before touching npm packages.
 _OA_NODE_CMD=""
 if [ -x "$BIN_DIR/node" ]; then
@@ -26,16 +26,16 @@ if [ -n "$_OA_NODE_VER" ]; then
     _OA_MAJOR=$(echo "$_OA_NODE_VER" | cut -d. -f1)
     _OA_MINOR=$(echo "$_OA_NODE_VER" | cut -d. -f2)
     _OA_PATCH=$(echo "$_OA_NODE_VER" | cut -d. -f3)
-    if [ "$_OA_MAJOR" = "24" ] && { [ "$_OA_MINOR" -gt 16 ] || { [ "$_OA_MINOR" -eq 16 ] && [ "$_OA_PATCH" -ge 0 ]; }; }; then
+    if [ "$_OA_MAJOR" = "24" ] && { [ "$_OA_MINOR" -gt 22 ] || { [ "$_OA_MINOR" -eq 22 ] && [ "$_OA_PATCH" -ge 1 ]; }; }; then
         _OA_NODE_OK=true
-    elif [ "$_OA_MAJOR" = "26" ] && { [ "$_OA_MINOR" -gt 1 ] || { [ "$_OA_MINOR" -eq 1 ] && [ "$_OA_PATCH" -ge 0 ]; }; }; then
+    elif [ "$_OA_MAJOR" -eq 26 ] 2>/dev/null && { [ "$_OA_MINOR" -gt 12 ] || { [ "$_OA_MINOR" -eq 12 ] && [ "$_OA_PATCH" -ge 1 ]; }; }; then
         _OA_NODE_OK=true
     elif [ "$_OA_MAJOR" -gt 26 ] 2>/dev/null; then
         _OA_NODE_OK=true
     fi
 fi
 if [ "$_OA_NODE_OK" = false ]; then
-    echo "Node.js ${_OA_NODE_VER:-missing} does not satisfy OpenClaw (>=24.16 <25 || >=26.1)."
+    echo "Node.js ${_OA_NODE_VER:-missing} does not satisfy OpenClaw (>=24.22.1 <25 || >=26.12.1)."
     echo "Upgrading glibc Node.js before updating packages..."
     if [ -f "$SCRIPT_DIR/../../scripts/install-nodejs.sh" ]; then
         bash "$SCRIPT_DIR/../../scripts/install-nodejs.sh" || {

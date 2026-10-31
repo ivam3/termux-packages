@@ -62,6 +62,8 @@ cp "$SCRIPT_DIR/scripts/backup.sh" "$PROJECT_DIR/scripts/backup.sh"
 rm -rf "$PROJECT_DIR/platforms/$SELECTED_PLATFORM" 2>/dev/null
 cp -R "$SCRIPT_DIR/platforms/$SELECTED_PLATFORM" "$PROJECT_DIR/platforms/$SELECTED_PLATFORM"
 
-step 7 "Verification"
-bash "$SCRIPT_DIR/tests/verify-install.sh"
+echo ""
+echo -e "${BOLD}[7] Verification${NC}"
+echo "----------------------------------------"
+bash "$SCRIPT_DIR/scripts/verify-install.sh"
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

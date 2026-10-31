@@ -141,6 +141,22 @@ SHA1: bf365988b598321ab772c860896f4a91affcafdb
 SHA256: 14cf73033ee3ee083cf10ec39711a97f538d901f8543b859b281b3cd5d484f1e
 SHA512: 70f33b7bf4338f6259ec8de7c03fedb10e84d996b8124b91f5eb4a20361f09999e63fe9b0d6c3ec4d4153958730fe167b1e70f006c208ed7c276968092db294d
 
+Package: openclaw
+Version: 2026.10.9-1
+Architecture: aarch64
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 150
+Depends: android-tools, git, curl, nodejs-lts, pacman, python, python-pip, make, cmake, clang, binutils, proot, tar, xz-utils, file
+Suggests: i-haklab, botgram
+Homepage: https://github.com/AidanPark/openclaw-android
+Description: Open-source autonomous artificial intelligence agent.
+Filename: dists/stable/extras/binary-aarch64/openclaw_2026.10.9-1_aarch64.deb
+Size: 42932
+MD5Sum: a803eca5e3036e29dbe7900ff68f3a6a
+SHA1: 98273c0c45007d27b6f06c51e1a303f3e3c76691
+SHA256: 5aea783b2968b5b467150e52b5481237c6fac025c8dc6f4609a1d6ec0c19c0ab
+SHA512: 08fe5c718cca3deb2cffc076268f2529743ef165212f749cb385595f8c9afde1051aa8c8336549e4c9b30e3093dd6a46d472e40009cfe89f5a3c422c7ddc643e
+
 Package: opencode-v2
 Version: 2.0.32-1
 Architecture: aarch64

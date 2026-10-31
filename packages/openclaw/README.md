@@ -12,14 +12,14 @@ pkg install openclaw
 
 | Field | Value |
 |-------|-------|
-| Version | `0.1.0` |
+| Version | `2026.10.9-1` |
 | Architecture | `aarch64` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [openclaw](https://github.com/Ivam3/openclaw) |
+| Homepage | [openclaw](https://github.com/AidanPark/openclaw-android) |
 
 ## Dependencies
 
-`glibc, nodejs-lts, wget, tar`
+`glibc-runner, nodejs-lts, curl, pacman, tar, xz-utils, file`
 
 ## Usage
 

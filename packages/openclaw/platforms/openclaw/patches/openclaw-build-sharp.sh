@@ -96,7 +96,7 @@ echo -e "${GREEN}[OK]${NC}   node-gyp installed"
 # On Bionic (legacy), we need explicit compatibility flags.
 if [ ! -f "$HOME/.openclaw-android/.glibc-arch" ]; then
     export CFLAGS="-Wno-error=implicit-function-declaration"
-    export CXXFLAGS="-include $HOME/.openclaw-android/patches/termux-compat.h"
+    export CXXFLAGS="-include $HOME/.openclaw/runtime-assets/termux-compat.h"
     export GYP_DEFINES="OS=linux android_ndk_path=$PREFIX"
 fi
 export CPATH="$PREFIX/include/glib-2.0:$PREFIX/lib/glib-2.0/include"

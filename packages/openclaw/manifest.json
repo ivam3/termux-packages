@@ -1,11 +1,11 @@
 {
   "name": "openclaw",
-  "version": "2026.10.4-1",
-  "arch": "all",
+  "version": "2026.10.9-1",
+  "arch": "aarch64",
   "homepage": "https://github.com/AidanPark/openclaw-android",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
   "depends": [
-    "android-tools, git, curl, nodejs-lts, pacman, python, python-pip, make, cmake, clang, binutils, proot"
+    "android-tools, git, curl, nodejs-lts, pacman, python, python-pip, make, cmake, clang, binutils, proot, tar, xz-utils, file"
   ],
   "suggests": [
     "i-haklab, botgram"
@@ -16,12 +16,9 @@
     "bin/oa": "bin/oa",
     "bin/oaupdate": "bin/oaupdate",
     "bin/systemctl": "bin/systemctl",
-    "patches_bak/apply-patches.sh": "/data/data/com.termux/files/home/.openclaw/patches_bak/apply-patches.sh",
-    "patches_bak/argon2-stub.js": "/data/data/com.termux/files/home/.openclaw/patches_bak/argon2-stub.js",
-    "patches_bak/glibc-compat.js": "/data/data/com.termux/files/home/.openclaw/patches_bak/glibc-compat.js",
-    "patches_bak/patch-paths.sh": "/data/data/com.termux/files/home/.openclaw/patches_bak/patch-paths.sh",
-    "patches_bak/spawn.h": "/data/data/com.termux/files/home/.openclaw/patches_bak/spawn.h",
-    "patches_bak/termux-compat.h": "/data/data/com.termux/files/home/.openclaw/patches_bak/termux-compat.h",
+    "runtime-assets/glibc-compat.js": "/data/data/com.termux/files/home/.openclaw/runtime-assets/glibc-compat.js",
+    "runtime-assets/glibc-libs/libcap.so.2.44": "/data/data/com.termux/files/home/.openclaw/runtime-assets/glibc-libs/libcap.so.2.44",
+    "runtime-assets/termux-compat.h": "/data/data/com.termux/files/home/.openclaw/runtime-assets/termux-compat.h",
     "platforms/openclaw/config.env": "/data/data/com.termux/files/home/.openclaw/platforms/openclaw/config.env",
     "platforms/openclaw/env.sh": "/data/data/com.termux/files/home/.openclaw/platforms/openclaw/env.sh",
     "platforms/openclaw/install.sh": "/data/data/com.termux/files/home/.openclaw/platforms/openclaw/install.sh",

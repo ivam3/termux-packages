@@ -12,7 +12,7 @@ export CPATH="${PREFIX}/include/glib-2.0:${PREFIX}/lib/glib-2.0/include"
 python -c "import yaml" 2>/dev/null || pip install pyyaml -q || true
 
 mkdir -p "$PROJECT_DIR/patches"
-cp "$SCRIPT_DIR/patches_bak/glibc-compat.js" "$PROJECT_DIR/patches/glibc-compat.js"
+cp "$SCRIPT_DIR/runtime-assets/glibc-compat.js" "$PROJECT_DIR/patches/glibc-compat.js"
 
 chmod +x "${PREFIX}/bin/systemctl"
 

@@ -815,20 +815,20 @@ SHA256: 7314363d3c2ea23da381084bc93d3036961f143a20917f3e61e5ab8fe9c374f6
 SHA512: b6fd9867e1d15bd89b2276105215ffc2079ed00a2c00f7e99f8bf70bc99e6be3a000d2f1936eee7258ab9ae456d8a921aea1267850a0a61cdbb73e278379fb9c
 
 Package: i-haklab
-Version: 3.13.25
+Version: 3.13.26
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 26074
+Installed-Size: 26084
 Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, execline, fd, file, findutils, fish, fzf, gawk, git, glibc-repo, glow, golang, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, mandoc, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nodejs-lts, ollama, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, rust, sqlite, strace, tar, tor, torsocks, translate-shell, ttyd, unzip, wget, yazi, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.13.25_all.deb
-Size: 3736984
-MD5Sum: f82e4d0b01a8381b333b0bb4e04c5125
-SHA1: 2290a88d28a7ba4e3a94e855853a9b3416158fd3
-SHA256: 76d42044c048328c9f59417d84bfcd84ca40f100560be1d4a0f6592790b3be0f
-SHA512: faee0d70bc740fb7c3364fd8711d2846c4ba604f7dcaffcc2b35900417fb78c8890baa5191db288de41335ae1e1219379cd02d090868affc2f25b518e1801b81
+Filename: dists/stable/extras/binary-all/i-haklab_3.13.26_all.deb
+Size: 3738864
+MD5Sum: a60ee6d5c13269f2b199a7cdb7e93eb6
+SHA1: 056b29a07b7530151a97fc4cdae9588743a59760
+SHA256: a3909da37f0cce5160c75573d3979c0d88b33383e535c1715575dca9f6b44b06
+SHA512: f2b9c258d3e6e6ea4fa768602e8650659da07596686dff44231f2c740fcafb98b963cc90c3ee58a8323f3db4c9f77d103a949ab9a44b33ab3c2a054480bc04e4
 
 Package: infoga
 Version: 1.0
@@ -1052,22 +1052,6 @@ MD5Sum: 0fb46ab641e255e7fe0ff3a336910aac
 SHA1: a0d4b5865969294ce327b03d73a7ab5ce4f605bb
 SHA256: 7f1cebc17002bb7125289d12816e74cb157ab7f20a7fc326a86ff13010734db1
 SHA512: 3a573eed5a3e3a44fb8d3b747d10eff3f2e0ca67acdacd246e1054f4dcc8ae533ec2c5116fbd664cf59bd2a3d9473ce6f700d78d97e24d313df78215a00dba28
-
-Package: openclaw
-Version: 2026.10.4-1
-Architecture: all
-Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 127
-Depends: android-tools, git, curl, nodejs-lts, pacman, python, python-pip, make, cmake, clang, binutils, proot
-Suggests: i-haklab, botgram
-Homepage: https://github.com/AidanPark/openclaw-android
-Description: Open-source autonomous artificial intelligence agent.
-Filename: dists/stable/extras/binary-all/openclaw_2026.10.4-1_all.deb
-Size: 31856
-MD5Sum: 935dd1aaed309cf77943590ec7e9bbc2
-SHA1: 5e9fb2747000370f5a55fbe5b78735b3ec7c12d1
-SHA256: 55532558d008dd582217056e8f0b5ce65970ab8aa72f6e7de92baea02bfdf867
-SHA512: ed775d928e21335eda57230d4c526fdfb23593987cf11e7f4d29d98f0b28a35a796b263dfc0aa4ec0df2cc12a03a4131b6fbd36bd240798236a96a4b3bcfffea
 
 Package: openjdk-21-source
 Architecture: all

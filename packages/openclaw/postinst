@@ -8,19 +8,23 @@ export DPKG_FORCE=confold
 export APT_LISTCHANGES_FRONTEND=none
 export LANG=C
 export LC_ALL=C
-PWS=$(echo ${SHELL} | awk -F '/' '{print $NF}')
+: "${HOME:=/data/data/com.termux/files/home}"
+: "${PREFIX:=/data/data/com.termux/files/usr}"
+SHELL="${SHELL:-/bin/bash}"
+PWS=$(printf '%s\n' "$SHELL" | awk -F '/' '{print $NF}')
 
 case $PWS in 
-    bash) FILERC="${HOME}/.bashrc" ;;
     fish) FILERC="${PREFIX}/etc/fish/config.fish" ;;
     zsh) FILERC="${HOME}/.zshrc" ;;
+    *) FILERC="${HOME}/.bashrc" ;;
 esac
+mkdir -p "$(dirname "$FILERC")" 2>/dev/null || true
 # Update with all non-interactive flags to prevent config file prompts
 # =========================================================================
 # Fix Node.js IPv4 DNS (Crucial for Termux)
 # =========================================================================
 echo "Applying Enviroment Fixes..."
-if ! grep -q "" $FILERC 2>/dev/null; then
+if ! grep -qF "# >>> OpenClaw on Android >>>" "$FILERC" 2>/dev/null; then
     echo """
 # >>> OpenClaw on Android >>>
 # platform: openclaw
@@ -33,11 +37,11 @@ export CONTAINER=1
 export CLAWDHUB_WORKDIR="$HOME/.openclaw/workspace"
 export CPATH="$PREFIX/include/glib-2.0:$PREFIX/lib/glib-2.0/include"
 # <<< OpenClaw on Android <<<
-""" >> $FILERC
+""" >> "$FILERC"
 fi
 echo "Applying Network Fixes..."
-if ! grep -q "NODE_OPTIONS=--dns-result-order=ipv4first" $FILERC 2>/dev/null; then
-    echo "export NODE_OPTIONS=--dns-result-order=ipv4first" >> $FILERC
+if ! grep -q "NODE_OPTIONS=--dns-result-order=ipv4first" "$FILERC" 2>/dev/null; then
+    echo "export NODE_OPTIONS=--dns-result-order=ipv4first" >> "$FILERC"
 fi
 export NODE_OPTIONS=--dns-result-order=ipv4first
 
@@ -45,15 +49,31 @@ export NODE_OPTIONS=--dns-result-order=ipv4first
 # Install Official OpenClaw 
 # =========================================================================
 if command -v openclaw &>/dev/null || [ -d "${HOME}/.openclaw/repo" ]; then
-    echo "OpenClaw is already installed! Ensuring Node.js runtime..."
+    echo "OpenClaw is already installed! Ensuring runtime..."
+    # Self-heal: restore supplementary glibc libraries and the glibc marker.
+    if [ -f "${HOME}/.openclaw/scripts/install-glibc.sh" ]; then
+        bash "${HOME}/.openclaw/scripts/install-glibc.sh" || echo "[!] glibc ensure failed — run 'bash ~/.openclaw/scripts/install-glibc.sh' manually."
+    fi
     # Self-heal: pre-2026.9.3 installs carry glibc Node 22.x, rejected by
-    # OpenClaw >=24.16 guard. install-nodejs.sh is idempotent (SKIP on target).
+    # OpenClaw >=24.22.1 guard. install-nodejs.sh is idempotent (SKIP on target).
     if [ -f "${HOME}/.openclaw/scripts/install-nodejs.sh" ]; then
         bash "${HOME}/.openclaw/scripts/install-nodejs.sh" || echo "[!] Node.js ensure failed — run 'bash ~/.openclaw/scripts/install-nodejs.sh' manually, then 'openclaw update'."
     fi
 else
     echo "Installing OpenClaw. This takes a few minutes..."
-    bash ${PREFIX}/bin/openclaw_installer
+    bash "${PREFIX}/bin/openclaw_installer"
+fi
+
+OC_MJS="${PREFIX}/lib/node_modules/openclaw/openclaw.mjs"
+OC_BIN="${PREFIX}/bin/openclaw"
+if [ -f "$OC_MJS" ] && { [ ! -L "$OC_BIN" ] || [ "$(readlink "$OC_BIN")" != "$OC_MJS" ]; }; then
+    rm -f "$OC_BIN"
+    ln -s "$OC_MJS" "$OC_BIN"
+fi
+
+if ! command -v openclaw >/dev/null 2>&1; then
+    echo "Error: OpenClaw command not found after installation." >&2
+    exit 1
 fi
 
 echo "Configuring AI Phone Controller..."
@@ -180,27 +200,31 @@ NEW_PATH="'.openclaw-android', 'bin', 'node'"
 
 echo "--- Corrector de OpenClaw-Android ---"
 
-# 1. Verificar si el archivo existe
 if [ ! -f "$TARGET_FILE" ]; then
-    echo "Error: No se encontró el archivo en $TARGET_FILE"
-    exit 1
+    PATCH_SOURCE="$HOME/.openclaw/runtime-assets/glibc-compat.js"
+    if [ -f "$PATCH_SOURCE" ]; then
+        mkdir -p "$(dirname "$TARGET_FILE")"
+        cp "$PATCH_SOURCE" "$TARGET_FILE"
+        echo "✓ glibc-compat.js copiado desde $PATCH_SOURCE"
+    else
+        echo "Error: No se encontró el archivo en $TARGET_FILE ni en $PATCH_SOURCE"
+    fi
 fi
 
-# 2. Crear respaldo
-cp "$TARGET_FILE" "${TARGET_FILE}.bak"
-echo "✓ Respaldo creado: ${TARGET_FILE}.bak"
+if [ -f "$TARGET_FILE" ]; then
+    cp "$TARGET_FILE" "${TARGET_FILE}.bak"
+    echo "✓ Respaldo creado: ${TARGET_FILE}.bak"
 
-# 3. Aplicar la corrección
-if grep -q "$OLD_PATH" "$TARGET_FILE"; then
-    sed -i "s|$OLD_PATH|$NEW_PATH|g" "$TARGET_FILE"
-    echo "✓ Corrección aplicada exitosamente."
-else
-    # Verificar si ya estaba corregido
-    if grep -q "$NEW_PATH" "$TARGET_FILE"; then
+    if grep -q "$OLD_PATH" "$TARGET_FILE"; then
+        sed -i "s|$OLD_PATH|$NEW_PATH|g" "$TARGET_FILE"
+        echo "✓ Corrección aplicada exitosamente."
+    elif grep -q "$NEW_PATH" "$TARGET_FILE"; then
         echo "i El archivo ya parece estar corregido."
     else
         echo "Error: No se encontró la línea específica para parchear. Es posible que la versión sea distinta."
     fi
+else
+    echo "Warning: glibc-compat.js no disponible; se omite la corrección."
 fi
 
 echo "[💡] Connect ADB (if not already):"

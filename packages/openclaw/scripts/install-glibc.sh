@@ -30,16 +30,19 @@ if [ "$ARCH" != "aarch64" ]; then
     exit 1
 fi
 
-# ── Install supplementary glibc libraries (always runs) ──
+# ── Supplementary glibc libraries ─────────────
 # glibc-runner provides core libraries but not all libraries that
 # third-party binaries may need (e.g., libcap.so.2 for codex-acp).
-# This runs on both fresh install and update to ensure libraries are current.
+# Called after glibc is present, both on fresh install and on update.
 
 GLIBC_LIB_DIR="$PREFIX/glibc/lib"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-GLIBC_LIBS_SRC="$SCRIPT_DIR/../patches_bak/glibc-libs"
+GLIBC_LIBS_SRC="$SCRIPT_DIR/../runtime-assets/glibc-libs"
 
-if [ -d "$GLIBC_LIB_DIR" ] && [ -d "$GLIBC_LIBS_SRC" ]; then
+install_supplementary_libs() {
+    [ -d "$GLIBC_LIB_DIR" ] && [ -d "$GLIBC_LIBS_SRC" ] || return 0
+
+    local lib filename soname
     for lib in "$GLIBC_LIBS_SRC"/*.so.*; do
         [ -f "$lib" ] || continue
         filename=$(basename "$lib")
@@ -50,7 +53,7 @@ if [ -d "$GLIBC_LIB_DIR" ] && [ -d "$GLIBC_LIBS_SRC" ]; then
             echo -e "${GREEN}[OK]${NC}   Installed $soname"
         fi
     done
-fi
+}
 
 # ── Ensure glibc /etc/hosts exists (always runs) ──
 # glibc's getaddrinfo reads $PREFIX/glibc/etc/hosts for localhost resolution.
@@ -68,7 +71,10 @@ HOSTS
 fi
 
 # Check if already installed
-if [ -f "$OPENCLAW_DIR/.glibc-arch" ] && [ -x "$GLIBC_LDSO" ]; then
+if [ -x "$GLIBC_LDSO" ]; then
+    mkdir -p "$OPENCLAW_DIR"
+    install_supplementary_libs
+    touch "$OPENCLAW_DIR/.glibc-arch"
     echo -e "${GREEN}[SKIP]${NC} glibc-runner already installed"
     exit 0
 fi
@@ -77,45 +83,47 @@ fi
 
 echo ""
 echo "Initializing pacman..."
-echo "  (This may take a few minutes for GPG key generation)"
 
-# SigLevel workaround: Some devices have a GPGME crypto engine bug
-# that prevents signature verification. Temporarily set SigLevel = Never.
-SIGLEVEL_PATCHED=false
-if [ -f "$PACMAN_CONF" ]; then
-    if ! grep -q "^SigLevel = Never" "$PACMAN_CONF"; then
-        cp "$PACMAN_CONF" "${PACMAN_CONF}.bak"
-        sed -i 's/^SigLevel\s*=.*/SigLevel = Never/' "$PACMAN_CONF"
-        SIGLEVEL_PATCHED=true
-        echo -e "${YELLOW}[INFO]${NC} Applied SigLevel = Never workaround (GPGME bug)"
-    fi
+if ! command -v pacman >/dev/null 2>&1; then
+    echo -e "${RED}[FAIL]${NC} pacman not found"
+    exit 1
 fi
 
-# Initialize pacman keyring (may hang on low-entropy devices)
-pacman-key --init 2>/dev/null || true
-pacman-key --populate 2>/dev/null || true
+if [ ! -f "$PACMAN_CONF" ]; then
+    echo -e "${RED}[FAIL]${NC} pacman config not found at $PACMAN_CONF"
+    exit 1
+fi
+
+mkdir -p "${TMPDIR:-$PREFIX/tmp}"
+PACMAN_TMP_CONF="$(mktemp "${TMPDIR:-$PREFIX/tmp}/openclaw-pacman.XXXXXX")"
+trap 'rm -f "$PACMAN_TMP_CONF"' EXIT
+
+sed 's/^[[:space:]]*SigLevel[[:space:]]*=.*/SigLevel = Never/' "$PACMAN_CONF" > "$PACMAN_TMP_CONF"
+if ! grep -q '^SigLevel[[:space:]]*=[[:space:]]*Never' "$PACMAN_TMP_CONF"; then
+    sed -i '/^\[options\]/a SigLevel = Never' "$PACMAN_TMP_CONF"
+fi
+
+echo ""
+echo "Syncing pacman databases..."
+if ! pacman -Sy --noconfirm --config "$PACMAN_TMP_CONF"; then
+    echo -e "${RED}[FAIL]${NC} Failed to sync pacman databases"
+    exit 1
+fi
 
 # ── Step 3: Install glibc-runner ──────────────
 
 echo ""
 echo "Installing glibc-runner..."
 
-# --assume-installed: these packages are provided by Termux's apt but pacman
-# doesn't know about them, causing dependency resolution failures
-if pacman -Sy glibc-runner --noconfirm --assume-installed bash,patchelf,resolv-conf 2>&1; then
+if pacman -S --noconfirm --config "$PACMAN_TMP_CONF" \
+    --assume-installed bash=999 \
+    --assume-installed patchelf=999 \
+    --assume-installed resolv-conf=999 \
+    glibc-runner; then
     echo -e "${GREEN}[OK]${NC}   glibc-runner installed"
 else
     echo -e "${RED}[FAIL]${NC} Failed to install glibc-runner"
-    if [ "$SIGLEVEL_PATCHED" = true ] && [ -f "${PACMAN_CONF}.bak" ]; then
-        mv "${PACMAN_CONF}.bak" "$PACMAN_CONF"
-    fi
     exit 1
-fi
-
-# Restore SigLevel after successful install
-if [ "$SIGLEVEL_PATCHED" = true ] && [ -f "${PACMAN_CONF}.bak" ]; then
-    mv "${PACMAN_CONF}.bak" "$PACMAN_CONF"
-    echo -e "${GREEN}[OK]${NC}   Restored pacman SigLevel"
 fi
 
 # ── Verify ────────────────────────────────────
@@ -125,6 +133,8 @@ if [ ! -x "$GLIBC_LDSO" ]; then
     exit 1
 fi
 echo -e "${GREEN}[OK]${NC}   glibc dynamic linker available"
+
+install_supplementary_libs
 
 if command -v grun &>/dev/null; then
     echo -e "${GREEN}[OK]${NC}   grun command available"

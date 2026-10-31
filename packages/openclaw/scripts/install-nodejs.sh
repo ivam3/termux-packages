@@ -24,10 +24,10 @@ BIN_DIR="$OPENCLAW_DIR/bin"
 GLIBC_LDSO="$PREFIX/glibc/lib/ld-linux-aarch64.so.1"
 
 # Node.js LTS version to install
-# OpenClaw requires >=24.16.0 <25 || >=26.1.0 (engines + node-version.mjs guard).
+# OpenClaw requires >=24.22.1 <25 || >=26.12.1 (engines + node-version.mjs guard).
 # Keep on Node 24 line for parity with Termux nodejs-lts (bionic) while using
 # the glibc linux-arm64 tarball (distinct binary, not the bionic one).
-NODE_VERSION="24.20.0"
+NODE_VERSION="24.22.2"
 NODE_TARBALL="node-v${NODE_VERSION}-linux-arm64.tar.xz"
 NODE_URL="https://nodejs.org/dist/v${NODE_VERSION}/${NODE_TARBALL}"
 
@@ -109,9 +109,10 @@ case "$*" in *-g*openclaw*|*--global*openclaw*|*openclaw*-g*|*openclaw*--global*
     _oc_bin="__PREFIX__/bin/openclaw"
     _oc_mjs="__PREFIX__/lib/node_modules/openclaw/openclaw.mjs"
     if [ -f "$_oc_mjs" ]; then
-        [ -L "$_oc_bin" ] && rm -f "$_oc_bin"
-        printf '#!__PREFIX__/bin/bash\nexec "__BIN_DIR__/node" "%s" "$@"\n' "$_oc_mjs" > "$_oc_bin"
-        chmod +x "$_oc_bin"
+        if [ ! -L "$_oc_bin" ] || [ "$(readlink "$_oc_bin")" != "$_oc_mjs" ]; then
+            rm -f "$_oc_bin"
+            ln -s "$_oc_mjs" "$_oc_bin"
+        fi
     fi
     ;;
 esac
@@ -170,7 +171,7 @@ fi
 echo -e "${GREEN}[OK]${NC}   Downloaded $NODE_TARBALL"
 
 # Extract
-# Major upgrades (e.g. 22.x -> 24.x for OpenClaw >=24.16 requirement) must not
+# Major upgrades (e.g. 22.x -> 24.x for OpenClaw >=24.22.1 requirement) must not
 # overlay the old tree: stale lib/node_modules, headers and node.real break
 # the new runtime. Clean NODE_DIR only AFTER a successful download so a
 # network failure never leaves the user without node.
@@ -251,9 +252,10 @@ case "$*" in *-g*openclaw*|*--global*openclaw*|*openclaw*-g*|*openclaw*--global*
     _oc_bin="__PREFIX__/bin/openclaw"
     _oc_mjs="__PREFIX__/lib/node_modules/openclaw/openclaw.mjs"
     if [ -f "$_oc_mjs" ]; then
-        [ -L "$_oc_bin" ] && rm -f "$_oc_bin"
-        printf '#!__PREFIX__/bin/bash\nexec "__BIN_DIR__/node" "%s" "$@"\n' "$_oc_mjs" > "$_oc_bin"
-        chmod +x "$_oc_bin"
+        if [ ! -L "$_oc_bin" ] || [ "$(readlink "$_oc_bin")" != "$_oc_mjs" ]; then
+            rm -f "$_oc_bin"
+            ln -s "$_oc_mjs" "$_oc_bin"
+        fi
     fi
     ;;
 esac
