@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# Save data in ~/.local/share/terminus-game is intentionally kept on removal.
+echo "Removing terminus-game (your save file is preserved)."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

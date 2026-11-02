@@ -1,0 +1,3 @@
+#!/data/data/com.termux/files/usr/bin/bash
+echo "Done. Package 'terminus-game' removed."
+echo "Save data kept in ~/.local/share/terminus-game (delete it manually to reset)."

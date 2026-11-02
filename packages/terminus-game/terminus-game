@@ -1,0 +1,18 @@
+#!/data/data/com.termux/files/usr/bin/bash
+: "${PREFIX:=/data/data/com.termux/files/usr}"
+: "${TERMINUS_ROOT:=${PREFIX}/share/terminus-game}"
+
+if ! command -v node >/dev/null 2>&1; then
+  echo "E: terminus-game requires Node.js (package: nodejs-lts)." >&2
+  echo "   Install it with: pkg install nodejs-lts" >&2
+  exit 1
+fi
+
+if [[ ! -f "${TERMINUS_ROOT}/lib/cli.js" ]]; then
+  echo "E: terminus-game data missing at ${TERMINUS_ROOT}" >&2
+  echo "   Reinstall the package: pkg install --reinstall terminus-game" >&2
+  exit 1
+fi
+
+exec node "${TERMINUS_ROOT}/lib/cli.js" "$@"
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

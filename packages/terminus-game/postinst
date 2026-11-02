@@ -1,0 +1,75 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+set -Eeuo pipefail
+: "${PREFIX:=/data/data/com.termux/files/usr}"
+
+SAVE_DIR="${HOME}/.local/share/terminus-game"
+BIN_PATH="${PREFIX}/bin/terminus-game"
+DATA_DIR="${PREFIX}/share/terminus-game"
+APP_DIR="${PREFIX}/share/applications/terminus-game"
+
+# Colors
+CYAN="\033[36m"
+GREEN="\033[32m"
+RED="\033[31m"
+YELLOW="\033[33m"
+DIM="\033[2m"
+RESET="\033[0m"
+
+# Msg
+info() { printf "%b[📢]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+msg()   { printf "[➡] %s\n" "$*"; }
+ok()   { printf "%b[✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+warn() { printf "%b[!]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+tip() { printf "%b[💡]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+err()  { printf "%b[❌]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+
+if [[ ! -f "${DATA_DIR}/lib/cli.js" ]]; then
+  err "terminus-game data missing at ${DATA_DIR}."
+  exit 1
+fi
+
+msg "Finalizing installation ..."
+chmod 755 "${BIN_PATH}" 2>/dev/null || true
+chmod 755 "${DATA_DIR}" 2>/dev/null || true
+find "${DATA_DIR}" -type d -exec chmod 755 {} + 2>/dev/null || true
+find "${DATA_DIR}" -type f -exec chmod 644 {} + 2>/dev/null || true
+if [[ -d "${APP_DIR}" ]]; then
+  chmod 755 "${APP_DIR}" "${APP_DIR}/img" 2>/dev/null || true
+  chmod 644 "${APP_DIR}/terminus-game.desktop" "${APP_DIR}/img/terminus-game.png" 2>/dev/null || true
+fi
+
+mkdir -p "${SAVE_DIR}"
+chmod 700 "${SAVE_DIR}" 2>/dev/null || true
+ok "terminus-game installation finished."
+
+if command -v chafa >/dev/null 2>&1; then
+  ok "chafa detected: room and item images will be rendered in the terminal."
+else
+  tip "Install 'chafa' for inline images: pkg install chafa"
+fi
+if command -v termux-open >/dev/null 2>&1; then
+  tip "termux-open detected: use --images=open to view images in an external app."
+fi
+
+info "Run 'terminus-game' to play. Use 'terminus-game --help' for options."
+info "Your progress is saved in ${SAVE_DIR}/save.json"
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+msg "Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o "${PREFIX}/bin/fixer"; then
+    chmod 750 "${PREFIX}/bin/fixer"
+    info "Run 'fixer' to fix any posible issue."
+else
+    warn "Could not download fixer."
+fi
+
+# ==============================
+# FINALS MESSAGES
+# ==============================
+tip "Help: going to https://t.me/Ivam3_Bot."
+msg "@Ivam3: thank you for use my package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

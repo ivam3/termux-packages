@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Terminus
+GenericName=Linux learning adventure game
+Comment=Learn the Linux command line through a text adventure
+Comment[es]=Aprende la línea de comandos de Linux con una aventura de texto
+Version=1.0.0-1
+Exec=terminus-game
+Icon=/data/data/com.termux/files/usr/share/applications/terminus-game/img/terminus-game.png
+Terminal=true
+Type=Application
+Categories=Game;Education;
+X-Desktop-File-Install-Version=1.0.0-1

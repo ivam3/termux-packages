@@ -1,0 +1,19 @@
+{
+  "name": "terminus-game",
+  "version": "1.0.0-1",
+  "arch": "all",
+  "homepage": "https://github.com/mprat/Terminus",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["nodejs-lts"],
+  "suggests": ["chafa", "termux-api", "i-haklab"],
+  "description": "Terminal port of Terminus, the Linux learning adventure game.",
+  "files" :{
+    "terminus-game": "bin/terminus-game",
+    "lib": "share/terminus-game/lib",
+    "vendor": "share/terminus-game/vendor",
+    "LICENSE": "share/terminus-game/LICENSE",
+    "README.md": "share/terminus-game/README.md",
+    "img/terminus-game.png": "/data/data/com.termux/files/usr/share/applications/terminus-game/img/terminus-game.png",
+    "terminus-game.desktop": "/data/data/com.termux/files/usr/share/applications/terminus-game/terminus-game.desktop"
+  }
+}

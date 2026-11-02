@@ -815,20 +815,20 @@ SHA256: 7314363d3c2ea23da381084bc93d3036961f143a20917f3e61e5ab8fe9c374f6
 SHA512: b6fd9867e1d15bd89b2276105215ffc2079ed00a2c00f7e99f8bf70bc99e6be3a000d2f1936eee7258ab9ae456d8a921aea1267850a0a61cdbb73e278379fb9c
 
 Package: i-haklab
-Version: 3.13.26
+Version: 3.13.27
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 26084
+Installed-Size: 26088
 Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, execline, fd, file, findutils, fish, fzf, gawk, git, glibc-repo, glow, golang, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, mandoc, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nodejs-lts, ollama, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, rust, sqlite, strace, tar, tor, torsocks, translate-shell, ttyd, unzip, wget, yazi, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.13.26_all.deb
-Size: 3738864
-MD5Sum: a60ee6d5c13269f2b199a7cdb7e93eb6
-SHA1: 056b29a07b7530151a97fc4cdae9588743a59760
-SHA256: a3909da37f0cce5160c75573d3979c0d88b33383e535c1715575dca9f6b44b06
-SHA512: f2b9c258d3e6e6ea4fa768602e8650659da07596686dff44231f2c740fcafb98b963cc90c3ee58a8323f3db4c9f77d103a949ab9a44b33ab3c2a054480bc04e4
+Filename: dists/stable/extras/binary-all/i-haklab_3.13.27_all.deb
+Size: 3739864
+MD5Sum: 93da830544c0efac3bdb9f41b800b066
+SHA1: 03cfd5a46f31f2d10dad63da47e9d4caa6c63f8d
+SHA256: 8710075b544bf756df0d214fe3e807c7fec44597bb6b70667e6760a9e113c56d
+SHA512: 7e1e4746f4d636854b18f65406ccafdc29b576c0388dad434003acac1e18b834341c98491ae18e5026ca1e1cad4b835ddbc4df01b5b1b45b56c544b1b4a69531
 
 Package: infoga
 Version: 1.0
@@ -1339,6 +1339,22 @@ MD5Sum: 544659ed99dcd703d1025ab875c6863f
 SHA1: c9e5627041cf8b1ee12a6be794154717d9b57e39
 SHA256: e288acf8a3dcf00083456c02a72f369ff342e94e37561346ae76705c70736a80
 SHA512: d89eafeb96f340522c2acb4d99c6e9ce2e5731eee3bbadbba302bcb096173d5607178a6cbe141029130e23b02399c4801e8c56604156da1e94c210c8905fe9b0
+
+Package: terminus-game
+Version: 1.0.0-1
+Architecture: all
+Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
+Installed-Size: 817
+Depends: nodejs-lts
+Suggests: chafa, termux-api, i-haklab
+Homepage: https://github.com/mprat/Terminus
+Description: Terminal port of Terminus, the Linux learning adventure game.
+Filename: dists/stable/extras/binary-all/terminus-game_1.0.0-1_all.deb
+Size: 409836
+MD5Sum: ad67729d10694f1802517cfffb920107
+SHA1: 9440e81b6730c7b39023927b7b59f950fdee9366
+SHA256: cda4bdf9f99cd37f2cc2a9be269e2b33f83d51c992d1b1e82e3b1d77a3d32141
+SHA512: db52236a5566e22e139a6916a042220575a561a88b4480478300a4ce8905df2b524d765801d68de46800ac83e3df58d66087f5161adffca7152e4c84b4819a1d
 
 Package: termux-desktop-bspwm
 Version: 0.1.1

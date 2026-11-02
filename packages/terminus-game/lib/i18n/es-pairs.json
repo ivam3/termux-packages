@@ -1,0 +1,506 @@
+[
+  [
+    "DEAD END",
+    "CALLEJÓN SIN SALIDA"
+  ],
+  [
+    "Password:",
+    "Contraseña:"
+  ],
+  [
+    "This is a Gear",
+    "Es un engranaje."
+  ],
+  [
+    "They're multiplying!",
+    "¡Se están multiplicando!"
+  ],
+  [
+    "It's a practice dummy",
+    "Es un muñeco de práctica."
+  ],
+  [
+    "This is AnotherEarOfCorn",
+    "Es otra mazorca de maíz."
+  ],
+  [
+    "There are so many files here!",
+    "¡Hay tantísimos archivos aquí!"
+  ],
+  [
+    "He looks mad, and really ugly.",
+    "Parece enfadado, y realmente feo."
+  ],
+  [
+    "The boulder disappears with a pop.",
+    "La roca desaparece con un ¡pop!"
+  ],
+  [
+    "You can't take that, it's not yours!",
+    "¡No puedes llevarte eso, no es tuyo!"
+  ],
+  [
+    "The corn is sad and withered-looking.",
+    "El maíz está triste y parece marchito."
+  ],
+  [
+    "You are too small to fit into the box.",
+    "Eres demasiado pequeño para caber en la caja."
+  ],
+  [
+    "It's your typical cave: dark and dank.",
+    "Es una cueva típica: oscura y húmeda."
+  ],
+  [
+    "There's a scared-looking kid in there.",
+    "Hay un niño que parece asustado ahí dentro."
+  ],
+  [
+    "You are in the comfort of your own home.",
+    "Estás en la comodidad de tu propio hogar."
+  ],
+  [
+    "You have arrived by magic carpet to MIT!",
+    "¡Has llegado al MIT en una alfombra mágica!"
+  ],
+  [
+    "You have been transported through time...",
+    "Has sido transportado a través del tiempo..."
+  ],
+  [
+    "Vendors and their goods line the streets.",
+    "Los vendedores y sus mercancías bordean las calles."
+  ],
+  [
+    "You have to get past the UglyTroll first.",
+    "Primero tienes que pasar junto al UglyTroll."
+  ],
+  [
+    "This box is too small for you to fit into.",
+    "Esta caja es demasiado pequeña para que quepas dentro."
+  ],
+  [
+    "You must enter the Athena cluster combo first.",
+    "Primero debes introducir la combinación del clúster Athena."
+  ],
+  [
+    "The weed-choked path leads off into the fields.",
+    "El sendero cubierto de maleza se adentra en los campos."
+  ],
+  [
+    "There's really nothing interesting in Paradise.",
+    "Realmente no hay nada interesante en Paradise."
+  ],
+  [
+    "A creaky rope bridges stretches across a chasm.",
+    "Un puente de cuerda que cruje se extiende sobre un abismo."
+  ],
+  [
+    "Why would you destroy a starving man's only food?",
+    "¿Por qué destruirías la única comida de un hombre hambriento?"
+  ],
+  [
+    "You must read the Certificate with the sudo password.",
+    "Debes leer el Certificate con la contraseña de sudo."
+  ],
+  [
+    "Type \"man COMMAND\" if you forget how to use a command.",
+    "Escribe \"man COMANDO\" si olvidas cómo usar un comando."
+  ],
+  [
+    "The slides is long. At the end, you see the KernelFiles.",
+    "El tobogán es largo. Al final, ves los KernelFiles."
+  ],
+  [
+    "It looks like a crystal of some sort. It's very beautiful.",
+    "Parece una especie de cristal. Es muy hermoso."
+  ],
+  [
+    "It’s a miracle! Thank you, friend. May the Admin bless you.",
+    "¡Es un milagro! Gracias, amigo. Que el Admin te bendiga."
+  ],
+  [
+    "You probably don't want to look at this guy. Oops, too late.",
+    "Probablemente no quieras mirar a este tipo. Ups, demasiado tarde."
+  ],
+  [
+    "You can't touch them because they are covered with thorns. Ouch!",
+    "No puedes tocarlas porque están cubiertas de espinas. ¡Auch!"
+  ],
+  [
+    "It's just a Slide. Keep going. You're almost at the KernelFiles.",
+    "Es solo un tobogán. Sigue adelante. Ya casi estás en los KernelFiles."
+  ],
+  [
+    "You can’t cross the bridge until you’ve replaced the missing Plank.",
+    "No puedes cruzar el puente hasta que hayas reemplazado el Plank que falta."
+  ],
+  [
+    "You have truly found Paradise with the sudo password. Congratulations.",
+    "Has encontrado Paradise de verdad con la contraseña de sudo. Enhorabuena."
+  ],
+  [
+    "The rocky staircase leads you to a dead end and a sign indicating such.",
+    "La escalera rocosa te lleva a un callejón sin salida y a un cartel que lo indica."
+  ],
+  [
+    "You travel through the dark corridor and find a small dank room at the end.",
+    "Recorres el corredor oscuro y encuentras una pequeña habitación húmeda al final."
+  ],
+  [
+    "It's a musty dank room. A round boulder sits to the right side of the room.",
+    "Es una habitación húmeda y con olor a moho. Una roca redonda descansa a la derecha de la habitación."
+  ],
+  [
+    "There is an enormous boulder blocking your way.  It's much too big to move.",
+    "Hay una roca enorme bloqueando el paso. Es demasiado grande para moverla."
+  ],
+  [
+    "Ha, finished already? I guess you learn fast. Well, thanks for your assistance.",
+    "Ja, ¿ya has terminado? Veo que aprendes rápido. Bueno, gracias por tu ayuda."
+  ],
+  [
+    "This is a beautiful green meadow. A plump but majestic pony prances happily about.",
+    "Esta es una hermosa pradera verde. Un poni rechoncho pero majestuoso retoza alegremente."
+  ],
+  [
+    "There was once a farm of some sort here, but now the fields are scorched and brown.",
+    "Antaño hubo aquí una especie de granja, pero ahora los campos están quemados y marrones."
+  ],
+  [
+    "The troll looks briefy surprised, then vanishes with an unpleasant squelching sound.",
+    "El trol parece brevemente sorprendido y luego desaparece con un desagradable sonido de chapoteo."
+  ],
+  [
+    "The troll looks briefly surprised, then moves away. He's mostly     harmless anyway.",
+    "El trol parece brevemente sorprendido y luego se aleja. De todos modos, es casi inofensivo."
+  ],
+  [
+    "The room is filled with practice dummies for students to practice their new spells on.",
+    "La sala está llena de muñecos de práctica para que los estudiantes practiquen sus nuevos hechizos."
+  ],
+  [
+    "You feel a slight breeze coming from behind the boulder. Maybe move it out of your way?",
+    "Sientes una ligera brisa proveniente de detrás de la roca. ¿Quizá moverla de tu camino?"
+  ],
+  [
+    "The KernelFiles hold the sudo-secret (no, not pseudo). You'd better read the Instructions.",
+    "Los KernelFiles guardan el secreto de sudo (no, no es pseudo). Será mejor que leas las Instructions."
+  ],
+  [
+    "There's nothing exciting in the small hole, and it's pretty dirty. I suggest going back out.",
+    "No hay nada emocionante en el agujero pequeño, y está bastante sucio. Sugiero que vuelvas a salir."
+  ],
+  [
+    "You know it's kind of mean, but you can't help but think that that is one funny-looking kid.",
+    "Sabes que es un poco cruel, pero no puedes evitar pensar que ese niño tiene un aspecto muy gracioso."
+  ],
+  [
+    "The exceptionally ugly elf turns to you with a sour expression. \"Greeeeeep,\" he says sullenly.",
+    "El elfo excepcionalmente feo se gira hacia ti con expresión agria. \"Greeeeeep\", dice malhumorado."
+  ],
+  [
+    "If you move him out of the cave, he'll terrorize the countryside. Also he will probably eat you.",
+    "Si lo sacas de la cueva, aterrorizará el campo. Además, probablemente te comerá."
+  ],
+  [
+    "Sally picked a peck\nOf seashelled peppers.\nA seashore of pickled pickles\ndid Peter and Sally pick.",
+    "Sally recogió un puñado\nde pimientos marinos.\nUna orilla de pepinillos encurtidos\nrecogieron Peter y Sally."
+  ],
+  [
+    "You can’t squeeze through the bars. Anyway, are you crazy?     Why would you want to go into a cage?",
+    "No puedes colarte entre los barrotes. De todos modos, ¿estás loco? ¿Por qué querrías meterte en una jaula?"
+  ],
+  [
+    "None shall pass without the combination. Youhave one chance to enter the combination. Enter password:",
+    "Nadie podrá pasar sin la combinación. Tienes una oportunidad para introducir la combinación. Introduce la contraseña:"
+  ],
+  [
+    "None shall pass without the combination. You have one chance to enter the combination. Enter password:",
+    "Nadie podrá pasar sin la combinación. Tienes una oportunidad para introducir la combinación. Introduce la contraseña:"
+  ],
+  [
+    "Spell Casting Academy: The Elite School of Magic Today Only: Free Introductory Lessons! Novices welcome!",
+    "Academia de Lanzamiento de Hechizos: La Escuela de Magia de Élite. Solo por hoy: ¡Clases introductorias gratis! ¡Novatos bienvenidos!"
+  ],
+  [
+    "Congratulations on entering MIT! Here you will learn special spells that you can only use at MIT. Enjoy!",
+    "¡Enhorabuena por entrar en el MIT! Aquí aprenderás hechizos especiales que solo puedes usar en el MIT. ¡Disfruta!"
+  ],
+  [
+    "A creaky wooden bridges stretches across a chasm. But it's missing a Plank, and the gap is too far to jump.",
+    "Un puente de madera que cruje se extiende sobre un abismo. Pero le falta un Plank, y el hueco es demasiado grande para saltarlo."
+  ],
+  [
+    "There's a small grassy clearing here, with a man sitting on a stone, weeping. Behind him is a pile of rubble.",
+    "Hay un pequeño claro cubierto de hierba, con un hombre sentado sobre una piedra, llorando. Detrás de él hay un montón de escombros."
+  ],
+  [
+    "There's nothing exciting in the small hole, and it's pretty dirty. There's no real reason to go into the hole.",
+    "No hay nada emocionante en el agujero pequeño, y está bastante sucio. No hay una razón real para entrar en el agujero."
+  ],
+  [
+    "Didn't your mother ever teach you that it's rude to rease other people's things from their plane of existence?",
+    "¿No te enseñó tu madre que es de mala educación borrar las cosas de los demás de su plano de existencia?"
+  ],
+  [
+    "Didn't your mother ever teach you that it's rude to erase other people's things from their plane of existence?",
+    "¿No te enseñó tu madre que es de mala educación borrar las cosas de los demás de su plano de existencia?"
+  ],
+  [
+    "You find a mysterious back room. You find a librarian alone with a small elf. You hope you're not interrupting.",
+    "Encuentras una misteriosa sala trasera. Encuentras a una bibliotecaria a solas con un pequeño elfo. Esperas no estar interrumpiendo."
+  ],
+  [
+    "This contains items and spells that can be used anywhere in the world after you add the locker. More is coming.",
+    "Contiene objetos y hechizos que se pueden usar en cualquier parte del mundo después de añadir el casillero. Pronto habrá más."
+  ],
+  [
+    "\"Ha! That spell doesn't work on everything, you know. I may have forgotten to mention that before I sold it to you...\"",
+    "\"¡Ja! Ese hechizo no funciona con todo, ¿sabes? Puede que haya olvidado mencionarlo antes de vendértelo...\""
+  ],
+  [
+    "\" 'Ello there.\" The vendor smiles at you unpleasantly, revealing a mouth full of gold teeth. \"Well? Wot are you looking for?\"",
+    "\"Hola.\" El vendedor te sonríe de forma desagradable, mostrando una boca llena de dientes de oro. \"¿Y bien? ¿Qué buscas?\""
+  ],
+  [
+    "If you ever get lonely for Home, just 'cd ~' and you'll go back there. But just remember that it will be harder to come back.",
+    "Si alguna vez añoras Home, solo escribe 'cd ~' y volverás allí. Pero recuerda que será más difícil regresar."
+  ],
+  [
+    "The path leads toward a dark cave. It's an ordinary cobblestone path, but for some reason it fills you with a sense of dread.",
+    "El sendero conduce hacia una cueva oscura. Es un camino empedrado normal, pero por alguna razón te llena de inquietud."
+  ],
+  [
+    "Thank you for making me the House!  Why am I still crying?  These are tears of joy.  Can't a man openly express his emotions?",
+    "¡Gracias por hacerme la House! ¿Por qué sigo llorando? Son lágrimas de alegría. ¿Acaso un hombre no puede expresar sus emociones abiertamente?"
+  ],
+  [
+    "The Library is dimly lit and smells like mildew. Still, it's warm in here and the soft green carpet makes it seem kind of cozy.",
+    "La Library está tenuemente iluminada y huele a moho. Aun así, hace calor aquí y la suave alfombra verde la hace bastante acogedora."
+  ],
+  [
+    "You spot an inconspicuous lever behind the shelves.  Curious, you pull it, and a panel slides open to reveal a secret back room.",
+    "Vislumbras una palanca discreta detrás de las estanterías. Por curiosidad, tiras de ella, y un panel se desliza para revelar una sala trasera secreta."
+  ],
+  [
+    "There's a small grassy clearing here, with a man sitting on a stone, weeping. Behind him is a pile of rubble and a small white house.",
+    "Hay un pequeño claro cubierto de hierba, con un hombre sentado sobre una piedra, llorando. Detrás de él hay un montón de escombros y una pequeña casa blanca."
+  ],
+  [
+    "The cave is dark and smells like... feet? Oh, right, it's probably the trolls. There's a scared-looking kid in a cage by the far wall.",
+    "La cueva está oscura y huele a... ¿pies? Ah, claro, probablemente sean los trols. Hay un niño que parece asustado en una jaula junto a la pared del fondo."
+  ],
+  [
+    "You travel through a mountain path, which eventually leads you to the entrance of a cave. Sitting right outside this cave is an old man.",
+    "Recorres un sendero de montaña que finalmente te lleva a la entrada de una cueva. Justo fuera de la cueva hay un anciano sentado."
+  ],
+  [
+    "The center of computer science and artificial intelligence research at MIT. Lots of magic happens here, including TAs, grad students, etc.",
+    "El centro de investigación en informática e inteligencia artificial del MIT. Aquí ocurre mucha magia, incluyendo a los TAs, estudiantes de posgrado, etc."
+  ],
+  [
+    "You speak the words of the Remove spell and the brambles glimmer a deep blue. After fizzling for a minute, they disappear with a puff of smoke.",
+    "Pronuncias las palabras del hechizo Remove y las zarzas brillan en azul profundo. Tras chisporrotear durante un minuto, desaparecen con una bocanada de humo."
+  ],
+  [
+    "Upon further inspection, you determine that the furry presence is in fact a rat...the size of a small dog. It bites you. You are very displeased.",
+    "Tras examinarla mejor, determinas que la presencia peluda es en realidad una rata... del tamaño de un perro pequeño. Te muerde. Estás muy disgustado."
+  ],
+  [
+    "A dragon the size of a small dog is frolicking about the room. You'd think it was real if it weren't for the wind-up key sticking out of its back.",
+    "Un dragón del tamaño de un perro pequeño retoza por la habitación. Pensarías que es real si no fuera por la llave de cuerda que sobresale de su espalda."
+  ],
+  [
+    "Ah, welcome to the wonderful land of Stata. There's one room here that you'll need the combination for. All you have to do is ask:\n 'tellme combo'.",
+    "Ah, bienvenido a la maravillosa tierra de Stata. Aquí hay una sala para la que necesitarás la combinación. Todo lo que tienes que hacer es preguntar:\n 'tellme combo'."
+  ],
+  [
+    "If you ever want to go directly Home, just type 'cd ~' or just plain old `cd' and you'll come back Home. Getting back might be more difficult though.",
+    "Si alguna vez quieres ir directamente a Home, escribe 'cd ~' o simplemente 'cd' y volverás a Home. Aunque volver atrás puede ser más difícil."
+  ],
+  [
+    "The old man's voice echoes in your head as if from a great distance:\n(CoPy)\nUse \"cp\" to duplicate an item. \nCommand Input:\ncp ITEM NEWNAME \nRememberrrrrr...",
+    "La voz del anciano resuena en tu cabeza como si viniera de muy lejos:\n(CoPiAr)\nUsa \"cp\" para duplicar un objeto.\nEntrada del comando:\ncp OBJETO NUEVONOMBRE\nRecuerdaaaaa..."
+  ],
+  [
+    "The old man's voice echoes in your head as if from a great distance:\n(exit) \nUse \"exit\" to exit the game permanently. \nCommand Input: \nexit \nRememberrrrrr...",
+    "La voz del anciano resuena en tu cabeza como si viniera de muy lejos:\n(exit)\nUsa \"exit\" para salir del juego permanentemente.\nEntrada del comando:\nexit\nRecuerdaaaaa..."
+  ],
+  [
+    "The woman is sobbing uncontrollably, her face in her hands. \"My baby,\" she cries, \"They kidnapped my baby! I just know that wizard had something to do with it.\"",
+    "La mujer solloza sin control, con la cara entre las manos. \"Mi bebé\", llora, \"¡Se han llevado a mi bebé! Estoy segura de que ese mago ha tenido algo que ver.\""
+  ],
+  [
+    "I'm the old man dangit! You can't try to get more information about me. Here are all the commands you can man: cd, ls, rm, mv, exit, help, man, touch, grep, pwd.",
+    "¡Soy el anciano, caramba! No puedes intentar obtener más información sobre mí. Estos son todos los comandos sobre los que puedes usar man: cd, ls, rm, mv, exit, help, man, touch, grep, pwd."
+  ],
+  [
+    "The whole rooms glows a dim green light. The source of this light is a portal standing in the middle of the room. This is obviously the portal of which the old man spoke.",
+    "Toda la sala brilla con una tenue luz verde. La fuente de esa luz es un portal que está en el centro de la sala. Obviamente, es el portal del que habló el anciano."
+  ],
+  [
+    "The old man's voice echoes in your head as if from a great distance: \n(Choose Destination) Use \"cd\" to move about the world. \nCommand Input: cd LOCATION \nRememberrrrrr...",
+    "La voz del anciano resuena en tu cabeza como si viniera de muy lejos:\n(Elegir destino) Usa \"cd\" para moverte por el mundo.\nEntrada del comando: cd LUGAR\nRecuerdaaaaa..."
+  ],
+  [
+    "The old man's voice echoes in your head as if from a great distance: \n(Print Where i Do stuff) \nTo remind yourself where you currently are.\nCommand Input: \npwd \nRememberrrrrr...",
+    "La voz del anciano resuena en tu cabeza como si viniera de muy lejos:\n(Imprimir dónde estoy)\nPara recordar dónde te encuentras ahora mismo.\nEntrada del comando:\npwd\nRecuerdaaaaa..."
+  ],
+  [
+    "The walls of the shop are covered in clocks, all slightly out of sync. At the workbench, a woman in an enormous pair of goggles is wielding a blowtorch with frightening enthusiasm.",
+    "Las paredes de la tienda están cubiertas de relojes, todos ligeramente desincronizados. En el banco de trabajo, una mujer con unas gafas enormes maneja un soplete con un entusiasmo aterrador."
+  ],
+  [
+    "The old man's voice echoes in your head as if from a great distance: \n(MoVe). \n Use \"mv\" to move an object to a new location. \n Command Input:mv OBJECT NEWLOCATION \nRememberrrrrr...",
+    "La voz del anciano resuena en tu cabeza como si viniera de muy lejos:\n(MoVeR).\n Usa \"mv\" para mover un objeto a una nueva ubicación.\n Entrada del comando:mv OBJETO NUEVOLUGAR\nRecuerdaaaaa..."
+  ],
+  [
+    "Welcome to the Practice Room. Here you will find practice dummies try your new spells on. Go ahead, give it a go! If you don't know any spells yet, go back and check out some Lessons.",
+    "Bienvenido a la Practice Room. Aquí encontrarás muñecos de práctica sobre los que probar tus nuevos hechizos. Adelante, ¡pruébalo! Si aún no conoces ningún hechizo, vuelve y echa un vistazo a algunas Lessons."
+  ],
+  [
+    "You enter and travel deep into the forest. Eventually, the path leads to a clearing with a large impressive building. A sign on it reads: Spell Casting Academy: The Elite School of Magic.",
+    "Entras y te adentras en lo profundo del bosque. Finalmente, el sendero conduce a un claro con un gran edificio impresionante. Un cartel dice: Academia de Lanzamiento de Hechizos: La Escuela de Magia de Élite."
+  ],
+  [
+    "This thicket of brambles is covered with wicked-looking thorns. You can't go around it, and you definitely aren't about to go through it. And yet something tells you that you really want to.",
+    "Esta maraña de zarzas está cubierta de espinas de aspecto malvado. No puedes rodearla, y desde luego no estás a punto de atravesarla. Y sin embargo, algo te dice que realmente quieres hacerlo."
+  ],
+  [
+    "The old man's voice echoes in your head as if from a great distance:\n(tellme combo) tells you the combination for the AthenaCluster rooms at MIT.\nCommand Input:\ntellme combo\nRememberrrrrr...",
+    "La voz del anciano resuena en tu cabeza como si viniera de muy lejos:\n(tellme combo) te dice la combinación para las salas AthenaCluster del MIT.\nEntrada del comando:\ntellme combo\nRecuerdaaaaa..."
+  ],
+  [
+    "\"Make dreams into reality. Just say \"mkdir\" followed by any name that pleases you, and you can create a new place that never existed there before. A little finicky, though...\" the Vendor mumbles.",
+    "\"Haz realidad los sueños. Solo di \"mkdir\" seguido de cualquier nombre que te guste, y podrás crear un lugar nuevo que nunca existió allí. Aunque es un poco quisquilloso...\", murmura el vendedor."
+  ],
+  [
+    "\"Ah, yes, the rm spell,\" the Vendor muses. \"Simply say \"rm\" followed by the name of an item or person, and they will disappear from this plane... forever. D'you have the guts to use it, I wonder?\"",
+    "\"Ah, sí, el hechizo rm\", reflexiona el vendedor. \"Solo di \"rm\" seguido del nombre de un objeto o persona, y desaparecerán de este plano... para siempre. Me pregunto si tendrás valor para usarlo.\""
+  ],
+  [
+    "The MagicLocker contains Items that can be used (and spells that can be used) anywhere else in the game once you add the locker. MIT is making updates to the locker at all times, so check back frequently.",
+    "El MagicLocker contiene objetos (y hechizos) que se pueden usar en cualquier otra parte del juego una vez que añadas el casillero. El MIT actualiza el casillero constantemente, así que vuelve a comprobarlo a menudo."
+  ],
+  [
+    "It's quite moist in here.     You notice a small furry movement in the corner of your vision. It's most likely a rat. A very large rat. Perhaps a mongoose. At the end of the tunnel you find a stone chamber.",
+    "Aquí dentro hay bastante humedad. Percibes un pequeño movimiento peludo en la esquina de tu visión. Lo más probable es que sea una rata. Una rata muy grande. Quizá una mangosta. Al final del túnel encuentras una cámara de piedra."
+  ],
+  [
+    "You are in a sunny and spacious town square. There is a pedestal at the center of the cobblestone turnabout, but no statue on it. The architecture is charming, but everyone here seems nervous for some reason.",
+    "Estás en una plaza soleada y espaciosa. Hay un pedestal en el centro de la rotonda empedrada, pero no tiene estatua. La arquitectura es encantadora, pero todos aquí parecen nerviosos por alguna razón."
+  ],
+  [
+    "The old man's voice echoes in your head as if from a great distance:\n(grep) \nUse \"grep\" to command your minion to help search through text for you.\nCommand Input: \ngrep WORDTOSEARCH PLACETOSEARCH \nRememberrrrrr...",
+    "La voz del anciano resuena en tu cabeza como si viniera de muy lejos:\n(grep)\nUsa \"grep\" para ordenar a tu esbirro que te ayude a buscar en un texto.\nEntrada del comando:\ngrep PALABRAABUSAR LUGARDONDEBUSCAR\nRecuerdaaaaa..."
+  ],
+  [
+    "The old man's voice echoes in your head as if from a great distance:\n(Touch) gives you the artisan's touch to create new objects.\nUse \"touch\" to create new objects in the world.\nCommand Input:\ntouch OBJECT \nRememberrrrrr...",
+    "La voz del anciano resuena en tu cabeza como si viniera de muy lejos:\n(Touch) te da el toque del artesano para crear objetos nuevos.\nUsa \"touch\" para crear objetos nuevos en el mundo.\nEntrada del comando:\ntouch OBJETO\nRecuerdaaaaa..."
+  ],
+  [
+    "You enter the Lessons hall ready and eager. It's much quieter here, as many of the lessons have already started. You quickly ushered into the Introductory Lesson, which already begun. You enter the class on the \"Move Spell.\"",
+    "Entras en el salón de Lessons con ganas y entusiasmo. Aquí hay mucha menos gente, ya que muchas de las clases ya han comenzado. Te llevan rápidamente a la clase introductoria, que ya ha empezado. Entras en la clase sobre el \"Hechizo de Movimiento\"."
+  ],
+  [
+    "\"Ruined! I'm ruined! Look at these crops... almost nothing left! The wizard's minions were here last week... they destroyed everything. How will I feed my 3 children with just one ear of corn? I could really use AnotherEarOfCorn! \"",
+    "\"¡Arruinado! ¡Estoy arruinado! Mira estos cultivos... ¡casi no queda nada! Los esbirros del mago estuvieron aquí la semana pasada... lo destruyeron todo. ¿Cómo voy a alimentar a mis 3 hijos con solo una mazorca de maíz? ¡Me vendría muy bien AnotherEarOfCorn!\""
+  ],
+  [
+    "The halls are filled the hustle and bustle of academy students scurrying to and from classes. The inside of the academy is as impressive as it is on the outside with a high ceiling and gothic arches, it seems even larger on the inside.",
+    "Los pasillos están llenos del ajetreo de los estudiantes de la academia que corren de un lado a otro entre clases. El interior de la academia es tan impresionante como el exterior, con un techo alto y arcos góticos; parece aún más grande por dentro."
+  ],
+  [
+    "\"Excuse me,\" you begin. The man turns, startled. \"Oh, hello! Welcome to Terminus. You'll have to forgive me, but we're all a little on edge lately, what with the Dark Wizard spreading corruption all along the coast.  You should be careful!\"",
+    "\"Disculpe\", empiezas. El hombre se gira, sobresaltado. \"¡Ah, hola! Bienvenido a Terminus. Tendrás que perdonarme, pero últimamente todos estamos un poco tensos, con el Mago Oscuro propagando corrupción por toda la costa. ¡Deberías tener cuidado!\""
+  ],
+  [
+    "You go up to the pony and attempt to ride it. It compiles and you ride the pony around in circles for a bit. It then grows tired of having you as a burden and knocks you off. He then looks towards the east as if suggesting that you head in that direction.",
+    "Te acercas al poni e intentas montarlo. Compila y cabalgas el poni en círculos durante un rato. Luego se cansa de llevarte como carga y te derriba. Después mira hacia el este, como sugiriendo que te dirijas en esa dirección."
+  ],
+  [
+    "The troll belches spectacularly, and you could swear he actually smirks. You won't get rid of him that easily, not without the 'sudo password'. It's not 'pseudo', it's 'sudo'. You'll find that in KernelFiles. But first you have to get past the UglyTroll to the Slide.",
+    "El trol eructa espectacularmente, y jurarías que realmente sonríe con suficiencia. No te desharás de él tan fácilmente, no sin la 'contraseña de sudo'. No es 'pseudo', es 'sudo'. La encontrarás en los KernelFiles. Pero primero tienes que pasar junto al UglyTroll para llegar al Slide."
+  ],
+  [
+    "If you ever forget a spell just use \"help\" and a list of available spells will appear. If you need details on how to use a specific spell, use 'man' followed by spell command. For example, if you were interested in details on how to use the \"mv\" spell you would use: man mv",
+    "Si alguna vez olvidas un hechizo, usa \"help\" y aparecerá una lista de hechizos disponibles. Si necesitas detalles sobre cómo usar un hechizo concreto, usa 'man' seguido del comando del hechizo. Por ejemplo, si te interesaran los detalles sobre cómo usar el hechizo \"mv\", usarías: man mv"
+  ],
+  [
+    "Legends speak of a great word of power that allows the speaker to perform any action on any item. \"Sudo\", as the ancients called it, conveys complete mastery over the elements. Unfortunately, or perhaps fortunately, the mystical password has been lost to the sands of time.",
+    "Las leyendas hablan de una gran palabra de poder que permite a quien la pronuncia realizar cualquier acción sobre cualquier objeto. \"Sudo\", como la llamaban los antiguos, otorga dominio completo sobre los elementos. Desafortunadamente, o quizá afortunadamente, la mística contraseña se ha perdido en las arenas del tiempo."
+  ],
+  [
+    "The old man's voice echoes in your head as if from a great distance: \n(Look at, Examine, or Speak to Something). \nUse \"less\" to look at what’s in a certain location. Either your current location or (rarely) you may have look into a location to see what is in it. \nCommand Input: less ITEM\nRememberrrrrr...",
+    "La voz del anciano resuena en tu cabeza como si viniera de muy lejos:\n(Mirar, examinar o hablar con algo).\nUsa \"less\" para mirar lo que hay en un lugar. Puede ser tu ubicación actual o (raramente) puedes mirar dentro de un lugar para ver qué contiene.\nEntrada del comando: less OBJETO\nRecuerdaaaaa..."
+  ],
+  [
+    "It looks like an interesting book, but it's way too long and the print is too tiny. Here is an excerpt:\n DarkWizard', '...old tales tell of a DarkWizard who will fragment the land...\n ...only the world-maker can stop the DarkWizard's virus from...\n...that the power of \"sudo\" may be the DarkWizard's only weakness...\n",
+    "Parece un libro interesante, pero es demasiado largo y la letra es demasiado pequeña. Aquí tienes un extracto:\n DarkWizard', '...viejos relatos hablan de un DarkWizard que fragmentará la tierra...\n ...solo el creador del mundo puede detener el virus del DarkWizard...\n...que el poder de \"sudo\" puede ser la única debilidad del DarkWizard..."
+  ],
+  [
+    "The kid looks around, dazed, surprised to find himself out of the cage. You smile at him and speak in a gentle voice. 'You should probably be getting home, little boy. Someone is there waiting for you.' 'I'm a girl,' says the little girl smartly. Then she dashes past you, out of the cave, and runs up the ominous path towards home.",
+    "El niño mira a su alrededor, aturdido, sorprendido de encontrarse fuera de la jaula. Le sonríes y hablas con voz suave. 'Probablemente deberías irte a casa, pequeño. Alguien te espera allí.' 'Soy una niña', dice la niña con astucia. Luego pasa corriendo a tu lado, sale de la cueva y corre por el sendero inquietante hacia casa."
+  ],
+  [
+    "You flip the paperback open to a random page. \"Oh, Horatio, don't worry my love! I will save you!\" Antonia exclaimed as she brandished her sword and deftly stabbed the dragon. Horatio, astounded that he hadn't died a fiery death, collapsed on the ground sobbing and  ... — You close the book, disinterested, and place it back on the shelf.",
+    "Abres el libro de bolsillo por una página al azar. \"¡Oh, Horacio, no te preocupes, amor mío! ¡Te salvaré!\", exclamó Antonia mientras blandía su espada y apuñalaba hábilmente al dragón. Horacio, asombrado de no haber muerto en un ardiente final, se desplomó en el suelo sollozando y... —Cierras el libro, desinteresado, y lo devuelves a la estantería."
+  ],
+  [
+    "If you so desire, you can add a new MagicLocker outside your Home. In this MagicLocker you can find some tools that will be useful in your time at MIT (and beyond). There you can find portals to other places, you can write notes, and you can store various items you collect in your travels in the MagicLocker. But first you need to go to the AthenaCluster and learn how.",
+    "Si lo deseas, puedes añadir un nuevo MagicLocker fuera de tu Home. En este MagicLocker puedes encontrar algunas herramientas que te serán útiles durante tu estancia en el MIT (y más allá). Allí puedes encontrar portales a otros lugares, escribir notas y guardar diversos objetos que recojas en tus viajes en el MagicLocker. Pero primero tienes que ir al AthenaCluster y aprender cómo."
+  ],
+  [
+    "The man looks up from his newspaper when he notices you staring. \"Have you read this?\" he exclaims, shaking the latest edition of \"The Last Word\" in your face. \"It says here the wizard's corruption has spread as far as Oston to the south, and New Console is completely unrecoverable! These are dangerous times,\" he mutters, shaking his head and turning back to his reading.",
+    "El hombre levanta la vista de su periódico cuando nota que lo miras fijamente. \"¿Has leído esto?\", exclama, agitando la última edición de \"The Last Word\" delante de tu cara. \"Aquí dice que la corrupción del mago se ha extendido hasta Oston, al sur, ¡y que New Console es completamente irrecuperable! Estos son tiempos peligrosos\", murmura, negando con la cabeza y volviendo a su lectura."
+  ],
+  [
+    "The old man's voice echoes in your head as if from a great distance: \n(Look at your Surroundings). \n Use \"ls\" to look at what’s in a certain location. Either your current location or (rarely) you may have look into a location to see what's in it. \n Command Input: \nls          (for current location) \n-OR- \nls LOCATION     (for locations you that you cannot \"cd\" into)\nRememberrrrrr...",
+    "La voz del anciano resuena en tu cabeza como si viniera de muy lejos:\n(Mirar alrededor).\n Usa \"ls\" para mirar lo que hay en un lugar. Puede ser tu ubicación actual o (raramente) puedes mirar dentro de un lugar para ver qué contiene.\n Entrada del comando:\n ls          (para la ubicación actual)\n -O-\n ls LUGAR     (para lugares a los que no puedes entrar con \"cd\")\nRecuerdaaaaa..."
+  ],
+  [
+    "Welcome! If you are new to the game, here are some tips: \n\nLook at your surroundings with the command \"ls\". \nMove to a new location with the command \"cd LOCATION\" \nYou can backtrack with the command \"cd ..\". \nInteract with things in the world with the command \"less ITEM\" \n\nIf you forget where you are, type \"pwd\" \n\nGo ahead, explore. We hope you enjoy what you find. Do ls as your first command.\n",
+    "¡Bienvenido! Si eres nuevo en el juego, aquí tienes algunos consejos:\n\nMira a tu alrededor con el comando \"ls\".\nMuévete a una nueva ubicación con el comando \"cd LUGAR\".\nPuedes retroceder con el comando \"cd ..\".\nInteractúa con las cosas del mundo con el comando \"less OBJETO\".\n\nSi olvidas dónde estás, escribe \"pwd\".\n\nAdelante, explora. Esperamos que disfrutes lo que encuentres. Haz ls como tu primer comando."
+  ],
+  [
+    "The Artisan lifts up her goggles and peers at you in surprise. \"Are you the new assistant? You're late! ...  \nYou say you aren't my assistant? Well, that doesn't mean you can't make yourself useful. I need some gears, quickly! \n... \nYou don't even know how to make things? Hmph. Some assistant you are. Just say \"touch ITEM\" alright? Where ITEM is the name of the thing you want to create. Now make me a Gear! Then come back.\"",
+    "La Artesana levanta sus gafas y te observa sorprendida. \"¿Eres el nuevo ayudante? ¡Llegas tarde!...\n¿Dices que no eres mi ayudante? Bueno, eso no significa que no puedas ser útil. ¡Necesito algunos engranajes, rápido!\n...\n¿Y ni siquiera sabes cómo crear cosas? Hmph. Vaya ayudante estás hecho. Solo di \"touch OBJETO\", ¿vale? Donde OBJETO es el nombre de la cosa que quieres crear. ¡Ahora hazme un Gear! Y luego vuelve.\""
+  ],
+  [
+    "The Workstation has resources you can use to access files in a joint Athena locker. It adds new rooms (when they're in your Home we call them lockers) to your Home, and you can add them to your collection of lockers if you have permission. If you know what you want to add to your Home (the name of the locker you want, of course), just 'add LOCKERNAME'. It gives you extra spells (if you learn them), and gives you more Rooms to explore.",
+    "El Workstation tiene recursos que puedes usar para acceder a archivos en un casillero compartido de Athena. Añade nuevas salas (cuando están en tu Home las llamamos casilleros) a tu Home, y puedes añadirlas a tu colección de casilleros si tienes permiso. Si sabes lo que quieres añadir a tu Home (el nombre del casillero que quieres, claro), solo di 'add NOMBREDELCASILLERO'. Te da hechizos extra (si los aprendes) y te da más salas que explorar."
+  ],
+  [
+    "Well that’s lovely, thank you, but you can’t expect me to makeanything with just one gear! Can’t you copy it?\n...\n*sigh* I can see you are going to need a lot of training. Just say “cp [ITEM] [NEWITEM]”.[ITEM]’s the name of the item that you want copy, and [NEWITEM]’s the new name of thecopy, got it? Then poof! You’ll have shiny new item. I need five more gears so you’d betterget started! Just call them gear1, gear2, gear3, gear4, and gear5, please.",
+    "Bueno, eso es encantador, gracias, pero no puedes esperar que haga algo con un solo engranaje. ¿No puedes copiarlo?\n...\n*suspiro* Veo que vas a necesitar mucha formación. Solo di \"cp [OBJETO] [NUEVOOBJETO]\". [OBJETO] es el nombre del objeto que quieres copiar, y [NUEVOOBJETO] es el nuevo nombre de la copia, ¿entendido? ¡Y entonces, puf! Tendrás un objeto nuevo y reluciente. Necesito cinco engranajes más, así que ¡más vale que empieces! Llámalos gear1, gear2, gear3, gear4 y gear5, por favor."
+  ],
+  [
+    "He looks mad, and really, really ugly. But he wants to tell you something. Between his garbled grunts, you manage to understand the following: You can cast spells on items that you don't currently see. For example, if you want to copy an item from this room to the OminousLookingPath from which you came, you can cp [ITEM_TO_COPY] ../[NEW_ITEM_NAME]. You can do this for most spells and most rooms. Use this knowledge wisely. Remember.... you can't undo an 'rm' spell.",
+    "Parece enfadado, y realmente, realmente feo. Pero quiere decirte algo. Entre sus gruñidos guturales, logras entender lo siguiente: Puedes lanzar hechizos sobre objetos que no ves en este momento. Por ejemplo, si quieres copiar un objeto de esta sala al OminousLookingPath por el que viniste, puedes usar cp [OBJETO_A_COPIAR] ../[NUEVO_NOMBRE_DEL_OBJETO]. Puedes hacer esto con la mayoría de hechizos y la mayoría de salas. Usa este conocimiento con sabiduría. Recuerda... no puedes deshacer un hechizo 'rm'."
+  ],
+  [
+    "The professor is difficult to understand, but you pick up just enough to learn 3 things: \n1. You can use 'mv' to move things in the world \n2. You have to indicate the object and the new location (i.e.: mv OBJECT NEWLOCATION) \n3. This spell will only work on certain objects, for example the PracticeDummy objects in the PracticeRoom \n\nYou did not pay enough attention to learn which types of objects are unmovable. Oh well, experimenting was always more of your style anyways. But be careful!",
+    "Al profesor le cuesta hacerse entender, pero captas lo suficiente para aprender 3 cosas:\n1. Puedes usar 'mv' para mover cosas por el mundo.\n2. Tienes que indicar el objeto y la nueva ubicación (es decir: mv OBJETO NUEVOLUGAR).\n3. Este hechizo solo funcionará con ciertos objetos, por ejemplo los objetos PracticeDummy de la PracticeRoom.\n\nNo prestaste suficiente atención para aprender qué tipos de objetos son inamovibles. En fin, experimentar siempre fue más tu estilo. ¡Pero ten cuidado!"
+  ],
+  [
+    "\"Hm? Oh, hello. I apologize for the mess, but I'm very busy doing research on the dark wizard. Would you do me a favor? Go look up all references to DarkWizard in the History of Terminus. My assistant Grep can help you.\" Grep eyes you balefully. \"Greeepp.\" \"To search the contents of the book, just type \"grep PHRASE ITEM\", where PHRASE is the phrase you want to search for, and ITEM is the name of the book you want to search. Try it with the PracticeBook here - see if you can find the line with the word 'peppers' in it.\"",
+    "\"¿Hm? Ah, hola. Disculpa el desorden, pero estoy muy ocupada investigando sobre el mago oscuro. ¿Me harías un favor? Busca todas las referencias a DarkWizard en la History of Terminus. Mi ayudante Grep puede ayudarte.\" Grep te mira con recelo. \"Greeepp.\" \"Para buscar en el contenido del libro, solo escribe \"grep FRASE OBJETO\", donde FRASE es la frase que quieres buscar y OBJETO es el nombre del libro en el que quieres buscar. Pruébalo con el PracticeBook que hay aquí: a ver si encuentras la línea con la palabra 'peppers'.\""
+  ],
+  [
+    "You speak with the old man. He greets you warmly as if you were old friends. You feel at ease with him. \n\"Hello adventurer! Top of the morning to you! You seem like a young and energetic explorer. If you're brave enough, your destiny awaits within this cave. That destiny will manifest itself as a portal. Enter this portal and begin the next chapter of your life.\"\nThe old man sees the shock on your face and smiles a comforting smile, \"I am but a fragile old man, and cannot accompany you through this cave, but what I can provide are a few simple spells that will help you along your way. Just read my old manuscripts and tryout those spells.\"",
+    "Hablas con el anciano. Te saluda con calidez como si fuerais viejos amigos. Te sientes a gusto con él.\n\"¡Hola, aventurero! ¡Buenos días! Pareces un explorador joven y lleno de energía. Si eres lo bastante valiente, tu destino te espera dentro de esta cueva. Ese destino se manifestará como un portal. Entra en este portal y comienza el siguiente capítulo de tu vida.\"\nEl anciano ve la sorpresa en tu cara y sonríe con una sonrisa reconfortante: \"No soy más que un anciano frágil y no puedo acompañarte a través de esta cueva, pero lo que sí puedo ofrecerte son algunos hechizos sencillos que te ayudarán en tu camino. Solo lee mis viejos manuscritos y prueba esos hechizos.\""
+  ],
+  [
+    "\"You! You're a magic-user! I can tell, you've got that look. Come to finish the job, have you? Well, go ahead, do your worst there's nothing else you can take from me. Not since the rest of you were here a few days ago.\" \n\n\"What happened? You DARE to ask-- you know perfectly well what happened. Your friends, the wizard's minions, destroyed my house and kidnapped my poor daughter, that's what! My wife even went into town to look for help, and I haven't heard from her since!\" \n\n\"Hm? Well, I guess it's true that you don't look like one of the wizard's minions. Still, I don't trust you magicfolk. If you really are who you say you are, then prove your good intentions by making me a new House!\"",
+    "\"¡Tú! ¡Eres un usuario de magia! Se nota, tienes ese aspecto. ¿Vienes a terminar el trabajo, eh? Pues adelante, haz lo que quieras, no queda nada más que puedas quitarme. No desde que vosotros estuvisteis aquí hace unos días.\"\n\n\"¿Qué pasó? ¿TE ATREVES a preguntar? Sabes perfectamente lo que pasó. Tus amigos, los esbirros del mago, destruyeron mi casa y secuestraron a mi pobre hija, ¡eso es lo que pasó! ¡Mi mujer incluso fue al pueblo a buscar ayuda, y no he vuelto a saber de ella!\"\n\n\"¿Hm? Bueno, supongo que es cierto que no pareces uno de los esbirros del mago. Aun así, no confío en la gente mágica. Si de verdad eres quien dices ser, demuestra tus buenas intenciones haciéndome una House nueva.\""
+  ],
+  [
+    "You speak to a hurrying student. The student runs into you and falls to the ground. The student quickly gets up and apologizes to you, asking if you are okay. You are sturdier than you look and you're undamaged. I'm so sorry, I was in such a hurry that I didn't see you there... Say, I haven't seen you here before. You're new here aren't-cha?\" the student winks at you, \"Don't worry, there's tons of newbies around today, why don't you try checking out one of the free intro lessons? I'd show you where to go, but I gotta run to class. Just head into the Lessons hall and someone should help you out. See you around.\" The student runs past you. You notice that the student is pretty cute, and probably around your age. Unfortunately, the student disappears around a corner before you can ask for a name.",
+    "Hablas con un estudiante que va con prisa. El estudiante choca contigo y cae al suelo. Se levanta rápidamente, se disculpa y te pregunta si estás bien. Eres más resistente de lo que pareces y no tienes ningún daño. \"Lo siento mucho, tenía tanta prisa que no te vi ahí... Oye, no te había visto antes por aquí. Eres nuevo, ¿verdad?\", el estudiante te guiña un ojo. \"No te preocupes, hoy hay un montón de novatos por aquí. ¿Por qué no pruebas una de las clases introductorias gratuitas? Te mostraría dónde ir, pero tengo que correr a clase. Solo entra en el salón de Lessons y alguien debería ayudarte. Nos vemos.\" El estudiante pasa corriendo a tu lado. Te das cuenta de que es bastante mono y probablemente de tu edad. Por desgracia, desaparece tras una esquina antes de que puedas preguntarle su nombre."
+  ],
+  [
+    "You've learned how to make use of your friend grep I see. If you haven't it might be wise for you to go back to the Library again to do some reading. Because here, you'll need to use him to help you. Here is your task: \nThere are a lot of items in the MoreKernelFiles room and one of them contains the sudo password. This password is very powerful password that lets you do absolutely anything in the world. It lets you cast a spell on any item that is protected in any way. You know the password is contained in one of these .txt items. You know that it appears on a line that says the word: 'password='. You should find it with grep's help. Then you'll need to use the sudo spell to find Paradise. To do this, just Type 'sudo' before the command you want to run, like so: 'sudo cp ITEM_A ITEM_B'. You will then be prompted for the sudo password. Type the password, and the spell that comes after sudo will be cast. If you open the Certificate in Paradise with sudo, you will have truly found Paradise.",
+    "Veo que has aprendido a usar a tu amigo grep. Si no lo has hecho, quizá sería buena idea que volvieras a la Library a leer un poco. Porque aquí tendrás que usarlo para que te ayude. Esta es tu tarea:\nEn la sala MoreKernelFiles hay muchos objetos y uno de ellos contiene la contraseña de sudo. Esta contraseña es muy poderosa y te permite hacer absolutamente cualquier cosa en el mundo. Te permite lanzar un hechizo sobre cualquier objeto que esté protegido de alguna manera. Sabes que la contraseña está contenida en uno de estos archivos .txt. Sabes que aparece en una línea que dice la palabra: 'password='. Deberías encontrarla con la ayuda de grep. Después tendrás que usar el hechizo sudo para encontrar Paradise. Para ello, solo escribe 'sudo' antes del comando que quieras ejecutar, así: 'sudo cp OBJETO_A OBJETO_B'. Entonces se te pedirá la contraseña de sudo. Escribe la contraseña y se lanzará el hechizo que venga después de sudo. Si abres el Certificate en Paradise con sudo, habrás encontrado Paradise de verdad."
+  ]
+]
