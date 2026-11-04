@@ -1,2 +1,16 @@
 #!/data/data/com.termux/files/usr/bin/bash
+set -euo pipefail
+
+PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
+HOME="${HOME:-/data/data/com.termux/files/home}"
+APP_DIR="${PREFIX}/lib/mistral-vibe"
+
+# Remove files created by postinst. User configuration in ~/.vibe is kept.
+rm -f "${PREFIX}/bin/vibe" "${PREFIX}/bin/vibe-acp" 2>/dev/null || true
+rm -rf "$APP_DIR" 2>/dev/null || true
+
+# Remove old uv shims if they are still present.
+rm -f "$HOME/.local/bin/vibe" "$HOME/.local/bin/vibe-acp" 2>/dev/null || true
+
 echo "Done. Package 'mistral-vibe' removed."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

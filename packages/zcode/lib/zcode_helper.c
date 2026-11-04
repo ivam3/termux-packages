@@ -10,7 +10,7 @@ int main(int argc, char** argv) {
     // Static --help/--version: no Electron, instant, no X
     for (int i = 1; i < argc; i++) {
         if (strcmp(argv[i], "--help") == 0 || strcmp(argv[i], "-h") == 0) {
-            printf("ZCode 3.10.2 — AI vibe coding harness (GLM-5.3)\n");
+            printf("ZCode 3.17.2 — AI vibe coding harness (GLM-5.3)\n");
             printf("Usage: zcode [options] [path]\n\n");
             printf("Options:\n");
             printf("  --help, -h          Show this help message\n");
@@ -25,7 +25,7 @@ int main(int argc, char** argv) {
             return 0;
         }
         if (strcmp(argv[i], "--version") == 0 || strcmp(argv[i], "-v") == 0) {
-            printf("zcode 3.10.2\n");
+            printf("zcode 3.17.2\n");
             return 0;
         }
     }

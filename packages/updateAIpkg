@@ -16,7 +16,20 @@ export claudecode=$(curl -sI "https://github.com/anthropics/claude-code/releases
 
 export opencode=$(curl -sI "https://github.com/anomalyco/opencode/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|'|awk -F "v" '{print $NF}')
 
-export mistral=$(curl -sI "https://github.com/mistralai/mistral-vibe/releases/latest" | grep -i location | awk -F "v" '{print $NF}')
+# Mistral Vibe 3.x only publishes the ACP server, not the interactive CLI.
+# Pick the newest stable release that ships both standalone CLI archives so the
+# package keeps working without compiling Rust on-device.
+export mistral=$(curl -fsSL --max-time 30 \
+  "https://api.github.com/repos/mistralai/mistral-vibe/releases?per_page=100" |
+  jq -r '
+    [ .[] | select(.draft == false and .prerelease == false) |
+      . as $r |
+      ($r.tag_name | sub("^v"; "")) as $v |
+      ($r.assets | map(.name)) as $assets |
+      select(any($assets[]; . == "vibe-linux-aarch64-\($v).zip")) |
+      select(any($assets[]; . == "vibe-linux-x86_64-\($v).zip")) |
+      $v
+    ] | .[0] // empty')
 
 export openclaw=$(curl -sI "https://github.com/openclaw/openclaw/releases/latest" | grep -i location | sed -E 's|.*/tag/([^[:space:]]+).*|\1|')
 
@@ -63,6 +76,14 @@ for var in "${!AGENT_MAP[@]}"; do
       new_ver="${github_ver}-1"
     fi
     jq --arg ver "$new_ver" '.version = $ver' "$manifest" > "${manifest}.tmp" && mv "${manifest}.tmp" "$manifest"
+
+    # The verified upstream version is embedded in the standalone-download
+    # postinst as well as in manifest.json.
+    if [ "$pkg_dir" = "mistral-vibe" ]; then
+      sed -i "s|^VERSION=\"\${MISTRAL_VIBE_VERSION:-[^}]*}\"|VERSION=\"\${MISTRAL_VIBE_VERSION:-${github_ver}}\"|" \
+        "$SCRIPT_DIR/$pkg_dir/postinst"
+    fi
+
     rm -f "$SCRIPT_DIR/../${pkg_dir}_"*.deb
     (cd "$SCRIPT_DIR/$pkg_dir" && termux-create-package manifest.json && mv *.deb ../../)
     echo "Actualizado $pkg_dir: $manifest_ver → $new_ver ✓ paquete reconstruido"

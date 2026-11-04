@@ -2,7 +2,20 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-# Colors
+# Install the upstream standalone aarch64/x86_64 build. The previous
+# implementation used `uv tool install mistral-vibe`, which compiled Rust
+# extensions on-device and often hit the 600s timeout. The standalone build
+# already contains Python and all dependencies, so installation is deterministic.
+
+PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
+HOME="${HOME:-/data/data/com.termux/files/home}"
+APP_DIR="${MISTRAL_VIBE_APP_DIR:-${PREFIX}/lib/mistral-vibe}"
+BIN_DIR="${MISTRAL_VIBE_BIN_DIR:-${PREFIX}/bin}"
+GLIBC_DIR="${PREFIX}/glibc"
+VERSION="${MISTRAL_VIBE_VERSION:-2.26.1}"
+STAGE="${TMPDIR:-${PREFIX}/tmp}/mistral-vibe-install.$$"
+ZIP="${STAGE}/vibe.zip"
+
 CYAN="\033[36m"
 GREEN="\033[32m"
 RED="\033[31m"
@@ -10,224 +23,129 @@ YELLOW="\033[33m"
 DIM="\033[2m"
 RESET="\033[0m"
 
-info() { printf "%b[📢]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
-msg()  { printf "[➡] %s\n" "$*"; }
-ok()   { printf "%b[✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+info() { printf "%b[INFO]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+msg()  { printf "[->] %s\n" "$*"; }
+ok()   { printf "%b[OK]%b %s\n" "$GREEN" "$RESET" "$*"; }
 warn() { printf "%b[!]%b %s\n" "$YELLOW" "$RESET" "$*"; }
-tip()  { printf "%b[💡]%b %s\n" "$YELLOW" "$RESET" "$*"; }
-err()  { printf "%b[❌]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+err()  { printf "%b[ERROR]%b %s\n" "$RED" "$RESET" "$*" >&2; }
 
-# Ensure ~/.local/bin is in PATH (uv tool shims) — defined BEFORE uv to suppress warning
-ensure_local_bin_in_path() {
-    case ":$PATH:" in
-        *":$HOME/.local/bin:"*) ok "~/.local/bin ya está en PATH" ;;
-        *) warn "~/.local/bin no está en PATH — corrigiendo..."
-           export PATH="$HOME/.local/bin:$PATH" ;;
-    esac
-
-    shell_name="$(basename "${SHELL:-}")"
-    [ -z "$shell_name" ] && shell_name="$(ps -p $$ -o comm= 2>/dev/null | tr -d ' ')"
-    # fish reports as 'fish', bash/zsh accordingly
-
-    resolve_rc() { [ -L "$1" ] && readlink -f "$1" || echo "$1"; }
-
-    line_bash_zsh='export PATH="$HOME/.local/bin:$PATH"  # mistral-vibe (uv tool)'
-    line_fish='fish_add_path -g $HOME/.local/bin  # mistral-vibe (uv tool)'
-
-    add_to_rc() {
-        rc="$(resolve_rc "$1")"; line="$2"
-        [ -f "$rc" ] || { mkdir -p "$(dirname "$rc")"; touch "$rc"; }
-        grep -qF -- "$line" "$rc" 2>/dev/null || {
-            printf '\n# Added by mistral-vibe (uv tool needs ~/.local/bin in PATH)\n%s\n' "$line" >> "$rc"
-            ok "Agregado a $rc"
-        }
-    }
-
-    case "$shell_name" in
-        fish) add_to_rc "$HOME/.config/fish/config.fish" "$line_fish" ;;
-        zsh)  add_to_rc "$HOME/.zshrc" "$line_bash_zsh"
-              add_to_rc "$HOME/.local/etc/zsh/zshrc" "$line_bash_zsh" ;;
-        bash) add_to_rc "$HOME/.bashrc" "$line_bash_zsh"
-              add_to_rc "$HOME/.local/etc/bash/bashrc" "$line_bash_zsh" ;;
-        *) # fallback: parchea los 3 para cubrir Termux multi-shell
-            add_to_rc "$HOME/.bashrc" "$line_bash_zsh"
-            add_to_rc "$HOME/.zshrc" "$line_bash_zsh"
-            add_to_rc "$HOME/.config/fish/config.fish" "$line_fish"
-            ;;
-    esac
-    tip "Reinicia la shell o ejecuta: export PATH=\"\$HOME/.local/bin:\$PATH\""
+cleanup() {
+    rm -rf "$STAGE"
 }
+trap cleanup EXIT
 
-# Ensure PATH BEFORE calling uv so uv never warns
-# This prevents "Installed 3 executables: ... warning: ~/.local/bin is not on your PATH"
-ensure_local_bin_in_path
-
-# ==============================
-# TERMUX BUILD ENV FIX (zstd-sys/maturin/textual-speedups)
-# Causa del fallo anterior:
-#   cc-rs invocaba `clang --target=aarch64-linux-android` (sin version)
-#   y sys/cdefs.h aborta con "Unversioned target triples are not supported!"
-# Fix: forzar triple versionado (API 24 = minimo Termux, coincide con
-# `clang --version` Target: aarch64-unknown-linux-android24)
-# ==============================
-setup_termux_build_env() {
-    _api="${ANDROID_API_LEVEL:-24}"
-    # getprop da el SDK del dispositivo (ej. 34), pero para compilar
-    # usamos el minimo de Termux (24) que es el default de clang
-    case "$_api" in
-        ''|*[!0-9]*) _api=24 ;;
-    esac
-    # No usar un API mayor al del dispositivo si se puede detectar
-    _dev_api="$(getprop ro.build.version.sdk 2>/dev/null || echo '')"
-    case "$_dev_api" in
-        ''|*[!0-9]*) ;;
-        *) [ "$_dev_api" -lt "$_api" ] 2>/dev/null && _api="$_dev_api" ;;
-    esac
-    export TERMUX_ANDROID_API="$_api"
-    export TARGET_TRIPLE="aarch64-linux-android${_api}"
-    # uname -m para soportar x86_64/i686/arm aunque lo comun es aarch64
-    _arch="$(uname -m 2>/dev/null || echo aarch64)"
-    case "$_arch" in
-        aarch64|arm64) _tarch="aarch64-linux-android${_api}" ;;
-        arm*|armv*)    _tarch="armv7a-linux-androideabi${_api}" ;;
-        x86_64)       _tarch="x86_64-linux-android${_api}" ;;
-        i*86)         _tarch="i686-linux-android${_api}" ;;
-        *)            _tarch="aarch64-linux-android${_api}" ;;
-    esac
-    export TARGET_TRIPLE="$_tarch"
-
-    export UV_LINK_MODE="${UV_LINK_MODE:-copy}"
-    export CC="clang --target=$TARGET_TRIPLE"
-    export CXX="clang++ --target=$TARGET_TRIPLE"
-    export CFLAGS="--target=$TARGET_TRIPLE -Wno-incompatible-function-pointer-types"
-    export CXXFLAGS="--target=$TARGET_TRIPLE -Wno-incompatible-function-pointer-types"
-    export LDFLAGS="--target=$TARGET_TRIPLE"
-    # Vars que lee el crate cc-rs (solo nombres validos en bash: guion bajo).
-    # cc-rs tambien acepta CC_<target> con guiones, pero bash no permite
-    # `export` con '-' (error: not a valid identifier), por eso solo usamos '_'.
-    export CC_aarch64_linux_android="clang --target=$TARGET_TRIPLE"
-    export CXX_aarch64_linux_android="clang++ --target=$TARGET_TRIPLE"
-    export CFLAGS_aarch64_linux_android="--target=$TARGET_TRIPLE -Wno-incompatible-function-pointer-types"
-    export CXXFLAGS_aarch64_linux_android="--target=$TARGET_TRIPLE -Wno-incompatible-function-pointer-types"
-}
-
-setup_termux_build_env
-
-# Limpia entornos rotos de intentos anteriores (ej. "Ignoring malformed tool")
-# No es fatal si no hay nada que limpiar
-uv tool uninstall mistral-vibe >/dev/null 2>&1 || true
-
-# Elige Python con mejor compatibilidad Termux:
-# 3.13 ya tiene textual-speedups android_24 wheel probado (vibe 2.7.6),
-# mientras 3.14 obliga a compilar todo desde source (lento/fragil)
-# NOTA: usar formato --python=3.13 (con '=') porque IFS=$'\n\t' impide
-# word-splitting en espacios y "--python 3.13" llegaria como un solo arg.
-_pick_python_flag() {
-    if command -v python3.13 >/dev/null 2>&1; then
-        echo "--python=3.13"
-    else
-        echo ""
-    fi
-}
-_PY_FLAG="$(_pick_python_flag)"
-if [ -n "$_PY_FLAG" ]; then
-    msg "Using Python 3.13 for best Termux compatibility..."
-else
-    msg "Python 3.13 not found, using default Python..."
+if [[ "$(id -u)" -eq 0 ]]; then
+    err "You must run this package as a normal user, not root."
+    exit 1
 fi
 
-# Install / upgrade mistral-vibe via uv tool (idempotent)
-# Filter uv's PATH warning defensively (never fatal, already handled above)
-# MISTRAL_VIBE_UV_TIMEOUT permite acotar builds largos en Termux (default 600s).
-# Si el build excede el timeout, se conserva el vibe existente y APT queda configured.
-msg "Installing mistral-vibe via uv (latest compatible)..."
-set +e
-_UV_TIMEOUT="${MISTRAL_VIBE_UV_TIMEOUT:-600}"
-if command -v timeout >/dev/null 2>&1; then
-    # shellcheck disable=SC2086
-    _uv_output=$(timeout "$_UV_TIMEOUT" uv tool install mistral-vibe --force $_PY_FLAG 2>&1)
-    _uv_rc=$?
-    [ $_uv_rc -eq 124 ] && warn "uv install timed out after ${_UV_TIMEOUT}s (build Rust lento, continuando con fallback)..."
-else
-    # shellcheck disable=SC2086
-    _uv_output=$(uv tool install mistral-vibe --force $_PY_FLAG 2>&1)
-    _uv_rc=$?
+case "$(uname -m)" in
+    aarch64|arm64)
+        release_arch="aarch64"
+        loader="ld-linux-aarch64.so.1"
+        ;;
+    x86_64|amd64)
+        release_arch="x86_64"
+        loader="ld-linux-x86-64.so.2"
+        ;;
+    *)
+        err "Unsupported architecture: $(uname -m)."
+        err "The standalone Mistral Vibe build is available for aarch64 and x86_64."
+        exit 1
+        ;;
+esac
+
+if [[ ! -x "${GLIBC_DIR}/lib/${loader}" ]]; then
+    err "glibc is missing. Run 'pkg install glibc-repo' and retry."
+    exit 1
 fi
-# Always show output but strip the spurious PATH warning
-printf '%s\n' "$_uv_output" | grep -v "is not on your PATH" | grep -v "uv tool update-shell" | grep -v "fish_add_path" || true
-if [ $_uv_rc -ne 0 ]; then
-    msg "'uv tool install --force $_PY_FLAG' failed (rc=$_uv_rc), trying 'uv tool upgrade'..."
-    _upg_output=$(uv tool upgrade mistral-vibe 2>&1)
-    _upg_rc=$?
-    printf '%s\n' "$_upg_output" | grep -v "is not on your PATH" | grep -v "uv tool update-shell" | grep -v "fish_add_path" || true
-    if [ $_upg_rc -ne 0 ]; then
-        warn "uv tool install/upgrade failed (rc=$_uv_rc/$_upg_rc). Trying pip fallback..."
-        # Fallback: pip usa el site-packages del sistema donde vibe 2.7.6 ya funciona.
-        # Si vibe ya existe, no forzamos upgrade lento (build Rust 10min); solo avisamos.
-        # Solo intentamos pip upgrade si vibe falta por completo.
-        if command -v vibe >/dev/null 2>&1 || [ -x "$HOME/.local/bin/vibe" ] || [ -x "/data/data/com.termux/files/usr/bin/vibe" ]; then
-            warn "Existing 'vibe' preserved ($(vibe --version 2>/dev/null || echo 'vibe')). Skipping slow pip upgrade."
-            tip "Para forzar latest: 'pip3.13 install --upgrade mistral-vibe' o 'uv tool install mistral-vibe --force --python 3.13' manualmente."
-        elif command -v pip3.13 >/dev/null 2>&1; then
-            if command -v timeout >/dev/null 2>&1; then
-                timeout "$_UV_TIMEOUT" pip3.13 install --upgrade mistral-vibe 2>&1 | tail -n 20 || true
-            else
-                pip3.13 install --upgrade mistral-vibe 2>&1 | tail -n 20 || true
-            fi
-        elif command -v pip >/dev/null 2>&1; then
-            if command -v timeout >/dev/null 2>&1; then
-                timeout "$_UV_TIMEOUT" pip install --upgrade mistral-vibe 2>&1 | tail -n 20 || true
-            else
-                pip install --upgrade mistral-vibe 2>&1 | tail -n 20 || true
-            fi
-        fi
-        # NO exit 1: el paquete APT ya instalo sus archivos. Dejar half-configured (iF)
-        # es peor que conservar un vibe funcional aunque sea version anterior.
-        warn "Continuing: APT package will be marked configured; check 'vibe --version'."
+
+if ! command -v patchelf >/dev/null 2>&1; then
+    err "patchelf is missing. Run 'pkg install patchelf' and retry."
+    exit 1
+fi
+
+# Remove the old uv-based installation and its broken Python 3.13 shim.
+# On Python upgrades the shim can point to a removed interpreter.
+if command -v uv >/dev/null 2>&1; then
+    uv tool uninstall mistral-vibe >/dev/null 2>&1 || true
+fi
+rm -f "$BIN_DIR/vibe" "$BIN_DIR/vibe-acp" \
+      "$HOME/.local/bin/vibe" "$HOME/.local/bin/vibe-acp" 2>/dev/null || true
+
+mkdir -p "$STAGE"
+
+if [[ -n "${MISTRAL_VIBE_ZIP:-}" ]]; then
+    msg "Using local archive: $MISTRAL_VIBE_ZIP"
+    cp -f "$MISTRAL_VIBE_ZIP" "$ZIP"
+else
+    url="https://github.com/mistralai/mistral-vibe/releases/download/v${VERSION}/vibe-linux-${release_arch}-${VERSION}.zip"
+    info "Downloading Mistral Vibe ${VERSION} (${release_arch})..."
+    if ! curl -fL --retry 3 --retry-delay 2 --connect-timeout 20 \
+        -o "$ZIP" "$url"; then
+        err "Download failed: $url"
+        exit 1
     fi
 fi
-set -e
 
-# Re-ensure PATH in case uv created ~/.local/bin after first check
-ensure_local_bin_in_path
-
-# Verify installation — solo warning, nunca hacer exit 1 por PATH
-# Busca en PATH, shim de uv y binario del sistema (pip3.13)
-if command -v vibe &>/dev/null; then
-    ok "mistral-vibe installation finished ($(vibe --version 2>/dev/null || echo 'vibe'))"
-    warn "Don't forget to set your API key (MISTRAL_API_KEY)."
-    tip "Run 'vibe' to execute it."
-    tip "Run 'vibe-acp' for ACP mode."
-elif [ -x "$HOME/.local/bin/vibe" ]; then
-    ok "mistral-vibe installed at ~/.local/bin/vibe ($("$HOME/.local/bin/vibe" --version 2>/dev/null || echo 'vibe'))"
-    warn "Don't forget to set your API key (MISTRAL_API_KEY)."
-    tip "Reinicia la shell o ejecuta: export PATH=\"\$HOME/.local/bin:\$PATH\""
-elif [ -x "/data/data/com.termux/files/usr/bin/vibe" ]; then
-    ok "mistral-vibe found at \$PREFIX/bin/vibe ($(/data/data/com.termux/files/usr/bin/vibe --version 2>/dev/null || echo 'vibe'))"
-    warn "uv tool aun no provee shim, pero el binario pip sigue funcional."
-    tip "Ejecuta 'uv tool list' para ver el estado del tool."
-else
-    warn "Installation completed but 'vibe' not found (PATH fix pending or uv build incomplete)."
-    tip "Check PATH includes \$HOME/.local/bin and run 'uv tool list'."
-    tip "Si acabas de corregir PATH, reinicia la shell o ejecuta: export PATH=\"\$HOME/.local/bin:\$PATH\""
-    # No exit 1 — warning only, installation succeeded (evita estado iF/half-configured)
+if ! unzip -tq "$ZIP" >/dev/null 2>&1; then
+    err "Downloaded archive is not a valid zip file."
+    exit 1
 fi
 
-# ==============================
-# INSTALLING SCRIPT FIXER (mantenlo siempre)
-# ==============================
+msg "Extracting standalone build..."
+mkdir -p "$STAGE/app"
+unzip -q "$ZIP" -d "$STAGE/app"
+
+if [[ ! -f "$STAGE/app/vibe" ]]; then
+    err "The archive does not contain the 'vibe' binary."
+    exit 1
+fi
+
+chmod +x "$STAGE/app/vibe"
+
+# Termux has no /lib/ld-linux-*.so; point the binary at the glibc loader and
+# let it find the bundled modules plus the glibc runtime libraries.
+msg "Patching ELF interpreter and runtime path..."
+patchelf --set-interpreter "${GLIBC_DIR}/lib/${loader}" "$STAGE/app/vibe"
+patchelf --set-rpath "\$ORIGIN:\$ORIGIN/_internal:${GLIBC_DIR}/lib" "$STAGE/app/vibe"
+
+msg "Installing to $APP_DIR ..."
+rm -rf "$APP_DIR"
+mkdir -p "$APP_DIR"
+cp -a "$STAGE/app/." "$APP_DIR/"
+chmod 755 "$APP_DIR/vibe"
+
+mkdir -p "$BIN_DIR"
+cat > "$BIN_DIR/vibe" <<EOF
+#!/data/data/com.termux/files/usr/bin/bash
+# Mistral Vibe standalone wrapper (managed by the mistral-vibe package)
+APP_DIR="${APP_DIR}"
+export LD_LIBRARY_PATH="\$APP_DIR/_internal:${GLIBC_DIR}/lib\${LD_LIBRARY_PATH:+:\$LD_LIBRARY_PATH}"
+exec "\$APP_DIR/vibe" "\$@"
+EOF
+chmod 755 "$BIN_DIR/vibe"
+
+if ! "$BIN_DIR/vibe" --version >/dev/null 2>&1; then
+    err "Mistral Vibe was installed but failed to start."
+    err "Check that glibc-repo is installed and try again."
+    exit 1
+fi
+
+ok "Mistral Vibe installed: $("$BIN_DIR/vibe" --version 2>/dev/null)"
+warn "Set MISTRAL_API_KEY before using the CLI."
+msg "Run 'vibe' for the interactive CLI."
+msg "Run 'vibe --help' for all options."
+
+# Keep the i-Haklab helper available, matching the other packages.
 msg "Installing script fixer..."
-fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
-if curl -fsSL "$fixerURL" -o /data/data/com.termux/files/usr/bin/fixer; then
-    chmod 750 /data/data/com.termux/files/usr/bin/fixer
-    tip "Run 'fixer' to fix any possible issue."
+fixer_url="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixer_url" -o "$BIN_DIR/fixer"; then
+    chmod 750 "$BIN_DIR/fixer"
+    info "Run 'fixer' to fix possible environment issues."
 else
-    err "Error downloading fixer (non-fatal, continuing)."
+    warn "Could not download fixer (non-fatal)."
 fi
 
-# ==============================
-# FINALS MESSAGES
-# ==============================
-msg "Help: going to https://t.me/Ivam3_Bot."
-ok "@Ivam3: thank you for use my package."
+ok "Package configured."
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 set -euo pipefail
-if command -v vibe &>/dev/null; then
-    echo "[*] Uninstalling mistral-vibe via uv..."
-    uv tool uninstall mistral-vibe || echo "[!] uv tool uninstall failed (non-fatal)"
-fi
+
+# The package installs an upstream standalone build from postinst, so there is
+# no uv tool to uninstall here. Files are removed in postrm.
+exit 0
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

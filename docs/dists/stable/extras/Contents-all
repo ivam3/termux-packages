@@ -97,6 +97,8 @@ data/data/com.termux/files/home/.local/bin/LOCALHOST                            
 data/data/com.termux/files/home/.local/bin/adminfiles                            i-haklab
 data/data/com.termux/files/home/.local/bin/ai                                    i-haklab
 data/data/com.termux/files/home/.local/bin/apt                                   i-haklab
+data/data/com.termux/files/home/.local/bin/cam-float                             i-haklab
+data/data/com.termux/files/home/.local/bin/cam-usb                               i-haklab
 data/data/com.termux/files/home/.local/bin/gitbrowsering                         i-haklab
 data/data/com.termux/files/home/.local/bin/i-Haklab                              i-haklab
 data/data/com.termux/files/home/.local/bin/lock                                  i-haklab
@@ -106,6 +108,8 @@ data/data/com.termux/files/home/.local/bin/net-traffic-scan                     
 data/data/com.termux/files/home/.local/bin/npm                                   i-haklab
 data/data/com.termux/files/home/.local/bin/openvpn-app                           i-haklab
 data/data/com.termux/files/home/.local/bin/phantom-ps                            i-haklab
+data/data/com.termux/files/home/.local/bin/phone-cam                             i-haklab
+data/data/com.termux/files/home/.local/bin/phone-float                           i-haklab
 data/data/com.termux/files/home/.local/bin/pm                                    i-haklab
 data/data/com.termux/files/home/.local/bin/pnpm                                  i-haklab
 data/data/com.termux/files/home/.local/bin/postgresql                            i-haklab
@@ -252,6 +256,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/nljson.md      
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/nmap.md         i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ntlmrelayx.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/objection.md    i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/obs-studio.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/octosuite.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ollama.md       i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/omniroute.md    i-haklab
@@ -384,7 +389,6 @@ data/data/com.termux/files/home/.local/libexec/cleanup                          
 data/data/com.termux/files/home/.local/libexec/i-Haklab.login                    i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/4share                   i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/ESmsg                    i-haklab
-data/data/com.termux/files/home/.local/libexec/i-Haklab/Xwayland                 i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/about                    i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/androforensic            i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/apkactivity              i-haklab
@@ -392,7 +396,9 @@ data/data/com.termux/files/home/.local/libexec/i-Haklab/aptup                   
 data/data/com.termux/files/home/.local/libexec/i-Haklab/backup                   i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/binchecker               i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/bruteforce               i-haklab
+data/data/com.termux/files/home/.local/libexec/i-Haklab/build-uvc-cam            i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/chatAI                   i-haklab
+data/data/com.termux/files/home/.local/libexec/i-Haklab/desktop                  i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/help                     i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/msf                      i-haklab
 data/data/com.termux/files/home/.local/libexec/i-Haklab/ngroklink                i-haklab
@@ -417,6 +423,10 @@ data/data/com.termux/files/home/.local/libexec/pkg2conf                         
 data/data/com.termux/files/home/.local/libexec/preconf                           i-haklab
 data/data/com.termux/files/home/.local/libexec/tips                              i-haklab
 data/data/com.termux/files/home/.local/libexec/walkie-tg/bridge.js               i-haklab
+data/data/com.termux/files/home/.local/src/uvc-cam/Makefile                      i-haklab
+data/data/com.termux/files/home/.local/src/uvc-cam/mjpeg-pipe-server.c           i-haklab
+data/data/com.termux/files/home/.local/src/uvc-cam/usbdesc.c                     i-haklab
+data/data/com.termux/files/home/.local/src/uvc-cam/uvc-stream.c                  i-haklab
 data/data/com.termux/files/home/.local/var/service/www/veno-file-manager/UPGRADE-README.html i-haklab
 data/data/com.termux/files/home/.local/var/service/www/veno-file-manager/documentation/README.md i-haklab
 data/data/com.termux/files/home/.local/var/service/www/veno-file-manager/documentation/assets/docs.js i-haklab

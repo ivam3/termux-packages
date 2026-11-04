@@ -1,36 +1,48 @@
 # Mistral Vibe (mistral-vibe)
 
-## ¿Qué es Mistral Vibe?
+Mistral Vibe is Mistral AI's terminal coding assistant. This package installs
+the official standalone Linux build for Termux aarch64/x86_64; it does not
+compile Rust extensions on the device.
 
-**Mistral Vibe** es una herramienta de línea de comandos que integra los modelos de lenguaje de Mistral AI en el flujo de trabajo de desarrollo, proporcionando capacidades de edición agéntica, explicación de código y generación automatizada directamente desde la terminal.
-
-## ¿Para qué es útil?
-
-- Asistencia en programación con modelos Mistral AI
-- Generación y refactorización de código
-- Explicación de fragmentos de código complejos
-- Automatización de tareas de desarrollo
-
-## Instalación
+## Installation
 
 ```bash
-# Mediante el wrapper de i-HakLab:
 apt install mistral-vibe
-# O directamente con pip:
-pip install mistral-vibe
 ```
 
-## ¿Cómo se usa?
+The package requires a working `glibc-repo` installation. The standalone
+binary is installed in `$PREFIX/lib/mistral-vibe` and exposed as `vibe`.
+
+## Usage
 
 ```bash
-mistral-vibe "describe el propósito de este repositorio"
+export MISTRAL_API_KEY="your-key"
+vibe
 ```
 
-## Consideraciones Adicionales
+Useful options:
 
-- Requiere una API key de Mistral AI configurada en las variables de entorno.
-- Se instala automáticamente como dependencia al instalar `claude-code` o `qwen-code` mediante los wrappers de i-HakLab.
+```bash
+vibe --help
+vibe --setup
+vibe -p "describe this repository"
+```
+
+Configuration is stored in `~/.vibe`.
+
+## Notes
+
+- No `uv` or `pip` build is performed during installation.
+- `vibe-acp` is not included in the standalone CLI build; use the official
+  upstream release if you need ACP mode.
+- The standalone build version is pinned to the release selected by `updateAIpkg`.
+
+## Help
+
+```bash
+i-Haklab about mistral-vibe
+```
 
 ---
 
-*Nota: Herramienta integrada en el ecosistema i-HakLab para desarrollo asistido por IA.*
+*Integrated into the i-Haklab ecosystem.*

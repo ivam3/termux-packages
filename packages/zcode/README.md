@@ -12,7 +12,7 @@ pkg install zcode
 
 | Field | Value |
 |-------|-------|
-| Version | `3.10.2-1` |
+| Version | `3.17.2-1` |
 | Architecture | `aarch64` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [ZCode](https://zcode.z.ai) |
