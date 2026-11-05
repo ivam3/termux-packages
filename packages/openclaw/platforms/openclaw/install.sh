@@ -8,6 +8,10 @@ echo "=== Installing OpenClaw Platform Package ==="
 echo ""
 
 export CPATH="${PREFIX}/include/glib-2.0:${PREFIX}/lib/glib-2.0/include"
+# Android's seccomp filter kills the native fs-safe binding when it calls
+# openat2(). Force OpenClaw's JavaScript fallback for the updater and CLI.
+export FS_SAFE_NATIVE_MODE=off
+export OPENCLAW_FS_SAFE_NATIVE_MODE=off
 
 python -c "import yaml" 2>/dev/null || pip install pyyaml -q || true
 
@@ -67,13 +71,10 @@ echo "Installing NPM required modules"
 npm install -g grammy
 npm install -g @grammyjs/runner
 npm install -g @grammyjs/transformer-throttler
-echo "Running: openclaw update"
+echo "Running: openclaw update --yes --no-restart"
 echo "  (This includes building native modules and may take 5-10 minutes)"
 echo ""
-echo "NOTE: 'openclaw update' may ask:"
-echo "  Proceed with installation? [y/N]"
-echo "This only confirms installing/updating ClawHub components (skills/plugins)."
+echo "This only installs/updates ClawHub components (skills/plugins)."
 echo "It does NOT delete ~/.openclaw, your workspace, memory, or settings."
-echo "Answer 'y' to continue — it is part of the installation, not an error."
 echo ""
-openclaw update || true
+openclaw update --yes --no-restart || true

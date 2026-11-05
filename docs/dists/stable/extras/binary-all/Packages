@@ -815,20 +815,20 @@ SHA256: 7314363d3c2ea23da381084bc93d3036961f143a20917f3e61e5ab8fe9c374f6
 SHA512: b6fd9867e1d15bd89b2276105215ffc2079ed00a2c00f7e99f8bf70bc99e6be3a000d2f1936eee7258ab9ae456d8a921aea1267850a0a61cdbb73e278379fb9c
 
 Package: i-haklab
-Version: 3.13.28
+Version: 3.13.29
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 26150
+Installed-Size: 26153
 Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, execline, fd, file, findutils, fish, fzf, gawk, git, glibc-repo, glow, golang, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, mandoc, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nodejs-lts, ollama, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, rust, sqlite, strace, tar, tor, torsocks, translate-shell, ttyd, unzip, wget, yazi, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.13.28_all.deb
-Size: 3753672
-MD5Sum: d09ef8d0a97d7085c7846cf73e1c1cac
-SHA1: f36be454ca581a7921475ae1751a16ef04ba0487
-SHA256: 8804dbaa518bd9fc376d7ca397d761776f130621da80c86693efaea8268ab1b4
-SHA512: 9f275664105a5559c6788a1e0527434bd44d59b5d1cb289856c53bbaf2217807241b2dfa45ff3a66278986fcea2786b80e2b30368115bbcbb8664b9b55ec7ca2
+Filename: dists/stable/extras/binary-all/i-haklab_3.13.29_all.deb
+Size: 3754308
+MD5Sum: 78dc19b5eb0e6200604cbaf0d8361d69
+SHA1: 507a1f58632151420ac9ff1a225616016448acd2
+SHA256: d7d734dc789a535ff8ec66dece377edb249ae684ce7e612c7cd40ac5e755e881
+SHA512: 3667f0b3e866a16d628b0a8af9d2f38e0be9816c104f40e4ebec410c922b4f6831b79e18618123fd0dc6d9ee064c14e82d08bc26e1cedc187649ef7bcd11b757
 
 Package: infoga
 Version: 1.0
@@ -975,7 +975,7 @@ SHA256: 7e8101235c834b33b092e8bddbafa3483e126331b05a5b8b499947977fdc108d
 SHA512: 522fc2400cfb442c0d388ef4ba242068b84f27f3569a00ae758bcb83c2267c06114bb8b6196a6749395fb1447fd11c0c80f6218d1ef22413a160977c3f75d062
 
 Package: mistral-vibe
-Version: 2.26.1-2
+Version: 2.26.1-4
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
@@ -983,12 +983,12 @@ Depends: coreutils, curl, unzip, glibc-repo, glibc, patchelf
 Suggests: i-haklab, neovim, termux-oracle-skill
 Homepage: https://github.com/mistralai/mistral-vibe
 Description: Minimal CLI coding assistant/agent powered by Mistral's models.
-Filename: dists/stable/extras/binary-all/mistral-vibe_2.26.1-2_all.deb
-Size: 3828
-MD5Sum: 91ebb71e21816618248e11674c7a9c6d
-SHA1: 43ec7545ba1fa8b6812718b8d61e3f54af2bcc5d
-SHA256: 10e5c2e18a47c4ab645d3888100f2da74b2b20ac0eec9bf5d787470b2378fbef
-SHA512: 998fd4a7ee048f42ad9847a2123dbb6b62da2a4e304dd19a0a4416f35d6d8b676229ce0ba42a887473f0434750532b7d4dc7a6b2d237c5dfdb39913f32351320
+Filename: dists/stable/extras/binary-all/mistral-vibe_2.26.1-4_all.deb
+Size: 4128
+MD5Sum: 6ae4c2e2631b1b98112c9ddb1c94f571
+SHA1: 2547d45697eebff19c75107e0cef5d529095be2f
+SHA256: 794c0839b814df58a200df3f9bca1d095147789f317510abf7593beaa5661b1d
+SHA512: 5dadff8874dd6d562978d0c1c950279e026d819419000051838a2104f726050b2ef01b732063611646aa05c91999ca99a956ff6628f05c2cf89d35533da07525
 
 Package: ngrok
 Version: 3.15.1

@@ -10,40 +10,18 @@ export LANG=C
 export LC_ALL=C
 : "${HOME:=/data/data/com.termux/files/home}"
 : "${PREFIX:=/data/data/com.termux/files/usr}"
-SHELL="${SHELL:-/bin/bash}"
-PWS=$(printf '%s\n' "$SHELL" | awk -F '/' '{print $NF}')
-
-case $PWS in 
-    fish) FILERC="${PREFIX}/etc/fish/config.fish" ;;
-    zsh) FILERC="${HOME}/.zshrc" ;;
-    *) FILERC="${HOME}/.bashrc" ;;
-esac
-mkdir -p "$(dirname "$FILERC")" 2>/dev/null || true
-# Update with all non-interactive flags to prevent config file prompts
-# =========================================================================
-# Fix Node.js IPv4 DNS (Crucial for Termux)
-# =========================================================================
-echo "Applying Enviroment Fixes..."
-if ! grep -qF "# >>> OpenClaw on Android >>>" "$FILERC" 2>/dev/null; then
-    echo """
-# >>> OpenClaw on Android >>>
-# platform: openclaw
-export PATH="$HOME/.openclaw-android/bin:$HOME/.openclaw-android/node/bin:$PATH"
+# Keep the environment used by the installer consistent with the managed
+# shell block. FS_SAFE_NATIVE_MODE=off is required on Android because the
+# native binding uses openat2(), which the seccomp filter rejects with SIGSYS.
+export FS_SAFE_NATIVE_MODE=off
+export OPENCLAW_FS_SAFE_NATIVE_MODE=off
+export NODE_OPTIONS=--dns-result-order=ipv4first
 export TMPDIR="$PREFIX/tmp"
 export TMP="$TMPDIR"
 export TEMP="$TMPDIR"
 export OA_GLIBC=1
 export CONTAINER=1
-export CLAWDHUB_WORKDIR="$HOME/.openclaw/workspace"
-export CPATH="$PREFIX/include/glib-2.0:$PREFIX/lib/glib-2.0/include"
-# <<< OpenClaw on Android <<<
-""" >> "$FILERC"
-fi
-echo "Applying Network Fixes..."
-if ! grep -q "NODE_OPTIONS=--dns-result-order=ipv4first" "$FILERC" 2>/dev/null; then
-    echo "export NODE_OPTIONS=--dns-result-order=ipv4first" >> "$FILERC"
-fi
-export NODE_OPTIONS=--dns-result-order=ipv4first
+export PATH="$HOME/.openclaw-android/bin:$HOME/.openclaw-android/node/bin:$HOME/.local/bin:$PATH"
 
 # =========================================================================
 # Install Official OpenClaw 
@@ -74,6 +52,15 @@ fi
 if ! command -v openclaw >/dev/null 2>&1; then
     echo "Error: OpenClaw command not found after installation." >&2
     exit 1
+fi
+
+# Refresh the managed shell block even when OpenClaw was already installed.
+# setup-env.sh writes bash syntax to ~/.bashrc and fish syntax to the user's
+# fish config, and removes the broken block older versions wrote to the
+# system-wide fish config.
+if [ -f "${HOME}/.openclaw/scripts/setup-env.sh" ]; then
+    bash "${HOME}/.openclaw/scripts/setup-env.sh" || \
+        echo "[!] Could not refresh shell environment; run 'bash ~/.openclaw/scripts/setup-env.sh' manually."
 fi
 
 echo "Configuring AI Phone Controller..."

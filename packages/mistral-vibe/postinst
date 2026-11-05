@@ -110,6 +110,13 @@ msg "Patching ELF interpreter and runtime path..."
 patchelf --set-interpreter "${GLIBC_DIR}/lib/${loader}" "$STAGE/app/vibe"
 patchelf --set-rpath "\$ORIGIN:\$ORIGIN/_internal:${GLIBC_DIR}/lib" "$STAGE/app/vibe"
 
+# Some upstream builds link against the libc linker script name instead of
+# libc.so.6. glibc's libc.so is a text linker script, so the dynamic loader
+# would fail with "invalid ELF header" if it ever resolved that entry.
+if patchelf --print-needed "$STAGE/app/vibe" | grep -qx 'libc.so'; then
+    patchelf --replace-needed libc.so libc.so.6 "$STAGE/app/vibe"
+fi
+
 msg "Installing to $APP_DIR ..."
 rm -rf "$APP_DIR"
 mkdir -p "$APP_DIR"
@@ -121,18 +128,25 @@ cat > "$BIN_DIR/vibe" <<EOF
 #!/data/data/com.termux/files/usr/bin/bash
 # Mistral Vibe standalone wrapper (managed by the mistral-vibe package)
 APP_DIR="${APP_DIR}"
-export LD_LIBRARY_PATH="\$APP_DIR/_internal:${GLIBC_DIR}/lib\${LD_LIBRARY_PATH:+:\$LD_LIBRARY_PATH}"
+# Do not inherit Termux/Bionic library paths. In particular,
+# LD_LIBRARY_PATH=\$PREFIX/lib makes the glibc loader pick Bionic's libz.so.1,
+# which then asks for libc.so and crashes on glibc's linker script.
+unset LD_PRELOAD LD_AUDIT
+export LD_LIBRARY_PATH="\$APP_DIR/_internal:${GLIBC_DIR}/lib"
 exec "\$APP_DIR/vibe" "\$@"
 EOF
 chmod 755 "$BIN_DIR/vibe"
 
-if ! "$BIN_DIR/vibe" --version >/dev/null 2>&1; then
+# Verify from a clean dynamic-loader environment so the user's interactive
+# LD_LIBRARY_PATH cannot mask a broken package.
+if ! env -u LD_LIBRARY_PATH -u LD_PRELOAD -u LD_AUDIT \
+        "$BIN_DIR/vibe" --version >/dev/null 2>&1; then
     err "Mistral Vibe was installed but failed to start."
     err "Check that glibc-repo is installed and try again."
     exit 1
 fi
 
-ok "Mistral Vibe installed: $("$BIN_DIR/vibe" --version 2>/dev/null)"
+ok "Mistral Vibe installed: $(env -u LD_LIBRARY_PATH -u LD_PRELOAD -u LD_AUDIT "$BIN_DIR/vibe" --version 2>/dev/null)"
 warn "Set MISTRAL_API_KEY before using the CLI."
 msg "Run 'vibe' for the interactive CLI."
 msg "Run 'vibe --help' for all options."

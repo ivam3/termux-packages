@@ -31,6 +31,8 @@ export TMPDIR="${PREFIX}/tmp"
 export TMP="${TMPDIR}"
 export TEMP="${TMPDIR}"
 export OA_GLIBC=1
+export FS_SAFE_NATIVE_MODE=off
+export OPENCLAW_FS_SAFE_NATIVE_MODE=off
 
 echo "Platform Package Install (L2)"
 bash "$SCRIPT_DIR/platforms/$SELECTED_PLATFORM/install.sh"

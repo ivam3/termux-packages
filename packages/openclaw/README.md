@@ -12,7 +12,7 @@ pkg install openclaw
 
 | Field | Value |
 |-------|-------|
-| Version | `2026.10.9-1` |
+| Version | `2026.10.9-2` |
 | Architecture | `aarch64` |
 | Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
 | Homepage | [openclaw](https://github.com/AidanPark/openclaw-android) |

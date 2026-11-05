@@ -72,6 +72,8 @@ if [ -n "$_NODE_CMD" ]; then
 #!${PREFIX}/bin/bash
 [ -n "\$LD_PRELOAD" ] && export _OA_ORIG_LD_PRELOAD="\$LD_PRELOAD"
 unset LD_PRELOAD
+export FS_SAFE_NATIVE_MODE="\${FS_SAFE_NATIVE_MODE:-off}"
+export OPENCLAW_FS_SAFE_NATIVE_MODE="\${OPENCLAW_FS_SAFE_NATIVE_MODE:-off}"
 export _OA_WRAPPER_PATH="$BIN_DIR/node"
 _OA_COMPAT="\$HOME/.openclaw-android/patches/glibc-compat.js"
 if [ -f "\$_OA_COMPAT" ]; then
@@ -133,6 +135,12 @@ NPXWRAP
             fi
             if [ -f "$NODE_DIR/bin/corepack" ] && head -1 "$NODE_DIR/bin/corepack" 2>/dev/null | grep -q '#!/usr/bin/env node'; then
                 sed -i "1s|#!/usr/bin/env node|#!$BIN_DIR/node|" "$NODE_DIR/bin/corepack"
+                _any_fixed=true
+            fi
+            # Existing installs may predate the Android seccomp workaround.
+            # Add it to the wrapper without forcing a Node.js reinstall.
+            if [ -x "$BIN_DIR/node" ] && ! grep -q 'FS_SAFE_NATIVE_MODE' "$BIN_DIR/node"; then
+                sed -i '/^unset LD_PRELOAD$/a export FS_SAFE_NATIVE_MODE="${FS_SAFE_NATIVE_MODE:-off}"\nexport OPENCLAW_FS_SAFE_NATIVE_MODE="${OPENCLAW_FS_SAFE_NATIVE_MODE:-off}"' "$BIN_DIR/node"
                 _any_fixed=true
             fi
             if [ "$_any_fixed" = true ]; then
@@ -211,6 +219,8 @@ cat > "$BIN_DIR/node" << WRAPPER
 #!${PREFIX}/bin/bash
 [ -n "\$LD_PRELOAD" ] && export _OA_ORIG_LD_PRELOAD="\$LD_PRELOAD"
 unset LD_PRELOAD
+export FS_SAFE_NATIVE_MODE="\${FS_SAFE_NATIVE_MODE:-off}"
+export OPENCLAW_FS_SAFE_NATIVE_MODE="\${OPENCLAW_FS_SAFE_NATIVE_MODE:-off}"
 export _OA_WRAPPER_PATH="$BIN_DIR/node"
 _OA_COMPAT="\$HOME/.openclaw-android/patches/glibc-compat.js"
 if [ -f "\$_OA_COMPAT" ]; then

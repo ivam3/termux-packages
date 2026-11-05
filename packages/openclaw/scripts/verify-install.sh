@@ -116,10 +116,22 @@ else
     check_warn "opencode not installed (non-critical)"
 fi
 
-if grep -qF "OpenClaw on Android" "$HOME/.bashrc" 2>/dev/null; then
-    check_pass ".bashrc contains environment block"
+ENV_BLOCK_FOUND=false
+for ENV_FILE in \
+    "$HOME/.bashrc" \
+    "$HOME/.config/fish/config.fish" \
+    "${XDG_CONFIG_HOME:-}/fish/config.fish" \
+    "$HOME/.zshrc"; do
+    [ -n "$ENV_FILE" ] && [ -f "$ENV_FILE" ] || continue
+    if grep -qF "OpenClaw on Android" "$ENV_FILE" 2>/dev/null; then
+        ENV_BLOCK_FOUND=true
+        break
+    fi
+done
+if [ "$ENV_BLOCK_FOUND" = true ]; then
+    check_pass "Shell configuration contains environment block"
 else
-    check_fail ".bashrc missing environment block"
+    check_fail "Missing OpenClaw environment block in shell configuration"
 fi
 
 PLATFORM=$(detect_platform) || true
