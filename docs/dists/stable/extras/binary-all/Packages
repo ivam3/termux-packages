@@ -399,7 +399,7 @@ SHA256: 115acf00c211ca2decc6379848336e43109619b321620cd3c32bf6f65337343d
 SHA512: 65fd549a7d8384cff34e70c8aa7b711c3ce855fc8ebfd82114e4fb7f7cae4f1dabfb650a0f788ef1061a2eb6e1f5e0e7f40f5616858305edf527153e03cedf87
 
 Package: engram
-Version: 3.4.0-1
+Version: 3.6.2-1
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 1
@@ -407,12 +407,12 @@ Depends: git, golang, curl
 Suggests: i-haklab
 Homepage: https://github.com/Gentleman-Programming/engram
 Description: Persistent memory system for AI coding agents
-Filename: dists/stable/extras/binary-all/engram_3.4.0-1_all.deb
-Size: 2280
-MD5Sum: fbc53caf2c11574c14f9d4fa0f2dfda9
-SHA1: 70db2a6e47cb2cddeaa81937dd98b19ffa9a1a40
-SHA256: d89235cdf9996448e23ad6cb53b4c3df9afd08c463b08a5f8f60a12bfc4fcfb6
-SHA512: 154713bea5a4f81a1071d31d735f41cbcbe90dcea604fc771555837faf88b21024946d87393c88125725cdfa4dddaf084029dc64fb3bfa236193f7017f672b52
+Filename: dists/stable/extras/binary-all/engram_3.6.2-1_all.deb
+Size: 2292
+MD5Sum: a581e663fad8e2d89091774b338c3a5e
+SHA1: 121c9f235eaf90a87bc119974e81f0b1ef6764a6
+SHA256: c1e885f181d6042572bc0e0bf51e38b04c48369f09dec9aa877efed988d2b27f
+SHA512: e3326028e0ac6df8d66cd7d5c276bd73bcd09252771309ded9ca5385046a83305add9333935db081677f21afd8a3bd3f9822062ad8ab9781f277e7029d2e8c55
 
 Package: enum4linux-ng
 Version: 1.3.10
@@ -815,7 +815,7 @@ SHA256: 7314363d3c2ea23da381084bc93d3036961f143a20917f3e61e5ab8fe9c374f6
 SHA512: b6fd9867e1d15bd89b2276105215ffc2079ed00a2c00f7e99f8bf70bc99e6be3a000d2f1936eee7258ab9ae456d8a921aea1267850a0a61cdbb73e278379fb9c
 
 Package: i-haklab
-Version: 3.13.29
+Version: 3.13.30
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 26153
@@ -823,12 +823,12 @@ Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-pack
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.13.29_all.deb
-Size: 3754308
-MD5Sum: 78dc19b5eb0e6200604cbaf0d8361d69
-SHA1: 507a1f58632151420ac9ff1a225616016448acd2
-SHA256: d7d734dc789a535ff8ec66dece377edb249ae684ce7e612c7cd40ac5e755e881
-SHA512: 3667f0b3e866a16d628b0a8af9d2f38e0be9816c104f40e4ebec410c922b4f6831b79e18618123fd0dc6d9ee064c14e82d08bc26e1cedc187649ef7bcd11b757
+Filename: dists/stable/extras/binary-all/i-haklab_3.13.30_all.deb
+Size: 3754540
+MD5Sum: b08ed1cfc6c7b11fcfb2e26a07582ed3
+SHA1: ea60f7b6ddfdba0c6841683efc13e5ead39a460d
+SHA256: 378384408948645104b8b14f64e818a356908fb15a41e75892566d5648b78ee0
+SHA512: 41649453273a52624d8eccd8ba68e3f166e6eec48bc0ef0609a32c002f408c2c015f2e46af8f36a8c0e0a544756b4e73735dd0de71213396925f122cfcf97942
 
 Package: infoga
 Version: 1.0
