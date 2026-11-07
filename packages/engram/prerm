@@ -1,9 +1,15 @@
 #!/data/data/com.termux/files/usr/bin/bash
 tool="engram"
 
-[[ -e ${HOME}/go/bin/$tool ]] && rm -f ${HOME}/go/bin/$tool
-[[ -e ${HOME}/go/bin/$tool.real ]] && rm -f ${HOME}/go/bin/$tool.real
-[[ -d ${HOME}/.local/share/$tool ]] && rm -rf ${HOME}/.local/share/$tool
-[[ -d ${HOME}/go/pkg/mod/github.com ]] && \
-    find ${HOME}/go/pkg/mod/github.com -maxdepth 1 -iname "*gentleman*" -exec rm -rf {} + 2>/dev/null
+rm -f "${HOME}/go/bin/${tool}" "${HOME}/go/bin/${tool}.real"
+if [[ -d "${HOME}/.local/share/${tool}" ]]; then
+    chmod -R u+w "${HOME}/.local/share/${tool}" 2>/dev/null || true
+    rm -rf "${HOME}/.local/share/${tool}" 2>/dev/null || true
+fi
+if [[ -d "${HOME}/go/pkg/mod/github.com" ]]; then
+    # Go module cache directories are read-only; make them writable before cleanup.
+    find "${HOME}/go/pkg/mod/github.com" -maxdepth 1 -iname "*gentleman*" -exec chmod -R u+w {} + 2>/dev/null || true
+    find "${HOME}/go/pkg/mod/github.com" -maxdepth 1 -iname "*gentleman*" -exec rm -rf {} + 2>/dev/null || true
+fi
+exit 0
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

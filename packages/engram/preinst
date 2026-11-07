@@ -5,8 +5,11 @@ then
   exit 1
 else
   echo "Preparing enviroment ..."
-  [[ -d ${HOME}/.local/share/engram ]] && rm -rf ${HOME}/.local/share/engram
-  [[ -e ${HOME}/go/bin/engram ]] && rm -f ${HOME}/go/bin/engram
-  [[ -e ${HOME}/go/bin/engram.real ]] && rm -f ${HOME}/go/bin/engram.real
+  if [[ -d "${HOME}/.local/share/engram" ]]; then
+    chmod -R u+w "${HOME}/.local/share/engram" 2>/dev/null || true
+    rm -rf "${HOME}/.local/share/engram" 2>/dev/null || true
+  fi
+  rm -f "${HOME}/go/bin/engram" "${HOME}/go/bin/engram.real"
 fi
+exit 0
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####
