@@ -28,12 +28,13 @@ function renderWithChafa(file, options) {
   const opts = options || {};
   const size = opts.size || chafaSize();
   const result = spawnSync('chafa', [
-    '--format=symbols',
-    '--animate=off',
-    '--size=' + size.width + 'x' + size.height,
-    '--margin-bottom=0',
-    '--margin-right=0',
-    file
+      file
+    // '--format=symbols',
+    // '--animate=off',
+    // '--size=' + size.width + 'x' + size.height,
+    // '--margin-bottom=0',
+    // '--margin-right=0',
+    // file
   ], {
     encoding: 'utf8',
     maxBuffer: 16 * 1024 * 1024,

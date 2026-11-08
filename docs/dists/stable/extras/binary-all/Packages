@@ -1341,7 +1341,7 @@ SHA256: e288acf8a3dcf00083456c02a72f369ff342e94e37561346ae76705c70736a80
 SHA512: d89eafeb96f340522c2acb4d99c6e9ce2e5731eee3bbadbba302bcb096173d5607178a6cbe141029130e23b02399c4801e8c56604156da1e94c210c8905fe9b0
 
 Package: terminus-game
-Version: 1.0.0-1
+Version: 1.0.0-2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 817
@@ -1349,12 +1349,12 @@ Depends: nodejs-lts
 Suggests: chafa, termux-api, i-haklab
 Homepage: https://github.com/mprat/Terminus
 Description: Terminal port of Terminus, the Linux learning adventure game.
-Filename: dists/stable/extras/binary-all/terminus-game_1.0.0-1_all.deb
-Size: 409836
-MD5Sum: ad67729d10694f1802517cfffb920107
-SHA1: 9440e81b6730c7b39023927b7b59f950fdee9366
-SHA256: cda4bdf9f99cd37f2cc2a9be269e2b33f83d51c992d1b1e82e3b1d77a3d32141
-SHA512: db52236a5566e22e139a6916a042220575a561a88b4480478300a4ce8905df2b524d765801d68de46800ac83e3df58d66087f5161adffca7152e4c84b4819a1d
+Filename: dists/stable/extras/binary-all/terminus-game_1.0.0-2_all.deb
+Size: 409932
+MD5Sum: 3307aa7c5461540bd1efbd15e62555ef
+SHA1: d18512e17a612efc8063b921a587e5859f4837cb
+SHA256: 36c9b76ed9de65c2497b0477d97c73e48203216a9a79dee0f4e2dce5feff2c14
+SHA512: d3f822f129dd07f480cdb2888be56dfccbe1ff2faa70fa8a7dce656af4506edb12d45c5b3f88379117705741430a68fc7bfb2200e96cf99297de8d46794c1a18
 
 Package: termux-desktop-bspwm
 Version: 0.1.1
