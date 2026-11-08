@@ -254,6 +254,7 @@ data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ngrok.md       
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/nikto.md        i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/nljson.md       i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/nmap.md         i-haklab
+data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/npm.md          i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/ntlmrelayx.md   i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/objection.md    i-haklab
 data/data/com.termux/files/home/.local/etc/i-Haklab/Tools/Readme/obs-studio.md   i-haklab
