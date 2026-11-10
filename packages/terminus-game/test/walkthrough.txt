@@ -1,0 +1,26 @@
+# Main-story walkthrough used by the package smoke test.
+# Starts at Home and ends in Paradise.
+cd NorthernMeadow
+cd EasternMountains
+cd Cave
+cd DarkCorridor
+cd DankRoom
+mv Boulder SmallHole
+cd Tunnel
+cd StoneChamber
+cd Portal
+cd TownSquare
+cd BrokenBridge
+touch Plank
+cd Clearing
+cd OminousLookingPath
+rm ThornyBrambles
+cd CaveOfDisgruntledTrolls
+rm UglyTroll
+cd Slide
+cd KernelFiles
+cd MoreKernelFiles
+grep password= U_txt
+cd ..
+sudo less Certificate
+IHTFP

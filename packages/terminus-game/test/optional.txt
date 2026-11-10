@@ -1,0 +1,36 @@
+# Optional MIT branch and kidnapped-child rescue.
+# Starts at Home.
+cd MIT
+cd AthenaCluster
+tellme combo
+terminus
+add MagicLocker
+cd ~
+cd MagicLocker
+less MoreComing
+cd ~
+cd NorthernMeadow
+cd EasternMountains
+cd Cave
+cd DarkCorridor
+cd DankRoom
+mv Boulder SmallHole
+cd Tunnel
+cd StoneChamber
+cd Portal
+cd TownSquare
+cd BrokenBridge
+touch Plank
+cd Clearing
+cd OminousLookingPath
+rm ThornyBrambles
+cd CaveOfDisgruntledTrolls
+rm UglyTroll
+mv KidnappedChild
+cd Slide
+cd KernelFiles
+cd MoreKernelFiles
+grep password= U_txt
+cd ..
+sudo less Certificate
+IHTFP

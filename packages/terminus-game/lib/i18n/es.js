@@ -37,6 +37,7 @@ const MESSAGES = new Map([
   ['You made this house for the man. How thoughtful of you!', 'Construiste esta casa para el hombre. ¡Qué detalle por tu parte!'],
   ['You have correctly entered the password. You are now in Paradise. Take a look around, and congratulations.', 'Has introducido la contraseña correctamente. Ya estás en Paradise. Echa un vistazo y enhorabuena.'],
   ['You have correctly entered the cluster combo. Entering the AthenaCluster.', 'Has introducido correctamente la combinación del clúster. Entrando en AthenaCluster.'],
+  ['The child is already free.', 'La niña ya está libre.'],
   [' Locations:', ' Lugares:'],
   [' Items:', ' Objetos:']
 ]);

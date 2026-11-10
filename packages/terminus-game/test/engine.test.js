@@ -183,3 +183,75 @@ test('Spanish mode translates dynamic text replayed from a save', () => {
   assert.match(game.sandbox.Tunnel.intro_text, /Aquí dentro hay bastante humedad/);
   assert.match(game.command('ls').output, /Lugares:/);
 });
+
+test('BrokenBridge remains case-sensitive', () => {
+  const game = engine('terminuscookie=BrokenBridge=');
+  const lower = game.command('touch plank');
+  assert.match(lower.output, /created plank/);
+  assert.match(game.command('cd Clearing').output, /can’t cross the bridge/);
+  assert.strictEqual(game.roomName(), 'BrokenBridge');
+
+  const upper = game.command('touch Plank');
+  assert.match(upper.output, /created Plank/);
+  assert.match(game.command('cd Clearing').output, /You have moved to Clearing/);
+  assert.strictEqual(game.roomName(), 'Clearing');
+});
+
+test('rescues the kidnapped child and persists the state', () => {
+  const game = engine('terminuscookie=CaveOfDisgruntledTrolls=');
+  const result = game.command('mv KidnappedChild');
+  assert.match(result.output, /dashes past you/);
+  assert.strictEqual(game.sandbox.Cage.items.length, 0);
+  assert.ok(game.sandbox.Clearing.items.map(String).includes('KidnappedChild'));
+  assert.match(game.stateString(), /freeKid:1/);
+
+  const resumed = engine('terminuscookie=' + game.stateString());
+  assert.strictEqual(resumed.sandbox.Cage.items.length, 0);
+  assert.ok(resumed.sandbox.Clearing.items.map(String).includes('KidnappedChild'));
+  assert.match(resumed.command('mv KidnappedChild').output, /already free/);
+});
+
+test('Spanish mode translates the child rescue and already-free message', () => {
+  const game = spanish('terminuscookie=CaveOfDisgruntledTrolls=');
+  const result = game.command('mv KidnappedChild');
+  assert.match(result.output, /niña/);
+  assert.match(result.output, /sendero inquietante/);
+  assert.match(game.command('mv KidnappedChild').output, /La niña ya está libre/);
+});
+
+test('walkthrough reaches Paradise', () => {
+  const game = engine();
+  const commands = [
+    'cd NorthernMeadow',
+    'cd EasternMountains',
+    'cd Cave',
+    'cd DarkCorridor',
+    'cd DankRoom',
+    'mv Boulder SmallHole',
+    'cd Tunnel',
+    'cd StoneChamber',
+    'cd Portal',
+    'cd TownSquare',
+    'cd BrokenBridge',
+    'touch Plank',
+    'cd Clearing',
+    'cd OminousLookingPath',
+    'rm ThornyBrambles',
+    'cd CaveOfDisgruntledTrolls',
+    'rm UglyTroll',
+    'cd Slide',
+    'cd KernelFiles',
+    'cd MoreKernelFiles',
+    'grep password= U_txt',
+    'cd ..',
+    'sudo less Certificate',
+    'IHTFP'
+  ];
+  let result = null;
+  for (const command of commands) {
+    result = game.command(command);
+  }
+  assert.strictEqual(game.roomName(), 'Paradise');
+  assert.match(result.output, /congratulations/);
+  assert.match(game.stateString(), /sudoComplete:1/);
+});

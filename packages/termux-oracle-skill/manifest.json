@@ -1,6 +1,6 @@
 {
   "name": "termux-oracle-skill",
-  "version": "0.3.1",
+  "version": "0.4.2",
   "arch": "all",
   "homepage": "https://github.com/ivam3/termux-oracle",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
@@ -23,7 +23,8 @@
     "freebuff",
     "openclaw",
     "mimocode",
-    "mistral-vibe"
+    "mistral-vibe",
+    "zcode"
   ],
   "description": "A termux skill for AI coding agents with all context about termux, i-Haklab and Ivam3 termux-packages.",
   "files": {

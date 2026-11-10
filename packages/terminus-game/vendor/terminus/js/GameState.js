@@ -15,6 +15,7 @@
  * FiveGearsCopied -- five Gears copied in ArtisanShop, Artisan text changed
  * CornCopied -- corn copied in Farm
  * touchPlank -- Plank made in BrokenBridge
+ * freeKid -- kidnapped child rescued and moved to Clearing
  * sudoComplete -- entered paradise (current location is paradise)
  */
 
@@ -149,6 +150,12 @@ stone, weeping. Behind him is a pile of rubble and a small white house.");
     	case "rmBrambles":
     		link_rooms(OminousLookingPath, CaveOfDisgruntledTrolls) ;
     		if (re) OminousLookingPath.removeItem("ThornyBrambles");
+    		break;
+    	case "freeKid":
+    		if (Cage.getItemFromName("KidnappedChild") !== -1){
+    			Cage.removeItem("KidnappedChild");
+    			Clearing.addItem(KidnappedChild);
+    		}
     		break;
     	case "sudoComplete":
     		KernelFiles.removeCommand("IHTFP");

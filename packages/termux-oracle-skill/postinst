@@ -23,6 +23,7 @@ tar -xzf <(curl -fsSL "$RELEASE_URL") -C ${HOME}/.agents/skills/
     echo "    • Mistral-AI (vibe)"
     echo "    • Codebuff"
     echo "    • freebuff"
+    echo "    • zcode"
     echo "    • Any agent compatible with SKILL.md"
     echo ""
     echo "[📢] ROOT directory '~/.agents/skills/termux-oracle'."

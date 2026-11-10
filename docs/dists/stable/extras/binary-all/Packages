@@ -815,7 +815,7 @@ SHA256: 7314363d3c2ea23da381084bc93d3036961f143a20917f3e61e5ab8fe9c374f6
 SHA512: b6fd9867e1d15bd89b2276105215ffc2079ed00a2c00f7e99f8bf70bc99e6be3a000d2f1936eee7258ab9ae456d8a921aea1267850a0a61cdbb73e278379fb9c
 
 Package: i-haklab
-Version: 3.13.32
+Version: 3.13.33
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 26169
@@ -823,12 +823,12 @@ Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-pack
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.13.32_all.deb
-Size: 3756908
-MD5Sum: e606eba6c3acb13e2669120ca9c901a1
-SHA1: fce2ebaa5d4787e2a2862ecd55038ced67a34695
-SHA256: 95b8585fa76e413c0dd91442e32c467e51b704a3c36e51ab8b6418201ddf2916
-SHA512: 08750d2211c8394a34b804b6e3f3813f5d66c514d6fc4a9c5a006f491bf168872ee36e00654b1bc1d21ddb369f8039967b5f10125dc2a490e3c4617dd1cec896
+Filename: dists/stable/extras/binary-all/i-haklab_3.13.33_all.deb
+Size: 3757112
+MD5Sum: 9cd0e44818b16e16c4f56b5d1ea8ea1e
+SHA1: 67cd89bb2c4ba4e4c61ccaf1c7305f5f0e7170e2
+SHA256: 6eb5e724c01ad8c8756cf21e9cc5ba433f2f4a41b104459b50b026c2dfe0c8d7
+SHA512: 8068ce7be4304387d0210eb4107b5b3bf28dafb115a7e5018ba03b87baf41e59e5ce047ad70a07bdbd0829846d664c5a882e0d27f6be33bfc8e487145bc04a7a
 
 Package: infoga
 Version: 1.0
@@ -1341,7 +1341,7 @@ SHA256: e288acf8a3dcf00083456c02a72f369ff342e94e37561346ae76705c70736a80
 SHA512: d89eafeb96f340522c2acb4d99c6e9ce2e5731eee3bbadbba302bcb096173d5607178a6cbe141029130e23b02399c4801e8c56604156da1e94c210c8905fe9b0
 
 Package: terminus-game
-Version: 1.0.0-2
+Version: 1.0.0-4
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 817
@@ -1349,12 +1349,12 @@ Depends: nodejs-lts
 Suggests: chafa, termux-api, i-haklab
 Homepage: https://github.com/mprat/Terminus
 Description: Terminal port of Terminus, the Linux learning adventure game.
-Filename: dists/stable/extras/binary-all/terminus-game_1.0.0-2_all.deb
-Size: 409932
-MD5Sum: 3307aa7c5461540bd1efbd15e62555ef
-SHA1: d18512e17a612efc8063b921a587e5859f4837cb
-SHA256: 36c9b76ed9de65c2497b0477d97c73e48203216a9a79dee0f4e2dce5feff2c14
-SHA512: d3f822f129dd07f480cdb2888be56dfccbe1ff2faa70fa8a7dce656af4506edb12d45c5b3f88379117705741430a68fc7bfb2200e96cf99297de8d46794c1a18
+Filename: dists/stable/extras/binary-all/terminus-game_1.0.0-4_all.deb
+Size: 410036
+MD5Sum: 6f63d347846d68ac096e68378fca6b5e
+SHA1: 665e78d9a59bb35a9e3b59caa8d7b5540c94dd75
+SHA256: 211e230f0ba0b47a72829dce5381d407e4be205b8e6b5312c63cedaa5439f129
+SHA512: 4b84e134e0aa3d6586065e13b57247c0337024d21147ddd8e65e53c848650315cff827b9cd8b7f4b1e73bf6c8e163e9d0e3d04c4c69e582926942e65d22178c6
 
 Package: termux-desktop-bspwm
 Version: 0.1.1
@@ -1405,20 +1405,20 @@ SHA256: 92cb5a98ad08116cd18a53ba7d40c5ebd363d5d38c6a5f36e79032e2c8b659b2
 SHA512: 539902e8aa75cf985f523bcdada5a1f3d7528e64f8f5afb5f3434c2ce1b490d9c6c020196f019340fbfffb366ca6fd5bbdac51f871b4e9917d9b8f818c7dafba
 
 Package: termux-oracle-skill
-Version: 0.3.1
+Version: 0.4.2
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
 Installed-Size: 6
 Depends: git, tar, curl, wget, termux-api, termux-tools, termux-services, termux-exec
-Suggests: i-haklab, antigravity-cli, opencode, claude-code, codebuff, freebuff, openclaw, mimocode, mistral-vibe
+Suggests: i-haklab, antigravity-cli, opencode, claude-code, codebuff, freebuff, openclaw, mimocode, mistral-vibe, zcode
 Homepage: https://github.com/ivam3/termux-oracle
 Description: A termux skill for AI coding agents with all context about termux, i-Haklab and Ivam3 termux-packages.
-Filename: dists/stable/extras/binary-all/termux-oracle-skill_0.3.1_all.deb
-Size: 4540
-MD5Sum: db56ca309df542f4036811b604d68cd4
-SHA1: 77a5742b2ddceb2ad63b489962ed1813796effb1
-SHA256: 9dc5aaab45a3273beb4e150a93741cd8723cd1809a0cf90542382fd0bb5ccdec
-SHA512: fa5570894ac7f5d43b86ae2948dba8e7d56227904b3ccf1904d7ce0626ca416b27f6a8027771eadecc553cfd940491615e0ab906742f16b685fa3b499fa264b2
+Filename: dists/stable/extras/binary-all/termux-oracle-skill_0.4.2_all.deb
+Size: 4552
+MD5Sum: 9f1bb5506b75ee593872554938e53413
+SHA1: 0a2454d4e7af3503be674b0b9110ba6110c593b1
+SHA256: 7fefe92b06d8e3ff3a534568e3c4edbea2f12028edab7808160bac9c0680ca0c
+SHA512: 61f957e5cb401a6fc74356ccf60487a5eb2ba9b81b0dab9ca53c111e79088d71f0b0c630ee8cc0039b9dd5fc1a236746fd86335f942cf1e66b850f5c5086485e
 
 Package: unshc
 Version: 0.1

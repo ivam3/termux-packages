@@ -5,9 +5,10 @@ learning adventure game by Michele Pratusevich. Explore a text world and learn
 `cd`, `ls`, `less`, `pwd`, `cp`, `mv`, `rm`, `grep`, `touch` and `sudo` while
 solving the game's puzzles.
 
-The upstream JavaScript game logic is vendored unchanged and executed with
-Node.js; only the browser terminal has been replaced with a native CLI.
-Vendored from commit `a62d0e53f77bc53d0b1941e6baf89403ed25a129`.
+The upstream JavaScript game logic is vendored from commit
+`a62d0e53f77bc53d0b1941e6baf89403ed25a129` with minor compatibility fixes and
+executed with Node.js; only the browser terminal has been replaced with a
+native CLI.
 
 ## Usage
 

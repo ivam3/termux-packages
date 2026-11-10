@@ -1776,6 +1776,20 @@ little boy. Someone is there waiting for you.' \
 runs up the ominous path towards home.");
 Cage.addItem(KidnappedChild);
 
+// Termux fix: optional kidnapped-child rescue.
+var caveMv = CaveOfDisgruntledTrolls.mv;
+CaveOfDisgruntledTrolls.mv = function(args){
+    if (args.length >= 1 && args[0] === "KidnappedChild"){
+        var child = Cage.getItemFromName("KidnappedChild");
+        if (child !== -1){
+            state.applyState("freeKid");
+            return child.cmd_text["mv"];
+        }
+        return "The child is already free.";
+    }
+    return caveMv.call(this, args);
+};
+
 //Athena cluster
 var AthenaCluster = new Room("AthenaCluster", "None shall pass without the combination. You \
 have one chance to enter the combination. Enter password:",
