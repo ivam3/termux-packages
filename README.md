@@ -161,7 +161,7 @@ the source of truth for that package.
 | [websploit](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/websploit/README.md) | MITM framework. |
 | [whatweb](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/whatweb/README.md) | Recognises web technologies including content management systems (CMS), blogging platforms, statistic/analytics packages, JavaScript libraries, web servers, and embedded devices. |
 | [wpscan](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/wpscan/README.md) | WordPress security scanner. |
-| [xapt-management](https://github.com/ivam3/xapt-management) | Tkinter graphical frontend for APT on Termux |
+| [xapt-management](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/xapt-management/README.md) | Tkinter graphical frontend for APT on Termux (Xapt 2.0.0) |
 | [xleak](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/xleak/README.md) | A fast terminal Excel viewer with an interactive TUI |
 | [xml2axml](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/xml2axml/README.md) | Encoding xml to axml OR decoding axml to xml |
 | [zaproxy](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/zaproxy/README.md) | The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications |

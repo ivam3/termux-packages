@@ -1,0 +1,13 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+set -Eeuo pipefail
+: "${PREFIX:=/data/data/com.termux/files/usr}"
+
+# Remove the compatibility symlink created by postinst. Do not touch a regular
+# file that may belong to another package or to the user.
+if [[ -L "${PREFIX}/bin/xapt" ]]; then
+  rm -f "${PREFIX}/bin/xapt"
+fi
+
+rm -rf "${HOME}/.local/share/xapt-management"
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

@@ -1,0 +1,73 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+set -Eeuo pipefail
+: "${PREFIX:=/data/data/com.termux/files/usr}"
+
+# ==============================
+# CONFIGURATION
+# ==============================
+APP="${HOME}/.local/share/xapt-management"
+VERSION="2.0.0"
+
+# Colors
+CYAN="\033[36m"
+GREEN="\033[32m"
+RED="\033[31m"
+YELLOW="\033[33m"
+DIM="\033[2m"
+RESET="\033[0m"
+
+# Messages
+info() { printf "%b[📢]%b %b%s%b\n" "$CYAN" "$RESET" "$DIM" "$*" "$RESET"; }
+msg()  { printf "[➡] %s\n" "$*"; }
+ok()   { printf "%b[✔]%b %s\n" "$GREEN" "$RESET" "$*"; }
+warn() { printf "%b[!]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+tip()  { printf "%b[💡]%b %s\n" "$YELLOW" "$RESET" "$*"; }
+err()  { printf "%b[❌]%b %s\n" "$RED" "$RESET" "$*" >&2; }
+
+# ==============================
+# INSTALL UPSTREAM SOURCE
+# ==============================
+msg "Cloning Xapt ${VERSION} ..."
+rm -rf "$APP"
+if ! git clone --quiet --depth 1 https://github.com/ivam3/xapt-management "$APP"; then
+  err "Could not clone xapt-management."
+  exit 1
+fi
+
+if [[ ! -f "$APP/main.py" || ! -f "$APP/xapt_core.py" ]]; then
+  err "Xapt source is incomplete at ${APP}."
+  exit 1
+fi
+
+chmod 751 -R "$APP"
+ok "Xapt ${VERSION} source installed in ${APP}."
+
+# Keep the historical command name available for users upgrading from 1.x.
+ln -sfn xapt-management "${PREFIX}/bin/xapt"
+
+if ! python -c 'import tkinter' >/dev/null 2>&1; then
+  warn "Tkinter is not importable. Install it with: pkg install python-tkinter"
+else
+  ok "Tkinter is available."
+fi
+
+# ==============================
+# INSTALLING SCRIPT FIXER
+# ==============================
+msg "Installing script fixer..."
+fixerURL="https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer"
+if curl -fsSL "$fixerURL" -o "${PREFIX}/bin/fixer"; then
+  chmod 750 "${PREFIX}/bin/fixer"
+  info "Run 'fixer' to fix any possible issue."
+else
+  warn "Could not download the optional fixer."
+fi
+
+# ==============================
+# FINAL MESSAGES
+# ==============================
+tip "Start Termux:X11 or another X server before launching Xapt."
+msg "Run 'xapt' (or 'xapt-management') to open the GUI."
+msg "@Ivam3: thank you for using this package."
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

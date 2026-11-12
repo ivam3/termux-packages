@@ -1,0 +1,15 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+set -Eeuo pipefail
+
+APP="${HOME}/.local/share/xapt-management"
+
+if [[ ! -f "${APP}/main.py" ]]; then
+  echo -e "\e[31mE:\e[0m Xapt source missing at ${APP}" >&2
+  echo "Reinstall with: pkg install --reinstall xapt-management" >&2
+  exit 1
+fi
+
+cd "${APP}" || exit 1
+exec "$(command -v python)" main.py "$@"
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

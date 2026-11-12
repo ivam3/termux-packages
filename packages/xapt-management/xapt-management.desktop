@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Xapt
+GenericName=APT package manager
+Comment=Graphical frontend for APT package management on Termux
+Comment[es]=Interfaz gráfica para gestionar paquetes APT en Termux
+Version=2.0.0
+Exec=xapt-management
+Icon=/data/data/com.termux/files/usr/share/applications/xapt-management/img/xapt-management.png
+Terminal=false
+Type=Application
+Categories=System;Utility;
+Keywords=apt;package;manager;termux;xapt;
+X-Desktop-File-Install-Version=2.0.0

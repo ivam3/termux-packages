@@ -1327,8 +1327,9 @@ data/data/com.termux/files/usr/share/walkie/patch-mention-only.js               
 data/data/com.termux/files/usr/bin/websploit                                     websploit
 data/data/com.termux/files/usr/bin/whatweb                                       whatweb
 data/data/com.termux/files/usr/bin/wpscan                                        wpscan
-data/data/com.termux/files/usr/bin/xapt                                          xapt-management
-data/data/com.termux/files/usr/bin/xapt-installer                                xapt-management
+data/data/com.termux/files/usr/bin/xapt-management                               xapt-management
+data/data/com.termux/files/usr/share/applications/xapt-management/img/xapt-management.png xapt-management
+data/data/com.termux/files/usr/share/applications/xapt-management/xapt-management.desktop xapt-management
 data/data/com.termux/files/usr/share/xleak/xleak_patch.py                        xleak
 data/data/com.termux/files/usr/bin/xml2axml                                      xml2axml
 data/data/com.termux/files/usr/bin/zaproxy                                       zaproxy

@@ -1,0 +1,16 @@
+{
+  "name": "xapt-management",
+  "version": "2.0.0",
+  "arch": "all",
+  "homepage": "https://github.com/ivam3/xapt-management",
+  "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
+  "depends": ["git", "python"],
+  "recommends": ["x11-repo", "python-tkinter"],
+  "suggests": ["i-haklab", "termux-desktop-xfce", "xwayland"],
+  "description": "Tkinter graphical frontend for APT on Termux, with package search, filters, details and safe APT operations.",
+  "files": {
+    "xapt-management": "bin/xapt-management",
+    "img/xapt-management.png": "/data/data/com.termux/files/usr/share/applications/xapt-management/img/xapt-management.png",
+    "xapt-management.desktop": "/data/data/com.termux/files/usr/share/applications/xapt-management/xapt-management.desktop"
+  }
+}

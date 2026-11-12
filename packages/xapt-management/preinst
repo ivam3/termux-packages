@@ -1,0 +1,61 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IFS=$'\n\t'
+set -Eeuo pipefail
+: "${PREFIX:=/data/data/com.termux/files/usr}"
+
+if [[ $(id -u) -eq 0 ]]; then
+  echo -e "\e[31mE:\e[0m You need to be a common user" >&2
+  exit 1
+fi
+
+warn() { printf "%b[!]%b %s\n" "\033[33m" "\033[0m" "$*"; }
+
+missing=0
+
+if ! dpkg -s x11-repo >/dev/null 2>&1; then
+  warn "x11-repo is not installed."
+  missing=1
+fi
+
+if [[ ! -f "${PREFIX}/etc/apt/sources.list.d/x11.list" ]]; then
+  warn "The X11 APT repository is not configured (x11.list is missing)."
+  missing=1
+fi
+
+if ! python -c 'import tkinter' >/dev/null 2>&1; then
+  warn "python-tkinter is not available."
+  missing=1
+fi
+
+if (( missing )); then
+  cat <<'EOF'
+
+Xapt needs the Termux X11 repository and Tkinter. Install them first:
+
+  pkg install x11-repo
+  pkg update
+  pkg install python-tkinter
+
+Then install Xapt again:
+
+  pkg install xapt-management
+
+Do not add x11.list manually; the x11-repo package installs the repository,
+mirror configuration and keyring integration correctly.
+EOF
+  exit 1
+fi
+
+echo "Preparing environment ..."
+
+# Remove previous source install and the old 1.x location.
+rm -rf "${HOME}/.local/share/xapt-management"
+rm -rf "${PREFIX}/share/applications/xapt"
+
+# The package files are unpacked after this script; remove stale launchers so
+# the new ones are the only versions on PATH.
+rm -f "${PREFIX}/bin/xapt" "${PREFIX}/bin/xapt-management" "${PREFIX}/bin/xapt-installer"
+
+mkdir -p "${HOME}/.local/share"
+mkdir -p "${PREFIX}/share/applications/xapt-management/img"
+####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

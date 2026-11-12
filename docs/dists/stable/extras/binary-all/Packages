@@ -815,20 +815,20 @@ SHA256: 7314363d3c2ea23da381084bc93d3036961f143a20917f3e61e5ab8fe9c374f6
 SHA512: b6fd9867e1d15bd89b2276105215ffc2079ed00a2c00f7e99f8bf70bc99e6be3a000d2f1936eee7258ab9ae456d8a921aea1267850a0a61cdbb73e278379fb9c
 
 Package: i-haklab
-Version: 3.13.33
+Version: 3.13.34
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 26169
+Installed-Size: 26172
 Depends: x11-repo, termux-api, termux-elf-cleaner, termux-tools, termux-gui-package, tur-repo, util-linux, lsd, apr, which, apr-util, autoconf, axel, bat, bc, binutils, fontconfig-utils, bison, clang, coreutils, curl, debianutils, dnsutils, dos2unix, duf, execline, fd, file, findutils, fish, fzf, gawk, git, glibc-repo, glow, golang, gpgme, irssi, jq, libassuan, libcaca, libffi, libgcrypt, libgmp, libgpg-error, libgrpc, libiconv, libmpc, libmpc-static, libmpfr, libmpfr-static, libpcap, libsodium, libsodium-static, libsqlite, libtool, libxml2, libxml2-utils, gnupg, make, mandoc, megatools, mlocate, ncurses, ncurses-utils, neofetch, ninja, nodejs-lts, ollama, openssh, openssl, openssl-tool, php, php-apache, pkg-config, procps, pv, python, python-pip, readline, ripgrep, rust, sqlite, strace, tar, tor, torsocks, translate-shell, ttyd, unzip, wget, yazi, zip, zlib
 Suggests: openjdk-17, perl, ruby
 Homepage: https://github.com/ivam3/i-Haklab
 Description: Hacking lab containing an extensive suite of open source tools ported to Termux focused on programming, develop, pentesting, scan/find/explotation/post-explotation of vulnerabilities
-Filename: dists/stable/extras/binary-all/i-haklab_3.13.33_all.deb
-Size: 3757112
-MD5Sum: 9cd0e44818b16e16c4f56b5d1ea8ea1e
-SHA1: 67cd89bb2c4ba4e4c61ccaf1c7305f5f0e7170e2
-SHA256: 6eb5e724c01ad8c8756cf21e9cc5ba433f2f4a41b104459b50b026c2dfe0c8d7
-SHA512: 8068ce7be4304387d0210eb4107b5b3bf28dafb115a7e5018ba03b87baf41e59e5ce047ad70a07bdbd0829846d664c5a882e0d27f6be33bfc8e487145bc04a7a
+Filename: dists/stable/extras/binary-all/i-haklab_3.13.34_all.deb
+Size: 3758052
+MD5Sum: 0df9a84d9e265398a56eef0f08278d48
+SHA1: eefe46ce9ae760e3cd47b973e9eea56585dd3f1b
+SHA256: baa2984befd646222b74c44414cf5e2434262c38983474de14cebfa187d1332a
+SHA512: 8c4b8e57df9508c66523ff54b59fca940c4ad486a096f1eaa1a2303edc2cd02da7531dc9ca5baf697fef1f2746c8053643eec147f235f55a7964de35cf3b5f10
 
 Package: infoga
 Version: 1.0
@@ -1517,20 +1517,21 @@ SHA256: 59a3d27be56ea042b1c6277ada92c6cc8d79a1e6f0675f5f8818039e3061c031
 SHA512: cb6f8ed527bd6209dbdad76828b12e5f3d05e08a6af5713b50100d4f608f86fac467bdc0834f0fdbac7be41903b9ed253ad5e37f3561199ba4041b8bf5ffbc86
 
 Package: xapt-management
-Version: 1.0.2
+Version: 2.0.0
 Architecture: all
 Maintainer: Ivam3 <https://t.me/Ivam3_Bot>
-Installed-Size: 2
-Depends: x11-repo, git, xwayland, python, python-tkinter
-Suggests: i-haklab, termux-desktop-xfce
+Installed-Size: 44
+Depends: git, python
+Recommends: x11-repo, python-tkinter
+Suggests: i-haklab, termux-desktop-xfce, xwayland
 Homepage: https://github.com/ivam3/xapt-management
-Description: Graphical interface for Advance Package Tool (APT) written in python.
-Filename: dists/stable/extras/binary-all/xapt-management_1.0.2_all.deb
-Size: 2332
-MD5Sum: 55680dcff18f5eee31568261fd955590
-SHA1: 6a381074f7ca6b27e3e69ce233181e50d94a5c80
-SHA256: 17f3361f6dc053aa976288f2e5b2b51f7283464e692383d37d305e2b68586d89
-SHA512: 9efd1d5eec25ce689000aa22fc42c8bf16bde4fa130bc937397c48706c0318712aa04d0758a97fb188ca95a145e6778aea3531bcad43ac06fcb35311d48c0688
+Description: Tkinter graphical frontend for APT on Termux, with package search, filters, details and safe APT operations.
+Filename: dists/stable/extras/binary-all/xapt-management_2.0.0_all.deb
+Size: 45348
+MD5Sum: c9afe348d0116957792a06de3478e733
+SHA1: a9f489dfeb236341c420f888a8e9ae7039822f10
+SHA256: 1663d205e560aa537ed93ce9ee80cd7b04f24829f0f6fafa1a1d9cef2466c83e
+SHA512: 8fb63fe64eab2307316f910e8c26f053425d1959ab1f85fe902bec8a04f8713c79e95a261402d704606c4db2271ed3853d92396f0cfec0008c22855fe1a041f1
 
 Package: xleak
 Version: 0.2.5
