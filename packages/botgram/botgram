@@ -1,21 +1,85 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+APP="${HOME}/.local/share/$(basename "$0")"
+
 echo -en """
     \e[36m|_  __|_\e[34m _ .__.._ _
     \e[36m|_)(_)|_\e[34m(_||(_|| | |
     \e[36m        \e[34m _|\e[36mby @Ivam3
 """
-if [[ -d ${HOME}/.local/share/$(basename $0) ]]
+if [[ -d "$APP" ]]
 then
 	PS3="(➤_) "
-	printf "$Y(➤_)$W Choose an opcion to run $(basename $0).\n\n"
+
+	install_requirements() {
+		if [[ -f requirements.txt ]]; then
+			"$(command -v python)" -m pip install --upgrade -r requirements.txt
+		else
+			# Legacy setup.py offers to pip-install pandas; pandas is provided by
+			# the python-pandas APT dependency, so install only Telethon here.
+			"$(command -v python)" -m pip install --upgrade 'telethon>=1.36,<2'
+		fi
+	}
+
+	setup_menu() {
+		local action first second
+		while true; do
+			printf "\n%s setup actions:\n\n" "$(basename "$0")"
+			select action in "Configure API credentials" "Install Python requirements" "Merge two CSV files" "Back"; do
+				case "$action" in
+					"Configure API credentials")
+						"$(command -v python)" setup.py --config
+						return
+						;;
+					"Install Python requirements")
+						install_requirements
+						return
+						;;
+					"Merge two CSV files")
+						read -r -p "First CSV: " first
+						read -r -p "Second CSV: " second
+						if [[ -z "$first" || -z "$second" ]]; then
+							echo "Both CSV paths are required."
+						else
+							"$(command -v python)" setup.py --merge "$first" "$second"
+						fi
+						return
+						;;
+					"Back"|"")
+						return
+						;;
+					*)
+						echo "Invalid option."
+						;;
+				esac
+			done
+		done
+	}
+
+	printf "Choose an option to run $(basename "$0").\n\n"
 	select opc in add2group getdata getUserComments sendmsg setup exit;do
-		[[ $opc = "exit" ]] && exit
-		pushd ${HOME}/.local/share/$(basename $0) >/dev/null
-		$(command -v python) $opc.py ${@:1}
+		case "$opc" in
+			exit)
+				exit 0
+				;;
+			setup)
+				pushd "$APP" >/dev/null || exit 1
+				setup_menu
+				popd >/dev/null || true
+				;;
+			"")
+				echo "Invalid option."
+				;;
+			*)
+				pushd "$APP" >/dev/null || exit 1
+				"$(command -v python)" "$opc.py" "${@:1}"
+				popd >/dev/null || true
+				;;
+		esac
 	done
+	exit 0
 else
-	echo -en "\e[31m(➤_) ERROR :\e[0m $(basename $0) PATH missing ...\e[33m Aborting.\e[0m"
+	echo -en "\e[31m(➤_) ERROR :\e[0m $(basename "$0") PATH missing ...\e[33m Aborting.\e[0m"
 	exit 1
 fi
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

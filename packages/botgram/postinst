@@ -12,7 +12,13 @@ cd "$APP" || exit 1
 chmod 751 -R "$APP"
 
 echo "Installing Python requirements ..."
-python setup.py --install
+if [[ -f requirements.txt ]]; then
+  python -m pip install --upgrade -r requirements.txt
+else
+  # The legacy setup.py also tries to pip-install pandas. Pandas is provided
+  # by the python-pandas APT dependency; only Telethon is needed here.
+  python -m pip install --upgrade 'telethon>=1.36,<2'
+fi
 
 if [[ ! -f "${PREFIX}/bin/fixer" ]]; then
   wget --tries=20 --quiet \
