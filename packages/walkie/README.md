@@ -1,25 +1,25 @@
 # walkie
 
-> P2P communication CLI for AI agents. No server. No setup. Just talk.
+> P2P communication CLI for AI agents. No server. No setup. Just talk. Termux adaptation with netlink/SELinux patch for Android.
+
+## Overview
+
+This package provides `walkie` for Termux. It is maintained as part of the i-HakLab package collection.
+
+## Upstream source
+
+- **Source:** [https://github.com/vikasprogrammer/walkie](https://github.com/vikasprogrammer/walkie)
 
 ## Installation
 
 ```bash
+pkg update
 pkg install walkie
 ```
 
-## Info
+## Requirements
 
-| Field | Value |
-|-------|-------|
-| Version | `1.5.0-5` |
-| Architecture | `all` |
-| Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [walkie](https://github.com/vikasprogrammer/walkie) |
-
-## Dependencies
-
-`nodejs, git, curl`
+nodejs-lts, git, curl, ollama
 
 ## Usage
 
@@ -76,10 +76,10 @@ Known invocation registry (prompt flag per agent):
 | `vibe` | `-p --output text` |
 | `opencode` | `run` |
 | `gemini`, `qwen`, `qwen-code`, `mimo`, `mimocode`, `kilo`, `kilocode`, `minimax`, `mmx` | `-p` |
-| `copilot`, `copilot-cli`, `codebuff`, `freebuff`, `hermes`, `openclaw` | (prompt posicional, subcomando vía `--agent-args`) |
-| `cactus` | `run --prompt` (modelo positional: `cactus run [model]`, vía `--model` o `--agent-args`; respuesta limpia vía `--result-json`) |
+| `copilot`, `copilot-cli`, `codebuff`, `freebuff`, `hermes`, `openclaw` | (positional prompt, subcommand via `--agent-args`) |
+| `cactus` | `run --prompt` (model positional: `cactus run [model]`, via `--model` or `--agent-args`; clean response via `--result-json`) |
 | `ollama` | (local LLM via HTTP API, no CLI) |
-| cualquier otro | `<cli> <prompt>` (fallback genérico) |
+| any other CLI | `<cli> <prompt>` (generic fallback) |
 
 `walkie pair` also benefits via `--brain` / `--exec-cli`. `claude`/`codex` keep
 their dedicated runners untouched.
@@ -131,7 +131,7 @@ Executor (user device, only obeys the brain):
 
 ```bash
 walkie agent soporte-u1 --secret SECRET \
-  --name usuario1-executor --cli codex --mention-only \
+  --name user1-executor --cli codex --mention-only \
   --respond-to termux-oracle-brain \
   --agent-args "--dangerously-skip-permissions" \
   --prompt "$(cat ~/.config/walkie/prompt-executor.txt)"
@@ -201,9 +201,34 @@ walkie is installed from the git main branch (v1.5.0), which includes
 WALKIE_USE_140=1 pkg reinstall walkie
 ```
 
+## Package details
+
+| Field | Value |
+|---|---|
+| Package | `walkie` |
+| Version | `1.5.0-6` |
+| Architecture | `all` |
+| Maintainer | Ivam3 <https://t.me/Ivam3_Bot> |
+| Source | [https://github.com/vikasprogrammer/walkie](https://github.com/vikasprogrammer/walkie) |
+| Dependencies | nodejs-lts, git, curl, ollama |
+| Suggests | i-haklab |
+
+## Troubleshooting
+
+```bash
+pkg update
+pkg install walkie
+```
+
+Verify that the command is available with `command -v walkie`. If the package was recently installed, open a new shell so the updated `PATH` is loaded.
+
+## License
+
+See the upstream source for the license terms that apply to this package and its bundled sources.
+
 ## Part of i-HakLab
 
-This package is part of the [i-HakLab](https://github.com/Ivam3/i-HakLab) ecosystem — a comprehensive hacking toolkit for Android/Termux.
+This package is part of the [i-HakLab](https://github.com/Ivam3/i-HakLab) ecosystem, a cybersecurity and pentesting toolkit for Android/Termux.
 
 ```bash
 pkg install i-haklab

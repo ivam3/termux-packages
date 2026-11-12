@@ -2,34 +2,61 @@
 
 > CeWL is a custom word list generator that spiders a given URL to a specified depth, optionally following external links, and returns a list of words.
 
+## Overview
+
+This package provides `cewl` for Termux. It is maintained as part of the i-HakLab package collection.
+
+## Upstream source
+
+- **Source:** [https://github.com/digininja/CeWL](https://github.com/digininja/CeWL)
+
 ## Installation
 
 ```bash
+pkg update
 pkg install cewl
 ```
 
-## Info
+## Requirements
 
-| Field | Value |
-|-------|-------|
-| Version | `6.2.1` |
-| Architecture | `all` |
-| Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [CeWL](https://digi.ninja/projects/cewl.php) |
-
-## Dependencies
-
-`git, ruby`
+curl, git, ruby
 
 ## Usage
 
 ```bash
-cewl [options]
+cewl --help
 ```
+
+For the complete command reference, see the upstream documentation.
+
+## Package details
+
+| Field | Value |
+|---|---|
+| Package | `cewl` |
+| Version | `6.2.1` |
+| Architecture | `all` |
+| Maintainer | Ivam3 <https://t.me/Ivam3_Bot> |
+| Source | [https://github.com/digininja/CeWL](https://github.com/digininja/CeWL) |
+| Dependencies | curl, git, ruby |
+| Suggests | i-haklab |
+
+## Troubleshooting
+
+```bash
+pkg update
+pkg install cewl
+```
+
+Verify that the command is available with `command -v cewl`. If the package was recently installed, open a new shell so the updated `PATH` is loaded.
+
+## License
+
+See the upstream source for the license terms that apply to this package and its bundled sources.
 
 ## Part of i-HakLab
 
-This package is part of the [i-HakLab](https://github.com/Ivam3/i-HakLab) ecosystem — a comprehensive hacking toolkit for Android/Termux.
+This package is part of the [i-HakLab](https://github.com/Ivam3/i-HakLab) ecosystem, a cybersecurity and pentesting toolkit for Android/Termux.
 
 ```bash
 pkg install i-haklab

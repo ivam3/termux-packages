@@ -1,40 +1,35 @@
 # opencode-v2
 
-> OpenCode v2 — AI coding agent (anomalyco fork). Native glibc build for Termux.
-> Coexists with the `opencode` v1 package: this one installs the `opencode-v2` command.
+> OpenCode v2 AI coding agent. Native glibc build for Termux, coexists with opencode v1.
+
+## Overview
+
+This package provides `opencode-v2` for Termux. It is maintained as part of the i-HakLab package collection.
+
+## Upstream source
+
+- **Source:** [https://github.com/anomalyco/opencode](https://github.com/anomalyco/opencode)
 
 ## Installation
 
 ```bash
-# glibc support is required
-apt install glibc-repo
+pkg update
 pkg install opencode-v2
 ```
 
-## Info
+## Requirements
 
-| Field | Value |
-|-------|-------|
-| Version | `2.0.32` |
-| Architecture | `aarch64` |
-| Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [opencode.ai](https://opencode.ai) |
-
-## Dependencies
-
-`glibc, clang, patchelf, curl, tar`
+glibc, clang, patchelf, curl, tar
 
 ## Usage
 
 ```bash
-opencode-v2 [options]
+opencode-v2
+opencode-v2 --help
 ```
 
-v1 remains available as `opencode`. Both commands share neither configuration nor
-session data.
-
-> Update with `pkg update`, not with `opencode-v2 upgrade`: the self-updater
-> replaces the binary and loses the ELF interpreter patch needed on Termux.
+The package installs OpenCode v2 as `opencode-v2`, so it can coexist with the
+v1 `opencode` package. Start it inside a project directory.
 
 ## Paths (isolated from v1)
 
@@ -63,3 +58,36 @@ pkg uninstall --purge opencode-v2  # removes config and sessions
 ## Suggestions
 
 Install also: `i-haklab`, `termux-oracle-skill`, `antigravity-cli`, `claude-code`, `codebuff`, `freebuff`
+
+## Package details
+
+| Field | Value |
+|---|---|
+| Package | `opencode-v2` |
+| Version | `2.0.32-1` |
+| Architecture | `aarch64` |
+| Maintainer | Ivam3 <https://t.me/Ivam3_Bot> |
+| Source | [https://github.com/anomalyco/opencode](https://github.com/anomalyco/opencode) |
+| Dependencies | glibc, clang, patchelf, curl, tar |
+| Suggests | i-haklab |
+
+## Troubleshooting
+
+```bash
+pkg update
+pkg install opencode-v2
+```
+
+Verify that the command is available with `command -v opencode-v2`. If the package was recently installed, open a new shell so the updated `PATH` is loaded.
+
+## License
+
+See the upstream source for the license terms that apply to this package and its bundled sources.
+
+## Part of i-HakLab
+
+This package is part of the [i-HakLab](https://github.com/Ivam3/i-HakLab) ecosystem, a cybersecurity and pentesting toolkit for Android/Termux.
+
+```bash
+pkg install i-haklab
+```

@@ -15,11 +15,10 @@ wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/embed/master/.Ib
   -O ${HOME}/.android/debug.keystore
 #bash setup apktool
 gem install bundle
-bundle update --bundler
 bundle install -j$(nproc --all) --verbose
 
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
-chmod 751 /data/data/com.termux/files/usr/bin/fixer
+wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O "${PREFIX}/bin/fixer"
+chmod 751 "${PREFIX}/bin/fixer"
 echo "[✔] Embed installation finished."
 echo "[*] Run 'embed' to execute it."
 echo "[*] Run 'fixer' to fix any posible issue."

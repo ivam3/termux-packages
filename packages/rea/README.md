@@ -1,14 +1,14 @@
 # rea
 
-Reverse engineering agent CLI for binaries, Android apps, JavaScript and web apps.
+> Reverse engineering agent CLI for binaries, Android apps, JavaScript and web apps, packaged for Termux.
 
-This package installs `rea-agents` 6.8.0 for Termux through npm and exposes the
-`rea` command. The application itself runs on the Termux Node.js runtime.
+## Overview
 
-Installation also installs the shared REA skill and registers the MCP server in
-every supported agent that is already present. A small Termux entrypoint wrapper
-applies the platform shim and Ghidra environment to `rea setup` and MCP
-registrations, so agents launched outside the `rea` launcher still work.
+This package provides `rea` for Termux. It is maintained as part of the i-HakLab package collection.
+
+## Upstream source
+
+- **Source:** [https://github.com/morluto/rea](https://github.com/morluto/rea)
 
 ## Installation
 
@@ -38,27 +38,20 @@ After installing or updating an agent later, rerun the setup helper:
 rea-setup
 ```
 
+## Requirements
+
+nodejs-lts (>= 22.23.4), npm, apktool, rizin, procps, curl, ca-certificates, bash, coreutils, binutils
+
 ## Usage
 
 ```bash
-rea --version
-rea doctor --json
-rea mcp doctor --json
 rea
+rea --help
+rea-setup
 ```
 
-`rea doctor --json` is read-only and reports the providers available on this
-device. It exits non-zero when a required check fails, so use `jq` when you only
-want to inspect a specific provider. `rea mcp doctor --json` checks the MCP
-server, tools and prompts.
-
-`rea-setup` is idempotent. It installs or repairs the shared skill and runs
-`rea setup --all-detected --yes`. `rea setup --client <name> --yes` remains
-available for an existing client configuration.
-
-On Termux, REA's setup uses hard links when publishing new files, which Android
-rejects with `EACCES`. `rea-setup` works around this by copying the bundled skill
-and pre-creating empty client configuration files before running REA's setup.
+`rea` is the reverse-engineering agent. `rea-setup` refreshes its agent and MCP
+registration after installation. Run `rea` from the target project directory.
 
 ## Verification
 
@@ -95,19 +88,6 @@ The runtime directory is separate from `~/.local/share/rea/hopper`, caches,
 state, captures and Evidence files. Removing the package does not delete those
 paths. The entrypoint wrapper sits at the same path used by earlier releases, so
 existing MCP registrations keep working. It delegates to `rea-real.mjs`.
-
-## Dependencies
-
-The package depends on:
-
-- `nodejs-lts` and `npm`
-- `apktool` and `rizin`
-- `procps` (`ps`)
-- `curl` and `ca-certificates`
-- `bash`, `coreutils` and `binutils`
-
-`chromium`, `ghidra` and `i-haklab` are suggested. Install `ghidra` to enable
-native analysis and `chromium` if you want to use browser observation.
 
 ## Supported providers
 
@@ -235,3 +215,36 @@ This removes the launcher, `rea-setup` and the npm runtime. It preserves
 `fixer` helper. MCP registrations and the installed skill are also left in
 place; remove those from each agent if you no longer want REA available there.
 Use REA's own cleanup commands if you also want to remove user data.
+
+## Package details
+
+| Field | Value |
+|---|---|
+| Package | `rea` |
+| Version | `6.8.0-3` |
+| Architecture | `all` |
+| Maintainer | Ivam3 <https://t.me/Ivam3_Bot> |
+| Source | [https://github.com/morluto/rea](https://github.com/morluto/rea) |
+| Dependencies | nodejs-lts (>= 22.23.4), npm, apktool, rizin, procps, curl, ca-certificates, bash, coreutils, binutils |
+| Suggests | chromium, ghidra, i-haklab |
+
+## Troubleshooting
+
+```bash
+pkg update
+pkg install rea
+```
+
+Verify that the command is available with `command -v rea`. If the package was recently installed, open a new shell so the updated `PATH` is loaded.
+
+## License
+
+See the upstream source for the license terms that apply to this package and its bundled sources.
+
+## Part of i-HakLab
+
+This package is part of the [i-HakLab](https://github.com/Ivam3/i-HakLab) ecosystem, a cybersecurity and pentesting toolkit for Android/Termux.
+
+```bash
+pkg install i-haklab
+```

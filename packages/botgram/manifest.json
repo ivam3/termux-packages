@@ -4,9 +4,9 @@
   "arch": "all",
   "homepage": "https://github.com/ivam3/botgram",
   "maintainer": "Ivam3 <https://t.me/Ivam3_Bot>",
-  "depends": ["git, python, python-pip", "python-numpy"],
+  "depends": ["git, python, python-pip"],
   "suggests": ["i-haklab"],
-  "description": "Scraper Telegram's groups information and manage it from CLi.",
+  "description": "Telegram group scraper and CLI utility for member, comment and post data.",
   "files" :{
     "botgram": "bin/botgram"
 	}

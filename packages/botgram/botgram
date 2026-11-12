@@ -9,7 +9,7 @@ if [[ -d ${HOME}/.local/share/$(basename $0) ]]
 then
 	PS3="(➤_) "
 	printf "$Y(➤_)$W Choose an opcion to run $(basename $0).\n\n"
-	select opc in add2group getdata sendmsg setup exit;do
+	select opc in add2group getdata getUserComments sendmsg setup exit;do
 		[[ $opc = "exit" ]] && exit
 		pushd ${HOME}/.local/share/$(basename $0) >/dev/null
 		$(command -v python) $opc.py ${@:1}

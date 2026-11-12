@@ -1,224 +1,336 @@
-# Documentación del Escritorio bspwm para Termux:X11
+# termux-desktop-bspwm
 
-Este documento proporciona una visión general completa del escritorio `termux-desktop-bspwm`: un entorno tiling moderno, ligero y controlado por teclado para Termux:X11.
+> Meta-package and default configuration for a bspwm tiling desktop on Termux:X11.
 
-## 1. ¿Qué es bspwm?
+## Overview
 
-**bspwm** es un gestor de ventanas *tiling* basado en partición binaria del espacio. A diferencia de xfce (flotante, con barra de título y botones), aquí las ventanas se reparten solas toda la pantalla y se controlan con el teclado: no hay botones de minimizar/maximizar/cerrar, hay atajos (`super+w` cerrar, `super+m` monocle, `super+f` fullscreen).
+This package installs and configures a lightweight bspwm desktop for
+Termux:X11. It includes a launcher, keyboard shortcuts, polybar, picom, kitty,
+rofi and a set of default applications.
 
-## 2. ¿Qué es sxhkd y por qué se usa en bspwm?
+The package is intended for Termux X11 sessions and provides a complete starting
+point that can be customized through the generated configuration files.
 
-**sxhkd** (*Simple X Hotkey Daemon*) es el demonio de atajos de teclado. bspwm no trae atajos propios: sxhkd escucha las combinaciones (definidas en `~/.config/sxhkd/sxhkdrc`) y ejecuta `bspc` u otras apps. Sin sxhkd corriendo, bspwm no responde al teclado.
+## Upstream source
 
-> **Nota:** `super` = tecla Windows (logo) o Cmd (⌘) en Mac. Si tu teclado no la envía a Termux:X11, usa la columna de respaldo con `alt`.
+- **Package source:** [ivam3/termux-packages](https://github.com/ivam3/termux-packages)
+- **bspwm upstream:** [baskerville/bspwm](https://github.com/baskerville/bspwm)
 
----
+## Installation
 
-## 3. Componentes Instalados
+```bash
+pkg update
+pkg install termux-desktop-bspwm
+```
 
-| Componente | Paquete | Descripción |
-| :--- | :--- | :--- |
-| **bspwm** | `bspwm` | **Gestor de ventanas tiling principal.** |
-| **sxhkd** | `sxhkd` | **Demonio de atajos de teclado.** |
-| **kitty** | `kitty` | **Terminal principal** (GPU, transparencia). |
-| **xfce4-terminal** | `xfce4-terminal` | Terminal de respaldo. |
-| **rofi** | `rofi` | **Lanzador de apps y comandos** (tema gruvbox-dark-hard). |
-| **polybar** | `polybar` | **Barra superior**: escritorios, CPU, RAM, batería, WiFi, hora, volumen. |
-| **picom** | `picom` | **Compositor**: transparencia y vsync. |
-| **dmenu** | `dmenu` | Menú genérico (respaldo de rofi). |
-| **feh** | `feh` | Gestor de fondo de pantalla. |
-| **xsetroot** | `xorg-xsetroot` | Cursor normal + color sólido de respaldo. |
+Start a Termux:X11 session and launch the desktop with:
 
----
+```bash
+startbspwm
+```
 
-## 4. Gestión de Ventanas y Escritorios
+## Requirements
 
-Hay 2 escritorios (`I`–`II`). Firefox se va solo al `II`.
+- `x11-repo`
+- `termux-x11-nightly`
+- `bspwm`, `sxhkd`, `kitty`, `rofi`, `polybar`, `picom`
+- `tint2`, `dmenu`, `feh`, `xorg-xsetroot`, `xfce4-screenshooter`
+- `dbus`, `firefox`, `thunar`, `mousepad`, `pulseaudio`
+- `glow`, `papirus-icon-theme`, `hicolor-icon-theme`, `unzip`, `fontconfig`
 
-### Dividir pantalla entre ventanas
-1. Abre la primera app (ocupa todo).
-2. Preselecciona el lado: `super+ctrl+h/j/k/l` (verás el contorno).
-3. Abre la segunda app → cae en ese lado. Pantalla dividida.
-4. Proporción previa: `super+ctrl+5` (50%), `super+ctrl+7` (70%), etc.
+## Usage
 
----
+```bash
+startbspwm
+```
 
-## 5. Atajos de Teclado Personalizados
+The desktop starts bspwm, sxhkd, picom, polybar and the wallpaper helper. Use
+`super` (the Windows/Command key) as the main modifier. If your keyboard does
+not send `super` to Termux:X11, use the `alt` alternatives listed below.
 
-### Apps y sesión
-| Atajo | Respaldo `alt` | Descripción |
-| :--- | :--- | :--- |
-| `super+Return` | `alt+Return` | **Abrir terminal kitty.** |
-| `super+shift+Return` | — | Abrir terminal xfce4 (respaldo). |
-| `super+espacio` | `alt+espacio` | **Lanzador rofi (apps).** |
-| `super+shift+espacio` | — | Lanzador rofi (comandos). |
-| `super+Escape` | — | **Recargar atajos sxhkd.** |
-| `super+shift+q` | `alt+shift+q` | **Salir de bspwm** (cierra la sesión, no mata X11). |
-| `super+shift+r` | — | Reiniciar bspwm. |
-| `Print` | — | Captura (xfce4-screenshooter). |
+## 1. What is bspwm?
 
-### Ventanas: cerrar y estados
-| Atajo | Descripción |
-| :--- | :--- |
-| `super+w` | **Cerrar ventana.** |
-| `super+shift+w` | Matar ventana (forzado). |
-| `super+m` | **Alternar tiled / monocle** (maximizar). |
-| `super+t` / `super+shift+t` / `super+s` / `super+f` | Tiled / pseudo-tiled / flotante / **fullscreen**. |
-| `super+g` | Intercambiar con la ventana más grande. |
-| `super+y` | Enviar nodo marcado al preseleccionado. |
+**bspwm** is a tiling window manager based on binary space partitioning. Unlike
+a floating desktop such as Xfce, windows automatically share the screen and are
+controlled with the keyboard. There are no minimize, maximize or close buttons
+by default; use the shortcuts instead (`super+w` closes a window, `super+m`
+toggles monocle mode and `super+f` toggles fullscreen).
 
-### Foco y movimiento (`h`=izq, `j`=abajo, `k`=arriba, `l`=der)
-| Atajo | Descripción |
-| :--- | :--- |
-| `super+h/j/k/l` | Mover el **foco** en esa dirección. |
-| `super+shift+h/j/k/l` | **Mover la ventana** en esa dirección. |
-| `super+c` / `super+shift+c` | Siguiente / anterior ventana del desktop. |
-| `super+Tab` | Última ventana. |
-| `super+o` / `super+i` | Historial de foco (atrás / adelante). |
-| `super+p/b/,/.` | Foco por salto (padre, hermano, primero, segundo). |
+## 2. What is sxhkd?
 
-### Escritorios (I–II)
-| Atajo | Descripción |
-| :--- | :--- |
-| `super+1..2` | **Ir al desktop** N. |
-| `super+shift+1..2` | **Mandar la ventana** al desktop N. |
-| `super+[` / `super+]` | Desktop anterior / siguiente. |
-| `super+grave` (acento) | Último desktop. |
+**sxhkd** (*Simple X Hotkey Daemon*) reads keyboard shortcuts from
+`~/.config/sxhkd/sxhkdrc` and runs `bspc` commands or applications. bspwm does
+not provide its own shortcut daemon, so sxhkd must be running for the keyboard
+bindings to work.
 
-### Flags de nodo
-| Atajo | Descripción |
-| :--- | :--- |
-| `super+ctrl+m` | Marcar nodo. |
-| `super+ctrl+x` | Bloquear nodo. |
-| `super+ctrl+y` | Sticky (visible en todos los desktops). |
-| `super+ctrl+z` | Privado. |
+> **Note:** `super` is the Windows/logo key or Command (⌘) on a Mac. If your
+> keyboard does not forward it to Termux:X11, use the `alt` fallback column.
 
-### Preselección (división manual)
-| Atajo | Descripción |
-| :--- | :--- |
-| `super+ctrl+h/j/k/l` | **Preseleccionar dirección** (ahí cae la próxima app). |
-| `super+ctrl+1..9` | **Preseleccionar proporción** (0.1–0.9). |
-| `super+ctrl+espacio` | Cancelar preselección del nodo. |
-| `super+ctrl+shift+espacio` | Cancelar preselección del desktop. |
+## 3. Installed components
 
-### Mover y redimensionar
-| Atajo | Descripción |
-| :--- | :--- |
-| `super+alt+h/j/k/l` | **Expandir** ventana hacia ese lado. |
-| `super+alt+shift+h/j/k/l` | **Contraer** ventana. |
-| `super+flechas` | Mover ventana flotante (20px). |
+| Component | Package | Description |
+|---|---|---|
+| **bspwm** | `bspwm` | Main tiling window manager. |
+| **sxhkd** | `sxhkd` | Keyboard shortcut daemon. |
+| **kitty** | `kitty` | Primary GPU-accelerated terminal with transparency. |
+| **xfce4-terminal** | `xfce4-terminal` | Fallback terminal. |
+| **rofi** | `rofi` | Application and command launcher (gruvbox-dark-hard theme). |
+| **polybar** | `polybar` | Top bar with desktops, CPU, RAM, battery, WiFi, clock and volume. |
+| **picom** | `picom` | Compositor for transparency and vsync. |
+| **dmenu** | `dmenu` | Generic menu and rofi fallback. |
+| **feh** | `feh` | Wallpaper manager. |
+| **xsetroot** | `xorg-xsetroot` | Normal cursor and solid-color fallback. |
 
----
+## 4. Window and desktop management
 
-## 6. Comandos `bspc` Esenciales (sin atajo)
+Two desktops are configured (`I`–`II`). Firefox is assigned to desktop `II`.
 
-Útiles desde cualquier terminal con `DISPLAY=:0`:
+### Split the screen between windows
 
-| Comando | Descripción |
-| :--- | :--- |
-| `bspc query -D --names` | Listar escritorios. |
-| `bspc query -N` | Listar IDs de ventanas abiertas. |
-| `bspc rule -l` | Listar reglas por app. |
-| `bspc config border_width` | Ver valor actual de una opción. |
-| `bspc config window_gap 16` | Cambiar el gap en vivo. |
-| `bspc wm -r` | Reiniciar bspwm (recarga `bspwmrc`). |
-| `pkill -USR1 -x sxhkd` | Recargar `sxhkdrc` sin reiniciar. |
-| `pkill -SIGUSR1 -x kitty` | Recargar `kitty.conf` en terminales abiertas. |
+1. Open the first application; it fills the desktop.
+2. Preselect a side with `super+ctrl+h/j/k/l` (a border preview appears).
+3. Open the second application; it is placed on the selected side.
+4. Adjust the split ratio with `super+ctrl+5` (50%), `super+ctrl+7` (70%), and
+   so on.
 
----
+## 5. Keyboard shortcuts
 
-## 7. Estructura de la Configuración
+### Applications and session
 
-- **`~/.config/bspwm/bspwmrc`**: escritorios, bordes, gaps, reglas, autostart (sxhkd, fondo, picom, polybar).
-- **`~/.config/bspwm/wallpaper.jpg`**: fondo fijo (ver §10).
-- **`~/.config/sxhkd/sxhkdrc`**: todos los atajos (§5).
-- **`~/.config/polybar/config.ini`**: barra + módulos. **`launch.sh`**: lanzador (espera socket, exporta `BSPWM_SOCKET`). **`battery.sh` / `wifi.sh`**: batería y WiFi vía Termux:API.
-- **`~/.config/picom/picom.conf`**: compositor (log en `~/.config/picom/picom.log`).
-- **`~/.config/kitty/kitty.conf`**: terminal (§8).
-- **`~/.config/rofi/config.rasi`**: ajustes rofi (el tema va por CLI `-theme`, ver §9).
-- **`~/bin/startbspwm`**: lanzador.
+| Shortcut | `alt` fallback | Description |
+|---|---|---|
+| `super+Return` | `alt+Return` | Open kitty. |
+| `super+shift+Return` | — | Open the xfce4-terminal fallback. |
+| `super+space` | `alt+space` | Open rofi (applications). |
+| `super+shift+space` | — | Open rofi (commands). |
+| `super+Escape` | — | Reload sxhkd shortcuts. |
+| `super+shift+q` | `alt+shift+q` | Exit bspwm (closes the session, not X11). |
+| `super+shift+r` | — | Restart bspwm. |
+| `Print` | — | Take a screenshot with xfce4-screenshooter. |
 
----
+### Windows: closing and states
+
+| Shortcut | Description |
+|---|---|
+| `super+w` | Close the focused window. |
+| `super+shift+w` | Force-kill the focused window. |
+| `super+m` | Toggle tiled/monocle mode (maximize). |
+| `super+t` / `super+shift+t` / `super+s` / `super+f` | Tiled / pseudo-tiled / floating / fullscreen. |
+| `super+g` | Swap with the largest window. |
+| `super+y` | Send the marked node to the preselected node. |
+
+### Focus and movement (`h`=left, `j`=down, `k`=up, `l`=right)
+
+| Shortcut | Description |
+|---|---|
+| `super+h/j/k/l` | Move focus in that direction. |
+| `super+shift+h/j/k/l` | Move the focused window in that direction. |
+| `super+c` / `super+shift+c` | Next / previous window on the desktop. |
+| `super+Tab` | Last focused window. |
+| `super+o` / `super+i` | Focus history (back / forward). |
+| `super+p/b/,/.` | Focus by jump (parent, brother, first, second). |
+
+### Desktops (I–II)
+
+| Shortcut | Description |
+|---|---|
+| `super+1..2` | Go to desktop N. |
+| `super+shift+1..2` | Move the focused window to desktop N. |
+| `super+[` / `super+]` | Previous / next desktop. |
+| `super+grave` | Last desktop. |
+
+### Node flags
+
+| Shortcut | Description |
+|---|---|
+| `super+ctrl+m` | Mark a node. |
+| `super+ctrl+x` | Lock a node. |
+| `super+ctrl+y` | Sticky (visible on every desktop). |
+| `super+ctrl+z` | Private. |
+
+### Preselection (manual split)
+
+| Shortcut | Description |
+|---|---|
+| `super+ctrl+h/j/k/l` | Preselect a direction for the next application. |
+| `super+ctrl+1..9` | Preselect a ratio (0.1–0.9). |
+| `super+ctrl+space` | Cancel the node preselection. |
+| `super+ctrl+shift+space` | Cancel the desktop preselection. |
+
+### Move and resize
+
+| Shortcut | Description |
+|---|---|
+| `super+alt+h/j/k/l` | Expand the window toward that side. |
+| `super+alt+shift+h/j/k/l` | Shrink the window. |
+| `super+arrow keys` | Move a floating window (20 px). |
+
+## 6. Essential `bspc` commands
+
+These commands work from any terminal with `DISPLAY=:0`:
+
+| Command | Description |
+|---|---|
+| `bspc query -D --names` | List desktops. |
+| `bspc query -N` | List open window IDs. |
+| `bspc rule -l` | List per-application rules. |
+| `bspc config border_width` | Show the current value of an option. |
+| `bspc config window_gap 16` | Change the window gap at runtime. |
+| `bspc wm -r` | Restart bspwm and reload `bspwmrc`. |
+| `pkill -USR1 -x sxhkd` | Reload `sxhkdrc` without restarting. |
+| `pkill -SIGUSR1 -x kitty` | Reload `kitty.conf` in open terminals. |
+
+## 7. Configuration layout
+
+- `~/.config/bspwm/bspwmrc`: desktops, borders, gaps, rules and autostart
+  (sxhkd, wallpaper, picom, polybar).
+- `~/.config/bspwm/wallpaper.jpg`: default wallpaper (see section 10).
+- `~/.config/sxhkd/sxhkdrc`: all keyboard shortcuts (section 5).
+- `~/.config/polybar/config.ini`: bar and modules. `launch.sh` waits for the
+  socket and exports `BSPWM_SOCKET`. `battery.sh` and `wifi.sh` use Termux:API.
+- `~/.config/picom/picom.conf`: compositor settings; log at
+  `~/.config/picom/picom.log`.
+- `~/.config/kitty/kitty.conf`: terminal settings (section 8).
+- `~/.config/rofi/config.rasi`: rofi settings. The theme is selected on the
+  command line with `-theme` (section 9).
+- `~/bin/startbspwm`: desktop launcher.
 
 ## 8. Terminal (kitty)
 
-| Opción | Valor | Descripción |
-| :--- | :--- | :--- |
-| `font_family` | `Hack Nerd Font Mono` | Fuente con iconos (negrita/cursiva en `auto`). |
-| `font_size` | `15.0` | Tamaño (acepta decimales). |
-| `background_opacity` | `0.92` | Transparencia sutil (requiere picom vivo). |
-| `dynamic_background_opacity` | `yes` | `ctrl+shift+a` alterna sólido/transparente. |
-| `cursor_shape` | `beam` | Cursor tipo barra. |
-| `scrollback_lines` | `5000` | Historial por terminal. |
-| `copy_on_select` | `yes` | Copiar al seleccionar. |
-| `confirm_os_window_close` | `0` | Cerrar sin preguntar (`super+w`). |
+| Option | Value | Description |
+|---|---|---|
+| `font_family` | `Hack Nerd Font Mono` | Font with icon support. |
+| `font_size` | `15.0` | Font size; decimals are accepted. |
+| `background_opacity` | `0.92` | Subtle transparency; requires picom. |
+| `dynamic_background_opacity` | `yes` | `ctrl+shift+a` toggles solid/transparent. |
+| `cursor_shape` | `beam` | Bar cursor. |
+| `scrollback_lines` | `5000` | Scrollback per terminal. |
+| `copy_on_select` | `yes` | Copy text when selected. |
+| `confirm_os_window_close` | `0` | Close without confirmation (`super+w`). |
 
-## 9. Opciones del Sistema (bspwmrc + polybar)
+## 9. System options (bspwmrc + polybar)
 
 ### bspwm (`bspwmrc`)
-| Opción | Valor | Descripción |
-| :--- | :--- | :--- |
-| `border_width` | `2` | Grosor del borde de ventana. |
-| `window_gap` | `12` | Separación entre ventanas. |
-| `split_ratio` | `0.52` | Proporción del split automático. |
-| `borderless_monocle` | `true` | Sin borde en monocle. |
-| `gapless_monocle` | `true` | Sin gap en monocle. |
-| `focused_border_color` | `#7aa2f7` | Borde de ventana activa. |
-| `normal_border_color` | `#3b4261` | Borde de ventanas inactivas. |
-| `focus_follows_pointer` | `true` | El foco sigue al ratón. |
+
+| Option | Value | Description |
+|---|---|---|
+| `border_width` | `2` | Window border width. |
+| `window_gap` | `12` | Gap between windows. |
+| `split_ratio` | `0.52` | Automatic split ratio. |
+| `borderless_monocle` | `true` | No border in monocle mode. |
+| `gapless_monocle` | `true` | No gap in monocle mode. |
+| `focused_border_color` | `#7aa2f7` | Active window border. |
+| `normal_border_color` | `#3b4261` | Inactive window border. |
+| `focus_follows_pointer` | `true` | Focus follows the mouse pointer. |
 
 ### polybar (`config.ini`)
-| Módulo | Tipo | Descripción |
-| :--- | :--- | :--- |
-| `bspwm` | interno | Escritorios I–II (clic para cambiar). Requiere `BSPWM_SOCKET` (lo pone `launch.sh`). |
-| `cpu` / `memory` | interno | `%` cada 2–3 s. |
-| `battery` | script | `battery.sh` → Termux:API cada 30 s. El módulo interno no sirve en Android (SELinux). |
-| `wifi` | script | `wifi.sh` → Termux:API cada 15 s. `internal/network` no tiene permiso (netlink denegado). |
-| `date` | interno | `%H:%M %d/%m`. |
-| `pulseaudio` | interno | Volumen. Requiere `XDG_RUNTIME_DIR=$TMPDIR` (lo pone `launch.sh`). |
-| `font-0/1` | — | `monospace:size=15`. Si subes la fuente, sube `height` (38) a la par. |
 
----
+| Module | Type | Description |
+|---|---|---|
+| `bspwm` | internal | Desktops I–II (click to switch). Requires `BSPWM_SOCKET`, set by `launch.sh`. |
+| `cpu` / `memory` | internal | Percentage, refreshed every 2–3 seconds. |
+| `battery` | script | `battery.sh` uses Termux:API every 30 seconds. The internal module does not work on Android because of SELinux. |
+| `wifi` | script | `wifi.sh` uses Termux:API every 15 seconds. `internal/network` is denied by netlink restrictions. |
+| `date` | internal | `%H:%M %d/%m`. |
+| `pulseaudio` | internal | Volume. Requires `XDG_RUNTIME_DIR=$TMPDIR`, set by `launch.sh`. |
+| `font-0/1` | — | `monospace:size=15`. If you increase the font size, increase `height` (38) as well. |
 
-## 10. Guía de Configuración Manual
+## 10. Manual configuration guide
 
-### Cambiar el fondo
+### Change the wallpaper
+
 ```sh
-cp /ruta/a/tu-imagen.jpg ~/.config/bspwm/wallpaper.jpg
+cp /path/to/image.jpg ~/.config/bspwm/wallpaper.jpg
 DISPLAY=:0 feh --no-fehbg --bg-fill ~/.config/bspwm/wallpaper.jpg
 ```
-Queda fijo: `bspwmrc` siempre usa ese archivo (o color sólido si falta).
 
-### Cambiar fuente/tamaño de la terminal
-Edita `~/.config/kitty/kitty.conf` (`font_family`, `font_size`) y recarga sin cerrar nada:
+`bspwmrc` always uses that file, or a solid color if it is missing.
+
+### Change the terminal font and size
+
+Edit `~/.config/kitty/kitty.conf` (`font_family`, `font_size`) and reload
+without closing the terminals:
+
 ```sh
 pkill -SIGUSR1 -x kitty
 ```
 
-### Cambiar transparencia
-`background_opacity 0.85` en `kitty.conf` (más bajo = más transparente). En vivo: `ctrl+shift+a` alterna. Si kitty avisa *"Failed to enable transparency"*, picom está muerto: `pgrep -x picom || (DISPLAY=:0 picom -b --log-file ~/.config/picom/picom.log &)`.
+### Change transparency
 
-### Cambiar fuente de polybar
-`font-0`/`font-1` en `config.ini` + ajusta `height`, luego:
+Set `background_opacity 0.85` in `kitty.conf`; lower values are more
+transparent. Press `ctrl+shift+a` to toggle at runtime. If kitty reports
+`Failed to enable transparency`, picom is not running:
+
+```sh
+pgrep -x picom || (DISPLAY=:0 picom -b --log-file ~/.config/picom/picom.log &)
+```
+
+### Change the polybar font
+
+Edit `font-0`/`font-1` in `config.ini`, adjust `height`, then restart polybar:
+
 ```sh
 DISPLAY=:0 XDG_RUNTIME_DIR=$TMPDIR bash ~/.config/polybar/launch.sh
 ```
 
-### Añadir un atajo propio
-1. Abre `~/.config/sxhkd/sxhkdrc`.
-2. Añade el bloque (ejemplo: `super+d` → thunar):
-```
+### Add a shortcut
+
+1. Open `~/.config/sxhkd/sxhkdrc`.
+2. Add a block, for example `super+d` for Thunar:
+
+```text
 super + d
 	thunar &
 ```
-3. Recarga: `super+Escape` (o `pkill -USR1 -x sxhkd`).
 
-### Añadir una regla por app
-En `bspwmrc` (ejemplo: Telegram siempre flotante) y aplica con `bspc wm -r`:
+3. Reload with `super+Escape` or `pkill -USR1 -x sxhkd`.
+
+### Add a per-application rule
+
+Add the rule to `bspwmrc` (for example, keep Telegram floating) and apply it
+with `bspc wm -r`:
+
 ```sh
 bspc rule -a TelegramDesktop state=floating
 ```
-Descubre el nombre de clase con `xprop | grep WM_CLASS` y clic en la ventana.
 
----
-*Nota: Escritorio integrado como `termux-desktop-bspwm` en el ecosistema i-Haklab/termux-packages.*
+Find the window class with `xprop | grep WM_CLASS` and click the window.
+
+## Package details
+
+| Field | Value |
+|---|---|
+| Package | `termux-desktop-bspwm` |
+| Version | `0.1.1` |
+| Architecture | `all` |
+| Maintainer | Ivam3 <https://t.me/Ivam3_Bot> |
+| Source | [ivam3/termux-packages](https://github.com/ivam3/termux-packages) |
+| Website | [baskerville/bspwm](https://github.com/baskerville/bspwm) |
+| Dependencies | `x11-repo`, `termux-x11-nightly`, `bspwm`, `sxhkd`, `kitty`, `rofi`, `polybar`, `picom`, `tint2`, `dmenu`, `feh`, `xorg-xsetroot`, `xfce4-screenshooter`, `dbus`, `firefox`, `thunar`, `mousepad`, `pulseaudio`, `glow`, `papirus-icon-theme`, `hicolor-icon-theme`, `unzip`, `fontconfig` |
+| Suggests | `i-haklab` |
+
+## Troubleshooting
+
+```bash
+pkg update
+pkg install x11-repo termux-x11-nightly bspwm sxhkd kitty rofi polybar picom tint2 dmenu feh xorg-xsetroot xfce4-screenshooter dbus firefox thunar mousepad pulseaudio glow papirus-icon-theme hicolor-icon-theme unzip fontconfig
+startbspwm
+```
+
+If the desktop does not start, verify that the Termux:X11 session is running
+and that `DISPLAY` is set. Check the logs for `bspwm`, `sxhkd`, `picom` and
+`polybar` in the terminal where the session was started.
+
+## License
+
+See the upstream sources for the license terms that apply to bspwm, sxhkd and
+the bundled configuration files.
+
+## Part of i-HakLab
+
+This package is part of the [i-HakLab](https://github.com/Ivam3/i-HakLab)
+ecosystem, a cybersecurity and pentesting toolkit for Android/Termux.
+
+```bash
+pkg install i-haklab
+```

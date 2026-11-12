@@ -2,38 +2,64 @@
 
 > OVH fork of ttyrec — a terminal session recorder and player. Records and replays shell sessions.
 
+## Overview
+
+This package provides `ovh-ttyrec` for Termux. It is maintained as part of the i-HakLab package collection.
+
+## Upstream source
+
+- **Source:** [https://github.com/ovh/ovh-ttyrec](https://github.com/ovh/ovh-ttyrec)
+
 ## Installation
 
 ```bash
+pkg update
 pkg install ovh-ttyrec
 ```
 
-## Info
+## Requirements
 
-| Field | Value |
-|-------|-------|
-| Version | `1.2.0.0` |
-| Architecture | `all` |
-| Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [ovh-ttyrec](https://github.com/ovh/ovh-ttyrec) |
-
-## Dependencies
-
-`git`, `make`, `clang`, `libcompiler-rt`, `zstd` (Bionic-native, no `bionic-host`/`glibc-repo` required)
-
-> Note: `bionic-host` was removed from Termux; `ovh-ttyrec` now builds natively with `clang` + `pty.h`/`libutil` + `libzstd`.
+git, make, clang, libcompiler-rt, zstd
 
 ## Usage
 
 ```bash
-ttyrec [options]   # record: ttyrec -h for help
-ttyplay [options] ./ttyrecord  # replay
-ttytime ./ttyrecord            # print timings
+ttyrec session.log
+ttyplay session.log
+ttytime session.log
 ```
+
+`ttyrec` records a terminal session, `ttyplay` replays it and `ttytime` reports
+its duration. Run each command with `--help` for the available options.
+
+## Package details
+
+| Field | Value |
+|---|---|
+| Package | `ovh-ttyrec` |
+| Version | `1.2.0.0` |
+| Architecture | `all` |
+| Maintainer | Ivam3 <https://t.me/Ivam3_Bot> |
+| Source | [https://github.com/ovh/ovh-ttyrec](https://github.com/ovh/ovh-ttyrec) |
+| Dependencies | git, make, clang, libcompiler-rt, zstd |
+| Suggests | i-haklab |
+
+## Troubleshooting
+
+```bash
+pkg update
+pkg install ovh-ttyrec
+```
+
+Verify that the command is available with `command -v ttyrec`. If the package was recently installed, open a new shell so the updated `PATH` is loaded.
+
+## License
+
+See the upstream source for the license terms that apply to this package and its bundled sources.
 
 ## Part of i-HakLab
 
-This package is part of the [i-HakLab](https://github.com/Ivam3/i-HakLab) ecosystem — a comprehensive hacking toolkit for Android/Termux.
+This package is part of the [i-HakLab](https://github.com/Ivam3/i-HakLab) ecosystem, a cybersecurity and pentesting toolkit for Android/Termux.
 
 ```bash
 pkg install i-haklab

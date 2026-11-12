@@ -2,24 +2,27 @@
 
 > Manage Docker containers from Linux x86, x86_64, ARMv7 and AArch64 virtual machines using QEMU (Quick EMUlator).
 
+## Overview
+
+This package provides `termux-docker-qemu` for Termux. It is maintained as part of the i-HakLab package collection.
+
+## Upstream source
+
+- **Source:** [https://github.com/ivam3/termux-packages](https://github.com/ivam3/termux-packages)
+- **Website:** [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
+
 ## Installation
 
 ```bash
+pkg update
 pkg install termux-docker-qemu
 ```
 
-## Info
+## Requirements
 
-| Field | Value |
-|-------|-------|
-| Version | `0.9.4` |
-| Architecture | `all` |
-| Maintainer | [Ivam3](https://t.me/Ivam3_Bot) |
-| Homepage | [termux-docker-qemu](https://github.com/ivam3/termux-packages/blob/gh-pages/packages/termux-docker-qemu/README.md) |
+openssh, wget, samba, procps, net-tools, xorg-xrandr, xfwm4, xdotool, termux-x11-nightly, qemu-utils, qemu-common, qemu-system-x86-64
 
-## Dependencies
-
-`openssh, wget, samba, procps, net-tools, xorg-xrandr, xfwm4, xdotool, termux-x11-nightly, qemu-utils, qemu-common, qemu-system-x86-64`
+This package is intended for the Termux X11 environment.
 
 ## Usage
 
@@ -183,9 +186,35 @@ xfce4-session &
 
 ---
 
+## Package details
+
+| Field | Value |
+|---|---|
+| Package | `termux-docker-qemu` |
+| Version | `0.9.5` |
+| Architecture | `all` |
+| Maintainer | Ivam3 <https://t.me/Ivam3_Bot> |
+| Source | [https://github.com/ivam3/termux-packages](https://github.com/ivam3/termux-packages) |
+| Website | [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop) |
+| Dependencies | openssh, wget, samba, procps, net-tools, xorg-xrandr, xfwm4, xdotool, termux-x11-nightly, qemu-utils, qemu-common, qemu-system-x86-64 |
+| Suggests | i-haklab |
+
+## Troubleshooting
+
+```bash
+pkg update
+pkg install termux-docker-qemu
+```
+
+Verify that the command is available with `command -v termux-docker-qemu`. If the package was recently installed, open a new shell so the updated `PATH` is loaded.
+
+## License
+
+See the upstream source for the license terms that apply to this package and its bundled sources.
+
 ## Part of i-HakLab
 
-This package is part of the [i-HakLab](https://github.com/Ivam3/i-HakLab) ecosystem — a comprehensive hacking toolkit for Android/Termux.
+This package is part of the [i-HakLab](https://github.com/Ivam3/i-HakLab) ecosystem, a cybersecurity and pentesting toolkit for Android/Termux.
 
 ```bash
 pkg install i-haklab

@@ -1,16 +1,29 @@
 #!/data/data/com.termux/files/usr/bin/bash
 IFS=$'\n\t'
+APP="${HOME}/.local/share/botgram"
+
 echo "Cloning botgram ..."
-git clone --quiet https://github.com/ivam3/botgram ${HOME}/.local/share/botgram && cd $_
-chmod 751 -R *
-echo "Installing requirements ..."
+rm -rf "$APP"
+if ! git clone --quiet https://github.com/ivam3/botgram "$APP"; then
+  echo "[!] Could not clone botgram."
+  exit 1
+fi
+cd "$APP" || exit 1
+chmod 751 -R "$APP"
+
+echo "Installing Python requirements ..."
 python setup.py --install
-python setup.py --config
-wget --tries=20 --quiet https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer -O /data/data/com.termux/files/usr/bin/fixer
-chmod 751 /data/data/com.termux/files/usr/bin/fixer
+
+if [[ ! -f "${PREFIX}/bin/fixer" ]]; then
+  wget --tries=20 --quiet \
+    https://raw.githubusercontent.com/ivam3/i-Haklab/master/.deb/home/.local/bin/fixer \
+    -O "${PREFIX}/bin/fixer" && chmod 751 "${PREFIX}/bin/fixer"
+fi
+
 echo "[*] Botgram installation finished."
-echo "[*] Run 'botgram' to execute it."
-echo "[*] Run 'fixer' to fix any posible issue."
-echo "[!] For help going to https://t.me/Ivam3_Bot."
-echo "[*] @Ivam3: thank you for use my package."
+echo "[*] Run 'botgram' to start the interactive menu."
+echo "[*] Configure your Telegram API credentials with:"
+echo "    cd ${APP} && python setup.py --config"
+echo "[*] Run 'fixer' to fix possible Termux issues."
+echo "[!] Help: https://t.me/Ivam3_Bot"
 ####::: REPORT ISSUES AT https://t.me/Ivam3_Bot :::####

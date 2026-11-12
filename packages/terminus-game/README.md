@@ -1,14 +1,25 @@
 # terminus-game
 
-Terminal port of [Terminus](https://github.com/mprat/Terminus), the Linux
-learning adventure game by Michele Pratusevich. Explore a text world and learn
-`cd`, `ls`, `less`, `pwd`, `cp`, `mv`, `rm`, `grep`, `touch` and `sudo` while
-solving the game's puzzles.
+> Terminal port of Terminus, the Linux learning adventure game.
 
-The upstream JavaScript game logic is vendored from commit
-`a62d0e53f77bc53d0b1941e6baf89403ed25a129` with minor compatibility fixes and
-executed with Node.js; only the browser terminal has been replaced with a
-native CLI.
+## Overview
+
+This package provides `terminus-game` for Termux. It is maintained as part of the i-HakLab package collection.
+
+## Upstream source
+
+- **Source:** [https://github.com/mprat/Terminus](https://github.com/mprat/Terminus)
+
+## Installation
+
+```bash
+pkg update
+pkg install terminus-game
+```
+
+## Requirements
+
+nodejs-lts
 
 ## Usage
 
@@ -64,8 +75,37 @@ which defaults to `~/.local/share/terminus-game/save.json`. Set `TERMINUS_SAVE`
 to override it. The save file survives package upgrades, reinstallation and
 removal; delete it (or use `--reset`) to start over.
 
+## Package details
+
+| Field | Value |
+|---|---|
+| Package | `terminus-game` |
+| Version | `1.0.0-4` |
+| Architecture | `all` |
+| Maintainer | Ivam3 <https://t.me/Ivam3_Bot> |
+| Source | [https://github.com/mprat/Terminus](https://github.com/mprat/Terminus) |
+| Dependencies | nodejs-lts |
+| Suggests | chafa, termux-api, i-haklab |
+
+## Troubleshooting
+
+```bash
+pkg update
+pkg install terminus-game
+```
+
+Verify that the command is available with `command -v terminus-game`. If the package was recently installed, open a new shell so the updated `PATH` is loaded.
+
 ## License
 
 The game is licensed under the GNU General Public License v2.0. The vendored
 upstream sources are unmodified and kept under `vendor/terminus/` together with
 their original license. See `LICENSE` and `vendor/terminus/LICENSE.md`.
+
+## Part of i-HakLab
+
+This package is part of the [i-HakLab](https://github.com/Ivam3/i-HakLab) ecosystem, a cybersecurity and pentesting toolkit for Android/Termux.
+
+```bash
+pkg install i-haklab
+```
